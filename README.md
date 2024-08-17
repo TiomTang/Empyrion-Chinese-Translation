@@ -7,9 +7,9 @@
 ### 使用方法：
 
 1. 找到游戏本体所在的 steamapps 目录( Steam 安装目录下，或其他盘的 SteamLibrary 里面)。
-2. 将【原版汉化】/【Reforged Eden1.11汉化】里面的【steamapps】目录内容复制进去覆盖即可。
+2. 将【原版汉化】/【Reforged Eden1.11汉化】/【Reforged Eden 2 汉化】里面的【steamapps】目录内容复制进去覆盖即可。
 
-### 最后更新时间：2024/08/17
+### 最后更新时间：2024/08/18
 
 2024/08/17
 ---
