@@ -16,7 +16,7 @@ RE2的文档8/17加入施工，不定时更新。(已完成)
    1. Github：右上角绿色Code→Download ZIP，解压按下面方法覆盖游戏原文件即可。
    2. 百度网盘：[https://pan.baidu.com/s/1WGgueRzB84ue_Gh15NxRRQ?pwd=a4ti](https://pan.baidu.com/s/1WGgueRzB84ue_Gh15NxRRQ?pwd=a4ti) 找到最新日期文件夹里面压缩包下载即可，使用方法同上。
 2. 找到游戏本体所在的 steamapps 目录( Steam 安装目录下，或其他盘的 SteamLibrary 里面)。
-3. 将【原版汉化】/【Reforged Eden1.11汉化】/【Reforged Eden 2 汉化】里面的【steamapps】目录内容复制进去覆盖即可。
+3. 将【本体汉化】(必须打上)/【Reforged Eden 1 汉化】(按需)/【Reforged Eden 2 汉化】(按需)里面的【steamapps】目录内容复制进去覆盖即可。
 
 ### 其他
 
