@@ -8,17 +8,29 @@ RE2的文档8/17加入施工，不定时更新。(已完成)
 
 ### 汉化适用：
 
-1. 帝国霸业银河生存（1.11.8）
-2. 重铸伊甸园1（6月版本）
-3. 重铸伊甸园2 (beta版)
+1. 帝国霸业银河生存游戏本体（1.11.9）
+2. Mod：重铸伊甸园1（Build 86）
+3. Mod：重铸伊甸园2 (Build 22)
+
+注意：本体汉化必打，Mod是玩哪个打哪个
 
 ### 使用方法：
+
+#### 一、Steam
 
 1. 下载：
    1. Github：右上角绿色Code→Download ZIP，解压按下面方法覆盖游戏原文件即可。
    2. 百度网盘：[https://pan.baidu.com/s/1WGgueRzB84ue_Gh15NxRRQ?pwd=a4ti](https://pan.baidu.com/s/1WGgueRzB84ue_Gh15NxRRQ?pwd=a4ti) 找到最新日期文件夹里面压缩包下载即可，使用方法同上。
 2. 找到游戏本体所在的 steamapps 目录( Steam 安装目录下，或其他盘的 SteamLibrary 里面)。
 3. 将【原版汉化】/【Reforged Eden1.11汉化】/【Reforged Eden 2 汉化】里面的【steamapps】目录内容复制进去覆盖即可。
+
+#### 二、Epic
+
+1. 下载同上。
+2. 本体汉化：将目录 【必需 - 本体汉化\steamapps\common\Empyrion - Galactic Survival】 里面的【Content】覆盖到游戏根目录同名目录。
+3. Mod汉化：
+   1. 首先把mod打上，上面百度网盘地址有mod本体，将mod解压出来后放到游戏根目录路径【Empyrion - Galactic Survival\Content\Scenarios】中，如RE2解压出来是【Reforged Eden 2】文件夹，整个拖到【Scenarios】目录中，然后看起来路径应该是【Empyrion - Galactic Survival\Content\Scenarios\Reforged Eden 2】，目录里面是各种mod的文件。
+   2. 然后打汉化包，将【Mod汉化 - Reforged Eden 2\steamapps\workshop\content\\383120\\3143225812】目录里面所有东西拖到上面的Mod本体里面，提示覆盖后确定。RE1也是这样打，汉化包目录是【Mod汉化 - Reforged Eden 1\steamapps\workshop\content\\383120\\2550354956】。
 
 ### 注意事项
 
