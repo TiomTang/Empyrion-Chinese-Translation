@@ -43,6 +43,10 @@ RE2的文档8/17加入施工，不定时更新。(已完成)
 1. 先把本体汉化打上
 2. 再到RE mod的位置，把相应版本的汉化打上
 
+### 四、关于玩RE2服务器，而服务器又不及时更新汉化文件解决方法
+
+此方法只适合服务器缺少汉化词条的补充，不能做到已有词条的更新，有条件的还是督促服务器所有权人更新语言文件。
+**使用方法**：将项目里面的"玩RE2服务器专用，汉化POI\Localization.csv"文件，替换本体语言文件，路径如："C:\Steam\steamapps\common\Empyrion - Galactic Survival\Content\Extras\Localization.csv"
 
 ## 【注意事项】
 
