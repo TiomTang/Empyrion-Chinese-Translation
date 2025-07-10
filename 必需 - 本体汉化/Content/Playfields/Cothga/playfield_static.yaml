@@ -1,0 +1,1079 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+PlanetType: CothgaPlanet
+
+PlayfieldType: Planet
+Difficulty: 4
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.6, 1.0, 0.4"
+
+SkyColor: "0.6,1,0.1"
+SkyHorizonColor: "0.5, 1.0, 0.50"
+AtmosphereParams: [2, 1.2]
+
+# Light
+DayLightIntensity: 0.6
+NightLightIntensity: 0.68
+
+DayShadowStrength: 0.95
+
+LightZenithColor: "0.6,1,0.1"
+LightHorizonColor: "0.8,0.8,0.1"
+NightLightColor: "0.65, 0.8, 0.8"
+OrbitUsesLightColor: True
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite
+
+
+# Fog
+FogColor: "0.3, 0.7, 0.3"
+FogCloudIntensity: 0.8
+# AtmosphereFog: 0.95          # See Playfield_dynamic!
+# GroundFogIntensity: 0.24
+# GroundFogHeight: 45
+
+# Clouds and Wind
+CloudsDensity: 1
+CloudsSharpness: 1
+CloudsBrightness: 1
+CloudsOpacity: 0.3
+
+CloudsZenithColor: "0.6,1,0.12" 
+CloudsHorizonColor: "0.15, 0.4, 0.175"
+CloudsNightZenithColor: "0.015, 0.018, 0.017"
+CloudsNightHorizonColor: "0.015, 0.018, 0.017"
+
+WindSpeed: 4
+
+
+# Special Effects
+SpecialEffectsLocal:
+
+    # Day
+  - Name: ButterfliesBlue
+    Biome: [ Forest, Grove ]
+    Time: Day
+    MaxHeight: 15
+
+  - Name: FireFliesGreenFew
+    Biome: [ Savanna, Plateau ]
+    Time: Day
+    MaxHeight: 15
+
+  - Name: FireFliesRed
+    Biome: [ Savanna, Plateau ]
+    Time: Day
+    MaxHeight: 15
+
+  - Name: Mosquitos
+    Biome: [ Biofilm, ShallowWater ]
+    Time: Day
+    MaxHeight: 15
+
+
+    #Night
+  - Name: FireFliesOrange       # ->Fitting to BigFlower
+    Biome: [ Forest, Biofilm ]  # Biofilm: Night time has double intensity
+    Time: Night
+    MaxHeight: 15
+    
+  - Name: Sparks                       # Double entry for more intensity.
+    Biome: [ Forest, Grove, Plateau ]
+    Time: Night
+    MaxHeight: 20
+  - Name: Sparks
+    Biome: [ Forest, Grove, Plateau  ]
+    Time: Night
+    MaxHeight: 20
+    
+  - Name: FireFliesRed   # ->Fitting to MoundzTree
+    Biome: [ Savanna ]
+    Time: Night
+    MaxHeight: 15
+        
+  - Name: Pollen
+    Biome: [ Grassland, Savanna, Plateau ]
+    Time: Night
+    MaxHeight: 15
+    
+
+
+
+    # Always
+  - Name: FireFliesOrange
+    Biome: [ Biofilm, ShallowWater, Grove ]
+    Time: Always
+    MaxHeight: 15
+  - Name: TarantulaHawksFew
+    Biome: [ Biofilm ]
+    Time: Always
+    MaxHeight: 15
+
+
+    
+SpecialEffectsGlobal:
+
+# Global Effects
+  - Name: BirdFlockBats
+    Biome: [ AlienForest, AlienSavanna ]
+    Time: Day
+    InitialDelay: 0.5
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 50
+    SpawnY: 20
+    Struct: True
+
+  - Name: ThunderAndLightning
+    Biome: [ Any ]
+    Time: Always
+    InitialDelay: 0.5
+    Delay: 6
+    Lifetime: 300
+    PlyDist: 100
+    SpawnY: 500
+    Struct: Avoid
+
+
+
+
+# Weather
+
+
+    # Base weather
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 6
+    Delay: 5
+    Lifetime: 1200 # Duration: 20 minutes
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 12
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 6
+    Delay: 2
+    Lifetime: 1200
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 6
+    Delay: 2
+    Lifetime: 600
+
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 5
+    Delay: 2
+    Lifetime: 600
+
+    # Rarer Weather
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 1000
+  - Name: RainMedium
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 600
+  - Name: RainHeavy
+    Type: Weather
+    InitialDelay: 72
+    Delay: 24
+    Lifetime: 600
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 72
+    Delay: 24
+    Lifetime: 600
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 72
+    Delay: 24
+    Lifetime: 600
+
+
+  - Name: FogRadiationPurple   # Danger
+    Type: Weather
+    InitialDelay: 48 # 4 ingame days = 4 RL hours
+    Delay: 24
+    Lifetime: 600
+    # Rare
+  - Name: AcidRainHeavy   # Danger
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+
+
+
+
+# ==============================================================
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+
+
+    - Name: IronResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 5, 8 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.5
+      MaxDroneCount: 4
+
+    - Name: CopperResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 5, 8 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.4
+      MaxDroneCount: 2
+      
+    - Name: PromethiumResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 5, 6 ]
+      DroneProb: 0.4
+      MaxDroneCount: 2
+      DepthMinMax: [ 0, 1 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+      
+    - Name: CobaltResource
+      IsScalingCount: True
+      CountMinMax: [ 1, 2 ]
+      SizeMinMax: [ 5, 9 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.4
+      MaxDroneCount: 2
+      
+    - Name: PentaxidResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 4, 6 ]
+      DroneProb: 1
+      MaxDroneCount: 4
+      DepthMinMax: [ 0, 5 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+      
+    - Name: ErestrumResource
+      IsScalingCount: True
+      CountMinMax: [ 5, 7 ]
+      SizeMinMax: [ 8, 10 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 1
+      MaxDroneCount: 4
+      
+    - Name: MagnesiumResource
+      IsScalingCount: True
+      CountMinMax: [ 3, 4 ]
+      SizeMinMax: [ 5, 8 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 1
+      MaxDroneCount: 4
+
+
+### Resource Asteroids
+AsteroidResources:
+    - Name: IronResource
+      Threshold: 0.2
+      Amount: 0.2
+    - Name: CopperResource
+      Threshold: 0.2
+      Amount: 0.2
+    - Name: PromethiumResource
+      Threshold: 0.2
+      Amount: 0.2
+    - Name: CobaltResource
+      Threshold: 0.2
+      Amount: 0.2
+    - Name: ErestrumResource
+      Threshold: 0.2
+      Amount: 0.2
+    - Name: MagnesiumResource
+      Threshold: 0.2
+      Amount: 0.2
+
+
+### POIs
+POIs:
+    Random:
+
+    FixedPlayerStart:
+
+        - Mode: Creative
+          SubMode: Normal
+          Armor: ArmorLight
+          Pos: [0, 44.9, 0]
+          RotY: 150   
+
+
+        - Mode: Debug
+          Armor: ArmorMedium
+          Pos: [ 0, 147, 0 ]
+          RotY: 160 
+
+        - Mode: Survival
+          # Spawn: EscapePod        
+          Pos: [ 0, 147, 0 ]
+
+          # Armor: ArmorMedium
+          PlayerArmor: ["ArmorMedium, ArmorLight, None, #FreshStart:ArmorMedium"]     
+          Status: [ "Food: 400, Health: 400", "Food: 250, Health: 250", "Food: 150, Health: 150", "#FreshStart:Food: 250, Health: 250" ]
+          Items: [ 
+          "SurvivalTool, PowerBar:2, Medikit04:3, Bandages:2, Flashlight, AntibioticOintment:2, SurvivalTent, MobileAirCon, OreScanner", 
+          "SurvivalTool, PowerBar:1, Medikit04:2, Bandages:1, Flashlight, AntibioticOintment:1, SurvivalTent, MobileAirCon, OreScanner", 
+          "SurvivalTool, PowerBar:1, Medikit04:1, Flashlight, SurvivalTent, OreScanner", 
+          "#FreshStart: SurvivalTool, Medikit04:1, Flashlight, SurvivalTent" 
+          ]
+
+# ==============================================================
+# ==============================================================
+# ### Drones
+# DroneBaseSetup: 
+    # Random:
+        # - GroupName: DroneBaseSetup  
+          # Difficulty: 7
+          # PresetStyle: 3
+          # Stock:
+              # - Name: DroneSmallFast01Plasma
+                # Amount: 200
+                # Extra: 0
+
+              # - Name: EnemyDroneV2Minigun
+                # Amount: 400
+                # Extra: 0
+
+              # - Name: EnemyDroneV2Plasma
+                # Amount: 400
+                # Extra: 0
+
+              # - Name: DroneLargeAttackBase
+                # Amount: Infinite
+                # Extra: 1
+
+              # - Name: DroneBomberAttackBase
+                # Amount: Infinite
+                # Extra: 1
+
+              # - Name: EnemyDroneV2Plasma
+                # Amount: Infinite
+                # Extra: 1
+
+              # - Name: DroneTroopsTransport01
+                # Amount: Infinite
+                # Extra: 2
+
+              # - Name: ZiraxMinigun
+                # Amount: 500
+                # Extra: 3
+
+              # - Name: RipperDog
+                # Amount: 250
+                # Extra: 3
+
+              # - Name: Mechanoid
+                # Amount: 250
+                # Extra: 3
+
+          # PlanetVesselBase:
+              # Name: PlanetVesselBaseSetup
+              # Position3D: [ 0, 102, 0]
+              # BaseType: PlanetVesselBase
+              # KeyId: 0
+              # PlanetVessel:
+                # - Name: PVZiraxT2
+                  # Mission: PlanetPatrol
+                  # FixedMaxSpeed: 10
+                  # RespawnDelay: 12
+                  # InitialDelay: 48
+
+                  # RangePatrolTask:
+                    # Position3D: [ -1000, 80, 0 ]
+                    # Radius: 800
+                    # DistToGround: 80
+
+                  # AttackCVCircleAround:
+                    # DistToTarget: 190
+
+# DroneSpawning:
+    # Random:
+        # - DronesMinMax: [ 5, 10 ]
+          # CenterX: -5000
+          # Radius: 3000
+
+        # - DronesMinMax: [ 5, 10 ]
+          # CenterX: -5000
+          # Radius: 3000
+
+# # ==============================================================
+# # ==============================================================
+
+      
+# SpawnZones:
+   # - SpawnAt: [ErestrumResource]
+     # BiomesExcluded: [ Mountains ]
+     # Radius: 500
+     # RadiusRandom: 25
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.6
+     # Color: "1.0, 1.0, 1.0, 1.0"
+     # Entities:
+       # - Names: [AlienAssassinGreysInfected]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+         
+   # - SpawnAt: [Ruins, Wreckage, AbandonedPOI]
+     # BiomesExcluded: [ Mountains ]
+     # Radius: 500
+     # RadiusRandom: 25
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.6
+     # Color: "1.0, 1.0, 1.0, 1.0" 
+     # SpawnOnlyIfPoiIsAlien: true
+     # Entities:
+       # - Names: [Overseers]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+         
+   # - SpawnAt: [GhystAuxT2]
+     # # BiomesExcluded: [ LowMountains, Mountains ]
+     # Radius: 600
+     # RadiusRandom: 25
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.6
+     # Color: "1.0, 0.0, 0.0, 1.0" 
+     # SpawnOnlyIfPoiIsAlien: true
+     # Entities:
+       # - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+         
+   # - SpawnAt: [DroneBaseT1, GhystMain, GhystBunker]
+     # BiomesExcluded: [ Mountains ]
+     # Radius: 1000
+     # RadiusRandom: 100
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.6
+     # Color: "1.0, 0.0, 0.0, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     # Entities:
+       # - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+
+
+# ### Creatures ===========================
+# CreatureSpawning:
+
+
+
+    # - Biomes: [Grassland]
+      # Entities:
+
+          # # Day - Aggressive
+        # - Name: Spiders01
+          # Period: Day
+          # Amount: 10
+          # Color: "1.0, 1, 1"
+          # DelayMinMax: [20, 24]
+
+        # - Name: Spiders03
+          # Period: Day
+          # Amount: 10
+          # DelayMinMax: [10, 20]
+          
+        # - Name: AlienAssassinGreysInfected
+          # Period: Day
+          # Amount: 4
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+
+          # # Day - Mostly Neutral
+        # - Name: LizardMuleHerd
+          # Period: Always
+          # Amount: 17
+          # DelayMinMax: [6, 8]
+          # Color: "0, 0, 1.0"
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 20
+          # DelayMinMax: [6, 8]
+          # Color: "0, 1.0, 1.0"
+
+          # # Night - Aggressive       # Teeming with spiders. Easy to fight due to their flight behaviour.
+        # - Name: Spiders02
+          # Period: Night
+          # Amount: 40
+          # Color: "1.0, 1, 1"
+          # DelayMinMax: [20, 24]
+
+        # - Name: Spiders03
+          # Period: Day
+          # Amount: 20
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+
+    # - Biomes: [Plains]
+      # Entities:
+      
+          # # Day - Aggressive
+        # - Name: AlienBugs03
+          # Period: Day
+          # Amount: 10
+          # DelayMinMax: [10, 20]
+
+        # - Name: CaveWormsGreen
+          # Period: Day
+          # Amount: 10
+          # DelayMinMax: [10, 12]
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Day
+          # Amount: 4
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+
+          # # Day - Mostly Neutral
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 40
+          # DelayMinMax: [6, 8]
+          # Color: "0, 1.0, 1.0"
+
+
+          
+          # # Night - Aggressive       # Teeming with spitters. More dangerous than Grassland.
+        # - Name: Spiders03
+          # Period: Night
+          # Amount: 30
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienBugs03
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [10, 20]
+
+        # - Name: Overseers
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+
+
+    # - Biomes: [Forest]    # Low visibility biome.
+      # Entities:
+      
+          # # Day - Aggressive
+        # - Name: Spiders02
+          # Period: Day
+          # Amount: 20
+          # Color: "1.0, 1, 1"
+          # DelayMinMax: [20, 24]
+          
+        # - Name: GolemsSwamp
+          # Period: Day
+          # Amount: 5
+          # DelayMinMax: [10, 20]
+          
+        # - Name: AlienBugs03
+          # Period: Day
+          # Amount: 8
+          # DelayMinMax: [10, 20]
+          
+          # # Day - Mostly Neutral
+        # - Name: AlienBugs01
+          # Period: Day
+          # Amount: 20
+          # DelayMinMax: [10, 12]
+          # Color: "0, 1.0, 1.0"
+
+
+          # # Night - Aggressive
+        # - Name: Spiders02
+          # Period: Night
+          # Amount: 70
+          # Color: "1.0, 1, 1"
+          # DelayMinMax: [20, 24]
+
+        # - Name: Spiders03
+          # Period: Night
+          # Amount: 15
+          # DelayMinMax: [20, 40]
+
+        # - Name: AlienBugs03
+          # Period: Night
+          # Amount: 15
+          # DelayMinMax: [20, 24]
+          # Color: "0.7, 0, 0"
+
+        # - Name: GolemsSwamp
+          # Period: Night
+          # Amount: 10
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+
+
+
+
+    # - Biomes: [Grove ]      # Higher visibility than Forest => More dangerous creatures.
+      # Entities:
+          # # Day - Aggressive
+        # - Name: Spiders02
+          # Period: Always
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+          # Color: "1.0, 1, 1"
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Day
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+
+        # - Name: Spiders03
+          # Period: Day
+          # Amount: 8
+          # DelayMinMax: [10, 20]
+
+        # - Name: GolemsSwamp
+          # Period: Day
+          # Amount: 5
+          # DelayMinMax: [10, 20]
+
+
+          # # Day - Mostly Neutral
+        # - Name: AlienBugs04
+          # Period: Always
+          # Amount: 30
+          # DelayMinMax: [10, 12]
+          # Color: "0, 1.0, 1.0"
+          
+        # - Name: AlienBugs01
+          # Period: Day
+          # Amount: 25
+          # DelayMinMax: [10, 12]
+          # Color: "0, 1.0, 1.0"
+
+
+          # # Night - Aggressive
+        # - Name: Spiders03
+          # Period: Night
+          # Amount: 30
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienBugs03
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [10, 20]
+
+        # - Name: Overseers
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [10, 20]
+
+        # - Name: GolemsSwamp
+          # Period: Night
+          # Amount: 10
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+
+
+          # # Night - Mostly Neutral
+        # - Name: Slimes
+          # Period: Night
+          # Amount: 50
+          # DelayMinMax: [10, 12] 
+          # Color: "0.3, 0.9, 0.0"
+
+
+
+    # - Biomes: [Savanna]
+      # Entities:
+      
+          # # Day - Aggressive
+        # - Name: CaveWormsGreen   # Only dangerous if they hit you. Easy to evade and to kill with survival tool.
+          # Period: Day
+          # Amount: 12
+          # DelayMinMax: [10, 12]
+
+        # - Name: AlienBugs03
+          # Period: Day
+          # Amount: 8
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Day
+          # Amount: 4
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+          
+          # # Day - Mostly Neutral
+        # - Name: LizardMuleHerd
+          # Period: Always
+          # Amount: 17
+          # DelayMinMax: [6, 8]
+          # Color: "0, 0, 1.0"
+
+        # - Name: AlienBugs04
+          # Period: Always
+          # Amount: 10
+          # DelayMinMax: [10, 12]
+          # Color: "0, 1.0, 1.0"
+
+          # # Night - Aggressive
+        # - Name: Overseers
+          # Period: Night
+          # Amount: 60
+          # DelayMinMax: [20, 24]
+          # Color: "0.5, 0, 0"
+          
+        # - Name: Spiders03
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+          
+
+    # - Biomes: [ShallowWater, Biofilm]   # Guarding the water. Easy to be avoided, killed with survival tool. Backside glows at night.
+      # Entities:
+        # - Name: Telluropods
+          # Period: Always
+          # Amount: 85
+          # DelayMinMax: [10, 12]
+          # AllowInWater: true
+          # Color: "1.0, 0.6, 0.0"
+          
+
+
+    # - Biomes: [Biofilm ]   # Flat, open shore biome, drenched in fog. - VERY dangerous! 
+      # Entities:            # (Needs lots of spawns for creatures to appear, since the biome is so thin.)
+
+          # # Day - Aggressive
+        # - Name: RaptorsNight
+          # Period: Day
+          # Amount: 35
+          # DelayMinMax: [10, 20]
+          # Color: "0.2, 0.2, 0.2"
+
+        # - Name: RaptorHerd 
+          # Period: Day
+          # Amount: 10
+          # DelayMinMax: [10, 20]
+          # Color: "0.2, 0.2, 0.2"
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Day
+          # Amount: 2
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+
+          # # Day - Mostly Neutral
+        # - Name: Slimes                  # Will make good 'collateral damage enemies' (if you aren't careful with aiming during a raptor fight)
+          # Period: Day
+          # Amount: 300                   # Since they spawn as individuals, this isn't a very much number.
+          # DelayMinMax: [10, 12]
+          # Color: "0.3, 0.9, 0.0"
+
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 20
+          # DelayMinMax: [10, 12]
+          # Color: "0, 1.0, 1.0"
+
+          # # Night - Aggressive
+        # - Name: RaptorHerd
+          # Period: Night
+          # Amount: 150                  # Can swarm you. Very high spawn rate due to thin biome
+          # DelayMinMax: [30, 60]
+          # Color: "0.0, 0.0, 0.0"
+
+        # - Name: Spiders01
+          # Period: Night                # Spider eyes fitting nicely to other glow deco, hidden in grass
+          # Amount: 40
+          # DelayMinMax: [20, 24]
+          # Color: "1.0, 1, 1"
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 4
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+
+          # # Night - Mostly Neutral
+        # - Name: Slimes                 # Glow-in-the-dark eye
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [10, 12]
+          # Color: "0.3, 0.9, 0.0"
+
+    # - Biomes: [LowMountains]
+      # Entities:
+
+          # # Day - Aggressive
+        # - Name: Spiders02
+          # Period: Always
+          # Amount: 12
+          # DelayMinMax: [20, 24]
+          # Color: "1.0, 1, 1"
+          
+        # - Name: AlienAssassinGreysInfected
+          # Period: Always
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+
+        # - Name: AlienBugs03     # Spitting, affliction
+          # Period: Always
+          # Amount: 12
+          # DelayMinMax: [10, 12]
+
+          # # Day - Mostly Neutral
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 12
+          # DelayMinMax: [10, 12]
+          
+          # # Night - Aggressive
+        # - Name: Spiders02
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [20, 40]
+          
+        # - Name: AlienBugs03     # Spitting, affliction
+          # Period: Always
+          # Amount: 12
+          # DelayMinMax: [10, 12]
+
+        # - Name: GolemsSwamp
+          # Period: Night
+          # Amount: 10
+          # DelayMinMax: [10, 20]
+
+
+    # - Biomes: [Tundra]    # Flat, open biome. Mostly harmless at day, full of hunters at night.
+      # Entities:
+      
+          # # Day - Aggressive
+        # - Name: Spiders01          # Fitting to the black/white grass
+          # Period: Day
+          # Amount: 20
+          # DelayMinMax: [20, 24]
+          # Color: "1.0, 1, 1"
+      
+        # - Name: AlienAssassinGreysInfected
+          # Period: Day
+          # Amount: 4
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+      
+          # # Day - Mostly Neutral
+        # - Name: LizardMuleHerd
+          # Period: Always
+          # Amount: 15
+          # DelayMinMax: [10, 12]
+          # Color: "0.4, 0.2, 1.0"
+        # - Name: SlimesWhite
+          # Period: Day
+          # Amount: 10
+          # DelayMinMax: [10, 12]
+          # Color: "0.3, 0.9, 0.0"
+
+          # # Night - Aggressive       # Getting ganged up by spiders / arachnids
+        # - Name: Spiders01few
+          # Period: Night
+          # Amount: 40
+          # DelayMinMax: [30, 60]
+          # Color: "1.0, 1, 1"
+
+        # - Name: Spiders02            # Tank-y
+          # Period: Night
+          # Amount: 40
+          # DelayMinMax: [30, 60]
+          # Color: "0.5, 0.5, 1"
+
+        # - Name: CaveWormWhiteHerd
+          # Period: Night
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+          # Color: "1.0, 0, 0"
+          
+        # - Name: GolemsIce
+          # Period: Night
+          # Amount: 10
+          # DelayMinMax: [10, 20]
+          
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+          
+
+    # - Biomes: [IceSheet]
+      # Entities:
+      
+          # # Day - Aggressive
+        # - Name: GolemsIce           # Only once.
+          # Period: Day
+          # Amount: 3
+          # DelayMinMax: [-1, -1]
+          # Color: "1.0, 0.4, 0.4"
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Day
+          # Amount: 4
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+      
+          # # Day - Mostly Neutral
+        # - Name: SlimesWhite
+          # Period: Always
+          # Amount: 20
+          # DelayMinMax: [10, 12]
+          # Color: "1.0, 1.0, 0"
+
+        # - Name: LizardMuleHerd
+          # Period: Always
+          # Amount: 10
+          # DelayMinMax: [10, 12]
+          # Color: "0.4, 0.2, 1.0"
+
+          # # Night - Aggressive
+        # - Name: CaveWormWhiteHerd
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [20, 24]
+          # Color: "1.0, 0, 0"
+
+        # - Name: GolemsIce        # Can be farmed (If you can find them)
+          # Period: Night
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+          # Color: "1.0, 0.4, 0.4"
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+          
+
+    # - Biomes: [Glacier]
+      # Entities:
+          # # Day - Aggressive
+        # - Name: GolemsIce
+          # Period: Day
+          # Amount: 3
+          # DelayMinMax: [-1, -1]
+          # Color: "1.0, 0.4, 0.4"
+      
+        # - Name: AlienAssassinGreysInfected
+          # Period: Day
+          # Amount: 3
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+      
+          # # Night - Aggressive
+        # - Name: GolemsIce
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "1.0, 0.4, 0.4"
+          
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+          
+
+    # - Biomes: [Radiated, RadiatedFog]    # Dangerous biome due to high temperature, radiation, and occasionally spitting creatures.
+      # Entities:
+      
+          # # Day - Aggressive
+        # - Name: AlienBugs03             # Spitting; causes afflictions.
+          # Period: Day
+          # Amount: 12
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+
+          # # Night - Aggressive
+        # - Name: AlienAssassinGreysInfected
+          # Period: Night
+          # Amount: 50
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+
+        # - Name: AlienBugs03             # Spitting; causes afflictions.
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+
+        # - Name: GolemsSwamp          # Highest density on this playfield
+          # Period: Night
+          # Amount: 20
+          # DelayMinMax: [10, 20]
+
+        # - Name: AlienAssassinGreysInfected
+          # Period: Always
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+          # Color: "0.8, 0, 0"
+          
+        # - Name: Spiders03
+          # Period: Night
+          # Amount: 8
+          # DelayMinMax: [10, 20]
+          

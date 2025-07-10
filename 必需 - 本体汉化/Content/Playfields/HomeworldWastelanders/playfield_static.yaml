@@ -1,0 +1,332 @@
+Description: "\u8352\u539F\u90E8\u843D\u7684\u5BB6\u56ED"
+PlanetType: WastelandersHomeworld
+PlayfieldType: Planet
+Difficulty: "10"
+BaseAttackCount: "0"
+LandClaimZone: Device
+SunFlare: EnvironmentalEffects/SunFlareWhite4Space
+AtmosphereEnabled: "True"
+AtmosphereColor: 0.57, 0.5, 0.5
+OrbitUsesLightColor: "False"
+SkyColor: 0.15, 0.12, 0.12
+SkyHorizonColor: 0.5, 0.1, 0.1
+AtmosphereParams:
+- "6"
+- "1.8"
+DayLightIntensity: "0.15"
+NightLightIntensity: "0.35"
+LightZenithColor: 0.20,0.18,0.18
+LightHorizonColor: 0.91, 0.53, 0
+NightLightColor: 0.5, 0.45, 0.45
+DayShadowStrength: "1"
+NightShadowStrength: "1"
+FogCloudIntensity: "0.8"
+FogColor: 0.7,0.55,0.45
+GroundFogIntensity: "0.01"
+GroundFogHeight: "5"
+CloudsDensity: "1"
+CloudsSharpness: "0.95"
+CloudsBrightness: "0.2"
+CloudsOpacity: "0.9"
+CloudsZenithColor: 0.35, 0.30, 0.30
+CloudsHorizonColor: 1, 0.3, 0.1
+CloudsNightZenithColor: 0.03, 0, 0
+CloudsNightHorizonColor: 1, 0.3, 0.1
+WindSpeed: "12"
+SpecialEffectsLocal:
+- Name: SnowLight
+  Time: Always
+  MaxHeight: "200"
+- Name: Grime
+  Biome:
+  - Radiated
+  Time: Always
+  MaxHeight: "50"
+SpecialEffectsGlobal:
+- Name: CloudsDark
+  Type: Weather
+  InitialDelay: "0"
+  Delay: "12"
+  Lifetime: "1200"
+- Name: CloudsDark
+  Type: Weather
+  InitialDelay: "4"
+  Delay: "0"
+  Lifetime: "1200"
+- Name: Fog
+  Type: Weather
+  InitialDelay: "48"
+  Delay: "12"
+  Lifetime: "300"
+- Name: AcidRainHeavy
+  Type: Weather
+  InitialDelay: "48"
+  Delay: "72"
+  Lifetime: "300"
+- Name: Hail
+  Type: Weather
+  InitialDelay: "72"
+  Delay: "72"
+  Lifetime: "300"
+- Name: FogRadiationPurple
+  Type: Weather
+  InitialDelay: "48"
+  Delay: "24"
+  Lifetime: "300"
+- Name: ThunderAndLightning
+  Time: Night
+  InitialDelay: "6"
+  Delay: "48"
+  Lifetime: "180"
+  PlyDist: "100"
+  SpawnY: "500"
+  Struct: Avoid
+- Name: ThunderAndLightningRed
+  Time: Night
+  InitialDelay: "6"
+  Delay: "48"
+  Lifetime: "180"
+  PlyDist: "100"
+  SpawnY: "500"
+  Struct: Avoid
+RandomResources:
+- Name: IronResource
+  CountMinMax:
+  - "5"
+  - "7"
+  SizeMinMax:
+  - "5"
+  - "7"
+  DepthMinMax:
+  - "0"
+  - "3"
+  DroneProb: "0.2"
+  MaxDroneCount: "1"
+AsteroidResources: 
+POIs:
+  Random:
+  - GroupName: WSTDroneBase
+    Faction: Wastelanders
+    NoShieldReload: "True"
+    IsImportant: "True"
+    DroneSetupID: DroneBaseWST
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "5"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: WSTCity
+    Faction: Wastelanders
+    NoShieldReload: "True"
+    IsImportant: "True"
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "5"
+    AuxiliaryPOIs:
+    - WSTDefense
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: WSTOldShuttleStation
+    Faction: Wastelanders
+    NoShieldReload: "True"
+    IsImportant: "True"
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "5"
+    AuxiliaryPOIs:
+    - WSTDefense
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: WSTMain
+    Faction: Wastelanders
+    NoShieldReload: "True"
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "5"
+    AuxiliaryPOIs:
+    - WSTDefense
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: WST
+    Faction: Wastelanders
+    NoShieldReload: "True"
+    CountMinMax:
+    - "3"
+    - "5"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "5"
+    AuxiliaryPOIs:
+    - WSTDefense
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: WSTDefense
+    Faction: Wastelanders
+    NoShieldReload: "True"
+    CountMinMax:
+    - "1"
+    - "2"
+    IsAuxPOI: "True"
+    SpawnPOINearRange:
+    - "500"
+    - "800"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  FixedPlayerStart:
+  - Mode: Debug
+    Armor: ArmorLight
+    Pos:
+    - "-596"
+    - "104"
+    - "-1063"
+    RotY: "125"
+DroneSpawning:
+  Random:
+  - Name: DroneSmallFast01Rocket
+    DronesMinMax:
+    - "9"
+    - "10"
+    Faction: Wastelanders
+    POINameAsPositionRef: WSTDroneBase
+    Radius: "6000"
+DroneBaseSetup:
+  DroneBases:
+  - DroneSetupID: DroneBaseWST
+    Stock:
+    - Name: DroneSmallFast01Minigun
+      Amount: Infinite
+      Type: FighterDrone
+    - Name: DroneSmallFast01Rocket
+      Amount: Infinite
+      Type: FighterDrone
+    - Name: DroneTroopsTransport
+      Amount: Infinite
+      Type: TroopTransport
+    - Name: SoldierAlienAssaultRifle
+      Amount: Infinite
+      Type: 
+  PlanetVessels:
+  - Name: OPVWSTT2
+    Faction: Wastelanders
+    CountMinMax:
+    - "4"
+    - "4"
+    LevelMod: "2"
+    FixedMaxSpeed: "40"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - WSTDroneBase
+      DistToGround: "300"
+    Stock:
+    - Name: DroneSmallFast01Minigun
+      Amount: Infinite
+      Type: FighterDrone
+  - Name: CivilianDroneCVfast
+    Faction: Wastelanders
+    LevelMod: "2"
+    FixedMaxSpeed: "100"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "1"
+    - "2"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - WSTCity
+      Radius: "500"
+      DistToGround: "300"
+  - Name: CivilianMicroCV
+    Faction: Wastelanders
+    LevelMod: "2"
+    FixedMaxSpeed: "80"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "2"
+    - "3"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - WSTCity
+      Radius: "1000"
+      DistToGround: "300"
+  - Name: CivilianDroneCVfast
+    Faction: Wastelanders
+    LevelMod: "2"
+    FixedMaxSpeed: "100"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "1"
+    - "2"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - WSTOldShuttleStation
+      Radius: "500"
+      DistToGround: "300"
+  - Name: CivilianMicroCV
+    Faction: Wastelanders
+    LevelMod: "2"
+    FixedMaxSpeed: "80"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "2"
+    - "3"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - WSTOldShuttleStation
+      Radius: "1000"
+      DistToGround: "300"
+  - Name: CivilianDroneCV
+    Faction: Wastelanders
+    LevelMod: "2"
+    FixedMaxSpeed: "100"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "2"
+    - "3"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - WSTOldShuttleStation
+      Radius: "1500"
+      DistToGround: "120"
+SpawnRateZones: 
+SpawnZones: 
+CreatureSpawning: 

@@ -1,0 +1,554 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+# ==============================================================
+# Playfield Characteristics
+
+# # ==============================================================
+# # DELETE 
+# # ==============================================================
+# RealRadius: 1303.797294            # DELETE
+# ScaledRadius: 1300                 # DELETE
+# DayLength: 24                      # DELETE
+# Moons: 1                           # DELETE
+
+# # ==============================================================
+
+PlanetType: Snow               
+PlayfieldType: Planet               
+# AtmosphereEnabled: True              # WILL BE SET BY SSG dependent on AtmoBreathableProb
+# PlanetSize: 5                      # Determines the size of the planet. Integer [1, 2, 3, 4, 5], Default is 2
+Difficulty: 2                        # WE HAVE TO GIVE IT A NEW MEANING
+
+# ==============================================================
+Gravity: -9.81                          # Influences jump height and flying behavior of vessels                  
+# Gravity: [-8, -12]                      # ADD TO DYNAMIC PARAMETERS. Influences jump height and flying behavior of vessels                  
+AtmosphereDensity: 1.1                  # Influences shooting range of weapons
+# AtmosphereDensity: [0.9, 1.2]           # ADD TO DYNAMIC PARAMETERS. Influences shooting range of weapons
+AtmosphereO2: 0.2                       # Oxygen level of atmosphere, influences speed of survival o2 generator
+# AtmosphereO2: [0.1, 0.3]                # ADD TO DYNAMIC PARAMETERS. Oxygen level of atmosphere, influences speed of survival o2 generator
+# AtmoBreathableProb: 0.8                 # ADD TO DYNAMIC PARAMETERS. Probability that atmosphere is breathable => if atmo is breathable, it will set: "AtmosphereEnabled: True" in playfield.yaml
+# # ==============================================================
+# # WHAT TO DO?
+# Description: "[c][e0e020]Origin: %Origin%[-][/c]\n[c][d29818]Difficulty: Easy[-][/c]\nAkua is a temperate planet with vast oceans, volcanic islands and large continents with mountain ranges. It has a breathable atmosphere. The average temperature is 23°C and gravity amounts to 0.84g."   # Multi line text input - Here you can write custom text          # TBD
+
+# ==============================================================
+Water: WaterBlue                        # Available: [WaterGreen, WaterBlue, WaterBrown, WaterRed] - later: implement color picker 
+# Water: [WaterBlue, WaterGreen]          # ADD TO DYNAMIC PARAMETERS. Available: [WaterGreen, WaterBlue, WaterBrown, WaterRed] - later: implement color picker 
+# SeaLevel: 23                            # Float [1, 255]) - Level of water plane
+  
+Music: temperate   
+# # WE COULD DEFINE music sets dependent on PlanetType      
+# Music: [temperate, temperate2, temperate3]   # ADD TO DYNAMIC PARAMETERS          
+
+# ==============================================================
+# ==============================================================
+# # Special parameters:
+# PvP: False                         # Bool var [true, false] - Set to True to allow PvP in this playfield, default is False
+# AllowSV: True                      # Set to False to dis-allow SVs in this playfield, default is True
+# AllowCV: True                      # Set to False to dis-allow CVs in this playfield, default is True
+# #Seed: 123456                      # Integer [1, 999999] If set overwrites main Seed 
+# #UseFixed: True  			   	     # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
+# #UseRandom: True				     # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
+# # IndestructibleTerrain: True      # If set to True terrain on this playfield will be indestructible
+# # Instance:
+  # # Time: 120                        # Minutes until this instance has to be completed and players are kicked
+  # # MaxPlayers: 4                    # Portal closes after this amount of players entered
+  # # PortalOpen: 60                   # Seconds the portal is open
+  # # Cooldown: 7200                   # Seconds the portal is closed after it was open (cooldown time)
+  # # DropInventory: True              # When you do not solve the instance within the given "Time", you will be kicked and your inventory stays behind
+  # # AllowBlueprints: True            # Allow to spawn blueprints in an instance
+  # # RestrictToOrigin: 3              # Only Origin with ID <xyz> can enter portal, see sectors.yaml origin ID
+  # # LockOnFaction: True              # Only members of the same faction can enter portal
+
+
+# # ==============================================================
+
+# Special Effects                   
+SpecialEffectsLocal:
+  - Name: FireFliesOrange
+    Biome: [ ArcticForest, ArcticHighForest ]
+    Time: Night
+    MaxHeight: 80
+
+SpecialEffectsGlobal:
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0   
+    Delay: 3
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0   
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 0   
+    Delay: 3
+    Lifetime: 1200
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 5   
+    Delay: 3
+    Lifetime: 1200
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 12     
+    Delay: 5            
+    Lifetime: 1000      
+  - Name: SnowLight
+    Type: Weather
+    InitialDelay: 24   
+    Delay: 5          
+    Lifetime: 600      
+  - Name: SnowMedium
+    Type: Weather
+    InitialDelay: 24   
+    Delay: 12          
+    Lifetime: 600      
+  - Name: SnowHeavy
+    Type: Weather
+    InitialDelay: 24   
+    Delay: 12          
+    Lifetime: 600         
+  - Name: ColdWave
+    Type: Weather
+    InitialDelay: 48   
+    Delay: 24          
+    Lifetime: 1000             
+  - Name: Hail
+    Type: Weather
+    InitialDelay: 48   
+    Delay: 24          
+    Lifetime: 600     
+
+# ==============================================================
+
+# TO DO: DEFINE PARAM RANGES 
+
+# Atmosphere and Sky
+AtmosphereEnabled: True              # Atmosphere True or False
+AtmosphereColor: "0.19, 0.26, 0.35"  # Color of atmosphere seen in space, default is white "1,1,1"
+SkyColor: "1, 0.8, 1"                  # Color of skybox if sun is in zenith, default is white "1,1,1"
+SkyHorizonColor: "1, 0.3, 0"         # Color of skybox if sun is on horizon, default is white "1,1,1"
+
+# Light
+DayLightIntensity: 0.9              # Between 0 and 1: larger values = brighter, default is 0.6
+NightLightIntensity: 0.2            # Between 0 and 1: larger values = brighter, default is 0.6
+DayShadowStrength: 0.95             # Between 0 and 1: larger values = stronger
+NightShadowStrength: 0.5            # Between 0 and 1: larger values = stronger
+
+# >> MOVE TO HERE + predefine path + choose range 
+# Sun                              
+SunFlare: EnvironmentalEffects/SunFlareWhite3     # Choose from pre-selection: SunFlareBlue, SunFlarePurple, SunFlareRed, SunFlareRedSpace, SunFlareWhite, SunFlareWhite2, SunFlareWhite3, SunFlareWhite3Space, SunFlareWhite4, SunFlareWhite4Space, SunFlareWhiteMoon, SunFlareWhiteSpace, SunFlareYellow, SunFlareYellow2, SunFlareYellow3
+
+# ==============================================================
+# ==============================================================
+
+# Fog
+AtmosphereFog: 0.5      
+FogCloudIntensity: 1.0 
+FogIntensity: 0.1                  
+FogStartDistance: 100            
+GroundFogIntensity: 0.0          
+GroundFogHeight: 10          
+
+# DEPENDS ON WEATHER
+CloudsDensity: 0.3               
+CloudsSharpness: 0.2           
+CloudsBrightness: 0.35      
+# CloudsOpacity: 0.9			 
+CloudsZenithColor: "0.87, 0.92, 1"  
+CloudsHorizonColor: "1, 0.3, 0"  
+
+# DEPENDS ON WEATHER
+# Wind Speed
+WindSpeed: 3                           # Float [0, 20] -  Larger values = faster moving clouds, grass and trees
+
+
+# ==============================================================
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: IronResource
+      Biome: [ Grassland ]
+      CountMinMax: [ 5, 7 ]  
+      SizeMinMax: [ 8, 10 ] 
+      DepthMinMax: [ 0, 1 ] 
+      DroneProb: 0.2 
+      MaxDroneCount: 1
+      DistTypeCylinder:
+        MaxRadius: 10
+        YVariance: 12
+
+    - Name: CopperResource
+      Biome: [ Forest ]
+      CountMinMax: [ 3, 5 ]
+      SizeMinMax: [ 6, 8 ]
+      DepthMinMax: [ 0, 1 ] 
+      DroneProb: 0.3
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: SiliconResource
+      Biome: [ Savanna ]
+      CountMinMax: [ 3, 6 ]
+      SizeMinMax: [ 6, 7 ]
+      DepthMinMax: [ 0, 1 ] 
+      DroneProb: 0.3
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 8
+
+    - Name: PromethiumResource
+      Biome: [ Mountains, HighMountains ]
+      CountMinMax: [ 4, 8 ]
+      SizeMinMax: [ 7, 10 ]
+      DepthMinMax: [ 0, 1 ] 
+      DroneProb: 0.4
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+### Resource Asteroids
+AsteroidResources:
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+
+    # - Name: IronResource 
+      # Amount: 5000       
+      # InitialDelay: 1    
+      # Delay: 24          
+
+    #- Name: CobaltResource
+    #  Threshold: 0.4
+    #  Amount: 0.4
+
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.2
+
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+
+    # - Name: MagnesiumResource
+      # Threshold: 0.2
+      # Amount: 0.3
+
+### POIs
+POIs:
+    Random:
+        - GroupName: Wreckage
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 1
+          TroopTransport: False    
+          PlayerStart: True   
+          SpawnResource: ["IronResource:1","CopperResource:1","PromethiumResource:1","SiliconResource:1"]
+          ResourceDistance: 700
+          Properties: 
+            - Key: PersonalContainer
+              Value: "AutoMinerCore:5, Core, WaterBottle:2, TomatoStage1, WheatStage1, CornStage1, SnakeweedStage1, PumpkinStage1, PearthingStage1, DurianRoot, RadiationPills, EVABoost"  
+            - Key: MapDistance
+              Value: 700         
+        
+        # Spawn DroneBase far away from wreckage      
+        - GroupName: DroneBaseT1
+          DroneBaseSetup: DroneBaseSetup
+          Biome: [ Savanna ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1  
+          DronesMinMax: [ 2, 3 ]  
+          ReserveCount: 3    
+          SpawnPOIAvoid: [Wreckage]  
+          POIDistance: 1300   
+          Properties: 
+            - Key: Music
+              Value: DarkSoundscape  
+
+        # Spawn TS Akua and close to it some weakly defended civil settlements
+        - GroupName: TS_Akua
+          Biome: [ Grassland ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 1
+          TroopTransport: False      
+          SpawnPOIAvoid: [DroneBaseAkua, Wreckage]  
+          POIDistance: 1000   
+          SpawnResource: ["PromethiumResource:0-2"]
+          ResourceDistance: 300  
+          Properties: 
+            - Key: Music
+              Value: SunnySkies
+
+        # Spawn mine with some weakly defended tribal villages
+        - GroupName: AbandonedPOI
+          Biome: [ Tundra ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.1
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 1
+          TroopTransport: False  
+          SpawnPOIAvoid: [TS_Akua]
+          POIDistance: 1300 
+          SpawnResource: ["IronResource:0-2","PromethiumResource:0-2","CopperResource:0-1"]
+          ResourceDistance: 300 
+          Properties: 
+            - Key: Music
+              Value: DarkSoundscape    
+
+        # Weakly defended Civil Settlements close to TS Akua
+        - GroupName: CivilSettlementO2
+          Biome: [ Grassland ]
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0.5 
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True    
+          SpawnPOINear: [TS_Akua]
+          POIDistance: 500
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral   
+              
+        # Spawn strong defended civil settlements randomly
+        - GroupName: CivilSettlement
+          Biome: [ Swamp ]
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0.9 
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True  
+          SpawnPOIAvoid: [Wreckage]  
+          POIDistance: 1000   
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral                
+
+        # Tribal villages close to Abandoned POI
+        - GroupName: TribalVillage
+          Biome: [ Swamp ]
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0.8 
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          SpawnPOINear: [AbandonedPOI]
+          POIDistance: 500 
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral                 
+
+        # Spawn crashed Talos 
+        - GroupName: CrashedTalosMid      # Do not use regeneration with burried POIs
+          Biome: [ Snow ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          SpawnPOINear: [Wreckage]
+          POIDistance: 1500
+          TroopTransport: True
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral        
+
+        - GroupName: CrashedTalosFront      # Do not use regeneration with burried POIs
+          Biome: [ Snow ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.6
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [CrashedTalosMid]
+          POIDistance: 1000
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral       
+
+        - GroupName: CrashedTalosBack      # Do not use regeneration with burried POIs
+          Biome: [ Snow ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.9
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [CrashedTalosFront]
+          POIDistance: 1000 
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral       
+
+        # Spawn military POIs close to Drone Base 
+        - GroupName: EpsilonT1
+          CountMinMax: [ 2, 3 ]         
+          DroneProb: 1.0                
+          DronesMinMax: [ 1, 2 ]        
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOINear: [DroneBaseAkua]
+          SpawnPOIAvoid: [TS_Akua, Wreckage]
+          POIDistance: 600 
+          SpawnResource: ["PromethiumResource:0-1"]
+          ResourceDistance: 300
+
+        # Spawn military POIs randomly
+        - GroupName: EpsilonT1
+          CountMinMax: [ 4, 6 ]         
+          DroneProb: 1.0                
+          DronesMinMax: [ 1, 2 ]        
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOIAvoid: [TS_Akua, Wreckage]
+          POIDistance: 1000 
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ 423, 147, 693 ]  
+          RotY: 160              
+
+        - Mode: Survival
+          Spawn: EscapePod
+          # Spawn: Structure
+          # Structure: "Wreckage"
+          Armor: ArmorLight
+          Items: [ "Pistol, 50Caliber:250, Medikit02:3, AntidotePills:3, EmergencyRations:4, Drill, Chainsaw, BioFuel:15, ConstructorSurvival, EnergyCell:5, OreScanner", "Pistol, 50Caliber:150, Medikit02:2, AntidotePills:2, EmergencyRations:2, Drill, Chainsaw, BioFuel:10, ConstructorSurvival, EnergyCell:4, OreScanner", "Pistol, 50Caliber:100, Medikit02:1, AntidotePills:1, EmergencyRations:1, Drill, Chainsaw, BioFuel:5, ConstructorSurvival, EnergyCell:3", "#FreshStart: Pistol, 50Caliber:250, Drill, Chainsaw, BioFuel:15, ConstructorSurvival, OreScanner" ]
+
+# ==============================================================
+# ==============================================================
+### Drones
+DroneBaseSetup: 
+    Random:
+        - GroupName: DroneBaseSetupAkua # Name of drone base setup defined under RandomPOIs
+          DronesMinMax: [ 2, 3 ]        # Range of number of drones that defend drone base
+          ReserveCount: 3               # Number of drones that will be replaced when defending drones got killed
+          DroneProb: 1.0                # Probability that drones will defend drone base
+          Difficulty: 1                 # 0..4 -> 0 = no drone attack base ... 4 = max difficulty level (5, 6, 7 = low, medium, high difficulty but with infinite drone waves)
+          PresetStyle: 2                # 0..4 -> see comment above
+          Stock:
+              - Name: DroneSmallFast01Rocket    # Name of drone   
+                Amount: 10                      # Amount of drones in stock          
+                Extra: 0                        # Type of drone 0..3 -> see comment above    
+
+              - Name: DroneSmallAttackBase      # Base attack drones
+                Amount: 100
+                Extra: 1                 
+
+              - Name: DroneTroopsTransport
+                Amount: 1
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 100
+                Extra: 3
+
+          PlanetVesselBase:
+              Name: PlanetVesselBaseSetupAkua        # Name of planet vessel base setup defined under RandomPOIs
+              Position3D: [ 0, 102, 0]
+              BaseType: PlanetVesselBase
+              KeyId: 0                         # Unique Key Id
+              PlanetVessel:
+                - Name: Patrol-S-Easy          # GroupName
+                  Mission: PlanetPatrol
+                  FixedMaxSpeed: 5             # Max speed of a planet vessel in m/s
+                  RangePatrolCenter: [ -1000, 0 ]
+                  RangePatrolRadius: 800
+                  RangePatrolAltitude: 60
+                  RespawnDelay: 12             # Integer [1, 200] Respawn Delay in game hours after destruction of planet vessel 
+                  InitialDelay: 96             # Integer [1, 200] Initial delay in game hours before planet vessel becomes active
+
+# Drones that patrol on whole planet 
+# Type determined by stock of drone base (default drone - type = 0)
+DroneSpawning:    
+    Random:
+        - DronesMinMax: [ 5, 10 ]    # Range of number of drones that patrol
+          CenterX: -2500             # Center of circle around which drones patrol (radius 1500m)
+
+        - DronesMinMax: [ 5, 10 ]    # Range of number of drones that patrol
+          CenterX: 2500              # Center of circle around which drones patrol (radius 1500m)
+
+# ==============================================================
+# ==============================================================
+
+### Creatures
+CreatureSpawning:
+    - Biome: Swamp
+      Entities:
+        - Name: Slimes
+          Period: Day             
+          Amount: 1
+          Delay: 0
+        - Name: PlantMonsters
+          Period: Night
+          Amount: 3
+          Delay: 0
+          # RestrictYMinMax: [ 0, 40 ]
+
+    - Biome: Forest
+      Entities:
+        - Name: Hexapods
+          Period: Night
+          Amount: 2
+          Delay: 0
+        - Name: Spiders01
+          Period: Night
+          Amount: 2
+          Delay: 0
+        - Name: Triceratopses
+          Period: Day
+          Amount: 2
+          Delay: 0
+        - Name: TalonGuardianHerd
+          Period: Always
+          Amount: 2
+          Delay: 0
+
+    - Biome: Grassland
+      Entities:
+        - Name: LizardMuleHerd
+          Period: Day
+          Amount: 2
+          Delay: 0
+        - Name: RaptorHerd
+          Period: Day
+          Amount: 2
+          Delay: 0
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 2
+          Delay: 0
+        - Name: TalonGuardianHerd
+          Period: Night
+          Amount: 2
+          Delay: 0
+        - Name: PlantMonsters
+          Period: Night
+          Amount: 1
+          Delay: 0
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 1
+          Delay: 0
+
+    - Biome: Mountains
+      Entities:
+        - Name: Spiders01
+          Period: Always
+          Amount: 3
+          Delay: 0
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 1
+          Delay: 0

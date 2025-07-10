@@ -1,0 +1,685 @@
+Description: "\u96BE\u5EA6: [c][ff00ff]\u7EC8\u6781[-][/c]\n\n[c][ffffff][i](\u7EC8\u6781\u96BE\u5EA6\u4F1A\u5E26\u6765\u6781\u7AEF\u6311\u6218,\u53EF\u80FD\u4F1A\u5728\u51E0\u4E4E\u6CA1\u6709\u8B66\u544A\u7684\u60C5\u51B5\u4E0B\u5BFC\u81F4\u4F60\u7684\u98DE\u8239\u635F\u5931)[-][/i][/c]\n\n[c][ffff00]\u9AD8\u91CD\u529B\u8B66\u544A[-][/c]\n\n\u884C\u661F\u5730\u58F3\u4E2D\u5927\u91CF\u94B7\u5143\u7D20\u5F15\u53D1\u7684\u653E\u5C04\u6027\u8870\u53D8\u5931\u63A7,\u4F7F\u5730\u8868\u53D8\u6210\u4E86\u4E00\u4E2A\u9762\u76EE\u5168\u975E\u7684\u5730\u72F1,\u88AB\u7B49\u79BB\u5B50\u88C2\u7F1D\u548C\u91CD\u529B\u5F02\u5E38\u6495\u88C2\u3002\n\n\u4F20\u611F\u5668\u68C0\u6D4B\u5230[c][ff00ff]\u6DF1\u6E0A\u9F50\u62C9\u514B\u65AF[-][/c]\u7684\u5B58\u5728\u3002\u5EFA\u8BAE\u6781\u7AEF\u8C28\u614E\u3002"
+PlanetType: Plasma
+Emissive: "True"
+PlayfieldType: Planet
+Difficulty: "10"
+LandClaimZone: Device
+AtmosphereEnabled: "True"
+AtmosphereColor: 0, 0.2, 0.4
+SkyColor: 0,0,0.1
+SkyHorizonColor: 0, 0, 0.2
+AtmosphereParams:
+- "10"
+- "3"
+DayLightIntensity: "0.7"
+NightLightIntensity: "0.9"
+LightZenithColor: 1.2, 1, 1.2
+LightHorizonColor: 0.3, 0.5, 1
+NightLightColor: 0.4, 0.7, 1.4
+DayShadowStrength: "0.95"
+NightShadowStrength: "0.5"
+SunFlare: EnvironmentalEffects/SunFlareBlue
+FogColor: 1, 0, 1
+FogCloudIntensity: "0.1"
+CloudsDensity: "0.2"
+CloudsSharpness: "0.2"
+CloudsBrightness: "0.3"
+CloudsOpacity: "0.1"
+CloudsZenithColor: 0, 0.2, 1
+CloudsHorizonColor: 0.2, 0.0, 0.4
+CloudsNightZenithColor: 0.015, 0.018, 0.017
+CloudsNightHorizonColor: 0.015, 0.018, 0.017
+WindSpeed: "0"
+SpecialEffectsLocal:
+- Name: Grime
+  MaxHeight: "20"
+SpecialEffectsGlobal:
+- Name: Clear
+  Type: Weather
+  InitialDelay: "300"
+  Delay: "300"
+  Lifetime: "30"
+- Name: ThunderAndLightningPurple
+  Time: Always
+  InitialDelay: "0"
+  Delay: "2"
+  Lifetime: "300"
+  PlyDist: "50"
+  SpawnY: "100"
+  Struct: Avoid
+RandomResources:
+- Name: MagnesiumResource
+  Biome:
+  - Plains
+  - Dunes
+  - CrystallizedRocks
+  - Flats
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "5"
+  SizeMinMax:
+  - "6"
+  - "9"
+  DepthMinMax:
+  - "5"
+  - "10"
+  DroneProb: "0.9"
+- Name: GoldResource
+  Biome:
+  - Plains
+  - Dunes
+  - CrystallizedRocks
+  - Flats
+  IsScalingCount: "True"
+  CountMinMax:
+  - "2"
+  - "4"
+  SizeMinMax:
+  - "6"
+  - "9"
+  DepthMinMax:
+  - "5"
+  - "10"
+  DroneProb: "1"
+  MaxDroneCount: "8"
+- Name: ZascosiumResource
+  Biome:
+  - Plains
+  - Dunes
+  - CrystallizedRocks
+  - Flats
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "4"
+  SizeMinMax:
+  - "6"
+  - "7"
+  DepthMinMax:
+  - "0"
+  - "5"
+  DroneProb: "1"
+  MaxDroneCount: "8"
+- Name: PromethiumResource
+  Biome:
+  - Plains
+  - Dunes
+  - CrystallizedRocks
+  - Flats
+  IsScalingCount: "True"
+  CountMinMax:
+  - "4"
+  - "5"
+  SizeMinMax:
+  - "13"
+  - "16"
+  DepthMinMax:
+  - "1"
+  - "1"
+  DroneProb: "1"
+  MaxDroneCount: "12"
+AsteroidResources:
+- Name: MagnesiumResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: GoldResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: ZascosiumResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: PromethiumResource
+  Threshold: "0.2"
+  Amount: "0.1"
+POIs:
+  Random:
+  - GroupName: R2KrielDroneBase
+    Faction: Kriel
+    IsCommandCenter: "True"
+    DroneBaseSetup: DroneBaseSetup
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "8"
+    - "8"
+    ReserveCount: "30"
+    SpawnResource:
+    - PromethiumResource:1-1
+    - ZascosiumResource:1-1
+    SpawnResourceRange:
+    - "175"
+    - "300"
+    Properties:
+    - Key: SI
+      Value: "Off"
+    - Key: Music
+      Value: moonstone
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2KrielMain
+    Faction: Kriel
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "1"
+    DronesMinMax:
+    - "3"
+    - "5"
+    ReserveCount: "12"
+    SpawnPOINear:
+    - R2KrielDroneBase
+    SpawnPOINearRange:
+    - "250"
+    - "400"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2KrielDefenseT1
+    Faction: Kriel
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "1"
+    DronesMinMax:
+    - "5"
+    - "8"
+    ReserveCount: "12"
+    SpawnPOINear:
+    - R2KrielDroneBase
+    SpawnPOINearRange:
+    - "500"
+    - "650"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_TE_TheAnomaly
+    Faction: None
+    Biome:
+    - Plasma
+    - HotPlasma
+    - BurningPlasma
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: Discovery
+      Value: "False"
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2KrielMain
+    Faction: Kriel
+    Territory: "False"
+    Biome:
+    - HotPlasma
+    - BurningPlasma
+    - Plasma
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "1"
+    DronesMinMax:
+    - "5"
+    - "5"
+    ReserveCount: "5"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_TE_TheAnomaly
+    SpawnPOINearRange:
+    - "100"
+    - "400"
+    SpawnResource:
+    - PromethiumResource:2-3
+    SpawnResourceRange:
+    - "350"
+    - "500"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_FloatingProm
+    Faction: None
+    Biome:
+    - HotPlasma
+    - BurningPlasma
+    - Plasma
+    - PlasmaRift
+    CountMinMax:
+    - "5"
+    - "5"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - Eden_FloatingProm
+    SpawnPOIAvoidDistance: "100"
+    SpawnPOINear:
+    - Eden_TE_TheAnomaly
+    SpawnPOINearRange:
+    - "50"
+    - "150"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_PlasmaRift
+    Faction: None
+    Biome:
+    - HotPlasma
+    - BurningPlasma
+    - Plasma
+    - PlasmaRift
+    CountMinMax:
+    - "5"
+    - "10"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_TE_TheAnomaly
+    SpawnPOINearRange:
+    - "150"
+    - "400"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2KrielDefenseT1
+    Faction: Kriel
+    Territory: "False"
+    CountMinMax:
+    - "8"
+    - "8"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - R2KrielDefenseT1
+    SpawnPOIAvoidDistance: "350"
+    SpawnPOINear:
+    - Eden_TE_TheAnomaly
+    SpawnPOINearRange:
+    - "450"
+    - "550"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2KrielMain
+    Faction: Kriel
+    BiomesExcluded:
+    - Mountains
+    - LowMountains
+    - PlasmaMountains
+    - MetalVeins
+    - Plasma
+    - BurningPlasma
+    - HotPlasma
+    CountMinMax:
+    - "8"
+    - "10"
+    IsScalingCount: "True"
+    DroneProb: "1"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "12"
+    TroopTransport: "True"
+    SpawnPOIAvoid:
+    - Eden_TE_TheAnomaly
+    - R2KrielDroneBase
+    SpawnPOIAvoidDistance: "7500"
+    SpawnResource:
+    - MagnesiumResource:0-1
+    - GoldResource:0-1
+    SpawnResourceRange:
+    - "150"
+    - "300"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_HarvestVoidiumT2
+    Faction: None
+    CountMinMax:
+    - "1"
+    - "2"
+    IsScalingCount: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_HarvestVoidiumT2
+    Faction: None
+    CountMinMax:
+    - "1"
+    - "2"
+    SpawnPOINear:
+    - Eden_HarvestVoidiumT2
+    SpawnPOINearRange:
+    - "35"
+    - "250"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_HarvestVoidiumT2
+    Faction: None
+    FactionTerritory:
+    - Kriel
+    - Eden_DroneHome
+    - TheLegacy
+    - Tesch
+    CountMinMax:
+    - "0"
+    - "1"
+    SpawnPOINear:
+    - Eden_HarvestVoidiumT2
+    SpawnPOINearRange:
+    - "35"
+    - "250"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_HarvestVoidiumT1
+    Faction: None
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_RiftPromethium
+    Faction: None
+    BiomesExcluded:
+    - Dunes
+    - CrystallizedRocks
+    - Flats
+    - Rocks
+    CountMinMax:
+    - "8"
+    - "12"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "True"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_FloatingProm
+    Faction: None
+    BiomesExcluded:
+    - Dunes
+    - CrystallizedRocks
+    - Flats
+    - Rocks
+    CountMinMax:
+    - "8"
+    - "12"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "True"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RiftRock
+    Faction: None
+    BiomesExcluded:
+    - Dunes
+    - CrystallizedRocks
+    - Flats
+    - Rocks
+    CountMinMax:
+    - "8"
+    - "12"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "True"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_FloatingRock
+    Faction: None
+    BiomesExcluded:
+    - Dunes
+    - CrystallizedRocks
+    - Flats
+    - Rocks
+    CountMinMax:
+    - "8"
+    - "12"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "True"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_TR_SpireProm
+    Faction: None
+    Biome:
+    - Plasma
+    - HotPlasma
+    - BurningPlasma
+    CountMinMax:
+    - "8"
+    - "12"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "1"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: SI
+      Value: "Off"
+  - GroupName: Eden_CrystalsRedMixed
+    Faction: None
+    Biome:
+    - CrystallizedRocks
+    CountMinMax:
+    - "25"
+    - "25"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: RegenAfter
+      Value: "720"
+  FixedPlayerStart:
+  - Mode: Debug
+    Pos:
+    - "3500"
+    - "120"
+    - "-3500"
+    RotY: "0"
+  - Mode: Survival
+    Spawn: EscapePod
+    Armor: ArmorMedium
+DroneBaseSetup:
+  Random:
+  - GroupName: DroneBaseSetup
+    Difficulty: "7"
+    PresetStyle: "3"
+    Stock:
+    - Name: DroneLargeKrielRailgun
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneBomberAttackBase
+      Amount: Infinite
+      Extra: "1"
+    - Name: DroneSmallFast01Plasma
+      Amount: Infinite
+      Extra: "1"
+    - Name: EnemyDroneV2Plasma
+      Amount: Infinite
+      Extra: "1"
+    - Name: DroneTroopsTransport
+      Amount: Infinite
+      Extra: "2"
+    - Name: ZiraxMinigun
+      Amount: "500"
+      Extra: "3"
+    - Name: AlienAssassinGrey
+      Amount: "250"
+      Extra: "3"
+    - Name: TotalHorror
+      Amount: "250"
+      Extra: "3"
+    PlanetVesselBase: 
+DroneSpawning:
+  Random:
+  - DronesMinMax:
+    - "5"
+    - "8"
+    CenterX: "-2500"
+    Radius: "4000"
+  - DronesMinMax:
+    - "5"
+    - "8"
+    CenterX: "2500"
+    Radius: "4000"
+  - DronesMinMax:
+    - "5"
+    - "8"
+    CenterX: "1000"
+    Radius: "4000"
+  - DronesMinMax:
+    - "5"
+    - "8"
+    CenterX: "-1000"
+    Radius: "4000"
+  - DronesMinMax:
+    - "5"
+    - "8"
+    CenterX: "5000"
+    Radius: "4000"
+  - DronesMinMax:
+    - "5"
+    - "8"
+    CenterX: "-5000"
+    Radius: "4000"
+  - DronesMinMax:
+    - "5"
+    - "8"
+    CenterX: "7500"
+    Radius: "4000"
+  - DronesMinMax:
+    - "5"
+    - "8"
+    CenterX: "-7500"
+    Radius: "4000"

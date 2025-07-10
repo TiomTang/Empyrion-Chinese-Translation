@@ -1,0 +1,248 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+
+# Description: "The homeworld of the Polaris Megacorp"
+
+
+PlanetType: PolarisHomeworldMoon
+PlayfieldType: Moon
+Difficulty: 10
+
+LandClaimZone: Device
+
+
+# Atmosphere and Sky
+AtmosphereEnabled: False
+
+# Light
+DayLightIntensity: 1.6
+NightLightIntensity: 0.7
+
+DayShadowStrength: 0.95
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhiteMoon
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: IronResource
+      IsScalingCount: True
+      CountMinMax: [ 3, 5 ]
+      SizeMinMax: [ 8, 13 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.3
+      MaxDroneCount: 1
+
+    - Name: SiliconResource
+      IsScalingCount: True
+      CountMinMax: [ 3, 5 ]
+      SizeMinMax: [ 8, 9 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.4
+
+    - Name: CopperResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 5, 6 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+
+    - Name: CobaltResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 5, 6 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+
+    - Name: MagnesiumResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1 
+
+    - Name: TitanResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 3, 4 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DepthMinMax: [ 2, 5 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+
+    - Name: PentaxidResource
+      IsScalingCount: True
+      CountMinMax: [ 4, 5 ]
+      SizeMinMax: [ 2, 3 ]
+      DroneProb: 0.6
+      MaxDroneCount: 2
+      DepthMinMax: [ 0, 5 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+
+### Resource Asteroids
+AsteroidResources:
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CobaltResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: MagnesiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PentaxidResource
+       Threshold: 0.2
+       Amount: 0.2
+
+### POIs
+POIs:
+    Random:  
+        - GroupName: DroneBaseT1              #CommandCenter
+          DroneSetupID: DroneBasePolaris
+          Faction: Polaris    
+          NoShieldReload: True
+          BiomesExcluded: [Radiated,RadiatedFog]
+        #  IsCommandCenter: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PolarisIndustrialSingle                      # Main Building
+          Faction: Polaris  
+          NoShieldReload: True
+       #   BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+          SpawnResource: ["SiliconResource:1-2","PromethiumResource:2-2"]
+          SpawnResourceRange: [150,300]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisIndustrialMain                      # Main Building
+          Faction: Polaris  
+          NoShieldReload: True
+       #   BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 2, 4 ]
+          SpawnResource: ["SiliconResource:1-2","PromethiumResource:2-2"]
+          SpawnResourceRange: [150,300]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisIndustrialAux
+          Faction: Polaris  
+          NoShieldReload: True
+      #    Biome: [ LowMountains, LowMountains_1, Mountains ]
+          CountMinMax: [ 3, 6 ]
+          SpawnPOINear: [PolarisIndustrialMain]
+          SpawnPOINearRange: [100, 1000] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisDefence
+          Faction: Polaris         
+          NoShieldReload: True
+      #    Biome: [ LowMountains, LowMountains_1, Mountains ]
+          CountMinMax: [ 2, 4 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [300, 400] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+              
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+## Drones
+DroneBaseSetup:
+  DroneBases:                               
+    - DroneSetupID: DroneBasePolaris
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+        - Name: DroneSmallFast01Rocket
+          Amount: Infinite
+          Type: FighterDrone
+
+        - Name: DroneTroopsTransport
+          Amount: Infinite
+          Type: TroopTransport
+
+        - Name: SoldierAlienAssaultRifle
+          Amount: Infinite
+          Type: GroundTroop
+
+        - Name: AssaultCyborg
+          Amount: Infinite
+          Type: GroundTroop
+
+  PlanetVessels:
+    - Name: OPVPolaris
+      Position3D: [500, 0, -400]
+      Faction: Polaris                                  
+      LevelMod: 2
+      FixedMaxSpeed: 10
+     # PauseTimeOnStart: 60
+      DelayBetweenRespawn: 600
+      DelayBeforeSelfDestruction: 300
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        Position3D: [500, 0, -400]
+      #  POINameAsPositionRef: DroneBaseT1
+     #   Radius: 1000
+        DistToGround: 120
+    #    RangePatrolAvoidArea:
+    #      - POIName: ThatAwesomePOIofMine             
+    #        Radius: 2000                              
+    #        Duration: 100                             
+      Stock:
+        - Name: DroneSmallFast01Minigun               
+          Amount: Infinite                                  
+          Type: FighterDrone                          
+
+DroneSpawning:
+    Random:
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 9, 10 ]
+        Faction: Polaris
+       # CenterX: 5
+        POINameAsPositionRef: DroneBaseT1      
+        Radius: 6000                                    # [int] - Radius of the patrol area. ### Default: 1500m

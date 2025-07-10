@@ -1,0 +1,1178 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+PlanetType: Arid
+PlayfieldType: Planet
+Difficulty: 2
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True   
+AtmosphereColor: "1.0, 0.86, 0.88"
+SkyColor: "1, 0.6, 0.6"
+SkyHorizonColor: "1, 0.2, 0.2"
+
+# Light
+DayLightIntensity: 1.3
+NightLightIntensity: 0.48
+DayShadowStrength: 0.95
+LightZenithColor: "1, 0.75, 0.60"
+LightHorizonColor: "1, 0.3, 0.2"
+NightLightColor: "0.7, 0.7, 1"
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite2
+
+# Fog
+FogCloudIntensity: 0.8
+# AtmosphereFog: 0.3
+# GroundFogIntensity: 0.05
+# GroundFogHeight: 30
+
+# Clouds and Wind
+CloudsDensity: 0.4
+CloudsSharpness: 0.3
+CloudsBrightness: 1.0
+CloudsOpacity: 1.0
+CloudsZenithColor: "0.5, 0.3, 0.4"
+CloudsHorizonColor: "1, 0.18, 0.18"
+WindSpeed: 4
+
+# Special Effects
+SpecialEffectsLocal:
+  - Name: Pollen
+    Biome: [ Desert, Dunes, Rocks ]  
+    Time: Day
+    MaxHeight: 10
+  - Name: DustDevil
+    Biome: [ Desert, Dunes, Rocks ]  
+    Time: Day
+    FollowPlayerY: True
+    MaxHeight: 10
+  - Name: FireFliesGreenFew
+    Biome: [ Marsh, Oasis, OasisEdge, OasisThin, Grassland ]
+    Time: Night
+    MaxHeight: 15
+  - Name: DandelionsFew
+    Biome: [ Savanna, SavannaEdge ]
+    Time: Day
+    MaxHeight: 10
+  - Name: ButterfliesBlue
+    Biome: [ Marsh, Oasis, OasisEdge, OasisThin, Grassland ]
+    Time: Day
+    MaxHeight: 15
+  - Name: TarantulaHawksFew
+    Biome: [ Marsh, Savanna, SavannaEdge ]
+    Time: Day
+    MaxHeight: 15
+  - Name: WindLines
+    Biome: [ Desert, Dunes, Rocks, LowMountains, Mountains ]
+    Time: Day
+    MaxHeight: 10
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 0
+    Delay: 3
+    Lifetime: 1200
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 12
+    Delay: 10
+    Lifetime: 1000
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 24
+    Delay: 10
+    Lifetime: 600
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 1000
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 1200
+  - Name: FogRadiationGreen
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+# Global Effect
+  - Name: BirdFlocksVultures
+    Biome: [ Any ]
+    Time: Day
+    InitialDelay: 2
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 50
+    SpawnY: 40
+    Struct: True
+  - Name: MeteorShower
+    Biome: [ Savanna, SavannaEdge, Dunes, Desert ]
+    Time: Always
+    InitialDelay: 3.5
+    Delay: 5
+    Lifetime: 60
+    PlyDist: 200
+    SpawnY: 100
+    Struct: Avoid
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+# T0; 
+
+# T1
+    - Name: IronResource
+      IsScalingCount: True
+      CountMinMax: [ 4, 5 ]
+      SizeMinMax: [ 10, 12 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.5
+      MaxDroneCount: 1
+
+    - Name: CopperResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 10, 12 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+
+# T2:
+    - Name: AluminiumResource
+      Biome: [ LowMountains, Mountains, Rocks ]
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]  # Dry planet, more resources ( and small target biome)
+      SizeMinMax: [ 4, 6 ] 
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.5
+      MaxDroneCount: 1
+
+    - Name: TitanResource
+      Biome: [ LowMountains, Mountains, Rocks ]
+      IsScalingCount: True
+      CountMinMax: [ 3, 3 ]  # ( small target biome)
+      SizeMinMax: [ 5, 6 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 1
+      MaxDroneCount: 4
+      
+    - Name: NeodymiumResource #rich
+      IsScalingCount: True
+      CountMinMax: [ 5, 6 ]
+      SizeMinMax: [ 8, 11 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 1
+      MaxDroneCount: 4
+      
+    - Name: CobaltResource
+      IsScalingCount: True
+      CountMinMax: [ 1, 3 ]
+      SizeMinMax: [ 5, 9 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.5
+
+# SPECIAL
+    - Name: PromethiumResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 5, 6 ]
+      DroneProb: 1
+      MaxDroneCount: 4
+      DepthMinMax: [ 0, 1 ]
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+### Resource Asteroids
+AsteroidResources:
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: NeodymiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CobaltResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: TitanResource
+       Threshold: 0.2
+       Amount: 0.2
+
+# ==============================================================
+# ==============================================================
+
+### POIs
+POIs:
+    Random:
+        - GroupName: DroneBaseT1           # CommandCenter
+          Faction: Zirax    
+          NoShieldReload: True
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ] 
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone 
+            - Key: RegenAfter
+              Value: 720
+
+# Farr MAIN World Type
+
+# MainSingle
+
+        - GroupName: FarrMainSingle               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 3 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+# Main Hub
+
+        - GroupName: FarrMain               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+       #   SpawnPOIAvoid: [FarrMainSingle]
+       #   SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 3 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT2               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+       #   SpawnPOINear: [FarrMain]
+       #   SpawnPOINearRange: [300, 800]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT1               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+       #   SpawnPOINear: [FarrMain]
+       #   SpawnPOINearRange: [300, 800]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+           #Trading
+
+        - GroupName: FarrTradingT1               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 2, 4 ]
+       #   SpawnPOIAvoid: [FarrMainSingle]
+        #  SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        # - GroupName: FarrAuxT1               
+          # BiomesExcluded: [ Radiated ]
+          # Faction: Farr    
+          # NoShieldReload: True
+          # IsImportant: True
+          # CountMinMax: [ 2, 4 ]
+          # SpawnPOINear: [FarrTradingT1]
+          # SpawnPOINearRange: [300, 800]
+          # DroneProb: 1.0
+          # DronesMinMax: [ 3, 5 ]
+          # ReserveCount: 5
+          # Properties: 
+            # - Key: Music
+              # Value: moonstone
+            # - Key: RegenAfter
+              # Value: 720 
+
+           #Patch AuxT3
+
+        - GroupName: FarrAuxT3               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+      #    SpawnPOIAvoid: [FarrMainSingle]
+      #    SpawnPOIAvoidDistance: 2000
+          # SpawnPOINear: [FarrMain]
+          # SpawnPOINearRange: [300, 1200]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT1               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 3 ]
+          SpawnPOINear: [FarrAuxT3]
+          SpawnPOINearRange: [300, 800]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+           #Patch AuxT2
+
+        - GroupName: FarrAuxT2               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+          SpawnPOIAvoid: [FarrMainSingle]
+          SpawnPOIAvoidDistance: 2000
+          # SpawnPOINear: [FarrMain]
+          # SpawnPOINearRange: [300, 1200]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT1               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 3 ]
+          SpawnPOINear: [FarrAuxT2]
+          SpawnPOINearRange: [300, 800]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+           #Settlement Hubs around Monuments
+
+        - GroupName: FarrMonument               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 0, 1 ]
+       #   SpawnPOIAvoid: [FarrMainSingle]
+       #   SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT1               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 3, 6 ]
+          SpawnPOINear: [FarrMonument]
+          SpawnPOINearRange: [300, 800]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+           #Defenses
+
+        - GroupName: FarrDefenseT2               
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          IsScalingCount: True
+          CountMinMax: [ 8, 12 ]
+      #    SpawnPOINear: [FarrMain]
+      #    SpawnPOINearRange: [500, 1600]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+           #Ruins
+
+        - GroupName: FarrRuinT1               
+          Faction: None    
+          NoShieldReload: True
+          IsImportant: True
+          IsScalingCount: True
+          CountMinMax: [ 4, 8 ]
+        #  SpawnPOINear: [FarrRuinT2]
+       #   SpawnPOINearRange: [300, 600]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+# Polaris
+       # ================================
+        # Trading Station with some settlements
+        - GroupName: TS_Planet
+          Faction: Polaris    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOIAvoid: [DroneBaseT1]
+          SpawnPOIAvoidDistance: 2000
+          Properties:  
+            - Key: Music
+              Value: SunnySkies
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PolarisSettlement
+          Faction: Polaris    
+          NoShieldReload: True
+          CountMinMax: [ 2, 4 ]
+          SpawnPOINear: [TS_Planet]
+          SpawnPOINearRange: [100, 250]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: PolarisDefenceSand
+          Faction: Polaris  
+          NoShieldReload: True
+          CountMinMax: [ 5, 6 ]
+          SpawnPOINear: [TS_Planet]
+          SpawnPOINearRange: [300, 400] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+ 
+ 
+       # ================================
+        # Epsilon Faction Main Complex
+
+          # Main
+        - GroupName: EpsilonRadarMain
+          Faction: Epsilon    
+          NoShieldReload: True
+      #    Biome: [ RadiatedFog ]
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.9
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 3
+          TroopTransport: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+          # Main Aux 
+        - GroupName: EpsilonRadarAddition
+          Faction: Epsilon    
+          NoShieldReload: True
+      #    Biome: [ RadiatedFog ] 
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0.9
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOINear: [EpsilonRadarMain]
+          SpawnPOINearRange: [300, 500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+          # Main Defense Turrets
+        - GroupName: EpsilonRadarTurret
+          Faction: Epsilon    
+          NoShieldReload: True
+          # IsImportant: True
+          CountMinMax: [ 3, 4 ]
+          DroneProb: 0.9
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [EpsilonRadarMain]
+          SpawnPOINearRange: [100, 350] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+ 
+       # ======================= TALON  SETTLEMENT ======================= 
+         
+        - GroupName: TribalBazarArid                      # CommandCenter
+          Faction: Talon  
+          IsImportant: True
+          IsCommandCenter: True
+          CountMinMax: [ 1, 1 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TribalVillageAridMain
+          Faction: Talon  
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [TribalBazarArid]
+          SpawnPOINearRange: [150, 300] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+ 
+        # - GroupName: TribalAridReservoir    # cannot use due to cutout terrain not visible in distance
+          # Faction: Talon  
+          # IsImportant: True
+          # CountMinMax: [ 1, 1 ]
+          # SpawnPOINear: [TribalBazarArid]
+          # SpawnPOINearRange: [100, 200] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0  
+            # - Key: HudDistance
+              # Value: 300 
+            # - Key: RegenAfter
+              # Value: 720
+
+        - GroupName: TribalVillageAridAux
+          Faction: Talon  
+          CountMinMax: [ 5, 8 ]
+          SpawnPOINear: [TribalVillageAridMain]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: TribalAridDefence
+          Faction: Talon  
+          CountMinMax: [ 5, 6 ]
+          SpawnPOINear: [TribalBazarArid]
+          SpawnPOINearRange: [300, 400] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+       # ================================
+        # Zirax complex with several structures around
+        - GroupName: EpsilonMain
+          Faction: Epsilon    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1
+          DronesMinMax: [ 3, 4 ]
+          ReserveCount: 4
+          TroopTransport: True
+          SpawnPOIAvoid: [TS_Planet]
+          SpawnPOIAvoidDistance: 2000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: EpsilonAuxT1
+          Faction: Epsilon    
+          NoShieldReload: True
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: True
+          SpawnPOINear: [EpsilonMain]
+          SpawnPOINearRange: [100, 250]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: EpsilonDefenceT1
+          Faction: Epsilon    
+          NoShieldReload: True
+          CountMinMax: [ 4, 5 ]
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [EpsilonMain]
+          SpawnPOINearRange: [200, 350]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+        # Defense for drone base
+        - GroupName: EpsilonAuxT1
+          Faction: Epsilon    
+          NoShieldReload: True
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [350, 600] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+        # POI amount scales with planet size 
+       # ================================
+
+# Trader
+
+        - GroupName: TraderMain 
+          Faction: Trader    
+          NoShieldReload: True
+          CountMinMax: [ 0, 1 ]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: TraderSettlement 
+          Faction: Trader    
+          NoShieldReload: True
+          CountMinMax: [ 3, 5 ]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: TraderDefenseHQ 
+          Faction: Trader    
+          NoShieldReload: True
+          CountMinMax: [ 1, 3 ]
+          SpawnPOINear: [TraderMain]
+          SpawnPOINearRange: [100,250]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: TraderDefenseA 
+          Faction: Trader    
+          NoShieldReload: True
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [TraderSettlement]
+          SpawnPOINearRange: [100,250]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+# Civilians
+
+        - GroupName: CivilMain
+          Territory: False
+          Faction: Colonists                    #primarily for outside the territories
+          NoShieldReload: True
+          CountMinMax: [ 1, 1 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: CivilSettlement 
+          Territory: False
+          Faction: Colonists                    #primarily for outside the territories
+          NoShieldReload: True
+          CountMinMax: [ 3, 4 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        # - GroupName: CivilSettlement 
+       # #   Territory: False
+          # Faction: Main                    #fill up territories when CIV faction is not placed
+          # NoShieldReload: True
+          # CountMinMax: [ 3, 4 ]
+          # Properties:  
+            # - Key: RegenAfter
+              # Value: 720 
+
+# Kriel
+
+        - GroupName: KrielMain 
+          Faction: Kriel    
+          NoShieldReload: True
+          CountMinMax: [ 1, 2 ]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: KrielDefenseT1 
+          Faction: Kriel    
+          NoShieldReload: True
+          CountMinMax: [ 1, 4 ]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+# Pirates
+
+        - GroupName: PiratesAmbushDesert 
+          Faction: Pirates    
+          NoShieldReload: True
+          CountMinMax: [ 0, 3 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PiratesAuxDesert
+          Faction: Pirates    
+          NoShieldReload: True
+          CountMinMax: [ 0, 3 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PiratesDefenseT1Desert 
+          Faction: Pirates    
+          NoShieldReload: True 
+          SpawnPOINear: [PiratesAuxDesert]
+          SpawnPOINearRange: [100,250]
+          CountMinMax: [ 1, 3 ]
+     #     IsImportant: True
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        # Random civil outposts scattered around planet
+        - GroupName: PolarisSettlement
+          Faction: Polaris    
+          NoShieldReload: True
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True 
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 3 ]
+          ReserveCount: 3
+          TroopTransport: False 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720   
+
+        # Random military outposts scattered around planet
+        - GroupName: EpsilonAuxT2
+          Faction: Epsilon    
+          NoShieldReload: True
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True 
+          DroneProb: 0.8
+          DronesMinMax: [ 4, 6 ]
+          ReserveCount: 3
+          TroopTransport: True
+          SpawnPOIAvoid: [TS_Planet]
+          SpawnPOIAvoidDistance: 2000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: EpsilonBunker
+          Faction: Epsilon    
+          NoShieldReload: True
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True 
+          DroneProb: 0.8
+          DronesMinMax: [ 4, 6 ]
+          ReserveCount: 3
+          TroopTransport: True
+          SpawnPOIAvoid: [TS_Planet]
+          SpawnPOIAvoidDistance: 2000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        # Different POIs scattered around planet
+        - GroupName: CrashedShip          # Only use regeneration with burried POIs if LandClaimZone: Device is set in playfield.yaml
+          Faction: None    
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          PlaceAt: UnderWater, Terrain
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: AbandonedPOI
+          Faction: Alien    
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 3
+          TroopTransport: True
+          Properties: 
+            - Key: Music
+              Value: lava
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Wreckage
+          Faction: None    
+          CountMinMax: [ 1, 3 ]
+          IsScalingCount: True 
+          DroneProb: 0.5
+          DronesMinMax: [ 1, 3 ]
+          ReserveCount: 2
+          TroopTransport: True
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Ruins
+          Faction: None    
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          DroneProb: 0.5
+          DronesMinMax: [ 1, 3 ]
+          ReserveCount: 2
+          TroopTransport: False
+          Properties:  
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -3400, 100, -720 ]
+          RotY: 125
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 6
+          PresetStyle: 3
+          Stock:
+              - Name: DroneSmallFast01Plasma
+                Amount: 200
+                Extra: 0  
+
+              - Name: EnemyDroneV2Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: EnemyDroneV2Plasma
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneLargeSlow02Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxLaser
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 400
+                Extra: 3
+
+          PlanetVesselBase:
+              Name: PlanetVesselBaseSetup
+              Position3D: [ 0, 102, 0]
+              BaseType: PlanetVesselBase
+              KeyId: 0
+              PlanetVessel:
+                - Name: PVZiraxT2
+                  Mission: PlanetPatrol
+                  FixedMaxSpeed: 10
+               
+                  RangePatrolTask:
+                    Position3D: [ 1500, 80, 0 ]
+                    Radius: 800
+                    DistToGround: 80
+
+                  AttackCVCircleAround:
+                    DistToTarget: 249
+
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -2500
+          Radius: 3000
+
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 2500
+          Radius: 3000
+
+# ==============================================================
+# ==============================================================
+ 
+SpawnRateZones:
+   - SpawnAt: [TS_Planet]
+     Radius: 1000
+     RadiusRandom: 50
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0.7
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7"  
+
+SpawnZones:
+   - SpawnAt: [TribalBazarArid ]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 1200
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [TalonGuardianHerd]
+         Biomes: [Any]
+         Amount: 250
+         Period: Always
+         DelayMinMax: [200, 240]
+       - Names: [LizardMuleHerd]
+         Biomes: [Any]
+         Amount: 100
+         Period: Always
+         DelayMinMax: [200, 240]
+   - SpawnAt: [TitanResource]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 400
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     Entities:
+       - Names: [Otyughs, GolemsDesert]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [NeodymiumResource]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 400
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     Entities:
+       - Names: [Spiders02]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [CrashedShip, AbandonedPOI, Wreckage]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 500
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [CaveWormsGrey, Otyughs, Spiders02, GolemsDesert]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [EpsilonMain, DroneBaseT1] 
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 1000
+     RadiusRandom: 100
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.4
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 250
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [EpsilonAuxT2]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 500
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+### Creatures
+CreatureSpawning:
+    - Biomes: [Desert, Dunes, Sand, Rocks]
+      Entities:
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 10
+          DelayMinMax: [10, 20]
+          # Color: "1.0, 1.0, 1.0"
+        - Name: WormDesertHerd
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 20]
+    - Biomes: [SavannaEdge, Savanna]
+      Entities:
+        - Name: CaveWormGreyHerd
+          Period: Day
+          Amount: 8
+          DelayMinMax: [10, 20]
+        - Name: WormDesertHerd
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 20]
+        - Name: Otyughs
+          Period: Night
+          Amount: 5
+          DelayMinMax: [10, 20]
+        - Name: LizardMuleHerd
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 12]
+    - Biomes: [Oasis, OasisEdge]
+      Entities:
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 20]
+        - Name: Spiders02
+          Period: Night
+          Amount: 10
+          DelayMinMax: [10, 20]
+        - Name: LizardMuleHerd
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 12]
+    - Biomes: [Marsh, Shore]
+      Entities:
+        - Name: CaveWormGreyHerd
+          Period: Night
+          Amount: 8
+          DelayMinMax: [10, 20]
+        - Name: Slimes
+          Period: Day
+          Amount: 12
+          DelayMinMax: [10, 20]
+    - Biomes: [LowMountains]
+      Entities:
+        - Name: Spiders02
+          Period: Day
+          Amount: 8
+          DelayMinMax: [10, 20]

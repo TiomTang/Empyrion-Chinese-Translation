@@ -1,0 +1,1055 @@
+Description: "\u96BE\u5EA6: [c][ffff00]\u4E2D\u7B49[-][/c]\n\nDead Type 4\u3002\n\n\u5C1A\u4E0D\u6E05\u695A\u662F\u4EC0\u4E48\u5BFC\u81F4\u4E86\u8FD9\u9897\u884C\u661F\u4E0A\u6240\u6709\u751F\u547D\u7684\u706D\u7EDD\u3002\n\n\u4F20\u611F\u5668\u663E\u793A\u5B58\u5728\u5DF2\u706D\u7EDD\u7684\u9AD8\u79D1\u6280\u6587\u660E\u7684\u5E9F\u5F03\u57FA\u7840\u8BBE\u65BD\u3002 \u8FD9\u91CC\u6709\u4E30\u5BCC\u7684\u6DF1\u5C42\u77FF\u85CF,\u53EF\u4EE5\u901A\u8FC7\u81EA\u52A8\u91C7\u77FF\u8BBE\u5907\u65E0\u9650\u671F\u5F00\u91C7\u3002"
+PlayfieldType: Planet
+Difficulty: "5"
+LandClaimZone: Device
+AtmosphereEnabled: "True"
+AtmosphereColor: 0.8, 0.6, 0.6
+SkyColor: 0.2, 0.05, 0
+SkyHorizonColor: 0.3, 0, 0.1
+AtmosphereParams:
+- "1"
+- "1.6"
+DayLightIntensity: "1.2"
+NightLightIntensity: "0.70"
+LightZenithColor: 1, 0.72, 0.72
+LightHorizonColor: 1, 0.6, 0
+NightLightColor: 1, 0.50, 0.50
+DayShadowStrength: "0.5"
+NightShadowStrength: "1"
+SunFlare: EnvironmentalEffects/SunFlareRedSpace
+FogCloudIntensity: "0.8"
+CloudsDensity: "0.3"
+CloudsSharpness: "0.1"
+CloudsBrightness: "0.2"
+CloudsOpacity: "0.1"
+CloudsZenithColor: 1, 0.83, 0.83
+CloudsHorizonColor: 1, 0.3, 0.1
+WindSpeed: "6"
+SpecialEffectsLocal:
+- Name: DustDevil
+  Biome:
+  - DriedLakeBed
+  - Sand
+  Time: Always
+  FollowPlayerY: "True"
+  MaxHeight: "5"
+- Name: WindLines
+  Biome:
+  - Sand
+  - LowMountains
+  - Mountains
+  Time: Always
+  MaxHeight: "5"
+SpecialEffectsGlobal:
+- Name: Clear
+  Type: Weather
+  InitialDelay: "0"
+  Delay: "0"
+  Lifetime: "1200"
+- Name: CloudsLight
+  Type: Weather
+  InitialDelay: "6"
+  Delay: "12"
+  Lifetime: "600"
+- Name: Wind
+  Type: Weather
+  InitialDelay: "24"
+  Delay: "12"
+  Lifetime: "600"
+- Name: FogRadiationPurple
+  Type: Weather
+  InitialDelay: "24"
+  Delay: "72"
+  Lifetime: "300"
+RandomResources:
+- Name: IronResource
+  CountMinMax:
+  - "1"
+  - "1"
+  SizeMinMax:
+  - "4"
+  - "5"
+  DepthMinMax:
+  - "60"
+  - "70"
+  DroneProb: "0"
+  MaxDroneCount: "1"
+- Name: CopperResource
+  CountMinMax:
+  - "1"
+  - "1"
+  SizeMinMax:
+  - "4"
+  - "5"
+  DepthMinMax:
+  - "60"
+  - "70"
+  DroneProb: "0"
+  MaxDroneCount: "1"
+- Name: SiliconResource
+  CountMinMax:
+  - "1"
+  - "1"
+  SizeMinMax:
+  - "4"
+  - "5"
+  DepthMinMax:
+  - "60"
+  - "70"
+  DroneProb: "0"
+  MaxDroneCount: "1"
+AsteroidResources: 
+POIs:
+  Random:
+  - GroupName: Eden_DeadSignal4
+    Faction: Admin
+    AvoidFactionTerritory: "False"
+    IsImportant: "True"
+    IsScalingCount: "False"
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "1"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+  - GroupName: Eden_RuinsSpaceportMain
+    Faction: Alien
+    BiomesExcluded:
+    - LowMountains
+    - Mountains
+    - Tundra
+    - PolarSnow
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsLaunchAuxT2
+    Faction: Alien
+    CountMinMax:
+    - "4"
+    - "6"
+    IsImportant: "True"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_RuinsSpaceportMain
+    SpawnPOINearRange:
+    - "100"
+    - "300"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsLogisticsAuxT1
+    Faction: Alien
+    CountMinMax:
+    - "6"
+    - "9"
+    InitPower: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_RuinsSpaceportMain
+    SpawnPOINearRange:
+    - "100"
+    - "400"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsLaunchAuxT0
+    Faction: None
+    CountMinMax:
+    - "2"
+    - "3"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_RuinsSpaceportMain
+    SpawnPOINearRange:
+    - "150"
+    - "300"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsSkyhookBase
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    SpawnPOINear:
+    - Eden_EscapeRocketPad
+    SpawnPOINearRange:
+    - "1000"
+    - "3000"
+    Properties:
+    - Key: MapDistance
+      Value: "250"
+    - Key: HudDistance
+      Value: "250"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsSkyhookCarriage
+    Faction: Alien
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    SpawnPOINear:
+    - Eden_RuinsSkyhookBase
+    SpawnPOINearRange:
+    - "150"
+    - "350"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsSpaceTether
+    Faction: Alien
+    CountMinMax:
+    - "1"
+    - "3"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsSpaceTetherPart
+    Faction: None
+    CountMinMax:
+    - "1"
+    - "2"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    SpawnPOINear:
+    - Eden_RuinsSpaceTether
+    SpawnPOINearRange:
+    - "400"
+    - "800"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsSpaceRadar
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    - Tundra
+    - PolarSnow
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    SpawnPOIAvoid:
+    - Eden_RuinsSpaceportMain
+    - Eden_RuinsSpaceTether
+    - Eden_RuinsRingWreck
+    SpawnPOIAvoidDistance: "3500"
+    Properties:
+    - Key: MapDistance
+      Value: "250"
+    - Key: HudDistance
+      Value: "250"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsRadarDish
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    - Tundra
+    - PolarSnow
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    SpawnPOINear:
+    - Eden_RuinsSpaceRadar
+    SpawnPOINearRange:
+    - "150"
+    - "250"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsSpaceRadarAuxT1
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    - Tundra
+    - PolarSnow
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_RuinsSpaceRadar
+    SpawnPOINearRange:
+    - "200"
+    - "300"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsLogisticsAuxT1
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    - Tundra
+    - PolarSnow
+    CountMinMax:
+    - "2"
+    - "6"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_RuinsSpaceRadar
+    SpawnPOINearRange:
+    - "200"
+    - "400"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsRingWreck
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    SpawnPOIAvoid:
+    - Eden_EscapeRocketPad
+    - Eden_RuinsSpaceportMain
+    - Eden_RuinsSpaceTether
+    SpawnPOIAvoidDistance: "3500"
+    Properties:
+    - Key: SI
+      Value: "Off"
+    - Key: MapDistance
+      Value: "250"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsElysiumMain
+    Faction: Alien
+    BiomesExcluded:
+    - LowMountains
+    - Mountains
+    - Tundra
+    - PolarSnow
+    - DriedLakeBed
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    Properties:
+    - Key: MapDistance
+      Value: "250"
+    - Key: HudDistance
+      Value: "250"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsElysiumAux
+    Faction: Alien
+    CountMinMax:
+    - "2"
+    - "3"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - Eden_RuinsElysiumAux
+    SpawnPOIAvoidDistance: "50"
+    SpawnPOINear:
+    - Eden_RuinsElysiumMain
+    SpawnPOINearRange:
+    - "50"
+    - "75"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsElysiumAux
+    Faction: Alien
+    CountMinMax:
+    - "3"
+    - "5"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - Eden_RuinsElysiumAux
+    SpawnPOIAvoidDistance: "50"
+    SpawnPOINear:
+    - Eden_RuinsElysiumMain
+    SpawnPOINearRange:
+    - "125"
+    - "150"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsMiningPit
+    Faction: Alien
+    Biome:
+    - LowMountains
+    - Mountains
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    SpawnResource:
+    - IronResource:1-1
+    - CopperResource:1-1
+    - SiliconResource:1-1
+    SpawnResourceRange:
+    - "100"
+    - "150"
+    Properties:
+    - Key: MapDistance
+      Value: "250"
+    - Key: HudDistance
+      Value: "250"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsIndustryAuxT2
+    Faction: Alien
+    CountMinMax:
+    - "2"
+    - "3"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_RuinsMiningPit
+    SpawnPOINearRange:
+    - "125"
+    - "250"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsIndustryAuxT1
+    Faction: Alien
+    CountMinMax:
+    - "4"
+    - "6"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_RuinsMiningPit
+    SpawnPOINearRange:
+    - "250"
+    - "400"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsLogisticsAuxT1
+    Faction: Alien
+    CountMinMax:
+    - "2"
+    - "3"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - Eden_RuinsMiningPit
+    SpawnPOINearRange:
+    - "250"
+    - "400"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsMiningPit
+    Faction: Alien
+    Biome:
+    - LowMountains
+    - Mountains
+    CountMinMax:
+    - "3"
+    - "5"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "1"
+    TroopTransport: "False"
+    AuxiliaryPOIs:
+    - Eden_RuinsIndustryAuxT1
+    - Eden_RuinsIndustryAuxT1
+    - Eden_RuinsLogisticsAuxT1
+    SpawnResource:
+    - IronResource:1-1
+    - CopperResource:1-1
+    - SiliconResource:1-1
+    SpawnResourceRange:
+    - "1"
+    - "1"
+    Properties:
+    - Key: MapDistance
+      Value: "250"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsIndustryAuxT2
+    Faction: Alien
+    CountMinMax:
+    - "2"
+    - "3"
+    IsAuxPOI: "True"
+    SpawnPOINearRange:
+    - "50"
+    - "100"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsIndustryAuxT1
+    Faction: Alien
+    CountMinMax:
+    - "3"
+    - "4"
+    IsAuxPOI: "True"
+    SpawnPOINearRange:
+    - "75"
+    - "150"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsLogisticsAuxT1
+    Faction: Alien
+    CountMinMax:
+    - "2"
+    - "3"
+    IsAuxPOI: "True"
+    SpawnPOINearRange:
+    - "100"
+    - "200"
+    InitPower: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsCivilianAuxT2
+    Faction: Alien
+    Biome:
+    - Sand
+    - DeadForest
+    - Wasteland
+    CountMinMax:
+    - "2"
+    - "4"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "1"
+    TroopTransport: "False"
+    AuxiliaryPOIs:
+    - Eden_RuinsCivilianAuxT1
+    Properties:
+    - Key: MapDistance
+      Value: "250"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsCivilianAuxT1
+    Faction: Alien
+    CountMinMax:
+    - "5"
+    - "8"
+    IsAuxPOI: "True"
+    SpawnPOINearRange:
+    - "75"
+    - "150"
+    InitPower: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_SV_UniqueT1
+    Type: SV_Player
+    Faction: None
+    CountMinMax:
+    - "4"
+    - "8"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+  - GroupName: Eden_RuinsIndustryAuxT2
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    - Mountains
+    - LowMountains
+    CountMinMax:
+    - "3"
+    - "4"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsIndustryAuxT1
+    Faction: Alien
+    Biome:
+    - Mountains
+    - LowMountains
+    CountMinMax:
+    - "4"
+    - "8"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsIndustryAuxT1
+    Faction: Alien
+    BiomesExcluded:
+    - Mountains
+    - LowMountains
+    CountMinMax:
+    - "4"
+    - "8"
+    InitPower: "False"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsLogisticsAuxT1
+    Faction: Alien
+    Biome:
+    - Sand
+    - Wasteland
+    CountMinMax:
+    - "8"
+    - "12"
+    InitPower: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsLogisticsAuxT1
+    Faction: Alien
+    BiomesExcluded:
+    - Sand
+    - Wasteland
+    CountMinMax:
+    - "4"
+    - "6"
+    InitPower: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsCivilianAuxT2
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    - Tundra
+    - PolarSnow
+    CountMinMax:
+    - "2"
+    - "4"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RuinsCivilianAuxT1
+    Faction: Alien
+    BiomesExcluded:
+    - DriedLakeBed
+    - Tundra
+    - PolarSnow
+    CountMinMax:
+    - "8"
+    - "12"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  FixedPlayerStart:
+  - Mode: Debug
+    Pos:
+    - "-596"
+    - "104"
+    - "-1063"
+    RotY: "125"
+  - Mode: Survival
+    Spawn: EscapePod
+    Pos:
+    - "-350"
+    - "0"
+    PlayerArmor:
+    - 'ArmorMedium, ArmorLight, ArmorLight, #FreshStart:ArmorLight'
+    Status:
+    - 'Food: 400, Health: 400'
+    - 'Food: 250, Health: 250'
+    - 'Food: 150, Health: 150'
+    - '#FreshStart:Food: 250, Health: 250'
+    Items:
+    - SurvivalTool, PowerBar:2, Medikit04:3, Bandages:2, Flashlight, AntibioticOintment:2, SurvivalTent, MobileAirCon, OxygenGeneratorSmall, BioFuel:5, OxygenBottleSmall:5
+    - SurvivalTool, PowerBar:1, Medikit04:2, Bandages:1, Flashlight, AntibioticOintment:1, SurvivalTent, MobileAirCon, OxygenGeneratorSmall, BioFuel:2, OxygenBottleSmall:5
+    - SurvivalTool, PowerBar:1, Medikit04:1, Flashlight, SurvivalTent, OxygenBottleSmall:5
+    - '#FreshStart: SurvivalTool, Medikit04:1, Flashlight, SurvivalTent, OxygenBottleSmall:3'
+DroneBaseSetup:
+  Random:
+  - GroupName: DroneBaseSetup
+    Difficulty: "6"
+    PresetStyle: "3"
+    Stock:
+    - Name: DroneSmallFast01Minigun
+      Amount: "300"
+      Extra: "0"
+    - Name: DroneSmallFast01Rocket
+      Amount: "100"
+      Extra: "0"
+    - Name: DroneBomberAttackBase
+      Amount: Infinite
+      Extra: "1"
+    - Name: EnemyDroneV2Plasma
+      Amount: Infinite
+      Extra: "1"
+    - Name: DroneTroopsTransport
+      Amount: Infinite
+      Extra: "2"
+    - Name: ZiraxMinigun
+      Amount: "500"
+      Extra: "3"
+    - Name: ZiraxRocket
+      Amount: "500"
+      Extra: "3"
+    - Name: Crawler
+      Amount: "150"
+      Extra: "3"
+    - Name: AlienAssassinGrey
+      Amount: "300"
+      Extra: "3"
+DroneSpawning:
+  Random:
+  - DronesMinMax:
+    - "0"
+    - "0"
+    CenterX: "-5000"
+  - DronesMinMax:
+    - "0"
+    - "0"
+    CenterX: "5000"

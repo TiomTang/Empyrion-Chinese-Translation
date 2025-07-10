@@ -1,0 +1,214 @@
+Description: "\u8FD9\u9897\u521D\u751F\u7684\u536B\u661F\u5DF2\u7ECF\u5728\u6052\u661F\u98CE\u7684\u65E0\u60C5\u5439\u88AD\u4E0B\u5931\u53BB\u4E86\u5927\u6C14\u5C42\u3002\n\n\u672A\u53D7\u5E72\u6270\u7684\u6700\u540E\u5F00\u653E\u7684\u7194\u5CA9\u6D77\u4EE5\u5947\u5F02\u7684\u5F62\u6001\u9010\u6E10\u51DD\u56FA\u3002"
+PlanetType: Lava
+Emissive: "True"
+PlayfieldType: Moon
+Difficulty: "3"
+LandClaimZone: Device
+AtmosphereEnabled: "False"
+DayLightIntensity: "0.6"
+NightLightIntensity: "0.7"
+DayShadowStrength: "0.95"
+SunFlare: EnvironmentalEffects/SunFlareWhiteMoon
+RandomResources:
+- Name: IronResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "5"
+  SizeMinMax:
+  - "8"
+  - "13"
+  DepthMinMax:
+  - "6"
+  - "15"
+  DroneProb: "0.3"
+  MaxDroneCount: "1"
+- Name: SiliconResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "5"
+  SizeMinMax:
+  - "8"
+  - "9"
+  DepthMinMax:
+  - "6"
+  - "15"
+  DroneProb: "0.4"
+- Name: CobaltResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "2"
+  - "3"
+  SizeMinMax:
+  - "5"
+  - "6"
+  DepthMinMax:
+  - "6"
+  - "15"
+  DroneProb: "0.7"
+  MaxDroneCount: "1"
+- Name: MagnesiumResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "2"
+  - "3"
+  SizeMinMax:
+  - "3"
+  - "4"
+  DepthMinMax:
+  - "6"
+  - "15"
+  DroneProb: "0.7"
+  MaxDroneCount: "1"
+- Name: PromethiumResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "2"
+  - "4"
+  SizeMinMax:
+  - "3"
+  - "6"
+  DroneProb: "0.7"
+  MaxDroneCount: "1"
+  DepthMinMax:
+  - "0"
+  - "1"
+- Name: PentaxidResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "4"
+  - "5"
+  SizeMinMax:
+  - "2"
+  - "3"
+  DroneProb: "0.6"
+  MaxDroneCount: "2"
+  DepthMinMax:
+  - "0"
+  - "5"
+AsteroidResources:
+- Name: IronResource
+  Threshold: "0.2"
+  Amount: "0.2"
+- Name: SiliconResource
+  Threshold: "0.2"
+  Amount: "0.2"
+- Name: CobaltResource
+  Threshold: "0.2"
+  Amount: "0.2"
+- Name: MagnesiumResource
+  Threshold: "0.2"
+  Amount: "0.2"
+- Name: PromethiumResource
+  Threshold: "0.2"
+  Amount: "0.2"
+- Name: PentaxidResource
+  Threshold: "0.2"
+  Amount: "0.2"
+POIs:
+  Random:
+  - GroupName: R2DroneBase
+    Faction: Kriel
+    IsCommandCenter: "True"
+    DroneBaseSetup: DroneBaseSetup
+    CountMinMax:
+    - "0"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "4"
+    - "5"
+    ReserveCount: "5"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: CrashedShip
+    Faction: None
+    CountMinMax:
+    - "1"
+    - "2"
+    IsScalingCount: "True"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "4"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2KrielMain
+    Faction: Kriel
+    CountMinMax:
+    - "0"
+    - "1"
+    Properties:
+    - Key: Music
+      Value: AlteredPhase
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2KrielDefenseT1
+    Faction: Kriel
+    CountMinMax:
+    - "10"
+    - "20"
+    Properties:
+    - Key: Music
+      Value: AlteredPhase
+    - Key: RegenAfter
+      Value: "720"
+  FixedPlayerStart:
+  - Mode: Debug
+    Pos:
+    - "-596"
+    - "104"
+    - "-1063"
+    RotY: "125"
+  - Mode: Survival
+    Spawn: EscapePod
+    Armor: ArmorMedium
+DroneBaseSetup:
+  Random:
+  - GroupName: DroneBaseSetup
+    Difficulty: "0"
+    PresetStyle: "0"
+    Stock:
+    - Name: DroneSmallFast01Rocket
+      Amount: "100"
+      Extra: "0"
+    - Name: DroneSmallFast01Minigun
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneLargeSlow01Minigun
+      Amount: "100"
+      Extra: "0"
+    - Name: DroneSmallSlow01Cannon
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneSmallAttackBase
+      Amount: "300"
+      Extra: "1"
+    - Name: DroneTroopsTransport
+      Amount: Infinite
+      Extra: "2"
+    - Name: ZiraxMale
+      Amount: "500"
+      Extra: "3"
+    - Name: RipperDog
+      Amount: "400"
+      Extra: "3"
+DroneSpawning:
+  Random:
+  - DronesMinMax:
+    - "5"
+    - "10"
+    CenterX: "-2500"
+    Radius: "1500"
+  - DronesMinMax:
+    - "5"
+    - "10"
+    CenterX: "2500"
+    Radius: "1500"

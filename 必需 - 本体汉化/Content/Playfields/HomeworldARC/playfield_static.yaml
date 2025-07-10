@@ -1,0 +1,540 @@
+Description: " "
+PlanetType: ARCHomeworld
+PlayfieldType: Planet
+Difficulty: "10"
+LandClaimZone: Device
+AtmosphereEnabled: "True"
+AtmosphereColor: 0.5, 0.8, 0.45
+SkyColor: 0.6, 1, 0.2
+SkyHorizonColor: 0.3, 1, 0
+AtmosphereParams:
+- "3"
+- "1.7"
+DayLightIntensity: "1.30"
+NightLightIntensity: "0.45"
+LightZenithColor: 1, 0.9, 0.8
+LightHorizonColor: 1, 0.5, 0
+NightLightColor: 0.5, 0.78, 0.16
+DayShadowStrength: "0.95"
+SunFlare: EnvironmentalEffects/SunFlareBlue
+FogColor: 0.6, 1, 0.3
+FogCloudIntensity: "0.8"
+CloudsDensity: "1"
+CloudsSharpness: "1"
+CloudsBrightness: "1"
+CloudsOpacity: "0.3"
+CloudsZenithColor: 0.6, 1, 0.1
+CloudsHorizonColor: 0.1, 0.33, 0.13
+CloudsNightZenithColor: 0.01, 0.025, 0.015
+CloudsNightHorizonColor: 0.01, 0.025, 0.015
+WindSpeed: "4"
+SpecialEffectsLocal:
+- Name: Pollen
+  Biome:
+  - Plains
+  Time: Day
+  MaxHeight: "10"
+- Name: FireFliesGreenFew
+  Biome:
+  - Plains
+  Time: Night
+  MaxHeight: "15"
+- Name: FireFliesOrange
+  Biome:
+  - RadiatedFog
+  - Hotspot
+  Time: Night
+  MaxHeight: "15"
+- Name: Grime
+  Biome:
+  - RadiatedFog
+  - Hotspot
+  Time: Always
+  MaxHeight: "10"
+SpecialEffectsGlobal:
+- Name: Clear
+  Type: Weather
+  InitialDelay: "0"
+  Delay: "2"
+  Lifetime: "600"
+- Name: CloudsLight
+  Type: Weather
+  InitialDelay: "0"
+  Delay: "2"
+  Lifetime: "1200"
+- Name: CloudsMedium
+  Type: Weather
+  InitialDelay: "0"
+  Delay: "2"
+  Lifetime: "1200"
+- Name: CloudsDark
+  Type: Weather
+  InitialDelay: "0"
+  Delay: "2"
+  Lifetime: "1200"
+- Name: Wind
+  Type: Weather
+  InitialDelay: "0"
+  Delay: "5"
+  Lifetime: "600"
+- Name: HeatWave
+  Type: Weather
+  InitialDelay: "48"
+  Delay: "24"
+  Lifetime: "1200"
+- Name: FogRadiationGreen
+  Type: Weather
+  InitialDelay: "10"
+  Delay: "5"
+  Lifetime: "1000"
+- Name: AcidRainHeavy
+  Type: Weather
+  InitialDelay: "48"
+  Delay: "24"
+  Lifetime: "600"
+- Name: MeteorShower
+  Biome:
+  - Plains
+  Time: Always
+  InitialDelay: "3.5"
+  Delay: "5"
+  Lifetime: "60"
+  PlyDist: "200"
+  SpawnY: "100"
+  Struct: Avoid
+- Name: ThunderAndLightning
+  Biome:
+  - Any
+  Time: Always
+  InitialDelay: "0.5"
+  Delay: "8"
+  Lifetime: "300"
+  PlyDist: "100"
+  SpawnY: "500"
+  Struct: Avoid
+RandomResources:
+- Name: IronResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "1"
+  - "2"
+  SizeMinMax:
+  - "2"
+  - "6"
+  DepthMinMax:
+  - "3"
+  - "15"
+  DroneProb: "0.2"
+  MaxDroneCount: "1"
+- Name: CopperResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "1"
+  - "2"
+  SizeMinMax:
+  - "2"
+  - "6"
+  DepthMinMax:
+  - "5"
+  - "15"
+  DroneProb: "0.2"
+- Name: SiliconResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "1"
+  - "2"
+  SizeMinMax:
+  - "2"
+  - "6"
+  DepthMinMax:
+  - "5"
+  - "15"
+  DroneProb: "0.2"
+- Name: CobaltResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "1"
+  - "2"
+  SizeMinMax:
+  - "2"
+  - "6"
+  DepthMinMax:
+  - "5"
+  - "15"
+  DroneProb: "0.2"
+- Name: ErestrumResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "3"
+  SizeMinMax:
+  - "10"
+  - "12"
+  DepthMinMax:
+  - "6"
+  - "15"
+  DroneProb: "1"
+  MaxDroneCount: "2"
+AsteroidResources: 
+POIs:
+  Random:
+  - GroupName: DroneBaseT1
+    DroneSetupID: DroneBaseARC
+    Faction: ARC
+    IsImportant: "True"
+    BiomesExcluded:
+    - Radiated
+    - RadiatedFog
+    - Hotspot
+    - Dunes
+    NoShieldReload: "True"
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: ARCSingle
+    Faction: ARC
+    IsImportant: "True"
+    BiomesExcluded:
+    - Radiated
+    - RadiatedFog
+    - Hotspot
+    - Dunes
+    NoShieldReload: "True"
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "1"
+    - "3"
+    AuxiliaryPOIs:
+    - ARCDefense
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: ARC
+    Faction: ARC
+    BiomesExcluded:
+    - Radiated
+    - RadiatedFog
+    - Hotspot
+    - Dunes
+    IsScalingCount: "True"
+    CountMinMax:
+    - "4"
+    - "8"
+    NoShieldReload: "True"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "0"
+    - "2"
+    AuxiliaryPOIs:
+    - ARCDefense
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: SkyminerPolaris
+    Faction: ARC
+    NoShieldReload: "True"
+    Territory: "False"
+    CountMinMax:
+    - "3"
+    - "3"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "1"
+    - "2"
+    SpawnResource:
+    - ErestrumResource:1-1
+    ResourceDistance: "100"
+    AuxiliaryPOIs:
+    - ARCDefense
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: ARCDefense
+    Faction: ARC
+    NoShieldReload: "True"
+    IsScalingCount: "True"
+    IsAuxPOI: "True"
+    SpawnPOINearRange:
+    - "100"
+    - "250"
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "0.5"
+    DronesMinMax:
+    - "1"
+    - "2"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: ARCDefense
+    Faction: ARC
+    NoShieldReload: "True"
+    SpawnPOIAvoid:
+    - ARCDefense
+    SpawnPOIAvoidDistance: "250"
+    SpawnPOINear:
+    - DroneBaseT1
+    SpawnPOINearRange:
+    - "350"
+    - "350"
+    CountMinMax:
+    - "5"
+    - "5"
+    DroneProb: "0.5"
+    DronesMinMax:
+    - "1"
+    - "2"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  FixedPlayerStart: 
+DroneBaseSetup:
+  DroneBases:
+  - DroneSetupID: DroneBaseARC
+    Stock:
+    - Name: DroneSmallFast01Minigun
+      Amount: Infinite
+      Type: FighterDrone
+    - Name: DroneSmallFast01Rocket
+      Amount: Infinite
+      Type: FighterDrone
+    - Name: DroneTroopsTransport
+      Amount: Infinite
+      Type: TroopTransport
+    - Name: RipperDog
+      Amount: "150"
+      Type: GroundTroop
+  PlanetVessels:
+  - Name: OPVARCT3
+    Faction: ARC
+    LevelMod: "2"
+    FixedMaxSpeed: "40"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - DroneBaseT1
+      DistToGround: "200"
+    Properties:
+    - Key: AIManPatrolGroups
+      Value: BA_ARCWeaponFactory,BA_PolarisSkyminer,BA_ARCFarm,BA_ARCFuelDepot,BA_ARCHabitat,BA_ARCListeningPost,BA_ARCMoonBase,BA_ARCOutpostJeremy,BA_ARCOxygenDepot,BA_ARCRadarTower,BA_ARCSupplyYard,BA_ARCTransportHub,BA_ARCSettlement,BA_ARCSolarFarm
+    Stock:
+    - Name: DroneSmallFast01Minigun
+      Amount: Infinite
+      Type: FighterDrone
+  - Name: OPVARCT3
+    Faction: ARC
+    LevelMod: "2"
+    FixedMaxSpeed: "40"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - DroneBaseT1
+      DistToGround: "200"
+    Properties:
+    - Key: AIManPatrolGroups
+      Value: BA_ARCWeaponFactory,BA_PolarisSkyminer,BA_ARCFarm,BA_ARCFuelDepot,BA_ARCHabitat,BA_ARCListeningPost,BA_ARCMoonBase,BA_ARCOutpostJeremy,BA_ARCOxygenDepot,BA_ARCRadarTower,BA_ARCSupplyYard,BA_ARCTransportHub,BA_ARCSettlement,BA_ARCSolarFarm
+    Stock:
+    - Name: DroneSmallFast01Minigun
+      Amount: Infinite
+      Type: FighterDrone
+  - Name: CivilianDroneCVfast
+    Faction: ARC
+    LevelMod: "2"
+    FixedMaxSpeed: "100"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "2"
+    - "3"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - ARCSingle
+      Radius: "500"
+      DistToGround: "120"
+  - Name: CivilianDroneCVfast
+    Faction: ARC
+    LevelMod: "2"
+    FixedMaxSpeed: "100"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "4"
+    - "6"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - ARCSingle
+      DistToGround: "120"
+    Properties:
+    - Key: AIManPatrolGroups
+      Value: BA_ARCWeaponFactory,BA_PolarisSkyminer,BA_ARCFarm,BA_ARCFuelDepot,BA_ARCHabitat,BA_ARCListeningPost,BA_ARCMoonBase,BA_ARCOutpostJeremy,BA_ARCOxygenDepot,BA_ARCRadarTower,BA_ARCSupplyYard,BA_ARCTransportHub,BA_ARCSettlement,BA_ARCSolarFarm
+  - Name: CV_CargoTPolarisDroneBus
+    Faction: ARC
+    LevelMod: "2"
+    FixedMaxSpeed: "80"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "2"
+    - "4"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - ARCSingle
+      DistToGround: "120"
+    Properties:
+    - Key: AIManPatrolGroups
+      Value: BA_ARCWeaponFactory,BA_ARCFarm,BA_ARCFuelDepot,BA_ARCHabitat,BA_ARCListeningPost,BA_ARCMoonBase,BA_ARCOutpostJeremy,BA_ARCOxygenDepot,BA_ARCRadarTower,BA_ARCSupplyYard,BA_ARCTransportHub,BA_ARCSettlement,BA_ARCSolarFarm
+  - Name: CivilianDroneCV
+    Faction: ARC
+    LevelMod: "2"
+    FixedMaxSpeed: "30"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "300"
+    IsRespawnAfterDestruction: "True"
+    CountMinMax:
+    - "2"
+    - "4"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - ARCSingle
+      DistToGround: "120"
+    Properties:
+    - Key: AIManPatrolGroups
+      Value: BA_ARCWeaponFactory,BA_PolarisSkyminer,BA_ARCFarm,BA_ARCFuelDepot,BA_ARCOxygenDepot,BA_ARCSupplyYard,BA_ARCSolarFarm
+DroneSpawning:
+  Random:
+  - Name: DroneSmallFast01Rocket
+    DronesMinMax:
+    - "9"
+    - "10"
+    Faction: ARC
+    POINameAsPositionRef: DroneBaseT1
+    Radius: "6000"
+SpawnRateZones:
+- SpawnAt:
+  - DroneBaseT1
+  Radius: "250"
+  RadiusRandom: "0"
+  RateMultiplyerCenter: "0.0"
+  RateMultiplyerEdge: "1.0"
+  AffectEnemies: "true"
+  Color: 0.0, 1.0, 0.0, 0.7
+SpawnZones:
+- SpawnAt:
+  - DroneBaseT1
+  Radius: "500"
+  RadiusRandom: "0"
+  RateMultiplyerCenter: "0"
+  RateMultiplyerEdge: "0"
+  Color: 1.0, 1.0, 0.0, 1.0
+  Entities:
+  - Names:
+    - CyborgsDamagedHerd
+    Biomes:
+    - Any
+    Amount: "0"
+    Period: Always
+    DelayMinMax:
+    - "15"
+    - "25"
+- SpawnAt:
+  - DroneBaseT1
+  Radius: "900"
+  RadiusRandom: "0"
+  RateMultiplyerCenter: "0"
+  RateMultiplyerEdge: "0"
+  Color: 1.0, 1.0, 0.0, 1.0
+  Entities:
+  - Names:
+    - CyborgsDamagedHerd
+    Biomes:
+    - Any
+    Amount: "0"
+    Period: Always
+    DelayMinMax:
+    - "15"
+    - "25"
+CreatureSpawning:
+- Biomes:
+  - Hotspot
+  - RadiatedFog
+  Entities:
+  - Name: Overseers
+    Period: Always
+    Amount: "30"
+    DelayMinMax:
+    - "10"
+    - "20"
+- Biomes:
+  - Plains
+  - PlainsEdge
+  - Flats
+  Entities:
+  - Name: WormDesertLargeHerd
+    Period: Always
+    Amount: "8"
+    DelayMinMax:
+    - "10"
+    - "20"
+  - Name: AlienBugs04
+    Period: Day
+    Amount: "10"
+    DelayMinMax:
+    - "10"
+    - "20"
+  - Name: Otyughs
+    Period: Night
+    Amount: "10"
+    DelayMinMax:
+    - "10"
+    - "20"
+- Biomes:
+  - Sand
+  - Barren
+  Entities:
+  - Name: Overseers
+    Period: Night
+    Amount: "10"
+    DelayMinMax:
+    - "10"
+    - "20"
+  - Name: CaveWormGreyHerd
+    Period: Always
+    Amount: "6"
+    DelayMinMax:
+    - "10"
+    - "20"
+- Biomes:
+  - LowMountains
+  - LowMountainsEdge
+  - Flats
+  Entities:
+  - Name: Overseers
+    Period: Always
+    Amount: "5"
+    DelayMinMax:
+    - "10"
+    - "20"
+  - Name: GolemsDesert
+    Period: Night
+    Amount: "5"
+    DelayMinMax:
+    - "10"
+    - "20"

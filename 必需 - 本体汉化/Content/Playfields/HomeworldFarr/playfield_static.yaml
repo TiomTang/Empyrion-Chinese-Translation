@@ -1,0 +1,887 @@
+---
+#PlanetType: Arid
+#Biomes: Pole, DeepWater, Water, ShallowWater, Marsh, Shore, GlacierSnow, Maountains, LowMountains, Oasis, OasisEdge, Savanna, SavannaEdge, Rocks, Dunes, Sand
+
+PlanetType: FarrHomeworld
+PlayfieldType: Planet
+Difficulty: 10
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True   
+AtmosphereColor: "1.0, 0.86, 0.88"
+SkyColor: "1, 0.6, 0.6"
+SkyHorizonColor: "1, 0.2, 0.2"
+
+# Light
+DayLightIntensity: 1.3
+NightLightIntensity: 0.48
+DayShadowStrength: 0.95
+LightZenithColor: "1, 0.75, 0.60"
+LightHorizonColor: "1, 0.3, 0.2"
+NightLightColor: "0.7, 0.7, 1"
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite2
+
+# Fog
+FogCloudIntensity: 0.8
+# AtmosphereFog: 0.3
+# GroundFogIntensity: 0.05
+# GroundFogHeight: 30
+
+# Clouds and Wind
+CloudsDensity: 0.4
+CloudsSharpness: 0.3
+CloudsBrightness: 1.0
+CloudsOpacity: 1.0
+CloudsZenithColor: "0.5, 0.3, 0.4"
+CloudsHorizonColor: "1, 0.18, 0.18"
+WindSpeed: 4
+
+# Special Effects
+SpecialEffectsLocal:
+  - Name: Pollen
+    Biome: [ Desert, Dunes, Rocks ]  
+    Time: Day
+    MaxHeight: 10
+  - Name: DustDevil
+    Biome: [ Desert, Dunes, Rocks ]  
+    Time: Day
+    FollowPlayerY: True
+    MaxHeight: 10
+  - Name: FireFliesGreenFew
+    Biome: [ Marsh, Oasis, OasisEdge, OasisThin, Grassland ]
+    Time: Night
+    MaxHeight: 15
+  - Name: DandelionsFew
+    Biome: [ Savanna, SavannaEdge ]
+    Time: Day
+    MaxHeight: 10
+  - Name: ButterfliesBlue
+    Biome: [ Marsh, Oasis, OasisEdge, OasisThin, Grassland ]
+    Time: Day
+    MaxHeight: 15
+  - Name: TarantulaHawksFew
+    Biome: [ Marsh, Savanna, SavannaEdge ]
+    Time: Day
+    MaxHeight: 15
+  - Name: WindLines
+    Biome: [ Desert, Dunes, Rocks, LowMountains, Mountains ]
+    Time: Day
+    MaxHeight: 10
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 0
+    Delay: 3
+    Lifetime: 1200
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 12
+    Delay: 10
+    Lifetime: 1000
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 24
+    Delay: 10
+    Lifetime: 600
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 1000
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 1200
+  - Name: FogRadiationGreen
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+# Global Effect
+  - Name: BirdFlocksVultures
+    Biome: [ Any ]
+    Time: Day
+    InitialDelay: 2
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 50
+    SpawnY: 40
+    Struct: True
+  - Name: MeteorShower
+    Biome: [ Savanna, SavannaEdge, Dunes, Desert ]
+    Time: Always
+    InitialDelay: 3.5
+    Delay: 5
+    Lifetime: 60
+    PlyDist: 200
+    SpawnY: 100
+    Struct: Avoid
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+# Common Resources
+-  Name: IronResource
+   IsScalingCount: True
+   CountMinMax: [1, 2]
+   SizeMinMax: [2, 6]
+   DepthMinMax: [3, 15]
+   DroneProb: 0.2
+   MaxDroneCount: 1
+-  Name: CopperResource
+   IsScalingCount: True
+   CountMinMax: [1, 2]
+   SizeMinMax: [2, 6]
+   DepthMinMax: [5, 15]
+   DroneProb: 0.2
+-  Name: SiliconResource
+   IsScalingCount: True
+   CountMinMax: [1, 2]
+   SizeMinMax: [2, 6]
+   DepthMinMax: [5, 15]
+   DroneProb: 0.2
+-  Name: CobaltResource
+   IsScalingCount: True
+   CountMinMax: [1, 2]
+   SizeMinMax: [2, 6]
+   DepthMinMax: [5, 15]
+   DroneProb: 0.2
+   
+# Special Resources
+-  Name: GoldResource
+   IsScalingCount: True
+   CountMinMax: [ 3, 3 ]
+   SizeMinMax: [ 10, 12 ]
+   DepthMinMax: [ 6, 15 ]
+   DroneProb: 0.5
+   MaxDroneCount: 1
+      
+-  Name: PlatinResource
+   IsScalingCount: True
+   CountMinMax: [ 1, 3 ]
+   SizeMinMax: [ 10, 12 ]
+   DepthMinMax: [ 6, 15 ]
+   DroneProb: 0.5
+   MaxDroneCount: 1
+ 
+
+### Resource Asteroids
+AsteroidResources:
+     # - Name: IronResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: CopperResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: NeodymiumResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: CobaltResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: PromethiumResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: TitanResource
+       # Threshold: 0.2
+       # Amount: 0.2
+
+# ==============================================================
+# ==============================================================
+
+### POIs
+POIs:
+    Random:   
+        - GroupName: FarrDroneBase
+          IsImportant: True
+          BiomesExcluded: [ Sand ]
+          Faction: Farr  
+          NoShieldReload: True
+       #   IsCommandCenter: True
+          DroneSetupID: DroneBaseFarr
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          Properties:
+            # - Key: Music
+              # Value: moonstone 
+            - Key: RegenAfter
+              Value: 720
+
+# UNIQUE (only on Homeworld)
+
+        - GroupName: FarrTemplePrime               # Quest Start Location
+          IsImportant: True
+          BiomesExcluded: [ Sand ]
+          Faction: Farr    
+          NoShieldReload: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrCrashSite
+          IsImportant: True
+          # BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [FarrTemplePrime]
+          SpawnPOINearRange: [600, 1000]
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrArchive               # Alternative Quest Start Location
+          IsImportant: True
+          # BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [FarrTemplePrime]
+          SpawnPOINearRange: [600, 1000]
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+
+# MainSingle
+
+        - GroupName: FarrMainSingle
+          # BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True 
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+# Main Hub
+
+        - GroupName: FarrMain
+          # BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True 
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True 
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrTradingT3
+          # BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True 
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 3 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT3
+          # BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True 
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 3 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT2               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsScalingCount: True 
+          CountMinMax: [ 1, 3 ] 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT1               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsScalingCount: True 
+          CountMinMax: [ 1, 4 ] 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+# Settlement around Farr Monuments
+
+        - GroupName: FarrMonument               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsScalingCount: True 
+          CountMinMax: [ 1, 6 ] 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT0               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsScalingCount: True 
+          CountMinMax: [ 1, 4 ]
+          SpawnPOINear: [FarrMonument]
+          SpawnPOINearRange: [100, 400]
+          DroneProb: 0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+# Alternative Village Hubs
+
+        - GroupName: FarrAuxT3b               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsScalingCount: True 
+          CountMinMax: [ 1, 2 ] 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 3 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT2b               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsScalingCount: True 
+          CountMinMax: [ 1, 3 ]
+          SpawnPOINear: [FarrAuxT3b]
+          SpawnPOINearRange: [200, 500]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT1b               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True 
+          IsScalingCount: True
+          CountMinMax: [ 1, 4 ]
+          SpawnPOINear: [FarrAuxT1b]
+          SpawnPOINearRange: [200, 500]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+#Defenses 
+
+        - GroupName: FarrDefenseT2               
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          IsScalingCount: True
+          CountMinMax: [ 1, 12 ] 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrDefenseT1               
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          IsScalingCount: True
+          CountMinMax: [ 1, 6 ] 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+#Ruins
+
+        - GroupName: FarrRuinT2               
+          Faction: None    
+          NoShieldReload: True 
+          IsScalingCount: True
+          CountMinMax: [ 1, 2 ] 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrRuinT1               
+          Faction: None    
+          NoShieldReload: True 
+          IsScalingCount: True
+          CountMinMax: [ 1, 2 ] 
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrRuinT0               
+          Faction: None    
+          NoShieldReload: True 
+          IsScalingCount: True
+          CountMinMax: [ 1, 2 ] 
+          DroneProb: 0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            # - Key: Music
+              # Value: moonstone
+            - Key: RegenAfter
+              Value: 720  
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -3400, 100, -720 ]
+          RotY: 125
+
+### Drones
+
+DroneSpawning:
+    Random:
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 9, 10 ]
+        Faction: Farr
+       # CenterX: 5
+        POINameAsPositionRef: FarrDroneBase     
+        Radius: 6000        
+        
+DroneBaseSetup:
+  DroneBases:                               
+    - DroneSetupID: DroneBaseFarr
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+        - Name: DroneSmallFast01Rocket
+          Amount: Infinite
+          Type: FighterDrone
+
+        - Name: DroneTroopsTransport
+          Amount: Infinite
+          Type: TroopTransport
+
+        - Name: SoldierAlienAssaultRifle
+          Amount: Infinite
+          Type: 
+
+  PlanetVessels:
+    - Name: OPVFarrT3 
+      Faction: Farr                                  
+      CountMinMax: [2, 2]
+      LevelMod: 2
+      FixedMaxSpeed: 40 
+      DelayBetweenRespawn: 600
+      DelayBeforeSelfDestruction: 300
+      IsRespawnAfterDestruction: True
+      RangePatrolTask: 
+        POINameAsPositionRef: [FarrDroneBase] 
+        DistToGround: 300 
+      Properties:
+        - Key: AIManPatrolFactions  
+          Value: "Farr"
+        # - Key: AIManPatrolGroups  
+          # Value: " "
+      Stock:
+        - Name: DroneSmallFast01Minigun               
+          Amount: Infinite                                  
+          Type: FighterDrone                           
+
+# Aerial Traffic around the Command center / HQ on the Homeworld
+
+    - Name: CivilianDroneCVfast    # Fast Air Traffic DRONES
+      Faction: Farr                                  
+      LevelMod: 2        
+      FixedMaxSpeed: 100 
+      DelayBetweenRespawn: 600
+      DelayBeforeSelfDestruction: 300
+      IsRespawnAfterDestruction: True
+      CountMinMax: [2, 3]
+      RangePatrolTask: 
+        POINameAsPositionRef: [FarrArchive] 
+        Radius: 500
+        DistToGround: 300   
+# Planetary Air Traffic
+ 
+    # - Name: CivilianDroneCVfast    # Fast Air Traffic DRONES  (Scannter, Courier)
+      # Faction: Farr                                  
+      # LevelMod: 2
+      # FixedMaxSpeed: 100      
+      # DelayBetweenRespawn: 600
+      # DelayBeforeSelfDestruction: 300
+      # IsRespawnAfterDestruction: True
+      # CountMinMax: [2, 3]
+      # RangePatrolTask: 
+        # POINameAsPositionRef: [FarrArchive] 
+      # #  Radius: 500
+        # DistToGround: 120   
+      # Properties:
+        # - Key: AIManPatrolFactions  
+          # Value: "Farr"
+
+# Main route public transport ("Sightseeing")
+
+    - Name: CivilianMicroCV   # CivilianMicroCV FARR sighseeing
+      Faction: Farr                                  
+      LevelMod: 2
+      FixedMaxSpeed: 80      
+      DelayBetweenRespawn: 600
+      DelayBeforeSelfDestruction: 300
+      IsRespawnAfterDestruction: True
+      CountMinMax: [5, 8]
+      RangePatrolTask: 
+        POINameAsPositionRef: [FarrTemplePrime] 
+        Radius: 1000
+        DistToGround: 300   
+   #   Properties:
+   ##     - Key: AIManPatrolGroups  
+    #      Value: "BA_FarrTemplePrime, BA_FarrCrashSite, BA_FarrArchives"
+          
+    # - Name: CivilianMicroCV   # CivilianMicroCV fast moving (Private Transports)
+      # Faction: Farr                                  
+      # LevelMod: 2
+      # FixedMaxSpeed: 80      
+      # DelayBetweenRespawn: 600
+      # DelayBeforeSelfDestruction: 300
+      # IsRespawnAfterDestruction: True
+      # CountMinMax: [8, 10]
+      # RangePatrolTask: 
+        # POINameAsPositionRef: [FarrTemplePrime] 
+      # #  Radius: 1000
+        # DistToGround: 120   
+      # Properties:
+        # - Key: AIManPatrolGroups  
+          # Value: "BA_FarrHQ, BA_FarrTemplePrime, BA_FarrBank, BA_FarrMembersMarket, BA_FarrCrashSite, BA_FarrArchives"
+          
+# Other locations private traffic  
+
+    # - Name: CivilianMicroCV   # CivilianMicroCV fast moving (Private Transports)
+      # Faction: Farr                                  
+      # LevelMod: 2
+      # FixedMaxSpeed: 80      
+      # DelayBetweenRespawn: 600
+      # DelayBeforeSelfDestruction: 300
+      # IsRespawnAfterDestruction: True
+      # CountMinMax: [5, 10]
+      # RangePatrolTask: 
+        # POINameAsPositionRef: [FarrCrashSite] 
+      # #  Radius: 1000
+        # DistToGround: 120   
+      # Properties:
+        # - Key: AIManPatrolFactions  
+          # Value: "Farr"
+        # - Key: AIManPatrolGroups  
+          # Value: "FarrMain,FarrTradingT1,FarrTradingT2,FarrTradingT3,FarrAuxT0,FarrAuxT1,FarrAuxT1b,FarrAuxT2,FarrAuxT2b,FarrAuxT3,FarrAuxT3b,FarrColonyT1,FarrColonyT2"
+
+
+# ==============================================================
+# ==============================================================
+ 
+SpawnRateZones: 
+
+
+
+      # All creatures next to the dronebase already got killed.
+   - SpawnAt: [FarrDroneBase, FarrTemplePrime, FarrCrashSite]
+     Radius: 250
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 1.0
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
+
+
+
+
+
+SpawnZones:
+
+
+
+
+     # ====================
+     # MARKER ZONES
+     # (To easily find important POI in the SSG  - - has no other function. 
+     # Please keep these active.)
+     # ====================
+
+   - SpawnAt: [FarrDroneBase, FarrTemplePrime, FarrCrashSite, FarrArchive]  # Marker
+     Radius: 500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 1.0"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+   - SpawnAt: [FarrDroneBase]  # Marker
+     Radius: 900
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 1.0"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+
+
+
+
+     # # ====================
+     # # TROOP ZONES
+     # # ====================
+
+
+
+   # - SpawnAt: [FarrDroneBase, FarrTemplePrime, FarrCrashSite, FarrArchive, FarrMain, FarrTradingT3, FarrAuxT3]    # Troops closest to base. 'Doorstoppers'
+     # # BiomesExcluded: [RadiatedFog, Hotspot]
+     # SpawnOnlyIfPoiIsAlien: true   # (= These troops will not spawn anymore if POI has been conquered)
+     # Radius: 70
+     # RadiusRandom: 0
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 1.0
+     # Color: "0.0, 1.0, 1.0, 1.0" 
+     # Entities:
+       # - Names: [CyborgsDamagedHerd]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]  # troops do not respawn
+
+
+
+   # - SpawnAt: [FarrDroneBase, FarrTemplePrime, FarrCrashSite, FarrArchive, FarrMain]          # Troops in the near vicinity
+     # # BiomesExcluded: [RadiatedFog, Hotspot]
+     # SpawnOnlyIfPoiIsAlien: true   # (= These troops will not spawn anymore if POI has been conquered)
+     # Radius: 300
+     # RadiusRandom: 0
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.5
+     # Color: "0.0, 1.0, 1.0, 1.0" 
+     # Entities:
+       # - Names: [CyborgsDamagedHerd]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+     # # "Civilisation spawns"
+   # - SpawnAt: [FarrDroneBase, FarrTemplePrime, FarrMain]    # Main troop anchor for the whole planet. 
+                                               # # These will still appear after conquering the POI, unless killed.
+     # BiomesExcluded: [RadiatedFog, Hotspot]
+     # Radius: 3000
+     # RadiusRandom: 0
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 1.0
+     # Color: "0.0, 1.0, 1.0, 1.0" 
+     # Entities:
+       # - Names: [CyborgsDamagedHerd]
+         # Biomes: [ Oasis, OasisEdge, Marsh]
+         # Amount: 20            # Low densities, since the spawnzones are tied to many POI, and will overlap often. 1-2 creatures
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+       # - Names: [CyborgsDamagedHerd]
+         # Biomes: [Savanna, Oasis, OasisEdge, Marsh, Shore]
+         # Amount: 5            # Low densities, since the spawnzones are tied to many POI, and will overlap often
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+
+
+   # - SpawnAt: [FarrDefenseT1]    # Troops just catching some 'fresh air'.
+                                               # # These will still appear after conquering the POI, unless killed.
+     # # BiomesExcluded: [RadiatedFog, Hotspot]
+     # Radius: 50
+     # RadiusRandom: 0
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.5
+     # Color: "0.0, 1.0, 1.0, 1.0" 
+     # Entities:
+       # - Names: [CyborgsDamagedHerd]
+         # Biomes: [Any]
+         # Amount: 1000
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+
+
+
+
+
+
+
+
+CreatureSpawning:
+    - Biomes: [Desert, Dunes, Sand, Rocks]
+      Entities:
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 10
+          DelayMinMax: [10, 20]
+          # Color: "1.0, 1.0, 1.0"
+        - Name: WormDesertHerd
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 20]
+    - Biomes: [SavannaEdge, Savanna]
+      Entities:
+        - Name: CaveWormGreyHerd
+          Period: Day
+          Amount: 8
+          DelayMinMax: [10, 20]
+        - Name: WormDesertHerd
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 20]
+        - Name: Otyughs
+          Period: Night
+          Amount: 5
+          DelayMinMax: [10, 20]
+        - Name: LizardMuleHerd
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 12]
+    - Biomes: [Oasis, OasisEdge]
+      Entities:
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 20]
+        - Name: Spiders02
+          Period: Night
+          Amount: 10
+          DelayMinMax: [10, 20]
+        - Name: LizardMuleHerd
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 12]
+    - Biomes: [Marsh, Shore]
+      Entities:
+        - Name: CaveWormGreyHerd
+          Period: Night
+          Amount: 8
+          DelayMinMax: [10, 20]
+        - Name: Slimes
+          Period: Day
+          Amount: 12
+          DelayMinMax: [10, 20]
+    - Biomes: [LowMountains]
+      Entities:
+        - Name: Spiders02
+          Period: Day
+          Amount: 8
+          DelayMinMax: [10, 20]

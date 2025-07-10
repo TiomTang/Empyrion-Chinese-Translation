@@ -1,0 +1,1295 @@
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\n\u8FD9\u4E2A\u5E74\u8F7B\u884C\u661F\u7684\u8584\u5730\u58F3\u4ECD\u7136\u6709\u7194\u5CA9\u4ECE\u88C2\u7F1D\u4E2D\u55B7\u51FA\u3002Zirax\u5E1D\u56FD\u7684\u51E0\u4E2A\u5BB6\u65CF\u76F8\u4E92\u7ADE\u4E89,\u4EE5\u4E89\u593A\u5176\u4E30\u5BCC\u7684\u8D44\u6E90,\u4F46\u5728\u9762\u5BF9\u4EFB\u4F55\u6F5C\u5728\u7684\u5165\u4FB5\u8005\u65F6,\u4ED6\u4EEC\u4E5F\u4F1A\u5408\u4F5C\u5171\u540C\u62B5\u5FA1\u3002"
+PlanetType: Crusted Lava
+Emissive: "True"
+PlayfieldType: Planet
+Difficulty: "4"
+LandClaimZone: Device
+AtmosphereEnabled: "True"
+AtmosphereColor: 0.2, 0.05, 0.05
+SkyColor: 0.1, 0.0, 0.0
+SkyHorizonColor: 0.35, 0.15, 0
+AtmosphereParams:
+- "3"
+- "2.5"
+DayLightIntensity: "1"
+NightLightIntensity: "0.9"
+LightZenithColor: 1, 0.95, 0.95
+LightHorizonColor: 1, 0.5, 0
+NightLightColor: 1, 0.85, 0.85
+DayShadowStrength: "0.95"
+NightShadowStrength: "0.5"
+SunFlare: EnvironmentalEffects/SunFlareRed
+FogColor: 0.95, 0.50, 0.14
+FogCloudIntensity: "0.3"
+CloudsDensity: "0.2"
+CloudsSharpness: "0.2"
+CloudsBrightness: "0.3"
+CloudsOpacity: "0.1"
+CloudsZenithColor: 1, 0.2, 0.2
+CloudsHorizonColor: 1, 0.1, 0.45
+CloudsNightHorizonColor: 0.8, 0.15, 0.00
+CloudsNightZenithColor: 0.8, 0.15, 0.00
+WindSpeed: "2"
+SpecialEffectsLocal:
+- Name: Grime
+  MaxHeight: "20"
+SpecialEffectsGlobal:
+- Name: Clear
+  Type: Weather
+  InitialDelay: "300"
+  Delay: "300"
+  Lifetime: "30"
+- Name: MeteorShower
+  Time: Always
+  InitialDelay: "1"
+  Delay: "1"
+  Lifetime: "60"
+  PlyDist: "200"
+  SpawnY: "100"
+  Struct: Avoid
+RandomResources:
+- Name: IronResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "1"
+  - "2"
+  SizeMinMax:
+  - "8"
+  - "9"
+  DepthMinMax:
+  - "30"
+  - "60"
+  DroneProb: "0.9"
+- Name: CopperResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "4"
+  - "5"
+  SizeMinMax:
+  - "4"
+  - "5"
+  DepthMinMax:
+  - "1"
+  - "3"
+  DroneProb: "0.9"
+- Name: PromethiumResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "2"
+  - "3"
+  SizeMinMax:
+  - "4"
+  - "5"
+  DepthMinMax:
+  - "2"
+  - "3"
+  DroneProb: "0.4"
+- Name: ZascosiumResource
+  Biome:
+  - Plains
+  - Dunes
+  - Rocks
+  IsScalingCount: "True"
+  CountMinMax:
+  - "2"
+  - "3"
+  SizeMinMax:
+  - "4"
+  - "5"
+  DepthMinMax:
+  - "5"
+  - "20"
+  DroneProb: "0.9"
+  MaxDroneCount: "4"
+- Name: GoldResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "4"
+  SizeMinMax:
+  - "5"
+  - "6"
+  DroneProb: "1"
+  MaxDroneCount: "3"
+  DepthMinMax:
+  - "5"
+  - "10"
+AsteroidResources:
+- Name: IronResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: CopperResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: PromethiumResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: ZascosiumResource
+  Threshold: "0.2"
+  Amount: "0.1"
+POIs:
+  Random:
+  - GroupName: R2DroneBaseT5
+    Faction: Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    IsImportant: "True"
+    DroneBaseSetup: DroneBaseSetup
+    CountMinMax:
+    - "1"
+    - "1"
+    LevelMod: "+2"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "3"
+    - "5"
+    ReserveCount: "5"
+    Properties:
+    - Key: Music
+      Value: moonstone
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuMainT3
+    Faction: Zirax
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2DroneBaseT5
+    SpawnPOINearRange:
+    - "150"
+    - "200"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuDefenseT3
+    Faction: Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "1"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2DroneBaseT5
+    SpawnPOINearRange:
+    - "200"
+    - "350"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2DroneBaseT5
+    Faction: Zirax
+    FactionTerritory:
+    - Rados
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    IsImportant: "True"
+    CountMinMax:
+    - "1"
+    - "1"
+    LevelMod: "+2"
+    DroneProb: "1"
+    DronesMinMax:
+    - "8"
+    - "12"
+    ReserveCount: "15"
+    TroopTransport: "True"
+    SpawnPOIAvoid:
+    - R2DroneBase
+    SpawnPOIAvoidDistance: "3000"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuDefenseT3
+    Faction: Zirax
+    FactionTerritory:
+    - Rados
+    Territory: "False"
+    CountMinMax:
+    - "3"
+    - "4"
+    DroneProb: "1"
+    DronesMinMax:
+    - "3"
+    - "5"
+    ReserveCount: "5"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - R2XenuDefenseT3
+    SpawnPOIAvoidDistance: "500"
+    SpawnPOINear:
+    - R2DroneBaseT5
+    SpawnPOINearRange:
+    - "400"
+    - "500"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuDefenseT2
+    Faction: Zirax
+    FactionTerritory:
+    - Rados
+    Territory: "False"
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "1"
+    DronesMinMax:
+    - "3"
+    - "5"
+    ReserveCount: "5"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - R2XenuDefenseT2
+    - R2XenuDefenseT3
+    SpawnPOIAvoidDistance: "500"
+    SpawnPOINear:
+    - R2DroneBaseT5
+    SpawnPOINearRange:
+    - "650"
+    - "750"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuAuxT2
+    Faction: Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnPOINear:
+    - R2XenuMain
+    SpawnPOINearRange:
+    - "150"
+    - "300"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuMain
+    Faction: Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "1"
+    DronesMinMax:
+    - "3"
+    - "4"
+    ReserveCount: "5"
+    TroopTransport: "True"
+    SpawnPOIAvoid:
+    - R2DroneBaseT5
+    SpawnPOIAvoidDistance: "3000"
+    SpawnResource:
+    - GoldResource:2-3
+    SpawnResourceRange:
+    - "225"
+    - "400"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuAuxT2
+    Faction: Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnPOINear:
+    - R2XenuMain
+    SpawnPOINearRange:
+    - "150"
+    - "300"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuMainT3
+    Faction: Zirax
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2XenuMain
+    SpawnPOINearRange:
+    - "150"
+    - "200"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuDefenseT3
+    Faction: Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "4"
+    - "5"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2XenuMain
+    SpawnPOINearRange:
+    - "350"
+    - "500"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2GhystMain
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "1"
+    DronesMinMax:
+    - "3"
+    - "4"
+    ReserveCount: "5"
+    TroopTransport: "True"
+    SpawnPOIAvoid:
+    - R2DroneBaseT5
+    - R2XenuMain
+    SpawnPOIAvoidDistance: "3000"
+    SpawnResource:
+    - ZascosiumResource:2-3
+    SpawnResourceRange:
+    - "150"
+    - "225"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2GhystAuxT1
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnPOINear:
+    - R2GhystMain
+    SpawnPOINearRange:
+    - "100"
+    - "250"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2GhystDefenseT1
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2GhystMain
+    SpawnPOINearRange:
+    - "200"
+    - "350"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2GhystDefenseT2
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2GhystMain
+    SpawnPOINearRange:
+    - "200"
+    - "350"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2GhystDunT4
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "1"
+    - "1"
+    IsImportant: "True"
+    DroneProb: "1"
+    DronesMinMax:
+    - "3"
+    - "5"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    Properties:
+    - Key: Music
+      Value: lava
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2GhystAuxT1
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2GhystDunT4
+    SpawnPOINearRange:
+    - "350"
+    - "450"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2GhystDefenseT1
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    CountMinMax:
+    - "3"
+    - "4"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2GhystDunT4
+    SpawnPOINearRange:
+    - "400"
+    - "500"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: PolarisLavaMiningAux
+    Faction: Polaris
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "0.2"
+    DronesMinMax:
+    - "0"
+    - "1"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: PolarisLavaMiningAux
+    Faction: Polaris
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "True"
+    SpawnPOINear:
+    - PolarisLavaMiningAux
+    SpawnPOINearRange:
+    - "150"
+    - "350"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2FactoryPolaris3
+    Faction: Polaris
+    CountMinMax:
+    - "1"
+    - "1"
+    SpawnPOINear:
+    - PolarisLavaMiningAux
+    SpawnPOINearRange:
+    - "500"
+    - "1000"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2PolarisDecoMining
+    Faction: Polaris
+    Territory: "False"
+    CountMinMax:
+    - "4"
+    - "6"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - PolarisLavaMiningAux
+    SpawnPOINearRange:
+    - "25"
+    - "150"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "500"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2PolarisDeco
+    Faction: Polaris
+    Territory: "False"
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - PolarisLavaMiningAux
+    SpawnPOINearRange:
+    - "25"
+    - "150"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "500"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuAuxT2
+    Faction: Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    - Plains
+    CountMinMax:
+    - "2"
+    - "3"
+    IsScalingCount: "True"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "4"
+    - "6"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuMainT3
+    Faction: Zirax
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2XenuAuxT2
+    SpawnPOINearRange:
+    - "150"
+    - "200"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2GhystAuxT2
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    - Plains
+    CountMinMax:
+    - "2"
+    - "3"
+    IsScalingCount: "True"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "4"
+    - "6"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: RE2_RadosLavaT0
+    Faction: Rados
+    FactionTerritory:
+    - Zirax
+    CountMinMax:
+    - "2"
+    - "3"
+    IsScalingCount: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: RE2_RadosLavaT1
+    Faction: Rados
+    FactionTerritory:
+    - Zirax
+    CountMinMax:
+    - "3"
+    - "4"
+    IsScalingCount: "True"
+    DroneProb: "0.5"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnResource:
+    - CopperResource:0-1
+    SpawnResourceRange:
+    - "150"
+    - "225"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_RadosSurveyLava
+    Faction: Rados
+    FactionTerritory:
+    - Zirax
+    Biome:
+    - Plains
+    - Dunes
+    - CrystallizedRocks
+    - Flats
+    - Crusted
+    CountMinMax:
+    - "2"
+    - "3"
+    IsScalingCount: "True"
+    DroneProb: "1"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "5"
+    TroopTransport: "True"
+    SpawnPOIAvoid:
+    - R2DroneBaseT5
+    - R2GhystMain
+    - R2XenuMain
+    SpawnPOIAvoidDistance: "3000"
+    AuxiliaryPOIs:
+    - R2RadosDefenseT1
+    SpawnResource:
+    - GoldResource:0-1
+    - PromethiumResource:0-1
+    - ZascosiumResource:0-1
+    SpawnResourceRange:
+    - "150"
+    - "225"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2RadosDefenseT1
+    Faction: Rados
+    FactionTerritory:
+    - Zirax
+    Territory: "False"
+    IsAuxPOI: "True"
+    SpawnPOINearRange:
+    - "100"
+    - "300"
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - R2RadosDefenseT1
+    SpawnPOIAvoidDistance: "75"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuDefenseT1
+    Faction: Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    - Plains
+    CountMinMax:
+    - "4"
+    - "5"
+    IsScalingCount: "True"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "4"
+    - "6"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnResource:
+    - ZascosiumResource:0-1
+    - GoldResource:0-1
+    - PromethiumResource:0-1
+    SpawnResourceRange:
+    - "150"
+    - "225"
+    Properties:
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2GhystDefenseT1
+    Faction: Ghyst
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    - Plains
+    CountMinMax:
+    - "4"
+    - "5"
+    IsScalingCount: "True"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "4"
+    - "6"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnResource:
+    - ZascosiumResource:0-1
+    - GoldResource:0-1
+    - PromethiumResource:0-1
+    SpawnResourceRange:
+    - "150"
+    - "225"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2RadosDefenseT1
+    Faction: Rados
+    FactionTerritory:
+    - Zirax
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    - Plains
+    CountMinMax:
+    - "4"
+    - "5"
+    IsScalingCount: "True"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "4"
+    - "6"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnResource:
+    - ZascosiumResource:0-1
+    - GoldResource:0-1
+    - PromethiumResource:0-1
+    SpawnResourceRange:
+    - "150"
+    - "225"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: PolarisLavaMiningAux
+    Faction: Polaris
+    CountMinMax:
+    - "1"
+    - "1"
+    IsScalingCount: "True"
+    DroneProb: "0.2"
+    DronesMinMax:
+    - "0"
+    - "1"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: CrashedShip
+    Faction: None
+    CountMinMax:
+    - "2"
+    - "3"
+    PlaceAt: UnderWater, Terrain
+    IsScalingCount: "True"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "4"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Wreckage
+    Faction: None
+    BiomesExcluded:
+    - LavaFolds
+    - LavaEdge
+    - Hotspot
+    - Plains
+    CountMinMax:
+    - "2"
+    - "4"
+    IsScalingCount: "True"
+    DroneProb: "0.5"
+    DronesMinMax:
+    - "1"
+    - "3"
+    ReserveCount: "2"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: RE2_HarvestMagmacite
+    Faction: None
+    Biome:
+    - Hotspot
+    PlaceAt: OnWater
+    CountMinMax:
+    - "2"
+    - "3"
+    IsScalingCount: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_CaveRandom
+    Faction: Alien
+    Biome:
+    - Dunes
+    - Flats
+    - Rocks
+    - CrystallizedRocks
+    - Plains
+    CountMinMax:
+    - "3"
+    - "5"
+    IsScalingCount: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2VolcanicVent
+    Faction: Civilian
+    FactionTerritory:
+    - All
+    CountMinMax:
+    - "1"
+    - "2"
+    IsScalingCount: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_HarvestVoidiumT2
+    Faction: None
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_HarvestVoidiumT2
+    Faction: None
+    CountMinMax:
+    - "0"
+    - "1"
+    SpawnPOINear:
+    - Eden_HarvestVoidiumT2
+    SpawnPOINearRange:
+    - "35"
+    - "250"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_HarvestVoidiumT2
+    Faction: None
+    FactionTerritory:
+    - Kriel
+    - Eden_DroneHome
+    - TheLegacy
+    - Tesch
+    CountMinMax:
+    - "0"
+    - "1"
+    SpawnPOINear:
+    - Eden_HarvestVoidiumT2
+    SpawnPOINearRange:
+    - "35"
+    - "250"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  FixedPlayerStart:
+  - Mode: Debug
+    Pos:
+    - "0"
+    - "120"
+    - "0"
+    RotY: "0"
+  - Mode: Survival
+    Spawn: EscapePod
+    Armor: ArmorMedium
+DroneBaseSetup:
+  Random:
+  - GroupName: DroneBaseSetup
+    Difficulty: "6"
+    PresetStyle: "3"
+    Stock:
+    - Name: DroneHoverZiraxLaser
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneHoverZiraxRocket
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneLargeZiraxRocket
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneLargeZiraxPlasma
+      Amount: "50"
+      Extra: "0"
+    - Name: DroneBomberAttackBase
+      Amount: Infinite
+      Extra: "1"
+    - Name: EnemyDroneV2Plasma
+      Amount: Infinite
+      Extra: "1"
+    - Name: DroneTroopsTransport
+      Amount: Infinite
+      Extra: "2"
+    - Name: ZiraxMinigun
+      Amount: "500"
+      Extra: "3"
+    - Name: ZiraxRocket
+      Amount: "500"
+      Extra: "3"
+    - Name: RipperDog
+      Amount: "150"
+      Extra: "3"
+    - Name: Mechanoid
+      Amount: "300"
+      Extra: "3"
+  PlanetVessels:
+  - Name: R2PVZiraxT1
+    Faction: Zirax
+    CountMinMax:
+    - "1"
+    - "1"
+    LevelMod: "2"
+    FixedMaxSpeed: "20"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "1800"
+    IsRespawnAfterDestruction: "False"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - R2DroneBase
+      Radius: "1000"
+      DistToGround: "200"
+    Properties:
+    - Key: Discovery
+      Value: "False"
+    Stock:
+    - Name: DroneHoverZiraxLaser
+      Amount: "4"
+      Type: FighterDrone
+  - Name: R2PVZiraxT1
+    Faction: Zirax
+    CountMinMax:
+    - "0"
+    - "1"
+    LevelMod: "2"
+    FixedMaxSpeed: "10"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "1800"
+    IsRespawnAfterDestruction: "False"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - R2DroneBase
+      DistToGround: "200"
+    Properties:
+    - Key: Discovery
+      Value: "False"
+    - Key: AIManPatrolFactions
+      Value: Zirax, Epsilon, Rados, Ghyst, Xenu
+    Stock:
+    - Name: DroneHoverZiraxLaser
+      Amount: "0"
+      Type: FighterDrone
+  - Name: R2PVZiraxT1
+    Faction: Xenu
+    CountMinMax:
+    - "0"
+    - "1"
+    LevelMod: "2"
+    FixedMaxSpeed: "50"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "1800"
+    IsRespawnAfterDestruction: "False"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - R2DroneBase
+      DistToGround: "200"
+    Properties:
+    - Key: Discovery
+      Value: "False"
+    - Key: AIManPatrolFactions
+      Value: Zirax, Epsilon, Rados, Ghyst, Xenu
+    Stock:
+    - Name: DroneHoverZiraxLaser
+      Amount: "4"
+      Type: FighterDrone
+DroneSpawning:
+  Random:
+  - DronesMinMax:
+    - "3"
+    - "5"
+    CenterX: "5000"
+    Radius: "3000"
+  - DronesMinMax:
+    - "3"
+    - "5"
+    CenterX: "-5000"
+    Radius: "3000"
+  - DronesMinMax:
+    - "3"
+    - "5"
+    CenterX: "2500"
+    Radius: "3000"
+  - DronesMinMax:
+    - "3"
+    - "5"
+    CenterX: "-2500"
+    Radius: "3000"
+SpawnZones:
+- SpawnAt:
+  - R2DroneBaseT5
+  - R2GhystMain
+  - R2GhystMain
+  - R2XenuMain
+  - Eden_RadosSurveyLava
+  BiomesExcluded:
+  - LowMountains
+  - Mountains
+  Radius: "400"
+  RadiusRandom: "100"
+  RateMultiplyerCenter: "1.0"
+  RateMultiplyerEdge: "0.4"
+  Color: 1.0, 1.0, 1.0, 1.0
+  SpawnOnlyIfPoiIsAlien: "true"
+  Entities:
+  - Names:
+    - ZiraxMechanoidPatrol
+    Biomes:
+    - Any
+    Amount: "125"
+    Period: Always
+    DelayMinMax:
+    - "-1"
+    - "-1"
+- SpawnAt:
+  - R2GhystAuxT2
+  BiomesExcluded:
+  - LowMountains
+  - Mountains
+  Radius: "500"
+  RadiusRandom: "25"
+  RateMultiplyerCenter: "1.0"
+  RateMultiplyerEdge: "0.6"
+  Color: 1.0, 1.0, 1.0, 1.0
+  SpawnOnlyIfPoiIsAlien: "true"
+  Entities:
+  - Names:
+    - ZiraxMechanoidPatrol
+    Biomes:
+    - Any
+    Amount: "100"
+    Period: Always
+    DelayMinMax:
+    - "-1"
+    - "-1"
+CreatureSpawning:
+- Biomes:
+  - LavaEdge
+  - LavaFolds
+  - Plains
+  Entities:
+  - Name: AlienAssassinReds
+    Period: Always
+    Amount: "0"
+    DelayMinMax:
+    - "20"
+    - "24"

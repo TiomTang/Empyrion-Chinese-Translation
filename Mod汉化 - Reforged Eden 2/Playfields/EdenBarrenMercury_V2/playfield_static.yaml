@@ -1,0 +1,710 @@
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\n[c][ffff00]\u8B66\u544A:\u65B0\u7684\u661F\u533A\u6B63\u5728\u6D4B\u8BD5\u4E2D\u3002\u8FDB\u5165\u6B64\u6E38\u620F\u573A\u5730\u53EF\u80FD\u4F1A\u9047\u5230\u610F\u5916\u95EE\u9898\u3002[-][/c]\n\n\u8FD9\u9897\u884C\u661F\u6CA1\u6709\u4EFB\u4F55\u81EA\u7136\u751F\u547D,\u767D\u5929\u56E0\u9760\u8FD1\u592A\u9633\u800C scorched,\u591C\u665A\u5219\u51BB\u7ED3\u3002\u8D44\u6E90\u4E30\u5BCC\u7684\u9668\u77F3\u8986\u76D6\u5730\u8868,\u800C\u4E30\u5BCC\u7684\u77FF\u85CF\u5219\u6DF1\u57CB\u5728\u5730\u8868\u4E4B\u4E0B\u3002"
+PlanetType: Barren
+PlayfieldType: Planet
+Difficulty: "2"
+LandClaimZone: Device
+AtmosphereEnabled: "False"
+DayLightIntensity: "1.6"
+NightLightIntensity: "0.7"
+DayShadowStrength: "0.95"
+SunFlare: EnvironmentalEffects/SunFlareWhiteMoon
+RandomResources:
+- Name: IronResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "1"
+  - "1"
+  SizeMinMax:
+  - "9"
+  - "10"
+  DepthMinMax:
+  - "40"
+  - "50"
+  DroneProb: "1"
+  MaxDroneCount: "5"
+- Name: MagnesiumResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "2"
+  - "3"
+  SizeMinMax:
+  - "6"
+  - "7"
+  DepthMinMax:
+  - "6"
+  - "15"
+  DroneProb: "1"
+  MaxDroneCount: "5"
+- Name: SathiumResource
+  CountMinMax:
+  - "2"
+  - "2"
+  SizeMinMax:
+  - "11"
+  - "12"
+  DroneProb: "1"
+  MaxDroneCount: "5"
+  DepthMinMax:
+  - "40"
+  - "50"
+- Name: SathiumResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "5"
+  - "6"
+  SizeMinMax:
+  - "9"
+  - "11"
+  DroneProb: "1"
+  MaxDroneCount: "5"
+  DepthMinMax:
+  - "40"
+  - "50"
+- Name: GoldResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "5"
+  - "6"
+  SizeMinMax:
+  - "2"
+  - "3"
+  DroneProb: "1"
+  MaxDroneCount: "5"
+  DepthMinMax:
+  - "20"
+  - "30"
+AsteroidResources:
+- Name: IronResource
+  Threshold: "0.1"
+  Amount: "0.2"
+- Name: MagnesiumResource
+  Threshold: "0.1"
+  Amount: "0.2"
+- Name: SathiumResource
+  Threshold: "0.1"
+  Amount: "0.2"
+POIs:
+  Random:
+  - GroupName: R2DroneBase
+    Faction: Zirax
+    IsCommandCenter: "True"
+    DroneBaseSetup: DroneBaseSetup
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "5"
+    Properties:
+    - Key: Music
+      Value: lava2
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2DroneBaseT5
+    Faction: Zirax
+    FactionTerritory:
+    - Rados
+    IsImportant: "True"
+    CountMinMax:
+    - "1"
+    - "1"
+    LevelMod: "+2"
+    DroneProb: "1"
+    DronesMinMax:
+    - "8"
+    - "12"
+    ReserveCount: "15"
+    TroopTransport: "True"
+    SpawnPOIAvoid:
+    - R2DroneBase
+    SpawnPOIAvoidDistance: "3000"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuDefenseT3
+    Faction: Zirax
+    FactionTerritory:
+    - Rados
+    Territory: "False"
+    CountMinMax:
+    - "3"
+    - "4"
+    DroneProb: "1"
+    DronesMinMax:
+    - "3"
+    - "5"
+    ReserveCount: "5"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - R2XenuDefenseT3
+    SpawnPOIAvoidDistance: "500"
+    SpawnPOINear:
+    - R2DroneBaseT5
+    SpawnPOINearRange:
+    - "400"
+    - "500"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuDefenseT2
+    Faction: Zirax
+    FactionTerritory:
+    - Rados
+    Territory: "False"
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "1"
+    DronesMinMax:
+    - "3"
+    - "5"
+    ReserveCount: "5"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - R2XenuDefenseT2
+    - R2XenuDefenseT3
+    SpawnPOIAvoidDistance: "500"
+    SpawnPOINear:
+    - R2DroneBaseT5
+    SpawnPOINearRange:
+    - "650"
+    - "750"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuDeco
+    Faction: Zirax
+    Territory: "False"
+    CountMinMax:
+    - "0"
+    - "2"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2DroneBase
+    SpawnPOINearRange:
+    - "150"
+    - "300"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "500"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2PolarisTradePlanet
+    Faction: Polaris
+    IsImportant: "True"
+    CountMinMax:
+    - "1"
+    - "1"
+    Properties:
+    - Key: Discovery
+      Value: "False"
+    - Key: Music
+      Value: AlteredPhase
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2PolarisAuxT1
+    Faction: Polaris
+    CountMinMax:
+    - "2"
+    - "3"
+    SpawnPOINear:
+    - R2PolarisTradePlanet
+    SpawnPOINearRange:
+    - "150"
+    - "250"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2PolarisDefenseT1
+    Faction: Polaris
+    CountMinMax:
+    - "5"
+    - "6"
+    SpawnPOINear:
+    - R2PolarisTradePlanet
+    SpawnPOINearRange:
+    - "300"
+    - "400"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2FactoryPolaris1
+    Faction: Polaris
+    CountMinMax:
+    - "1"
+    - "1"
+    SpawnPOINear:
+    - R2PolarisTradePlanet
+    SpawnPOINearRange:
+    - "250"
+    - "600"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2FactoryPolaris2
+    Faction: Polaris
+    FactionTerritory:
+    - Eden_PolarisTerritory
+    CountMinMax:
+    - "1"
+    - "1"
+    SpawnPOINear:
+    - R2PolarisTradePlanet
+    SpawnPOINearRange:
+    - "250"
+    - "600"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: MineT3PolarisRG
+    Territory: "False"
+    Faction: Polaris
+    CountMinMax:
+    - "1"
+    - "2"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: MineSulfurPolarisRG
+    Territory: "False"
+    Faction: Polaris
+    CountMinMax:
+    - "1"
+    - "1"
+    SpawnPOINear:
+    - R2PolarisTradePlanet
+    SpawnPOINearRange:
+    - "800"
+    - "2000"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2PolarisDeco
+    Faction: Polaris
+    Territory: "False"
+    CountMinMax:
+    - "2"
+    - "4"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2PolarisTradePlanet
+    SpawnPOINearRange:
+    - "75"
+    - "200"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "500"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2ColonistAux
+    Territory: "False"
+    Faction: Colonists
+    CountMinMax:
+    - "3"
+    - "4"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: MineT1PolarisRG
+    Territory: "False"
+    Faction: Colonists
+    CountMinMax:
+    - "1"
+    - "1"
+    SpawnPOINear:
+    - R2ColonistAux
+    SpawnPOINearRange:
+    - "100"
+    - "200"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2ColonistDeco
+    Faction: Colonists
+    Territory: "False"
+    CountMinMax:
+    - "2"
+    - "4"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2ColonistAux
+    SpawnPOINearRange:
+    - "75"
+    - "200"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "500"
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuMainT3
+    Faction: Zirax
+    IsImportant: "True"
+    Biome:
+    - Hotspot
+    - RadiatedFog
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Ruins
+    Faction: None
+    CountMinMax:
+    - "3"
+    - "5"
+    SpawnPOINear:
+    - R2XenuMainT3
+    SpawnPOINearRange:
+    - "150"
+    - "350"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuMain
+    Faction: Zirax
+    IsImportant: "True"
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "4"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2DroneBase
+    SpawnPOINearRange:
+    - "200"
+    - "300"
+    Properties:
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2XenuDefenseT2
+    Faction: Zirax
+    CountMinMax:
+    - "2"
+    - "3"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnPOINear:
+    - R2DroneBase
+    SpawnPOINearRange:
+    - "200"
+    - "300"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2KrielMain
+    Faction: Kriel
+    CountMinMax:
+    - "1"
+    - "2"
+    Properties:
+    - Key: Music
+      Value: AlteredPhase
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: R2KrielDefenseT1
+    Faction: Kriel
+    CountMinMax:
+    - "1"
+    - "4"
+    Properties:
+    - Key: Music
+      Value: AlteredPhase
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2PirateAuxT1
+    Faction: Pirates
+    CountMinMax:
+    - "0"
+    - "3"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: CrashedShip
+    Faction: None
+    CountMinMax:
+    - "2"
+    - "3"
+    IsScalingCount: "True"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "4"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuAuxT1
+    Faction: Zirax
+    CountMinMax:
+    - "3"
+    - "5"
+    IsScalingCount: "True"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuAuxT2
+    Faction: Zirax
+    CountMinMax:
+    - "1"
+    - "2"
+    IsScalingCount: "True"
+    DroneProb: "1.0"
+    DronesMinMax:
+    - "2"
+    - "3"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_HarvestVoidiumT1
+    Faction: None
+    CountMinMax:
+    - "0"
+    - "2"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_PalladiumSurface
+    Faction: None
+    Biome:
+    - Rocks
+    CountMinMax:
+    - "8"
+    - "12"
+    IsScalingCount: "True"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapDistance
+      Value: "0"
+    - Key: HudDistance
+      Value: "0"
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_HarvestPalladium
+    Faction: None
+    FactionTerritory:
+    - Kriel
+    - Tesch
+    - TheLegacy
+    - Eden_DroneHome
+    - Xenu
+    CountMinMax:
+    - "3"
+    - "4"
+    IsScalingCount: "True"
+    DroneProb: "0.75"
+    DronesMinMax:
+    - "2"
+    - "4"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  - GroupName: Eden_HarvestPalladium
+    Faction: None
+    FactionTerritory:
+    - Wastelanders
+    CountMinMax:
+    - "1"
+    - "2"
+    IsScalingCount: "True"
+    DroneProb: "0.5"
+    DronesMinMax:
+    - "1"
+    - "3"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    Properties:
+    - Key: MapMarker
+      Value: Neutral
+    - Key: SI
+      Value: "Off"
+    - Key: RegenAfter
+      Value: "4320"
+  FixedPlayerStart:
+  - Mode: Debug
+    Pos:
+    - "-835"
+    - "165"
+    - "-1000"
+    RotY: "125"
+    Armor: ArmorMedium
+  - Mode: Survival
+    Spawn: EscapePod
+    Armor: ArmorMedium
+DroneBaseSetup:
+  Random:
+  - GroupName: DroneBaseSetup
+    Stock:
+    - Name: DroneHoverZiraxLaser
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneHoverZiraxRocket
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneLargeZiraxPlasma
+      Amount: "50"
+      Extra: "0"
+    - Name: DroneBomberAttackBase
+      Amount: Infinite
+      Extra: "1"
+    - Name: EnemyDroneV2Plasma
+      Amount: Infinite
+      Extra: "1"
+    - Name: DroneTroopsTransport
+      Amount: Infinite
+      Extra: "2"
+    - Name: ZiraxMinigun
+      Amount: "500"
+      Extra: "3"
+    - Name: ZiraxRocket
+      Amount: "500"
+      Extra: "3"
+    - Name: RipperDog
+      Amount: "150"
+      Extra: "3"
+    - Name: Mechanoid
+      Amount: "300"
+      Extra: "3"
+  PlanetVessels:
+  - Name: R2PVZiraxT1
+    Faction: Zirax
+    CountMinMax:
+    - "1"
+    - "1"
+    LevelMod: "2"
+    FixedMaxSpeed: "20"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "1800"
+    IsRespawnAfterDestruction: "False"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - R2DroneBase
+      Radius: "1000"
+      DistToGround: "200"
+    Properties:
+    - Key: Discovery
+      Value: "False"
+    Stock:
+    - Name: DroneHoverZiraxLaser
+      Amount: "4"
+      Type: FighterDrone
+  - Name: R2PVZiraxT1
+    Faction: Xenu
+    CountMinMax:
+    - "1"
+    - "1"
+    LevelMod: "2"
+    FixedMaxSpeed: "50"
+    DelayBetweenRespawn: "600"
+    DelayBeforeSelfDestruction: "1800"
+    IsRespawnAfterDestruction: "False"
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - R2DroneBase
+      DistToGround: "200"
+    Properties:
+    - Key: Discovery
+      Value: "False"
+    - Key: AIManPatrolFactions
+      Value: Zirax, Epsilon, Rados, Ghyst, Xenu
+    Stock:
+    - Name: DroneHoverZiraxLaser
+      Amount: "4"
+      Type: FighterDrone
+DroneSpawning:
+  Random:
+  - DronesMinMax:
+    - "3"
+    - "5"
+    CenterX: "5000"
+    Radius: "3000"
+  - DronesMinMax:
+    - "3"
+    - "5"
+    CenterX: "-5000"
+    Radius: "3000"
+  - DronesMinMax:
+    - "3"
+    - "5"
+    CenterX: "2500"
+    Radius: "3000"
+  - DronesMinMax:
+    - "3"
+    - "5"
+    CenterX: "-2500"
+    Radius: "3000"

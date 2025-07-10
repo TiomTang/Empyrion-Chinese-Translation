@@ -1,0 +1,584 @@
+Description: "\u96BE\u5EA6: [c][ffff00]\u4E2D\u7B49[-][/c]\n\n\u4E00\u4E2A\u62E5\u6709\u5E7F\u9614\u5E73\u539F\u7684\u6E29\u5E26\u536B\u661F\u3002\n\n[c][808080][i]\u6700\u521D\u7531 Javarox87 \u521B\u5EFA\u3002[/i][-][/c]"
+PlanetType: Temperate Moon
+PlayfieldType: Moon
+Difficulty: "3"
+SpecialEffectsLocal:
+- Name: FireFliesRed
+  Biome:
+  - Water
+  Time: Night
+  MaxHeight: "20"
+- Name: DandelionsFew
+  Biome:
+  - Savanna
+  - Grassland
+  Time: Day
+  MaxHeight: "180"
+- Name: Butterflies
+  Biome:
+  - Forest
+  Time: Day
+  MaxHeight: "180"
+  FollowPlayerY: "True"
+SpecialEffectsGlobal:
+- Name: Clear
+  Type: Weather
+  InitialDelay: "0"
+  Delay: "2"
+  Lifetime: "1200"
+- Name: CloudsLight
+  Type: Weather
+  InitialDelay: "2"
+  Delay: "2"
+  Lifetime: "600"
+- Name: BirdFlocksCrows
+  Biome:
+  - Savanna
+  - Grassland
+  Time: Day
+  InitialDelay: "1"
+  Delay: "4"
+  Lifetime: "600"
+  PlyDist: "100"
+  SpawnY: "30"
+  Struct: "True"
+AtmosphereEnabled: "True"
+AtmosphereColor: 0.19, 0.26, 0.35
+SkyColor: 0.19, 0.26, 0.35
+SkyHorizonColor: 0.7, 1, 1
+DayLightIntensity: "1.7"
+NightLightIntensity: "0.55"
+LightZenithColor: 1, 0.8, 0.4
+LightHorizonColor: 0.5, 1, 0.5
+NightLightColor: 0.7, 0.2, 0.2
+DayShadowStrength: "0.3"
+NightShadowStrength: "1"
+SunFlare: EnvironmentalEffects/SunFlareBlue
+AtmosphereFog: "0.4"
+FogCloudIntensity: "0.8"
+FogIntensity: "0.1"
+FogStartDistance: "200"
+GroundFogIntensity: "0.15"
+GroundFogHeight: "33"
+CloudsDensity: "0.8"
+CloudsSharpness: "0.35"
+CloudsBrightness: "0.7"
+CloudsOpacity: "0.7"
+CloudsZenithColor: 0.67,0.65,0.99
+CloudsHorizonColor: 1, 0.76, 0.56
+WindSpeed: "5"
+RandomResources:
+- Name: TitanResource
+  CountMinMax:
+  - "1"
+  - "1"
+  SizeMinMax:
+  - "9"
+  - "10"
+  DepthMinMax:
+  - "0"
+  - "1"
+  DroneProb: "1"
+  MaxDroneCount: "5"
+- Name: TitanResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "4"
+  SizeMinMax:
+  - "7"
+  - "8"
+  DepthMinMax:
+  - "0"
+  - "1"
+  DroneProb: "0.2"
+  MaxDroneCount: "1"
+- Name: CopperResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "5"
+  SizeMinMax:
+  - "6"
+  - "8"
+  DepthMinMax:
+  - "0"
+  - "1"
+  DroneProb: "0.3"
+- Name: SiliconResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "4"
+  SizeMinMax:
+  - "6"
+  - "7"
+  DepthMinMax:
+  - "0"
+  - "1"
+  DroneProb: "0.3"
+- Name: PromethiumResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "3"
+  - "5"
+  SizeMinMax:
+  - "7"
+  - "10"
+  DepthMinMax:
+  - "0"
+  - "1"
+  DroneProb: "0.4"
+- Name: MagnesiumResource
+  IsScalingCount: "True"
+  CountMinMax:
+  - "4"
+  - "6"
+  SizeMinMax:
+  - "6"
+  - "8"
+  DepthMinMax:
+  - "0"
+  - "1"
+  DroneProb: "0.4"
+AsteroidResources:
+- Name: TitanResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: CopperResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: SiliconResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: MagnesiumResource
+  Threshold: "0.2"
+  Amount: "0.1"
+- Name: PromethiumResource
+  Threshold: "0.2"
+  Amount: "0.1"
+POIs:
+  Random:
+  - GroupName: R2DroneBase
+    DroneBaseSetup: DroneBaseSetup
+    Faction: Zirax
+    IsCommandCenter: "True"
+    CountMinMax:
+    - "0"
+    - "1"
+    DroneProb: "1"
+    DronesMinMax:
+    - "4"
+    - "5"
+    ReserveCount: "6"
+    SpawnResource:
+    - TitanResource:2-2
+    - SiliconResource:1-1
+    - CopperResource:1-1
+    SpawnResourceRange:
+    - "150"
+    - "400"
+    Properties:
+    - Key: Music
+      Value: moonstone
+  - GroupName: R2XenuDefenseT2
+    Faction: Zirax
+    CountMinMax:
+    - "8"
+    - "12"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2DroneBase
+    SpawnPOINearRange:
+    - "200"
+    - "1500"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuMain
+    Faction: Zirax
+    IsImportant: "True"
+    CountMinMax:
+    - "0"
+    - "1"
+    DroneProb: "1"
+    DronesMinMax:
+    - "2"
+    - "4"
+    ReserveCount: "4"
+    TroopTransport: "True"
+    SpawnPOINear:
+    - R2DroneBase
+    SpawnPOINearRange:
+    - "3500"
+    - "6000"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuAuxT2
+    Faction: Zirax
+    CountMinMax:
+    - "0"
+    - "3"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "3"
+    - "4"
+    ReserveCount: "3"
+    TroopTransport: "True"
+    SpawnPOINear:
+    - R2XenuMain
+    SpawnPOINearRange:
+    - "500"
+    - "3000"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2XenuDefenseT2
+    Faction: Zirax
+    CountMinMax:
+    - "4"
+    - "5"
+    DroneProb: "0.8"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "3"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - R2XenuMain
+    SpawnPOINearRange:
+    - "200"
+    - "350"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: R2PolarisAuxT1
+    Faction: Polaris
+    CountMinMax:
+    - "0"
+    - "5"
+    DroneProb: "1"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "6"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+    - Key: Music
+      Value: Hyperion
+  - GroupName: R2ColonistColonyTempStarter
+    Faction: Colonists
+    IsImportant: "True"
+    Territory: "False"
+    AvoidFactionTerritory: "True"
+    BiomesExcluded:
+    - PolarSnow
+    - Radiated
+    - RadiatedFog
+    CountMinMax:
+    - "0"
+    - "1"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - R2ColonistMain
+    SpawnPOIAvoidDistance: "1000"
+  - GroupName: R2ColonistColonyTempStarter
+    Faction: Colonists
+    FactionTerritory:
+    - Eden_ColonistsTerritory
+    IsImportant: "True"
+    Territory: "False"
+    AvoidFactionTerritory: "True"
+    BiomesExcluded:
+    - PolarSnow
+    - Radiated
+    - RadiatedFog
+    CountMinMax:
+    - "1"
+    - "1"
+    DroneProb: "0"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - R2ColonistColonyTempStarter
+    SpawnPOIAvoidDistance: "100000"
+  - GroupName: RE2_NecroAuxT1
+    Faction: Eden_Abandoned
+    FactionTerritory:
+    - Warlord
+    - Xenu
+    AvoidFactionTerritory: "True"
+    NoShieldReload: "True"
+    CountMinMax:
+    - "0"
+    - "2"
+    IsScalingCount: "True"
+    DroneProb: "0.5"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "1"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - RE2_NecroAuxT2
+    - RE2_NecroMain
+    SpawnPOIAvoidDistance: "3000"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: RE2_NecroDefenseT1
+    Faction: Eden_Abandoned
+    FactionTerritory:
+    - Warlord
+    - Xenu
+    NoShieldReload: "True"
+    CountMinMax:
+    - "1"
+    - "2"
+    DroneProb: "0.5"
+    DronesMinMax:
+    - "1"
+    - "1"
+    ReserveCount: "0"
+    TroopTransport: "False"
+    SpawnPOINear:
+    - RE2_NecroMain
+    SpawnPOINearRange:
+    - "400"
+    - "600"
+    SpawnPOIAvoid:
+    - RE2_NecroAuxT1
+    SpawnPOIAvoidDistance: "250"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: RE2_NecroAuxT1
+    Faction: Eden_Abandoned
+    FactionTerritory:
+    - Xenu
+    AvoidFactionTerritory: "True"
+    NoShieldReload: "True"
+    CountMinMax:
+    - "1"
+    - "2"
+    IsScalingCount: "True"
+    DroneProb: "0.5"
+    DronesMinMax:
+    - "1"
+    - "2"
+    ReserveCount: "1"
+    TroopTransport: "False"
+    SpawnPOIAvoid:
+    - RE2_NecroAuxT2
+    - RE2_NecroMain
+    SpawnPOIAvoidDistance: "3000"
+    Properties:
+    - Key: RegenAfter
+      Value: "720"
+  - GroupName: Eden_AncientWalker
+    Faction: Talon
+    Territory: "False"
+    CountMinMax:
+    - "1"
+    - "1"
+    Properties:
+    - Key: MapDistance
+      Value: "3000"
+    - Key: HudDistance
+      Value: "3000"
+    - Key: RegenAfter
+      Value: "720"
+  FixedPlayerStart:
+  - Mode: Debug
+    Pos:
+    - "300"
+    - "170"
+    - "160"
+    RotY: "160"
+DroneBaseSetup:
+  Random:
+  - GroupName: DroneBaseSetup
+    Difficulty: "6"
+    PresetStyle: "3"
+    Stock:
+    - Name: DroneHoverZiraxMinigun
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneHoverZiraxRocket
+      Amount: "200"
+      Extra: "0"
+    - Name: DroneLargeZiraxMinigun
+      Amount: "50"
+      Extra: "0"
+    - Name: DroneBomberAttackBase
+      Amount: Infinite
+      Extra: "1"
+    - Name: EnemyDroneV2Plasma
+      Amount: Infinite
+      Extra: "1"
+    - Name: DroneTroopsTransport
+      Amount: Infinite
+      Extra: "2"
+    - Name: ZiraxMinigun
+      Amount: "500"
+      Extra: "3"
+    - Name: ZiraxRocket
+      Amount: "500"
+      Extra: "3"
+    - Name: RipperDog
+      Amount: "150"
+      Extra: "3"
+    - Name: Mechanoid
+      Amount: "300"
+      Extra: "3"
+DroneSpawning:
+  Random:
+  - DronesMinMax:
+    - "1"
+    - "2"
+    CenterX: "-5000"
+    Radius: "3000"
+  - DronesMinMax:
+    - "1"
+    - "2"
+    CenterX: "-5000"
+    Radius: "3000"
+CreatureSpawning:
+- Biomes:
+  - Water
+  Entities:
+  - Name: Parasaurs
+    Period: Always
+    Amount: "8"
+    DelayMinMax:
+    - "10"
+    - "12"
+    Color: 1.0, 1.0, 1.0
+  - Name: LizardMuleHerd
+    Period: Always
+    Amount: "8"
+    DelayMinMax:
+    - "10"
+    - "12"
+  - Name: GolemsDesert
+    Period: Night
+    Amount: "4"
+    DelayMinMax:
+    - "20"
+    - "24"
+- Biomes:
+  - Grassland
+  Entities:
+  - Name: Parasaurs
+    Period: Always
+    Amount: "8"
+    DelayMinMax:
+    - "10"
+    - "12"
+  - Name: GolemsDesert
+    Period: Always
+    Amount: "8"
+    DelayMinMax:
+    - "10"
+    - "12"
+  - Name: WormDesertLargeHerd
+    Period: Night
+    Amount: "4"
+    DelayMinMax:
+    - "20"
+    - "24"
+- Biomes:
+  - Forest
+  Entities:
+  - Name: GolemsDesert
+    Period: Night
+    Amount: "6"
+    DelayMinMax:
+    - "20"
+    - "24"
+  - Name: WormDesertLargeHerd
+    Period: Day
+    Amount: "4"
+    DelayMinMax:
+    - "20"
+    - "24"
+  - Name: Triceratopses
+    Period: Day
+    Amount: "5"
+    DelayMinMax:
+    - "10"
+    - "12"
+  - Name: TalonGuardianHerd
+    Period: Always
+    Amount: "2"
+    DelayMinMax:
+    - "10"
+    - "12"
+- Biomes:
+  - Savanna
+  Entities:
+  - Name: RaptorHerd
+    Period: Day
+    Amount: "6"
+    DelayMinMax:
+    - "10"
+    - "12"
+  - Name: RaptorsNight
+    Period: Night
+    Amount: "4"
+    DelayMinMax:
+    - "20"
+    - "24"
+  - Name: WormDesertLargeHerd
+    Period: Always
+    Amount: "4"
+    DelayMinMax:
+    - "10"
+    - "12"
+- Biomes:
+  - Swamp
+  - WaterSwamp
+  - Beach
+  Entities:
+  - Name: Slimes
+    Period: Day
+    Amount: "5"
+    DelayMinMax:
+    - "10"
+    - "12"
+  - Name: Creepys
+    Period: Night
+    Amount: "6"
+    DelayMinMax:
+    - "20"
+    - "24"
+- Biomes:
+  - Mountains
+  Entities:
+  - Name: Spiders02
+    Period: Always
+    Amount: "3"
+    DelayMinMax:
+    - "20"
+    - "24"
+  - Name: WormDesertLargeHerd
+    Period: Always
+    Amount: "3"
+    DelayMinMax:
+    - "10"
+    - "12"
