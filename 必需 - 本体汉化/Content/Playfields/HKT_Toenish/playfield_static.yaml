@@ -1,9 +1,5 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "TemperatePrairie"
-PlanetSize: 2
-Difficulty: 1
 SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
 - Name: "DandelionsFew"
@@ -84,42 +80,28 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 5
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsLight"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 6
   Delay: 6
-  PlyDist: 100
   Lifetime: 500
   Type: "Weather"
 - Name: "CloudsMedium"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 12
   Delay: 6
-  PlyDist: 100
   Lifetime: 500
   Type: "Weather"
 - Name: "Wind"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 12
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "Storm"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 72
   Delay: 24
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "BirdFlocksCrows"
@@ -129,9 +111,7 @@ SpecialEffectsGlobal:
   - "Any"
   InitialDelay: 1
   Delay: 4
-  PlyDist: 100
   Lifetime: 600
-AtmosphereEnabled: true
 AtmosphereColor: "0.57, 0.71, 0.85"
 OrbitUsesLightColor: true
 SkyColor: "1, 1.2, 0.76"
@@ -156,9 +136,6 @@ WindSpeed: 3
 FogColor: "1.0, 1.0, 1.0"
 Description: "\u4E00\u9897\u53E4\u8001\u7684\u884C\u661F\u3002\u8000\u773C\u7684\u592A\u9633\u548C\u5E72\u71E5\u7684\u571F\u5730\u3002  \n\u6709\u690D\u7269\u548C\u771F\u83CC\u3002  \n[i]\u5176\u4E2D\u4E00\u79CD[/i]\u4FB5\u5165\u4E86\u8FD9\u4E2A\u4E16\u754C\u3002  \n\u4F46\u7ECF\u5386\u4E86\u8FD9\u4E48\u957F\u65F6\u95F4,\u8C01\u8FD8\u80FD\u8BF4\u5F97\u6E05\u2026\u2026?  \n\n\u6781\u7AEF\u8005\u706D\u7EDD\u4E86,\u7ADE\u4E89\u8BA9\u4F4D\u4E8E\u4F11\u6218\u2014\u2014\u7136\u540E\u8F6C\u53D8\u4E3A\u76F8\u4E92\u4EA4\u6362\u8425\u517B\u3002  \n\u76F4\u5230\u7A81\u7136,\u4E00\u79CD\u751F\u547D\u4F9D\u8D56\u4E8E\u53E6\u4E00\u79CD\u751F\u547D\u3002  \n"
 Seed: 971145
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "TemperatePrairie"
 UseFixed: true
 UseRandom: true
@@ -169,6 +146,7 @@ AllowHV: false
 AllowBA: false
 AllowBlueprintSV: false
 AllowBlueprintCV: false
+AllowBlueprintHV: false
 AllowBlueprintBA: false
 AllowBPFactory: false
 AllowMaxCPUTierSV: 1
@@ -178,16 +156,7 @@ AllowMaxCPUTierBA: 1
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 3
-    Max: 4
-  Size:
-    Min: 6
-    Max: 10
-  Depth:
-    Min: 6
-    Max: 10
-  Name: "CarbonResource"
+- Name: "CarbonResource"
   CountMinMax:
   - 3
   - 4
@@ -198,22 +167,13 @@ RandomResources:
   - 6
   - 10
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "LowMountains"
   - "Mountains"
   - "HighMountains"
   - "Swamp"
   - "Grassland"
-- Count:
-    Min: 11
-    Max: 12
-  Size:
-    Min: 5
-    Max: 7
-  Depth:
-    Max: 3
-  Name: "IronResource"
+- Name: "IronResource"
   CountMinMax:
   - 11
   - 12
@@ -224,22 +184,13 @@ RandomResources:
   - 0
   - 3
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "Grassland"
   - "ColdPlains"
   - "DustBowl"
   - "Marsh"
   - "Swamp"
-- Count:
-    Min: 8
-    Max: 10
-  Size:
-    Min: 4
-    Max: 6
-  Depth:
-    Max: 3
-  Name: "CopperResource"
+- Name: "CopperResource"
   CountMinMax:
   - 8
   - 10
@@ -250,21 +201,12 @@ RandomResources:
   - 0
   - 3
   DroneProb: 0.3
-  MaxDroneCount: 1
   Biome:
   - "Forest"
   - "DeepForest"
   - "Marsh"
   - "Swamp"
-- Count:
-    Min: 7
-    Max: 8
-  Size:
-    Min: 4
-    Max: 6
-  Depth:
-    Max: 3
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   CountMinMax:
   - 7
   - 8
@@ -275,22 +217,13 @@ RandomResources:
   - 0
   - 3
   DroneProb: 0.3
-  MaxDroneCount: 1
   Biome:
   - "Savanna"
   - "SavannaEdge"
   - "Tundra"
   - "Sand"
   - "DustBowl"
-- Count:
-    Min: 3
-    Max: 4
-  Size:
-    Min: 3
-    Max: 5
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   CountMinMax:
   - 3
   - 4
@@ -304,22 +237,13 @@ RandomResources:
     MaxRadius: 8
     YVariance: 15
   DroneProb: 0.8
-  MaxDroneCount: 1
   Biome:
   - "LowMountains"
   - "Mountains"
   - "HighMountains"
   - "Glacier"
   - "GlacierSnow"
-- Count:
-    Min: 1
-    Max: 1
-  Size:
-    Min: 2
-    Max: 2
-  Depth:
-    Max: 1
-  Name: "GoldResource"
+- Name: "GoldResource"
   CountMinMax:
   - 1
   - 1
@@ -332,7 +256,6 @@ RandomResources:
   DistTypeCylinder:
     MaxRadius: 8
     YVariance: 15
-  MaxDroneCount: 1
   Biome:
   - "LowMountains"
   - "Mountains"
@@ -362,10 +285,7 @@ AsteroidResources:
   Delay: -1
 POIs:
   Random:
-  - SpawnPoiRange:
-      Min: 80
-      Max: 10
-    GroupName: "NullPOI"
+  - GroupName: "NullPOI"
     Territory: false
     Count:
       Min: 1
@@ -433,10 +353,7 @@ POIs:
     - Key: "RegenAfter"
       Value: "720"
     LevelMod: "+4"
-  - SpawnPoiRange:
-      Min: 200
-      Max: 800
-    GroupName: "TalonWood"
+  - GroupName: "TalonWood"
     Faction: "Talon"
     Territory: false
     Count:
@@ -747,54 +664,38 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "30"
-      Extra: -1
       Type: "FighterDrone"
 CreatureSpawning:
 - Biomes:
   - "Forest"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 15
     Color: "0, 1.0, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders01"
+  - Name: "Spiders01"
     Amount: 15
     Color: "1.0, 1, 1"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "AlienBugs03"
+  - Name: "AlienBugs03"
     Amount: 10
     Color: "0.7, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 10
     Color: "0.5, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Triceratopses"
+  - Name: "Triceratopses"
     Amount: 15
     Color: "0, 0.5, 1.0"
     DelayMinMax:
@@ -804,39 +705,27 @@ CreatureSpawning:
 - Biomes:
   - "DeepForest"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 15
     Color: "0, 1.0, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders01"
+  - Name: "Spiders01"
     Amount: 15
     Color: "1.0, 1, 1"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "AlienBugs03"
+  - Name: "AlienBugs03"
     Amount: 10
     Color: "0.7, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Triceratopses"
+  - Name: "Triceratopses"
     Amount: 30
     Color: "0, 0.5, 1.0"
     DelayMinMax:
@@ -846,48 +735,33 @@ CreatureSpawning:
 - Biomes:
   - "Marsh"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 40
     Color: "0, 1.0, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders01"
+  - Name: "Spiders01"
     Amount: 15
     Color: "1.0, 1, 1"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "AlienBugs03"
+  - Name: "AlienBugs03"
     Amount: 10
     Color: "0.7, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 10
     Color: "0.5, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Triceratopses"
+  - Name: "Triceratopses"
     Amount: 5
     Color: "0, 0.5, 1.0"
     DelayMinMax:
@@ -898,10 +772,7 @@ CreatureSpawning:
   - "Swamp"
   - "WaterSwamp"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 12
     Color: "0, 1.0, 1.0"
     DelayMinMax:
@@ -912,10 +783,7 @@ CreatureSpawning:
   - "ShallowWater"
   - "WaterSwamp_1"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 75
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
@@ -923,10 +791,7 @@ CreatureSpawning:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 12
     DelayMinMax:
     - 10
@@ -935,10 +800,7 @@ CreatureSpawning:
 - Biomes:
   - "Beach_1"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 20
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
@@ -950,38 +812,26 @@ CreatureSpawning:
   - "Savanna"
   - "SavannaEdge"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "RaptorHerd"
+  - Name: "RaptorHerd"
     Amount: 35
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 20
     Color: "0.5, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs04"
+  - Name: "AlienBugs04"
     Amount: 10
     Color: "0, 1.0, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Pangolins"
+  - Name: "Pangolins"
     Amount: 15
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
@@ -991,38 +841,26 @@ CreatureSpawning:
 - Biomes:
   - "Sand"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "RaptorHerd"
+  - Name: "RaptorHerd"
     Amount: 10
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 10
     Color: "0.5, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs04"
+  - Name: "AlienBugs04"
     Amount: 25
     Color: "0, 1.0, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Pangolins"
+  - Name: "Pangolins"
     Amount: 5
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
@@ -1032,20 +870,14 @@ CreatureSpawning:
 - Biomes:
   - "DustBowl"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders01"
+  - Name: "Spiders01"
     Amount: 15
     Color: "1.0, 1, 1"
     DelayMinMax:
     - 20
     - 24
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 10
     DelayMinMax:
     - 10
@@ -1054,20 +886,14 @@ CreatureSpawning:
 - Biomes:
   - "LowMountains"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders01"
+  - Name: "Spiders01"
     Amount: 8
     Color: "1.0, 1, 1"
     DelayMinMax:
     - 20
     - 24
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 10
     DelayMinMax:
     - 10
@@ -1077,10 +903,7 @@ CreatureSpawning:
   - "Glacier"
   - "GlacierSnow"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "GolemsIce"
+  - Name: "GolemsIce"
     Amount: 8
     Color: "1.0, 0.4, 0.4"
     DelayMinMax:
@@ -1089,40 +912,28 @@ CreatureSpawning:
 - Biomes:
   - "Grassland"
   Entities:
-  - DelayRange:
-      Min: 6
-      Max: 8
-    Name: "ParasaursFew"
+  - Name: "ParasaursFew"
     Amount: 25
     Color: "0, 0, 1.0"
     DelayMinMax:
     - 6
     - 8
     Period: "Always"
-  - DelayRange:
-      Min: 8
-      Max: 12
-    Name: "Pangolins"
+  - Name: "Pangolins"
     Amount: 10
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
     - 8
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 6
-      Max: 8
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 20
     Color: "0, 1.0, 1.0"
     DelayMinMax:
     - 6
     - 8
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders01few"
+  - Name: "Spiders01few"
     Amount: 5
     Color: "1.0, 1, 1"
     DelayMinMax:
@@ -1132,10 +943,7 @@ CreatureSpawning:
   - Name: "Spiders01few"
     Amount: 10
     Color: "1.0, 1, 1"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 10
     Color: "0.5, 0, 0"
     DelayMinMax:
@@ -1144,29 +952,20 @@ CreatureSpawning:
 - Biomes:
   - "ColdPlains"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 10
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Oviraptors"
+  - Name: "Oviraptors"
     Amount: 15
     Color: "0.4, 0.2, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 20
     Color: "0.5, 0, 0"
     DelayMinMax:
@@ -1176,29 +975,20 @@ CreatureSpawning:
   - "Tundra"
   - "TundraEdge"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Oviraptors"
+  - Name: "Oviraptors"
     Amount: 15
     Color: "0.4, 0.2, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 5
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 30
     Color: "0.5, 0, 0"
     DelayMinMax:
@@ -1207,39 +997,27 @@ CreatureSpawning:
 - Biomes:
   - "PolarSnow"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "SlimesWhite"
+  - Name: "SlimesWhite"
     Amount: 10
     Color: "1.0, 1.0, 0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Oviraptors"
+  - Name: "Oviraptors"
     Amount: 10
     Color: "0.4, 0.2, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "CaveWormWhiteHerd"
+  - Name: "CaveWormWhiteHerd"
     Amount: 6
     Color: "1.0, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "GolemsIce"
+  - Name: "GolemsIce"
     Amount: 3
     Color: "1.0, 0.4, 0.4"
     DelayMinMax:
@@ -1292,10 +1070,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "1.0, 0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "Spiders01"
     DelayMinMax:
     - 99
@@ -1313,10 +1088,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "1.0, 1, 0.3, 1.0"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "Spiders02"
     DelayMinMax:
     - 99
@@ -1333,10 +1105,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "1.0, 1, 0.3, 1.0"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "Spiders03"
     DelayMinMax:
     - 99
@@ -1353,10 +1122,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "1.0, 1, 0.3, 1.0"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "Spiders01few"
     DelayMinMax:
     - 99
@@ -1369,10 +1135,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "0.0, 0, 1.0, 1"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "Spiders01few"
     DelayMinMax:
     - 99
@@ -1386,10 +1149,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "0.0, 1, 0.0, 0.15"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "Spiders01few"
     DelayMinMax:
     - 99
@@ -1407,10 +1167,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0, 1.0, 0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Grassland"
@@ -1440,10 +1197,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0, 1.0, 0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Any"
@@ -1452,10 +1206,7 @@ SpawnZones:
     - 200
     - 240
     Period: "Always"
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "LizardMuleHerd"
     Biomes:
     - "Grassland"
@@ -1478,10 +1229,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0, 1.0, 0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Any"
@@ -1498,10 +1246,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.3
   Color: "0.0, 1.0, 1.0, 0.5"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -1522,10 +1267,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs03"
     - "Spiders01"
     Biomes:
@@ -1548,10 +1290,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "Spiders01"
     Biomes:
     - "Any"

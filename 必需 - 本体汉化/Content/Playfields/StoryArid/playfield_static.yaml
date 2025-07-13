@@ -1,8 +1,5 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "StoryArid"
-PlanetSize: 2
 Difficulty: 2
 SunFlare: "EnvironmentalEffects/SunFlareWhite2"
 SpecialEffectsLocal:
@@ -21,6 +18,7 @@ SpecialEffectsLocal:
   - "Desert"
   - "Dunes"
   - "Rocks"
+  FollowPlayerY: false
 - Name: "FireFliesGreenFew"
   MaxHeight: 15
   Time: "Night"
@@ -68,64 +66,43 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsLight"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsMedium"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 3
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "Clouds"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 12
   Delay: 10
-  PlyDist: 100
   Lifetime: 1000
   Type: "Weather"
 - Name: "Wind"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 24
   Delay: 10
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "Fog"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 1000
   Type: "Weather"
 - Name: "HeatWave"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "FogRadiationGreen"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "BirdFlocksVultures"
@@ -139,7 +116,6 @@ SpecialEffectsGlobal:
   Lifetime: 600
 - Name: "MeteorShower"
   SpawnY: 100
-  Time: "Always"
   Biome:
   - "Savanna"
   - "SavannaEdge"
@@ -150,7 +126,6 @@ SpecialEffectsGlobal:
   PlyDist: 200
   Struct: "Avoid"
   Lifetime: 60
-AtmosphereEnabled: true
 AtmosphereColor: "1.0, 0.86, 0.88"
 SkyColor: "1, 0.6, 0.6"
 SkyHorizonColor: "1, 0.2, 0.2"
@@ -159,24 +134,16 @@ LightHorizonColor: "1, 0.3, 0.2"
 NightLightColor: "0.7, 0.7, 1"
 CloudsZenithColor: "0.5, 0.3, 0.4"
 CloudsHorizonColor: "1, 0.18, 0.18"
-CloudsNightZenithColor: "0.054, 0.094, 0.152"
-CloudsNightHorizonColor: "0.054, 0.094, 0.152"
 CloudsOpacity: 1
 FogCloudIntensity: 0.8
 DayLightIntensity: 1.3
 NightLightIntensity: 0.48
 DayShadowStrength: 0.95
-NightShadowStrength: 0.4
 CloudsDensity: 0.4
 CloudsSharpness: 0.3
 CloudsBrightness: 1
 WindSpeed: 4
-FogColor: "0.8, 0.8, 0.8"
 Description: "\u5E72\u88C2\u7684\u5C71\u8109\u3001\u5D0E\u5C96\u7684\u7A00\u6811\u8349\u539F\u548C\u8270\u82E6\u7684\u5E73\u539F,\u5E72\u6DB8\u7684\u6E56\u6CCA\u5E8A\u5730\u4E0A\u6B8B\u7559\u7740\u66FE\u7ECF\u7E41\u8363\u7684\u52A8\u690D\u7269\u751F\u547D\u7684\u75D5\u8FF9\u3002\u8FD9\u9897\u708E\u70ED\u3001\u5E72\u71E5\u800C\u53C8\u4E25\u5389\u7684\u884C\u661F\u62E5\u6709\u7A00\u8584\u7684\u5927\u6C14,\u4EBA\u7C7B\u65E0\u6CD5\u547C\u5438\u3002\u5BF9\u4E8E\u559C\u6B22\u9762\u5BF9\u708E\u70ED\u548C\u7F3A\u6C27\u5371\u9669\u7684\u73A9\u5BB6\u6765\u8BF4,\u8FD9\u662F\u4E00\u4E2A[c][FFFFFF]\u66F4\u5177\u6311\u6218\u6027\u7684[-][/c]\u5F00\u5C40\u3002\n\n[i]- \u7528\u6C34\u964D\u6E29;\u7528\u51B7\u51DD\u5668\u4EA7\u751F\u6C27\u6C14\u3002\n- \u6076\u52A3\u7684\u5929\u6C14\u548C\u597D\u6597\u7684\u90BB\u5C45\u5C06\u4F1A\u5230\u6765\u3002\u505A\u597D\u51C6\u5907\u3002[/i]\n"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "Story"
 UseRandom: true
 AllowSV: false
@@ -191,16 +158,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 5
-    Max: 6
-  Size:
-    Min: 5
-    Max: 7
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "IronResource"
+- Name: "IronResource"
   IsScalingCount: true
   CountMinMax:
   - 5
@@ -212,23 +170,13 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "Dunes"
   - "SavannaEdge"
   - "Savanna"
   - "LowMountains"
   - "Mountains"
-- Count:
-    Min: 3
-    Max: 5
-  Size:
-    Min: 4
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "CopperResource"
+- Name: "CopperResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -240,22 +188,12 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.3
-  MaxDroneCount: 1
   Biome:
   - "Rocks"
   - "SavannaEdge"
   - "LowMountains"
   - "Mountains"
-- Count:
-    Min: 3
-    Max: 4
-  Size:
-    Min: 4
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -267,22 +205,13 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.3
-  MaxDroneCount: 1
   Biome:
   - "Dunes"
   - "Oasis"
   - "OasisEdge"
   - "Marsh"
   - "Shore"
-- Count:
-    Min: 2
-    Max: 2
-  Size:
-    Min: 3
-    Max: 5
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -297,19 +226,10 @@ RandomResources:
     MaxRadius: 13
     YVariance: 10
   DroneProb: 0.8
-  MaxDroneCount: 1
   Biome:
   - "Mountains"
   - "LowMountains"
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 6
-    Max: 8
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsImportant: true
   IsScalingCount: true
   CountMinMax:
@@ -325,19 +245,10 @@ RandomResources:
     MaxRadius: 13
     YVariance: 10
   DroneProb: 0.8
-  MaxDroneCount: 1
   Biome:
   - "Radiated"
   - "RadiatedFog"
-- Count:
-    Max: 1
-  Size:
-    Min: 2
-    Max: 2
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "GoldResource"
+- Name: "GoldResource"
   CountMinMax:
   - 0
   - 1
@@ -347,7 +258,6 @@ RandomResources:
   DepthMinMax:
   - 5
   - 10
-  MaxDroneCount: 1
   Biome:
   - "Mountains"
 AsteroidResources:
@@ -373,10 +283,7 @@ AsteroidResources:
   Delay: -1
 POIs:
   Random:
-  - SpawnPoiRange:
-      Min: 80
-      Max: 10
-    GroupName: "NullPOI"
+  - GroupName: "NullPOI"
     Territory: false
     IsImportant: true
     Count:
@@ -390,13 +297,7 @@ POIs:
     SpawnPOINearRange:
     - 80
     - 10
-  - SpawnPoiRange:
-      Min: 100
-      Max: 380
-    SpawnResRange:
-      Min: 150
-      Max: 400
-    GroupName: "StoryDmgComStation"
+  - GroupName: "StoryDmgComStation"
     Faction: "None"
     Territory: false
     AvoidFactionTerritory: true
@@ -424,10 +325,7 @@ POIs:
     SpawnResourceRange:
     - 150
     - 400
-  - SpawnPoiRange:
-      Min: 80
-      Max: 200
-    GroupName: "Junksite"
+  - GroupName: "Junksite"
     Faction: "None"
     Territory: false
     Count:
@@ -449,10 +347,7 @@ POIs:
     - 80
     - 200
     SpawnPOIAvoidDistance: 80
-  - SpawnPoiRange:
-      Min: 1200
-      Max: 1400
-    GroupName: "TribalVillageWoodStory"
+  - GroupName: "TribalVillageWoodStory"
     Faction: "Talon"
     Territory: false
     IsImportant: true
@@ -478,10 +373,7 @@ POIs:
     - "RadiatedFog"
     - "ShallowWater"
     - "Shore"
-  - SpawnPoiRange:
-      Min: 400
-      Max: 600
-    GroupName: "BAStoryCryoStation"
+  - GroupName: "BAStoryCryoStation"
     Faction: "Alien"
     Territory: false
     IsImportant: true
@@ -510,10 +402,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 80
-      Max: 100
-    GroupName: "TribalField"
+  - GroupName: "TribalField"
     Faction: "Talon"
     Territory: false
     Count:
@@ -536,10 +425,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 80
-      Max: 150
-    GroupName: "TribalField"
+  - GroupName: "TribalField"
     Faction: "Talon"
     Territory: false
     Count:
@@ -559,10 +445,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 140
-      Max: 250
-    GroupName: "RuinsTribal"
+  - GroupName: "RuinsTribal"
     Faction: "Talon"
     Territory: false
     Count:
@@ -582,10 +465,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 120
-      Max: 200
-    GroupName: "TribalDefenceStone"
+  - GroupName: "TribalDefenceStone"
     Faction: "Talon"
     Territory: false
     Count:
@@ -605,10 +485,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 200
-      Max: 350
-    GroupName: "TribalDefenceStone"
+  - GroupName: "TribalDefenceStone"
     Faction: "Talon"
     Territory: false
     Count:
@@ -629,10 +506,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 1500
-      Max: 1600
-    GroupName: "UCHHeidelberg"
+  - GroupName: "UCHHeidelberg"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -666,10 +540,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 75
-      Max: 150
-    GroupName: "DamagedHV"
+  - GroupName: "DamagedHV"
     Faction: "None"
     Territory: false
     Type: "HV_Player"
@@ -691,10 +562,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 1500
-      Max: 1600
-    GroupName: "PolarisSanctuaryStory"
+  - GroupName: "PolarisSanctuaryStory"
     Faction: "Polaris"
     Territory: false
     NoShieldReload: true
@@ -723,10 +591,7 @@ POIs:
     - "Radiated"
     - "RadiatedFog"
     - "Rocks"
-  - SpawnPoiRange:
-      Min: 500
-      Max: 800
-    GroupName: "BurialChamberStory"
+  - GroupName: "BurialChamberStory"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -757,10 +622,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 150
-      Max: 200
-    GroupName: "JunkT1"
+  - GroupName: "JunkT1"
     UseEachGroupPoiOnlyOnce: true
     Faction: "None"
     Territory: false
@@ -780,10 +642,7 @@ POIs:
     SpawnPOINearRange:
     - 150
     - 200
-  - SpawnPoiRange:
-      Min: 180
-      Max: 240
-    GroupName: "Ruins"
+  - GroupName: "Ruins"
     Faction: "None"
     Territory: false
     Count:
@@ -802,10 +661,7 @@ POIs:
     SpawnPOINearRange:
     - 180
     - 240
-  - SpawnPoiRange:
-      Min: 5000
-      Max: 10000
-    GroupName: "WreckTeleporterStory"
+  - GroupName: "WreckTeleporterStory"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -832,10 +688,7 @@ POIs:
     Biome:
     - "Dunes"
     - "SavannaEdge"
-  - SpawnPoiRange:
-      Min: 70
-      Max: 140
-    GroupName: "UCHDartWreck"
+  - GroupName: "UCHDartWreck"
     Faction: "None"
     Territory: false
     Type: "SV_Player"
@@ -858,10 +711,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 300
-      Max: 800
-    GroupName: "DroneBaseStarter"
+  - GroupName: "DroneBaseStarter"
     DroneSetupID: "DroneBaseZiraxStarter"
     Faction: "Zirax"
     Territory: false
@@ -901,10 +751,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 200
-      Max: 600
-    GroupName: "XenuStarter"
+  - GroupName: "XenuStarter"
     Faction: "Zirax"
     Territory: false
     NoShieldReload: true
@@ -936,10 +783,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 500
-      Max: 700
-    GroupName: "XenuDefenceT1"
+  - GroupName: "XenuDefenceT1"
     Faction: "Zirax"
     Territory: false
     NoShieldReload: true
@@ -973,10 +817,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 800
-      Max: 1000
-    GroupName: "XenuDefenceT1"
+  - GroupName: "XenuDefenceT1"
     Faction: "Zirax"
     Territory: false
     NoShieldReload: true
@@ -1011,10 +852,7 @@ POIs:
     BiomesExcluded:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnResRange:
-      Min: 150
-      Max: 400
-    GroupName: "Artifacts"
+  - GroupName: "Artifacts"
     Faction: "TheLegacy"
     Territory: false
     IsImportant: true
@@ -1041,13 +879,7 @@ POIs:
     Biome:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 3000
-      Max: 16000
-    SpawnResRange:
-      Min: 90
-      Max: 90
-    GroupName: "SignalMarker01"
+  - GroupName: "SignalMarker01"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -1081,10 +913,7 @@ POIs:
     Biome:
     - "Radiated"
     - "RadiatedFog"
-  - SpawnResRange:
-      Min: 150
-      Max: 400
-    GroupName: "TribalBazarStone"
+  - GroupName: "TribalBazarStone"
     Faction: "Talon"
     Territory: false
     IsImportant: true
@@ -1110,10 +939,7 @@ POIs:
     - "Savanna"
     - "SavannaEdge"
     - "Forest"
-  - SpawnPoiRange:
-      Min: 100
-      Max: 250
-    GroupName: "TribalBazarStoneAux"
+  - GroupName: "TribalBazarStoneAux"
     Faction: "Talon"
     Territory: false
     Count:
@@ -1135,10 +961,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 50
-      Max: 120
-    GroupName: "TribalField"
+  - GroupName: "TribalField"
     Faction: "Talon"
     Territory: false
     Count:
@@ -1159,10 +982,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 250
-      Max: 320
-    GroupName: "TribalDefenceStone"
+  - GroupName: "TribalDefenceStone"
     Faction: "Talon"
     Territory: false
     Count:
@@ -1183,10 +1003,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 6000
-      Max: 20000
-    GroupName: "TribalZiggurat"
+  - GroupName: "TribalZiggurat"
     Faction: "Talon"
     Territory: false
     IsCommandCenter: true
@@ -1221,10 +1038,7 @@ POIs:
     - "LowMountains"
     - "Mountains"
     - "HighMountains"
-  - SpawnPoiRange:
-      Min: 100
-      Max: 200
-    GroupName: "TribalBazarStoneAux"
+  - GroupName: "TribalBazarStoneAux"
     Faction: "Talon"
     Territory: false
     Count:
@@ -1246,10 +1060,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 250
-      Max: 300
-    GroupName: "RuinsTribalTower"
+  - GroupName: "RuinsTribalTower"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -1269,10 +1080,7 @@ POIs:
     SpawnPOINearRange:
     - 250
     - 300
-  - SpawnPoiRange:
-      Min: 180
-      Max: 300
-    GroupName: "TribalVillageStone"
+  - GroupName: "TribalVillageStone"
     Faction: "Talon"
     Territory: false
     Count:
@@ -1302,10 +1110,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 85
-      Max: 120
-    GroupName: "TribalField"
+  - GroupName: "TribalField"
     Faction: "Talon"
     Territory: false
     Count:
@@ -1326,10 +1131,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 250
-      Max: 350
-    GroupName: "TribalDefenseTower"
+  - GroupName: "TribalDefenseTower"
     Faction: "Talon"
     Territory: false
     Count:
@@ -1350,10 +1152,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 200
-      Max: 400
-    GroupName: "RuinsTribal"
+  - GroupName: "RuinsTribal"
     Faction: "None"
     Territory: false
     Count:
@@ -1376,10 +1175,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 3000
-      Max: 20000
-    GroupName: "TribalVillageStone"
+  - GroupName: "TribalVillageStone"
     Faction: "Talon"
     Territory: false
     AvoidFactionTerritory: true
@@ -1418,10 +1214,7 @@ POIs:
     - "HighMountains"
     - "Glacier"
     - "GlacierSnow"
-  - SpawnPoiRange:
-      Min: 110
-      Max: 125
-    GroupName: "TribalField"
+  - GroupName: "TribalField"
     Faction: "Talon"
     Territory: false
     IsAuxPOI: true
@@ -1441,10 +1234,7 @@ POIs:
     - "PolarSnow"
     - "Radiated"
     - "RadiatedFog"
-  - SpawnPoiRange:
-      Min: 80
-      Max: 200
-    GroupName: "TribalDefenceStone"
+  - GroupName: "TribalDefenceStone"
     Faction: "Talon"
     Territory: false
     IsAuxPOI: true
@@ -1500,10 +1290,7 @@ POIs:
     - "Savanna"
     - "SavannaEdge"
     - "Rocks"
-  - SpawnPoiRange:
-      Min: 1500
-      Max: 20000
-    GroupName: "TribalBurialChamber"
+  - GroupName: "TribalBurialChamber"
     Faction: "None"
     Territory: false
     IsScalingCount: true
@@ -1538,10 +1325,7 @@ POIs:
     - "Rocks"
     - "LowMountains"
     - "Savanna"
-  - SpawnPoiRange:
-      Min: 300
-      Max: 500
-    GroupName: "BAStarterLab"
+  - GroupName: "BAStarterLab"
     Faction: "Alien"
     Territory: false
     Count:
@@ -1558,10 +1342,7 @@ POIs:
     SpawnPOINearRange:
     - 300
     - 500
-  - SpawnPoiRange:
-      Min: 150
-      Max: 300
-    GroupName: "BAStarterConvoy"
+  - GroupName: "BAStarterConvoy"
     Faction: "Alien"
     Territory: false
     Count:
@@ -1578,10 +1359,7 @@ POIs:
     SpawnPOINearRange:
     - 150
     - 300
-  - SpawnPoiRange:
-      Min: 250
-      Max: 600
-    GroupName: "BAStarterBunker"
+  - GroupName: "BAStarterBunker"
     Faction: "Alien"
     Territory: false
     Count:
@@ -1598,10 +1376,7 @@ POIs:
     SpawnPOINearRange:
     - 250
     - 600
-  - SpawnPoiRange:
-      Min: 70
-      Max: 150
-    GroupName: "BAStarterWreckageCV"
+  - GroupName: "BAStarterWreckageCV"
     Faction: "Zirax"
     Territory: false
     Count:
@@ -1661,10 +1436,7 @@ POIs:
     SpawnPOIAvoid:
     - "START"
     SpawnPOIAvoidDistance: 1500
-  - SpawnPoiRange:
-      Min: 200
-      Max: 500
-    GroupName: "Wreckage"
+  - GroupName: "Wreckage"
     Faction: "None"
     Territory: false
     Count:
@@ -1686,10 +1458,7 @@ POIs:
     - 200
     - 500
     SpawnPOIAvoidDistance: 3000
-  - SpawnPoiRange:
-      Min: 80
-      Max: 150
-    GroupName: "Ruins"
+  - GroupName: "Ruins"
     Faction: "None"
     Territory: false
     Count:
@@ -1759,34 +1528,25 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneSmallFast01Rocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneTroopsTransport"
       Amount: "Infinite"
-      Extra: -1
       Type: "TroopTransport"
     - Name: "ZiraxMinigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "GroundTroop"
     - Name: "ZiraxRocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "GroundTroop"
     - Name: "RipperDog"
       Amount: "Infinite"
-      Extra: -1
       Type: "GroundTroop"
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 9
-      Max: 10
-    Name: "DroneSmallFast01Minigun"
+  - Name: "DroneSmallFast01Minigun"
     DronesMinMax:
     - 9
     - 10
@@ -1797,10 +1557,7 @@ CreatureSpawning:
 - Biomes:
   - "Crashsite"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 17
     Color: "0, 0, 1.0"
     DelayMinMax:
@@ -1811,36 +1568,24 @@ CreatureSpawning:
   - "SavannaEdge"
   - "Savanna"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 5
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "CaveWormGreyHerd"
+  - Name: "CaveWormGreyHerd"
     Amount: 10
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 17
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 6
-      Max: 8
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 20
     Color: "0, 1.0, 1.0"
     DelayMinMax:
@@ -1853,26 +1598,17 @@ CreatureSpawning:
   - "Sand"
   - "Rocks"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Otyughs"
+  - Name: "Otyughs"
     Amount: 20
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "GolemsDesert"
+  - Name: "GolemsDesert"
     Amount: 5
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 10
     DelayMinMax:
     - 10
@@ -1882,27 +1618,18 @@ CreatureSpawning:
   - "Oasis"
   - "OasisEdge"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 15
     DelayMinMax:
     - 10
     - 20
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 10
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 15
     DelayMinMax:
     - 10
@@ -1911,10 +1638,7 @@ CreatureSpawning:
 - Biomes:
   - "ShallowWater"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 25
     AllowInWater: true
     DelayMinMax:
@@ -1925,18 +1649,12 @@ CreatureSpawning:
   - "Marsh"
   - "Shore"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "CaveWormGreyHerd"
+  - Name: "CaveWormGreyHerd"
     Amount: 8
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 12
     DelayMinMax:
     - 10
@@ -1945,19 +1663,13 @@ CreatureSpawning:
 - Biomes:
   - "LowMountains"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 8
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 10
     DelayMinMax:
     - 10
@@ -1967,19 +1679,13 @@ CreatureSpawning:
   - "Radiated"
   - "RadiatedFog"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "AlienAssassinGreysInfected"
+  - Name: "AlienAssassinGreysInfected"
     Amount: 10
     Color: "0, 0, 0"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "AlienBugs03"
+  - Name: "AlienBugs03"
     Amount: 10
     Color: "0, 0, 0"
     DelayMinMax:
@@ -2013,10 +1719,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "1.0, 1, 0.3, 1.0"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "AlienAssassinGreysInfected"
     DelayMinMax:
     - 99
@@ -2036,10 +1739,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "1.0, 1, 0.3, 1.0"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "AlienAssassinGreysInfected"
     DelayMinMax:
     - 99
@@ -2053,10 +1753,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "1.0, 1, 0.3, 1.0"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "AlienAssassinGreysInfected"
     DelayMinMax:
     - 99
@@ -2069,10 +1766,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "0.0, 0, 1.0, 0.4"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "AlienAssassinGreysInfected"
     DelayMinMax:
     - 99
@@ -2086,10 +1780,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "0.0, 1, 0.0, 0.15"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "AlienAssassinGreysInfected"
     DelayMinMax:
     - 99
@@ -2108,10 +1799,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienAssassinGreysInfected"
     Biomes:
     - "Radiated"
@@ -2130,10 +1818,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "CaveWormGreyHerd"
     - "Spiders02"
     - "AlienAssassinGreysInfected"
@@ -2158,10 +1843,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "Spiders02"
     - "GolemsDesert"
     Biomes:
@@ -2184,10 +1866,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "Spiders02"
     - "GolemsDesert"
     Biomes:
@@ -2223,10 +1902,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.2, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Any"
@@ -2235,10 +1911,7 @@ SpawnZones:
     - 200
     - 240
     Period: "Always"
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "LizardMuleHerd"
     Biomes:
     - "Oasis"
@@ -2264,10 +1937,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.2, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Any"
@@ -2289,10 +1959,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.2, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Any"
@@ -2316,10 +1983,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.2, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Any"
@@ -2337,10 +2001,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.2, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Any"
@@ -2363,10 +2024,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 200
-      Max: 240
-    Names:
+  - Names:
     - "TalonGuardianHerd"
     Biomes:
     - "Any"
@@ -2389,10 +2047,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ZiraxMinigunPatrol"
     - "ZiraxRocketPatrol"
     - "ZiraxShotgunPatrol"
@@ -2419,10 +2074,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ZiraxMinigunPatrolEasy"
     - "ZiraxShotgunPatrolEasy"
     - "ZiraxRipperDogPatrolEasy"
@@ -2446,10 +2098,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ZiraxMinigunPatrolEasy"
     - "ZiraxShotgunPatrolEasy"
     - "ZiraxRocketPatrolEasy"
@@ -2473,10 +2122,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ZiraxMinigunPatrolEasy"
     - "ZiraxShotgunPatrolEasy"
     Biomes:
@@ -2498,10 +2144,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ZiraxRipperDogPatrolEasy"
     - "ZiraxShotgunPatrolEasy"
     Biomes:
@@ -2527,10 +2170,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ZiraxMinigunPatrol"
     - "ZiraxRocketPatrol"
     - "ZiraxShotgunPatrol"
@@ -2557,10 +2197,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ZiraxMinigunPatrol"
     - "ZiraxRocketPatrol"
     - "ZiraxShotgunPatrol"
@@ -2590,10 +2227,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.0, 0.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienCivilians1"
     Biomes:
     - "Any"
@@ -2602,10 +2236,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AssaultCyborgs"
     Biomes:
     - "Any"
@@ -2629,10 +2260,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.0, 0.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienCivilians1"
     Biomes:
     - "Oasis"
@@ -2646,10 +2274,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AssaultCyborgs"
     Biomes:
     - "Any"

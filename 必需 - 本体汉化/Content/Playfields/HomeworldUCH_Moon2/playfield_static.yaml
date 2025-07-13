@@ -1,18 +1,13 @@
 PlayfieldType: "Moon"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "Erebus"
-PlanetSize: 2
 Difficulty: 3
 SunFlare: "EnvironmentalEffects/SunFlareWhiteMoon"
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
-  PlyDist: 100
+  InitialDelay: 0
+  Delay: 0
   Lifetime: 3000
   Type: "Weather"
-AtmosphereEnabled: true
 AtmosphereColor: "0.30, 0.35, 0.35"
 AtmosphereParams:
 - 5
@@ -24,19 +19,17 @@ LightHorizonColor: "0.5, 0.4, 0.45"
 NightLightColor: "0.78, 0.78, 1"
 CloudsZenithColor: "0.0, -0.1, -0.1"
 CloudsHorizonColor: "1, 0.3, 0.1"
-CloudsNightZenithColor: "0.054, 0.094, 0.152"
-CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+CloudsOpacity: 0
+FogCloudIntensity: 0
 DayLightIntensity: 1.6
-NightLightIntensity: 0.7
 DayShadowStrength: 1
 NightShadowStrength: 1
 CloudsSharpness: 1
+CloudsBrightness: 0
+WindSpeed: 0
 FogColor: "0.9, 0.9, 0.1"
 Description: "\u8FD9\u9897\u536B\u661F\u7684\u5927\u6C14\u5C42\u975E\u5E38\u7A00\u8584 - \u5B83\u7531\u9644\u8FD1\u884C\u661F\u7684\u5F02\u5E38\u5DE8\u5927\u7684\u78C1\u573A\u4FDD\u62A4\u7740,\u800C\u4E14\u536B\u661F\u5BC6\u5EA6\u8DB3\u591F\u5927,\u80FD\u591F\u963B\u6B62\u4E00\u4E9B\u6C14\u4F53\u6F02\u5411\u592A\u7A7A\u3002\u56E0\u6B64,\u5B83\u6C89\u79EF\u4E86\u5927\u91CF\u7684\u6C99\u6F20\u5CA9\u6F06\u3002"
 Seed: 272253
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "Erebus"
 UseFixed: true
 UseRandom: true
@@ -52,16 +45,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 3
-    Max: 3
-  Size:
-    Min: 6
-    Max: 11
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "IronResource"
+- Name: "IronResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -73,21 +57,11 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.3
-  MaxDroneCount: 1
   Biome:
   - "LargeCrater"
   - "SmallCrater"
   - "Dunes"
-- Count:
-    Min: 3
-    Max: 5
-  Size:
-    Min: 8
-    Max: 9
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -99,21 +73,11 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.4
-  MaxDroneCount: 1
   Biome:
   - "LargeCrater"
   - "SmallCrater"
   - "Dunes"
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 5
-    Max: 6
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "CopperResource"
+- Name: "CopperResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -125,22 +89,12 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.7
-  MaxDroneCount: 1
   Biome:
   - "LargeCrater"
   - "SmallCrater"
   - "Dunes"
   - "LowMountains"
-- Count:
-    Min: 4
-    Max: 4
-  Size:
-    Min: 5
-    Max: 8
-  Depth:
-    Min: 30
-    Max: 45
-  Name: "AluminiumResource"
+- Name: "AluminiumResource"
   IsScalingCount: true
   CountMinMax:
   - 4
@@ -152,20 +106,11 @@ RandomResources:
   - 30
   - 45
   DroneProb: 0.7
-  MaxDroneCount: 1
   Biome:
   - "LowMountains"
   - "Mountains"
   - "RayCrater"
-- Count:
-    Min: 2
-    Max: 4
-  Size:
-    Min: 3
-    Max: 6
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -180,20 +125,11 @@ RandomResources:
     MaxRadius: 13
     YVariance: 10
   DroneProb: 0.7
-  MaxDroneCount: 1
   Biome:
   - "LowMountains"
   - "Mountains"
   - "RayCrater"
-- Count:
-    Min: 4
-    Max: 5
-  Size:
-    Min: 2
-    Max: 3
-  Depth:
-    Max: 5
-  Name: "PentaxidResource"
+- Name: "PentaxidResource"
   IsScalingCount: true
   CountMinMax:
   - 4
@@ -338,10 +274,7 @@ POIs:
     - "SmallCrater"
     - "Dunes"
     - "Mare"
-  - SpawnPoiRange:
-      Min: 200
-      Max: 1000
-    GroupName: "UCHFuelDepot"
+  - GroupName: "UCHFuelDepot"
     Faction: "UCH"
     Territory: false
     NoShieldReload: true
@@ -384,25 +317,18 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneSmallFast01Rocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneTroopsTransport"
       Amount: "Infinite"
-      Extra: -1
       Type: "TroopTransport"
     - Name: "SoldierAlienAssaultRifle"
       Amount: "Infinite"
-      Extra: -1
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 9
-      Max: 10
-    Name: "DroneSmallFast01Rocket"
+  - Name: "DroneSmallFast01Rocket"
     DronesMinMax:
     - 9
     - 10
@@ -415,10 +341,7 @@ SpawnZones:
   Radius: 200
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "UCHPatrolMediumMinigun"
     Biomes:
     - "Any"
@@ -431,10 +354,7 @@ SpawnZones:
   Radius: 600
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "UCHRocketPatrolSmall"
     Biomes:
     - "Any"
@@ -447,10 +367,7 @@ SpawnZones:
   Radius: 900
   Color: "1.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "UCHRocketPatrolSmall"
     Biomes:
     - "Any"

@@ -1,83 +1,60 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "WastelandersHomeworld"
-PlanetSize: 2
 Difficulty: 10
 SunFlare: "EnvironmentalEffects/SunFlareWhite4Space"
 SpecialEffectsLocal:
 - Name: "SnowLight"
-  MaxHeight: 200
-  Time: "Always"
   FollowPlayerY: false
 - Name: "Grime"
   MaxHeight: 50
-  Time: "Always"
   Biome:
   - "Radiated"
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "CloudsDark"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 12
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsDark"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 4
-  PlyDist: 100
+  Delay: 0
   Lifetime: 1200
   Type: "Weather"
 - Name: "Fog"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 12
-  PlyDist: 100
   Lifetime: 300
   Type: "Weather"
 - Name: "AcidRainHeavy"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 72
-  PlyDist: 100
   Lifetime: 300
   Type: "Weather"
 - Name: "Hail"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 72
   Delay: 72
-  PlyDist: 100
   Lifetime: 300
   Type: "Weather"
 - Name: "FogRadiationPurple"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 300
   Type: "Weather"
 - Name: "ThunderAndLightning"
   SpawnY: 500
+  Time: "Night"
   InitialDelay: 6
   Delay: 48
-  PlyDist: 100
   Struct: "Avoid"
   Lifetime: 180
 - Name: "ThunderAndLightningRed"
   SpawnY: 500
+  Time: "Night"
   InitialDelay: 6
   Delay: 48
-  PlyDist: 100
   Struct: "Avoid"
   Lifetime: 180
-AtmosphereEnabled: true
 AtmosphereColor: "0.57, 0.5, 0.5"
 AtmosphereParams:
 - 6
@@ -91,7 +68,6 @@ CloudsZenithColor: "0.35, 0.30, 0.30"
 CloudsHorizonColor: "1, 0.3, 0.1"
 CloudsNightZenithColor: "0.03, 0, 0"
 CloudsNightHorizonColor: "1, 0.3, 0.1"
-CloudsOpacity: 0.9
 FogCloudIntensity: 0.8
 DayLightIntensity: 0.15
 NightLightIntensity: 0.35
@@ -105,9 +81,7 @@ FogColor: "0.7,0.55,0.45"
 GroundFogIntensity: 0.01
 GroundFogHeight: 5
 Description: "\u8352\u539F\u90E8\u843D\u7684\u5BB6\u56ED"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-AllowSavingBlueprints: true
+BaseAttackCount: 0
 PlanetClass: "WastelandersHomeworld"
 UseRandom: true
 AllowSV: false
@@ -122,15 +96,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 5
-    Max: 7
-  Size:
-    Min: 5
-    Max: 7
-  Depth:
-    Max: 3
-  Name: "IronResource"
+- Name: "IronResource"
   CountMinMax:
   - 5
   - 7
@@ -141,7 +107,6 @@ RandomResources:
   - 0
   - 3
   DroneProb: 0.2
-  MaxDroneCount: 1
 POIs:
   Random:
   - GroupName: "WSTDroneBase"
@@ -261,10 +226,7 @@ POIs:
     Properties:
     - Key: "RegenAfter"
       Value: "720"
-  - SpawnPoiRange:
-      Min: 500
-      Max: 800
-    GroupName: "WSTDefense"
+  - GroupName: "WSTDefense"
     Faction: "Wastelanders"
     Territory: false
     NoShieldReload: true
@@ -295,19 +257,15 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneSmallFast01Rocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneTroopsTransport"
       Amount: "Infinite"
-      Extra: -1
       Type: "TroopTransport"
     - Name: "SoldierAlienAssaultRifle"
       Amount: "Infinite"
-      Extra: -1
   PlanetVessels:
   - Name: "OPVWSTT2"
     CountMinMax:
@@ -326,7 +284,6 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
   - Name: "CivilianDroneCVfast"
     CountMinMax:
@@ -405,10 +362,7 @@ DroneBaseSetup:
       DistToGround: 120
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 9
-      Max: 10
-    Name: "DroneSmallFast01Rocket"
+  - Name: "DroneSmallFast01Rocket"
     DronesMinMax:
     - 9
     - 10

@@ -1,19 +1,14 @@
 PlayfieldType: "Moon"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "MoonLava"
-PlanetSize: 2
 Emissive: true
 Difficulty: 3
 SunFlare: "EnvironmentalEffects/SunFlareRed"
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
-  PlyDist: 100
+  InitialDelay: 0
+  Delay: 0
   Lifetime: 1000
   Type: "Weather"
-AtmosphereEnabled: true
 AtmosphereColor: "0.88, 0.48, 0.25"
 AtmosphereParams:
 - 2
@@ -25,19 +20,17 @@ LightHorizonColor: "1, 0.6, 0.15"
 NightLightColor: "0.78, 0.78, 1"
 CloudsZenithColor: "-0.1, -0.2, -0.2"
 CloudsHorizonColor: "1, 0.3, 0.1"
-CloudsNightZenithColor: "0.054, 0.094, 0.152"
-CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+CloudsOpacity: 0
+FogCloudIntensity: 0
 DayLightIntensity: 0.65
 NightLightIntensity: 0.8
 DayShadowStrength: 1
 NightShadowStrength: 1
 CloudsSharpness: 1
+CloudsBrightness: 0
+WindSpeed: 0
 FogColor: "1, 0, 0"
 Description: "\u4E00\u9897\u5E7C\u6708,\u6838\u5FC3\u5C1A\u672A\u56FA\u5316,\u5927\u6C14\u5C42\u53EA\u6709\u5FAE\u5F31\u75D5\u8FF9\u3002\n\u6216\u8BB8\u5B83\u8BDE\u751F\u4E8E\u6052\u661F\u76D8,\u6216\u662F\u6765\u81EA\u4E00\u6B21\u58EE\u89C2\u884C\u661F\u78B0\u649E\u7684\u6B8B\u7559\u7269\u3002"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "MoonLava"
 UseRandom: true
 AllowSV: false
@@ -52,16 +45,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 3
-    Max: 5
-  Size:
-    Min: 8
-    Max: 13
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "IronResource"
+- Name: "IronResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -73,17 +57,7 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.3
-  MaxDroneCount: 1
-- Count:
-    Min: 3
-    Max: 5
-  Size:
-    Min: 8
-    Max: 9
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -95,17 +69,7 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.4
-  MaxDroneCount: 1
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 5
-    Max: 6
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "CobaltResource"
+- Name: "CobaltResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -117,17 +81,7 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.7
-  MaxDroneCount: 1
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 3
-    Max: 4
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "MagnesiumResource"
+- Name: "MagnesiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -139,19 +93,10 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.7
-  MaxDroneCount: 1
   BiomesExcluded:
   - "SmallCrater"
   - "LargeCrater"
-- Count:
-    Min: 2
-    Max: 4
-  Size:
-    Min: 3
-    Max: 6
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -166,19 +111,10 @@ RandomResources:
     MaxRadius: 13
     YVariance: 10
   DroneProb: 0.7
-  MaxDroneCount: 1
   Biome:
   - "Mare"
   - "MareEdge"
-- Count:
-    Min: 4
-    Max: 5
-  Size:
-    Min: 2
-    Max: 3
-  Depth:
-    Max: 5
-  Name: "PentaxidResource"
+- Name: "PentaxidResource"
   IsScalingCount: true
   CountMinMax:
   - 4
@@ -292,10 +228,7 @@ POIs:
       Value: "Neutral"
     - Key: "RegenAfter"
       Value: "720"
-  - SpawnResRange:
-      Min: 80
-      Max: 400
-    GroupName: "GhystAuxT1"
+  - GroupName: "GhystAuxT1"
     Faction: "Ghyst"
     Territory: false
     NoShieldReload: true
@@ -338,12 +271,16 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Rocket"
       Amount: "100"
+      Extra: 0
     - Name: "DroneSmallFast01Minigun"
       Amount: "200"
+      Extra: 0
     - Name: "DroneLargeSlow01Minigun"
       Amount: "100"
+      Extra: 0
     - Name: "DroneSmallSlow01Cannon"
       Amount: "200"
+      Extra: 0
     - Name: "DroneSmallAttackBase"
       Amount: "300"
       Extra: 1
@@ -358,18 +295,12 @@ DroneBaseSetup:
       Extra: 3
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 5
-      Max: 10
-    DronesMinMax:
+  - DronesMinMax:
     - 5
     - 10
     CenterX: -2500
     Radius: 1500
-  - Drones:
-      Min: 5
-      Max: 10
-    DronesMinMax:
+  - DronesMinMax:
     - 5
     - 10
     CenterX: 2500

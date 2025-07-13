@@ -1,9 +1,5 @@
 PlayfieldType: "Moon"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "AlienSwampStarter"
-PlanetSize: 2
-Difficulty: 1
 SunFlare: "EnvironmentalEffects/SunFlareYellow3"
 SpecialEffectsLocal:
 - Name: "FireFliesGreen"
@@ -32,7 +28,6 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 - Name: "TarantulaHawksFew"
   MaxHeight: 15
-  Time: "Always"
   Biome:
   - "Swamp"
   - "SwampUpper"
@@ -90,87 +85,58 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "CloudsMedium"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsLight"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 4
   Delay: 2
-  PlyDist: 100
   Lifetime: 1000
   Type: "Weather"
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 8
   Delay: 2
-  PlyDist: 100
   Lifetime: 800
   Type: "Weather"
 - Name: "CloudsDark"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 8
   Delay: 2
-  PlyDist: 100
   Lifetime: 800
   Type: "Weather"
 - Name: "Fog"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 8
   Delay: 3
-  PlyDist: 100
   Lifetime: 800
   Type: "Weather"
 - Name: "RainMedium"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 12
   Delay: 12
-  PlyDist: 100
   Lifetime: 1000
   Type: "Weather"
 - Name: "RainHeavy"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 30
   Delay: 24
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "Storm"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 500
   Type: "Weather"
 - Name: "AcidRainHeavy"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 96
   Delay: 48
-  PlyDist: 100
   Lifetime: 400
   Type: "Weather"
 - Name: "BirdFlocksCrows"
-  SpawnY: 50
   Time: "Day"
   Biome:
   - "Any"
   InitialDelay: 1
   Delay: 2
-  PlyDist: 100
   Lifetime: 600
 - Name: "BirdFlocksCrows"
-  SpawnY: 50
   Time: "Day"
   Biome:
   - "Any"
@@ -178,7 +144,6 @@ SpecialEffectsGlobal:
   Delay: 1
   PlyDist: 200
   Lifetime: 600
-AtmosphereEnabled: true
 AtmosphereColor: "0.57, 0.85, 0.71"
 SkyColor: "0.07, 0.60, 0.25"
 SkyHorizonColor: "1, 0.2, 0"
@@ -187,8 +152,6 @@ LightHorizonColor: "1, 0.5, 0.2"
 NightLightColor: "0.85, 0.78, 1"
 CloudsZenithColor: "0.9, 1.4, 1.5"
 CloudsHorizonColor: "1.7, 0.35, 0.25"
-CloudsNightZenithColor: "0.054, 0.094, 0.152"
-CloudsNightHorizonColor: "0.054, 0.094, 0.152"
 CloudsOpacity: 0.4
 FogCloudIntensity: 0.3
 DayLightIntensity: 1.4
@@ -202,9 +165,6 @@ WindSpeed: 3
 FogColor: "0.7, 0.85, 0.85"
 Description: "\u96BE\u5EA6:\u4E2D\u7B49\n\u6559\u7A0B:\u65E0\n\u4EFB\u52A1:\u6076\u72FC(Zirax \u6DF1\u6E0A\u519B)\n\n\u8FD9\u4E2A\u4E16\u754C\u968F\u7740\u6BCF\u4E00\u6B21\u5FC3\u8DF3\u800C\u53D8\u5F97\u66F4\u52A0\u5371\u9669\u3002\u5982\u679C\u4F60\u80FD\u5E78\u5B58\u4E0B\u6765,\u5E76\u4E14\u4E0D\u4ECB\u610F\u4F17\u591A\u9965\u997F\u7684\u76EE\u5149\u6CE8\u89C6\u7740\u4F60,\u90A3\u5C31\u627E\u5230\u90A3\u4E2A\u53E4\u8001\u7684 Zirax \u57FA\u5730\u3002\u4F60\u7684\u7ECF\u9A8C\u6216\u8BB8\u4F1A\u88AB\u8FEB\u5207\u9700\u8981\u2026\u2026\n"
 Seed: 575561
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "Alien Swamp"
 UseFixed: true
 UseRandom: true
@@ -220,15 +180,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 1
-    Max: 4
-  Size:
-    Min: 5
-    Max: 7
-  Depth:
-    Max: 5
-  Name: "CarbonResource"
+- Name: "CarbonResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -240,17 +192,7 @@ RandomResources:
   - 0
   - 5
   DroneProb: 0.2
-  MaxDroneCount: 1
-- Count:
-    Min: 1
-    Max: 4
-  Size:
-    Min: 5
-    Max: 7
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "IronResource"
+- Name: "IronResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -262,17 +204,7 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.2
-  MaxDroneCount: 1
-- Count:
-    Min: 1
-    Max: 4
-  Size:
-    Min: 4
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "CopperResource"
+- Name: "CopperResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -284,17 +216,7 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.3
-  MaxDroneCount: 1
-- Count:
-    Min: 1
-    Max: 6
-  Size:
-    Min: 4
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -306,17 +228,7 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.3
-  MaxDroneCount: 1
-- Count:
-    Min: 1
-    Max: 4
-  Size:
-    Min: 3
-    Max: 4
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "TitanResource"
+- Name: "TitanResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -328,17 +240,7 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.3
-  MaxDroneCount: 1
-- Count:
-    Min: 1
-    Max: 4
-  Size:
-    Min: 3
-    Max: 4
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "PentaxidResource"
+- Name: "PentaxidResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -350,7 +252,6 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.3
-  MaxDroneCount: 1
 AsteroidResources:
 - Name: "IronResource"
   Threshold: 0.2
@@ -374,13 +275,7 @@ AsteroidResources:
   Delay: -1
 POIs:
   Random:
-  - SpawnPoiRange:
-      Min: 80
-      Max: 10
-    SpawnResRange:
-      Min: 300
-      Max: 400
-    GroupName: "NullPOI"
+  - GroupName: "NullPOI"
     Territory: false
     IsImportant: true
     Count:
@@ -401,9 +296,7 @@ POIs:
     SpawnResourceRange:
     - 300
     - 400
-  - SpawnPoiRange:
-      Max: 200
-    GroupName: "GSmasperonStart"
+  - GroupName: "GSmasperonStart"
     Faction: "Civilian"
     Territory: false
     IsImportant: true
@@ -440,10 +333,7 @@ POIs:
     SpawnPOIAvoid:
     - "START"
     SpawnPOIAvoidDistance: 800
-  - SpawnPoiRange:
-      Min: 200
-      Max: 800
-    GroupName: "MasperonRDTrainingArena"
+  - GroupName: "MasperonRDTrainingArena"
     Faction: "Abyssal"
     Territory: false
     IsImportant: true
@@ -461,10 +351,7 @@ POIs:
     SpawnPOINearRange:
     - 200
     - 800
-  - SpawnPoiRange:
-      Min: 500
-      Max: 800
-    GroupName: "MasperonRDCage"
+  - GroupName: "MasperonRDCage"
     Faction: "Abyssal"
     Territory: false
     IsImportant: true
@@ -482,10 +369,7 @@ POIs:
     SpawnPOINearRange:
     - 500
     - 800
-  - SpawnPoiRange:
-      Min: 500
-      Max: 800
-    GroupName: "MasperonRDCageDMGpure"
+  - GroupName: "MasperonRDCageDMGpure"
     Faction: "Abyssal"
     Territory: false
     IsImportant: true
@@ -503,10 +387,7 @@ POIs:
     SpawnPOINearRange:
     - 500
     - 800
-  - SpawnPoiRange:
-      Min: 500
-      Max: 800
-    GroupName: "MasperonRDcageFight"
+  - GroupName: "MasperonRDcageFight"
     Faction: "Abyssal"
     Territory: false
     IsImportant: true
@@ -524,10 +405,7 @@ POIs:
     SpawnPOINearRange:
     - 500
     - 800
-  - SpawnPoiRange:
-      Min: 500
-      Max: 800
-    GroupName: "MasperonRDcageHostile"
+  - GroupName: "MasperonRDcageHostile"
     Faction: "Abyssal"
     Territory: false
     IsImportant: true
@@ -545,10 +423,7 @@ POIs:
     SpawnPOINearRange:
     - 500
     - 800
-  - SpawnPoiRange:
-      Min: 300
-      Max: 600
-    GroupName: "TOTObeliskAlien"
+  - GroupName: "TOTObeliskAlien"
     Faction: "Progenitor"
     Territory: false
     IsImportant: true
@@ -576,10 +451,7 @@ POIs:
     - "SwampEdge"
     - "DustBowl"
     - "ColdPlains"
-  - SpawnPoiRange:
-      Min: 30
-      Max: 100
-    GroupName: "TOTCampObeliskAlien"
+  - GroupName: "TOTCampObeliskAlien"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -625,10 +497,7 @@ POIs:
     - "SwampEdge"
     - "DustBowl"
     - "ColdPlains"
-  - SpawnPoiRange:
-      Min: 30
-      Max: 70
-    GroupName: "TOTCampFontAlien"
+  - GroupName: "TOTCampFontAlien"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -867,10 +736,7 @@ POIs:
     - "#FreshStart:Food: 250, Health: 350"
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 9
-      Max: 10
-    Name: "DroneSmallFast01Minigun"
+  - Name: "DroneSmallFast01Minigun"
     DronesMinMax:
     - 9
     - 10
@@ -892,36 +758,28 @@ CreatureSpawning:
   - "Crashsite"
   - "Crashsite_1"
   Entities:
-  - DelayRange:
-      Max: 1
-    Name: "AnnoyingMosquitosPrimitive"
+  - Name: "AnnoyingMosquitosPrimitive"
     Amount: 15
     Color: "0, 0, 0.7"
     DelayMinMax:
     - 0
     - 1
     Period: "Always"
-  - DelayRange:
-      Max: 1
-    Name: "AnnoyingMosquitosGray"
+  - Name: "AnnoyingMosquitosGray"
     Amount: 15
     Color: "0, 0, 0.7"
     DelayMinMax:
     - 0
     - 1
     Period: "Always"
-  - DelayRange:
-      Max: 1
-    Name: "AnnoyingMosquitosRed"
+  - Name: "AnnoyingMosquitosRed"
     Amount: 15
     Color: "0, 0, 0.7"
     DelayMinMax:
     - 0
     - 1
     Period: "Always"
-  - DelayRange:
-      Max: 1
-    Name: "AnnoyingMosquitosGreen"
+  - Name: "AnnoyingMosquitosGreen"
     Amount: 15
     Color: "0, 0, 0.7"
     DelayMinMax:
@@ -935,10 +793,7 @@ CreatureSpawning:
   - "Morass"
   - "Shore"
   Entities:
-  - DelayRange:
-      Min: 8
-      Max: 10
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 50
     Color: "0, 0, 0.7"
     AllowInWater: true
@@ -952,10 +807,7 @@ CreatureSpawning:
   - "ShallowWaterLilies"
   - "DeepWater"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 30
     Color: "0.7, 1, 0.8"
     AllowInWater: true
@@ -967,10 +819,7 @@ CreatureSpawning:
   - "DeepWater"
   - "ShallowWaterLilies"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 50
     Color: "0.8, 0.7, 1"
     AllowInWater: true
@@ -985,10 +834,7 @@ CreatureSpawning:
   - "Swamp"
   - "SwampUpper"
   Entities:
-  - DelayRange:
-      Min: 6
-      Max: 8
-    Name: "AlienBugs02"
+  - Name: "AlienBugs02"
     Amount: 10
     DelayMinMax:
     - 6
@@ -1000,10 +846,7 @@ CreatureSpawning:
   - "SwampEdge"
   - "Swamp"
   Entities:
-  - DelayRange:
-      Min: 6
-      Max: 8
-    Name: "GolemsSwamp"
+  - Name: "GolemsSwamp"
     Amount: 15
     DelayMinMax:
     - 6
@@ -1015,10 +858,7 @@ CreatureSpawning:
   - "AlienSwamp"
   - "Fungus"
   Entities:
-  - DelayRange:
-      Min: 6
-      Max: 8
-    Name: "GolemsSwamp"
+  - Name: "GolemsSwamp"
     Amount: 120
     Color: "0.9, 0.2, 0.9"
     DelayMinMax:
@@ -1031,10 +871,7 @@ CreatureSpawning:
   - "AlienSwamp"
   - "Flats"
   Entities:
-  - DelayRange:
-      Min: 8
-      Max: 10
-    Name: "Creepys"
+  - Name: "Creepys"
     Amount: 20
     DelayMinMax:
     - 8
@@ -1045,10 +882,7 @@ CreatureSpawning:
   - "SwampEdge"
   - "AlienSwamp"
   Entities:
-  - DelayRange:
-      Min: 8
-      Max: 10
-    Name: "Creepys"
+  - Name: "Creepys"
     Amount: 90
     Color: "1, 0, 0"
     DelayMinMax:
@@ -1058,10 +892,7 @@ CreatureSpawning:
   - "Marsh"
   - "Swamp"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Name: "AlienBugs04"
+  - Name: "AlienBugs04"
     Amount: 15
     Color: "1.0, 0, 1"
     DelayMinMax:
@@ -1071,10 +902,7 @@ CreatureSpawning:
 - Biomes:
   - "Marsh"
   Entities:
-  - DelayRange:
-      Min: 16
-      Max: 24
-    Name: "GolemsSwamp"
+  - Name: "GolemsSwamp"
     Amount: 5
     Color: "1.0, 0, 1"
     DelayMinMax:
@@ -1084,10 +912,7 @@ CreatureSpawning:
 - Biomes:
   - "Marsh"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Name: "Alien02_03_BattleGroup"
+  - Name: "Alien02_03_BattleGroup"
     Amount: 20
     Color: "1, 0.8, 0.4"
     DelayMinMax:
@@ -1097,20 +922,14 @@ CreatureSpawning:
 - Biomes:
   - "LargeCrater"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Name: "Alien02_03_BattleGroup"
+  - Name: "Alien02_03_BattleGroup"
     Amount: 10
     Color: "1, 0.8, 0.4"
     DelayMinMax:
     - 99
     - 99
     Period: "Always"
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Name: "Alien02_03_BattleGroupLarge"
+  - Name: "Alien02_03_BattleGroupLarge"
     Amount: 5
     Color: "1, 0.9, 0.4"
     DelayMinMax:
@@ -1129,10 +948,7 @@ CreatureSpawning:
   - "Peat"
   - "Beach"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs04"
+  - Name: "AlienBugs04"
     Amount: 25
     DelayMinMax:
     - 10
@@ -1153,10 +969,7 @@ CreatureSpawning:
   - "LowMountains_2"
   - "Crashsite"
   Entities:
-  - DelayRange:
-      Min: 8
-      Max: 12
-    Name: "AlienBugs02"
+  - Name: "AlienBugs02"
     Amount: 15
     DelayMinMax:
     - 8
@@ -1177,10 +990,7 @@ CreatureSpawning:
   - "DustBowl"
   - "Beach"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Creepys"
+  - Name: "Creepys"
     Amount: 20
     DelayMinMax:
     - 10
@@ -1190,9 +1000,7 @@ CreatureSpawning:
   - "Water"
   - "ShallowWater"
   Entities:
-  - DelayRange:
-      Max: 1
-    Name: "ShoalofFishesSmall"
+  - Name: "ShoalofFishesSmall"
     Amount: 10
     Color: "1, 1.0, 0.0"
     AllowInWater: true
@@ -1209,10 +1017,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.6
   Color: "1.0, 1, 0.3, 1.0"
   Entities:
-  - DelayRange:
-      Min: 99
-      Max: 99
-    Names:
+  - Names:
     - "AlienAssassinGreysInfected"
     DelayMinMax:
     - 99
@@ -1228,10 +1033,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "AlienBugs02Group"
     Biomes:
     - "Swamp"
@@ -1250,10 +1052,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "0.0, 0.0, 0.0, 0.5"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "AlienBugs03"
     Biomes:
     - "Swamp"
@@ -1271,10 +1070,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "0.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "AlienBugs02Group"
     Biomes:
     - "Swamp"
@@ -1292,10 +1088,7 @@ SpawnZones:
   RateMultiplyerCenter: 1
   Color: "0.0, 0.0, 0.0, 0.5"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "AlienBugs03"
     Biomes:
     - "Swamp"
@@ -1313,10 +1106,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "AlienBugs02Group"
     Biomes:
     - "LowMountains"

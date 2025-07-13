@@ -1,8 +1,5 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "AridBombed"
-PlanetSize: 2
 Difficulty: 2
 SunFlare: "EnvironmentalEffects/SunFlareWhite2"
 SpecialEffectsLocal:
@@ -21,6 +18,7 @@ SpecialEffectsLocal:
   - "Desert"
   - "Dunes"
   - "Rocks"
+  FollowPlayerY: false
 - Name: "FireFliesGreenFew"
   MaxHeight: 15
   Time: "Night"
@@ -78,7 +76,6 @@ SpecialEffectsGlobal:
   Lifetime: 600
 - Name: "MeteorShower"
   SpawnY: 100
-  Time: "Always"
   Biome:
   - "Savanna"
   - "SavannaEdge"
@@ -89,7 +86,6 @@ SpecialEffectsGlobal:
   PlyDist: 200
   Struct: "Avoid"
   Lifetime: 60
-AtmosphereEnabled: true
 AtmosphereColor: "0.54, 0.60, 0.72"
 AtmosphereParams:
 - 1.2
@@ -101,24 +97,17 @@ LightHorizonColor: "1, 0.3, 0.2"
 NightLightColor: "0.7, 0.7, 1"
 CloudsZenithColor: "0.35, 0.25, 0.3"
 CloudsHorizonColor: "0.85, 0.33, 0.18"
-CloudsNightZenithColor: "0.054, 0.094, 0.152"
-CloudsNightHorizonColor: "0.054, 0.094, 0.152"
 CloudsOpacity: 1
 FogCloudIntensity: 0.8
 DayLightIntensity: 1.3
 NightLightIntensity: 0.48
 DayShadowStrength: 0.95
-NightShadowStrength: 0.4
 CloudsDensity: 0.1
 CloudsSharpness: 0.3
 CloudsBrightness: 1
 WindSpeed: 10
 FogColor: "0.2, 1.05, 0.85"
 Description: "Arkenian \u6BCD\u661F\u3002\n\n\u8FD9\u9897\u884C\u661F\u7531\u4E8E\u53E4\u4EE3\u7684\u707E\u53D8\u6838\u5FC3\u8F70\u51FB,\u51E0\u4E4E\u5931\u53BB\u4E86\u6240\u6709\u7684\u6C34\u8D44\u6E90\u3002"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "AridBombed"
 UseRandom: true
 AllowSV: false
@@ -133,16 +122,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 1
-    Max: 2
-  Size:
-    Min: 2
-    Max: 6
-  Depth:
-    Min: 3
-    Max: 15
-  Name: "IronResource"
+- Name: "IronResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -154,7 +134,6 @@ RandomResources:
   - 3
   - 15
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "LavaField"
   - "LowMountains"
@@ -162,16 +141,7 @@ RandomResources:
   - "Mountains"
   - "HighMountains"
   - "Rocks"
-- Count:
-    Min: 1
-    Max: 2
-  Size:
-    Min: 2
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 15
-  Name: "CopperResource"
+- Name: "CopperResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -183,7 +153,6 @@ RandomResources:
   - 5
   - 15
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "LavaField"
   - "LowMountains"
@@ -191,16 +160,7 @@ RandomResources:
   - "Mountains"
   - "HighMountains"
   - "Rocks"
-- Count:
-    Min: 1
-    Max: 2
-  Size:
-    Min: 2
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 15
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -212,19 +172,9 @@ RandomResources:
   - 5
   - 15
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "Dunes"
-- Count:
-    Min: 4
-    Max: 4
-  Size:
-    Min: 2
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 15
-  Name: "CobaltResource"
+- Name: "CobaltResource"
   CountMinMax:
   - 4
   - 4
@@ -235,7 +185,6 @@ RandomResources:
   - 5
   - 15
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "LavaField"
   - "LowMountains"
@@ -243,16 +192,7 @@ RandomResources:
   - "Mountains"
   - "HighMountains"
   - "Rocks"
-- Count:
-    Min: 3
-    Max: 3
-  Size:
-    Min: 10
-    Max: 12
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "SathiumResource"
+- Name: "SathiumResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -264,7 +204,6 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.5
-  MaxDroneCount: 1
   Biome:
   - "Oasis"
   - "OasisEdge"
@@ -273,16 +212,7 @@ RandomResources:
   - "SavannaEdge"
   - "LavaField"
   - "Rocks"
-- Count:
-    Min: 5
-    Max: 5
-  Size:
-    Min: 10
-    Max: 12
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "PentaxidResource"
+- Name: "PentaxidResource"
   CountMinMax:
   - 5
   - 5
@@ -293,15 +223,12 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.5
-  MaxDroneCount: 1
   Biome:
   - "LavaField"
   - "GeoBuster"
 POIs:
   Random:
-  - SpawnPoiRange:
-      Max: 3000
-    GroupName: "PolarisHQUnique"
+  - GroupName: "PolarisHQUnique"
     DroneSetupID: "DroneBaseArkenian"
     Faction: "ArkenianRepublic"
     Territory: false
@@ -335,10 +262,7 @@ POIs:
     - "Oasis"
     - "OasisEdge"
     - "FertileLand"
-  - SpawnPoiRange:
-      Min: 100
-      Max: 400
-    GroupName: "PolarisLogisticsAux"
+  - GroupName: "PolarisLogisticsAux"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -365,9 +289,7 @@ POIs:
     SpawnPOINearRange:
     - 100
     - 400
-  - SpawnPoiRange:
-      Max: 3000
-    GroupName: "PolarisLogisticsMain"
+  - GroupName: "PolarisLogisticsMain"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -403,10 +325,7 @@ POIs:
     - "Oasis"
     - "OasisEdge"
     - "FertileLand"
-  - SpawnPoiRange:
-      Min: 100
-      Max: 200
-    GroupName: "PolarisTradingPlanet"
+  - GroupName: "PolarisTradingPlanet"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -441,10 +360,7 @@ POIs:
     - "BarrenRocks"
     - "PolarSnow"
     - "IceSheet"
-  - SpawnPoiRange:
-      Min: 100
-      Max: 200
-    GroupName: "PolarisIndustrialSingle"
+  - GroupName: "PolarisIndustrialSingle"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -477,10 +393,7 @@ POIs:
     - "Oasis"
     - "OasisEdge"
     - "FertileLand"
-  - SpawnPoiRange:
-      Min: 200
-      Max: 500
-    GroupName: "PolarisLogisticsMain"
+  - GroupName: "PolarisLogisticsMain"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -518,9 +431,7 @@ POIs:
     - "BarrenRocks"
     - "PolarSnow"
     - "IceSheet"
-  - SpawnPoiRange:
-      Max: 500
-    GroupName: "PolarisLogisticsAux"
+  - GroupName: "PolarisLogisticsAux"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -557,10 +468,7 @@ POIs:
     - "OasisEdge"
     - "FertileLand"
     - "Savanna"
-  - SpawnPoiRange:
-      Min: 1000
-      Max: 3000
-    GroupName: "PolarisLogisticsAux"
+  - GroupName: "PolarisLogisticsAux"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -595,10 +503,7 @@ POIs:
     Biome:
     - "Savanna"
     - "SavannaEdge"
-  - SpawnPoiRange:
-      Min: 200
-      Max: 300
-    GroupName: "PolarisIndustrialAux"
+  - GroupName: "PolarisIndustrialAux"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -627,10 +532,7 @@ POIs:
     - 200
     - 300
     SpawnPOIAvoidDistance: 1000
-  - SpawnPoiRange:
-      Min: 2000
-      Max: 6000
-    GroupName: "PolarisLogisticsAux"
+  - GroupName: "PolarisLogisticsAux"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -665,10 +567,7 @@ POIs:
     Biome:
     - "Rocks"
     - "LavaField"
-  - SpawnPoiRange:
-      Min: 100
-      Max: 300
-    GroupName: "PolarisIndustrialAux"
+  - GroupName: "PolarisIndustrialAux"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -843,10 +742,7 @@ POIs:
     SpawnPOIAvoidDistance: 500
     Biome:
     - "Rocks"
-  - SpawnPoiRange:
-      Min: 150
-      Max: 300
-    GroupName: "PolarisDefence"
+  - GroupName: "PolarisDefence"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -863,10 +759,7 @@ POIs:
     SpawnPOINearRange:
     - 150
     - 300
-  - SpawnPoiRange:
-      Min: 150
-      Max: 300
-    GroupName: "PolarisDefenceSand"
+  - GroupName: "PolarisDefenceSand"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -883,10 +776,7 @@ POIs:
     SpawnPOINearRange:
     - 150
     - 300
-  - SpawnPoiRange:
-      Min: 80
-      Max: 100
-    GroupName: "PolarisDefenceSnow"
+  - GroupName: "PolarisDefenceSnow"
     Faction: "ArkenianRepublic"
     Territory: false
     NoShieldReload: true
@@ -923,19 +813,15 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneSmallFast01Rocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneTroopsTransport"
       Amount: "Infinite"
-      Extra: -1
       Type: "TroopTransport"
     - Name: "SoldierAlienAssaultRifle"
       Amount: "Infinite"
-      Extra: -1
   PlanetVessels:
   - Name: "OPVArkenianT3"
     CountMinMax:
@@ -954,7 +840,6 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
   - Name: "CivilianDroneCVfast"
     CountMinMax:
@@ -988,10 +873,7 @@ DroneBaseSetup:
       DistToGround: 300
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 9
-      Max: 10
-    Name: "DroneSmallFast01Rocket"
+  - Name: "DroneSmallFast01Rocket"
     DronesMinMax:
     - 9
     - 10
@@ -1005,18 +887,12 @@ CreatureSpawning:
   - "Sand"
   - "Rocks"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "GolemsDesert"
+  - Name: "GolemsDesert"
     Amount: 10
     DelayMinMax:
     - 10
     - 20
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 10
     DelayMinMax:
     - 10
@@ -1026,36 +902,24 @@ CreatureSpawning:
   - "SavannaEdge"
   - "Savanna"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "CaveWormGreyHerd"
+  - Name: "CaveWormGreyHerd"
     Amount: 8
     DelayMinMax:
     - 10
     - 20
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 10
     DelayMinMax:
     - 10
     - 20
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Otyughs"
+  - Name: "Otyughs"
     Amount: 5
     DelayMinMax:
     - 10
     - 20
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 15
     DelayMinMax:
     - 10
@@ -1065,19 +929,13 @@ CreatureSpawning:
   - "Oasis"
   - "OasisEdge"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 15
     DelayMinMax:
     - 10
     - 20
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 10
     DelayMinMax:
     - 10
@@ -1085,10 +943,7 @@ CreatureSpawning:
 - Biomes:
   - "LowMountains"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 8
     DelayMinMax:
     - 10
@@ -1109,10 +964,7 @@ SpawnZones:
   Radius: 300
   Color: "1.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "CyborgsDamagedHerd"
     Biomes:
     - "Any"
@@ -1127,10 +979,7 @@ SpawnZones:
   Radius: 500
   Color: "1.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "CyborgsDamagedHerd"
     Biomes:
     - "Any"
@@ -1143,10 +992,7 @@ SpawnZones:
   Radius: 900
   Color: "1.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "CyborgsDamagedHerd"
     Biomes:
     - "Any"
@@ -1165,10 +1011,7 @@ SpawnZones:
   RateMultiplyerEdge: 1
   Color: "0.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ArkenianCyborgPatrolMedium"
     Biomes:
     - "Any"
@@ -1177,10 +1020,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ArkenianShotgunPatrolMedium"
     Biomes:
     - "Any"
@@ -1200,10 +1040,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "0.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ArkenianPatrolMedium"
     Biomes:
     - "Any"
@@ -1225,10 +1062,7 @@ SpawnZones:
   RateMultiplyerEdge: 1
   Color: "0.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ArkenianPatrolSmall"
     Biomes:
     - "Any"
@@ -1237,10 +1071,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ArkenianShotgunPatrolMedium"
     Biomes:
     - "Any"
@@ -1249,10 +1080,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ArkenianPatrolSmall"
     Biomes:
     - "Oasis"
@@ -1274,10 +1102,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "0.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ArkenianCyborgPatrolSmall"
     Biomes:
     - "Any"

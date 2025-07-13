@@ -1,19 +1,14 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "KaranaHomeworldMoon"
-PlanetSize: 2
 Difficulty: 10
 SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 1
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
+AtmosphereEnabled: false
 AtmosphereColor: "0,1,1"
 AtmosphereParams:
 - 1
@@ -31,18 +26,13 @@ CloudsOpacity: 0.7
 FogCloudIntensity: 1
 DayLightIntensity: 1.6
 NightLightIntensity: 0.55
-DayShadowStrength: 0.65
-NightShadowStrength: 0.4
 AtmosphereFog: 0.3
 CloudsDensity: 0.3
 CloudsSharpness: 0.35
 CloudsBrightness: 0.7
-WindSpeed: 1
 FogColor: "0.8,0.36,0.36"
 Description: "\u4E00\u9897\u62E5\u6709\u65E0\u6CD5\u60F3\u8C61\u8D77\u6E90\u7684\u72EC\u7279\u536B\u661F\u3002\u5927\u591A\u6570\u884C\u661F\u90FD\u6709\u5404\u79CD\u7C7B\u578B\u7684\u6676\u4F53,\u4F46\u8FD9\u9897\u536B\u661F\u786E\u5B9E\u662F\u6574\u4E2A\u94F6\u6CB3\u7CFB\u72EC\u4E00\u65E0\u4E8C\u7684\u81EA\u7136\u5947\u8FF9\u3002\n\n\u6676\u4F53\u4E0D\u4EC5\u662F\u8FD9\u9897\u536B\u661F\u7684\u4E3B\u5BFC\u7279\u5F81,\u66F4\u662F\u5176\u5B58\u5728\u7684\u672C\u8D28\u3002\u8FD9\u9897\u536B\u661F\u662F\u5426\u7ECF\u5386\u4E86\u6539\u9020,\u6216\u8005\u4EC5\u4EC5\u662F\u4E00\u79CD\u5929\u6587\u73B0\u8C61\u7684\u968F\u673A\u53D1\u751F,\u76EE\u524D\u90FD\u8FD8\u662F\u672A\u77E5\u3002\n\n\u5DF2\u77E5\u7684\u662F,\u8FD9\u9897\u536B\u661F\u63D0\u4F9B\u7684\u6676\u4F53\u5177\u6709\u5B8C\u5168\u4E14\u7EDD\u5BF9\u7684\u7A00\u6709\u6027\u3002\n"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-AllowSavingBlueprints: true
+BaseAttackCount: 0
 PlanetClass: "KaranaHomeworldMoon"
 UseRandom: true
 AllowSV: false
@@ -57,15 +47,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 2
-    Max: 4
-  Size:
-    Min: 10
-    Max: 13
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsImportant: true
   IsScalingCount: true
   CountMinMax:
@@ -81,18 +63,9 @@ RandomResources:
     MaxRadius: 13
     YVariance: 10
   DroneProb: 0.4
-  MaxDroneCount: 1
   Biome:
   - "Small Crystals"
-- Count:
-    Min: 2
-    Max: 4
-  Size:
-    Min: 10
-    Max: 13
-  Depth:
-    Max: 1
-  Name: "PentaxidResource"
+- Name: "PentaxidResource"
   IsImportant: true
   IsScalingCount: true
   CountMinMax:
@@ -108,7 +81,6 @@ RandomResources:
     MaxRadius: 13
     YVariance: 10
   DroneProb: 0.4
-  MaxDroneCount: 1
   Biome:
   - "Small Crystals"
 POIs:
@@ -196,11 +168,9 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneSmallFast01Rocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
   PlanetVessels:
   - Name: "OPVKaranaT2"
@@ -220,7 +190,6 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
   - Name: "CivilianDroneCVfast"
     CountMinMax:
@@ -254,10 +223,7 @@ DroneBaseSetup:
       DistToGround: 300
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 9
-      Max: 10
-    Name: "DroneSmallFast01Rocket"
+  - Name: "DroneSmallFast01Rocket"
     DronesMinMax:
     - 9
     - 10

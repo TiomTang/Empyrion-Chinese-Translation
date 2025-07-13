@@ -1,18 +1,13 @@
 PlayfieldType: "Moon"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "Boreas"
-PlanetSize: 2
 Difficulty: 2
 SunFlare: "EnvironmentalEffects/SunFlareWhite3"
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
-  PlyDist: 100
+  InitialDelay: 0
+  Delay: 0
   Lifetime: 1000
   Type: "Weather"
-AtmosphereEnabled: true
 AtmosphereColor: "0.25, 0.315, 0.31"
 AtmosphereParams:
 - 0
@@ -24,19 +19,18 @@ LightHorizonColor: "0.5, 0.35, 0.171"
 NightLightColor: "0.83, 0.85, 0.80"
 CloudsZenithColor: "0.89, 0.92, 1"
 CloudsHorizonColor: "1, 0.3, 0.1"
-CloudsNightZenithColor: "0.054, 0.094, 0.152"
-CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+CloudsOpacity: 0
+FogCloudIntensity: 0
 DayLightIntensity: 1
 NightLightIntensity: 0.55
 DayShadowStrength: 1
 NightShadowStrength: 1
 CloudsSharpness: 1
+CloudsBrightness: 0
+WindSpeed: 0
 FogColor: "1, 1, 1"
 Description: "\u5E78\u8FD0\u7684\u662F,\u8FD9\u91CC\u7684\u6C34\u8D44\u6E90\u4E30\u5BCC,\u53EF\u4EE5\u8FDB\u884C\u5F00\u91C7\u3002"
 Seed: 272253
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "Boreas"
 UseFixed: true
 UseRandom: true
@@ -51,16 +45,7 @@ AllowBlueprintBA: false
 AllowBPFactory: false
 RestrictToOrigin: 255
 RandomResources:
-- Count:
-    Min: 1
-    Max: 2
-  Size:
-    Min: 2
-    Max: 3
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "MagnesiumResource"
+- Name: "MagnesiumResource"
   CountMinMax:
   - 1
   - 2
@@ -71,20 +56,11 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.7
-  MaxDroneCount: 1
   Biome:
   - "Mountains"
   - "Regolith"
   - "RegolithEdge"
-- Count:
-    Max: 2
-  Size:
-    Min: 6
-    Max: 7
-  Depth:
-    Min: 70
-    Max: 80
-  Name: "MagnesiumResource"
+- Name: "MagnesiumResource"
   CountMinMax:
   - 0
   - 2
@@ -95,21 +71,11 @@ RandomResources:
   - 70
   - 80
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "LayeredIce"
   - "IceSheet"
   - "CrustedIce"
-- Count:
-    Min: 1
-    Max: 3
-  Size:
-    Min: 3
-    Max: 4
-  Depth:
-    Min: 4
-    Max: 9
-  Name: "CobaltResource"
+- Name: "CobaltResource"
   CountMinMax:
   - 1
   - 3
@@ -120,20 +86,11 @@ RandomResources:
   - 4
   - 9
   DroneProb: 0.7
-  MaxDroneCount: 1
   Biome:
   - "Mountains"
   - "Regolith"
   - "RegolithEdge"
-- Count:
-    Max: 2
-  Size:
-    Min: 8
-    Max: 9
-  Depth:
-    Min: 60
-    Max: 80
-  Name: "CobaltResource"
+- Name: "CobaltResource"
   CountMinMax:
   - 0
   - 2
@@ -144,7 +101,6 @@ RandomResources:
   - 60
   - 80
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "LayeredIce"
   - "IceSheet"
@@ -179,9 +135,7 @@ POIs:
     Properties:
     - Key: "RegenAfter"
       Value: "720"
-  - SpawnPoiRange:
-      Max: 2500
-    GroupName: "UCHResearchCampIce"
+  - GroupName: "UCHResearchCampIce"
     Faction: "UCH"
     Territory: false
     NoShieldReload: true
@@ -236,10 +190,7 @@ POIs:
     - "Rifts"
     - "Rifts_1"
     - "RayCrater"
-  - SpawnPoiRange:
-      Min: 250
-      Max: 1000
-    GroupName: "UCHCom"
+  - GroupName: "UCHCom"
     Faction: "UCH"
     Territory: false
     NoShieldReload: true
@@ -266,10 +217,7 @@ POIs:
     SpawnPOINearRange:
     - 250
     - 1000
-  - SpawnPoiRange:
-      Min: 250
-      Max: 1000
-    GroupName: "UCHFuelDepot"
+  - GroupName: "UCHFuelDepot"
     Faction: "UCH"
     Territory: false
     NoShieldReload: true
@@ -351,25 +299,18 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneSmallFast01Rocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneTroopsTransport"
       Amount: "Infinite"
-      Extra: -1
       Type: "TroopTransport"
     - Name: "SoldierAlienAssaultRifle"
       Amount: "Infinite"
-      Extra: -1
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 9
-      Max: 10
-    Name: "DroneSmallFast01Rocket"
+  - Name: "DroneSmallFast01Rocket"
     DronesMinMax:
     - 9
     - 10
@@ -402,10 +343,7 @@ SpawnZones:
   Radius: 200
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "CyborgsDamagedHerd"
     Biomes:
     - "Any"
@@ -421,10 +359,7 @@ SpawnZones:
   Radius: 600
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "CyborgsDamagedHerd"
     Biomes:
     - "Any"
@@ -438,10 +373,7 @@ SpawnZones:
   Radius: 300
   Color: "1.0, 0.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "CyborgsDamagedHerd"
     Biomes:
     - "Any"
@@ -455,10 +387,7 @@ SpawnZones:
   Radius: 400
   Color: "1.0, 0.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "CyborgsDamagedHerd"
     Biomes:
     - "Any"

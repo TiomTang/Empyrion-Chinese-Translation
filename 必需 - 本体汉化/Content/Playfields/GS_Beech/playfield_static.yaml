@@ -1,9 +1,5 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "Ocean"
-PlanetSize: 2
-Difficulty: 1
 SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
 - Name: "DandelionsFew"
@@ -80,33 +76,23 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsLight"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "Wind"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 24
   Delay: 12
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "Storm"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "BirdFlocksCrows"
@@ -116,9 +102,7 @@ SpecialEffectsGlobal:
   - "Any"
   InitialDelay: 1
   Delay: 4
-  PlyDist: 100
   Lifetime: 600
-AtmosphereEnabled: true
 AtmosphereColor: "0.674, 0.824, 1.000"
 AtmosphereParams:
 - 1
@@ -147,9 +131,6 @@ FogColor: "0.85, 0.70, 0.85"
 GroundFogIntensity: 0.025
 Description: "\u4E00\u4E2A\u53EA\u6709\u5C11\u91CF\u9646\u5730\u7684\u5927\u6D0B\u884C\u661F"
 Seed: 575561
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "Ocean"
 UseFixed: true
 UseRandom: true
@@ -217,34 +198,25 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "5"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneSmallFast01Rocket"
       Amount: "2"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneTroopsTransport"
       Amount: "1"
-      Extra: -1
       Type: "TroopTransport"
     - Name: "ZiraxMinigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "GroundTroop"
     - Name: "ZiraxRocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "GroundTroop"
     - Name: "RipperDog"
       Amount: "Infinite"
-      Extra: -1
       Type: "GroundTroop"
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 7
-      Max: 7
-    Name: "DroneSmallFast01Minigun"
+  - Name: "DroneSmallFast01Minigun"
     DronesMinMax:
     - 7
     - 7
@@ -255,20 +227,14 @@ CreatureSpawning:
 - Biomes:
   - "ContinentWarm_1_P"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 82
     Color: "0, 0, 0.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 50
     Color: "0, 1.0, 1.0"
     DelayMinMax:
@@ -278,10 +244,7 @@ CreatureSpawning:
 - Biomes:
   - "PalmDunes"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 20
     Color: "0, 1.0, 1.0"
     DelayMinMax:
@@ -291,10 +254,7 @@ CreatureSpawning:
 - Biomes:
   - "Savanna"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 40
     Color: "0, 1.0, 1.0"
     DelayMinMax:
@@ -304,10 +264,7 @@ CreatureSpawning:
 - Biomes:
   - "PalmBeach"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 30
     Color: "0, 1.0, 1.0"
     DelayMinMax:
@@ -319,10 +276,7 @@ CreatureSpawning:
   - "ShallowWater_1"
   - "Surf"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "ShoalofFishesSmall"
+  - Name: "ShoalofFishesSmall"
     Amount: 25
     Color: "0, 1.0, 0.0"
     AllowInWater: true
@@ -333,10 +287,7 @@ CreatureSpawning:
 - Biomes:
   - "ShallowWaterLilies"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "ShoalofFishesSmall"
+  - Name: "ShoalofFishesSmall"
     Amount: 100
     Color: "0, 1.0, 0.0"
     AllowInWater: true
@@ -363,10 +314,7 @@ SpawnZones:
   Radius: 1200
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -379,10 +327,7 @@ SpawnZones:
   Radius: 1500
   Color: "1.0, 0.0, 0.0, 0.5"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -395,10 +340,7 @@ SpawnZones:
   Radius: 1000
   Color: "1.0, 0.0, 0.0, 0.3"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -411,10 +353,7 @@ SpawnZones:
   Radius: 2000
   Color: "1.0, 0.0, 0.0, 0.3"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -431,10 +370,7 @@ SpawnZones:
   Radius: 200
   Color: "1.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -447,10 +383,7 @@ SpawnZones:
   Radius: 300
   Color: "1.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -468,10 +401,7 @@ SpawnZones:
   Radius: 500
   Color: "1.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -485,10 +415,7 @@ SpawnZones:
   Radius: 200
   Color: "0.6, 0.6, 1.0, 1"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -503,10 +430,7 @@ SpawnZones:
   Radius: 1000
   Color: "0.6, 0.6, 1.0, 1"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -522,10 +446,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "0.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Forest"
@@ -546,10 +467,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ZiraxRipperDogPatrolEasy"
     Biomes:
     - "Any"
@@ -567,10 +485,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "0.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Savanna"
@@ -594,10 +509,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "0.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -620,10 +532,7 @@ SpawnZones:
   RateMultiplyerEdge: 1
   Color: "0.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "RaptorsNight"
     Biomes:
     - "HighPalms"
@@ -644,10 +553,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "0.5, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "AlienBugs01"
     Biomes:
     - "Any"
@@ -671,10 +577,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.8
   Color: "1, 1, 1, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "Spiders01few"
     Biomes:
     - "PalmForest"
@@ -699,10 +602,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.8
   Color: "0.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "RaptorsNight"
     Biomes:
     - "HighPalms"
@@ -721,10 +621,7 @@ SpawnZones:
   RateMultiplyerEdge: 1
   Color: "1, 0.0, 1, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "Telluropods"
     Biomes:
     - "Surf_1"

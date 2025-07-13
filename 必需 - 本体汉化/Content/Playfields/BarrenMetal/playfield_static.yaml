@@ -1,63 +1,45 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "BarrenMetal"
-PlanetSize: 2
 Difficulty: 4
 SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
 - Name: "Grime"
   MaxHeight: 20
-  Time: "Always"
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 2
   Delay: 2
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "CloudsLight"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsMedium"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 6
   Delay: 2
-  PlyDist: 100
   Lifetime: 1000
   Type: "Weather"
 - Name: "CloudsDark"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "FireRain"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "MeteorShower"
   SpawnY: 100
   Time: "Day"
+  InitialDelay: 0
   Delay: 2
   PlyDist: 200
   Struct: "Avoid"
   Lifetime: 60
-AtmosphereEnabled: true
 AtmosphereColor: "0.6, 0.3, 0.0"
 SkyColor: "0.9, 0.25, 0.0"
 SkyHorizonColor: "0.5, 0.1, 0.005"
@@ -82,10 +64,6 @@ FogColor: "0.8, 0.40, 0.40"
 GroundFogIntensity: 0.02
 GroundFogHeight: 180
 Description: "[c][e0e020]\u6CE8\u8BB0:[-][/c]   [c]\u63A2\u6D4B\u5230\u591A\u5EA7\u9632\u7A7A\u70AE\u5854\u3002 [-][/c]\n[c][808080][i]\u8BF7\u52A1\u5FC5\u5C0F\u5FC3\u8C28\u614E\u3002[-][/i][-][/c]\n\n\u5728\u884C\u661F\u5F62\u6210\u671F\u95F4,\u5927\u90E8\u5206\u91CD\u5143\u7D20\u4F1A\u6C89\u5165\u5730\u6838\u3002\n\u4F46\u5982\u679C\u53D1\u751F\u5B87\u5B99\u610F\u5916\u5BFC\u81F4\u4E00\u4E2A\u4E16\u754C\u5931\u53BB\u5176\u5916\u5C42,\u6216\u8005\u5982\u679C\u66FE\u62E5\u6709\u4E30\u5BCC\u7269\u8D28\u2014\u2014\u90A3\u4E48\u5C31\u4F1A\u51FA\u73B0\u6240\u8C13\u7684\u201C\u91D1\u5C5E\u884C\u661F\u201D\u3002\n\n\u65E0\u8BBA\u5982\u4F55,\u4ECD\u4F1A\u6B8B\u7559\u4E00\u5C42\u201C\u4EC5\u6709\u6570\u767E\u516C\u91CC\u539A\u201D\u7684\u7845\u9178\u76D0\u5730\u5E54\u3002\n\u5C3D\u7BA1\u5982\u6B64,\u4ECD\u6709\u5927\u91CF\u53EF\u4F9B\u5F00\u91C7\u7684\u8D44\u6E90,\u4E14\u91CD\u5143\u7D20\u4E0E\u5947\u5F02\u5143\u7D20\u7684\u77FF\u85CF\u4E5F\u6613\u4E8E\u83B7\u53D6\u3002\n\n\u7531\u4E8E\u8FD9\u662F\u7A00\u6709\u7684\u5730\u65B9,\u5F15\u6765\u4E86\u8BB8\u591A\u201C\u5B88\u62A4\u8005\u201D\u3002\u53EA\u6709\u771F\u6B63\u8C28\u614E\u6216\u6700\u5F3A\u7684\u52BF\u529B\u624D\u80FD\u627E\u5230\u751F\u5B58\u4E4B\u9053...\u2014\u2014 territory \u7AA5\u4F3A\u8005,\u5F53\u5FC3\u81EA\u53D6\u5176\u7978\u3002"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "BarrenMetal"
 UseRandom: true
 AllowSV: false
@@ -100,16 +78,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 1
-    Max: 1
-  Size:
-    Min: 6
-    Max: 16
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "CopperResource"
+- Name: "CopperResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -121,7 +90,6 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.6
-  MaxDroneCount: 1
   Biome:
   - "DustBowl"
   - "Rifts"
@@ -129,16 +97,7 @@ RandomResources:
   - "LargeCrater"
   - "SmallCrater"
   - "Dunes"
-- Count:
-    Min: 1
-    Max: 1
-  Size:
-    Min: 6
-    Max: 9
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -150,21 +109,11 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "Plains"
   - "Sand"
   - "Dunes"
-- Count:
-    Min: 1
-    Max: 1
-  Size:
-    Min: 6
-    Max: 9
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "CobaltResource"
+- Name: "CobaltResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -176,7 +125,6 @@ RandomResources:
   - 5
   - 10
   DroneProb: 0.3
-  MaxDroneCount: 1
   Biome:
   - "DustBowl"
   - "Rocks"
@@ -187,16 +135,7 @@ RandomResources:
   - "HighMountains"
   - "LargeCrater"
   - "SmallCrater"
-- Count:
-    Min: 2
-    Max: 2
-  Size:
-    Min: 5
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 20
-  Name: "PlatinResource"
+- Name: "PlatinResource"
   IsImportant: true
   IsScalingCount: true
   CountMinMax:
@@ -214,16 +153,7 @@ RandomResources:
   - "ShallowCanyon"
   - "Canyon"
   - "DeepCanyon"
-- Count:
-    Min: 4
-    Max: 4
-  Size:
-    Min: 5
-    Max: 8
-  Depth:
-    Min: 5
-    Max: 20
-  Name: "ErestrumResource"
+- Name: "ErestrumResource"
   IsScalingCount: true
   CountMinMax:
   - 4
@@ -235,20 +165,10 @@ RandomResources:
   - 5
   - 20
   DroneProb: 0.2
-  MaxDroneCount: 1
   Biome:
   - "Canyon"
   - "DeepCanyon"
-- Count:
-    Min: 5
-    Max: 5
-  Size:
-    Min: 3
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 20
-  Name: "ErestrumResource"
+- Name: "ErestrumResource"
   IsScalingCount: true
   CountMinMax:
   - 5
@@ -265,16 +185,7 @@ RandomResources:
   - "ShallowCanyon"
   - "Canyon"
   - "DeepCanyon"
-- Count:
-    Min: 8
-    Max: 8
-  Size:
-    Min: 5
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 20
-  Name: "ZascosiumResource"
+- Name: "ZascosiumResource"
   IsScalingCount: true
   CountMinMax:
   - 8
@@ -286,20 +197,11 @@ RandomResources:
   - 5
   - 20
   DroneProb: 0.5
-  MaxDroneCount: 1
   Biome:
   - "ShallowCanyon"
   - "Canyon"
   - "DeepCanyon"
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 7
-    Max: 11
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -314,7 +216,6 @@ RandomResources:
     MaxRadius: 13
     YVariance: 10
   DroneProb: 0.7
-  MaxDroneCount: 1
   Biome:
   - "Rocks"
   - "Rocks_1"
@@ -323,16 +224,7 @@ RandomResources:
   - "ShallowCanyon"
   - "Canyon"
   - "DeepCanyon"
-- Count:
-    Min: 1
-    Max: 3
-  Size:
-    Min: 5
-    Max: 6
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "GoldResource"
+- Name: "GoldResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -410,10 +302,7 @@ POIs:
     SpawnPOIAvoidDistance: 2000
     BiomesExcluded:
     - "PoleEdge"
-  - SpawnResRange:
-      Min: 100
-      Max: 250
-    GroupName: "TS_Metal_Waypoint"
+  - GroupName: "TS_Metal_Waypoint"
     Faction: "Polaris"
     Territory: false
     NoShieldReload: true
@@ -526,10 +415,7 @@ POIs:
     Properties:
     - Key: "RegenAfter"
       Value: "720"
-  - SpawnPoiRange:
-      Min: 100
-      Max: 250
-    GroupName: "PiratesDefenseT1Desert"
+  - GroupName: "PiratesDefenseT1Desert"
     Faction: "Pirates"
     Territory: false
     NoShieldReload: true
@@ -547,10 +433,7 @@ POIs:
     SpawnPOINearRange:
     - 100
     - 250
-  - SpawnResRange:
-      Min: 100
-      Max: 250
-    GroupName: "XenuDefenceT3Rocket"
+  - GroupName: "XenuDefenceT3Rocket"
     Faction: "Xenu"
     Territory: false
     NoShieldReload: true
@@ -587,9 +470,7 @@ POIs:
     - "ShallowCanyon"
     - "Rifts"
     - "Rifts_1"
-  - SpawnPoiRange:
-      Max: 3000
-    GroupName: "DSRCMain"
+  - GroupName: "DSRCMain"
     Faction: "Zirax"
     Territory: false
     NoShieldReload: true
@@ -629,10 +510,7 @@ POIs:
     - "DustBowl"
     - "LavaFolds"
     - "Mountains"
-  - SpawnPoiRange:
-      Min: 75
-      Max: 150
-    GroupName: "DSRCTurret"
+  - GroupName: "DSRCTurret"
     Faction: "Zirax"
     Territory: false
     NoShieldReload: true
@@ -659,10 +537,7 @@ POIs:
     SpawnPOINearRange:
     - 75
     - 150
-  - SpawnPoiRange:
-      Min: 300
-      Max: 400
-    GroupName: "CrashedShip"
+  - GroupName: "CrashedShip"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -731,12 +606,16 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Plasma"
       Amount: "200"
+      Extra: 0
     - Name: "EnemyDroneV2Plasma"
       Amount: "200"
+      Extra: 0
     - Name: "EnemyDroneV2Minigun"
       Amount: "300"
+      Extra: 0
     - Name: "DroneLargeSlow02Cannon"
       Amount: "200"
+      Extra: 0
     - Name: "DroneBomberAttackBase"
       Amount: "Infinite"
       Extra: 1
@@ -778,18 +657,12 @@ DroneBaseSetup:
           DistToTarget: 220
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 10
-      Max: 15
-    DronesMinMax:
+  - DronesMinMax:
     - 10
     - 15
     CenterX: -2500
     Radius: 1500
-  - Drones:
-      Min: 10
-      Max: 15
-    DronesMinMax:
+  - DronesMinMax:
     - 10
     - 15
     CenterX: 2500
@@ -798,10 +671,7 @@ CreatureSpawning:
 - Biomes:
   - "Plains"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "ZiraxMechanoidPatrol"
+  - Name: "ZiraxMechanoidPatrol"
     DelayMinMax:
     - 20
     - 24
@@ -820,10 +690,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "Overseers"
     Biomes:
     - "Any"
@@ -844,10 +711,7 @@ SpawnZones:
   SpawnOnlyIfPoiIsAlien: true
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 36
-    Names:
+  - Names:
     - "ZiraxRocketPatrol"
     - "ZiraxMechanoidPatrol"
     Biomes:

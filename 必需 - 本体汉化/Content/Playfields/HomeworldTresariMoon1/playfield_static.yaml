@@ -1,8 +1,5 @@
 PlayfieldType: "Moon"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "TresariHomeworldMoon1"
-PlanetSize: 2
 Difficulty: 10
 SunFlare: "EnvironmentalEffects/SunFlareWhite2"
 SpecialEffectsLocal:
@@ -58,13 +55,11 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 - Name: "EnvironmentalEffects/SnowLight"
   MaxHeight: 15
-  Time: "Always"
   Biome:
   - "GreetingsStranger"
   FollowPlayerY: false
 - Name: "Sparks"
   MaxHeight: 15
-  Time: "Always"
   Biome:
   - "GreetingsStranger"
   FollowPlayerY: false
@@ -98,40 +93,28 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "CloudsMedium"
-  SpawnY: 50
-  Time: "Always"
-  PlyDist: 100
+  InitialDelay: 0
+  Delay: 0
   Lifetime: 1200
   Type: "Weather"
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 12
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "RainMedium"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 30
   Delay: 30
-  PlyDist: 100
   Lifetime: 800
   Type: "Weather"
 - Name: "Storm"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 72
   Delay: 60
-  PlyDist: 100
   Lifetime: 700
   Type: "Weather"
 - Name: "Fog"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 90
   Delay: 90
-  PlyDist: 100
   Lifetime: 450
   Type: "Weather"
 - Name: "BirdFlocksCrows"
@@ -141,9 +124,7 @@ SpecialEffectsGlobal:
   - "Any"
   InitialDelay: 1
   Delay: 4
-  PlyDist: 100
   Lifetime: 600
-AtmosphereEnabled: true
 AtmosphereColor: "0.7, 0.824, 0.82"
 AtmosphereParams:
 - -5
@@ -169,10 +150,6 @@ CloudsBrightness: 0.7
 WindSpeed: 3
 FogColor: "0.8, 0.9, 1.0"
 Description: "Tresari \u6BCD\u661F\u7684\u536B\u661F\u4E4B\u4E00"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "TresariHomeworldMoon1"
 UseRandom: true
 AllowSV: false
@@ -187,16 +164,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 1
-    Max: 2
-  Size:
-    Min: 3
-    Max: 5
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "IronResource"
+- Name: "IronResource"
   CountMinMax:
   - 1
   - 2
@@ -206,20 +174,10 @@ RandomResources:
   DepthMinMax:
   - 6
   - 15
-  MaxDroneCount: 1
   Biome:
   - "Grassland"
   - "ColdPlains"
-- Count:
-    Min: 1
-    Max: 1
-  Size:
-    Min: 3
-    Max: 5
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "CopperResource"
+- Name: "CopperResource"
   CountMinMax:
   - 1
   - 1
@@ -229,21 +187,12 @@ RandomResources:
   DepthMinMax:
   - 6
   - 15
-  MaxDroneCount: 1
   Biome:
   - "Forest"
   - "Oasis"
   - "Marsh"
   - "Swamp"
-- Count:
-    Max: 2
-  Size:
-    Min: 4
-    Max: 6
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   CountMinMax:
   - 0
   - 2
@@ -253,20 +202,12 @@ RandomResources:
   DepthMinMax:
   - 6
   - 15
-  MaxDroneCount: 1
   Biome:
   - "Savanna"
   - "SavannaEdge"
   - "Tundra"
   - "DustBowl"
-- Count:
-    Max: 1
-  Size:
-    Min: 2
-    Max: 3
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   CountMinMax:
   - 0
   - 1
@@ -279,19 +220,10 @@ RandomResources:
   DistTypeCylinder:
     MaxRadius: 13
     YVariance: 10
-  MaxDroneCount: 1
   Biome:
   - "LowMountains"
   - "Mountains"
-- Count:
-    Max: 1
-  Size:
-    Min: 2
-    Max: 4
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "PentaxidResource"
+- Name: "PentaxidResource"
   CountMinMax:
   - 0
   - 1
@@ -301,16 +233,7 @@ RandomResources:
   DepthMinMax:
   - 5
   - 10
-  MaxDroneCount: 1
-- Count:
-    Max: 1
-  Size:
-    Min: 2
-    Max: 2
-  Depth:
-    Min: 5
-    Max: 10
-  Name: "GoldResource"
+- Name: "GoldResource"
   CountMinMax:
   - 0
   - 1
@@ -320,7 +243,6 @@ RandomResources:
   DepthMinMax:
   - 5
   - 10
-  MaxDroneCount: 1
   Biome:
   - "LowMountains"
   - "Mountains"
@@ -401,10 +323,7 @@ POIs:
     Properties:
     - Key: "RegenAfter"
       Value: "720"
-  - SpawnPoiRange:
-      Min: 500
-      Max: 1500
-    GroupName: "TresariDefense"
+  - GroupName: "TresariDefense"
     Faction: "Tresari"
     Territory: false
     NoShieldReload: true
@@ -440,7 +359,6 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
   - Name: "CivilianDroneCVfast"
     CountMinMax:
@@ -492,20 +410,14 @@ CreatureSpawning:
   - "Water"
   - "ShallowWater"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 75
     AllowInWater: true
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 75
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
@@ -516,49 +428,34 @@ CreatureSpawning:
 - Biomes:
   - "Marsh"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 160
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 25
     Color: "0, 0.8, 0.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Triceratopses"
+  - Name: "Triceratopses"
     Amount: 10
     Color: "0, 0.5, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 10
     Color: "0.7, 0, 0.8"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 70
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
@@ -566,28 +463,19 @@ CreatureSpawning:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "WormDesertLargeHerd"
+  - Name: "WormDesertLargeHerd"
     Amount: 14
     Color: "0.7, 0, 0.8"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Spinosauruses"
+  - Name: "Spinosauruses"
     Amount: 30
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
     - 10
     - 12
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 70
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
@@ -597,56 +485,38 @@ CreatureSpawning:
 - Biomes:
   - "Swamp"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 150
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 20
     Color: "0, 1.0, 0.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 6
-      Max: 8
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 7
     DelayMinMax:
     - 6
     - 8
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 100
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Spinosauruses"
+  - Name: "Spinosauruses"
     Amount: 12
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
     - 10
     - 12
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 75
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
@@ -654,10 +524,7 @@ CreatureSpawning:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Creepys"
+  - Name: "Creepys"
     Amount: 60
     Color: "0.7, 0, 0.8"
     DelayMinMax:
@@ -666,58 +533,40 @@ CreatureSpawning:
 - Biomes:
   - "Forest"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Triceratopses"
+  - Name: "Triceratopses"
     Amount: 15
     Color: "0, 0.5, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Pangolins"
+  - Name: "Pangolins"
     Amount: 12
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 35
     Color: "0.7, 0, 0.8"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "WormDesertLargeHerd"
+  - Name: "WormDesertLargeHerd"
     Amount: 20
     Color: "0.7, 0, 0.8"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Spinosauruses"
+  - Name: "Spinosauruses"
     Amount: 10
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
     - 10
     - 12
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Creepys"
+  - Name: "Creepys"
     Amount: 80
     Color: "0.7, 0, 0.8"
     DelayMinMax:
@@ -726,67 +575,46 @@ CreatureSpawning:
 - Biomes:
   - "DeepForest"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 150
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "AlienBugs04"
+  - Name: "AlienBugs04"
     Amount: 100
     Color: "0.7, 0, 0"
     DelayMinMax:
     - 20
     - 24
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Triceratopses"
+  - Name: "Triceratopses"
     Amount: 15
     Color: "0, 0.5, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "WormDesertLargeHerd"
+  - Name: "WormDesertLargeHerd"
     Amount: 10
     Color: "0.7, 0, 0.8"
     DelayMinMax:
     - 20
     - 24
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Spinosauruses"
+  - Name: "Spinosauruses"
     Amount: 50
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
     - 10
     - 12
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 60
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
     DelayMinMax:
     - 10
     - 12
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Creepys"
+  - Name: "Creepys"
     Amount: 150
     Color: "0.7, 0, 0.8"
     DelayMinMax:
@@ -795,59 +623,41 @@ CreatureSpawning:
 - Biomes:
   - "TallTrees"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 80
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs04"
+  - Name: "AlienBugs04"
     Amount: 90
     Color: "0, 1.0, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Triceratopses"
+  - Name: "Triceratopses"
     Amount: 15
     Color: "0, 0.5, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Pangolins"
+  - Name: "Pangolins"
     Amount: 10
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 10
     Color: "0.7, 0, 0.8"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 10
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
@@ -855,29 +665,20 @@ CreatureSpawning:
     - 10
     - 12
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Spinosauruses"
+  - Name: "Spinosauruses"
     Amount: 15
     Color: "0.2, 0.5, 0.9"
     DelayMinMax:
     - 10
     - 12
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "Telluropods"
+  - Name: "Telluropods"
     Amount: 80
     Color: "1.0, 0.6, 0.0"
     AllowInWater: true
     DelayMinMax:
     - 10
     - 12
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Creepys"
+  - Name: "Creepys"
     Amount: 150
     Color: "0.7, 0, 0.8"
     DelayMinMax:
@@ -886,39 +687,27 @@ CreatureSpawning:
 - Biomes:
   - "DustBowl"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 60
     Color: "0.7, 0, 0.8"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 50
     Color: "0, 0.8, 0.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 40
     Color: "0, 1.0, 0.0"
     DelayMinMax:
     - 10
     - 12
-  - DelayRange:
-      Min: 20
-      Max: 30
-    Name: "GolemsSwamp"
+  - Name: "GolemsSwamp"
     Amount: 30
     Color: "0.8, 1, 1"
     DelayMinMax:
@@ -927,40 +716,28 @@ CreatureSpawning:
 - Biomes:
   - "LowMountains"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 100
     Color: "0, 0.8, 0.0"
     DelayMinMax:
     - 20
     - 24
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "AlienBugs04"
+  - Name: "AlienBugs04"
     Amount: 30
     Color: "0.7, 0, 0"
     DelayMinMax:
     - 20
     - 24
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Parasaurs"
+  - Name: "Parasaurs"
     Amount: 15
     Color: "0.7, 0, 0"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 20
-      Max: 30
-    Name: "GolemsSwamp"
+  - Name: "GolemsSwamp"
     Amount: 50
     Color: "0.8, 1, 1"
     DelayMinMax:
@@ -969,30 +746,21 @@ CreatureSpawning:
 - Biomes:
   - "Grassland"
   Entities:
-  - DelayRange:
-      Min: 6
-      Max: 8
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 30
     Color: "0, 0.8, 0.0"
     DelayMinMax:
     - 6
     - 8
     Period: "Always"
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Parasaurs"
+  - Name: "Parasaurs"
     Amount: 15
     Color: "0.7, 0, 0"
     DelayMinMax:
     - 20
     - 24
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 25
     DelayMinMax:
     - 10
@@ -1000,20 +768,14 @@ CreatureSpawning:
 - Biomes:
   - "ColdPlains"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 25
     Color: "0.4, 0.2, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 35
     Color: "0.0, 0.2, 0.0"
     DelayMinMax:
@@ -1022,20 +784,14 @@ CreatureSpawning:
 - Biomes:
   - "Tundra"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 10
     Color: "0.4, 0.2, 1.0"
     DelayMinMax:
     - 10
     - 12
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "RaptorsNight"
+  - Name: "RaptorsNight"
     Amount: 15
     Color: "0.0, 0.2, 0.0"
     DelayMinMax:
@@ -1044,10 +800,7 @@ CreatureSpawning:
 - Biomes:
   - "GreetingsStranger"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "SlimesWhite"
+  - Name: "SlimesWhite"
     Amount: 3000
     Color: "1, 1, 1"
     DelayMinMax:

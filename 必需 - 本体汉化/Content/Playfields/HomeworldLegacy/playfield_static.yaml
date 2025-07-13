@@ -1,8 +1,5 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "LegacyNexusWorld"
-PlanetSize: 2
 Difficulty: 10
 SunFlare: "EnvironmentalEffects/SunFlareYellow3"
 SpecialEffectsLocal:
@@ -21,22 +18,21 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 - Name: "FireFliesOrange"
   MaxHeight: 480
-  Time: "Always"
   Biome:
   - "Structure"
   - "Organized"
+  FollowPlayerY: false
 - Name: "FireFliesRed"
   MaxHeight: 15
-  Time: "Always"
   Biome:
   - "Active"
   FollowPlayerY: false
 - Name: "FireFliesRed"
   MaxHeight: 480
-  Time: "Always"
   Biome:
   - "Active"
   - "Organized"
+  FollowPlayerY: false
 - Name: "EnvironmentalEffects/Sparks"
   MaxHeight: 20
   Time: "Night"
@@ -51,7 +47,6 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 - Name: "Grime"
   MaxHeight: 10
-  Time: "Always"
   Biome:
   - "TacticalStrike"
   - "PlanetBuster"
@@ -64,37 +59,37 @@ SpecialEffectsLocal:
 SpecialEffectsGlobal:
 - Name: "MeteorShower"
   SpawnY: 100
-  Time: "Always"
   Biome:
   - "Any"
+  InitialDelay: 0
+  Delay: 0
   PlyDist: 200
   Struct: "Avoid"
   Lifetime: 60
 - Name: "ThunderAndLightningRed"
   SpawnY: 500
-  Time: "Always"
   Biome:
   - "Any"
-  PlyDist: 100
+  InitialDelay: 0
+  Delay: 0
   Struct: "Avoid"
   Lifetime: 500
 - Name: "ThunderAndLightningPurple"
   SpawnY: 500
-  Time: "Always"
   Biome:
   - "Any"
-  PlyDist: 100
+  InitialDelay: 0
+  Delay: 0
   Struct: "Avoid"
   Lifetime: 500
 - Name: "ThunderAndLightningWhite"
   SpawnY: 500
-  Time: "Always"
   Biome:
   - "Active"
-  PlyDist: 100
+  InitialDelay: 0
+  Delay: 0
   Struct: "Avoid"
   Lifetime: 500
-AtmosphereEnabled: true
 AtmosphereColor: "1.0, 0.85, 0.66"
 AtmosphereParams:
 - 3
@@ -116,14 +111,11 @@ NightLightIntensity: 1.2
 DayShadowStrength: 0.5
 NightShadowStrength: 0.5
 CloudsDensity: 1
+CloudsSharpness: 0
 CloudsBrightness: 1
 WindSpeed: 20
 FogColor: "0.05, 0.03, 0.9"
 Description: "[i]\u901A\u8FC7\u4F60\u7684\u901A\u8BAF\u5668\u4F20\u6765\u4E00\u6761\u5931\u771F\u7684\u81EA\u52A8\u64AD\u62A5,\u65F6\u95F4\u6233\u663E\u793A\u5B83\u53EF\u80FD\u5DF2\u7ECF\u5B58\u5728\u6570\u767E\u5E74\u4E86\u3002[br]\n\n\u2026\u2026 [c]\u91CD\u590D\u3002 \n[c][e0e020][b][\u5371\u9669][/b]   \u7981\u533A[-][/c]\n[c][b][i]\u9996\u7B49[/b] \u2014 [b]\u65E0\u9650\u91CF\u4F9B\u5E94[/b] \u2014 [b]\u6C38\u4E16\u4EAB\u7528[/b] \u2014 [-][/c][c][e0e020][b][\u751F][\u5C04][\u7075][-][/c][/i][/b]\n\n[c][i]\u5179\u62C9\u514B\u65AF\u9AD8\u5C42\u6307\u6325\u90E8\u53CA\u5B58\u6D3B\u6218\u4E89\u6D3E\u7684\u547D\u4EE4: \n\u4EFB\u4F55\u8FDB\u5165\u9057\u4EA7\u5730\u57DF\u7684\u8239\u8230\u90FD\u5C06\u88AB\u89C6\u4E3A\u72B6\u6001\u5931\u6548,\u5E76[br][b]\u4E00\u7ECF\u53D1\u73B0\u7ACB\u523B\u6467\u6BC1[/b]\u3002[/i]\n\n[c][e0e020][b]\u8FD9\u662F\u7ED9\u4F60\u7684\u552F\u4E00\u8B66\u544A\u3002[/b][-][/c]\n\n[c]\u91CD\u590D\u3002 \n[c][e0e020][\u5371\u9669]   \u7981\u533A [-][/c]\u2026\u2026''\n[i]\u4F60\u7684\u98DE\u8239\u6B63\u88AB\u8FD9\u9897\u661F\u7403\u626B\u63CF\u3002[/i]\n"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "LegacyNexusWorld"
 UseFixed: true
 UseRandom: true
@@ -139,16 +131,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 3
-    Max: 4
-  Size:
-    Min: 6
-    Max: 8
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "SiliconResource"
+- Name: "SiliconResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -160,23 +143,13 @@ RandomResources:
   - 6
   - 15
   DroneProb: 1
-  MaxDroneCount: 1
   Biome:
   - "Dunes"
   - "Forest"
   - "AtomicWeaponry"
   - "BarrenRocks"
   - "GlassedTerrain"
-- Count:
-    Min: 3
-    Max: 5
-  Size:
-    Min: 7
-    Max: 9
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "NeodymiumResource"
+- Name: "NeodymiumResource"
   IsScalingCount: true
   CountMinMax:
   - 3
@@ -193,15 +166,7 @@ RandomResources:
   - "Geobuster"
   - "LowMountains"
   - "BarrenRocks"
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 5
-    Max: 6
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -222,15 +187,7 @@ RandomResources:
   - "BarrenRocks"
   - "AtomicWeaponry"
   - "Structure"
-- Count:
-    Min: 10
-    Max: 10
-  Size:
-    Min: 5
-    Max: 5
-  Depth:
-    Max: 3
-  Name: "PentaxidResource"
+- Name: "PentaxidResource"
   CountMinMax:
   - 10
   - 10
@@ -240,18 +197,11 @@ RandomResources:
   DepthMinMax:
   - 0
   - 3
+  MaxDroneCount: 0
   Biome:
   - "Organized"
   - "Active"
-- Count:
-    Min: 5
-    Max: 5
-  Size:
-    Min: 3
-    Max: 3
-  Depth:
-    Max: 5
-  Name: "PentaxidResource"
+- Name: "PentaxidResource"
   IsScalingCount: true
   CountMinMax:
   - 5
@@ -269,16 +219,7 @@ RandomResources:
   - "Plains"
   - "Structure"
   - "Organized"
-- Count:
-    Min: 4
-    Max: 5
-  Size:
-    Min: 11
-    Max: 13
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "SathiumResource"
+- Name: "SathiumResource"
   IsScalingCount: true
   CountMinMax:
   - 4
@@ -296,16 +237,7 @@ RandomResources:
   - "BarrenRocks"
   - "LowMountains"
   - "GlassedTerrain"
-- Count:
-    Min: 4
-    Max: 7
-  Size:
-    Min: 4
-    Max: 4
-  Depth:
-    Min: 10
-    Max: 15
-  Name: "GoldResource"
+- Name: "GoldResource"
   CountMinMax:
   - 4
   - 7
@@ -315,7 +247,6 @@ RandomResources:
   DepthMinMax:
   - 10
   - 15
-  MaxDroneCount: 1
   Biome:
   - "Organized"
   - "Active"
@@ -352,10 +283,7 @@ AsteroidResources:
   Delay: -1
 POIs:
   Random:
-  - SpawnResRange:
-      Min: 80
-      Max: 100
-    GroupName: "BA_TribalRestaurant"
+  - GroupName: "BA_TribalRestaurant"
     Faction: "Talon"
     Territory: false
     AvoidFactionTerritory: true
@@ -445,10 +373,7 @@ POIs:
     SpawnPOIAvoid:
     - "BA_TribalRestaurant"
     SpawnPOIAvoidDistance: 1000
-  - SpawnPoiRange:
-      Min: 1500
-      Max: 2500
-    GroupName: "CrashedShip"
+  - GroupName: "CrashedShip"
     Faction: "None"
     Territory: false
     Count:
@@ -477,13 +402,7 @@ POIs:
     - 1500
     - 2500
     SpawnPOIAvoidDistance: 1500
-  - SpawnPoiRange:
-      Min: 300
-      Max: 500
-    SpawnResRange:
-      Min: 80
-      Max: 200
-    GroupName: "NullPOI"
+  - GroupName: "NullPOI"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -515,13 +434,7 @@ POIs:
     - 200
     Biome:
     - "Active"
-  - SpawnPoiRange:
-      Min: 800
-      Max: 1400
-    SpawnResRange:
-      Min: 80
-      Max: 100
-    GroupName: "LegacyFloatingT1"
+  - GroupName: "LegacyFloatingT1"
     Faction: "TheLegacy"
     Territory: false
     Count:
@@ -559,13 +472,7 @@ POIs:
     Biome:
     - "Proximity"
     - "Active"
-  - SpawnPoiRange:
-      Min: 800
-      Max: 1800
-    SpawnResRange:
-      Min: 80
-      Max: 100
-    GroupName: "LegacyFloatingT1"
+  - GroupName: "LegacyFloatingT1"
     Faction: "TheLegacy"
     Territory: false
     Count:
@@ -601,13 +508,7 @@ POIs:
     Biome:
     - "Proximity"
     - "Active"
-  - SpawnPoiRange:
-      Min: 1800
-      Max: 2000
-    SpawnResRange:
-      Min: 80
-      Max: 100
-    GroupName: "LegacyFloatingT2"
+  - GroupName: "LegacyFloatingT2"
     Faction: "TheLegacy"
     Territory: false
     Count:
@@ -642,10 +543,7 @@ POIs:
     SpawnResourceRange:
     - 80
     - 100
-  - SpawnPoiRange:
-      Min: 150
-      Max: 500
-    GroupName: "LegacyDefenseT1"
+  - GroupName: "LegacyDefenseT1"
     Faction: "TheLegacy"
     Territory: false
     Count:
@@ -676,10 +574,7 @@ POIs:
     SpawnPOIAvoidDistance: 80
     Biome:
     - "Active"
-  - SpawnPoiRange:
-      Min: 150
-      Max: 1200
-    GroupName: "LegacyDefenseT1"
+  - GroupName: "LegacyDefenseT1"
     Faction: "TheLegacy"
     Territory: false
     Count:
@@ -710,13 +605,7 @@ POIs:
     SpawnPOIAvoidDistance: 80
     Biome:
     - "Active"
-  - SpawnPoiRange:
-      Min: 100
-      Max: 1500
-    SpawnResRange:
-      Min: 80
-      Max: 60
-    GroupName: "Artifacts"
+  - GroupName: "Artifacts"
     Faction: "TheLegacy"
     Territory: false
     IsImportant: true
@@ -753,10 +642,7 @@ POIs:
     - 60
     Biome:
     - "Active"
-  - SpawnPoiRange:
-      Min: 3000
-      Max: 5000
-    GroupName: "AbandonedPOI"
+  - GroupName: "AbandonedPOI"
     Faction: "TheLegacy"
     Territory: false
     Count:
@@ -783,10 +669,7 @@ POIs:
     - "Forest"
     - "LowMountains"
     - "Mountains"
-  - SpawnPoiRange:
-      Min: 5000
-      Max: 8000
-    GroupName: "RuinsTribal"
+  - GroupName: "RuinsTribal"
     Faction: "None"
     Territory: false
     AvoidFactionTerritory: true
@@ -817,10 +700,7 @@ POIs:
     - "Forest"
     - "LowMountains"
     - "Mountains"
-  - SpawnPoiRange:
-      Min: 1000
-      Max: 2000
-    GroupName: "RuinsTribal"
+  - GroupName: "RuinsTribal"
     Faction: "None"
     Territory: false
     AvoidFactionTerritory: true
@@ -924,8 +804,10 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneLargeAttackBase"
       Amount: "600"
+      Extra: 0
     - Name: "DroneSmallAttackBase"
       Amount: "400"
+      Extra: 0
     - Name: "DroneBomberAttackBase"
       Amount: "Infinite"
       Extra: 1
@@ -970,33 +852,21 @@ DroneBaseSetup:
           DistToTarget: 400
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 5
-      Max: 10
-    DronesMinMax:
+  - DronesMinMax:
     - 5
     - 10
     CenterX: -5000
     Radius: 3000
-  - Drones:
-      Min: 5
-      Max: 10
-    DronesMinMax:
+  - DronesMinMax:
     - 5
     - 10
     CenterX: -5000
     Radius: 5000
-  - Drones:
-      Min: 5
-      Max: 10
-    DronesMinMax:
+  - DronesMinMax:
     - 5
     - 10
     Radius: 3000
-  - Drones:
-      Min: 5
-      Max: 10
-    DronesMinMax:
+  - DronesMinMax:
     - 5
     - 10
     Radius: 5000
@@ -1004,40 +874,28 @@ CreatureSpawning:
 - Biomes:
   - "Remnant"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "MegalonopsesBrown"
+  - Name: "MegalonopsesBrown"
     Amount: 30
     Color: "0.9, 0.7, 0.5"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "Oviraptors"
+  - Name: "Oviraptors"
     Amount: 50
     Color: "0.9, 0.9, 0.9"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: 80
-      Max: 99
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 40
     Color: "0.5, 1, 0"
     DelayMinMax:
     - 80
     - 99
     Period: "Always"
-  - DelayRange:
-      Min: 50
-      Max: 99
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 40
     DelayMinMax:
     - 50
@@ -1046,40 +904,28 @@ CreatureSpawning:
 - Biomes:
   - "FlowersEdge"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "MegalonopsesBrown"
+  - Name: "MegalonopsesBrown"
     Amount: 10
     Color: "0.9, 0.7, 0.5"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "Oviraptors"
+  - Name: "Oviraptors"
     Amount: 20
     Color: "0.9, 0.9, 0.9"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: 80
-      Max: 99
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 30
     Color: "0.5, 1, 0"
     DelayMinMax:
     - 80
     - 99
     Period: "Always"
-  - DelayRange:
-      Min: 50
-      Max: 99
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 15
     DelayMinMax:
     - 50
@@ -1088,39 +934,27 @@ CreatureSpawning:
 - Biomes:
   - "LowMountains"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 10
     Color: "0.5, 1, 0"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 12
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "Oviraptors"
+  - Name: "Oviraptors"
     Amount: 5
     Color: "0.9, 0.9, 0.9"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: 50
-      Max: 99
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 1
     DelayMinMax:
     - 50
@@ -1129,29 +963,20 @@ CreatureSpawning:
 - Biomes:
   - "Plains"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 15
     Color: "1, 0, 0.8"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 5
     DelayMinMax:
     - -1
     - -1
     Period: "Day"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 10
     DelayMinMax:
     - -1
@@ -1159,20 +984,14 @@ CreatureSpawning:
 - Biomes:
   - "Forest"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 5
     Color: "1, 0, 0.8"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "TotalHorrors"
+  - Name: "TotalHorrors"
     Amount: 5
     Color: "1, 0.2, 1"
     DelayMinMax:
@@ -1182,27 +1001,18 @@ CreatureSpawning:
 - Biomes:
   - "Dunes"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 1
     Color: "1, 0, 0.8"
     DelayMinMax:
     - -1
     - -1
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 2
     DelayMinMax:
     - -1
     - -1
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Overseers"
+  - Name: "Overseers"
     Amount: 40
     Color: "0.8, 0, 1"
     DelayMinMax:
@@ -1212,28 +1022,19 @@ CreatureSpawning:
 - Biomes:
   - "BarrenRocks"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 1
     DelayMinMax:
     - -1
     - -1
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 2
     Color: "1, 0, 0.8"
     DelayMinMax:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Overseers"
+  - Name: "Overseers"
     Amount: 10
     Color: "0.8, 0, 1"
     DelayMinMax:
@@ -1244,10 +1045,7 @@ CreatureSpawning:
   - "Dunes"
   - "Plains"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Overseers"
+  - Name: "Overseers"
     Amount: 40
     Color: "0.8, 0, 1"
     DelayMinMax:
@@ -1263,10 +1061,7 @@ CreatureSpawning:
   - "GlassedTerrain"
   - "Forest"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Overseers"
+  - Name: "Overseers"
     Amount: 20
     Color: "0.8, 0, 1"
     DelayMinMax:
@@ -1277,10 +1072,7 @@ CreatureSpawning:
   - "GlassedTerrain"
   - "Plains"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "AlienBugs02"
+  - Name: "AlienBugs02"
     Amount: 20
     Color: "0.8, 0, 1"
     DelayMinMax:
@@ -1290,40 +1082,28 @@ CreatureSpawning:
 - Biomes:
   - "Structure"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "TotalHorrors"
+  - Name: "TotalHorrors"
     Amount: 60
     Color: "1, 0.2, 1"
     DelayMinMax:
     - 10
     - 20
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "AlienBugs02"
+  - Name: "AlienBugs02"
     Amount: 20
     Color: "1, 0, 0.8"
     DelayMinMax:
     - 10
     - 20
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Overseers"
+  - Name: "Overseers"
     Amount: 5
     Color: "1, 0.2, 1"
     DelayMinMax:
     - 10
     - 20
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Spiders03"
+  - Name: "Spiders03"
     Amount: 800
     Color: "1, 0, 0.8"
     DelayMinMax:
@@ -1333,40 +1113,28 @@ CreatureSpawning:
 - Biomes:
   - "Organized"
   Entities:
-  - DelayRange:
-      Min: 6
-      Max: 10
-    Name: "AlienAssassinGreysInfected"
+  - Name: "AlienAssassinGreysInfected"
     Amount: 10
     Color: "1, 0.0, 1"
     DelayMinMax:
     - 6
     - 10
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "AlienBugs02"
+  - Name: "AlienBugs02"
     Amount: 50
     Color: "1, 0, 0.8"
     DelayMinMax:
     - 10
     - 20
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Overseers"
+  - Name: "Overseers"
     Amount: 50
     Color: "0.8, 0, 1"
     DelayMinMax:
     - 10
     - 20
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "TotalHorrors"
+  - Name: "TotalHorrors"
     Amount: 140
     Color: "1, 0.2, 1"
     DelayMinMax:
@@ -1376,40 +1144,28 @@ CreatureSpawning:
 - Biomes:
   - "Proximity"
   Entities:
-  - DelayRange:
-      Min: 6
-      Max: 10
-    Name: "AlienAssassinGreysInfected"
+  - Name: "AlienAssassinGreysInfected"
     Amount: 20
     Color: "1, 0.0, 1"
     DelayMinMax:
     - 6
     - 10
     Period: "Always"
-  - DelayRange:
-      Min: 6
-      Max: 10
-    Name: "AlienBugs02"
+  - Name: "AlienBugs02"
     Amount: 30
     Color: "1, 0, 0.8"
     DelayMinMax:
     - 6
     - 10
     Period: "Always"
-  - DelayRange:
-      Min: 6
-      Max: 10
-    Name: "Overseers"
+  - Name: "Overseers"
     Amount: 70
     Color: "0.8, 0, 1"
     DelayMinMax:
     - 6
     - 10
     Period: "Always"
-  - DelayRange:
-      Min: 6
-      Max: 10
-    Name: "TotalHorrors"
+  - Name: "TotalHorrors"
     Amount: 130
     Color: "1, 0.2, 1"
     DelayMinMax:

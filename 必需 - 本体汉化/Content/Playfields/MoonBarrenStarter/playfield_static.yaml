@@ -1,8 +1,5 @@
 PlayfieldType: "Moon"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "DesertBarrenStarter"
-PlanetSize: 2
 Difficulty: 3
 SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
@@ -45,26 +42,18 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "HeatWave"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 36
   Delay: 12
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "FireRain"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 72
   Delay: 24
-  PlyDist: 100
   Lifetime: 300
   Type: "Weather"
 - Name: "BirdFlocksVultures"
@@ -81,7 +70,6 @@ SpecialEffectsGlobal:
   Delay: 4
   PlyDist: 50
   Lifetime: 600
-AtmosphereEnabled: true
 AtmosphereColor: "0.77, 0.57, 0.44"
 AtmosphereParams:
 - 5
@@ -111,9 +99,6 @@ GroundFogIntensity: 0.05
 GroundFogHeight: 60
 Description: "\u6CA1\u6709\u6C27\u6C14\u3002\u77FF\u77F3\u7A00\u5C11\u3002\u2014 \u53EA\u6709\u5E9F\u589F,\u5728\u8000\u773C\u7684\u9633\u5149\u4E0B\u6467\u6B8B\u3002 \n\u8FD8\u6709\u602A\u7269\u5728\u7B49\u7740\u4F60,\u5EA6\u8FC7\u5B83\u4EEC\u7684\u65F6\u5149\u3002 \n\u6CA1\u6709\u6559\u7A0B\u652F\u6301! \n\u9002\u5408\u9AD8\u7EA7\u73A9\u5BB6\u3002\n"
 Seed: 575561
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "Desert Barren"
 UseRandom: true
 AllowSV: false
@@ -128,15 +113,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 1
-    Max: 2
-  Size:
-    Min: 3
-    Max: 4
-  Depth:
-    Max: 3
-  Name: "CarbonResource"
+- Name: "CarbonResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -148,16 +125,7 @@ RandomResources:
   - 0
   - 3
   DroneProb: 0.2
-  MaxDroneCount: 1
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 3
-    Max: 5
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -172,16 +140,7 @@ RandomResources:
     MaxRadius: 13
     YVariance: 10
   DroneProb: 0.8
-  MaxDroneCount: 1
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 3
-    Max: 5
-  Depth:
-    Max: 1
-  Name: "NeodymiumResource"
+- Name: "NeodymiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -193,7 +152,6 @@ RandomResources:
   - 0
   - 1
   DroneProb: 0.8
-  MaxDroneCount: 1
 AsteroidResources:
 - Name: "PromethiumResource"
   Threshold: 0.2
@@ -202,13 +160,7 @@ AsteroidResources:
   Delay: -1
 POIs:
   Random:
-  - SpawnPoiRange:
-      Min: 80
-      Max: 10
-    SpawnResRange:
-      Min: 300
-      Max: 400
-    GroupName: "NullPOI"
+  - GroupName: "NullPOI"
     Territory: false
     IsImportant: true
     Count:
@@ -247,10 +199,7 @@ POIs:
     SpawnPOIAvoid:
     - "START"
     SpawnPOIAvoidDistance: 800
-  - SpawnPoiRange:
-      Min: 300
-      Max: 600
-    GroupName: "TOTObeliskBarren"
+  - GroupName: "TOTObeliskBarren"
     Faction: "Alien"
     Territory: false
     IsImportant: true
@@ -272,10 +221,7 @@ POIs:
     SpawnPOINearRange:
     - 300
     - 600
-  - SpawnPoiRange:
-      Min: 15
-      Max: 100
-    GroupName: "TOTCampObeliskBarren"
+  - GroupName: "TOTCampObeliskBarren"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -332,10 +278,7 @@ POIs:
     SpawnPOIAvoid:
     - "START"
     SpawnPOIAvoidDistance: 1200
-  - SpawnPoiRange:
-      Min: 30
-      Max: 70
-    GroupName: "TOTCampFontBarren"
+  - GroupName: "TOTCampFontBarren"
     Faction: "None"
     Territory: false
     IsImportant: true
@@ -474,10 +417,7 @@ POIs:
       Value: "360"
     - Key: "PersonalContainer"
       Value: "AntiRadiationOintment:1"
-  - SpawnPoiRange:
-      Min: 50
-      Max: 200
-    GroupName: "JunkT1"
+  - GroupName: "JunkT1"
     Faction: "None"
     Territory: false
     Count:
@@ -542,25 +482,17 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Stun"
       Amount: "Infinite"
-      Extra: -1
     - Name: "DroneTroopsTransport"
       Amount: "Infinite"
-      Extra: -1
     - Name: "ZiraxMinigun"
       Amount: "Infinite"
-      Extra: -1
     - Name: "ZiraxRocket"
       Amount: "Infinite"
-      Extra: -1
     - Name: "RipperDog"
       Amount: "Infinite"
-      Extra: -1
 DroneSpawning:
   Random:
-  - Drones:
-      Min: 1
-      Max: 3
-    Name: "GlidingOverseer"
+  - Name: "GlidingOverseer"
     DronesMinMax:
     - 1
     - 3
@@ -569,18 +501,14 @@ CreatureSpawning:
 - Biomes:
   - "Crashsite"
   Entities:
-  - DelayRange:
-      Max: 1
-    Name: "ScraperDronesMixed"
+  - Name: "ScraperDronesMixed"
     Amount: 10
     Color: "0, 0, 1.0"
     DelayMinMax:
     - 0
     - 1
     Period: "Always"
-  - DelayRange:
-      Max: 1
-    Name: "CaveWormsGrey"
+  - Name: "CaveWormsGrey"
     Amount: 15
     Color: "0, 0, 1.0"
     DelayMinMax:
@@ -590,18 +518,14 @@ CreatureSpawning:
 - Biomes:
   - "Nest"
   Entities:
-  - DelayRange:
-      Max: 1
-    Name: "Spiders03"
+  - Name: "Spiders03"
     Amount: 10
     Color: "1.0, 1.0, 0.3"
     DelayMinMax:
     - 0
     - 1
     Period: "Always"
-  - DelayRange:
-      Max: 1
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 10
     Color: "1.0, 1.0, 0.7"
     DelayMinMax:
@@ -611,16 +535,12 @@ CreatureSpawning:
 - Biomes:
   - "LargeCrater"
   Entities:
-  - DelayRange:
-      Max: 1
-    Name: "Otyughs"
+  - Name: "Otyughs"
     Amount: 12
     DelayMinMax:
     - 0
     - 1
-  - DelayRange:
-      Max: 1
-    Name: "CaveWormsGrey"
+  - Name: "CaveWormsGrey"
     Amount: 10
     DelayMinMax:
     - 0
@@ -629,17 +549,13 @@ CreatureSpawning:
 - Biomes:
   - "Wadi"
   Entities:
-  - DelayRange:
-      Max: 1
-    Name: "CaveWormsGrey"
+  - Name: "CaveWormsGrey"
     Amount: 8
     DelayMinMax:
     - 0
     - 1
     Period: "Always"
-  - DelayRange:
-      Max: 1
-    Name: "GolemsDesert"
+  - Name: "GolemsDesert"
     Amount: 8
     DelayMinMax:
     - 0
@@ -648,26 +564,19 @@ CreatureSpawning:
   - "Oasis"
   - "Shore"
   Entities:
-  - DelayRange:
-      Min: 20
-      Max: 24
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 20
     Color: "1.0, 1.0, 0"
     DelayMinMax:
     - 20
     - 24
     Period: "Always"
-  - DelayRange:
-      Max: 1
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 8
     DelayMinMax:
     - 0
     - 1
-  - DelayRange:
-      Max: 1
-    Name: "RipperDogsWildGroup"
+  - Name: "RipperDogsWildGroup"
     Amount: 15
     DelayMinMax:
     - 0
@@ -678,16 +587,12 @@ CreatureSpawning:
   - "FlowersEdge"
   - "Plantation"
   Entities:
-  - DelayRange:
-      Max: 2
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 20
     DelayMinMax:
     - 0
     - 2
-  - DelayRange:
-      Max: 1
-    Name: "RipperDogsWildGroup"
+  - Name: "RipperDogsWildGroup"
     Amount: 60
     DelayMinMax:
     - 0
@@ -700,32 +605,24 @@ CreatureSpawning:
   - "Plateau"
   - "DustBowl"
   Entities:
-  - DelayRange:
-      Max: 4
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 6
     DelayMinMax:
     - 0
     - 4
     Period: "Always"
-  - DelayRange:
-      Max: 4
-    Name: "WormDesertLargeHerd"
+  - Name: "WormDesertLargeHerd"
     Amount: 6
     DelayMinMax:
     - 0
     - 4
     Period: "Always"
-  - DelayRange:
-      Max: 4
-    Name: "GolemsDesert"
+  - Name: "GolemsDesert"
     Amount: 8
     DelayMinMax:
     - 0
     - 4
-  - DelayRange:
-      Max: 4
-    Name: "Otyughs"
+  - Name: "Otyughs"
     Amount: 10
     DelayMinMax:
     - 0
@@ -736,17 +633,13 @@ CreatureSpawning:
   - "LowMountains_1"
   - "SandDrift"
   Entities:
-  - DelayRange:
-      Max: 4
-    Name: "CaveWormsGrey"
+  - Name: "CaveWormsGrey"
     Amount: 15
     DelayMinMax:
     - 0
     - 4
     Period: "Always"
-  - DelayRange:
-      Max: 4
-    Name: "GolemsDesert"
+  - Name: "GolemsDesert"
     Amount: 6
     DelayMinMax:
     - 0
@@ -755,9 +648,7 @@ CreatureSpawning:
   - "Water"
   - "ShallowWater"
   Entities:
-  - DelayRange:
-      Max: 1
-    Name: "ShoalofFishesSmall"
+  - Name: "ShoalofFishesSmall"
     Amount: 10
     Color: "1, 1.0, 0.0"
     AllowInWater: true
@@ -779,10 +670,7 @@ SpawnZones:
   RateMultiplyerEdge: 1
   Color: "1.0, 1.0, 1.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ScraperDronesBlue"
     - "ScraperDronesArmy"
     Biomes:
@@ -792,10 +680,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ScraperDronesBlue"
     - "ScraperDronesArmy"
     Biomes:
@@ -805,10 +690,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "ScraperDronesBlue"
     - "ScraperDronesArmy"
     Biomes:

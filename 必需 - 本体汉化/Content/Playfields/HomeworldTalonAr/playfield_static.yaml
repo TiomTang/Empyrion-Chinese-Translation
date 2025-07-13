@@ -1,8 +1,5 @@
 PlayfieldType: "Planet"
-AtmosphereO2: 0.1
-TemperatureDay: -2147483648
 PlanetType: "TalonArHomeworld"
-PlanetSize: 2
 Difficulty: 10
 SunFlare: "EnvironmentalEffects/SunFlareWhite2"
 SpecialEffectsLocal:
@@ -21,6 +18,7 @@ SpecialEffectsLocal:
   - "Desert"
   - "Dunes"
   - "Rocks"
+  FollowPlayerY: false
 - Name: "FireFliesGreenFew"
   MaxHeight: 15
   Time: "Night"
@@ -68,64 +66,43 @@ SpecialEffectsLocal:
   FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clear"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsLight"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 2
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsMedium"
-  SpawnY: 50
-  Time: "Always"
+  InitialDelay: 0
   Delay: 3
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "Clouds"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 12
   Delay: 10
-  PlyDist: 100
   Lifetime: 1000
   Type: "Weather"
 - Name: "Wind"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 24
   Delay: 10
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "Fog"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 1000
   Type: "Weather"
 - Name: "HeatWave"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 1200
   Type: "Weather"
 - Name: "FogRadiationGreen"
-  SpawnY: 50
-  Time: "Always"
   InitialDelay: 48
   Delay: 24
-  PlyDist: 100
   Lifetime: 600
   Type: "Weather"
 - Name: "BirdFlocksVultures"
@@ -139,7 +116,6 @@ SpecialEffectsGlobal:
   Lifetime: 600
 - Name: "MeteorShower"
   SpawnY: 100
-  Time: "Always"
   Biome:
   - "Savanna"
   - "SavannaEdge"
@@ -150,7 +126,6 @@ SpecialEffectsGlobal:
   PlyDist: 200
   Struct: "Avoid"
   Lifetime: 60
-AtmosphereEnabled: true
 AtmosphereColor: "1.0, 0.86, 0.88"
 SkyColor: "1, 0.6, 0.6"
 SkyHorizonColor: "1, 0.2, 0.2"
@@ -159,24 +134,16 @@ LightHorizonColor: "1, 0.3, 0.2"
 NightLightColor: "0.7, 0.7, 1"
 CloudsZenithColor: "0.5, 0.3, 0.4"
 CloudsHorizonColor: "1, 0.18, 0.18"
-CloudsNightZenithColor: "0.054, 0.094, 0.152"
-CloudsNightHorizonColor: "0.054, 0.094, 0.152"
 CloudsOpacity: 1
 FogCloudIntensity: 0.8
 DayLightIntensity: 1.25
 NightLightIntensity: 0.48
 DayShadowStrength: 0.95
-NightShadowStrength: 0.4
 CloudsDensity: 0.4
 CloudsSharpness: 0.3
 CloudsBrightness: 1
 WindSpeed: 4
-FogColor: "0.8, 0.8, 0.8"
 Description: "\u6CF0\u9686\u7684\u6BCD\u661F"
-Seed: -2147483648
-TerrainHeightMapMax: -1
-BaseAttackCount: 1
-AllowSavingBlueprints: true
 PlanetClass: "TalonArHomeworld"
 UseRandom: true
 AllowSV: false
@@ -191,16 +158,7 @@ AllowBPFactory: false
 RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
-- Count:
-    Min: 1
-    Max: 2
-  Size:
-    Min: 10
-    Max: 14
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "CarbonResource"
+- Name: "CarbonResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -212,17 +170,7 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.5
-  MaxDroneCount: 1
-- Count:
-    Min: 4
-    Max: 5
-  Size:
-    Min: 10
-    Max: 12
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "IronResource"
+- Name: "IronResource"
   IsScalingCount: true
   CountMinMax:
   - 4
@@ -234,17 +182,7 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.5
-  MaxDroneCount: 1
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 10
-    Max: 12
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "CopperResource"
+- Name: "CopperResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -256,17 +194,7 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.7
-  MaxDroneCount: 1
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 5
-    Max: 6
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "TitanResource"
+- Name: "TitanResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -279,16 +207,7 @@ RandomResources:
   - 15
   DroneProb: 1
   MaxDroneCount: 4
-- Count:
-    Min: 5
-    Max: 6
-  Size:
-    Min: 8
-    Max: 11
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "NeodymiumResource"
+- Name: "NeodymiumResource"
   IsScalingCount: true
   CountMinMax:
   - 5
@@ -301,16 +220,7 @@ RandomResources:
   - 15
   DroneProb: 1
   MaxDroneCount: 4
-- Count:
-    Min: 1
-    Max: 3
-  Size:
-    Min: 5
-    Max: 9
-  Depth:
-    Min: 6
-    Max: 15
-  Name: "CobaltResource"
+- Name: "CobaltResource"
   IsScalingCount: true
   CountMinMax:
   - 1
@@ -322,16 +232,7 @@ RandomResources:
   - 6
   - 15
   DroneProb: 0.5
-  MaxDroneCount: 1
-- Count:
-    Min: 2
-    Max: 3
-  Size:
-    Min: 5
-    Max: 6
-  Depth:
-    Max: 1
-  Name: "PromethiumResource"
+- Name: "PromethiumResource"
   IsScalingCount: true
   CountMinMax:
   - 2
@@ -465,11 +366,9 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
     - Name: "DroneSmallFast01Rocket"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
   PlanetVessels:
   - Name: "OPVTalonArT2"
@@ -489,7 +388,6 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
-      Extra: -1
       Type: "FighterDrone"
 CreatureSpawning:
 - Biomes:
@@ -498,18 +396,12 @@ CreatureSpawning:
   - "Sand"
   - "Rocks"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "GolemsDesert"
+  - Name: "GolemsDesert"
     Amount: 10
     DelayMinMax:
     - 10
     - 20
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 10
     DelayMinMax:
     - 10
@@ -519,36 +411,24 @@ CreatureSpawning:
   - "SavannaEdge"
   - "Savanna"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "CaveWormGreyHerd"
+  - Name: "CaveWormGreyHerd"
     Amount: 8
     DelayMinMax:
     - 10
     - 20
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "WormDesertHerd"
+  - Name: "WormDesertHerd"
     Amount: 10
     DelayMinMax:
     - 10
     - 20
     Period: "Day"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Otyughs"
+  - Name: "Otyughs"
     Amount: 5
     DelayMinMax:
     - 10
     - 20
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 15
     DelayMinMax:
     - 10
@@ -558,27 +438,18 @@ CreatureSpawning:
   - "Oasis"
   - "OasisEdge"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "AlienBugs01"
+  - Name: "AlienBugs01"
     Amount: 15
     DelayMinMax:
     - 10
     - 20
     Period: "Always"
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 10
     DelayMinMax:
     - 10
     - 20
-  - DelayRange:
-      Min: 10
-      Max: 12
-    Name: "LizardMuleHerd"
+  - Name: "LizardMuleHerd"
     Amount: 15
     DelayMinMax:
     - 10
@@ -588,18 +459,12 @@ CreatureSpawning:
   - "Marsh"
   - "Shore"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "CaveWormGreyHerd"
+  - Name: "CaveWormGreyHerd"
     Amount: 8
     DelayMinMax:
     - 10
     - 20
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Slimes"
+  - Name: "Slimes"
     Amount: 12
     DelayMinMax:
     - 10
@@ -608,10 +473,7 @@ CreatureSpawning:
 - Biomes:
   - "LowMountains"
   Entities:
-  - DelayRange:
-      Min: 10
-      Max: 20
-    Name: "Spiders02"
+  - Name: "Spiders02"
     Amount: 8
     DelayMinMax:
     - 10
@@ -640,10 +502,7 @@ SpawnZones:
   Radius: 500
   Color: "0.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "TalonarPatrolSmall"
     Biomes:
     - "Any"
@@ -656,10 +515,7 @@ SpawnZones:
   Radius: 900
   Color: "0.0, 0.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: 15
-      Max: 25
-    Names:
+  - Names:
     - "TalonarPatrolSmall"
     Biomes:
     - "Any"
@@ -678,10 +534,7 @@ SpawnZones:
   RateMultiplyerEdge: 1
   Color: "0.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "TalonarDogPatrol"
     Biomes:
     - "Any"
@@ -690,10 +543,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "TalonarPatrolMedium"
     Biomes:
     - "Any"
@@ -702,10 +552,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "TalonarPatrolSmall"
     Biomes:
     - "Any"
@@ -724,10 +571,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.5
   Color: "0.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "TalonarDogPatrol"
     Biomes:
     - "Any"
@@ -747,10 +591,7 @@ SpawnZones:
   RateMultiplyerEdge: 0.8
   Color: "0.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "TalonarPatrolMedium"
     Biomes:
     - "Any"
@@ -759,10 +600,7 @@ SpawnZones:
     - -1
     - -1
     Period: "Always"
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "TalonarPatrolMedium"
     Biomes:
     - "Oasis"
@@ -780,10 +618,7 @@ SpawnZones:
   RateMultiplyerEdge: 1
   Color: "0.0, 1.0, 0.0, 1.0"
   Entities:
-  - DelayRange:
-      Min: -1
-      Max: -1
-    Names:
+  - Names:
     - "TalonarPatrolSmall"
     Biomes:
     - "Any"
