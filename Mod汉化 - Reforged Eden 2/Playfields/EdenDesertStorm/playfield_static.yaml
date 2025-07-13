@@ -1,1632 +1,2151 @@
-Description: "\u96BE\u5EA6: [c][ffff00]\u4E2D\u7B49[-][/c]\n\n\u4F20\u611F\u5668\u5E72\u6270: [c][ffff00]POI\u68C0\u6D4B\u8303\u56F4\u7F29\u5C0F\u3002[-][/c]\n\n\u8FD9\u662F\u4E00\u9897\u6C99\u6F20\u884C\u661F,\u6CA1\u6709\u4EFB\u4F55\u5929\u7136\u6C34\u6E90\u3002\u5168\u7403\u6027\u7684\u6C99\u5C18\u66B4\u7B3C\u7F69\u7740\u6574\u4E2A\u661F\u7403,\u964D\u4F4E\u4E86\u80FD\u89C1\u5EA6\u3002"
-PlanetType: Stormy Desert
-PlayfieldType: Planet
-Difficulty: "5"
-LandClaimZone: Device
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "Stormy Desert"
+PlanetSize: 2
+Difficulty: 5
+SunFlare: "EnvironmentalEffects/SunFlareRedSpace"
 SpecialEffectsLocal:
-- Name: FireFliesRed
+- Name: "FireFliesRed"
+  MaxHeight: 40
+  Time: "Night"
   Biome:
-  - Water
-  - ShallowWater
-  - Shore
-  Time: Night
-  MaxHeight: "40"
-- Name: FireFliesGreenFew
+  - "Water"
+  - "ShallowWater"
+  - "Shore"
+  FollowPlayerY: false
+- Name: "FireFliesGreenFew"
+  MaxHeight: 150
+  Time: "Night"
   Biome:
-  - Plains
-  - Sand
-  - Flowers
-  - FlowersEdge
-  - Wadi
-  - DustBowl
-  Time: Night
-  MaxHeight: "150"
-- Name: Pollen
+  - "Plains"
+  - "Sand"
+  - "Flowers"
+  - "FlowersEdge"
+  - "Wadi"
+  - "DustBowl"
+  FollowPlayerY: false
+- Name: "Pollen"
+  MaxHeight: 150
+  Time: "Day"
   Biome:
-  - Plains
-  - DustBowl
-  - Plantation
-  - Flowers
-  - FlowersEdge
-  - Oasis
-  Time: Day
-  MaxHeight: "150"
-- Name: FireFliesGreen
+  - "Plains"
+  - "DustBowl"
+  - "Plantation"
+  - "Flowers"
+  - "FlowersEdge"
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "FireFliesGreen"
+  MaxHeight: 150
+  Time: "Night"
   Biome:
-  - Oasis
-  - Plantation
-  Time: Night
-  MaxHeight: "150"
-- Name: WindLines
+  - "Oasis"
+  - "Plantation"
+  FollowPlayerY: false
+- Name: "WindLines"
+  MaxHeight: 5
+  Time: "Always"
   Biome:
-  - Plains
-  - DustBowl
-  - Plantation
-  - Sand
-  - Plateau
-  - LowMountains
-  - LowMountains_1
-  - Mountains
-  - SandDrift
-  - Dunes
-  Time: Always
-  MaxHeight: "5"
+  - "Plains"
+  - "DustBowl"
+  - "Plantation"
+  - "Sand"
+  - "Plateau"
+  - "LowMountains"
+  - "LowMountains_1"
+  - "Mountains"
+  - "SandDrift"
+  - "Dunes"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "10"
-  Lifetime: "300"
-- Name: Wind
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "5"
-  Lifetime: "500"
-- Name: CloudsLight
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "12"
-  Lifetime: "300"
-- Name: Clouds
-  Type: Weather
-  InitialDelay: "6"
-  Delay: "12"
-  Lifetime: "180"
-- Name: CloudsDark
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "36"
-  Lifetime: "180"
-- Name: HeatWave
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "300"
-- Name: FogRadiationPurple
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "72"
-  Lifetime: "120"
-- Name: ThunderAndLightningRed
-  Time: Always
-  InitialDelay: "2"
-  Delay: "6"
-  Lifetime: "600"
-  PlyDist: "50"
-  SpawnY: "100"
-  Struct: Avoid
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.9, 0.75, 0.45
-SkyColor: 0.64, 0.4, 0.4
-SkyHorizonColor: 1, 0.2, 0
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 10
+  PlyDist: 100
+  Lifetime: 300
+  Type: "Weather"
+- Name: "Wind"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 5
+  PlyDist: 100
+  Lifetime: 500
+  Type: "Weather"
+- Name: "CloudsLight"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 300
+  Type: "Weather"
+- Name: "Clouds"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 6
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 180
+  Type: "Weather"
+- Name: "CloudsDark"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 36
+  PlyDist: 100
+  Lifetime: 180
+  Type: "Weather"
+- Name: "HeatWave"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 300
+  Type: "Weather"
+- Name: "FogRadiationPurple"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 72
+  PlyDist: 100
+  Lifetime: 120
+  Type: "Weather"
+- Name: "ThunderAndLightningRed"
+  SpawnY: 100
+  Time: "Always"
+  InitialDelay: 2
+  Delay: 6
+  PlyDist: 50
+  Struct: "Avoid"
+  Lifetime: 600
+AtmosphereEnabled: true
+AtmosphereColor: "0.9, 0.75, 0.45"
 AtmosphereParams:
-- "5"
-- "2.2"
-DayLightIntensity: "1.1"
-NightLightIntensity: "0.6"
-LightZenithColor: 0.64, 0.5, 0.5
-LightHorizonColor: 1, 0.5, 0
-NightLightColor: 0.5, 0.6, 0.8
-DayShadowStrength: "1"
-NightShadowStrength: "1"
-SunFlare: EnvironmentalEffects/SunFlareRedSpace
-AtmosphereFog: "0.70"
-FogCloudIntensity: "0.8"
-CloudsDensity: "0.3"
-CloudsSharpness: "0.05"
-CloudsOpacity: "0.7"
-CloudsBrightness: "0.7"
-CloudsZenithColor: 1.0, 0.6, 0.3
-CloudsHorizonColor: 1, 0.3, 0.1
-CloudsNightZenithColor: 0.3, 0.2, 0.1
-CloudsNightHorizonColor: 0.5, 0.3, 0
-WindSpeed: "15"
+- 5
+- 2.2
+SkyColor: "0.64, 0.4, 0.4"
+SkyHorizonColor: "1, 0.2, 0"
+LightZenithColor: "0.64, 0.5, 0.5"
+LightHorizonColor: "1, 0.5, 0"
+NightLightColor: "0.5, 0.6, 0.8"
+CloudsZenithColor: "1.0, 0.6, 0.3"
+CloudsHorizonColor: "1, 0.3, 0.1"
+CloudsNightZenithColor: "0.3, 0.2, 0.1"
+CloudsNightHorizonColor: "0.5, 0.3, 0"
+CloudsOpacity: 0.7
+FogCloudIntensity: 0.8
+DayLightIntensity: 1.1
+NightLightIntensity: 0.6
+DayShadowStrength: 1
+NightShadowStrength: 1
+AtmosphereFog: 0.7
+CloudsDensity: 0.3
+CloudsSharpness: 0.05
+CloudsBrightness: 0.7
+WindSpeed: 15
+FogColor: "0.8, 0.8, 0.8"
+Description: "\u96BE\u5EA6: [c][ffff00]\u4E2D\u7B49[-][/c]\n\u4F20\u611F\u5668\u5E72\u6270: [c][ffff00]\u5730\u6807\u63A2\u6D4B\u8303\u56F4\u51CF\u5C0F\u3002[-][/c]\n\n\u4E00\u9897\u6C99\u6F20\u884C\u661F\uFF0C\u6CA1\u6709\u4EFB\u4F55\u81EA\u7136\u6C34\u6E90\u3002\u4E00\u573A\u5168\u7403\u6027\u6C99\u5C18\u66B4\u5E2D\u5377\u6574\u9897\u661F\u7403\uFF0C\u964D\u4F4E\u4E86\u80FD\u89C1\u5EA6\u3002"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Stormy Desert"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: CobaltResource
-  Biome:
-  - Wadi
-  - Oasis
-  - Flowers
-  - Nest
-  IsImportant: "True"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 2
+    Max: 5
+  Depth:
+    Min: 10
+    Max: 15
+  Name: "CobaltResource"
+  IsImportant: true
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
-  IsScalingCount: "True"
+  - 1
+  - 2
   SizeMinMax:
-  - "2"
-  - "5"
+  - 2
+  - 5
   DepthMinMax:
-  - "10"
-  - "15"
-  DroneProb: "0"
-- Name: CopperResource
+  - 10
+  - 15
+  MaxDroneCount: 1
   Biome:
-  - Plateau
+  - "Wadi"
+  - "Oasis"
+  - "Flowers"
+  - "Nest"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 7
+  Depth:
+    Min: 10
+    Max: 15
+  Name: "CopperResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
-  IsScalingCount: "True"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "7"
+  - 5
+  - 7
   DepthMinMax:
-  - "10"
-  - "15"
-  DroneProb: "0"
-- Name: NeodymiumResource
+  - 10
+  - 15
+  MaxDroneCount: 1
   Biome:
-  - Mountains
-  - LowMountains
-  - LowMountains_1
+  - "Plateau"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 9
+    Max: 11
+  Depth:
+    Min: 65
+    Max: 75
+  Name: "NeodymiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
-  IsScalingCount: "True"
+  - 1
+  - 2
   SizeMinMax:
-  - "9"
-  - "11"
+  - 9
+  - 11
   DepthMinMax:
-  - "65"
-  - "75"
-  DroneProb: "0"
-  MaxDroneCount: "5"
-- Name: SathiumResource
+  - 65
+  - 75
+  MaxDroneCount: 5
   Biome:
-  - Rocks
-  - Dunes
-  - Sand
+  - "Mountains"
+  - "LowMountains"
+  - "LowMountains_1"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 6
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "SathiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
-  IsScalingCount: "True"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "6"
+  - 5
+  - 6
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0"
-  MaxDroneCount: "5"
-- Name: PromethiumResource
+  - 5
+  - 10
+  MaxDroneCount: 5
   Biome:
-  - Mountains
-  - LowMountains
-  - LowMountains_1
+  - "Rocks"
+  - "Dunes"
+  - "Sand"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 3
+    Max: 5
+  Depth:
+    Max: 5
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
-  IsScalingCount: "True"
+  - 2
+  - 3
   SizeMinMax:
-  - "3"
-  - "5"
+  - 3
+  - 5
   DepthMinMax:
-  - "0"
-  - "5"
-  DroneProb: "0"
+  - 0
+  - 5
+  MaxDroneCount: 1
+  Biome:
+  - "Mountains"
+  - "LowMountains"
+  - "LowMountains_1"
 AsteroidResources:
-- Name: CobaltResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: CopperResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: NeodymiumResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: SathiumResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.1"
+- Name: "CobaltResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "CopperResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "NeodymiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "SathiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: R2GhystMain
-    Faction: Ghyst
+  - SpawnResRange:
+      Min: 300
+      Max: 400
+    GroupName: "R2GhystMain"
+    Faction: "Ghyst"
     FactionTerritory:
-    - Zirax
-    IsImportant: "True"
+    - "Zirax"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnResource:
-    - CobaltResource:1-1
+    - "CobaltResource:1-1"
     SpawnResourceRange:
-    - "300"
-    - "400"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2GhystAuxT1
-    Faction: Ghyst
+    - 300
+    - 400
+  - SpawnPoiRange:
+      Min: 350
+      Max: 500
+    GroupName: "R2GhystAuxT1"
+    Faction: "Ghyst"
     FactionTerritory:
-    - Zirax
+    - "Zirax"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
+    - 1
+    - 2
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOINear:
-    - R2GhystMain
-    SpawnPOINearRange:
-    - "350"
-    - "500"
+    - 1
+    - 2
+    ReserveCount: 2
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2GhystDefenseT1
-    Faction: Ghyst
+    SpawnPOINear:
+    - "R2GhystMain"
+    SpawnPOINearRange:
+    - 350
+    - 500
+  - SpawnPoiRange:
+      Min: 200
+      Max: 300
+    GroupName: "R2GhystDefenseT1"
+    Faction: "Ghyst"
     FactionTerritory:
-    - Zirax
+    - "Zirax"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
+    - 1
+    - 2
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOINear:
-    - R2GhystMain
-    SpawnPOINearRange:
-    - "200"
-    - "300"
+    - 1
+    - 2
+    ReserveCount: 2
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_PolSanctuary
-    Faction: Polaris
-    IsImportant: "True"
-    BiomesExcluded:
-    - LowMountains
-    - LowMountains_1
-    - Mountains
+    SpawnPOINear:
+    - "R2GhystMain"
+    SpawnPOINearRange:
+    - 200
+    - 300
+  - GroupName: "Eden_PolSanctuary"
+    Faction: "Polaris"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Properties:
+    - Key: "PersonalContainer"
+      Value: "MoneyCard:10000"
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - R2GhystMain
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: PersonalContainer
-      Value: MoneyCard:10000
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2PolarisDefenseT1
-    Faction: Polaris
+    - "R2GhystMain"
+    SpawnPOIAvoidDistance: 1000
     BiomesExcluded:
-    - LowMountains
-    - LowMountains_1
-    - Mountains
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 150
+      Max: 300
+    GroupName: "R2PolarisDefenseT1"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - Eden_PolSanctuary
-    SpawnPOINearRange:
-    - "150"
-    - "300"
+    - 1
+    - 2
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_PolHabitat
-    Faction: Polaris
-    IsImportant: "True"
+    SpawnPOINear:
+    - "Eden_PolSanctuary"
+    SpawnPOINearRange:
+    - 150
+    - 300
     BiomesExcluded:
-    - LowMountains
-    - LowMountains_1
-    - Mountains
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 150
+      Max: 300
+    GroupName: "Eden_PolHabitat"
+    Faction: "Polaris"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 3
+      Max: 5
     CountMinMax:
-    - "3"
-    - "5"
-    SpawnPOINear:
-    - Eden_PolSanctuary
-    SpawnPOINearRange:
-    - "150"
-    - "300"
+    - 3
+    - 5
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2FactoryPolaris2
-    Faction: Polaris
+    SpawnPOINear:
+    - "Eden_PolSanctuary"
+    SpawnPOINearRange:
+    - 150
+    - 300
+    BiomesExcluded:
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 350
+      Max: 750
+    GroupName: "R2FactoryPolaris2"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - Eden_PolSanctuary
-    SpawnPOINearRange:
-    - "350"
-    - "750"
+    - 1
+    - 1
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2FactoryPolaris3
-    Faction: Polaris
+    SpawnPOINear:
+    - "Eden_PolSanctuary"
+    SpawnPOINearRange:
+    - 350
+    - 750
+  - SpawnPoiRange:
+      Min: 350
+      Max: 750
+    GroupName: "R2FactoryPolaris3"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - Eden_PolSanctuary
-    SpawnPOINearRange:
-    - "350"
-    - "750"
+    - 1
+    - 1
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2FactoryPolaris1
-    Faction: Polaris
+    SpawnPOINear:
+    - "Eden_PolSanctuary"
+    SpawnPOINearRange:
+    - 350
+    - 750
+  - SpawnPoiRange:
+      Min: 350
+      Max: 750
+    GroupName: "R2FactoryPolaris1"
+    Faction: "Polaris"
     FactionTerritory:
-    - Eden_PolarisTerritory
+    - "Eden_PolarisTerritory"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - Eden_PolSanctuary
-    SpawnPOINearRange:
-    - "350"
-    - "750"
+    - 1
+    - 1
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: JunkT1
-    Faction: None
+    SpawnPOINear:
+    - "Eden_PolSanctuary"
+    SpawnPOINearRange:
+    - 350
+    - 750
+  - SpawnPoiRange:
+      Min: 150
+      Max: 450
+    GroupName: "JunkT1"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_PolSanctuary"
+    SpawnPOINearRange:
+    - 150
+    - 450
     BiomesExcluded:
-    - LowMountains
-    - LowMountains_1
-    - Mountains
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "Eden_PolarisCondenser"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - Eden_PolSanctuary
-    SpawnPOINearRange:
-    - "150"
-    - "450"
+    - 1
+    - 1
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_PolarisCondenser
-    Faction: Polaris
+    SpawnPOINear:
+    - "Eden_PolSanctuary"
+    SpawnPOINearRange:
+    - 300
+    - 400
     BiomesExcluded:
-    - LowMountains
-    - LowMountains_1
-    - Mountains
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 25
+      Max: 50
+    GroupName: "Eden_PolarisCondenser"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - Eden_PolSanctuary
-    SpawnPOINearRange:
-    - "300"
-    - "400"
+    - 1
+    - 2
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_PolarisCondenser
-    Faction: Polaris
+    SpawnPOINear:
+    - "Eden_PolarisCondenser"
+    SpawnPOINearRange:
+    - 25
+    - 50
     BiomesExcluded:
-    - LowMountains
-    - LowMountains_1
-    - Mountains
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+  - GroupName: "R2PolarisAuxT1"
+    Faction: "Polaris"
+    Territory: false
+    AuxiliaryPOIs:
+    - "Eden_PolarisCondenser"
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - Eden_PolarisCondenser
-    SpawnPOINearRange:
-    - "25"
-    - "50"
+    - 3
+    - 4
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 3
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2PolarisAuxT1
-    Faction: Polaris
     Biome:
-    - Plantation
-    - Oasis
-    IsScalingCount: "True"
+    - "Plantation"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 200
+      Max: 400
+    GroupName: "Eden_PolarisCondenser"
+    Faction: "Polaris"
+    Territory: false
+    IsAuxPOI: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "3"
-    - "4"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "False"
-    AuxiliaryPOIs:
-    - Eden_PolarisCondenser
+    - 1
+    - 2
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_PolarisCondenser
-    Faction: Polaris
-    BiomesExcluded:
-    - LowMountains
-    - LowMountains_1
-    - Mountains
-    CountMinMax:
-    - "1"
-    - "2"
-    IsAuxPOI: "True"
     SpawnPOINearRange:
-    - "200"
-    - "400"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2GhystAuxT2
-    Faction: Ghyst
+    - 200
+    - 400
+    BiomesExcluded:
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 1500
+      Max: 2000
+    SpawnResRange:
+      Min: 150
+      Max: 300
+    GroupName: "R2GhystAuxT2"
+    Faction: "Ghyst"
     FactionTerritory:
-    - Zirax
-    IsImportant: "True"
-    BiomesExcluded:
-    - Plains
+    - "Zirax"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    TroopTransport: true
+    Drones:
+      Min: 2
+      Max: 3
     DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "5"
-    TroopTransport: "True"
+    - 2
+    - 3
+    ReserveCount: 5
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - R2GhystMain
-    SpawnPOINearRange:
-    - "1500"
-    - "2000"
+    - "R2GhystMain"
     SpawnResource:
-    - CopperResource:1-2
-    SpawnResourceRange:
-    - "150"
-    - "300"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2GhystAuxT1
-    Faction: Ghyst
-    FactionTerritory:
-    - Zirax
-    IsImportant: "True"
-    BiomesExcluded:
-    - Plains
-    CountMinMax:
-    - "2"
-    - "3"
-    DroneProb: "0"
-    DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "5"
-    TroopTransport: "True"
-    SpawnPOINear:
-    - R2GhystAuxT2
+    - "CopperResource:1-2"
     SpawnPOINearRange:
-    - "500"
-    - "800"
+    - 1500
+    - 2000
+    SpawnResourceRange:
+    - 150
+    - 300
+    BiomesExcluded:
+    - "Plains"
+  - SpawnPoiRange:
+      Min: 500
+      Max: 800
+    SpawnResRange:
+      Min: 150
+      Max: 600
+    GroupName: "R2GhystAuxT1"
+    Faction: "Ghyst"
+    FactionTerritory:
+    - "Zirax"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    TroopTransport: true
+    Drones:
+      Min: 2
+      Max: 3
+    DronesMinMax:
+    - 2
+    - 3
+    ReserveCount: 5
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2GhystAuxT2"
     SpawnResource:
-    - PromethiumResource:1-2
-    SpawnResourceRange:
-    - "150"
-    - "600"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CrashedShip
-    Faction: None
-    CountMinMax:
-    - "0"
-    - "1"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - R2GhystAuxT2
+    - "PromethiumResource:1-2"
     SpawnPOINearRange:
-    - "500"
-    - "700"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2GhystAuxT1
-    Faction: Ghyst
-    FactionTerritory:
-    - Zirax
+    - 500
+    - 800
+    SpawnResourceRange:
+    - 150
+    - 600
     BiomesExcluded:
-    - Plains
+    - "Plains"
+  - SpawnPoiRange:
+      Min: 500
+      Max: 700
+    GroupName: "CrashedShip"
+    Faction: "None"
+    Territory: false
+    Count:
+      Max: 1
     CountMinMax:
-    - "5"
-    - "8"
-    IsScalingCount: "True"
-    DroneProb: "0"
+    - 0
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2GhystAuxT2"
+    SpawnPOINearRange:
+    - 500
+    - 700
+  - GroupName: "R2GhystAuxT1"
+    Faction: "Ghyst"
+    FactionTerritory:
+    - "Zirax"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 5
+      Max: 8
+    CountMinMax:
+    - 5
+    - 8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - Eden_PolSanctuary
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2GhystDefenseT1
-    Faction: Ghyst
+    - "Eden_PolSanctuary"
+    SpawnPOIAvoidDistance: 1000
+    BiomesExcluded:
+    - "Plains"
+  - SpawnResRange:
+      Min: 100
+      Max: 150
+    GroupName: "R2GhystDefenseT1"
+    Faction: "Ghyst"
     FactionTerritory:
-    - Zirax
-    Territory: "False"
+    - "Zirax"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "3"
-    - "4"
-    IsScalingCount: "True"
+    - 3
+    - 4
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnResource:
+    - "NeodymiumResource:1-1"
+    SpawnResourceRange:
+    - 100
+    - 150
     Biome:
-    - LowMountains
-    - LowMountains_1
-    - Mountains
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnResource:
-    - NeodymiumResource:1-1
-    SpawnResourceRange:
-    - "100"
-    - "150"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2TraderMain
-    Faction: Trader
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+  - GroupName: "R2TraderMain"
+    Faction: "Trader"
+    Territory: false
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
+    - 0
+    - 1
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2TraderAuxT1
-    Faction: Trader
+  - GroupName: "R2TraderAuxT1"
+    Faction: "Trader"
+    Territory: false
+    Count:
+      Min: 3
+      Max: 5
     CountMinMax:
-    - "3"
-    - "5"
+    - 3
+    - 5
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2TraderDefenseT1
-    Faction: Trader
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "R2TraderDefenseT1"
+    Faction: "Trader"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 3
     CountMinMax:
-    - "1"
-    - "3"
+    - 1
+    - 3
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - R2TraderMain
+    - "R2TraderMain"
     SpawnPOINearRange:
-    - "100"
-    - "250"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2TraderDefenseT1
-    Faction: Trader
+    - 100
+    - 250
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "R2TraderDefenseT1"
+    Faction: "Trader"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
+    - 1
+    - 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - R2TraderAuxT1
+    - "R2TraderAuxT1"
     SpawnPOINearRange:
-    - "100"
-    - "250"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrMainSingleRG
-    Faction: Farr
-    IsImportant: "True"
+    - 100
+    - 250
+  - GroupName: "FarrMainSingleRG"
+    Faction: "Farr"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrDefenseT1RG
-    Faction: Farr
-    IsImportant: "True"
-    IsScalingCount: "True"
+  - SpawnPoiRange:
+      Min: 250
+      Max: 400
+    GroupName: "FarrDefenseT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
+    - 2
+    - 3
+    DroneProb: 0.25
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - FarrMainSingleRG
+    - "FarrMainSingleRG"
     SpawnPOINearRange:
-    - "250"
-    - "400"
-    DroneProb: "0.25"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "1"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrMainRG
-    Faction: Farr
+    - 250
+    - 400
+  - GroupName: "FarrMainRG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "1.0"
+    - 1
+    - 2
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrDefenseT1RG
-    Faction: Farr
-    IsImportant: "True"
-    IsScalingCount: "True"
+  - SpawnPoiRange:
+      Min: 250
+      Max: 400
+    GroupName: "FarrDefenseT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
+    - 1
+    - 2
+    DroneProb: 0.25
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - FarrMainRG
+    - "FarrMainRG"
     SpawnPOINearRange:
-    - "250"
-    - "400"
-    DroneProb: "0.25"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "1"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrTradingT3RG
-    Faction: Farr
+    - 250
+    - 400
+  - GroupName: "FarrTradingT3RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0.25"
+    - 1
+    - 1
+    DroneProb: 0.25
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
+    - 1
+    - 2
+    ReserveCount: 3
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrDefenseT1RG
-    Faction: Farr
-    IsImportant: "True"
-    IsScalingCount: "True"
+  - SpawnPoiRange:
+      Min: 250
+      Max: 400
+    GroupName: "FarrDefenseT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
+    - 1
+    - 2
+    DroneProb: 0.25
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - FarrTradingT3RG
+    - "FarrTradingT3RG"
     SpawnPOINearRange:
-    - "250"
-    - "400"
-    DroneProb: "0.25"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "1"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT3RG
-    Faction: Farr
+    - 250
+    - 400
+  - SpawnPoiRange:
+      Min: 200
+      Max: 350
+    GroupName: "FarrAuxT3RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    DroneProb: 0.1
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - FarrTradingT3RG
+    - "FarrTradingT3RG"
     SpawnPOINearRange:
-    - "200"
-    - "350"
-    DroneProb: "0.1"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT2RG
-    Faction: Farr
+    - 200
+    - 350
+  - SpawnPoiRange:
+      Min: 250
+      Max: 500
+    GroupName: "FarrAuxT2RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - FarrTradingT3RG
+    - "FarrTradingT3RG"
     SpawnPOINearRange:
-    - "250"
-    - "500"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1RG
-    Faction: Farr
+    - 250
+    - 500
+  - SpawnPoiRange:
+      Min: 250
+      Max: 500
+    GroupName: "FarrAuxT1RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 4
+      Max: 6
     CountMinMax:
-    - "4"
-    - "6"
+    - 4
+    - 6
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - FarrTradingT3RG
+    - "FarrTradingT3RG"
     SpawnPOINearRange:
-    - "250"
-    - "500"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2FarrMonument
-    Faction: Farr
+    - 250
+    - 500
+  - GroupName: "R2FarrMonument"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    ReserveCount: 5
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - FarrDroneBaseRG
-    - FarrTemplePrimeRG
-    - FarrMainSingleRG
-    - FarrMainRG
-    SpawnPOIAvoidDistance: "3000"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1RG
-    Faction: Farr
+    - "FarrDroneBaseRG"
+    - "FarrTemplePrimeRG"
+    - "FarrMainSingleRG"
+    - "FarrMainRG"
+    SpawnPOIAvoidDistance: 3000
+  - SpawnPoiRange:
+      Min: 200
+      Max: 350
+    GroupName: "FarrAuxT1RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - R2FarrMonument
+    - "R2FarrMonument"
     SpawnPOINearRange:
-    - "200"
-    - "350"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT0RG
-    Faction: Farr
+    - 200
+    - 350
+  - SpawnPoiRange:
+      Min: 250
+      Max: 800
+    GroupName: "FarrAuxT0RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 3
+      Max: 6
     CountMinMax:
-    - "3"
-    - "6"
+    - 3
+    - 6
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - R2FarrMonument
+    - "R2FarrMonument"
     SpawnPOINearRange:
-    - "250"
-    - "800"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2FarrMonument
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "2"
-    - "3"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "4"
-    ReserveCount: "3"
+    - 250
+    - 800
+  - GroupName: "R2FarrMonument"
+    Faction: "Farr"
+    Territory: false
     AuxiliaryPOIs:
-    - FarrAuxT1RG
-    - FarrAuxT0RG
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT2RG
-    Faction: Farr
+    - "FarrAuxT1RG"
+    - "FarrAuxT0RG"
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOIAvoid:
-    - FarrDroneBaseRG
-    - FarrTemplePrimeRG
-    - FarrMainSingleRG
-    - FarrMainRG
-    - R2FarrMonument
-    - FarrAuxT2RG
-    SpawnPOIAvoidDistance: "1500"
-    DroneProb: "1"
+    - 2
+    - 3
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 4
     DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "2"
+    - 3
+    - 4
+    ReserveCount: 3
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "FarrAuxT2RG"
+    Faction: "Farr"
+    Territory: false
     AuxiliaryPOIs:
-    - FarrAuxT1RG
-    - FarrAuxT0RG
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1RG
-    Faction: Farr
+    - "FarrAuxT1RG"
+    - "FarrAuxT0RG"
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    IsAuxPOI: "True"
-    SpawnPOINearRange:
-    - "100"
-    - "250"
-    DroneProb: "0"
+    - 1
+    - 2
+    DroneProb: 1
+    Drones:
+      Min: 2
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
+    - 2
+    - 3
+    ReserveCount: 2
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrAuxT0RG
-    Faction: Farr
-    CountMinMax:
-    - "2"
-    - "4"
-    IsAuxPOI: "True"
-    SpawnPOINearRange:
-    - "300"
-    - "500"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT3bRG
-    Faction: Farr
-    CountMinMax:
-    - "0"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT2bRG
-    BiomesExcluded:
-    - Radiated
-    Faction: Farr
-    CountMinMax:
-    - "2"
-    - "4"
-    SpawnPOINear:
-    - FarrAuxT3bRG
-    SpawnPOINearRange:
-    - "200"
-    - "500"
-    DroneProb: "0.5"
-    DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1b
-    BiomesExcluded:
-    - Radiated
-    Faction: Farr
-    CountMinMax:
-    - "2"
-    - "4"
-    SpawnPOINear:
-    - FarrAuxT1b
-    SpawnPOINearRange:
-    - "200"
-    - "500"
-    DroneProb: "0.5"
-    DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT2RG
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0.35"
-    DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "2"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1RG
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0.2"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "0"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT0RG
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrDefenseT1RG
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "2"
-    - "4"
-    DroneProb: "0.5"
-    DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2KrielMain
-    Faction: Kriel
-    CountMinMax:
-    - "1"
-    - "2"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2KrielDefenseT1
-    Faction: Kriel
-    CountMinMax:
-    - "1"
-    - "4"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2PirateAuxT1
-    Faction: Pirates
-    CountMinMax:
-    - "3"
-    - "5"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2PirateAuxT1
-    Faction: Pirates
-    CountMinMax:
-    - "3"
-    - "5"
-    Properties:
-    - Key: MapDistance
-      Value: "1200"
-    - Key: HudDistance
-      Value: "1200"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_SmugglerHideout
-    Faction: Pirates
-    Territory: "False"
-    BiomesExcluded:
-    - Plantation
-    CountMinMax:
-    - "5"
-    - "7"
-    IsScalingCount: "True"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "0"
-    TroopTransport: "False"
     SpawnPOIAvoid:
-    - Eden_PolSanctuary
-    SpawnPOIAvoidDistance: "1000"
+    - "FarrDroneBaseRG"
+    - "FarrTemplePrimeRG"
+    - "FarrMainSingleRG"
+    - "FarrMainRG"
+    - "R2FarrMonument"
+    - "FarrAuxT2RG"
+    SpawnPOIAvoidDistance: 1500
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "FarrAuxT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsAuxPOI: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
     Properties:
-    - Key: PersonalContainer
-      Value: MoneyCard:3000
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
+    SpawnPOINearRange:
+    - 100
+    - 250
+  - SpawnPoiRange:
+      Min: 300
+      Max: 500
+    GroupName: "FarrAuxT0RG"
+    Faction: "Farr"
+    Territory: false
+    IsAuxPOI: true
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINearRange:
+    - 300
+    - 500
+  - GroupName: "FarrAuxT3bRG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    ReserveCount: 5
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - SpawnPoiRange:
+      Min: 200
+      Max: 500
+    GroupName: "FarrAuxT2bRG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
+    DronesMinMax:
+    - 1
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrAuxT3bRG"
+    SpawnPOINearRange:
+    - 200
+    - 500
+    BiomesExcluded:
+    - "Radiated"
+  - SpawnPoiRange:
+      Min: 200
+      Max: 500
+    GroupName: "FarrAuxT1b"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
+    DronesMinMax:
+    - 1
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrAuxT1b"
+    SpawnPOINearRange:
+    - 200
+    - 500
+    BiomesExcluded:
+    - "Radiated"
+  - GroupName: "FarrAuxT2RG"
+    Faction: "Farr"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.35
+    Drones:
+      Min: 2
+      Max: 3
+    DronesMinMax:
+    - 2
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "FarrAuxT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.2
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "FarrAuxT0RG"
+    Faction: "Farr"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "FarrDefenseT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
+    DronesMinMax:
+    - 1
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "R2KrielMain"
+    Faction: "Kriel"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "R2KrielDefenseT1"
+    Faction: "Kriel"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 4
+    CountMinMax:
+    - 1
+    - 4
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "R2PirateAuxT1"
+    Faction: "Pirates"
+    Territory: false
+    Count:
+      Min: 3
+      Max: 5
+    CountMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "R2PirateAuxT1"
+    Faction: "Pirates"
+    Territory: false
+    Count:
+      Min: 3
+      Max: 5
+    CountMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "Eden_SmugglerHideout"
+    Faction: "Pirates"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 5
+      Max: 7
+    CountMinMax:
+    - 5
+    - 7
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "PersonalContainer"
+      Value: "MoneyCard:3000"
+    - Key: "MapDistance"
+      Value: "1200"
+    - Key: "HudDistance"
+      Value: "1200"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "Eden_PolSanctuary"
+    SpawnPOIAvoidDistance: 1000
+    BiomesExcluded:
+    - "Plantation"
   FixedPlayerStart:
-  - Mode: Creative
-    SubMode: Empty
-    Armor: ArmorLight
+  - Mode: "Creative"
+    SubMode: "Empty"
     Pos:
-    - "0"
-    - "147"
-    - "0"
-    RotY: "160"
-  - Mode: Creative
-    SubMode: Normal
-    Armor: ArmorLight
+    - 0
+    - 147
+    - 0
+    RotY: 160
+    Armor: "ArmorLight"
+  - Mode: "Creative"
+    SubMode: "Normal"
     Pos:
-    - "0"
-    - "52"
-    - "0"
-    RotY: "30"
-  - Mode: Debug
+    - 0
+    - 52
+    - 0
+    RotY: 30
+    Armor: "ArmorLight"
+  - Mode: "Debug"
     Pos:
-    - "0"
-    - "147"
-    - "0"
-    RotY: "160"
-  - Mode: Survival
-    Spawn: EscapePod
-    Armor: ArmorLight
+    - 0
+    - 147
+    - 0
+    RotY: 160
+  - Mode: "Survival"
+    Spawn: "EscapePod"
     Items:
-    - SurvivalTent, Flashlight, AntibioticOintment:2, Bandages:2, StomachPills:2, PowerBar:2, EnergyDrink:1
-    - SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1
-    - SurvivalTent, Flashlight, Bandages:1
-    - '#FreshStart: SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1'
+    - "SurvivalTent, Flashlight, AntibioticOintment:2, Bandages:2, StomachPills:2, PowerBar:2, EnergyDrink:1"
+    - "SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1"
+    - "SurvivalTent, Flashlight, Bandages:1"
+    - "#FreshStart: SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1"
+    Armor: "ArmorLight"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "6"
-    PresetStyle: "3"
+  - GroupName: "DroneBaseSetup"
+    Difficulty: 6
+    PresetStyle: 3
     Stock:
-    - Name: DroneAeroZiraxMinigun
+    - Name: "DroneAeroZiraxMinigun"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneAeroZiraxCannon
+      Extra: -1
+    - Name: "DroneAeroZiraxCannon"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneAeroZiraxRocket
+      Extra: -1
+    - Name: "DroneAeroZiraxRocket"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneLargeZiraxMinigun
+      Extra: -1
+    - Name: "DroneLargeZiraxMinigun"
       Amount: "50"
-      Extra: "0"
-    - Name: DroneBomberAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: EnemyDroneV2Plasma
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMinigun
+      Extra: -1
+    - Name: "DroneBomberAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "EnemyDroneV2Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
       Amount: "500"
-      Extra: "3"
-    - Name: ZiraxRocket
+      Extra: 3
+    - Name: "ZiraxRocket"
       Amount: "500"
-      Extra: "3"
-    - Name: RipperDog
+      Extra: 3
+    - Name: "RipperDog"
       Amount: "150"
-      Extra: "3"
-    - Name: Mechanoid
+      Extra: 3
+    - Name: "Mechanoid"
       Amount: "300"
-      Extra: "3"
+      Extra: 3
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "3"
-    - "5"
-    CenterX: "5000"
-    Radius: "3000"
-  - DronesMinMax:
-    - "3"
-    - "5"
-    CenterX: "-5000"
-    Radius: "3000"
-  - DronesMinMax:
-    - "3"
-    - "5"
-    CenterX: "2500"
-    Radius: "3000"
-  - DronesMinMax:
-    - "3"
-    - "5"
-    CenterX: "-2500"
-    Radius: "3000"
-SpawnZones:
-- SpawnAt:
-  - R2GhystMain
-  BiomesExcluded:
-  - LowMountains
-  - LowMountains_1
-  - Mountains
-  Radius: "200"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxRocketPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Any
-    Amount: "100"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - R2GhystAuxT2
-  BiomesExcluded:
-  - LowMountains
-  - LowMountains_1
-  - Mountains
-  Radius: "200"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxRipperDogPatrol
-    Biomes:
-    - Any
-    Amount: "50"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - R2GhystAuxT1
-  BiomesExcluded:
-  - LowMountains
-  - LowMountains_1
-  - Mountains
-  Radius: "100"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "0.3"
-  RateMultiplyerEdge: "0"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxShotgunPatrol
-    - ZiraxRipperDogPatrol
-    Biomes:
-    - Any
-    Amount: "10"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
+  - Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    CenterX: 5000
+    Radius: 3000
+  - Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    CenterX: -5000
+    Radius: 3000
+  - Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    CenterX: 2500
+    Radius: 3000
+  - Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    CenterX: -2500
+    Radius: 3000
 CreatureSpawning:
 - Biomes:
-  - Nest
+  - "Nest"
   Entities:
-  - Name: WormDesertHerd
-    Period: Always
-    Amount: "400"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "WormDesertHerd"
+    Amount: 400
+    Color: "1.0, 1.0, 0.3"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1.0, 1.0, 0.3
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - LargeCrater
+  - "LargeCrater"
   Entities:
-  - Name: AlienBugs01
-    Period: Day
-    Amount: "12"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 12
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Otyughs
-    Period: Night
-    Amount: "12"
+    - 20
+    - 24
+    Period: "Day"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Otyughs"
+    Amount: 12
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Wadi
+  - "Wadi"
   Entities:
-  - Name: CaveWormsGrey
-    Period: Always
-    Amount: "20"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormsGrey"
+    Amount: 20
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - Shore
+  - "Shore"
   Entities:
-  - Name: Slimes
-    Period: Always
-    Amount: "20"
-    Color: 1.0, 1.0, 0
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Slimes"
+    Amount: 20
+    Color: "1.0, 1.0, 0"
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - Flowers
-  - FlowersEdge
-  - Plantation
+  - "Flowers"
+  - "FlowersEdge"
+  - "Plantation"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Spiders02
-    Period: Night
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Spiders02"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: MegalonopsesBrown
-    Period: Day
-    Amount: "10"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "MegalonopsesBrown"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Day"
 - Biomes:
-  - Dunes
-  - Sand
-  - Plains
-  - Plateau
-  - DustBowl
+  - "Dunes"
+  - "Sand"
+  - "Plains"
+  - "Plateau"
+  - "DustBowl"
   Entities:
-  - Name: WormDesertHerd
-    Period: Always
-    Amount: "6"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "WormDesertHerd"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsDesert"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: MegalonopsesBrown
-    Period: Day
-    Amount: "10"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "MegalonopsesBrown"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Day"
 - Biomes:
-  - LowMountains
-  - LowMountains_1
-  - SandDrift
+  - "LowMountains"
+  - "LowMountains_1"
+  - "SandDrift"
   Entities:
-  - Name: CaveWormsGrey
-    Period: Always
-    Amount: "8"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormsGrey"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "6"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsDesert"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+SpawnZones:
+- SpawnAt:
+  - "R2GhystMain"
+  BiomesExcluded:
+  - "LowMountains"
+  - "LowMountains_1"
+  - "Mountains"
+  Radius: 200
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxRocketPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Any"
+    Amount: 100
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2GhystAuxT2"
+  BiomesExcluded:
+  - "LowMountains"
+  - "LowMountains_1"
+  - "Mountains"
+  Radius: 200
+  RadiusRandom: 25
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 50
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2GhystAuxT1"
+  BiomesExcluded:
+  - "LowMountains"
+  - "LowMountains_1"
+  - "Mountains"
+  Radius: 100
+  RadiusRandom: 25
+  RateMultiplyerCenter: 0.3
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxShotgunPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 10
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"

@@ -1,648 +1,859 @@
-Description: "[c][e0e020]\u6CE8\u8BB0:[-][/c]   [c]\u63A2\u6D4B\u5230\u591A\u5EA7\u9632\u7A7A\u70AE\u5854\u3002 [-][/c]\n[c][808080][i]\u8BF7\u52A1\u5FC5\u5C0F\u5FC3\u8C28\u614E\u3002[-][/i][-][/c]\n\n\u5728\u884C\u661F\u5F62\u6210\u671F\u95F4,\u5927\u90E8\u5206\u91CD\u5143\u7D20\u4F1A\u6C89\u5165\u5730\u6838\u3002\n\u4F46\u5982\u679C\u53D1\u751F\u5B87\u5B99\u610F\u5916\u5BFC\u81F4\u4E00\u4E2A\u4E16\u754C\u5931\u53BB\u5176\u5916\u5C42,\u6216\u8005\u5982\u679C\u66FE\u62E5\u6709\u4E30\u5BCC\u7269\u8D28\u2014\u2014\u90A3\u4E48\u5C31\u4F1A\u51FA\u73B0\u6240\u8C13\u7684\u201C\u91D1\u5C5E\u884C\u661F\u201D\u3002\n\n\u65E0\u8BBA\u5982\u4F55,\u4ECD\u4F1A\u6B8B\u7559\u4E00\u5C42\u201C\u4EC5\u6709\u6570\u767E\u516C\u91CC\u539A\u201D\u7684\u7845\u9178\u76D0\u5730\u5E54\u3002\n\u5C3D\u7BA1\u5982\u6B64,\u4ECD\u6709\u5927\u91CF\u53EF\u4F9B\u5F00\u91C7\u7684\u8D44\u6E90,\u4E14\u91CD\u5143\u7D20\u4E0E\u5947\u5F02\u5143\u7D20\u7684\u77FF\u85CF\u4E5F\u6613\u4E8E\u83B7\u53D6\u3002\n\n\u7531\u4E8E\u8FD9\u662F\u7A00\u6709\u7684\u5730\u65B9,\u5F15\u6765\u4E86\u8BB8\u591A\u201C\u5B88\u62A4\u8005\u201D\u3002\u53EA\u6709\u771F\u6B63\u8C28\u614E\u6216\u6700\u5F3A\u7684\u52BF\u529B\u624D\u80FD\u627E\u5230\u751F\u5B58\u4E4B\u9053...\u2014\u2014 territory \u7AA5\u4F3A\u8005,\u5F53\u5FC3\u81EA\u53D6\u5176\u7978\u3002"
-PlanetType: BarrenMetal
-PlayfieldType: Planet
-Difficulty: "4"
-LandClaimZone: Device
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.6, 0.3, 0.0
-DayLightIntensity: "1.4"
-NightLightIntensity: "1.5"
-DayShadowStrength: "0.95"
-NightShadowStrength: "0.5"
-FogCloudIntensity: "0.8"
-AtmosphereFog: "0"
-GroundFogIntensity: "0.02"
-GroundFogHeight: "180"
-SunFlare: EnvironmentalEffects/SunFlareBlue
-SkyColor: 0.9, 0.25, 0.0
-SkyHorizonColor: 0.5, 0.1, 0.005
-FogColor: 0.8, 0.40, 0.40
-LightZenithColor: 0.95, 0.95, 0.90
-LightHorizonColor: 0.8, 0.3, 0.1
-NightLightColor: 0.3, 0.4, 0.45
-CloudsZenithColor: 0.4, 0.108, 0.0
-CloudsHorizonColor: 0.4, 0.07, 0.05
-CloudsNightZenithColor: 0.03, 0.010, 0.01
-CloudsNightHorizonColor: 0.03, 0.010, 0.01
-WindSpeed: "3"
-CloudsDensity: "0.95"
-CloudsSharpness: "1"
-CloudsBrightness: "0.3"
-CloudsOpacity: "0.5"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "BarrenMetal"
+PlanetSize: 2
+Difficulty: 4
+SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
-- Name: Grime
-  MaxHeight: "20"
+- Name: "Grime"
+  MaxHeight: 20
+  Time: "Always"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "2"
-  Delay: "2"
-  Lifetime: "600"
-- Name: CloudsLight
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: CloudsMedium
-  Type: Weather
-  InitialDelay: "6"
-  Delay: "2"
-  Lifetime: "1000"
-- Name: CloudsDark
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "600"
-- Name: FireRain
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "600"
-- Name: MeteorShower
-  Time: Day
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "60"
-  PlyDist: "200"
-  SpawnY: "100"
-  Struct: Avoid
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 2
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "CloudsLight"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsMedium"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 6
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "CloudsDark"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "FireRain"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "MeteorShower"
+  SpawnY: 100
+  Time: "Day"
+  Delay: 2
+  PlyDist: 200
+  Struct: "Avoid"
+  Lifetime: 60
+AtmosphereEnabled: true
+AtmosphereColor: "0.6, 0.3, 0.0"
+SkyColor: "0.9, 0.25, 0.0"
+SkyHorizonColor: "0.5, 0.1, 0.005"
+LightZenithColor: "0.95, 0.95, 0.90"
+LightHorizonColor: "0.8, 0.3, 0.1"
+NightLightColor: "0.3, 0.4, 0.45"
+CloudsZenithColor: "0.4, 0.108, 0.0"
+CloudsHorizonColor: "0.4, 0.07, 0.05"
+CloudsNightZenithColor: "0.03, 0.010, 0.01"
+CloudsNightHorizonColor: "0.03, 0.010, 0.01"
+CloudsOpacity: 0.5
+FogCloudIntensity: 0.8
+DayLightIntensity: 1.4
+NightLightIntensity: 1.5
+DayShadowStrength: 0.95
+NightShadowStrength: 0.5
+CloudsDensity: 0.95
+CloudsSharpness: 1
+CloudsBrightness: 0.3
+WindSpeed: 3
+FogColor: "0.8, 0.40, 0.40"
+GroundFogIntensity: 0.02
+GroundFogHeight: 180
+Description: "[c][e0e020]\u6CE8\u8BB0:[-][/c]   [c]\u63A2\u6D4B\u5230\u591A\u5EA7\u9632\u7A7A\u70AE\u5854\u3002 [-][/c]\n[c][808080][i]\u8BF7\u52A1\u5FC5\u5C0F\u5FC3\u8C28\u614E\u3002[-][/i][-][/c]\n\n\u5728\u884C\u661F\u5F62\u6210\u671F\u95F4,\u5927\u90E8\u5206\u91CD\u5143\u7D20\u4F1A\u6C89\u5165\u5730\u6838\u3002\n\u4F46\u5982\u679C\u53D1\u751F\u5B87\u5B99\u610F\u5916\u5BFC\u81F4\u4E00\u4E2A\u4E16\u754C\u5931\u53BB\u5176\u5916\u5C42,\u6216\u8005\u5982\u679C\u66FE\u62E5\u6709\u4E30\u5BCC\u7269\u8D28\u2014\u2014\u90A3\u4E48\u5C31\u4F1A\u51FA\u73B0\u6240\u8C13\u7684\u201C\u91D1\u5C5E\u884C\u661F\u201D\u3002\n\n\u65E0\u8BBA\u5982\u4F55,\u4ECD\u4F1A\u6B8B\u7559\u4E00\u5C42\u201C\u4EC5\u6709\u6570\u767E\u516C\u91CC\u539A\u201D\u7684\u7845\u9178\u76D0\u5730\u5E54\u3002\n\u5C3D\u7BA1\u5982\u6B64,\u4ECD\u6709\u5927\u91CF\u53EF\u4F9B\u5F00\u91C7\u7684\u8D44\u6E90,\u4E14\u91CD\u5143\u7D20\u4E0E\u5947\u5F02\u5143\u7D20\u7684\u77FF\u85CF\u4E5F\u6613\u4E8E\u83B7\u53D6\u3002\n\n\u7531\u4E8E\u8FD9\u662F\u7A00\u6709\u7684\u5730\u65B9,\u5F15\u6765\u4E86\u8BB8\u591A\u201C\u5B88\u62A4\u8005\u201D\u3002\u53EA\u6709\u771F\u6B63\u8C28\u614E\u6216\u6700\u5F3A\u7684\u52BF\u529B\u624D\u80FD\u627E\u5230\u751F\u5B58\u4E4B\u9053...\u2014\u2014 territory \u7AA5\u4F3A\u8005,\u5F53\u5FC3\u81EA\u53D6\u5176\u7978\u3002"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "BarrenMetal"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: CopperResource
-  Biome:
-  - DustBowl
-  - Rifts
-  - Rifts_1
-  - LargeCrater
-  - SmallCrater
-  - Dunes
-  IsScalingCount: "True"
+- Count:
+    Min: 1
+    Max: 1
+  Size:
+    Min: 6
+    Max: 16
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "CopperResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "1"
+  - 1
+  - 1
   SizeMinMax:
-  - "6"
-  - "16"
+  - 6
+  - 16
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.6"
-- Name: SiliconResource
+  - 5
+  - 10
+  DroneProb: 0.6
+  MaxDroneCount: 1
   Biome:
-  - Plains
-  - Sand
-  - Dunes
-  IsScalingCount: "True"
+  - "DustBowl"
+  - "Rifts"
+  - "Rifts_1"
+  - "LargeCrater"
+  - "SmallCrater"
+  - "Dunes"
+- Count:
+    Min: 1
+    Max: 1
+  Size:
+    Min: 6
+    Max: 9
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "1"
+  - 1
+  - 1
   SizeMinMax:
-  - "6"
-  - "9"
+  - 6
+  - 9
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.2"
-- Name: CobaltResource
+  - 5
+  - 10
+  DroneProb: 0.2
+  MaxDroneCount: 1
   Biome:
-  - DustBowl
-  - Rocks
-  - Rocks_1
-  - LowMountains
-  - LowMountains_1
-  - Mountains
-  - HighMountains
-  - LargeCrater
-  - SmallCrater
-  IsScalingCount: "True"
+  - "Plains"
+  - "Sand"
+  - "Dunes"
+- Count:
+    Min: 1
+    Max: 1
+  Size:
+    Min: 6
+    Max: 9
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "CobaltResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "1"
+  - 1
+  - 1
   SizeMinMax:
-  - "6"
-  - "9"
+  - 6
+  - 9
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.3"
-- Name: PlatinResource
+  - 5
+  - 10
+  DroneProb: 0.3
+  MaxDroneCount: 1
   Biome:
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  IsImportant: "true"
-  IsScalingCount: "True"
+  - "DustBowl"
+  - "Rocks"
+  - "Rocks_1"
+  - "LowMountains"
+  - "LowMountains_1"
+  - "Mountains"
+  - "HighMountains"
+  - "LargeCrater"
+  - "SmallCrater"
+- Count:
+    Min: 2
+    Max: 2
+  Size:
+    Min: 5
+    Max: 6
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "PlatinResource"
+  IsImportant: true
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "2"
+  - 2
+  - 2
   SizeMinMax:
-  - "5"
-  - "6"
+  - 5
+  - 6
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "0.9"
-  MaxDroneCount: "3"
-- Name: ErestrumResource
+  - 5
+  - 20
+  DroneProb: 0.9
+  MaxDroneCount: 3
   Biome:
-  - Canyon
-  - DeepCanyon
-  IsScalingCount: "True"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+- Count:
+    Min: 4
+    Max: 4
+  Size:
+    Min: 5
+    Max: 8
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "ErestrumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "4"
+  - 4
+  - 4
   SizeMinMax:
-  - "5"
-  - "8"
+  - 5
+  - 8
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "0.2"
-  MaxDroneCount: "1"
-- Name: ErestrumResource
+  - 5
+  - 20
+  DroneProb: 0.2
+  MaxDroneCount: 1
   Biome:
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  IsScalingCount: "True"
+  - "Canyon"
+  - "DeepCanyon"
+- Count:
+    Min: 5
+    Max: 5
+  Size:
+    Min: 3
+    Max: 6
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "ErestrumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "5"
-  - "5"
+  - 5
+  - 5
   SizeMinMax:
-  - "3"
-  - "6"
+  - 3
+  - 6
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "1"
-  MaxDroneCount: "4"
-- Name: ZascosiumResource
+  - 5
+  - 20
+  DroneProb: 1
+  MaxDroneCount: 4
   Biome:
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  IsScalingCount: "True"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+- Count:
+    Min: 8
+    Max: 8
+  Size:
+    Min: 5
+    Max: 6
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "ZascosiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "8"
-  - "8"
+  - 8
+  - 8
   SizeMinMax:
-  - "5"
-  - "6"
+  - 5
+  - 6
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "0.5"
-  MaxDroneCount: "1"
-- Name: PromethiumResource
+  - 5
+  - 20
+  DroneProb: 0.5
+  MaxDroneCount: 1
   Biome:
-  - Rocks
-  - Rocks_1
-  - LavaFolds
-  - LavaEdge
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  IsScalingCount: "True"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 7
+    Max: 11
+  Depth:
+    Max: 1
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "7"
-  - "11"
-  DroneProb: "0.7"
+  - 7
+  - 11
   DepthMinMax:
-  - "0"
-  - "1"
+  - 0
+  - 1
   DistTypeCylinder:
-    MaxRadius: "13"
-    YVariance: "10"
-- Name: GoldResource
+    MaxRadius: 13
+    YVariance: 10
+  DroneProb: 0.7
+  MaxDroneCount: 1
   Biome:
-  - CanyonEdge
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  - LargeCrater
-  - SmallCrater
-  IsScalingCount: "True"
+  - "Rocks"
+  - "Rocks_1"
+  - "LavaFolds"
+  - "LavaEdge"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+- Count:
+    Min: 1
+    Max: 3
+  Size:
+    Min: 5
+    Max: 6
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "GoldResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "3"
+  - 1
+  - 3
   SizeMinMax:
-  - "5"
-  - "6"
-  DroneProb: "1"
-  MaxDroneCount: "3"
+  - 5
+  - 6
   DepthMinMax:
-  - "5"
-  - "10"
+  - 5
+  - 10
   DistTypeCylinder:
-    MaxRadius: "13"
-    YVariance: "10"
+    MaxRadius: 13
+    YVariance: 10
+  DroneProb: 1
+  MaxDroneCount: 3
+  Biome:
+  - "CanyonEdge"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+  - "LargeCrater"
+  - "SmallCrater"
 AsteroidResources:
-- Name: ErestrumResource
-  Threshold: "0.2"
-  Amount: "0.3"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.3"
-- Name: ZascosiumResource
-  Threshold: "0.2"
-  Amount: "0.3"
-- Name: GoldResource
-  Threshold: "0.1"
-  Amount: "0.2"
+- Name: "ErestrumResource"
+  Threshold: 0.2
+  Amount: 0.3
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.3
+  InitialDelay: -1
+  Delay: -1
+- Name: "ZascosiumResource"
+  Threshold: 0.2
+  Amount: 0.3
+  InitialDelay: -1
+  Delay: -1
+- Name: "GoldResource"
+  Threshold: 0.1
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: ZiraxDroneBase
-    IsImportant: "True"
-    Faction: Zirax
-    NoShieldReload: "True"
-    IsCommandCenter: "True"
-    DroneBaseSetup: DroneBaseSetup
-    BiomesExcluded:
-    - PoleEdge
+  - GroupName: "ZiraxDroneBase"
+    DroneBaseSetup: "DroneBaseSetup"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 4
+      Max: 4
     DronesMinMax:
-    - "4"
-    - "4"
-    ReserveCount: "20"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "2000"
+    - 4
+    - 4
+    ReserveCount: 20
     Properties:
-    - Key: Music
-      Value: Encryptor
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "Encryptor"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TS_Metal_Waypoint
-    IsImportant: "True"
-    Faction: Polaris
-    NoShieldReload: "True"
+    SpawnPOIAvoid:
+    - "START"
+    SpawnPOIAvoidDistance: 2000
     BiomesExcluded:
-    - PoleEdge
+    - "PoleEdge"
+  - SpawnResRange:
+      Min: 100
+      Max: 250
+    GroupName: "TS_Metal_Waypoint"
+    Faction: "Polaris"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "ZiraxDroneBase"
+    - "START"
     SpawnResource:
-    - ErestrumResource:1-1
+    - "ErestrumResource:1-1"
+    SpawnPOIAvoidDistance: 1000
     SpawnResourceRange:
-    - "100"
-    - "250"
-    SpawnPOIAvoid:
-    - ZiraxDroneBase
-    - START
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: KrielMain
-    Faction: Kriel
-    NoShieldReload: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: KrielDefenseT1
-    Faction: Kriel
-    NoShieldReload: "True"
-    CountMinMax:
-    - "1"
-    - "4"
-    Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CivilMain
-    Territory: "False"
-    Faction: Colonists
-    NoShieldReload: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CivilSettlement
-    Territory: "False"
-    Faction: Colonists
-    NoShieldReload: "True"
-    CountMinMax:
-    - "3"
-    - "4"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: PiratesMain
-    Faction: Pirates
-    NoShieldReload: "True"
-    CountMinMax:
-    - "0"
-    - "1"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: PiratesAuxDesert
-    Faction: Pirates
-    NoShieldReload: "True"
-    CountMinMax:
-    - "0"
-    - "3"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: PiratesDefenseT1Desert
-    Faction: Pirates
-    NoShieldReload: "True"
-    CountMinMax:
-    - "1"
-    - "3"
-    SpawnPOINear:
-    - PiratesMain
-    SpawnPOINearRange:
-    - "100"
-    - "250"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: XenuDefenceT3Rocket
-    IsImportant: "True"
-    IsScalingCount: "True"
-    Faction: Xenu
-    NoShieldReload: "True"
-    Territory: "False"
-    Biome:
-    - CanyonEdge
-    - ShallowCanyon
-    - Rifts
-    - Rifts_1
-    CountMinMax:
-    - "10"
-    - "10"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "0"
-    - "3"
-    ReserveCount: "5"
-    TroopTransport: "False"
-    SpawnResource:
-    - ZascosiumResource:1-1
-    - ErestrumResource:1-2
-    SpawnResourceRange:
-    - "100"
-    - "250"
-    SpawnPOIAvoid:
-    - TS_Metal_Waypoint
-    - XenuDefenceT3Rocket
-    SpawnPOIAvoidDistance: "600"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: DSRCMain
-    IsImportant: "True"
-    Faction: Zirax
-    NoShieldReload: "True"
-    Biome:
-    - SmallCrater
-    - Dunes
-    - DustBowl
-    - LavaFolds
-    - Mountains
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
-    TroopTransport: "True"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "0"
-    - "3000"
-    SpawnPOIAvoid:
-    - TS_Metal_Waypoint
-    - ZiraxDroneBase
-    SpawnPOIAvoidDistance: "2000"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: DSRCTurret
-    Faction: Zirax
-    NoShieldReload: "True"
-    CountMinMax:
-    - "3"
-    - "5"
-    DroneProb: "0.8"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOINear:
-    - DSRCMain
-    SpawnPOINearRange:
-    - "75"
-    - "150"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CrashedShip
-    IsImportant: "True"
-    Faction: None
-    Territory: "False"
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0.0"
-    DronesMinMax:
-    - "0"
-    - "0"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - TS_Metal_Waypoint
-    SpawnPOINearRange:
-    - "300"
-    - "400"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-  - GroupName: CrashedShip
-    Faction: None
-    CountMinMax:
-    - "2"
-    - "2"
+    - 100
+    - 250
     BiomesExcluded:
-    - PoleEdge
-    - LavaFolds
-    - LavaEdge
-    DroneProb: "0.7"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "6"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - TS_Metal_Waypoint
-    - ZiraxDroneBase
-    - XenuArtilleryBase
-    SpawnPOIAvoidDistance: "650"
+    - "PoleEdge"
+  - GroupName: "KrielMain"
+    Faction: "Kriel"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
     Properties:
-    - Key: MapMarker
-      Value: Neutral
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "KrielDefenseT1"
+    Faction: "Kriel"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 4
+    CountMinMax:
+    - 1
+    - 4
+    Properties:
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "CivilMain"
+    Faction: "Colonists"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "CivilSettlement"
+    Faction: "Colonists"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 3
+      Max: 4
+    CountMinMax:
+    - 3
+    - 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "PiratesMain"
+    Faction: "Pirates"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "PiratesAuxDesert"
+    Faction: "Pirates"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Max: 3
+    CountMinMax:
+    - 0
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "PiratesDefenseT1Desert"
+    Faction: "Pirates"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 3
+    CountMinMax:
+    - 1
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "PiratesMain"
+    SpawnPOINearRange:
+    - 100
+    - 250
+  - SpawnResRange:
+      Min: 100
+      Max: 250
+    GroupName: "XenuDefenceT3Rocket"
+    Faction: "Xenu"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 10
+      Max: 10
+    CountMinMax:
+    - 10
+    - 10
+    DroneProb: 1
+    Drones:
+      Max: 3
+    DronesMinMax:
+    - 0
+    - 3
+    ReserveCount: 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "TS_Metal_Waypoint"
+    - "XenuDefenceT3Rocket"
+    SpawnResource:
+    - "ZascosiumResource:1-1"
+    - "ErestrumResource:1-2"
+    SpawnPOIAvoidDistance: 600
+    SpawnResourceRange:
+    - 100
+    - 250
+    Biome:
+    - "CanyonEdge"
+    - "ShallowCanyon"
+    - "Rifts"
+    - "Rifts_1"
+  - SpawnPoiRange:
+      Max: 3000
+    GroupName: "DSRCMain"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    ReserveCount: 5
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "TS_Metal_Waypoint"
+    - "ZiraxDroneBase"
+    SpawnPOINearRange:
+    - 0
+    - 3000
+    SpawnPOIAvoidDistance: 2000
+    Biome:
+    - "SmallCrater"
+    - "Dunes"
+    - "DustBowl"
+    - "LavaFolds"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 75
+      Max: 150
+    GroupName: "DSRCTurret"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 3
+      Max: 5
+    CountMinMax:
+    - 3
+    - 5
+    DroneProb: 0.8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "DSRCMain"
+    SpawnPOINearRange:
+    - 75
+    - 150
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "CrashedShip"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Drones: {}
+    DronesMinMax:
+    - 0
+    - 0
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    SpawnPOINear:
+    - "TS_Metal_Waypoint"
+    SpawnPOINearRange:
+    - 300
+    - 400
+  - GroupName: "CrashedShip"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 2
+    CountMinMax:
+    - 2
+    - 2
+    DroneProb: 0.7
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 6
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    SpawnPOIAvoid:
+    - "TS_Metal_Waypoint"
+    - "ZiraxDroneBase"
+    - "XenuArtilleryBase"
+    SpawnPOIAvoidDistance: 650
+    BiomesExcluded:
+    - "PoleEdge"
+    - "LavaFolds"
+    - "LavaEdge"
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "0"
-    - "120"
-    - "0"
-    RotY: "0"
-  - Mode: Survival
-    Spawn: EscapePod
-    Armor: ArmorMedium
+    - 0
+    - 120
+    - 0
+  - Mode: "Survival"
+    Spawn: "EscapePod"
+    Armor: "ArmorMedium"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "7"
-    PresetStyle: "3"
+  - GroupName: "DroneBaseSetup"
+    Difficulty: 7
+    PresetStyle: 3
     Stock:
-    - Name: DroneSmallFast01Plasma
+    - Name: "DroneSmallFast01Plasma"
       Amount: "200"
-      Extra: "0"
-    - Name: EnemyDroneV2Plasma
+    - Name: "EnemyDroneV2Plasma"
       Amount: "200"
-      Extra: "0"
-    - Name: EnemyDroneV2Minigun
+    - Name: "EnemyDroneV2Minigun"
       Amount: "300"
-      Extra: "0"
-    - Name: DroneLargeSlow02Cannon
+    - Name: "DroneLargeSlow02Cannon"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneBomberAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneSmallFast01Plasma
-      Amount: Infinite
-      Extra: "1"
-    - Name: EnemyDroneV2Plasma
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMinigun
+    - Name: "DroneBomberAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneSmallFast01Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "EnemyDroneV2Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
       Amount: "500"
-      Extra: "3"
-    - Name: Mechanoid
+      Extra: 3
+    - Name: "Mechanoid"
       Amount: "250"
-      Extra: "3"
+      Extra: 3
     PlanetVesselBase:
-      Name: PlanetVesselBaseSetup
+      Name: "PlanetVesselBaseSetup"
       Position3D:
-      - "0"
-      - "102"
-      - "0"
-      BaseType: PlanetVesselBase
-      KeyId: "0"
+      - 0
+      - 102
+      - 0
+      BaseType: "PlanetVesselBase"
       PlanetVessel:
-      - Name: PVZiraxT2
-        Mission: PlanetPatrol
-        FixedMaxSpeed: "10"
-        RespawnDelay: "12"
+      - Name: "PVZiraxT2"
+        Mission: "PlanetPatrol"
+        FixedMaxSpeed: 10
+        RespawnDelay: 12
         RangePatrolTask:
           Position3D:
-          - "1500"
-          - "80"
-          - "0"
-          Radius: "800"
-          DistToGround: "80"
+          - 1500
+          - 80
+          - 0
+          Radius: 800
+          DistToGround: 80
         AttackCVCircleAround:
-          DistToTarget: "220"
+          DistToTarget: 220
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "10"
-    - "15"
-    CenterX: "-2500"
-    Radius: "1500"
-  - DronesMinMax:
-    - "10"
-    - "15"
-    CenterX: "2500"
-    Radius: "1500"
-SpawnZones:
-- SpawnAt:
-  - ZascosiumResource
-  - ErestrumResource
-  - GoldResource
-  - CrashedShip
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 1.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - Overseers
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - ZiraxDroneBase
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "500"
-  RadiusRandom: "100"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.4"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Any
-    Amount: "250"
-    Period: Always
-    DelayMinMax:
-    - "20"
-    - "36"
+  - Drones:
+      Min: 10
+      Max: 15
+    DronesMinMax:
+    - 10
+    - 15
+    CenterX: -2500
+    Radius: 1500
+  - Drones:
+      Min: 10
+      Max: 15
+    DronesMinMax:
+    - 10
+    - 15
+    CenterX: 2500
+    Radius: 1500
 CreatureSpawning:
 - Biomes:
-  - Plains
+  - "Plains"
   Entities:
-  - Name: ZiraxMechanoidPatrol
-    Period: Always
-    Amount: "0"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "ZiraxMechanoidPatrol"
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Always"
+SpawnZones:
+- SpawnAt:
+  - "ZascosiumResource"
+  - "ErestrumResource"
+  - "GoldResource"
+  - "CrashedShip"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 200
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "Overseers"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "ZiraxDroneBase"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 500
+  RadiusRandom: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.4
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 20
+      Max: 36
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Any"
+    Amount: 250
+    DelayMinMax:
+    - 20
+    - 36
+    Period: "Always"

@@ -1,372 +1,477 @@
-PlanetType: MoonIce2
-PlayfieldType: Moon
-Difficulty: "2"
-Description: "[c][fbff00]\u8BF7\u6CE8\u610F\u3002\u8FD9\u662F\u4E00\u6761\u516C\u5F00\u5E7F\u64AD![-][/c]\n\u6240\u6709\u5F80\u8FD4\u5965\u7C73\u514B\u9686(Omicron)\u661F\u7403\u7684\u8FD0\u8F93\u6D3B\u52A8,\u82E5\u65E0\u7279\u6B8A\u8BB8\u53EF\u6388\u6743,\u4E00\u5F8B\u6682\u505C,\u540E\u7EED\u901A\u77E5\u53E6\u884C\u901A\u544A\u3002\n\n\u6240\u6709\u4EBA\u5458\u5FC5\u987B\u5230\u5965\u7C73\u514B\u9686\u63A7\u5236\u7AD9\u4E0E\u884C\u653F\u7BA1\u7406\u90E8\u95E8\u767B\u8BB0!"
-BaseAttackCount: "0"
-AllowCV: "False"
-AllowBA: "False"
-AllowBlueprintSV: "False"
-AllowBlueprintCV: "False"
-AllowBlueprintBA: "False"
-AllowBlueprintHV: "False"
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.25, 0.315, 0.31
-SkyColor: 0, 0, 0.01
-SkyHorizonColor: 0, 0.07, 0.03
-AtmosphereParams:
-- "0"
-- "-1"
-DayLightIntensity: "1.0"
-NightLightIntensity: "0.55"
-LightZenithColor: 0.98, 0.90, 0.8
-LightHorizonColor: 0.5, 0.35, 0.171
-NightLightColor: 0.83, 0.85, 0.80
-DayShadowStrength: "1"
-NightShadowStrength: "1"
-SunFlare: EnvironmentalEffects/SunFlareWhite3
-FogCloudIntensity: "0.0"
-FogColor: 1, 1, 1
-CloudsDensity: "0.0"
-CloudsSharpness: "1"
-CloudsBrightness: "0.0"
-CloudsOpacity: "0.0"
-CloudsZenithColor: 0.89, 0.92, 1
-CloudsHorizonColor: 1, 0.3, 0.1
-WindSpeed: "0"
+PlayfieldType: "Moon"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "MoonIce2"
+PlanetSize: 2
+Difficulty: 2
+SunFlare: "EnvironmentalEffects/SunFlareWhite3"
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "0"
-  Lifetime: "1000"
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+AtmosphereEnabled: true
+AtmosphereColor: "0.25, 0.315, 0.31"
+AtmosphereParams:
+- 0
+- -1
+SkyColor: "0, 0, 0.01"
+SkyHorizonColor: "0, 0.07, 0.03"
+LightZenithColor: "0.98, 0.90, 0.8"
+LightHorizonColor: "0.5, 0.35, 0.171"
+NightLightColor: "0.83, 0.85, 0.80"
+CloudsZenithColor: "0.89, 0.92, 1"
+CloudsHorizonColor: "1, 0.3, 0.1"
+CloudsNightZenithColor: "0.054, 0.094, 0.152"
+CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+DayLightIntensity: 1
+NightLightIntensity: 0.55
+DayShadowStrength: 1
+NightShadowStrength: 1
+CloudsSharpness: 1
+FogColor: "1, 1, 1"
+Description: "[c][fbff00]\u8BF7\u6CE8\u610F\u3002\u8FD9\u662F\u4E00\u6761\u516C\u5F00\u5E7F\u64AD![-][/c]\n\u6240\u6709\u5F80\u8FD4\u5965\u7C73\u514B\u9686(Omicron)\u661F\u7403\u7684\u8FD0\u8F93\u6D3B\u52A8,\u82E5\u65E0\u7279\u6B8A\u8BB8\u53EF\u6388\u6743,\u4E00\u5F8B\u6682\u505C,\u540E\u7EED\u901A\u77E5\u53E6\u884C\u901A\u544A\u3002\n\n\u6240\u6709\u4EBA\u5458\u5FC5\u987B\u5230\u5965\u7C73\u514B\u9686\u63A7\u5236\u7AD9\u4E0E\u884C\u653F\u7BA1\u7406\u90E8\u95E8\u767B\u8BB0!"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+AllowSavingBlueprints: true
+PlanetClass: "MoonIce2"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
 RandomResources:
-- Name: MagnesiumResource
-  Biome:
-  - Mountains
-  - Regolith
-  - RegolithEdge
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 2
+    Max: 3
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "MagnesiumResource"
   CountMinMax:
-  - "1"
-  - "2"
+  - 1
+  - 2
   SizeMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
-- Name: MagnesiumResource
+  - 5
+  - 10
+  DroneProb: 0.7
+  MaxDroneCount: 1
   Biome:
-  - LayeredIce
-  - IceSheet
-  - CrustedIce
+  - "Mountains"
+  - "Regolith"
+  - "RegolithEdge"
+- Count:
+    Max: 2
+  Size:
+    Min: 6
+    Max: 7
+  Depth:
+    Min: 70
+    Max: 80
+  Name: "MagnesiumResource"
   CountMinMax:
-  - "0"
-  - "2"
+  - 0
+  - 2
   SizeMinMax:
-  - "6"
-  - "7"
+  - 6
+  - 7
   DepthMinMax:
-  - "70"
-  - "80"
-  DroneProb: "0.2"
-  MaxDroneCount: "1"
-- Name: CobaltResource
+  - 70
+  - 80
+  DroneProb: 0.2
+  MaxDroneCount: 1
   Biome:
-  - Mountains
-  - Regolith
-  - RegolithEdge
+  - "LayeredIce"
+  - "IceSheet"
+  - "CrustedIce"
+- Count:
+    Min: 1
+    Max: 3
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 4
+    Max: 9
+  Name: "CobaltResource"
   CountMinMax:
-  - "1"
-  - "3"
+  - 1
+  - 3
   SizeMinMax:
-  - "3"
-  - "4"
+  - 3
+  - 4
   DepthMinMax:
-  - "4"
-  - "9"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
-- Name: CobaltResource
+  - 4
+  - 9
+  DroneProb: 0.7
+  MaxDroneCount: 1
   Biome:
-  - LayeredIce
-  - IceSheet
-  - CrustedIce
+  - "Mountains"
+  - "Regolith"
+  - "RegolithEdge"
+- Count:
+    Max: 2
+  Size:
+    Min: 8
+    Max: 9
+  Depth:
+    Min: 60
+    Max: 80
+  Name: "CobaltResource"
   CountMinMax:
-  - "0"
-  - "2"
+  - 0
+  - 2
   SizeMinMax:
-  - "8"
-  - "9"
+  - 8
+  - 9
   DepthMinMax:
-  - "60"
-  - "80"
-  DroneProb: "0.2"
-  MaxDroneCount: "1"
+  - 60
+  - 80
+  DroneProb: 0.2
+  MaxDroneCount: 1
+  Biome:
+  - "LayeredIce"
+  - "IceSheet"
+  - "CrustedIce"
 AsteroidResources:
-- Name: CobaltResource
-  Threshold: "0.2"
-  Amount: "0.2"
+- Name: "CobaltResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: CrashedTitanFront
-    Faction: None
-    IsImportant: "True"
+  - SpawnResRange:
+      Min: 250
+      Max: 400
+    GroupName: "CrashedTitanFront"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    Drones:
+      Min: 2
+      Max: 4
     DronesMinMax:
-    - "2"
-    - "4"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    SpawnResource:
-    - PromethiumResource:1-1
-    SpawnResourceRange:
-    - "250"
-    - "400"
+    - 2
+    - 4
     Properties:
-    - Key: PersonalContainer
-      Value: InsulationBoost:1
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "PersonalContainer"
+      Value: "InsulationBoost:1"
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: CrashedTitanMid
-    Faction: None
-    IsImportant: "True"
+    SpawnResource:
+    - "PromethiumResource:1-1"
+    SpawnResourceRange:
+    - 250
+    - 400
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    SpawnResRange:
+      Min: 250
+      Max: 400
+    GroupName: "CrashedTitanMid"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    Drones:
+      Min: 2
+      Max: 4
     DronesMinMax:
-    - "2"
-    - "4"
-    ReserveCount: "3"
-    TroopTransport: "False"
+    - 2
+    - 4
+    ReserveCount: 3
+    Properties:
+    - Key: "PersonalContainer"
+      Value: "InsulationBoost:1"
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - CrashedTitanFront
-    SpawnPOINearRange:
-    - "300"
-    - "400"
+    - "CrashedTitanFront"
     SpawnResource:
-    - TitanResource:1-1
+    - "TitanResource:1-1"
+    SpawnPOINearRange:
+    - 300
+    - 400
     SpawnResourceRange:
-    - "250"
-    - "400"
-    Properties:
-    - Key: PersonalContainer
-      Value: InsulationBoost:1
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CrashedTitanBack
-    Faction: None
-    IsImportant: "True"
+    - 250
+    - 400
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    SpawnResRange:
+      Min: 250
+      Max: 400
+    GroupName: "CrashedTitanBack"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    Drones:
+      Min: 2
+      Max: 4
     DronesMinMax:
-    - "2"
-    - "4"
-    ReserveCount: "3"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - CrashedTitanMid
-    SpawnPOINearRange:
-    - "300"
-    - "400"
-    SpawnResource:
-    - TitanResource:1-1
-    - PromethiumResource:0-1
-    SpawnResourceRange:
-    - "250"
-    - "400"
+    - 2
+    - 4
+    ReserveCount: 3
     Properties:
-    - Key: PersonalContainer
-      Value: ArmorBoost:1, ArmorMedium:1
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "PersonalContainer"
+      Value: "ArmorBoost:1, ArmorMedium:1"
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: ResourceMarker01
-    Faction: None
-    Biome:
-    - LowMountains
-    CountMinMax:
-    - "1"
-    - "1"
+    SpawnPOINear:
+    - "CrashedTitanMid"
     SpawnResource:
-    - SiliconResource:0-1
-    - CobaltResource:1-1
-    - MagnesiumResource:0-1
+    - "TitanResource:1-1"
+    - "PromethiumResource:0-1"
+    SpawnPOINearRange:
+    - 300
+    - 400
     SpawnResourceRange:
-    - "150"
-    - "2000"
+    - 250
+    - 400
+  - SpawnResRange:
+      Min: 150
+      Max: 2000
+    GroupName: "ResourceMarker01"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: MapDistance
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "MapDistance"
       Value: "10000"
-  - GroupName: SignalMarker01
-    CountMinMax:
-    - "0"
-    - "1"
+    SpawnResource:
+    - "SiliconResource:0-1"
+    - "CobaltResource:1-1"
+    - "MagnesiumResource:0-1"
+    SpawnResourceRange:
+    - 150
+    - 2000
     Biome:
-    - LowMountains
-    - Flats
-    - DeepCanyon
-    - Rifts
-    - Rifts_1
-    - RayCrater
+    - "LowMountains"
+  - GroupName: "SignalMarker01"
+    Territory: false
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: MapDistance
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "MapDistance"
       Value: "10000"
-  - GroupName: RadosAuxT2
+    Biome:
+    - "LowMountains"
+    - "Flats"
+    - "DeepCanyon"
+    - "Rifts"
+    - "Rifts_1"
+    - "RayCrater"
+  - SpawnPoiRange:
+      Min: 200
+      Max: 800
+    GroupName: "RadosAuxT2"
+    Faction: "Rados"
+    Territory: false
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
-    Faction: Rados
-    Territory: "False"
-    DroneProb: "0.0"
+    - 0
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - SignalMarker01
-    SpawnPOINearRange:
-    - "200"
-    - "800"
+    - 1
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: RadosSurvey
-    Faction: Rados
-    Territory: "False"
-    CountMinMax:
-    - "2"
-    - "2"
     SpawnPOINear:
-    - RadosAuxT2
+    - "SignalMarker01"
     SpawnPOINearRange:
-    - "30"
-    - "100"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosAuxT1
-    Faction: Rados
-    Territory: "False"
+    - 200
+    - 800
+  - SpawnPoiRange:
+      Min: 30
+      Max: 100
+    GroupName: "RadosSurvey"
+    Faction: "Rados"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 2
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0.0"
+    - 2
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "RadosAuxT2"
+    SpawnPOINearRange:
+    - 30
+    - 100
+  - SpawnPoiRange:
+      Min: 500
+      Max: 1000
+    GroupName: "RadosAuxT1"
+    Faction: "Rados"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - RadosAuxT2
-    SpawnPOINearRange:
-    - "500"
-    - "1000"
+    - 1
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: ProgenitorArtifacts
-    Faction: None
+    SpawnPOINear:
+    - "RadosAuxT2"
+    SpawnPOINearRange:
+    - 500
+    - 1000
+  - GroupName: "ProgenitorArtifacts"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    IsScalingCount: "True"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "4"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 4
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "-596"
-    - "104"
-    - "-1063"
-    RotY: "125"
-  - Mode: Survival
-    Spawn: EscapePod
-    Armor: ArmorMedium
+    - -596
+    - 104
+    - -1063
+    RotY: 125
+  - Mode: "Survival"
+    Spawn: "EscapePod"
+    Armor: "ArmorMedium"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "0"
-    PresetStyle: "0"
+  - GroupName: "DroneBaseSetup"
     Stock:
-    - Name: DroneSmallFast01Rocket
+    - Name: "DroneSmallFast01Rocket"
       Amount: "100"
-      Extra: "0"
-    - Name: DroneSmallFast01Minigun
+    - Name: "DroneSmallFast01Minigun"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneLargeSlow01Minigun
+    - Name: "DroneLargeSlow01Minigun"
       Amount: "100"
-      Extra: "0"
-    - Name: DroneSmallSlow01Cannon
+    - Name: "DroneSmallSlow01Cannon"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneSmallAttackBase
+    - Name: "DroneSmallAttackBase"
       Amount: "300"
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMinigun
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
       Amount: "500"
-      Extra: "3"
-    - Name: Crawler
+      Extra: 3
+    - Name: "Crawler"
       Amount: "400"
-      Extra: "3"
+      Extra: 3
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "-2500"
-    Radius: "1500"
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "2500"
-    Radius: "1500"
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: -2500
+    Radius: 1500
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: 2500
+    Radius: 1500
 SpawnRateZones:
 - SpawnAt:
-  - SignalMarker01
-  - SignalMarker02
-  - ResourceMarker01
-  Radius: "120"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1"
-  RateMultiplyerEdge: "1"
-  AffectEnemies: "true"
-  Color: 1.0, 0.8, 0.5, 1.0
+  - "SignalMarker01"
+  - "SignalMarker02"
+  - "ResourceMarker01"
+  Radius: 120
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  AffectEnemies: true
+  Color: "1.0, 0.8, 0.5, 1.0"
 - SpawnAt:
-  - ResourceMarker01
-  Radius: "180"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1"
-  RateMultiplyerEdge: "1"
-  AffectEnemies: "true"
-  Color: 1.0, 0.8, 0.5, 1.0
+  - "ResourceMarker01"
+  Radius: 180
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  AffectEnemies: true
+  Color: "1.0, 0.8, 0.5, 1.0"

@@ -1,678 +1,739 @@
-Description: "\u4E00\u4E2A\u53EA\u6709\u5C11\u91CF\u9646\u5730\u7684\u5927\u6D0B\u884C\u661F"
-PlanetType: Ocean
-PlayfieldType: Planet
-Difficulty: "1"
-LandClaimZone: Device
-AllowBlueprintSV: "False"
-AllowBlueprintCV: "False"
-AllowBlueprintBA: "False"
-AllowBlueprintHV: "False"
-Seed: "575561"
-UseFixed: "True"
-UseRandom: "True"
-SunFlare: EnvironmentalEffects/SunFlareBlue
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.674, 0.824, 1.000
-AtmosphereParams:
-- "1"
-- "1.6"
-SkyColor: 0.55, 0.55, 0.3
-SkyHorizonColor: 1, 0.25, 0
-FogColor: 0.85, 0.70, 0.85
-FogCloudIntensity: "0.2"
-AtmosphereFog: "0.1"
-GroundFogIntensity: "0.025"
-GroundFogHeight: "0"
-DayLightIntensity: "1.34"
-NightLightIntensity: "0.8"
-DayShadowStrength: "1.0"
-NightShadowStrength: "1.0"
-LightZenithColor: 0.92, 0.70, 0.52
-LightHorizonColor: 0.6, 0.4, 0.03
-NightLightColor: 0.65, 0.9, 0.83
-CloudsZenithColor: 0.75, 0.85, 1.1
-CloudsHorizonColor: 0.9, 0.2, 0.05
-CloudsNightZenithColor: 0.05, 0.056, 0.072
-CloudsNightHorizonColor: 0.05, 0.0668, 0.056
-CloudsDensity: "0.2"
-CloudsSharpness: "0.3"
-CloudsBrightness: "1.0"
-CloudsOpacity: "0.2"
-WindSpeed: "3"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "Ocean"
+PlanetSize: 2
+Difficulty: 1
+SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
-- Name: DandelionsFew
+- Name: "DandelionsFew"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Grassland
-  - ColdPlains
-  Time: Day
-  MaxHeight: "10"
-- Name: ButterfliesFew
+  - "Grassland"
+  - "ColdPlains"
+  FollowPlayerY: false
+- Name: "ButterfliesFew"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Grassland
-  - Oasis
-  Time: Day
-  MaxHeight: "15"
-- Name: Pollen
+  - "Grassland"
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "Pollen"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Savanna
-  - SavannaEdge
-  - DustBowl
-  Time: Day
-  MaxHeight: "10"
-- Name: Mosquitos
+  - "Savanna"
+  - "SavannaEdge"
+  - "DustBowl"
+  FollowPlayerY: false
+- Name: "Mosquitos"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Savanna
-  - SavannaEdge
-  - DustBowl
-  - Marsh
-  - Swamp
-  - WaterSwamp
-  - Water
-  Time: Day
-  MaxHeight: "15"
-- Name: ButterfliesBlue
+  - "Savanna"
+  - "SavannaEdge"
+  - "DustBowl"
+  - "Marsh"
+  - "Swamp"
+  - "WaterSwamp"
+  - "Water"
+  FollowPlayerY: false
+- Name: "ButterfliesBlue"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Forest
-  - Marsh
-  Time: Day
-  MaxHeight: "15"
-- Name: Dragonflies
+  - "Forest"
+  - "Marsh"
+  FollowPlayerY: false
+- Name: "Dragonflies"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Marsh
-  - Swamp
-  - WaterSwamp
-  - Water
-  - ShallowWater
-  Time: Day
-  MaxHeight: "15"
-- Name: FireFliesOrange
+  - "Marsh"
+  - "Swamp"
+  - "WaterSwamp"
+  - "Water"
+  - "ShallowWater"
+  FollowPlayerY: false
+- Name: "FireFliesOrange"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Forest
-  - DeepForest
-  - Peaks
-  - Marsh
-  - Swamp
-  - WaterSwamp
-  - Oasis
-  Time: Night
-  MaxHeight: "15"
-- Name: Moths
+  - "Forest"
+  - "DeepForest"
+  - "Peaks"
+  - "Marsh"
+  - "Swamp"
+  - "WaterSwamp"
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "Moths"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - DeepForest
-  - Savanna
-  - SavannaEdge
-  - Grassland
-  Time: Night
-  MaxHeight: "15"
+  - "DeepForest"
+  - "Savanna"
+  - "SavannaEdge"
+  - "Grassland"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: CloudsLight
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: Wind
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "12"
-  Lifetime: "600"
-- Name: Storm
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "600"
-- Name: BirdFlocksCrows
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsLight"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Wind"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "Storm"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "BirdFlocksCrows"
+  SpawnY: 30
+  Time: "Day"
   Biome:
-  - Any
-  Time: Day
-  InitialDelay: "1"
-  Delay: "4"
-  Lifetime: "600"
-  PlyDist: "100"
-  SpawnY: "30"
-  Struct: "True"
-RandomResources: 
-AsteroidResources: 
-FixedResources: 
+  - "Any"
+  InitialDelay: 1
+  Delay: 4
+  PlyDist: 100
+  Lifetime: 600
+AtmosphereEnabled: true
+AtmosphereColor: "0.674, 0.824, 1.000"
+AtmosphereParams:
+- 1
+- 1.6
+SkyColor: "0.55, 0.55, 0.3"
+SkyHorizonColor: "1, 0.25, 0"
+LightZenithColor: "0.92, 0.70, 0.52"
+LightHorizonColor: "0.6, 0.4, 0.03"
+NightLightColor: "0.65, 0.9, 0.83"
+CloudsZenithColor: "0.75, 0.85, 1.1"
+CloudsHorizonColor: "0.9, 0.2, 0.05"
+CloudsNightZenithColor: "0.05, 0.056, 0.072"
+CloudsNightHorizonColor: "0.05, 0.0668, 0.056"
+CloudsOpacity: 0.2
+FogCloudIntensity: 0.2
+DayLightIntensity: 1.34
+NightLightIntensity: 0.8
+DayShadowStrength: 1
+NightShadowStrength: 1
+AtmosphereFog: 0.1
+CloudsDensity: 0.2
+CloudsSharpness: 0.3
+CloudsBrightness: 1
+WindSpeed: 3
+FogColor: "0.85, 0.70, 0.85"
+GroundFogIntensity: 0.025
+Description: "\u4E00\u4E2A\u53EA\u6709\u5C11\u91CF\u9646\u5730\u7684\u5927\u6D0B\u884C\u661F"
+Seed: 575561
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Ocean"
+UseFixed: true
+UseRandom: true
+Build: 3938
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 POIs:
-  Random: 
   Fixed:
-  - Type: BA_Player
-    Prefab: BAgs_TykkionPlayerSpawn
-    Mode: Survival
-    Name: TykkionPlayerSpawn
-    Pos:
-    - "10757"
-    - "18.9"
-    - "415"
-    Rot:
-    - "0"
-    - "180"
-    - "0"
-    InitPower: "True"
+  - Type: "BA_Player"
+    Prefab: "BAgs_TykkionPlayerSpawn"
+    Mode: "Survival"
+    Name: "TykkionPlayerSpawn"
+    InitPower: true
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "0"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "0"
-    - Key: MapMarker
-      Value: Neutral
-    - Key: Discovery
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "Discovery"
       Value: "False"
+    Pos:
+    - 10757
+    - 18.9
+    - 415
+    Rot:
+    - 0
+    - 180
+    - 0
   FixedPlayerStart:
-  - Mode: Survival
-    Armor: None
-    Spawn: Structure
-    Structure: TykkionPlayerSpawn
-    Status:
-    - 'Food: 350, Health: 350'
-    - 'Food: 250, Health: 250'
-    - 'Food: 150, Health: 150'
-    - '#FreshStart:Food: 400, Health: 450'
+  - Mode: "Survival"
+    Spawn: "Structure"
+    Structure: "TykkionPlayerSpawn"
     Items:
     - " "
     - " "
     - " "
-    - '#FreshStart: '
-  - Mode: Debug
-    Armor: ArmorLight
+    - "#FreshStart: "
+    Armor: "None"
+    Status:
+    - "Food: 350, Health: 350"
+    - "Food: 250, Health: 250"
+    - "Food: 150, Health: 150"
+    - "#FreshStart:Food: 400, Health: 450"
+  - Mode: "Debug"
     Pos:
-    - "10771.0"
-    - "19.1"
-    - "417.2"
-    RotY: "40"
+    - 10771
+    - 19.1
+    - 417.2
+    RotY: 40
+    Armor: "ArmorLight"
 DroneBaseSetup:
   DroneBases:
-  - DroneSetupID: DroneBaseZiraxStarter
+  - DroneSetupID: "DroneBaseZiraxStarter"
     Stock:
-    - Name: DroneSmallFast01Minigun
+    - Name: "DroneSmallFast01Minigun"
       Amount: "5"
-      Type: FighterDrone
-    - Name: DroneSmallFast01Rocket
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneSmallFast01Rocket"
       Amount: "2"
-      Type: FighterDrone
-    - Name: DroneTroopsTransport
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneTroopsTransport"
       Amount: "1"
-      Type: TroopTransport
-    - Name: ZiraxMinigun
-      Amount: Infinite
-      Type: GroundTroop
-    - Name: ZiraxRocket
-      Amount: Infinite
-      Type: GroundTroop
-    - Name: RipperDog
-      Amount: Infinite
-      Type: GroundTroop
+      Extra: -1
+      Type: "TroopTransport"
+    - Name: "ZiraxMinigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
+    - Name: "ZiraxRocket"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
+    - Name: "RipperDog"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
 DroneSpawning:
   Random:
-  - Name: DroneSmallFast01Minigun
+  - Drones:
+      Min: 7
+      Max: 7
+    Name: "DroneSmallFast01Minigun"
     DronesMinMax:
-    - "7"
-    - "7"
-    Faction: Zirax
-    POINameAsPositionRef: _BA_Tut4_DroneFactory01
-    Radius: "500"
-SpawnRateZones:
-- SpawnAt:
-  - TS_Planet
-  Radius: "1000"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.7"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-- SpawnAt:
-  - _BA_Tut3_LS_Heat&Rad
-  Radius: "310"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.0"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-SpawnZones:
-- SpawnAt:
-  - _BA_Tut4_DroneFactory01
-  Radius: "1200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  Color: 1.0, 0.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - _BA_Tut4_DroneFactory01
-  Radius: "1500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  Color: 1.0, 0.0, 0.0, 0.5
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - _BA_Tut4_DroneFactory01
-  Radius: "1000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  Color: 1.0, 0.0, 0.0, 0.3
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - _BA_Tut4_DroneFactory01
-  Radius: "2000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  Color: 1.0, 0.0, 0.0, 0.3
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - _BA_Tut3_LS_Heat&Rad
-  - _BA_Tut4 MCRN Nest2
-  - _BA_Tut4_FarpointOutpost
-  - _SV_Tut4_MarkerTerrainV3
-  - SignalMarker04
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0.0"
-  Color: 1.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - _BA_Tut3_LS_Heat&Rad
-  Radius: "300"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0.0"
-  Color: 1.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - _BA_Tut4_DroneFactory01
-  - _BA_Tut3_LS_Heat&Rad
-  - _BA_Tut4 MCRN Nest2
-  - _BA_Tut4_FarpointOutpost
-  - _SV_Tut4_MarkerTerrainV3
-  - SignalMarker04
-  Radius: "500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0.0"
-  Color: 1.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SignalMarker01
-  - SignalMarker03
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0.0"
-  Color: 0.6, 0.6, 1.0, 1
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SignalMarker01
-  - SignalMarker02
-  - SignalMarker04
-  Radius: "1000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0.0"
-  Color: 0.6, 0.6, 1.0, 1
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - _BA_Tut3_LS_Heat&Rad
-  Radius: "100"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.5"
-  RateMultiplyerEdge: "1.0"
-  Color: 0.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Forest
-    Amount: "1500"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - _BA_Tut4_DroneFactory01
-  BiomesExcluded:
-  - Mountains
-  - Glacier
-  - GlacierSnow
-  Radius: "500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 0.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRipperDogPatrolEasy
-    Biomes:
-    - Any
-    Amount: "60"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - CopperResource
-  - IronResource
-  - CarbonResource
-  Radius: "100"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.0, 1.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Savanna
-    Amount: "1000"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - IronResource
-  - CarbonResource
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  - Glacier
-  - IceSheet
-  - Rocks
-  - Tundra
-  Radius: "100"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.0, 1.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "700"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SignalMarker02
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  - Glacier
-  - IceSheet
-  - Rocks
-  - Tundra
-  Radius: "250"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "1.0"
-  Color: 0.0, 0.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - RaptorsNight
-    Biomes:
-    - HighPalms
-    - ContinentWarm
-    - Hills
-    - LowMountains
-    - Dunes
-    Amount: "100"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SignalMarker03
-  Radius: "70"
-  RadiusRandom: "1"
-  RateMultiplyerCenter: "1"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.5, 0.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "2000"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-    AllowInWater: "true"
-- SpawnAt:
-  - SignalMarker04
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  - Glacier
-  - IceSheet
-  - Rocks
-  - Tundra
-  Radius: "1000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.8"
-  Color: 1, 1, 1, 1.0
-  Entities:
-  - Names:
-    - Spiders01few
-    Biomes:
-    - PalmForest
-    - ForestClearing
-    - Forest
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SignalMarker04
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  - Glacier
-  - IceSheet
-  - Rocks
-  - Tundra
-  Radius: "1500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.8"
-  Color: 0.0, 0.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - RaptorsNight
-    Biomes:
-    - HighPalms
-    - ContinentWarm
-    - Hills
-    - LowMountains
-    Amount: "75"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SignalMarker04
-  Radius: "2000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "1"
-  Color: 1, 0.0, 1, 1.0
-  Entities:
-  - Names:
-    - Telluropods
-    Biomes:
-    - Surf_1
-    - Surf
-    - Shore
-    - Surf_Volcanic
-    Amount: "400"
-    AllowInWater: "true"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
+    - 7
+    - 7
+    Faction: "Zirax"
+    POINameAsPositionRef: "_BA_Tut4_DroneFactory01"
+    Radius: 500
 CreatureSpawning:
 - Biomes:
-  - ContinentWarm_1_P
+  - "ContinentWarm_1_P"
   Entities:
-  - Name: RaptorsNight
-    Period: Always
-    Amount: "82"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "RaptorsNight"
+    Amount: 82
+    Color: "0, 0, 0.0"
     DelayMinMax:
-    - "10"
-    - "12"
-    Color: 0, 0, 0.0
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "50"
+    - 10
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "AlienBugs01"
+    Amount: 50
+    Color: "0, 1.0, 1.0"
     DelayMinMax:
-    - "10"
-    - "12"
-    Color: 0, 1.0, 1.0
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - PalmDunes
+  - "PalmDunes"
   Entities:
-  - Name: AlienBugs01
-    Period: Day
-    Amount: "20"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "AlienBugs01"
+    Amount: 20
+    Color: "0, 1.0, 1.0"
     DelayMinMax:
-    - "10"
-    - "12"
-    Color: 0, 1.0, 1.0
+    - 10
+    - 12
+    Period: "Day"
 - Biomes:
-  - Savanna
+  - "Savanna"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "40"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "AlienBugs01"
+    Amount: 40
+    Color: "0, 1.0, 1.0"
     DelayMinMax:
-    - "10"
-    - "12"
-    Color: 0, 1.0, 1.0
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - PalmBeach
+  - "PalmBeach"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "30"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "AlienBugs01"
+    Amount: 30
+    Color: "0, 1.0, 1.0"
     DelayMinMax:
-    - "10"
-    - "12"
-    Color: 0, 1.0, 1.0
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - ShallowWater
-  - ShallowWater_1
-  - Surf
+  - "ShallowWater"
+  - "ShallowWater_1"
+  - "Surf"
   Entities:
-  - Name: ShoalofFishesSmall
-    Period: Always
-    Amount: "25"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "ShoalofFishesSmall"
+    Amount: 25
+    Color: "0, 1.0, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "10"
-    - "12"
-    AllowInWater: "true"
-    Color: 0, 1.0, 0.0
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - ShallowWaterLilies
+  - "ShallowWaterLilies"
   Entities:
-  - Name: ShoalofFishesSmall
-    Period: Always
-    Amount: "100"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "ShoalofFishesSmall"
+    Amount: 100
+    Color: "0, 1.0, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "10"
-    - "12"
-    AllowInWater: "true"
-    Color: 0, 1.0, 0.0
-Build: "3938"
+    - 10
+    - 12
+    Period: "Always"
+SpawnRateZones:
+- SpawnAt:
+  - "TS_Planet"
+  Radius: 1000
+  RadiusRandom: 50
+  RateMultiplyerEdge: 0.7
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+- SpawnAt:
+  - "_BA_Tut3_LS_Heat&Rad"
+  Radius: 310
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+SpawnZones:
+- SpawnAt:
+  - "_BA_Tut4_DroneFactory01"
+  Radius: 1200
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "_BA_Tut4_DroneFactory01"
+  Radius: 1500
+  Color: "1.0, 0.0, 0.0, 0.5"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "_BA_Tut4_DroneFactory01"
+  Radius: 1000
+  Color: "1.0, 0.0, 0.0, 0.3"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "_BA_Tut4_DroneFactory01"
+  Radius: 2000
+  Color: "1.0, 0.0, 0.0, 0.3"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "_BA_Tut3_LS_Heat&Rad"
+  - "_BA_Tut4 MCRN Nest2"
+  - "_BA_Tut4_FarpointOutpost"
+  - "_SV_Tut4_MarkerTerrainV3"
+  - "SignalMarker04"
+  Radius: 200
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "_BA_Tut3_LS_Heat&Rad"
+  Radius: 300
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "_BA_Tut4_DroneFactory01"
+  - "_BA_Tut3_LS_Heat&Rad"
+  - "_BA_Tut4 MCRN Nest2"
+  - "_BA_Tut4_FarpointOutpost"
+  - "_SV_Tut4_MarkerTerrainV3"
+  - "SignalMarker04"
+  Radius: 500
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker01"
+  - "SignalMarker03"
+  Radius: 200
+  Color: "0.6, 0.6, 1.0, 1"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker01"
+  - "SignalMarker02"
+  - "SignalMarker04"
+  Radius: 1000
+  Color: "0.6, 0.6, 1.0, 1"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "_BA_Tut3_LS_Heat&Rad"
+  Radius: 100
+  RateMultiplyerCenter: 0.5
+  RateMultiplyerEdge: 1
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Forest"
+    Amount: 1500
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "_BA_Tut4_DroneFactory01"
+  BiomesExcluded:
+  - "Mountains"
+  - "Glacier"
+  - "GlacierSnow"
+  Radius: 500
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRipperDogPatrolEasy"
+    Biomes:
+    - "Any"
+    Amount: 60
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "CopperResource"
+  - "IronResource"
+  - "CarbonResource"
+  Radius: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "0.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Savanna"
+    Amount: 1000
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "IronResource"
+  - "CarbonResource"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  - "Glacier"
+  - "IceSheet"
+  - "Rocks"
+  - "Tundra"
+  Radius: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "0.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    Amount: 700
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker02"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  - "Glacier"
+  - "IceSheet"
+  - "Rocks"
+  - "Tundra"
+  Radius: 250
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "RaptorsNight"
+    Biomes:
+    - "HighPalms"
+    - "ContinentWarm"
+    - "Hills"
+    - "LowMountains"
+    - "Dunes"
+    Amount: 100
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker03"
+  Radius: 70
+  RadiusRandom: 1
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "0.5, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    Amount: 2000
+    DelayMinMax:
+    - -1
+    - -1
+    AllowInWater: true
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker04"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  - "Glacier"
+  - "IceSheet"
+  - "Rocks"
+  - "Tundra"
+  Radius: 1000
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.8
+  Color: "1, 1, 1, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "Spiders01few"
+    Biomes:
+    - "PalmForest"
+    - "ForestClearing"
+    - "Forest"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker04"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  - "Glacier"
+  - "IceSheet"
+  - "Rocks"
+  - "Tundra"
+  Radius: 1500
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.8
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "RaptorsNight"
+    Biomes:
+    - "HighPalms"
+    - "ContinentWarm"
+    - "Hills"
+    - "LowMountains"
+    Amount: 75
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker04"
+  Radius: 2000
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  Color: "1, 0.0, 1, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "Telluropods"
+    Biomes:
+    - "Surf_1"
+    - "Surf"
+    - "Shore"
+    - "Surf_Volcanic"
+    Amount: 400
+    DelayMinMax:
+    - -1
+    - -1
+    AllowInWater: true
+    Period: "Always"

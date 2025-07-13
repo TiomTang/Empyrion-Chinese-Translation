@@ -1,434 +1,559 @@
-PlanetType: Decayed Lava
-Emissive: "True"
-PlayfieldType: Planet
-Difficulty: "4"
-AllowBlueprintSV: "False"
-AllowBlueprintCV: "False"
-AllowBlueprintBA: "False"
-AllowBlueprintHV: "False"
-LandClaimZone: Device
-Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\n\u4E00\u9897\u66FE\u7ECF\u88AB\u540D\u4E3A\u201C\u5148\u7956\u6587\u660E\u201D\u6240\u5C45\u4F4F\u7684\u8352\u829C\u3001\u65E0\u751F\u547D\u7684\u661F\u7403\u3002"
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.40, 0.50, 0.60
-SkyColor: 0.5, 0.5, 0.8
-SkyHorizonColor: 0.35, 0.75, 0.35
-AtmosphereParams:
-- "3"
-- "1.5"
-DayLightIntensity: "0.6"
-NightLightIntensity: "0.75"
-LightZenithColor: 0.70, 0.70, 1
-LightHorizonColor: 0.8, 1.2, 0.8
-NightLightColor: 0.2, 0.8, 0.5
-DayShadowStrength: "0.95"
-NightShadowStrength: "0.5"
-SunFlare: EnvironmentalEffects/SunFlareBlue
-FogColor: 0.3, 0.5, 1
-CloudsDensity: "0.7"
-CloudsSharpness: "0.2"
-CloudsBrightness: "0.6"
-CloudsOpacity: "0.7"
-CloudsZenithColor: 1.1, 1.1, 1.2
-CloudsHorizonColor: 0.4, 3, 0.6
-CloudsNightHorizonColor: 0.2, 0.5, 1
-CloudsNightZenithColor: 0.3, 2, 0.3
-WindSpeed: "10"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "Decayed Lava"
+PlanetSize: 2
+Emissive: true
+Difficulty: 4
+SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
-- Name: Grime
-  MaxHeight: "20"
-- Name: SnowLight
-  Time: Always
-  MaxHeight: "800"
-- Name: SnowLight
-  Time: Always
-  MaxHeight: "800"
-- Name: SnowLight
-  Time: Always
-  MaxHeight: "800"
-- Name: SnowLight
-  Time: Always
-  MaxHeight: "800"
-- Name: SnowLight
-  Time: Always
-  MaxHeight: "800"
+- Name: "Grime"
+  MaxHeight: 20
+  Time: "Always"
+  FollowPlayerY: false
+- Name: "SnowLight"
+  MaxHeight: 800
+  Time: "Always"
+  FollowPlayerY: false
+- Name: "SnowLight"
+  MaxHeight: 800
+  Time: "Always"
+  FollowPlayerY: false
+- Name: "SnowLight"
+  MaxHeight: 800
+  Time: "Always"
+  FollowPlayerY: false
+- Name: "SnowLight"
+  MaxHeight: 800
+  Time: "Always"
+  FollowPlayerY: false
+- Name: "SnowLight"
+  MaxHeight: 800
+  Time: "Always"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clouds
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1500"
-- Name: CloudsDark
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: HeatWave
-  Type: Weather
-  InitialDelay: "12"
-  Delay: "12"
-  Lifetime: "1200"
-- Name: FogRadiationGreen
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "48"
-  Lifetime: "600"
-- Name: MeteorShower
-  Time: Day
-  InitialDelay: "1"
-  Delay: "5"
-  Lifetime: "60"
-  PlyDist: "200"
-  SpawnY: "100"
-  Struct: Avoid
-- Name: ThunderAndLightningPurple
-  Time: Night
-  InitialDelay: "1.5"
-  Delay: "4"
-  Lifetime: "300"
-  PlyDist: "100"
-  SpawnY: "500"
-  Struct: Avoid
-- Name: ThunderAndLightningWhite
-  Time: Night
-  InitialDelay: "1.5"
-  Delay: "4"
-  Lifetime: "300"
-  PlyDist: "100"
-  SpawnY: "500"
-  Struct: Avoid
+- Name: "Clouds"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1500
+  Type: "Weather"
+- Name: "CloudsDark"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "HeatWave"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 12
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "FogRadiationGreen"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 48
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "MeteorShower"
+  SpawnY: 100
+  Time: "Day"
+  InitialDelay: 1
+  Delay: 5
+  PlyDist: 200
+  Struct: "Avoid"
+  Lifetime: 60
+- Name: "ThunderAndLightningPurple"
+  SpawnY: 500
+  Time: "Always"
+  InitialDelay: 1.5
+  Delay: 4
+  PlyDist: 100
+  Struct: "Avoid"
+  Lifetime: 300
+- Name: "ThunderAndLightningWhite"
+  SpawnY: 500
+  Time: "Always"
+  InitialDelay: 1.5
+  Delay: 4
+  PlyDist: 100
+  Struct: "Avoid"
+  Lifetime: 300
+AtmosphereEnabled: true
+AtmosphereColor: "0.40, 0.50, 0.60"
+AtmosphereParams:
+- 3
+- 1.5
+SkyColor: "0.5, 0.5, 0.8"
+SkyHorizonColor: "0.35, 0.75, 0.35"
+LightZenithColor: "0.70, 0.70, 1"
+LightHorizonColor: "0.8, 1.2, 0.8"
+NightLightColor: "0.2, 0.8, 0.5"
+CloudsZenithColor: "1.1, 1.1, 1.2"
+CloudsHorizonColor: "0.4, 3, 0.6"
+CloudsNightZenithColor: "0.3, 2, 0.3"
+CloudsNightHorizonColor: "0.2, 0.5, 1"
+CloudsOpacity: 0.7
+FogCloudIntensity: 1
+DayLightIntensity: 0.6
+NightLightIntensity: 0.75
+DayShadowStrength: 0.95
+NightShadowStrength: 0.5
+CloudsDensity: 0.7
+CloudsSharpness: 0.2
+CloudsBrightness: 0.6
+WindSpeed: 10
+FogColor: "0.3, 0.5, 1"
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\n\u8FD9\u662F\u4E00\u9897\u8352\u829C\u3001\u6BEB\u65E0\u751F\u673A\u7684\u661F\u7403\uFF0C\u66FE\u662F\u88AB\u79F0\u4E3A\u5148\u7956\u6587\u660E\u6240\u5C45\u4F4F\u7684\u661F\u7403\u3002"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Decayed Lava"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: MagnesiumResource
-  IsScalingCount: "True"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 6
+    Max: 16
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "MagnesiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "6"
-  - "16"
+  - 6
+  - 16
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.9"
-- Name: ErestrumResource
+  - 6
+  - 15
+  DroneProb: 0.9
+  MaxDroneCount: 1
+- Count:
+    Min: 5
+    Max: 6
+  Size:
+    Min: 8
+    Max: 11
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "ErestrumResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 5
+  - 6
+  SizeMinMax:
+  - 8
+  - 11
+  DepthMinMax:
+  - 5
+  - 20
+  DroneProb: 1
+  MaxDroneCount: 4
   Biome:
-  - Flats
-  - CrystallizedRocks
-  IsScalingCount: "True"
+  - "Flats"
+  - "CrystallizedRocks"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 7
+    Max: 11
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "5"
-  - "6"
+  - 2
+  - 3
   SizeMinMax:
-  - "8"
-  - "11"
+  - 7
+  - 11
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "1"
-  MaxDroneCount: "4"
-- Name: PromethiumResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.4
+  MaxDroneCount: 1
+- Count:
+    Min: 1
+    Max: 3
+  Size:
+    Min: 6
+    Max: 8
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "GoldResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 1
+  - 3
   SizeMinMax:
-  - "7"
-  - "11"
+  - 6
+  - 8
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.4"
-- Name: GoldResource
+  - 6
+  - 15
+  DroneProb: 1
+  MaxDroneCount: 3
   Biome:
-  - LavaEdge
-  - LavaFolds
-  - Plains
-  IsScalingCount: "True"
-  CountMinMax:
-  - "1"
-  - "3"
-  SizeMinMax:
-  - "6"
-  - "8"
-  DroneProb: "1"
-  MaxDroneCount: "3"
-  DepthMinMax:
-  - "6"
-  - "15"
+  - "LavaEdge"
+  - "LavaFolds"
+  - "Plains"
 AsteroidResources:
-- Name: MagnesiumResource
-  Threshold: "0.2"
-  Amount: "0.3"
-- Name: ErestrumResource
-  Threshold: "0.2"
-  Amount: "0.3"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.3"
-- Name: GoldResource
-  Threshold: "0.1"
-  Amount: "0.2"
+- Name: "MagnesiumResource"
+  Threshold: 0.2
+  Amount: 0.3
+  InitialDelay: -1
+  Delay: -1
+- Name: "ErestrumResource"
+  Threshold: 0.2
+  Amount: 0.3
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.3
+  InitialDelay: -1
+  Delay: -1
+- Name: "GoldResource"
+  Threshold: 0.1
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: Eden_ProgInterface
-    Faction: Alien
-    IsImportant: "True"
+  - GroupName: "Eden_ProgInterface"
+    Faction: "Alien"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: Discovery
+    - Key: "Discovery"
       Value: "False"
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_ProgenitorMain
-    Faction: Alien
+  - GroupName: "Eden_ProgenitorMain"
+    Faction: "Alien"
+    Territory: false
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
-    DroneProb: "0"
+    - 0
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_RuinsProgenitorObelisk
-    Faction: Alien
+  - SpawnPoiRange:
+      Min: 150
+      Max: 400
+    GroupName: "Eden_RuinsProgenitorObelisk"
+    Faction: "Alien"
+    Territory: false
+    Count:
+      Max: 12
     CountMinMax:
-    - "0"
-    - "12"
-    DroneProb: "0"
+    - 0
+    - 12
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
+    Properties:
+    - Key: "SI"
+      Value: "Off"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - Eden_ProgenitorMain
+    - "Eden_ProgenitorMain"
     SpawnPOINearRange:
-    - "150"
-    - "400"
-    Properties:
-    - Key: SI
-      Value: "Off"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_RuinsProgenitorMain
-    Faction: Alien
+    - 150
+    - 400
+  - GroupName: "Eden_RuinsProgenitorMain"
+    Faction: "Alien"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Max: 3
     CountMinMax:
-    - "0"
-    - "3"
-    IsScalingCount: "True"
-    DroneProb: "0"
+    - 0
+    - 3
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_RuinsProgenitorObeliskF
-    Faction: Alien
+  - GroupName: "Eden_RuinsProgenitorObeliskF"
+    Faction: "Alien"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_RuinsProgenitorObeliskF
-    Faction: Alien
+  - SpawnPoiRange:
+      Min: 50
+      Max: 200
+    GroupName: "Eden_RuinsProgenitorObeliskF"
+    Faction: "Alien"
+    Territory: false
+    Count:
+      Min: 5
+      Max: 10
     CountMinMax:
-    - "5"
-    - "10"
-    DroneProb: "0"
+    - 5
+    - 10
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
+    Properties:
+    - Key: "SI"
+      Value: "Off"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - Eden_RuinsProgenitorObeliskF
+    - "Eden_RuinsProgenitorObeliskF"
     SpawnPOINearRange:
-    - "50"
-    - "200"
-    Properties:
-    - Key: SI
-      Value: "Off"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: ProgenitorArtifacts
-    Faction: Alien
+    - 50
+    - 200
+  - GroupName: "ProgenitorArtifacts"
+    Faction: "Alien"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Max: 15
     CountMinMax:
-    - "0"
-    - "15"
-    IsScalingCount: "True"
-    DroneProb: "0"
+    - 0
+    - 15
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_RuinsProgenitorObelisk
-    Faction: Alien
+  - GroupName: "Eden_RuinsProgenitorObelisk"
+    Faction: "Alien"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Max: 3
     CountMinMax:
-    - "0"
-    - "3"
-    IsScalingCount: "True"
-    DroneProb: "0"
+    - 0
+    - 3
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_RuinsProgenitorSphere
-    Faction: Alien
+  - GroupName: "Eden_RuinsProgenitorSphere"
+    Faction: "Alien"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Max: 6
     CountMinMax:
-    - "0"
-    - "6"
-    IsScalingCount: "True"
-    DroneProb: "0"
+    - 0
+    - 6
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_CrystalsBlackXL
-    Faction: None
+  - GroupName: "Eden_CrystalsBlackXL"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 25
+      Max: 50
     CountMinMax:
-    - "25"
-    - "50"
-    DroneProb: "0"
+    - 25
+    - 50
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "0"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "0"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "0"
-    - "120"
-    - "0"
-    RotY: "0"
-  - Mode: Survival
-    Spawn: EscapePod
-    Armor: ArmorMedium
+    - 0
+    - 120
+    - 0
+  - Mode: "Survival"
+    Spawn: "EscapePod"
+    Armor: "ArmorMedium"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "6"
-    PresetStyle: "3"
+  - GroupName: "DroneBaseSetup"
+    Difficulty: 6
+    PresetStyle: 3
     Stock:
-    - Name: DroneSmallFast01Minigun
+    - Name: "DroneSmallFast01Minigun"
       Amount: "300"
-      Extra: "0"
-    - Name: DroneSmallFast01Rocket
+      Extra: -1
+    - Name: "DroneSmallFast01Rocket"
       Amount: "100"
-      Extra: "0"
-    - Name: DroneBomberAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: EnemyDroneV2Plasma
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMinigun
+      Extra: -1
+    - Name: "DroneBomberAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "EnemyDroneV2Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
       Amount: "500"
-      Extra: "3"
-    - Name: ZiraxRocket
+      Extra: 3
+    - Name: "ZiraxRocket"
       Amount: "500"
-      Extra: "3"
-    - Name: Crawler
+      Extra: 3
+    - Name: "Crawler"
       Amount: "150"
-      Extra: "3"
-    - Name: AlienAssassinGrey
+      Extra: 3
+    - Name: "AlienAssassinGrey"
       Amount: "300"
-      Extra: "3"
+      Extra: 3
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "0"
-    - "0"
-    CenterX: "-5000"
-  - DronesMinMax:
-    - "0"
-    - "0"
-    CenterX: "5000"
-SpawnRateZones: 
-SpawnZones:
-- SpawnAt:
-  - Eden_RuinsProgenitorObeliskF
-  - Eden_RuinsProgenitorObelisk
-  Radius: "75"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "1"
-  Color: 1.0, 1.0, 1.0, 0.7
-  Entities:
-  - Names:
-    - Eden_GolemsDesertMega
-    Biomes:
-    - Any
-    Amount: "125"
-    Period: Always
-    DelayMinMax:
-    - "48"
-    - "72"
+  - Drones: {}
+    DronesMinMax:
+    - 0
+    - 0
+    CenterX: -5000
+  - Drones: {}
+    DronesMinMax:
+    - 0
+    - 0
+    CenterX: 5000
 CreatureSpawning:
 - Biomes:
-  - Flats
+  - "Flats"
   Entities:
-  - Name: Eden_GolemsDesertMega
-    Period: Always
-    Amount: "0"
+  - DelayRange:
+      Min: 6
+      Max: 8
+    Name: "Eden_GolemsDesertMega"
+    Color: "0, 0, 1.0"
     DelayMinMax:
-    - "6"
-    - "8"
-    Color: 0, 0, 1.0
+    - 6
+    - 8
+    Period: "Always"
+SpawnZones:
+- SpawnAt:
+  - "Eden_RuinsProgenitorObeliskF"
+  - "Eden_RuinsProgenitorObelisk"
+  Radius: 75
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  Color: "1.0, 1.0, 1.0, 0.7"
+  Entities:
+  - DelayRange:
+      Min: 48
+      Max: 72
+    Names:
+    - "Eden_GolemsDesertMega"
+    Biomes:
+    - "Any"
+    Amount: 125
+    DelayMinMax:
+    - 48
+    - 72
+    Period: "Always"

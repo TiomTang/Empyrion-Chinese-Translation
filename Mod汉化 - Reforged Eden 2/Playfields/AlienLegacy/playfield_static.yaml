@@ -1,1643 +1,2067 @@
-Description: "[c][e0e020][\u5371\u9669][-][/c]   [c]\u9694\u79BB\u533A![-][/c]\n\n[c][808080][i]... \u53E4\u8001\u7684\u5A01\u80C1\u518D\u5EA6\u82CF\u9192\u4E4B\u5730...[-][/i][-][/c]\n\n[c][e0e020]\u6CE8\u610F:[-][/c]   [c]\u8FDB\u5165\u98CE\u9669\u81EA\u8D1F[-][/c]"
-PlanetType: Legacy
-PlayfieldType: Planet
-Difficulty: "10"
-LandClaimZone: Device
-UseFixed: "True"
-UseRandom: "True"
-OrbitUsesLightColor: "true"
-SunFlare: EnvironmentalEffects/SunFlareYellow3
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.6, 0.5, 0.4
-AtmosphereParams:
-- "3"
-- "2"
-SkyColor: 0.6, 0.30, 0.125
-SkyHorizonColor: 0.3, 0.5, 0.5
-FogColor: 0.05, 0.03, 0.9
-FogCloudIntensity: "0.8"
-DayLightIntensity: "0.1"
-NightLightIntensity: "1.4"
-DayShadowStrength: "0.5"
-NightShadowStrength: "0.5"
-LightZenithColor: 0.5, 0.4, 0.5
-LightHorizonColor: 0.8, 0.4, 0
-NightLightColor: 0.4, 0.4, 0.48
-CloudsZenithColor: 0.11, 0.095, 0.125
-CloudsHorizonColor: 0.4, 0.10, 0.08
-CloudsNightZenithColor: 0.080, 0.165, 0.10
-CloudsNightHorizonColor: 0.04, 0.04, 0.120
-CloudsDensity: "1"
-CloudsSharpness: "0"
-CloudsBrightness: "1"
-CloudsOpacity: "0.5"
-WindSpeed: "20"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "Legacy"
+PlanetSize: 2
+Difficulty: 10
+SunFlare: "EnvironmentalEffects/SunFlareYellow3"
 SpecialEffectsLocal:
-- Name: Pollen
+- Name: "Pollen"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Remnant
-  - FlowersEdge
-  Time: Day
-  MaxHeight: "10"
-- Name: FireFliesGreenFew
+  - "Remnant"
+  - "FlowersEdge"
+  FollowPlayerY: false
+- Name: "FireFliesGreenFew"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Plains
-  Time: Night
-  MaxHeight: "15"
-- Name: FireFliesOrange
+  - "Plains"
+  FollowPlayerY: false
+- Name: "FireFliesOrange"
+  MaxHeight: 480
+  Time: "Always"
   Biome:
-  - Structure
-  - Organized
-  Time: Always
-  MaxHeight: "480"
-  FollowPlayerY: "True"
-- Name: FireFliesRed
+  - "Structure"
+  - "Organized"
+  FollowPlayerY: false
+- Name: "FireFliesRed"
+  MaxHeight: 15
+  Time: "Always"
   Biome:
-  - Active
-  Time: Always
-  MaxHeight: "15"
-- Name: FireFliesRed
+  - "Active"
+  FollowPlayerY: false
+- Name: "FireFliesRed"
+  MaxHeight: 480
+  Time: "Always"
   Biome:
-  - Active
-  - Organized
-  Time: Always
-  MaxHeight: "480"
-  FollowPlayerY: "True"
-- Name: EnvironmentalEffects/Sparks
+  - "Active"
+  - "Organized"
+  FollowPlayerY: false
+- Name: "EnvironmentalEffects/Sparks"
+  MaxHeight: 20
+  Time: "Night"
   Biome:
-  - Organized
-  Time: Night
-  MaxHeight: "20"
-- Name: EnvironmentalEffects/Sparks
+  - "Organized"
+  FollowPlayerY: false
+- Name: "EnvironmentalEffects/Sparks"
+  MaxHeight: 100
+  Time: "Night"
   Biome:
-  - Active
-  Time: Night
-  MaxHeight: "100"
-- Name: Grime
+  - "Active"
+  FollowPlayerY: false
+- Name: "Grime"
+  MaxHeight: 10
+  Time: "Always"
   Biome:
-  - TacticalStrike
-  - PlanetBuster
-  - Structure
-  - Plains
-  - GlassedTerrain
-  - BarrenRocks
-  - Forest
-  Time: Always
-  MaxHeight: "10"
+  - "TacticalStrike"
+  - "PlanetBuster"
+  - "Structure"
+  - "Plains"
+  - "GlassedTerrain"
+  - "BarrenRocks"
+  - "Forest"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: MeteorShower
+- Name: "MeteorShower"
+  SpawnY: 100
+  Time: "Always"
   Biome:
-  - Any
-  Time: Always
-  InitialDelay: "0"
-  Delay: "0"
-  Lifetime: "60"
-  PlyDist: "200"
-  SpawnY: "100"
-  Struct: Avoid
-- Name: ThunderAndLightningRed
+  - "Any"
+  InitialDelay: 0.5
+  Delay: 1
+  PlyDist: 200
+  Struct: "Avoid"
+  Lifetime: 60
+- Name: "ThunderAndLightningRed"
+  SpawnY: 500
+  Time: "Always"
   Biome:
-  - Any
-  Time: Always
-  InitialDelay: "0"
-  Delay: "0"
-  Lifetime: "500"
-  PlyDist: "100"
-  SpawnY: "500"
-  Struct: Avoid
-- Name: ThunderAndLightningPurple
+  - "Any"
+  InitialDelay: 0.5
+  Delay: 1
+  PlyDist: 100
+  Struct: "Avoid"
+  Lifetime: 500
+- Name: "ThunderAndLightningPurple"
+  SpawnY: 500
+  Time: "Always"
   Biome:
-  - Any
-  Time: Always
-  InitialDelay: "0"
-  Delay: "0"
-  Lifetime: "500"
-  PlyDist: "100"
-  SpawnY: "500"
-  Struct: Avoid
-- Name: ThunderAndLightningWhite
+  - "Any"
+  InitialDelay: 0.5
+  Delay: 1
+  PlyDist: 100
+  Struct: "Avoid"
+  Lifetime: 500
+- Name: "ThunderAndLightningWhite"
+  SpawnY: 500
+  Time: "Always"
   Biome:
-  - Active
-  Time: Always
-  InitialDelay: "0"
-  Delay: "0"
-  Lifetime: "500"
-  PlyDist: "100"
-  SpawnY: "500"
-  Struct: Avoid
+  - "Active"
+  InitialDelay: 0.5
+  Delay: 1
+  PlyDist: 100
+  Struct: "Avoid"
+  Lifetime: 500
+AtmosphereEnabled: true
+AtmosphereColor: "0.6, 0.5, 0.4"
+AtmosphereParams:
+- 3
+- 2
+OrbitUsesLightColor: true
+SkyColor: "0.6, 0.30, 0.125"
+SkyHorizonColor: "0.3, 0.5, 0.5"
+LightZenithColor: "0.5, 0.4, 0.5"
+LightHorizonColor: "0.8, 0.4, 0"
+NightLightColor: "0.4, 0.4, 0.48"
+CloudsZenithColor: "0.11, 0.095, 0.125"
+CloudsHorizonColor: "0.4, 0.10, 0.08"
+CloudsNightZenithColor: "0.080, 0.165, 0.10"
+CloudsNightHorizonColor: "0.04, 0.04, 0.120"
+CloudsOpacity: 0.5
+FogCloudIntensity: 0.8
+DayLightIntensity: 0.1
+NightLightIntensity: 1.4
+DayShadowStrength: 0.5
+NightShadowStrength: 0.5
+CloudsDensity: 1
+CloudsSharpness: 1
+CloudsBrightness: 1
+WindSpeed: 20
+FogColor: "0.05, 0.03, 0.9"
+Description: "[c][e0e020][\u5371\u9669][-][/c]   [c]\u9694\u79BB\u533A\uFF01[-][/c] \n[c][808080][i]...\u8FDC\u53E4\u7684\u5A01\u80C1\u5728\u6B64\u5730\u518D\u6B21\u82CF\u9192...[/i][-][/c] \n \n[c][e0e020]\u6CE8\u610F\uFF1A[-][/c]   [c]\u8FDB\u5165\u98CE\u9669\u81EA\u8D1F[-][/c]"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Legacy"
+UseFixed: true
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: SiliconResource
-  Biome:
-  - Dunes
-  - Forest
-  - AtomicWeaponry
-  - BarrenRocks
-  - GlassedTerrain
-  IsScalingCount: "True"
+- Count:
+    Min: 3
+    Max: 4
+  Size:
+    Min: 6
+    Max: 8
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "4"
+  - 3
+  - 4
   SizeMinMax:
-  - "6"
-  - "8"
+  - 6
+  - 8
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "1"
-  MaxDroneCount: "1"
-- Name: NeodymiumResource
+  - 6
+  - 15
+  DroneProb: 1
+  MaxDroneCount: 1
   Biome:
-  - Geobuster
-  - LowMountains
-  - BarrenRocks
-  IsScalingCount: "True"
+  - "Dunes"
+  - "Forest"
+  - "AtomicWeaponry"
+  - "BarrenRocks"
+  - "GlassedTerrain"
+- Count:
+    Min: 3
+    Max: 5
+  Size:
+    Min: 7
+    Max: 9
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "NeodymiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "5"
+  - 3
+  - 5
   SizeMinMax:
-  - "7"
-  - "9"
+  - 7
+  - 9
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "1"
-  MaxDroneCount: "4"
-- Name: PromethiumResource
+  - 6
+  - 15
+  DroneProb: 1
+  MaxDroneCount: 4
   Biome:
-  - LowMountains
-  - Remnant
-  - Forest
-  - Geobuster
-  - BarrenRocks
-  - AtomicWeaponry
-  - Structure
-  IsScalingCount: "True"
+  - "Geobuster"
+  - "LowMountains"
+  - "BarrenRocks"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 6
+  Depth:
+    Max: 1
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "6"
-  DroneProb: "0.7"
-  MaxDroneCount: "2"
+  - 5
+  - 6
   DepthMinMax:
-  - "0"
-  - "1"
-- Name: PentaxidResource
+  - 0
+  - 1
+  DroneProb: 0.7
+  MaxDroneCount: 2
   Biome:
-  - Organized
-  - Active
+  - "LowMountains"
+  - "Remnant"
+  - "Forest"
+  - "Geobuster"
+  - "BarrenRocks"
+  - "AtomicWeaponry"
+  - "Structure"
+- Count:
+    Min: 10
+    Max: 10
+  Size:
+    Min: 5
+    Max: 5
+  Depth:
+    Max: 3
+  Name: "PentaxidResource"
   CountMinMax:
-  - "10"
-  - "10"
+  - 10
+  - 10
   SizeMinMax:
-  - "5"
-  - "5"
-  DroneProb: "0.0"
-  MaxDroneCount: "0"
+  - 5
+  - 5
   DepthMinMax:
-  - "0"
-  - "3"
-- Name: PentaxidResource
+  - 0
+  - 3
+  MaxDroneCount: 1
   Biome:
-  - GlassedTerrain
-  - Plains
-  - Structure
-  - Organized
-  IsScalingCount: "True"
+  - "Organized"
+  - "Active"
+- Count:
+    Min: 5
+    Max: 5
+  Size:
+    Min: 3
+    Max: 3
+  Depth:
+    Max: 5
+  Name: "PentaxidResource"
+  IsScalingCount: true
   CountMinMax:
-  - "5"
-  - "5"
+  - 5
+  - 5
   SizeMinMax:
-  - "3"
-  - "3"
-  DroneProb: "1"
-  MaxDroneCount: "2"
+  - 3
+  - 3
   DepthMinMax:
-  - "0"
-  - "5"
-- Name: SathiumResource
+  - 0
+  - 5
+  DroneProb: 1
+  MaxDroneCount: 2
   Biome:
-  - Geobuster
-  - BarrenRocks
-  - LowMountains
-  - GlassedTerrain
-  IsScalingCount: "True"
+  - "GlassedTerrain"
+  - "Plains"
+  - "Structure"
+  - "Organized"
+- Count:
+    Min: 4
+    Max: 5
+  Size:
+    Min: 11
+    Max: 13
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "SathiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "5"
+  - 4
+  - 5
   SizeMinMax:
-  - "11"
-  - "13"
+  - 11
+  - 13
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "1"
-  MaxDroneCount: "3"
-- Name: GoldResource
+  - 6
+  - 15
+  DroneProb: 1
+  MaxDroneCount: 3
   Biome:
-  - Organized
-  - Active
+  - "Geobuster"
+  - "BarrenRocks"
+  - "LowMountains"
+  - "GlassedTerrain"
+- Count:
+    Min: 4
+    Max: 7
+  Size:
+    Min: 4
+    Max: 4
+  Depth:
+    Min: 10
+    Max: 15
+  Name: "GoldResource"
   CountMinMax:
-  - "4"
-  - "7"
+  - 4
+  - 7
   SizeMinMax:
-  - "4"
-  - "4"
-  DroneProb: "0"
-  MaxDroneCount: "1"
+  - 4
+  - 4
   DepthMinMax:
-  - "10"
-  - "15"
+  - 10
+  - 15
+  MaxDroneCount: 1
+  Biome:
+  - "Organized"
+  - "Active"
 AsteroidResources:
-- Name: SiliconResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: NeodymiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PentaxidResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: SathiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: GoldResource
-  Threshold: "0.2"
-  Amount: "0.2"
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "NeodymiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PentaxidResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "SathiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "GoldResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: BA_TribalRestaurant
-    Faction: Talon
-    IsImportant: "True"
-    AvoidFactionTerritory: "True"
-    Territory: "False"
-    Biome:
-    - LowMountains
-    - Mountains
+  - SpawnResRange:
+      Min: 80
+      Max: 100
+    GroupName: "BA_TribalRestaurant"
+    Faction: "Talon"
+    Territory: false
+    AvoidFactionTerritory: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnResource:
-    - GoldResource:1-1
-    ResourceDistance: "100"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: LegacyFloatingT1RG
-    Faction: TheLegacy
-    IsImportant: "True"
-    Territory: "False"
-    CountMinMax:
-    - "2"
-    - "4"
-    SpawnPOIAvoid:
-    - BA_TribalRestaurant
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-    - Key: SI
-      Value: "Off"
-  - GroupName: LegacyFloatingT2RG
-    Faction: TheLegacy
-    IsImportant: "True"
-    Territory: "False"
-    CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOIAvoid:
-    - BA_TribalRestaurant
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-    - Key: SI
-      Value: "Off"
-  - GroupName: LegacyDefenseT1RG
-    Faction: TheLegacy
-    IsImportant: "True"
-    Territory: "False"
-    CountMinMax:
-    - "5"
-    - "7"
-    SpawnPOIAvoid:
-    - BA_TribalRestaurant
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: LegacyInfectorRG
-    Faction: TheLegacy
-    IsImportant: "True"
-    Territory: "False"
-    CountMinMax:
-    - "3"
-    - "5"
-    SpawnPOIAvoid:
-    - BA_TribalRestaurant
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CrashedShip
-    Faction: None
-    Territory: "False"
-    CountMinMax:
-    - "8"
-    - "8"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "1500"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "1500"
-    - "2500"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: NullPOI
-    Faction: None
+    - "GoldResource:1-1"
+    SpawnResourceRange:
+    - 80
+    - 100
     Biome:
-    - Active
+    - "LowMountains"
+    - "Mountains"
+  - GroupName: "LegacyFloatingT1RG"
+    Faction: "TheLegacy"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 2
+      Max: 4
     CountMinMax:
-    - "1"
-    - "1"
-    IsImportant: "True"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
+    - 2
+    - 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    - Key: "SI"
+      Value: "Off"
     SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "100"
+    - "BA_TribalRestaurant"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "LegacyFloatingT2RG"
+    Faction: "TheLegacy"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    - Key: "SI"
+      Value: "Off"
+    SpawnPOIAvoid:
+    - "BA_TribalRestaurant"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "LegacyDefenseT1RG"
+    Faction: "TheLegacy"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 5
+      Max: 7
+    CountMinMax:
+    - 5
+    - 7
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "BA_TribalRestaurant"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "LegacyInfectorRG"
+    Faction: "TheLegacy"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 3
+      Max: 5
+    CountMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "BA_TribalRestaurant"
+    SpawnPOIAvoidDistance: 1000
+  - SpawnPoiRange:
+      Min: 1500
+      Max: 2500
+    GroupName: "CrashedShip"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 8
+      Max: 8
+    CountMinMax:
+    - 8
+    - 8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - START
+    - "START"
+    SpawnPOIAvoid:
+    - "START"
     SpawnPOINearRange:
-    - "300"
-    - "500"
+    - 1500
+    - 2500
+    SpawnPOIAvoidDistance: 1500
+  - SpawnPoiRange:
+      Min: 300
+      Max: 500
+    SpawnResRange:
+      Min: 80
+      Max: 200
+    GroupName: "NullPOI"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "START"
     SpawnResource:
-    - GoldResource:1-1
-    - PentaxidResource:2-4
-    ResourceDistance: "200"
-  - GroupName: LegacyFloatingT1RG
-    Faction: TheLegacy
-    Biome:
-    - Proximity
-    - Active
-    CountMinMax:
-    - "5"
-    - "5"
-    DroneProb: "0.0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - ArtifactsFloating
-    SpawnPOIAvoidDistance: "400"
-    SpawnPOINear:
-    - START
+    - "GoldResource:1-1"
+    - "PentaxidResource:2-4"
     SpawnPOINearRange:
-    - "800"
-    - "1400"
+    - 300
+    - 500
+    SpawnPOIAvoidDistance: 100
+    SpawnResourceRange:
+    - 80
+    - 200
+    Biome:
+    - "Active"
+  - SpawnPoiRange:
+      Min: 800
+      Max: 1400
+    SpawnResRange:
+      Min: 80
+      Max: 100
+    GroupName: "LegacyFloatingT1RG"
+    Faction: "TheLegacy"
+    Territory: false
+    Count:
+      Min: 5
+      Max: 5
+    CountMinMax:
+    - 5
+    - 5
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "EvilWhispering"
+    - Key: "SI"
+      Value: "Off"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "ArtifactsFloating"
     SpawnResource:
-    - PentaxidResource:1-1
-    ResourceDistance: "100"
-    Properties:
-    - Key: Music
-      Value: EvilWhispering
-    - Key: SI
-      Value: "Off"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: LegacyFloatingT1RG
-    Faction: TheLegacy
+    - "PentaxidResource:1-1"
+    SpawnPOINearRange:
+    - 800
+    - 1400
+    SpawnPOIAvoidDistance: 400
+    SpawnResourceRange:
+    - 80
+    - 100
     Biome:
-    - Proximity
-    - Active
+    - "Proximity"
+    - "Active"
+  - SpawnPoiRange:
+      Min: 800
+      Max: 1800
+    SpawnResRange:
+      Min: 80
+      Max: 100
+    GroupName: "LegacyFloatingT1RG"
+    Faction: "TheLegacy"
+    Territory: false
+    Count:
+      Min: 5
+      Max: 5
     CountMinMax:
-    - "5"
-    - "5"
-    DroneProb: "0.0"
+    - 5
+    - 5
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - ArtifactsFloating
-    SpawnPOIAvoidDistance: "100"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "800"
-    - "1800"
-    ResourceDistance: "100"
+    - 1
+    - 1
     Properties:
-    - Key: Music
-      Value: EvilWhispering
-    - Key: SI
+    - Key: "Music"
+      Value: "EvilWhispering"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: LegacyFloatingT2RG
-    Faction: TheLegacy
-    CountMinMax:
-    - "5"
-    - "5"
-    DroneProb: "0.0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - ArtifactsFloating
-    SpawnPOIAvoidDistance: "1000"
     SpawnPOINear:
-    - START
+    - "START"
+    SpawnPOIAvoid:
+    - "ArtifactsFloating"
     SpawnPOINearRange:
-    - "1800"
-    - "2000"
+    - 800
+    - 1800
+    SpawnPOIAvoidDistance: 100
+    SpawnResourceRange:
+    - 80
+    - 100
+    Biome:
+    - "Proximity"
+    - "Active"
+  - SpawnPoiRange:
+      Min: 1800
+      Max: 2000
+    SpawnResRange:
+      Min: 80
+      Max: 100
+    GroupName: "LegacyFloatingT2RG"
+    Faction: "TheLegacy"
+    Territory: false
+    Count:
+      Min: 5
+      Max: 5
+    CountMinMax:
+    - 5
+    - 5
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "EvilWhispering"
+    - Key: "SI"
+      Value: "Off"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "ArtifactsFloating"
     SpawnResource:
-    - PentaxidResource:1-1
-    ResourceDistance: "100"
-    Properties:
-    - Key: Music
-      Value: EvilWhispering
-    - Key: SI
-      Value: "Off"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: LegacyDefenseT1RG
-    Faction: TheLegacy
-    Biome:
-    - Active
-    CountMinMax:
-    - "16"
-    - "16"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "1"
-    - "3"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "80"
-    SpawnPOINear:
-    - START
+    - "PentaxidResource:1-1"
     SpawnPOINearRange:
-    - "150"
-    - "500"
-    Properties:
-    - Key: Music
-      Value: EvilWhispering
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: LegacyDefenseT1RG
-    Faction: TheLegacy
-    Biome:
-    - Active
+    - 1800
+    - 2000
+    SpawnPOIAvoidDistance: 1000
+    SpawnResourceRange:
+    - 80
+    - 100
+  - SpawnPoiRange:
+      Min: 150
+      Max: 500
+    GroupName: "LegacyDefenseT1RG"
+    Faction: "TheLegacy"
+    Territory: false
+    Count:
+      Min: 16
+      Max: 16
     CountMinMax:
-    - "16"
-    - "16"
-    DroneProb: "1.0"
+    - 16
+    - 16
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "3"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "80"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "150"
-    - "1200"
+    - 1
+    - 3
     Properties:
-    - Key: Music
-      Value: EvilWhispering
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "EvilWhispering"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Artifacts
-    IsImportant: "True"
-    Faction: TheLegacy
-    Biome:
-    - Active
-    CountMinMax:
-    - "10"
-    - "10"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "2"
-    - "3"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "80"
     SpawnPOINear:
-    - START
+    - "START"
+    SpawnPOIAvoid:
+    - "START"
     SpawnPOINearRange:
-    - "100"
-    - "1500"
+    - 150
+    - 500
+    SpawnPOIAvoidDistance: 80
+    Biome:
+    - "Active"
+  - SpawnPoiRange:
+      Min: 150
+      Max: 1200
+    GroupName: "LegacyDefenseT1RG"
+    Faction: "TheLegacy"
+    Territory: false
+    Count:
+      Min: 16
+      Max: 16
+    CountMinMax:
+    - 16
+    - 16
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 3
+    DronesMinMax:
+    - 1
+    - 3
+    Properties:
+    - Key: "Music"
+      Value: "EvilWhispering"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "START"
+    SpawnPOINearRange:
+    - 150
+    - 1200
+    SpawnPOIAvoidDistance: 80
+    Biome:
+    - "Active"
+  - SpawnPoiRange:
+      Min: 100
+      Max: 1500
+    SpawnResRange:
+      Min: 80
+      Max: 60
+    GroupName: "Artifacts"
+    Faction: "TheLegacy"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 10
+      Max: 10
+    CountMinMax:
+    - 10
+    - 10
+    DroneProb: 1
+    Drones:
+      Min: 2
+      Max: 3
+    DronesMinMax:
+    - 2
+    - 3
+    Properties:
+    - Key: "Music"
+      Value: "EvilWhispering"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "START"
     SpawnResource:
-    - PentaxidResource:1-1
-    ResourceDistance: "60"
-    Properties:
-    - Key: Music
-      Value: EvilWhispering
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2AbandonedPOI
-    Faction: TheLegacy
-    Biome:
-    - Remnant
-    - FlowersEdge
-    - Plains
-    - Dunes
-    - Forest
-    - LowMountains
-    - Mountains
-    CountMinMax:
-    - "2"
-    - "2"
-    SpawnPOINear:
-    - START
+    - "PentaxidResource:1-1"
     SpawnPOINearRange:
-    - "3000"
-    - "5000"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2TalonWoodRuin
-    Faction: None
-    AvoidFactionTerritory: "True"
-    Territory: "False"
+    - 100
+    - 1500
+    SpawnPOIAvoidDistance: 80
+    SpawnResourceRange:
+    - 80
+    - 60
     Biome:
-    - Dunes
-    - Forest
-    - LowMountains
-    - Mountains
+    - "Active"
+  - SpawnPoiRange:
+      Min: 3000
+      Max: 5000
+    GroupName: "R2AbandonedPOI"
+    Faction: "TheLegacy"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 2
     CountMinMax:
-    - "3"
-    - "3"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "0"
-    - "2"
+    - 2
+    - 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - START
+    - "START"
     SpawnPOINearRange:
-    - "5000"
-    - "8000"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2TalonWoodRuin
-    Faction: None
-    AvoidFactionTerritory: "True"
-    Territory: "False"
+    - 3000
+    - 5000
     Biome:
-    - Dunes
-    - Forest
-    - Plains
-    - LowMountains
+    - "Remnant"
+    - "FlowersEdge"
+    - "Plains"
+    - "Dunes"
+    - "Forest"
+    - "LowMountains"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 5000
+      Max: 8000
+    GroupName: "R2TalonWoodRuin"
+    Faction: "None"
+    Territory: false
+    AvoidFactionTerritory: true
+    Count:
+      Min: 3
+      Max: 3
     CountMinMax:
-    - "5"
-    - "5"
-    DroneProb: "1.0"
+    - 3
+    - 3
+    DroneProb: 1
+    Drones:
+      Max: 2
     DronesMinMax:
-    - "0"
-    - "2"
+    - 0
+    - 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOINearRange:
+    - 5000
+    - 8000
+    Biome:
+    - "Dunes"
+    - "Forest"
+    - "LowMountains"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 1000
+      Max: 2000
+    GroupName: "R2TalonWoodRuin"
+    Faction: "None"
+    Territory: false
+    AvoidFactionTerritory: true
+    Count:
+      Min: 5
+      Max: 5
+    CountMinMax:
+    - 5
+    - 5
+    DroneProb: 1
+    Drones:
+      Max: 2
+    DronesMinMax:
+    - 0
+    - 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2TalonWoodRuin"
     SpawnPOIAvoid:
-    - R2TalonWoodRuin
-    SpawnPOIAvoidDistance: "1000"
-    SpawnPOINear:
-    - R2TalonWoodRuin
+    - "R2TalonWoodRuin"
     SpawnPOINearRange:
-    - "1000"
-    - "2000"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: AlienTowerSmall
-    Faction: TheLegacy
-    Territory: "False"
+    - 1000
+    - 2000
+    SpawnPOIAvoidDistance: 1000
     Biome:
-    - Remnant
+    - "Dunes"
+    - "Forest"
+    - "Plains"
+    - "LowMountains"
+  - GroupName: "AlienTowerSmall"
+    Faction: "TheLegacy"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - R2XenuMainT3
-    - R2GhystAuxT2
-    - R2EpsilonAuxT2
-    - R2DroneBaseT5
-    - R2GhystMain
-    SpawnPOIAvoidDistance: "800"
+    - 1
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_HarvestVoidiumT2
-    Faction: None
+    SpawnPOIAvoid:
+    - "R2XenuMainT3"
+    - "R2GhystAuxT2"
+    - "R2EpsilonAuxT2"
+    - "R2DroneBaseT5"
+    - "R2GhystMain"
+    SpawnPOIAvoidDistance: 800
+    Biome:
+    - "Remnant"
+  - GroupName: "Eden_HarvestVoidiumT2"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: Eden_HarvestVoidiumT2
-    Faction: None
+  - SpawnPoiRange:
+      Min: 35
+      Max: 250
+    GroupName: "Eden_HarvestVoidiumT2"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 2
     CountMinMax:
-    - "2"
-    - "2"
-    SpawnPOINear:
-    - Eden_HarvestVoidiumT2
-    SpawnPOINearRange:
-    - "35"
-    - "250"
-    DroneProb: "0"
+    - 2
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: Eden_HarvestVoidiumT2
-    Faction: None
+    SpawnPOINear:
+    - "Eden_HarvestVoidiumT2"
+    SpawnPOINearRange:
+    - 35
+    - 250
+  - SpawnPoiRange:
+      Min: 35
+      Max: 250
+    GroupName: "Eden_HarvestVoidiumT2"
+    Faction: "None"
     FactionTerritory:
-    - Kriel
-    - Eden_DroneHome
-    - TheLegacy
-    - Tesch
+    - "Kriel"
+    - "Eden_DroneHome"
+    - "TheLegacy"
+    - "Tesch"
+    Territory: false
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
-    SpawnPOINear:
-    - Eden_HarvestVoidiumT2
-    SpawnPOINearRange:
-    - "35"
-    - "250"
-    DroneProb: "0"
+    - 0
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: Eden_HarvestVoidiumT1
-    Faction: None
+    SpawnPOINear:
+    - "Eden_HarvestVoidiumT2"
+    SpawnPOINearRange:
+    - 35
+    - 250
+  - GroupName: "Eden_HarvestVoidiumT1"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
   Fixed:
-  - Type: BA_Alien
-    Faction: TheLegacy
-    Prefab: BAF_LegacyCorruptor
-    Mode: Survival
-    Name: The Corruptor
-    Pos:
-    - "5145"
-    - "350"
-    - "0"
-    InitPower: "True"
+  - Type: "BA_Alien"
+    Prefab: "BAF_LegacyCorruptor"
+    Mode: "Survival"
+    Name: "The Corruptor"
+    InitPower: true
+    Faction: "TheLegacy"
     Properties:
-    - Key: Music
-      Value: alien
-    - Key: SI
+    - Key: "Music"
+      Value: "alien"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  FixedPlayerStart:
-  - Mode: Debug
     Pos:
-    - "-835"
-    - "165"
-    - "-1000"
-    RotY: "125"
-    Armor: ArmorMedium
-  - Mode: Survival
-    Spawn: EscapePod
-    PlayerArmor:
-    - 'ArmorHeavy, ArmorMedium, ArmorLight, #FreshStart:ArmorMedium'
-    Status:
-    - 'Food: 400, Health: 400'
-    - 'Food: 400, Health: 400'
-    - 'Food: 150, Health: 150'
-    - '#FreshStart:Food: 250, Health: 250'
+    - 5145
+    - 350
+    - 0
+  FixedPlayerStart:
+  - Mode: "Debug"
+    Pos:
+    - -835
+    - 165
+    - -1000
+    RotY: 125
+    Armor: "ArmorMedium"
+  - Mode: "Survival"
+    Spawn: "EscapePod"
     Items:
-    - SurvivalTool, Pistol, Sniper2, ScifiCannonEpic, Sniper2Epic, PowerBar:4, Medikit04:3, Bandages:2, Flashlight, SurvivalTent, MobileAirCon, OxygenGeneratorSmall, AntibioticOintment:2, StomachPills, Medikit01, Medikit02, Medikit03, Drill, BioFuel:3, 50Caliber:140, Core, PlayerBike, BioFuel:6, SciFiCannonPlasmaCharge:50, SciFiCannonPlasmaCharge:50, RailgunBullet:100, OxygenBottleSmall:20
-    - SurvivalTool, Pistol, Sniper2, ScifiCannonEpic, Sniper2Epic, ConstructorSurvival, PowerBar:2, Medikit04:2, Flashlight, SurvivalTent, MobileAirCon, PlayerBikeKit, StomachPills, Medikit01, Medikit02, Medikit03, 50Caliber:70, SciFiCannonPlasmaCharge:50, RailgunBullet:50, 12.7mmBullet:50, OxygenBottleSmall:20
-    - SurvivalTool, Sniper2, ScifiCannonEpic, PowerBar:1, Bandages:2, Flashlight, SurvivalTent, ConstructorSurvival
-    - '#FreshStart: SurvivalTool, Sniper2, ScifiCannonEpic, PowerBar:2, Medikit04:1, Medikit01, Flashlight, AntibioticOintment:2, SurvivalTent, ConstructorSurvival, MobileAirCon, Drill, BioFuel:3, Core, PlayerBike, OxygenBottleSmall:20, EmergencyRations:1, SciFiCannonPlasmaCharge:100, 12.7mmBullet:100'
+    - "SurvivalTool, Pistol, Sniper2, ScifiCannonEpic, Sniper2Epic, PowerBar:4, Medikit04:3, Bandages:2, Flashlight, SurvivalTent, MobileAirCon, OxygenGeneratorSmall, AntibioticOintment:2, StomachPills, Medikit01, Medikit02, Medikit03, Drill, BioFuel:3, 50Caliber:140, Core, PlayerBike, BioFuel:6, SciFiCannonPlasmaCharge:50, SciFiCannonPlasmaCharge:50, RailgunBullet:100, OxygenBottleSmall:20"
+    - "SurvivalTool, Pistol, Sniper2, ScifiCannonEpic, Sniper2Epic, ConstructorSurvival, PowerBar:2, Medikit04:2, Flashlight, SurvivalTent, MobileAirCon, PlayerBikeKit, StomachPills, Medikit01, Medikit02, Medikit03, 50Caliber:70, SciFiCannonPlasmaCharge:50, RailgunBullet:50, 12.7mmBullet:50, OxygenBottleSmall:20"
+    - "SurvivalTool, Sniper2, ScifiCannonEpic, PowerBar:1, Bandages:2, Flashlight, SurvivalTent, ConstructorSurvival"
+    - "#FreshStart: SurvivalTool, Sniper2, ScifiCannonEpic, PowerBar:2, Medikit04:1, Medikit01, Flashlight, AntibioticOintment:2, SurvivalTent, ConstructorSurvival, MobileAirCon, Drill, BioFuel:3, Core, PlayerBike, OxygenBottleSmall:20, EmergencyRations:1, SciFiCannonPlasmaCharge:100, 12.7mmBullet:100"
+    Status:
+    - "Food: 400, Health: 400"
+    - "Food: 400, Health: 400"
+    - "Food: 150, Health: 150"
+    - "#FreshStart:Food: 250, Health: 250"
+    PlayerArmor:
+    - "ArmorHeavy, ArmorMedium, ArmorLight, #FreshStart:ArmorMedium"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "5"
-    PresetStyle: "3"
+  - GroupName: "DroneBaseSetup"
+    Difficulty: 5
+    PresetStyle: 3
     Stock:
-    - Name: DroneLargeAttackBase
+    - Name: "DroneLargeAttackBase"
       Amount: "600"
-      Extra: "0"
-    - Name: DroneSmallAttackBase
+      Extra: -1
+    - Name: "DroneSmallAttackBase"
       Amount: "400"
-      Extra: "0"
-    - Name: DroneBomberAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneLargeAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: EnemyDroneV2Minigun
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ArmoredGolem
+      Extra: -1
+    - Name: "DroneBomberAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneLargeAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "EnemyDroneV2Minigun"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ArmoredGolem"
       Amount: "400"
-      Extra: "3"
-    - Name: ZiraxRocket
+      Extra: 3
+    - Name: "ZiraxRocket"
       Amount: "400"
-      Extra: "3"
-    - Name: ZiraxLaser
+      Extra: 3
+    - Name: "ZiraxLaser"
       Amount: "200"
-      Extra: "3"
+      Extra: 3
     PlanetVesselBase:
-      Name: PlanetVesselBaseSetup
+      Name: "PlanetVesselBaseSetup"
       Position3D:
-      - "0"
-      - "202"
-      - "0"
-      BaseType: PlanetVesselBase
-      KeyId: "0"
+      - 0
+      - 202
+      - 0
+      BaseType: "PlanetVesselBase"
       PlanetVessel:
-      - Name: PVF_XenuOPVGround
-        Mission: PlanetPatrol
-        FixedMaxSpeed: "16"
-        RespawnDelay: "12"
+      - Name: "PVF_XenuOPVGround"
+        Mission: "PlanetPatrol"
+        FixedMaxSpeed: 16
+        RespawnDelay: 12
         RangePatrolTask:
           Position3D:
-          - "10000"
-          - "80"
-          - "0"
-          Radius: "5000"
-          DistToGround: "450"
+          - 10000
+          - 80
+          - 0
+          Radius: 5000
+          DistToGround: 450
         AttackCVCircleAround:
-          DistToTarget: "400"
+          DistToTarget: 400
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "-5000"
-    Radius: "3000"
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "-5000"
-    Radius: "5000"
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "0"
-    Radius: "3000"
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "0"
-    Radius: "5000"
-SpawnRateZones:
-- SpawnAt:
-  - R2GhystMain
-  - R2XenuMainT3
-  - R2DroneBaseT5
-  - R2DroneBase
-  - Eden_EpsilonRadarMain
-  - R2TalonAuxSand
-  Radius: "400"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 1
-- SpawnAt:
-  - R2GhystMain
-  - R2DroneBaseT5
-  - R2DroneBase
-  - Eden_EpsilonRadarMain
-  - R2TalonAuxSand
-  Radius: "400"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  AffectFriendly: "true"
-  Color: 0.0, 1.0, 0.0, 1
-SpawnZones:
-- SpawnAt:
-  - PVF_XenuOPV
-  Radius: "1500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.0"
-  Color: 0.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PVF_XenuPatrolVessel1
-  Radius: "1000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.0"
-  Color: 0.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PVF_XenuPatrolVessel1
-  Radius: "1500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.0"
-  Color: 0.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - Artifacts
-  Radius: "300"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.2"
-  Color: 1.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - Overseers
-    Biomes:
-    - Any
-    Amount: "40"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - AlienBugs02
-    Biomes:
-    - Any
-    Amount: "80"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - AlienBugs03
-    Biomes:
-    - Any
-    Amount: "20"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - TotalHorrors
-    Biomes:
-    - Any
-    Amount: "40"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PentaxidResource
-  BiomesExcluded:
-  - Mountains
-  Radius: "150"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - Overseers
-    Biomes:
-    - Any
-    Amount: "20"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - AlienBugs03
-    Biomes:
-    - Any
-    Amount: "20"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - TotalHorrors
-    Biomes:
-    - Any
-    Amount: "20"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - NeodymiumResource
-  - GoldResource
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "100"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - Overseers
-    Biomes:
-    - Any
-    Amount: "300"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PentaxidResource
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "100"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - Overseers
-    Biomes:
-    - Any
-    Amount: "40"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - AlienBugs02
-    Biomes:
-    - Any
-    Amount: "180"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SathiumResource
-  - PromethiumResource
-  BiomesExcluded:
-  - Structure
-  - Organized
-  - Active
-  Radius: "100"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 1.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - GolemsDesert
-    Biomes:
-    - Any
-    Amount: "400"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - CrashedShip
-  BiomesExcluded:
-  - Mountains
-  - GeoBuster
-  - GlassedTerrain
-  - Structure
-  - Organized
-  Radius: "100"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.7, 0.3, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Any
-    Amount: "400"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - RadarArray
-  - Eden_EpsilonRadarMain
-  Radius: "100"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.7, 0.3, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "30"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - BA_TribalRestaurant
-  Radius: "50"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.9"
-  Color: 0.7, 0.3, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - AlienBugs01
-    Biomes:
-    - Any
-    Amount: "900"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - R2GhystMain
-  - R2DroneBaseT5
-  Radius: "2000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.4"
-  Color: 1.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Remnant
-    - FlowersEdge
-    - Plains
-    - Dunes
-    - Forest
-    - TacticalStrike
-    Amount: "100"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - R2GhystMain
-  - R2DroneBaseT5
-  - R2DroneBase
-  Radius: "1000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.4"
-  Color: 1.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Remnant
-    - FlowersEdge
-    - Plains
-    - Dunes
-    - Forest
-    - TacticalStrike
-    Amount: "100"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - R2XenuMainT3
-  - Eden_EpsilonRadarMain
-  Radius: "700"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.4"
-  Color: 1.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Remnant
-    - FlowersEdge
-    - LowMountains
-    - Plains
-    - Dunes
-    - Forest
-    - TacticalStrike
-    Amount: "250"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - R2XenuAuxT2
-  - R2EpsilonAuxT2
-  - R2DroneBaseT5
-  - Eden_EpsilonRadarMain
-  - R2DroneBase
-  Radius: "500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Plains
-    - Dunes
-    - LowMountains
-    - Remnant
-    - FlowersEdge
-    - TacticalStrike
-    - Proximity
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - RadarArray
-  - R2GhystAuxT2
-  - R2GhystMain
-  - R2XenuMainT3
-  - R2DroneBaseT5
-  - R2DroneBase
-  - Eden_EpsilonRadarMain
-  - R2XenuAuxT2
-  - R2EpsilonAuxT2
-  BiomesExcluded:
-  - Mountains
-  - Structure
-  - Organized
-  - Proximity
-  - Active
-  - GlassedTerrain
-  - AtomicWeaponry
-  - BarrenRocks
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PVF_XenuPatrolVessel1
-  - R2TalonWoodRuin
-  BiomesExcluded:
-  - Organized
-  - Proximity
-  - Active
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - R2TalonWoodRuin
-  BiomesExcluded:
-  - Organized
-  - Proximity
-  - Active
-  Radius: "150"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.8"
-  Color: 1.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxMinigunPatrol
-    Biomes:
-    - Any
-    Amount: "800"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: -5000
+    Radius: 3000
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: -5000
+    Radius: 5000
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    Radius: 3000
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    Radius: 5000
 CreatureSpawning:
 - Biomes:
-  - Remnant
+  - "Remnant"
   Entities:
-  - Name: MegalonopsesBrown
-    Period: Always
-    Amount: "30"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "MegalonopsesBrown"
+    Amount: 30
+    Color: "0.9, 0.7, 0.5"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 0.9, 0.7, 0.5
-  - Name: Oviraptors
-    Period: Always
-    Amount: "50"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "Oviraptors"
+    Amount: 50
+    Color: "0.9, 0.9, 0.9"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 0.9, 0.9, 0.9
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "40"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: 80
+      Max: 99
+    Name: "AlienBugs01"
+    Amount: 40
+    Color: "0.5, 1, 0"
     DelayMinMax:
-    - "80"
-    - "99"
-    Color: 0.5, 1, 0
-  - Name: Spiders02
-    Period: Always
-    Amount: "40"
+    - 80
+    - 99
+    Period: "Always"
+  - DelayRange:
+      Min: 50
+      Max: 99
+    Name: "Spiders02"
+    Amount: 40
     DelayMinMax:
-    - "50"
-    - "99"
+    - 50
+    - 99
+    Period: "Always"
 - Biomes:
-  - FlowersEdge
+  - "FlowersEdge"
   Entities:
-  - Name: MegalonopsesBrown
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "MegalonopsesBrown"
+    Amount: 10
+    Color: "0.9, 0.7, 0.5"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 0.9, 0.7, 0.5
-  - Name: Oviraptors
-    Period: Always
-    Amount: "20"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "Oviraptors"
+    Amount: 20
+    Color: "0.9, 0.9, 0.9"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 0.9, 0.9, 0.9
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "30"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: 80
+      Max: 99
+    Name: "AlienBugs01"
+    Amount: 30
+    Color: "0.5, 1, 0"
     DelayMinMax:
-    - "80"
-    - "99"
-    Color: 0.5, 1, 0
-  - Name: Spiders02
-    Period: Always
-    Amount: "15"
+    - 80
+    - 99
+    Period: "Always"
+  - DelayRange:
+      Min: 50
+      Max: 99
+    Name: "Spiders02"
+    Amount: 15
     DelayMinMax:
-    - "50"
-    - "99"
+    - 50
+    - 99
+    Period: "Always"
 - Biomes:
-  - LowMountains
+  - "LowMountains"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "AlienBugs01"
+    Amount: 10
+    Color: "0.5, 1, 0"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 0.5, 1, 0
-  - Name: WormDesertHerd
-    Period: Always
-    Amount: "12"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "WormDesertHerd"
+    Amount: 12
     DelayMinMax:
-    - "-1"
-    - "-1"
-  - Name: Oviraptors
-    Period: Always
-    Amount: "5"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "Oviraptors"
+    Amount: 5
+    Color: "0.9, 0.9, 0.9"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 0.9, 0.9, 0.9
-  - Name: Spiders02
-    Period: Always
-    Amount: "1"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: 50
+      Max: 99
+    Name: "Spiders02"
+    Amount: 1
     DelayMinMax:
-    - "50"
-    - "99"
+    - 50
+    - 99
+    Period: "Always"
 - Biomes:
-  - Plains
+  - "Plains"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "15"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "AlienBugs01"
+    Amount: 15
+    Color: "1, 0, 0.8"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 1, 0, 0.8
-  - Name: WormDesertHerd
-    Period: Day
-    Amount: "5"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "WormDesertHerd"
+    Amount: 5
     DelayMinMax:
-    - "-1"
-    - "-1"
-  - Name: WormDesertHerd
-    Period: Night
-    Amount: "10"
+    - -1
+    - -1
+    Period: "Day"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "WormDesertHerd"
+    Amount: 10
     DelayMinMax:
-    - "-1"
-    - "-1"
+    - -1
+    - -1
 - Biomes:
-  - Forest
+  - "Forest"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "5"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "AlienBugs01"
+    Amount: 5
+    Color: "1, 0, 0.8"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 1, 0, 0.8
-  - Name: TotalHorrors
-    Period: Always
-    Amount: "5"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "TotalHorrors"
+    Amount: 5
+    Color: "1, 0.2, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 1, 0.2, 1
+    - 10
+    - 20
+    Period: "Always"
 - Biomes:
-  - Dunes
+  - "Dunes"
   Entities:
-  - Name: AlienBugs01
-    Period: Night
-    Amount: "1"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "AlienBugs01"
+    Amount: 1
+    Color: "1, 0, 0.8"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 1, 0, 0.8
-  - Name: WormDesertHerd
-    Period: Night
-    Amount: "2"
+    - -1
+    - -1
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "WormDesertHerd"
+    Amount: 2
     DelayMinMax:
-    - "-1"
-    - "-1"
-  - Name: Overseers
-    Period: Always
-    Amount: "40"
+    - -1
+    - -1
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Overseers"
+    Amount: 40
+    Color: "0.8, 0, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 0.8, 0, 1
+    - 10
+    - 20
+    Period: "Always"
 - Biomes:
-  - BarrenRocks
+  - "BarrenRocks"
   Entities:
-  - Name: WormDesertHerd
-    Period: Night
-    Amount: "1"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "WormDesertHerd"
+    Amount: 1
     DelayMinMax:
-    - "-1"
-    - "-1"
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "2"
+    - -1
+    - -1
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Name: "AlienBugs01"
+    Amount: 2
+    Color: "1, 0, 0.8"
     DelayMinMax:
-    - "-1"
-    - "-1"
-    Color: 1, 0, 0.8
-  - Name: Overseers
-    Period: Always
-    Amount: "10"
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Overseers"
+    Amount: 10
+    Color: "0.8, 0, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 0.8, 0, 1
+    - 10
+    - 20
+    Period: "Always"
 - Biomes:
-  - Dunes
-  - Plains
+  - "Dunes"
+  - "Plains"
   Entities:
-  - Name: Overseers
-    Period: Always
-    Amount: "40"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Overseers"
+    Amount: 40
+    Color: "0.8, 0, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 0.8, 0, 1
+    - 10
+    - 20
+    Period: "Always"
 - Biomes:
-  - LowMountains
-  - Mountains
-  - TacticalStrike
-  - AtomicWeaponry
-  - BarrenRocks
-  - GlassedTerrain
-  - Forest
+  - "LowMountains"
+  - "Mountains"
+  - "TacticalStrike"
+  - "AtomicWeaponry"
+  - "BarrenRocks"
+  - "GlassedTerrain"
+  - "Forest"
   Entities:
-  - Name: Overseers
-    Period: Always
-    Amount: "20"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Overseers"
+    Amount: 20
+    Color: "0.8, 0, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 0.8, 0, 1
+    - 10
+    - 20
+    Period: "Always"
 - Biomes:
-  - GlassedTerrain
-  - Plains
+  - "GlassedTerrain"
+  - "Plains"
   Entities:
-  - Name: AlienBugs02
-    Period: Always
-    Amount: "20"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "AlienBugs02"
+    Amount: 20
+    Color: "0.8, 0, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 0.8, 0, 1
+    - 10
+    - 20
+    Period: "Always"
 - Biomes:
-  - Structure
+  - "Structure"
   Entities:
-  - Name: TotalHorrors
-    Period: Always
-    Amount: "60"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "TotalHorrors"
+    Amount: 60
+    Color: "1, 0.2, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 1, 0.2, 1
-  - Name: AlienBugs02
-    Period: Always
-    Amount: "20"
+    - 10
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "AlienBugs02"
+    Amount: 20
+    Color: "1, 0, 0.8"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 1, 0, 0.8
-  - Name: Overseers
-    Period: Always
-    Amount: "5"
+    - 10
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Overseers"
+    Amount: 5
+    Color: "1, 0.2, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 1, 0.2, 1
-  - Name: Spiders03
-    Period: Always
-    Amount: "800"
+    - 10
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Spiders03"
+    Amount: 800
+    Color: "1, 0, 0.8"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 1, 0, 0.8
+    - 10
+    - 20
+    Period: "Always"
 - Biomes:
-  - Organized
+  - "Organized"
   Entities:
-  - Name: AlienAssassinReds
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: 6
+      Max: 10
+    Name: "AlienAssassinReds"
+    Amount: 10
+    Color: "1, 0.0, 1"
     DelayMinMax:
-    - "6"
-    - "10"
-    Color: 1, 0.0, 1
-  - Name: AlienBugs02
-    Period: Always
-    Amount: "50"
+    - 6
+    - 10
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "AlienBugs02"
+    Amount: 50
+    Color: "1, 0, 0.8"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 1, 0, 0.8
-  - Name: Overseers
-    Period: Always
-    Amount: "50"
+    - 10
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Overseers"
+    Amount: 50
+    Color: "0.8, 0, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 0.8, 0, 1
-  - Name: TotalHorrors
-    Period: Always
-    Amount: "140"
+    - 10
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "TotalHorrors"
+    Amount: 140
+    Color: "1, 0.2, 1"
     DelayMinMax:
-    - "10"
-    - "20"
-    Color: 1, 0.2, 1
+    - 10
+    - 20
+    Period: "Always"
 - Biomes:
-  - Proximity
+  - "Proximity"
   Entities:
-  - Name: AlienAssassinReds
-    Period: Always
-    Amount: "20"
+  - DelayRange:
+      Min: 6
+      Max: 10
+    Name: "AlienAssassinReds"
+    Amount: 20
+    Color: "1, 0.0, 1"
     DelayMinMax:
-    - "6"
-    - "10"
-    Color: 1, 0.0, 1
-  - Name: AlienBugs02
-    Period: Always
-    Amount: "30"
+    - 6
+    - 10
+    Period: "Always"
+  - DelayRange:
+      Min: 6
+      Max: 10
+    Name: "AlienBugs02"
+    Amount: 30
+    Color: "1, 0, 0.8"
     DelayMinMax:
-    - "6"
-    - "10"
-    Color: 1, 0, 0.8
-  - Name: Overseers
-    Period: Always
-    Amount: "70"
+    - 6
+    - 10
+    Period: "Always"
+  - DelayRange:
+      Min: 6
+      Max: 10
+    Name: "Overseers"
+    Amount: 70
+    Color: "0.8, 0, 1"
     DelayMinMax:
-    - "6"
-    - "10"
-    Color: 0.8, 0, 1
-  - Name: TotalHorrors
-    Period: Always
-    Amount: "130"
+    - 6
+    - 10
+    Period: "Always"
+  - DelayRange:
+      Min: 6
+      Max: 10
+    Name: "TotalHorrors"
+    Amount: 130
+    Color: "1, 0.2, 1"
     DelayMinMax:
-    - "6"
-    - "10"
-    Color: 1, 0.2, 1
+    - 6
+    - 10
+    Period: "Always"
+SpawnRateZones:
+- SpawnAt:
+  - "R2GhystMain"
+  - "R2XenuMainT3"
+  - "R2DroneBaseT5"
+  - "R2DroneBase"
+  - "Eden_EpsilonRadarMain"
+  - "R2TalonAuxSand"
+  Radius: 400
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 1"
+- SpawnAt:
+  - "R2GhystMain"
+  - "R2DroneBaseT5"
+  - "R2DroneBase"
+  - "Eden_EpsilonRadarMain"
+  - "R2TalonAuxSand"
+  Radius: 400
+  AffectFriendly: true
+  Color: "0.0, 1.0, 0.0, 1"
+SpawnZones:
+- SpawnAt:
+  - "PVF_XenuOPV"
+  Radius: 1500
+  Color: "0.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PVF_XenuPatrolVessel1"
+  Radius: 1000
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PVF_XenuPatrolVessel1"
+  Radius: 1500
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "Artifacts"
+  Radius: 300
+  RadiusRandom: 25
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.2
+  Color: "1.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "Overseers"
+    Biomes:
+    - "Any"
+    Amount: 40
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs02"
+    Biomes:
+    - "Any"
+    Amount: 80
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs03"
+    Biomes:
+    - "Any"
+    Amount: 20
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TotalHorrors"
+    Biomes:
+    - "Any"
+    Amount: 40
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PentaxidResource"
+  BiomesExcluded:
+  - "Mountains"
+  Radius: 150
+  RadiusRandom: 25
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "1.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "Overseers"
+    Biomes:
+    - "Any"
+    Amount: 20
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs03"
+    Biomes:
+    - "Any"
+    Amount: 20
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TotalHorrors"
+    Biomes:
+    - "Any"
+    Amount: 20
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "NeodymiumResource"
+  - "GoldResource"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 100
+  RadiusRandom: 25
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "1.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "Overseers"
+    Biomes:
+    - "Any"
+    Amount: 300
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PentaxidResource"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 100
+  RadiusRandom: 25
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "1.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "Overseers"
+    Biomes:
+    - "Any"
+    Amount: 40
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs02"
+    Biomes:
+    - "Any"
+    Amount: 180
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SathiumResource"
+  - "PromethiumResource"
+  BiomesExcluded:
+  - "Structure"
+  - "Organized"
+  - "Active"
+  Radius: 100
+  RadiusRandom: 25
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "GolemsDesert"
+    Biomes:
+    - "Any"
+    Amount: 400
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "CrashedShip"
+  BiomesExcluded:
+  - "Mountains"
+  - "GeoBuster"
+  - "GlassedTerrain"
+  - "Structure"
+  - "Organized"
+  Radius: 100
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.7, 0.3, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Any"
+    Amount: 400
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "RadarArray"
+  - "Eden_EpsilonRadarMain"
+  Radius: 100
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.7, 0.3, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    Amount: 30
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "BA_TribalRestaurant"
+  Radius: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.9
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.7, 0.3, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienBugs01"
+    Biomes:
+    - "Any"
+    Amount: 900
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2GhystMain"
+  - "R2DroneBaseT5"
+  Radius: 2000
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.4
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Remnant"
+    - "FlowersEdge"
+    - "Plains"
+    - "Dunes"
+    - "Forest"
+    - "TacticalStrike"
+    Amount: 100
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2GhystMain"
+  - "R2DroneBaseT5"
+  - "R2DroneBase"
+  Radius: 1000
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.4
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Remnant"
+    - "FlowersEdge"
+    - "Plains"
+    - "Dunes"
+    - "Forest"
+    - "TacticalStrike"
+    Amount: 100
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2XenuMainT3"
+  - "Eden_EpsilonRadarMain"
+  Radius: 700
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.4
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Remnant"
+    - "FlowersEdge"
+    - "LowMountains"
+    - "Plains"
+    - "Dunes"
+    - "Forest"
+    - "TacticalStrike"
+    Amount: 250
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2XenuAuxT2"
+  - "R2EpsilonAuxT2"
+  - "R2DroneBaseT5"
+  - "Eden_EpsilonRadarMain"
+  - "R2DroneBase"
+  Radius: 500
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Plains"
+    - "Dunes"
+    - "LowMountains"
+    - "Remnant"
+    - "FlowersEdge"
+    - "TacticalStrike"
+    - "Proximity"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "RadarArray"
+  - "R2GhystAuxT2"
+  - "R2GhystMain"
+  - "R2XenuMainT3"
+  - "R2DroneBaseT5"
+  - "R2DroneBase"
+  - "Eden_EpsilonRadarMain"
+  - "R2XenuAuxT2"
+  - "R2EpsilonAuxT2"
+  BiomesExcluded:
+  - "Mountains"
+  - "Structure"
+  - "Organized"
+  - "Proximity"
+  - "Active"
+  - "GlassedTerrain"
+  - "AtomicWeaponry"
+  - "BarrenRocks"
+  Radius: 200
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PVF_XenuPatrolVessel1"
+  - "R2TalonWoodRuin"
+  BiomesExcluded:
+  - "Organized"
+  - "Proximity"
+  - "Active"
+  Radius: 200
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2TalonWoodRuin"
+  BiomesExcluded:
+  - "Organized"
+  - "Proximity"
+  - "Active"
+  Radius: 150
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.8
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxMinigunPatrol"
+    Biomes:
+    - "Any"
+    Amount: 800
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"

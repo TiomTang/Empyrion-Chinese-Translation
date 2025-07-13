@@ -1,567 +1,772 @@
-Description: "\u4E00\u4E2A\u4EE4\u4EBA\u4E0D\u5B89\u7684\u4E16\u754C,\u65E2\u6709\u6BD2\u53C8\u5371\u9669\u3002\n\n\u5927\u6C14\u4E2D\u7684\u6C14\u4F53\u672C\u4E0D\u5E94\u652F\u6301\u751F\u547D,\u4F46\u5728\u8FD9\u91CC,\u751F\u547D\u5374\u4F9D\u7136\u6B23\u6B23\u5411\u8363\u3002\n"
-PlanetType: TresariHomeworld
-PlayfieldType: Planet
-AtmosphereEnabled: "True"
-Difficulty: "10"
-LandClaimZone: Device
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "TresariHomeworld"
+PlanetSize: 2
+Difficulty: 10
+SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
-- Name: Mosquitos
+- Name: "Mosquitos"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Deep Forest
-  - Forest
-  - Sweltering Forest
-  - Beach
-  - Shore
-  Time: Day
-  MaxHeight: "15"
-- Name: Dragonflies
+  - "Deep Forest"
+  - "Forest"
+  - "Sweltering Forest"
+  - "Beach"
+  - "Shore"
+  FollowPlayerY: false
+- Name: "Dragonflies"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Shallow Water
-  Time: Day
-  MaxHeight: "15"
-- Name: FireFliesOrange
+  - "Shallow Water"
+  FollowPlayerY: false
+- Name: "FireFliesOrange"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Sweltering Forest
-  - Forest
-  Time: Night
-  MaxHeight: "15"
+  - "Sweltering Forest"
+  - "Forest"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Wind
-  Type: Weather
-  InitialDelay: "1"
-  Delay: "12"
-  Lifetime: "1200"
-- Name: CloudsLight
-  Type: Weather
-  Delay: "2"
-  Lifetime: "1200"
-- Name: Storm
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "24"
-  Lifetime: "600"
-- Name: CloudsMedium
-  Type: Weather
-  InitialDelay: "12"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: AcidRainHeavy
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "24"
-  Lifetime: "120"
-- Name: Clouds
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "5"
-  Lifetime: "1000"
-AtmosphereColor: 0.31,0.59,0.38
-SkyColor: 0.33,0.46,0.08
-SkyHorizonColor: 0.56,0.81,0.08
+- Name: "Wind"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 1
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsLight"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Storm"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "CloudsMedium"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 12
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "AcidRainHeavy"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 120
+  Type: "Weather"
+- Name: "Clouds"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 5
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+AtmosphereEnabled: true
+AtmosphereColor: "0.31,0.59,0.38"
 AtmosphereParams:
-- "1"
-- "1.6"
-LightZenithColor: 0.07, 0.33, 0.15
-LightHorizonColor: 0.07, 0.33, 0.15
-DayLightIntensity: "0.9"
-NightLightIntensity: "0.55"
-NightLightColor: 0.04,0.23,0.01
-SunFlare: EnvironmentalEffects/SunFlareBlue
-AtmosphereFog: "0.3"
-FogColor: 0.15,0.66,0.45
-FogCloudIntensity: "0.8"
-CloudsDensity: "0.3"
-CloudsSharpness: "0.35"
-CloudsBrightness: "0.7"
-CloudsOpacity: "0.7"
-CloudsZenithColor: 0.71,0.27,0.13
-CloudsHorizonColor: 0.45,0.26,0.2
-CloudsNightZenithColor: 0.43,0.19,0.13
-CloudsNightHorizonColor: 0.45,0.16,0.16
-WindSpeed: "15"
-PvP: "False"
-BaseAttackCount: "0"
+- 1
+- 1.6
+SkyColor: "0.33,0.46,0.08"
+SkyHorizonColor: "0.56,0.81,0.08"
+LightZenithColor: "0.07, 0.33, 0.15"
+LightHorizonColor: "0.07, 0.33, 0.15"
+NightLightColor: "0.04,0.23,0.01"
+CloudsZenithColor: "0.71,0.27,0.13"
+CloudsHorizonColor: "0.45,0.26,0.2"
+CloudsNightZenithColor: "0.43,0.19,0.13"
+CloudsNightHorizonColor: "0.45,0.16,0.16"
+CloudsOpacity: 0.7
+FogCloudIntensity: 0.8
+DayLightIntensity: 0.9
+NightLightIntensity: 0.55
+DayShadowStrength: 0.65
+NightShadowStrength: 0.4
+AtmosphereFog: 0.3
+CloudsDensity: 0.3
+CloudsSharpness: 0.35
+CloudsBrightness: 0.7
+WindSpeed: 15
+FogColor: "0.15,0.66,0.45"
+Description: "\u4E00\u4E2A\u4EE4\u4EBA\u4E0D\u5B89\u7684\u4E16\u754C,\u65E2\u6709\u6BD2\u53C8\u5371\u9669\u3002\n\n\u5927\u6C14\u4E2D\u7684\u6C14\u4F53\u672C\u4E0D\u5E94\u652F\u6301\u751F\u547D,\u4F46\u5728\u8FD9\u91CC,\u751F\u547D\u5374\u4F9D\u7136\u6B23\u6B23\u5411\u8363\u3002\n"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+AllowSavingBlueprints: true
+PlanetClass: "TresariHomeworld"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: IronResource
-  Biome:
-  - Beach
-  - ShallowWater
-  - Lowlands
-  IsScalingCount: "True"
-  IsImportant: "False"
+- Count:
+    Min: 4
+    Max: 11
+  Size:
+    Min: 6
+    Max: 16
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "11"
+  - 4
+  - 11
   SizeMinMax:
-  - "6"
-  - "16"
+  - 6
+  - 16
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.9"
-- Name: CarbonResource
+  - 6
+  - 15
+  DroneProb: 0.9
+  MaxDroneCount: 1
   Biome:
-  - Lowlands
-  - Mountains
-  - Hills
-  IsScalingCount: "True"
-  IsImportant: "False"
+  - "Beach"
+  - "ShallowWater"
+  - "Lowlands"
+- Count:
+    Min: 5
+    Max: 6
+  Size:
+    Min: 4
+    Max: 8
+  Depth:
+    Min: 5
+    Max: 15
+  Name: "CarbonResource"
+  IsScalingCount: true
   CountMinMax:
-  - "5"
-  - "6"
+  - 5
+  - 6
   SizeMinMax:
-  - "4"
-  - "8"
+  - 4
+  - 8
   DepthMinMax:
-  - "5"
-  - "15"
-  DroneProb: "0.2"
-- Name: SiliconResource
+  - 5
+  - 15
+  DroneProb: 0.2
+  MaxDroneCount: 1
   Biome:
-  - Beach
-  - ShallowWater
-  - Lowlands
-  IsScalingCount: "True"
-  IsImportant: "False"
+  - "Lowlands"
+  - "Mountains"
+  - "Hills"
+- Count:
+    Min: 4
+    Max: 11
+  Size:
+    Min: 6
+    Max: 16
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "11"
+  - 4
+  - 11
   SizeMinMax:
-  - "6"
-  - "16"
+  - 6
+  - 16
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.9"
-- Name: SathiumResource
+  - 6
+  - 15
+  DroneProb: 0.9
+  MaxDroneCount: 1
   Biome:
-  - Deep Forest
-  IsScalingCount: "True"
-  IsImportant: "False"
+  - "Beach"
+  - "ShallowWater"
+  - "Lowlands"
+- Count:
+    Min: 5
+    Max: 6
+  Size:
+    Min: 8
+    Max: 11
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "SathiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "5"
-  - "6"
+  - 5
+  - 6
   SizeMinMax:
-  - "8"
-  - "11"
+  - 8
+  - 11
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "1"
-  MaxDroneCount: "4"
-- Name: PromethiumResource
+  - 5
+  - 20
+  DroneProb: 1
+  MaxDroneCount: 4
   Biome:
-  - Crystal
-  - Crystaline Patch
-  IsScalingCount: "True"
-  IsImportant: "False"
+  - "Deep Forest"
+- Count:
+    Min: 3
+    Max: 6
+  Size:
+    Min: 7
+    Max: 11
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "6"
+  - 3
+  - 6
   SizeMinMax:
-  - "7"
-  - "11"
+  - 7
+  - 11
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.4"
+  - 6
+  - 15
   DistTypeCylinder:
-    MaxRadius: "13"
-    YVariance: "10"
-- Name: ErestrumResource
+    MaxRadius: 13
+    YVariance: 10
+  DroneProb: 0.4
+  MaxDroneCount: 1
   Biome:
-  - Sweltering Forest
-  IsScalingCount: "True"
-  IsImportant: "False"
+  - "Crystal"
+  - "Crystaline Patch"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 7
+    Max: 9
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "ErestrumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
+  - 1
+  - 2
   SizeMinMax:
-  - "7"
-  - "9"
+  - 7
+  - 9
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "0.9"
-  MaxDroneCount: "4"
-- Name: GoldResource
+  - 5
+  - 20
+  DroneProb: 0.9
+  MaxDroneCount: 4
   Biome:
-  - Peak
-  - Deep Forest
-  IsScalingCount: "True"
-  IsImportant: "True"
+  - "Sweltering Forest"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 7
+    Max: 11
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "GoldResource"
+  IsImportant: true
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
+  - 1
+  - 2
   SizeMinMax:
-  - "7"
-  - "11"
+  - 7
+  - 11
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "1"
-  MaxDroneCount: "3"
+  - 6
+  - 15
   DistTypeCylinder:
-    MaxRadius: "13"
-    YVariance: "10"
-- Name: PentaxidResource
+    MaxRadius: 13
+    YVariance: 10
+  DroneProb: 1
+  MaxDroneCount: 3
   Biome:
-  - Crystal
-  - Crystaline Patch
-  IsScalingCount: "True"
-  IsImportant: "False"
+  - "Peak"
+  - "Deep Forest"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 3
+    Max: 8
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "PentaxidResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "3"
-  - "8"
+  - 3
+  - 8
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "1"
-  MaxDroneCount: "4"
+  - 5
+  - 20
+  DroneProb: 1
+  MaxDroneCount: 4
+  Biome:
+  - "Crystal"
+  - "Crystaline Patch"
 AsteroidResources:
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: IronResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: SiliconResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PentaxidResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: SathiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: ErestrumResource
-  Threshold: "0.2"
-  Amount: "0.2"
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PentaxidResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "SathiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "ErestrumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: TresariDroneBase
-    Faction: Tresari
-    NoShieldReload: "True"
-    IsCommandCenter: "True"
-    DroneSetupID: DroneBaseTresari
+  - GroupName: "TresariDroneBase"
+    DroneSetupID: "DroneBaseTresari"
+    Faction: "Tresari"
+    Territory: false
+    NoShieldReload: true
+    IsCommandCenter: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TresariMain
+  - GroupName: "TresariMain"
+    Faction: "Tresari"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    - Key: "SI"
+      Value: "Off"
     Biome:
-    - Hills
-    - Lowlands
-    - Forest
-    - Sweltering Forest
-    - Deep Forest
-    - Rock Plains
-    Faction: Tresari
-    NoShieldReload: "True"
-    IsImportant: "True"
+    - "Hills"
+    - "Lowlands"
+    - "Forest"
+    - "Sweltering Forest"
+    - "Deep Forest"
+    - "Rock Plains"
+  - GroupName: "TresariMainAux"
+    Faction: "Tresari"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 5
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 5
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
+    - 3
+    - 5
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-  - GroupName: TresariMainAux
-    Faction: Tresari
-    NoShieldReload: "True"
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "5"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-    - Key: SI
-      Value: "Off"
-  - GroupName: TresariTeleportHub
-    Faction: Tresari
-    NoShieldReload: "True"
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
+  - GroupName: "TresariTeleportHub"
+    Faction: "Tresari"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
     AuxiliaryPOIs:
-    - TresariDefense
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TresariDefense
-    Faction: Tresari
-    NoShieldReload: "True"
+    - "TresariDefense"
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "2"
-    IsAuxPOI: "True"
-    SpawnPOINearRange:
-    - "500"
-    - "1500"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
+  - SpawnPoiRange:
+      Min: 500
+      Max: 1500
+    GroupName: "TresariDefense"
+    Faction: "Tresari"
+    Territory: false
+    NoShieldReload: true
+    IsAuxPOI: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINearRange:
+    - 500
+    - 1500
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "0"
-    - "147"
-    - "0"
-    RotY: "160"
+    - 0
+    - 147
+    - 0
+    RotY: 160
     Status:
-    - 'Food:500, Health: 500'
-    - 'Food:500, Health: 500'
-    - 'Food:500, Health: 500'
-    - '#FreshStart:Food:500, Health: 500'
+    - "Food:500, Health: 500"
+    - "Food:500, Health: 500"
+    - "Food:500, Health: 500"
+    - "#FreshStart:Food:500, Health: 500"
 DroneBaseSetup:
   DroneBases:
-  - DroneSetupID: DroneBaseTresari
+  - DroneSetupID: "DroneBaseTresari"
     Stock:
-    - Name: DroneSmallFast01Minigun
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneSmallFast01Rocket
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Type: TroopTransport
-    - Name: SoldierAlienAssaultRifle
-      Amount: Infinite
-      Type: 
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneSmallFast01Rocket"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "TroopTransport"
+    - Name: "SoldierAlienAssaultRifle"
+      Amount: "Infinite"
+      Extra: -1
   PlanetVessels:
-  - Name: OPVTresariT4
-    Faction: Tresari
+  - Name: "OPVTresariT4"
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Faction: "Tresari"
     LevelMod: "2"
-    FixedMaxSpeed: "40"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+    FixedMaxSpeed: 40
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - TresariDefense
-      DistToGround: "300"
+      - "TresariDefense"
+      DistToGround: 300
     Stock:
-    - Name: DroneSmallFast01Minigun
-      Amount: Infinite
-      Type: FighterDrone
-  - Name: CivilianDroneCVfast
-    Faction: Tresari
-    LevelMod: "2"
-    FixedMaxSpeed: "100"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+  - Name: "CivilianDroneCVfast"
     CountMinMax:
-    - "2"
-    - "4"
+    - 2
+    - 4
+    Faction: "Tresari"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - TresariMain
-      Radius: "500"
-      DistToGround: "300"
-  - Name: CivilianMicroCV
-    Faction: Tresari
-    LevelMod: "2"
-    FixedMaxSpeed: "80"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+      - "TresariMain"
+      Radius: 500
+      DistToGround: 300
+  - Name: "CivilianMicroCV"
     CountMinMax:
-    - "2"
-    - "4"
+    - 2
+    - 4
+    Faction: "Tresari"
+    LevelMod: "2"
+    FixedMaxSpeed: 80
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - TresariMain
-      Radius: "1000"
-      DistToGround: "300"
-  - Name: CivilianDroneCV
-    Faction: Tresari
-    LevelMod: "2"
-    FixedMaxSpeed: "100"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+      - "TresariMain"
+      Radius: 1000
+      DistToGround: 300
+  - Name: "CivilianDroneCV"
     CountMinMax:
-    - "2"
-    - "4"
+    - 2
+    - 4
+    Faction: "Tresari"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - TresariMain
-      Radius: "1500"
-      DistToGround: "120"
-SpawnZones: 
+      - "TresariMain"
+      Radius: 1500
+      DistToGround: 120
 CreatureSpawning:
 - Biomes:
-  - Forest
-  - Deep Forest
+  - "Forest"
+  - "Deep Forest"
   Entities:
-  - Name: AlienBugs01
-    Period: Day
-    Amount: "50"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 50
+    Color: "1, 1, 1, 1"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1, 1, 1, 1
-  - Name: AnnoyingMosquitosGray
-    Period: Always
-    Amount: "50"
+    - 20
+    - 24
+    Period: "Day"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AnnoyingMosquitosGray"
+    Amount: 50
+    Color: "0, 0, 0, 1,"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 0, 0, 0, 1,
-  - Name: RaptorHerd
-    Period: Always
-    Amount: "100"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "RaptorHerd"
+    Amount: 100
+    Color: "1, 0, 0, 1"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1, 0, 0, 1
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - Sweltering Forest
+  - "Sweltering Forest"
   Entities:
-  - Name: RipperDogsWildGroup
-    Period: Always
-    Amount: "100"
+  - DelayRange:
+      Min: 24
+      Max: 20
+    Name: "RipperDogsWildGroup"
+    Amount: 100
+    Color: "1, 0, 0, 1"
     DelayMinMax:
-    - "24"
-    - "20"
-    Color: 1, 0, 0, 1
-  - Name: Otyughs
-    Period: Night
-    Amount: "40"
+    - 24
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 24
+      Max: 20
+    Name: "Otyughs"
+    Amount: 40
+    Color: "1, 0, 0, 1"
     DelayMinMax:
-    - "24"
-    - "20"
-    Color: 1, 0, 0, 1
-  - Name: LizardMuleHerd
-    Period: Always
-    Amount: "50"
+    - 24
+    - 20
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "LizardMuleHerd"
+    Amount: 50
+    Color: "1, 1, 1, 1"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1, 1, 1, 1
-  - Name: AnnoyingMosquitosGray
-    Period: Always
-    Amount: "50"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AnnoyingMosquitosGray"
+    Amount: 50
+    Color: "0, 0, 0, 1,"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 0, 0, 0, 1,
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - ShallowWater
-  - DeepWater
+  - "ShallowWater"
+  - "DeepWater"
   Entities:
-  - Name: Telluropods
-    Period: Always
-    Amount: "50"
+  - DelayRange:
+      Min: 24
+      Max: 20
+    Name: "Telluropods"
+    Amount: 50
+    Color: "0, 1, 0, 1"
+    AllowInWater: true
     DelayMinMax:
-    - "24"
-    - "20"
-    Color: 0, 1, 0, 1
-    AllowInWater: "True"
-  - Name: ShoalofFishesLarge
-    Period: Always
-    Amount: "50"
+    - 24
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 24
+      Max: 20
+    Name: "ShoalofFishesLarge"
+    Amount: 50
+    Color: "1, 1, 1, 1"
+    AllowInWater: true
     DelayMinMax:
-    - "24"
-    - "20"
-    Color: 1, 1, 1, 1
-    AllowInWater: "True"
-  - Name: ShoalofFishesSmall
-    Period: Always
-    Amount: "100"
+    - 24
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 24
+      Max: 20
+    Name: "ShoalofFishesSmall"
+    Amount: 100
+    Color: "1, 1, 1, 1"
+    AllowInWater: true
     DelayMinMax:
-    - "24"
-    - "20"
-    Color: 1, 1, 1, 1
-    AllowInWater: "True"
+    - 24
+    - 20
+    Period: "Always"
 - Biomes:
-  - Hills
-  - Lowlands
-  - Rock Plains
+  - "Hills"
+  - "Lowlands"
+  - "Rock Plains"
   Entities:
-  - Name: ParasaursFew
-    Period: Day
-    Amount: "40"
+  - DelayRange:
+      Min: 20
+      Max: 240
+    Name: "ParasaursFew"
+    Amount: 40
+    Color: "1, 1, 1, 1"
     DelayMinMax:
-    - "20"
-    - "240"
-    Color: 1, 1, 1, 1
-  - Name: LizardMuleHerd
-    Period: Always
-    Amount: "45"
+    - 20
+    - 240
+    Period: "Day"
+  - DelayRange:
+      Min: 24
+      Max: 20
+    Name: "LizardMuleHerd"
+    Amount: 45
+    Color: "1, 1, 1, 1"
     DelayMinMax:
-    - "24"
-    - "20"
-    Color: 1, 1, 1, 1
+    - 24
+    - 20
+    Period: "Always"
 - Biomes:
-  - Shore
-  - Beach
+  - "Shore"
+  - "Beach"
   Entities:
-  - Name: Telluropods
-    Period: Always
-    Amount: "20"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Telluropods"
+    Amount: 20
+    Color: "1, 1, 1, 1"
+    AllowInWater: true
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1, 1, 1, 1
-    AllowInWater: "True"
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - Beach
-  - Shore
+  - "Beach"
+  - "Shore"
   Entities:
-  - Name: AlienBugs01
-    Period: Night
-    Amount: "100"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 100
+    Color: "1, 1, 1, 1"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1, 1, 1, 1
-  - Name: PlantMonsters
-    Period: Day
-    Amount: "100"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "PlantMonsters"
+    Amount: 100
+    Color: "1, 1, 1, 1"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1, 1, 1, 1
+    - 20
+    - 24
+    Period: "Day"
 - Biomes:
-  - Crystal
-  - Crystaline Patch
+  - "Crystal"
+  - "Crystaline Patch"
   Entities:
-  - Name: Otyughs
-    Period: Always
-    Amount: "75"
+  - DelayRange:
+      Min: 24
+      Max: 20
+    Name: "Otyughs"
+    Amount: 75
     DelayMinMax:
-    - "24"
-    - "20"
+    - 24
+    - 20
+    Period: "Always"

@@ -1,721 +1,962 @@
-Description: "\u96BE\u5EA6: [c][ff0000][b]\u56F0\u96BE[/b][-][/c]\n\n\u4E00\u9897\u6D41\u6D6A\u884C\u661F\u3002"
-PlanetClass: Rogue
-PlanetType: Rogue
-Emissive: "True"
-PlayfieldType: Planet
-Difficulty: "40"
-LandClaimZone: Device
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.1, 0, 0
-SkyColor: 0,0,0
-AtmosphereParams:
-- "10"
-- "3"
-DayLightIntensity: "1"
-NightLightIntensity: "0.3"
-DayShadowStrength: "0.95"
-LightZenithColor: -4,-4,-4
-LightHorizonColor: -5,-5,-5
-NightLightColor: -1,-1,-1
-SunFlare: EnvironmentalEffects/SunFlareNone
-FogColor: 0, 0, 0
-FogCloudIntensity: "0.8"
-CloudsDensity: "0"
-CloudsSharpness: "0"
-CloudsBrightness: "0"
-CloudsOpacity: "0"
-CloudsZenithColor: 0,0,0
-CloudsHorizonColor: 0,0,0
-CloudsNightZenithColor: 0, 0, 0
-CloudsNightHorizonColor: 0, 0, 0
-WindSpeed: "0"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "Rogue"
+PlanetSize: 2
+Emissive: true
+Difficulty: 40
+SunFlare: "EnvironmentalEffects/SunFlareNone"
 SpecialEffectsLocal:
-- Name: Grime
-  MaxHeight: "20"
-- Name: SnowLight
-  MaxHeight: "800"
+- Name: "Grime"
+  MaxHeight: 20
+  Time: "Always"
+  FollowPlayerY: false
+- Name: "SnowLight"
+  MaxHeight: 800
+  Time: "Always"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "2400"
-  Delay: "2400"
-  Lifetime: "30"
-- Name: MeteorShower
-  Time: Day
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "60"
-  PlyDist: "200"
-  SpawnY: "100"
-  Struct: Avoid
-- Name: ThunderAndLightningRed
-  Time: Always
-  InitialDelay: "6"
-  Delay: "6"
-  Lifetime: "180"
-  PlyDist: "50"
-  SpawnY: "100"
-  Struct: Avoid
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 2400
+  Delay: 2400
+  PlyDist: 100
+  Lifetime: 30
+  Type: "Weather"
+- Name: "MeteorShower"
+  SpawnY: 100
+  Time: "Day"
+  InitialDelay: 0.5
+  Delay: 2
+  PlyDist: 200
+  Struct: "Avoid"
+  Lifetime: 60
+- Name: "ThunderAndLightningRed"
+  SpawnY: 100
+  Time: "Always"
+  InitialDelay: 6
+  Delay: 6
+  PlyDist: 50
+  Struct: "Avoid"
+  Lifetime: 180
+AtmosphereEnabled: true
+AtmosphereColor: "0.1, 0, 0"
+AtmosphereParams:
+- 10
+- 3
+SkyColor: "0,0,0"
+LightZenithColor: "-4,-4,-4"
+LightHorizonColor: "-5,-5,-5"
+NightLightColor: "-1,-1,-1"
+CloudsZenithColor: "0,0,0"
+CloudsHorizonColor: "0,0,0"
+CloudsNightZenithColor: "0, 0, 0"
+CloudsNightHorizonColor: "0, 0, 0"
+CloudsOpacity: 0.9
+FogCloudIntensity: 0.8
+DayLightIntensity: 1
+NightLightIntensity: 0.3
+DayShadowStrength: 0.95
+NightShadowStrength: 0.4
+CloudsSharpness: 1
+CloudsBrightness: 0.6
+WindSpeed: 1
+FogColor: "0, 0, 0"
+Description: "\u96BE\u5EA6: [c][ff0000][b]\u56F0\u96BE[/b][-][/c]\n\u4E00\u9897\u6D41\u6D6A\u884C\u661F\u3002"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Rogue"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: IronResource
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "IronResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 2
+  - 3
+  SizeMinMax:
+  - 3
+  - 4
+  DepthMinMax:
+  - 5
+  - 10
+  DroneProb: 1
+  MaxDroneCount: 1
   Biome:
-  - DustBowl
-  - Rifts
-  - Rifts_1
-  - LargeCrater
-  - SmallCrater
-  - Dunes
-  IsScalingCount: "True"
+  - "DustBowl"
+  - "Rifts"
+  - "Rifts_1"
+  - "LargeCrater"
+  - "SmallCrater"
+  - "Dunes"
+- Count:
+    Min: 3
+    Max: 4
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "CopperResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 3
+  - 4
   SizeMinMax:
-  - "3"
-  - "4"
+  - 3
+  - 4
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "1"
-  MaxDroneCount: "1"
-- Name: CopperResource
+  - 5
+  - 10
+  DroneProb: 1
+  MaxDroneCount: 2
   Biome:
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  IsScalingCount: "True"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "4"
+  - 1
+  - 2
   SizeMinMax:
-  - "3"
-  - "4"
+  - 3
+  - 4
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "1"
-  MaxDroneCount: "2"
-- Name: SiliconResource
-  IsScalingCount: "True"
+  - 5
+  - 10
+  DroneProb: 1
+  MaxDroneCount: 2
+- Count:
+    Min: 3
+    Max: 4
+  Size:
+    Min: 7
+    Max: 9
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "AluminiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
+  - 3
+  - 4
   SizeMinMax:
-  - "3"
-  - "4"
+  - 7
+  - 9
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "1"
-  MaxDroneCount: "2"
-- Name: AluminiumResource
+  - 5
+  - 10
+  DroneProb: 1
+  MaxDroneCount: 2
   Biome:
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  IsScalingCount: "True"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "4"
+  - 2
+  - 3
   SizeMinMax:
-  - "7"
-  - "9"
+  - 3
+  - 4
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "1"
-  MaxDroneCount: "2"
-- Name: PromethiumResource
+  - 5
+  - 10
+  DroneProb: 1
+  MaxDroneCount: 4
   Biome:
-  - Rocks
-  - Rocks_1
-  - LavaFolds
-  - LavaEdge
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  IsScalingCount: "True"
+  - "Rocks"
+  - "Rocks_1"
+  - "LavaFolds"
+  - "LavaEdge"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "GoldResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 1
+  - 2
   SizeMinMax:
-  - "3"
-  - "4"
-  DroneProb: "1"
-  MaxDroneCount: "4"
+  - 3
+  - 4
   DepthMinMax:
-  - "5"
-  - "10"
-- Name: GoldResource
+  - 5
+  - 10
+  DroneProb: 1
+  MaxDroneCount: 3
   Biome:
-  - CanyonEdge
-  - ShallowCanyon
-  - Canyon
-  - DeepCanyon
-  - LargeCrater
-  - SmallCrater
-  IsScalingCount: "True"
-  CountMinMax:
-  - "1"
-  - "2"
-  SizeMinMax:
-  - "3"
-  - "4"
-  DroneProb: "1"
-  MaxDroneCount: "3"
-  DepthMinMax:
-  - "5"
-  - "10"
+  - "CanyonEdge"
+  - "ShallowCanyon"
+  - "Canyon"
+  - "DeepCanyon"
+  - "LargeCrater"
+  - "SmallCrater"
 AsteroidResources:
-- Name: IronResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: SiliconResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: AluminiumResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: CopperResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.1"
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "AluminiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "CopperResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: Eden_HarvestVoidiumT2
-    Faction: None
+  - GroupName: "Eden_HarvestVoidiumT2"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: Eden_HarvestVoidiumT2
-    Faction: None
+  - SpawnPoiRange:
+      Min: 35
+      Max: 250
+    GroupName: "Eden_HarvestVoidiumT2"
+    Faction: "None"
+    Territory: false
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
+    - 0
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
+      Value: "Off"
+    - Key: "RegenAfter"
+      Value: "4320"
     SpawnPOINear:
-    - Eden_HarvestVoidiumT2
+    - "Eden_HarvestVoidiumT2"
     SpawnPOINearRange:
-    - "35"
-    - "250"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
-      Value: "Off"
-    - Key: RegenAfter
-      Value: "4320"
-  - GroupName: Eden_HarvestVoidiumT2
-    Faction: None
+    - 35
+    - 250
+  - SpawnPoiRange:
+      Min: 35
+      Max: 250
+    GroupName: "Eden_HarvestVoidiumT2"
+    Faction: "None"
     FactionTerritory:
-    - Kriel
-    - Eden_DroneHome
-    - TheLegacy
-    - Tesch
+    - "Kriel"
+    - "Eden_DroneHome"
+    - "TheLegacy"
+    - "Tesch"
+    Territory: false
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
+    - 0
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
+      Value: "Off"
+    - Key: "RegenAfter"
+      Value: "4320"
     SpawnPOINear:
-    - Eden_HarvestVoidiumT2
+    - "Eden_HarvestVoidiumT2"
     SpawnPOINearRange:
-    - "35"
-    - "250"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
-      Value: "Off"
-    - Key: RegenAfter
-      Value: "4320"
-  - GroupName: Eden_HarvestVoidiumT1
-    Faction: None
+    - 35
+    - 250
+  - GroupName: "Eden_HarvestVoidiumT1"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: Eden_HarvestVoidiumT2
-    Faction: None
+  - GroupName: "Eden_HarvestVoidiumT2"
+    Faction: "None"
     FactionTerritory:
-    - Eden_DroneHome
+    - "Eden_DroneHome"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
     Properties:
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: Eden_HarvestPalladium
-    Faction: None
+  - GroupName: "Eden_HarvestPalladium"
+    Faction: "None"
     FactionTerritory:
-    - Kriel
-    - Tesch
-    - TheLegacy
-    - Eden_DroneHome
-    - Xenu
+    - "Kriel"
+    - "Tesch"
+    - "TheLegacy"
+    - "Eden_DroneHome"
+    - "Xenu"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "3"
-    - "4"
-    IsScalingCount: "True"
-    DroneProb: "0.75"
+    - 3
+    - 4
+    DroneProb: 0.75
+    Drones:
+      Min: 2
+      Max: 4
     DronesMinMax:
-    - "2"
-    - "4"
-    ReserveCount: "3"
-    TroopTransport: "False"
+    - 2
+    - 4
+    ReserveCount: 3
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: Eden_HarvestPalladium
-    Faction: None
+  - GroupName: "Eden_HarvestPalladium"
+    Faction: "None"
     FactionTerritory:
-    - Wastelanders
+    - "Wastelanders"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    IsScalingCount: "True"
-    DroneProb: "0.5"
+    - 1
+    - 2
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "3"
-    TroopTransport: "False"
+    - 1
+    - 3
+    ReserveCount: 3
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: SI
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "0"
-    - "120"
-    - "0"
-    RotY: "0"
-  - Mode: Survival
-    Spawn: Structure
-    Structure: Eden_StarterRogue
-    PlayerArmor:
-    - 'None, None, None, #FreshStart:None'
-    Status:
-    - 'Food: 500, Health: 500'
-    - 'Food: 450, Health: 450'
-    - 'Food: 400, Health: 400'
-    - '#FreshStart:Food: 250, Health: 300'
+    - 0
+    - 120
+    - 0
+  - Mode: "Survival"
+    Spawn: "Structure"
+    Structure: "Eden_StarterRogue"
     Items:
-    - WaterBottle:3, PowerBar:3
-    - WaterBottle:2, PowerBar:2
-    - WaterBottle:1, PowerBar:1
-    - '#FreshStart: WaterBottle'
+    - "WaterBottle:3, PowerBar:3"
+    - "WaterBottle:2, PowerBar:2"
+    - "WaterBottle:1, PowerBar:1"
+    - "#FreshStart: WaterBottle"
+    Status:
+    - "Food: 500, Health: 500"
+    - "Food: 450, Health: 450"
+    - "Food: 400, Health: 400"
+    - "#FreshStart:Food: 250, Health: 300"
+    PlayerArmor:
+    - "None, None, None, #FreshStart:None"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "7"
-    PresetStyle: "3"
+  - GroupName: "DroneBaseSetup"
+    Difficulty: 7
+    PresetStyle: 3
     Stock:
-    - Name: DroneSmallFast01Plasma
-      Amount: Infinite
-      Extra: "0"
-    - Name: DroneBomberAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneSmallFast01Plasma
-      Amount: Infinite
-      Extra: "1"
-    - Name: EnemyDroneV2Plasma
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMinigun
+    - Name: "DroneSmallFast01Plasma"
+      Amount: "Infinite"
+      Extra: -1
+    - Name: "DroneBomberAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneSmallFast01Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "EnemyDroneV2Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
       Amount: "500"
-      Extra: "3"
+      Extra: 3
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "4"
-    - "6"
-    CenterX: "-1000"
-    Radius: "5000"
-  - DronesMinMax:
-    - "4"
-    - "6"
-    CenterX: "1000"
-    Radius: "5000"
-  - DronesMinMax:
-    - "4"
-    - "6"
-    CenterX: "-2500"
-    Radius: "5000"
-  - DronesMinMax:
-    - "4"
-    - "6"
-    CenterX: "2500"
-    Radius: "5000"
-  - DronesMinMax:
-    - "4"
-    - "6"
-    CenterX: "-6000"
-    Radius: "5000"
-  - DronesMinMax:
-    - "4"
-    - "6"
-    CenterX: "6000"
-    Radius: "5000"
-  - DronesMinMax:
-    - "4"
-    - "6"
-    CenterX: "-9000"
-    Radius: "5000"
-  - DronesMinMax:
-    - "4"
-    - "6"
-    CenterX: "9000"
-    Radius: "5000"
-  - DronesMinMax:
-    - "3"
-    - "4"
-    CenterX: "-10000"
-    Radius: "1000"
-SpawnZones:
-- SpawnAt:
-  - IronResource
-  - SiliconResource
-  - CopperResource
-  - PromethiumResource
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "1000"
-  RadiusRandom: "200"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.1"
-  Color: 1.0, 1.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - GolemsDesert
-    Biomes:
-    - Any
-    Amount: "75"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
+  - Drones:
+      Min: 4
+      Max: 6
+    DronesMinMax:
+    - 4
+    - 6
+    CenterX: -1000
+    Radius: 5000
+  - Drones:
+      Min: 4
+      Max: 6
+    DronesMinMax:
+    - 4
+    - 6
+    CenterX: 1000
+    Radius: 5000
+  - Drones:
+      Min: 4
+      Max: 6
+    DronesMinMax:
+    - 4
+    - 6
+    CenterX: -2500
+    Radius: 5000
+  - Drones:
+      Min: 4
+      Max: 6
+    DronesMinMax:
+    - 4
+    - 6
+    CenterX: 2500
+    Radius: 5000
+  - Drones:
+      Min: 4
+      Max: 6
+    DronesMinMax:
+    - 4
+    - 6
+    CenterX: -6000
+    Radius: 5000
+  - Drones:
+      Min: 4
+      Max: 6
+    DronesMinMax:
+    - 4
+    - 6
+    CenterX: 6000
+    Radius: 5000
+  - Drones:
+      Min: 4
+      Max: 6
+    DronesMinMax:
+    - 4
+    - 6
+    CenterX: -9000
+    Radius: 5000
+  - Drones:
+      Min: 4
+      Max: 6
+    DronesMinMax:
+    - 4
+    - 6
+    CenterX: 9000
+    Radius: 5000
+  - Drones:
+      Min: 3
+      Max: 4
+    DronesMinMax:
+    - 3
+    - 4
+    CenterX: -10000
+    Radius: 1000
 CreatureSpawning:
 - Biomes:
-  - Rifts
-  - Rifts_1
+  - "Rifts"
+  - "Rifts_1"
   Entities:
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "5"
-    Color: 1.0, 1, 0
+  - DelayRange:
+      Min: 48
+      Max: 72
+    Name: "GolemsDesert"
+    Amount: 5
+    Color: "1.0, 1, 0"
     DelayMinMax:
-    - "48"
-    - "72"
-  - Name: CaveWormGreyHerd
-    Period: Always
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 48
+    - 72
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: CaveWormsGrey
-    Period: Always
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormsGrey"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
+    - 12
+    - 24
+    Period: "Always"
 - Biomes:
-  - DustBowl
-  - Mare
+  - "DustBowl"
+  - "Mare"
   Entities:
-  - Name: WormsDesert
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: 6
+      Max: 12
+    Name: "WormsDesert"
+    Amount: 10
+    Color: "1, 0.5, 0"
     DelayMinMax:
-    - "6"
-    - "12"
-    Color: 1, 0.5, 0
-  - Name: WormsDesertLarge
-    Period: Always
-    Amount: "5"
+    - 6
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WormsDesertLarge"
+    Amount: 5
+    Color: "1, 0.3, 0"
     DelayMinMax:
-    - "12"
-    - "24"
-    Color: 1, 0.3, 0
-  - Name: CaveWormGreyHerd
-    Period: Always
-    Amount: "10"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 10
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: CaveWormGreyHerd
-    Period: Night
-    Amount: "10"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 10
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: Otyughs
-    Period: Night
-    Amount: "10"
+    - 12
+    - 24
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "Otyughs"
+    Amount: 10
+    Color: "1, 0, 1"
     DelayMinMax:
-    - "12"
-    - "24"
-    Color: 1, 0, 1
-  - Name: WoodWalkers
-    Period: Always
-    Amount: "3"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WoodWalkers"
+    Amount: 3
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: WoodWalkers
-    Period: Night
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WoodWalkers"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
+    - 12
+    - 24
 - Biomes:
-  - HighMountains
-  - Mountains
-  - LowMountains
-  - LowMountains_1
+  - "HighMountains"
+  - "Mountains"
+  - "LowMountains"
+  - "LowMountains_1"
   Entities:
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "10"
-    Color: 1.0, 1, 0
+  - DelayRange:
+      Min: 48
+      Max: 72
+    Name: "GolemsDesert"
+    Amount: 10
+    Color: "1.0, 1, 0"
     DelayMinMax:
-    - "48"
-    - "72"
-  - Name: CaveWormGreyHerd
-    Period: Always
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 48
+    - 72
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: CaveWormsGrey
-    Period: Always
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormsGrey"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: WoodWalkers
-    Period: Always
-    Amount: "10"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WoodWalkers"
+    Amount: 10
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
+    - 12
+    - 24
+    Period: "Always"
 - Biomes:
-  - LargeCrater
-  - SmallCrater
+  - "LargeCrater"
+  - "SmallCrater"
   Entities:
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "5"
-    Color: 1.0, 1, 0
+  - DelayRange:
+      Min: 48
+      Max: 72
+    Name: "GolemsDesert"
+    Amount: 5
+    Color: "1.0, 1, 0"
     DelayMinMax:
-    - "48"
-    - "72"
-  - Name: CaveWormGreyHerd
-    Period: Always
-    Amount: "20"
-    Color: 0.5, 0.5, 0.5
+    - 48
+    - 72
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 20
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: WoodWalkers
-    Period: Night
-    Amount: "35"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WoodWalkers"
+    Amount: 35
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: Otyughs
-    Period: Night
-    Amount: "10"
+    - 12
+    - 24
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "Otyughs"
+    Amount: 10
+    Color: "1, 0, 1"
     DelayMinMax:
-    - "12"
-    - "24"
-    Color: 1, 0, 1
+    - 12
+    - 24
 - Biomes:
-  - ColdPlains
-  - Rocks
-  - Rocks_1
+  - "ColdPlains"
+  - "Rocks"
+  - "Rocks_1"
   Entities:
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "3"
-    Color: 1.0, 1, 0
+  - DelayRange:
+      Min: 48
+      Max: 72
+    Name: "GolemsDesert"
+    Amount: 3
+    Color: "1.0, 1, 0"
     DelayMinMax:
-    - "48"
-    - "72"
-  - Name: CaveWormGreyHerd
-    Period: Always
-    Amount: "10"
-    Color: 0.5, 0.5, 0.5
+    - 48
+    - 72
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 10
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: CaveWormGreyHerd
-    Period: Night
-    Amount: "10"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 10
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: CaveWormsGrey
-    Period: Always
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormsGrey"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: WormsDesert
-    Period: Always
-    Amount: "5"
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 6
+      Max: 12
+    Name: "WormsDesert"
+    Amount: 5
+    Color: "1, 0.5, 0"
     DelayMinMax:
-    - "6"
-    - "12"
-    Color: 1, 0.5, 0
-  - Name: WoodWalkers
-    Period: Always
-    Amount: "3"
-    Color: 0.5, 0.5, 0.5
+    - 6
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WoodWalkers"
+    Amount: 3
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: WoodWalkers
-    Period: Night
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WoodWalkers"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
+    - 12
+    - 24
 - Biomes:
-  - Dunes
-  - Sand
-  - Plains
-  - PlainsEdge
+  - "Dunes"
+  - "Sand"
+  - "Plains"
+  - "PlainsEdge"
   Entities:
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "4"
-    Color: 1.0, 1, 0
+  - DelayRange:
+      Min: 48
+      Max: 72
+    Name: "GolemsDesert"
+    Amount: 4
+    Color: "1.0, 1, 0"
     DelayMinMax:
-    - "48"
-    - "72"
-  - Name: CaveWormGreyHerd
-    Period: Always
-    Amount: "10"
-    Color: 0.5, 0.5, 0.5
+    - 48
+    - 72
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 10
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: CaveWormGreyHerd
-    Period: Night
-    Amount: "10"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormGreyHerd"
+    Amount: 10
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: CaveWormsGrey
-    Period: Always
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "CaveWormsGrey"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: WormsDesert
-    Period: Always
-    Amount: "5"
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 6
+      Max: 12
+    Name: "WormsDesert"
+    Amount: 5
+    Color: "1, 0.5, 0"
     DelayMinMax:
-    - "6"
-    - "12"
-    Color: 1, 0.5, 0
-  - Name: WormsDesertLarge
-    Period: Always
-    Amount: "3"
+    - 6
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WormsDesertLarge"
+    Amount: 3
+    Color: "1, 0.3, 0"
     DelayMinMax:
-    - "12"
-    - "24"
-    Color: 1, 0.3, 0
-  - Name: Otyughs
-    Period: Night
-    Amount: "10"
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "Otyughs"
+    Amount: 10
+    Color: "1, 0, 1"
     DelayMinMax:
-    - "12"
-    - "24"
-    Color: 1, 0, 1
-  - Name: WoodWalkers
-    Period: Always
-    Amount: "3"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WoodWalkers"
+    Amount: 3
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
-  - Name: WoodWalkers
-    Period: Night
-    Amount: "5"
-    Color: 0.5, 0.5, 0.5
+    - 12
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 12
+      Max: 24
+    Name: "WoodWalkers"
+    Amount: 5
+    Color: "0.5, 0.5, 0.5"
     DelayMinMax:
-    - "12"
-    - "24"
+    - 12
+    - 24
+SpawnZones:
+- SpawnAt:
+  - "IronResource"
+  - "SiliconResource"
+  - "CopperResource"
+  - "PromethiumResource"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 1000
+  RadiusRandom: 200
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.1
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "GolemsDesert"
+    Biomes:
+    - "Any"
+    Amount: 75
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"

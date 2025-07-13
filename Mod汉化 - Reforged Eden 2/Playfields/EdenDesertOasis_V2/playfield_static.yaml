@@ -1,1511 +1,2016 @@
-Description: "\u96BE\u5EA6: [c][ffff00]\u4E2D\u7B49[-][/c]\n\n[c][ffff00]\u8B66\u544A:\u65B0\u7684\u88C5\u9970\u7CFB\u7EDF\u6B63\u5728\u6D4B\u8BD5\u4E2D\u3002\u8FDB\u5165\u6B64\u6E38\u620F\u573A\u5730\u53EF\u80FD\u4F1A\u9047\u5230\u610F\u5916\u95EE\u9898\u3002[-][/c]\n\n\u4E00\u9897\u62E5\u6709\u4E30\u5BCC\u751F\u547D\u4E4B\u6C34\u7684\u6C99\u6F20\u884C\u661F\u3002\u666F\u89C2\u4E2D\u70B9\u7F00\u7740\u4F17\u591A\u7EFF\u6D32\u548C\u79CD\u690D\u56ED\u3002"
-PlanetClass: Desert Oasis
-PlanetType: Desert Oasis
-PlayfieldType: Planet
-Difficulty: "3"
-LandClaimZone: Device
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "Desert Oasis"
+PlanetSize: 2
+Difficulty: 3
+SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
-- Name: FireFliesRed
+- Name: "FireFliesRed"
+  MaxHeight: 40
+  Time: "Night"
   Biome:
-  - Water
-  - ShallowWater
-  - Shore
-  Time: Night
-  MaxHeight: "40"
-- Name: FireFliesGreenFew
+  - "Water"
+  - "ShallowWater"
+  - "Shore"
+  FollowPlayerY: false
+- Name: "FireFliesGreenFew"
+  MaxHeight: 150
+  Time: "Night"
   Biome:
-  - Plains
-  - Sand
-  - OasisEdge
-  - FlowersEdge
-  - Wadi
-  - DustBowl
-  Time: Night
-  MaxHeight: "150"
-- Name: Pollen
+  - "Plains"
+  - "Sand"
+  - "OasisEdge"
+  - "FlowersEdge"
+  - "Wadi"
+  - "DustBowl"
+  FollowPlayerY: false
+- Name: "Pollen"
+  MaxHeight: 150
+  Time: "Day"
   Biome:
-  - Plains
-  - DustBowl
-  - Plantation
-  - OasisEdge
-  - FlowersEdge
-  Time: Day
-  MaxHeight: "150"
-- Name: FireFliesGreen
+  - "Plains"
+  - "DustBowl"
+  - "Plantation"
+  - "OasisEdge"
+  - "FlowersEdge"
+  FollowPlayerY: false
+- Name: "FireFliesGreen"
+  MaxHeight: 150
+  Time: "Night"
   Biome:
-  - Oasis
-  - Plantation
-  Time: Night
-  MaxHeight: "150"
-- Name: ButterfliesBlue
+  - "Oasis"
+  - "Plantation"
+  FollowPlayerY: false
+- Name: "ButterfliesBlue"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Oasis
-  Time: Day
-  MaxHeight: "15"
-- Name: ButterfliesFew
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "ButterfliesFew"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Oasis
-  - Shore
-  Time: Day
-  MaxHeight: "15"
-- Name: Mosquitos
+  - "Oasis"
+  - "Shore"
+  FollowPlayerY: false
+- Name: "Mosquitos"
+  MaxHeight: 5
+  Time: "Day"
   Biome:
-  - ShoreOasis
-  Time: Day
-  MaxHeight: "5"
+  - "ShoreOasis"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: HeatWave
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "12"
-  Lifetime: "1200"
-- Name: Wind
-  Type: Weather
-  InitialDelay: "20"
-  Delay: "8"
-  Lifetime: "500"
-- Name: BirdFlocksVultures
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "HeatWave"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Wind"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 20
+  Delay: 8
+  PlyDist: 100
+  Lifetime: 500
+  Type: "Weather"
+- Name: "BirdFlocksVultures"
+  SpawnY: 40
+  Time: "Day"
   Biome:
-  - Dunes
-  - Plains
-  - Mountains
-  - Water
-  - OasisEdge
-  - Plantation
-  Time: Day
-  InitialDelay: "2"
-  Delay: "4"
-  Lifetime: "600"
-  PlyDist: "50"
-  SpawnY: "40"
-  Struct: "True"
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.7, 0.8, 0.9
-SkyColor: 0.90, 0.80, 0.90
-SkyHorizonColor: 1, 0.2, 0
+  - "Dunes"
+  - "Plains"
+  - "Mountains"
+  - "Water"
+  - "OasisEdge"
+  - "Plantation"
+  InitialDelay: 2
+  Delay: 4
+  PlyDist: 50
+  Lifetime: 600
+AtmosphereEnabled: true
+AtmosphereColor: "0.7, 0.8, 0.9"
 AtmosphereParams:
-- "2"
-- "1.5"
-DayLightIntensity: "1.4"
-NightLightIntensity: "0.5"
-LightZenithColor: 1, 0.92, 1
-LightHorizonColor: 1, 0.1, 0
-NightLightColor: 0.58, 0.68, 1
-DayShadowStrength: "1"
-NightShadowStrength: "1"
-SunFlare: EnvironmentalEffects/SunFlareBlue
-AtmosphereFog: "0.15"
-FogCloudIntensity: "0.8"
-GroundFogIntensity: "0"
-GroundFogHeight: "0"
-CloudsDensity: "0.1"
-CloudsSharpness: "0.05"
-CloudsOpacity: "0.3"
-CloudsBrightness: "0.7"
-CloudsZenithColor: 1.0, 0.8, 0.9
-CloudsHorizonColor: 1, 0.3, 0.1
-WindSpeed: "3"
+- 2
+- 1.5
+SkyColor: "0.90, 0.80, 0.90"
+SkyHorizonColor: "1, 0.2, 0"
+LightZenithColor: "1, 0.92, 1"
+LightHorizonColor: "1, 0.1, 0"
+NightLightColor: "0.58, 0.68, 1"
+CloudsZenithColor: "1.0, 0.8, 0.9"
+CloudsHorizonColor: "1, 0.3, 0.1"
+CloudsNightZenithColor: "0.054, 0.094, 0.152"
+CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+CloudsOpacity: 0.3
+FogCloudIntensity: 0.8
+DayLightIntensity: 1.4
+NightLightIntensity: 0.5
+DayShadowStrength: 1
+NightShadowStrength: 1
+AtmosphereFog: 0.15
+CloudsDensity: 0.1
+CloudsSharpness: 0.05
+CloudsBrightness: 0.7
+WindSpeed: 3
+FogColor: "0.8, 0.8, 0.8"
+Description: "\u96BE\u5EA6: [c][ffff00]\u4E2D\u7B49[-][/c]\n[c][ffff00]\u8B66\u544A\uFF1A\u65B0\u7684\u661F\u533A\u6B63\u5728\u6D4B\u8BD5\u4E2D\u3002\u8FDB\u5165\u6B64\u6E38\u620F\u573A\u5730\u53EF\u80FD\u4F1A\u9047\u5230\u610F\u5916\u95EE\u9898\u3002[-][/c]\n\n\u8FD9\u662F\u4E00\u9897\u6C99\u6F20\u884C\u661F\uFF0C\u62E5\u6709\u4E30\u5BCC\u7684\u751F\u547D\u4E4B\u6C34\u3002\u5E7F\u88A4\u7684\u666F\u89C2\u4E0A\u70B9\u7F00\u7740\u65E0\u6570\u7EFF\u6D32\u548C\u79CD\u690D\u56ED\u3002"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Desert Oasis"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: IronResource
-  Biome:
-  - Sand
-  - Dunes
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 7
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
-  IsScalingCount: "True"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "7"
+  - 5
+  - 7
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.2"
-- Name: CobaltResource
+  - 5
+  - 10
+  DroneProb: 0.2
+  MaxDroneCount: 1
   Biome:
-  - Wadi
-  - Oasis
-  - OasisEdge
-  - Nest
-  IsImportant: "True"
+  - "Sand"
+  - "Dunes"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 2
+    Max: 5
+  Depth:
+    Min: 10
+    Max: 15
+  Name: "CobaltResource"
+  IsImportant: true
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
-  IsScalingCount: "True"
+  - 1
+  - 2
   SizeMinMax:
-  - "2"
-  - "5"
+  - 2
+  - 5
   DepthMinMax:
-  - "10"
-  - "15"
-  DroneProb: "0.3"
-- Name: CopperResource
+  - 10
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
   Biome:
-  - Plateau
+  - "Wadi"
+  - "Oasis"
+  - "OasisEdge"
+  - "Nest"
+- Count:
+    Min: 1
+    Max: 3
+  Size:
+    Min: 4
+    Max: 6
+  Depth:
+    Min: 10
+    Max: 15
+  Name: "CopperResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "3"
-  IsScalingCount: "True"
+  - 1
+  - 3
   SizeMinMax:
-  - "4"
-  - "6"
+  - 4
+  - 6
   DepthMinMax:
-  - "10"
-  - "15"
-  DroneProb: "0.3"
-- Name: NeodymiumResource
+  - 10
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
   Biome:
-  - Mountains
-  - LowMountains
-  - LowMountains_1
+  - "Plateau"
+- Count:
+    Min: 4
+    Max: 6
+  Size:
+    Min: 7
+    Max: 9
+  Depth:
+    Min: 10
+    Max: 15
+  Name: "NeodymiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "6"
-  IsScalingCount: "True"
+  - 4
+  - 6
   SizeMinMax:
-  - "7"
-  - "9"
+  - 7
+  - 9
   DepthMinMax:
-  - "10"
-  - "15"
-  DroneProb: "0.6"
-- Name: PromethiumResource
+  - 10
+  - 15
+  DroneProb: 0.6
+  MaxDroneCount: 1
   Biome:
-  - Mountains
-  - LowMountains
-  - LowMountains_1
+  - "Mountains"
+  - "LowMountains"
+  - "LowMountains_1"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 3
+    Max: 5
+  Depth:
+    Max: 5
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
-  IsScalingCount: "True"
+  - 2
+  - 3
   SizeMinMax:
-  - "3"
-  - "5"
+  - 3
+  - 5
   DepthMinMax:
-  - "0"
-  - "5"
-  DroneProb: "0.8"
+  - 0
+  - 5
+  DroneProb: 0.8
+  MaxDroneCount: 1
+  Biome:
+  - "Mountains"
+  - "LowMountains"
+  - "LowMountains_1"
 AsteroidResources:
-- Name: IronResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: CobaltResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: CopperResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: NeodymiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CobaltResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CopperResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "NeodymiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: R2DroneBase
-    Faction: Zirax
-    IsCommandCenter: "True"
-    DroneBaseSetup: DroneBaseSetup
-    Biome:
-    - Plateau
-    - LowMountains
-    - LowMountains_1
-    - Mountains
-    - SandDrift
-    IsImportant: "True"
+  - SpawnResRange:
+      Min: 150
+      Max: 400
+    GroupName: "R2DroneBase"
+    DroneBaseSetup: "DroneBaseSetup"
+    Faction: "Zirax"
+    Territory: false
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
-    SpawnResource:
-    - IronResource:0-1
-    - PromethiumResource:0-1
-    - CopperResource:0-1
-    SpawnResourceRange:
-    - "150"
-    - "400"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: R2XenuDefenseT2
-    Faction: Zirax
-    Territory: "False"
+    SpawnResource:
+    - "IronResource:0-1"
+    - "PromethiumResource:0-1"
+    - "CopperResource:0-1"
+    SpawnResourceRange:
+    - 150
+    - 400
+    Biome:
+    - "Plateau"
+    - "LowMountains"
+    - "LowMountains_1"
+    - "Mountains"
+    - "SandDrift"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "R2XenuDefenseT2"
+    Faction: "Zirax"
+    Territory: false
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "3"
-    - "4"
-    DroneProb: "1.0"
+    - 3
+    - 4
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - R2XenuDefenseT2
-    SpawnPOIAvoidDistance: "250"
-    SpawnPOINear:
-    - R2DroneBase
-    SpawnPOINearRange:
-    - "300"
-    - "400"
+    - 1
+    - 2
+    ReserveCount: 2
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_TribalTempleSun
-    Faction: Talon
-    IsImportant: "True"
-    Biome:
-    - Dunes
-    - Sand
-    CountMinMax:
-    - "1"
-    - "1"
+    SpawnPOINear:
+    - "R2DroneBase"
     SpawnPOIAvoid:
-    - R2DroneBase
-    SpawnPOIAvoidDistance: "1000"
+    - "R2XenuDefenseT2"
+    SpawnPOINearRange:
+    - 300
+    - 400
+    SpawnPOIAvoidDistance: 250
+  - SpawnResRange:
+      Min: 150
+      Max: 400
+    GroupName: "Eden_TribalTempleSun"
+    Faction: "Talon"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "Helios"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "R2DroneBase"
     SpawnResource:
-    - IronResource:1-2
+    - "IronResource:1-2"
+    SpawnPOIAvoidDistance: 1000
     SpawnResourceRange:
-    - "150"
-    - "400"
-    Properties:
-    - Key: Music
-      Value: Helios
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_TribalTempleMoon
-    Faction: Talon
-    IsImportant: "True"
+    - 150
+    - 400
     Biome:
-    - Dunes
-    - Sand
+    - "Dunes"
+    - "Sand"
+  - SpawnPoiRange:
+      Min: 1000
+      Max: 2500
+    SpawnResRange:
+      Min: 150
+      Max: 400
+    GroupName: "Eden_TribalTempleMoon"
+    Faction: "Talon"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "Transit"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - Eden_TribalTempleSun
-    SpawnPOINearRange:
-    - "1000"
-    - "2500"
+    - "Eden_TribalTempleSun"
     SpawnResource:
-    - IronResource:1-2
+    - "IronResource:1-2"
+    SpawnPOINearRange:
+    - 1000
+    - 2500
     SpawnResourceRange:
-    - "150"
-    - "400"
-    Properties:
-    - Key: Music
-      Value: Transit
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_TribalSunDefence
-    Faction: Talon
-    CountMinMax:
-    - "4"
-    - "5"
-    SpawnPOINear:
-    - Eden_TribalTempleSun
-    SpawnPOINearRange:
-    - "300"
-    - "400"
-    SpawnPOIAvoid:
-    - Eden_TribalTempleMoon
-    SpawnPOIAvoidDistance: "750"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_ObeliskSun
-    Faction: None
-    CountMinMax:
-    - "4"
-    - "6"
-    SpawnPOIAvoid:
-    - Eden_TribalTempleMoon
-    SpawnPOIAvoidDistance: "750"
-    SpawnPOINear:
-    - Eden_TribalTempleSun
-    SpawnPOINearRange:
-    - "200"
-    - "1000"
-    Properties:
-    - Key: MapDistance
-      Value: "0"
-    - Key: HudDistance
-      Value: "0"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_TribalMoonDefence
-    Faction: Talon
-    CountMinMax:
-    - "4"
-    - "6"
-    SpawnPOINear:
-    - Eden_TribalTempleMoon
-    SpawnPOINearRange:
-    - "300"
-    - "400"
-    SpawnPOIAvoid:
-    - Eden_TribalTempleSun
-    SpawnPOIAvoidDistance: "750"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_ObeliskMoon
-    Faction: None
-    CountMinMax:
-    - "4"
-    - "6"
-    SpawnPOIAvoid:
-    - Eden_TribalTempleSun
-    SpawnPOIAvoidDistance: "750"
-    SpawnPOINear:
-    - Eden_TribalTempleMoon
-    SpawnPOINearRange:
-    - "200"
-    - "1000"
-    Properties:
-    - Key: MapDistance
-      Value: "0"
-    - Key: HudDistance
-      Value: "0"
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_TribalVillageDesert
-    Faction: Talon
-    IsImportant: "True"
-    IsCommandCenter: "True"
+    - 150
+    - 400
     Biome:
-    - Dunes
-    - Sand
+    - "Dunes"
+    - "Sand"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "Eden_TribalSunDefence"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 4
+      Max: 5
     CountMinMax:
-    - "1"
-    - "1"
+    - 4
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_TribalTempleSun"
     SpawnPOIAvoid:
-    - R2DroneBase
-    SpawnPOIAvoidDistance: "1000"
+    - "Eden_TribalTempleMoon"
+    SpawnPOINearRange:
+    - 300
+    - 400
+    SpawnPOIAvoidDistance: 750
+  - SpawnPoiRange:
+      Min: 200
+      Max: 1000
+    GroupName: "Eden_ObeliskSun"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 4
+      Max: 6
+    CountMinMax:
+    - 4
+    - 6
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "0"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_TribalTempleSun"
+    SpawnPOIAvoid:
+    - "Eden_TribalTempleMoon"
+    SpawnPOINearRange:
+    - 200
+    - 1000
+    SpawnPOIAvoidDistance: 750
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "Eden_TribalMoonDefence"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 4
+      Max: 6
+    CountMinMax:
+    - 4
+    - 6
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_TribalTempleMoon"
+    SpawnPOIAvoid:
+    - "Eden_TribalTempleSun"
+    SpawnPOINearRange:
+    - 300
+    - 400
+    SpawnPOIAvoidDistance: 750
+  - SpawnPoiRange:
+      Min: 200
+      Max: 1000
+    GroupName: "Eden_ObeliskMoon"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 4
+      Max: 6
+    CountMinMax:
+    - 4
+    - 6
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "0"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_TribalTempleMoon"
+    SpawnPOIAvoid:
+    - "Eden_TribalTempleSun"
+    SpawnPOINearRange:
+    - 200
+    - 1000
+    SpawnPOIAvoidDistance: 750
+  - SpawnResRange:
+      Min: 150
+      Max: 400
+    GroupName: "Eden_TribalVillageDesert"
+    Faction: "Talon"
+    Territory: false
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "R2DroneBase"
     SpawnResource:
-    - IronResource:1-2
+    - "IronResource:1-2"
+    SpawnPOIAvoidDistance: 1000
     SpawnResourceRange:
-    - "150"
-    - "400"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_TribalSunDefence
-    Faction: Talon
-    CountMinMax:
-    - "3"
-    - "4"
-    SpawnPOINear:
-    - Eden_TribalVillageDesert
-    SpawnPOINearRange:
-    - "300"
-    - "400"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_TribalSunAux
-    Faction: Talon
-    CountMinMax:
-    - "5"
-    - "8"
-    SpawnPOINear:
-    - Eden_TribalVillageDesert
-    SpawnPOINearRange:
-    - "100"
-    - "200"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_AbandonedTomb
-    Faction: Alien
-    IsImportant: "True"
+    - 150
+    - 400
     Biome:
-    - Dunes
-    - Sand
+    - "Dunes"
+    - "Sand"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "Eden_TribalSunDefence"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "1"
-    - "1"
+    - 3
+    - 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_TribalVillageDesert"
+    SpawnPOINearRange:
+    - 300
+    - 400
+  - SpawnPoiRange:
+      Min: 100
+      Max: 200
+    GroupName: "Eden_TribalSunAux"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 5
+      Max: 8
+    CountMinMax:
+    - 5
+    - 8
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_TribalVillageDesert"
+    SpawnPOINearRange:
+    - 100
+    - 200
+  - GroupName: "Eden_AbandonedTomb"
+    Faction: "Alien"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "Helios"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - R2DroneBase
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: Music
-      Value: Helios
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_PirateLooters
-    Faction: Alien
-    AvoidFactionTerritory: "False"
-    IsImportant: "True"
-    Territory: "False"
+    - "R2DroneBase"
+    SpawnPOIAvoidDistance: 1000
     Biome:
-    - Dunes
-    - Sand
+    - "Dunes"
+    - "Sand"
+  - SpawnPoiRange:
+      Min: 100
+      Max: 200
+    GroupName: "Eden_PirateLooters"
+    Faction: "Alien"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - Eden_AbandonedTomb
+    - "Eden_AbandonedTomb"
     SpawnPOINearRange:
-    - "100"
-    - "200"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_TribalChurchMoon
-    Faction: Talon
-    CountMinMax:
-    - "0"
-    - "1"
-    SpawnPOIAvoid:
-    - R2DroneBase
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2TalonFarm
-    Faction: Talon
-    Territory: "False"
+    - 100
+    - 200
     Biome:
-    - Plantation
-    - Oasis
+    - "Dunes"
+    - "Sand"
+  - GroupName: "Eden_TribalChurchMoon"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Max: 1
     CountMinMax:
-    - "3"
-    - "4"
-    IsScalingCount: "True"
+    - 0
+    - 1
     Properties:
-    - Key: MapDistance
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "R2DroneBase"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "R2TalonFarm"
+    Faction: "Talon"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 4
+    CountMinMax:
+    - 3
+    - 4
+    Properties:
+    - Key: "MapDistance"
       Value: "150"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "150"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Eden_StatueDesertXL
-    Faction: None
     Biome:
-    - Dunes
-    - Sand
+    - "Plantation"
+    - "Oasis"
+  - SpawnResRange:
+      Min: 100
+      Max: 250
+    GroupName: "Eden_StatueDesertXL"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
-    IsScalingCount: "True"
-    SpawnResource:
-    - CopperResource:0-1
-    SpawnResourceRange:
-    - "100"
-    - "250"
+    - 2
+    - 3
     Properties:
-    - Key: MapDistance
+    - Key: "MapDistance"
       Value: "0"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "0"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2RadosMainT3Desert
-    Faction: Rados
-    FactionTerritory:
-    - Zirax
-    IsImportant: "True"
-    BiomesExcluded:
-    - Plains
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - R2PolarisTradePlanet
-    SpawnPOIAvoidDistance: "1000"
     SpawnResource:
-    - PromethiumResource:1-2
+    - "CopperResource:0-1"
     SpawnResourceRange:
-    - "100"
-    - "150"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2RadosAuxT1Desert
-    Faction: Rados
-    FactionTerritory:
-    - Zirax
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1"
-    DronesMinMax:
-    - "3"
-    - "3"
-    ReserveCount: "2"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - R2RadosMainT3Desert
-    SpawnPOINearRange:
-    - "100"
-    - "250"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2RadosDefenseT1Desert
-    Faction: Rados
-    FactionTerritory:
-    - Zirax
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0.7"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - R2RadosMainT3Desert
-    SpawnPOINearRange:
-    - "250"
-    - "400"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrMainSingleRG
-    Faction: Farr
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrDefenseT1RG
-    Faction: Farr
-    IsImportant: "True"
-    IsScalingCount: "True"
-    CountMinMax:
-    - "2"
-    - "3"
-    SpawnPOINear:
-    - FarrMainSingleRG
-    SpawnPOINearRange:
-    - "250"
-    - "400"
-    DroneProb: "0.25"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "1"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrMainRG
-    Faction: Farr
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrDefenseT1RG
-    Faction: Farr
-    IsImportant: "True"
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - FarrMainRG
-    SpawnPOINearRange:
-    - "250"
-    - "400"
-    DroneProb: "0.25"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "1"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrTradingT3RG
-    Faction: Farr
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0.25"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrDefenseT1RG
-    Faction: Farr
-    IsImportant: "True"
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - FarrTradingT3RG
-    SpawnPOINearRange:
-    - "250"
-    - "400"
-    DroneProb: "0.25"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "1"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT3RG
-    Faction: Farr
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - FarrTradingT3RG
-    SpawnPOINearRange:
-    - "200"
-    - "350"
-    DroneProb: "0.1"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT2RG
-    Faction: Farr
-    CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - FarrTradingT3RG
-    SpawnPOINearRange:
-    - "250"
-    - "500"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1RG
-    Faction: Farr
-    CountMinMax:
-    - "4"
-    - "6"
-    SpawnPOINear:
-    - FarrTradingT3RG
-    SpawnPOINearRange:
-    - "250"
-    - "500"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2FarrMonument
-    Faction: Farr
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - FarrDroneBaseRG
-    - FarrTemplePrimeRG
-    - FarrMainSingleRG
-    - FarrMainRG
-    SpawnPOIAvoidDistance: "3000"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1RG
-    Faction: Farr
-    CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - R2FarrMonument
-    SpawnPOINearRange:
-    - "200"
-    - "350"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT0RG
-    Faction: Farr
-    CountMinMax:
-    - "3"
-    - "6"
-    SpawnPOINear:
-    - R2FarrMonument
-    SpawnPOINearRange:
-    - "250"
-    - "800"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2FarrMonument
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "2"
-    - "3"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "4"
-    ReserveCount: "3"
-    AuxiliaryPOIs:
-    - FarrAuxT1RG
-    - FarrAuxT0RG
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT2RG
-    Faction: Farr
-    CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOIAvoid:
-    - FarrDroneBaseRG
-    - FarrTemplePrimeRG
-    - FarrMainSingleRG
-    - FarrMainRG
-    - R2FarrMonument
-    - FarrAuxT2RG
-    SpawnPOIAvoidDistance: "1500"
-    DroneProb: "1"
-    DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "2"
-    AuxiliaryPOIs:
-    - FarrAuxT1RG
-    - FarrAuxT0RG
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1RG
-    Faction: Farr
-    CountMinMax:
-    - "1"
-    - "2"
-    IsAuxPOI: "True"
-    SpawnPOINearRange:
-    - "100"
-    - "250"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT0RG
-    Faction: Farr
-    CountMinMax:
-    - "2"
-    - "4"
-    IsAuxPOI: "True"
-    SpawnPOINearRange:
-    - "300"
-    - "500"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT3bRG
-    Faction: Farr
-    CountMinMax:
-    - "0"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT2bRG
-    BiomesExcluded:
-    - Radiated
-    Faction: Farr
-    CountMinMax:
-    - "2"
-    - "4"
-    SpawnPOINear:
-    - FarrAuxT3bRG
-    SpawnPOINearRange:
-    - "200"
-    - "500"
-    DroneProb: "0.5"
-    DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1b
-    BiomesExcluded:
-    - Radiated
-    Faction: Farr
-    CountMinMax:
-    - "2"
-    - "4"
-    SpawnPOINear:
-    - FarrAuxT1b
-    SpawnPOINearRange:
-    - "200"
-    - "500"
-    DroneProb: "0.5"
-    DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT2RG
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0.35"
-    DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "2"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT1RG
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0.2"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "0"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrAuxT0RG
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: FarrDefenseT1RG
-    Faction: Farr
-    IsScalingCount: "True"
-    CountMinMax:
-    - "2"
-    - "4"
-    DroneProb: "0.5"
-    DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2RadosAuxT1Desert
-    Faction: Rados
-    FactionTerritory:
-    - Zirax
-    BiomesExcluded:
-    - Plains
-    CountMinMax:
-    - "5"
-    - "7"
-    IsScalingCount: "True"
-    DroneProb: "0.3"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - R2PolarisTradePlanet
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Eden_CaveDesert
-    Faction: Eden_Wreck
-    FactionTerritory:
-    - All
+    - 100
+    - 250
     Biome:
-    - Dunes
-    - Sand
+    - "Dunes"
+    - "Sand"
+  - SpawnResRange:
+      Min: 100
+      Max: 150
+    GroupName: "R2RadosMainT3Desert"
+    Faction: "Rados"
+    FactionTerritory:
+    - "Zirax"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "2"
-    IsScalingCount: "True"
-    DroneProb: "0"
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 2
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 2
+    - 3
+    ReserveCount: 2
     Properties:
-    - Key: MapDistance
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "R2PolarisTradePlanet"
+    SpawnResource:
+    - "PromethiumResource:1-2"
+    SpawnPOIAvoidDistance: 1000
+    SpawnResourceRange:
+    - 100
+    - 150
+    BiomesExcluded:
+    - "Plains"
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "R2RadosAuxT1Desert"
+    Faction: "Rados"
+    FactionTerritory:
+    - "Zirax"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 3
+    DronesMinMax:
+    - 3
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2RadosMainT3Desert"
+    SpawnPOINearRange:
+    - 100
+    - 250
+  - SpawnPoiRange:
+      Min: 250
+      Max: 400
+    GroupName: "R2RadosDefenseT1Desert"
+    Faction: "Rados"
+    FactionTerritory:
+    - "Zirax"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.7
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2RadosMainT3Desert"
+    SpawnPOINearRange:
+    - 250
+    - 400
+  - GroupName: "FarrMainSingleRG"
+    Faction: "Farr"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    ReserveCount: 5
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - SpawnPoiRange:
+      Min: 250
+      Max: 400
+    GroupName: "FarrDefenseT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    DroneProb: 0.25
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrMainSingleRG"
+    SpawnPOINearRange:
+    - 250
+    - 400
+  - GroupName: "FarrMainRG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    ReserveCount: 5
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - SpawnPoiRange:
+      Min: 250
+      Max: 400
+    GroupName: "FarrDefenseT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.25
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrMainRG"
+    SpawnPOINearRange:
+    - 250
+    - 400
+  - GroupName: "FarrTradingT3RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 0.25
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - SpawnPoiRange:
+      Min: 250
+      Max: 400
+    GroupName: "FarrDefenseT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.25
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrTradingT3RG"
+    SpawnPOINearRange:
+    - 250
+    - 400
+  - SpawnPoiRange:
+      Min: 200
+      Max: 350
+    GroupName: "FarrAuxT3RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 0.1
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrTradingT3RG"
+    SpawnPOINearRange:
+    - 200
+    - 350
+  - SpawnPoiRange:
+      Min: 250
+      Max: 500
+    GroupName: "FarrAuxT2RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrTradingT3RG"
+    SpawnPOINearRange:
+    - 250
+    - 500
+  - SpawnPoiRange:
+      Min: 250
+      Max: 500
+    GroupName: "FarrAuxT1RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 4
+      Max: 6
+    CountMinMax:
+    - 4
+    - 6
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrTradingT3RG"
+    SpawnPOINearRange:
+    - 250
+    - 500
+  - GroupName: "R2FarrMonument"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    ReserveCount: 5
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "FarrDroneBaseRG"
+    - "FarrTemplePrimeRG"
+    - "FarrMainSingleRG"
+    - "FarrMainRG"
+    SpawnPOIAvoidDistance: 3000
+  - SpawnPoiRange:
+      Min: 200
+      Max: 350
+    GroupName: "FarrAuxT1RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2FarrMonument"
+    SpawnPOINearRange:
+    - 200
+    - 350
+  - SpawnPoiRange:
+      Min: 250
+      Max: 800
+    GroupName: "FarrAuxT0RG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 3
+      Max: 6
+    CountMinMax:
+    - 3
+    - 6
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2FarrMonument"
+    SpawnPOINearRange:
+    - 250
+    - 800
+  - GroupName: "R2FarrMonument"
+    Faction: "Farr"
+    Territory: false
+    AuxiliaryPOIs:
+    - "FarrAuxT1RG"
+    - "FarrAuxT0RG"
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 4
+    DronesMinMax:
+    - 3
+    - 4
+    ReserveCount: 3
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "FarrAuxT2RG"
+    Faction: "Farr"
+    Territory: false
+    AuxiliaryPOIs:
+    - "FarrAuxT1RG"
+    - "FarrAuxT0RG"
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 1
+    Drones:
+      Min: 2
+      Max: 3
+    DronesMinMax:
+    - 2
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "FarrDroneBaseRG"
+    - "FarrTemplePrimeRG"
+    - "FarrMainSingleRG"
+    - "FarrMainRG"
+    - "R2FarrMonument"
+    - "FarrAuxT2RG"
+    SpawnPOIAvoidDistance: 1500
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "FarrAuxT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsAuxPOI: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINearRange:
+    - 100
+    - 250
+  - SpawnPoiRange:
+      Min: 300
+      Max: 500
+    GroupName: "FarrAuxT0RG"
+    Faction: "Farr"
+    Territory: false
+    IsAuxPOI: true
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINearRange:
+    - 300
+    - 500
+  - GroupName: "FarrAuxT3bRG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    ReserveCount: 5
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - SpawnPoiRange:
+      Min: 200
+      Max: 500
+    GroupName: "FarrAuxT2bRG"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
+    DronesMinMax:
+    - 1
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrAuxT3bRG"
+    SpawnPOINearRange:
+    - 200
+    - 500
+    BiomesExcluded:
+    - "Radiated"
+  - SpawnPoiRange:
+      Min: 200
+      Max: 500
+    GroupName: "FarrAuxT1b"
+    Faction: "Farr"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
+    DronesMinMax:
+    - 1
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "FarrAuxT1b"
+    SpawnPOINearRange:
+    - 200
+    - 500
+    BiomesExcluded:
+    - "Radiated"
+  - GroupName: "FarrAuxT2RG"
+    Faction: "Farr"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.35
+    Drones:
+      Min: 2
+      Max: 3
+    DronesMinMax:
+    - 2
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "FarrAuxT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.2
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "FarrAuxT0RG"
+    Faction: "Farr"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "FarrDefenseT1RG"
+    Faction: "Farr"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
+    DronesMinMax:
+    - 1
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "R2RadosAuxT1Desert"
+    Faction: "Rados"
+    FactionTerritory:
+    - "Zirax"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 5
+      Max: 7
+    CountMinMax:
+    - 5
+    - 7
+    DroneProb: 0.3
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "R2PolarisTradePlanet"
+    SpawnPOIAvoidDistance: 1000
+    BiomesExcluded:
+    - "Plains"
+  - GroupName: "Eden_CaveDesert"
+    Faction: "Eden_Wreck"
+    FactionTerritory:
+    - "All"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
       Value: "1200"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "1200"
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
+    Biome:
+    - "Dunes"
+    - "Sand"
   FixedPlayerStart:
-  - Mode: Creative
-    SubMode: Empty
-    Armor: ArmorLight
+  - Mode: "Creative"
+    SubMode: "Empty"
     Pos:
-    - "0"
-    - "147"
-    - "0"
-    RotY: "160"
-  - Mode: Creative
-    SubMode: Normal
-    Armor: ArmorLight
+    - 0
+    - 147
+    - 0
+    RotY: 160
+    Armor: "ArmorLight"
+  - Mode: "Creative"
+    SubMode: "Normal"
     Pos:
-    - "0"
-    - "52"
-    - "0"
-    RotY: "30"
-  - Mode: Debug
+    - 0
+    - 52
+    - 0
+    RotY: 30
+    Armor: "ArmorLight"
+  - Mode: "Debug"
     Pos:
-    - "0"
-    - "147"
-    - "0"
-    RotY: "160"
-  - Mode: Survival
-    Spawn: EscapePod
-    Armor: ArmorLight
+    - 0
+    - 147
+    - 0
+    RotY: 160
+  - Mode: "Survival"
+    Spawn: "EscapePod"
     Items:
-    - SurvivalTent, Flashlight, AntibioticOintment:2, Bandages:2, StomachPills:2, PowerBar:2, EnergyDrink:1
-    - SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1
-    - SurvivalTent, Flashlight, Bandages:1
-    - '#FreshStart: SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1'
+    - "SurvivalTent, Flashlight, AntibioticOintment:2, Bandages:2, StomachPills:2, PowerBar:2, EnergyDrink:1"
+    - "SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1"
+    - "SurvivalTent, Flashlight, Bandages:1"
+    - "#FreshStart: SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1"
+    Armor: "ArmorLight"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "6"
-    PresetStyle: "3"
+  - GroupName: "DroneBaseSetup"
+    Difficulty: 6
+    PresetStyle: 3
     Stock:
-    - Name: DroneAeroZiraxMinigun
+    - Name: "DroneAeroZiraxMinigun"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneAeroZiraxCannon
+      Extra: -1
+    - Name: "DroneAeroZiraxCannon"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneAeroZiraxRocket
+      Extra: -1
+    - Name: "DroneAeroZiraxRocket"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneLargeZiraxMinigun
+      Extra: -1
+    - Name: "DroneLargeZiraxMinigun"
       Amount: "50"
-      Extra: "0"
-    - Name: DroneBomberAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: EnemyDroneV2Plasma
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMinigun
+      Extra: -1
+    - Name: "DroneBomberAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "EnemyDroneV2Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
       Amount: "500"
-      Extra: "3"
-    - Name: ZiraxRocket
+      Extra: 3
+    - Name: "ZiraxRocket"
       Amount: "500"
-      Extra: "3"
-    - Name: RipperDog
+      Extra: 3
+    - Name: "RipperDog"
       Amount: "150"
-      Extra: "3"
-    - Name: Mechanoid
+      Extra: 3
+    - Name: "Mechanoid"
       Amount: "300"
-      Extra: "3"
+      Extra: 3
   PlanetVessels:
-  - Name: R2PVZiraxT0
-    Faction: Zirax
+  - Name: "R2PVZiraxT0"
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Faction: "Zirax"
     LevelMod: "2"
-    FixedMaxSpeed: "20"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "1800"
-    IsRespawnAfterDestruction: "False"
+    FixedMaxSpeed: 20
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 1800
     RangePatrolTask:
       POINameAsPositionRef:
-      - R2DroneBase
-      Radius: "1000"
-      DistToGround: "200"
-    Properties:
-    - Key: Discovery
-      Value: "False"
+      - "R2DroneBase"
+      Radius: 1000
+      DistToGround: 200
     Stock:
-    - Name: DroneHoverZiraxLaser
+    - Name: "DroneHoverZiraxLaser"
       Amount: "4"
-      Type: FighterDrone
-  - Name: R2PVZiraxT1
-    Faction: Xenu
+      Extra: -1
+      Type: "FighterDrone"
+    Properties:
+    - Key: "Discovery"
+      Value: "False"
+  - Name: "R2PVZiraxT1"
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Faction: "Xenu"
     LevelMod: "2"
-    FixedMaxSpeed: "50"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "1800"
-    IsRespawnAfterDestruction: "False"
+    FixedMaxSpeed: 50
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 1800
     RangePatrolTask:
       POINameAsPositionRef:
-      - R2DroneBase
-      DistToGround: "200"
-    Properties:
-    - Key: Discovery
-      Value: "False"
-    - Key: AIManPatrolFactions
-      Value: Zirax, Epsilon, Rados, Ghyst, Xenu
+      - "R2DroneBase"
+      DistToGround: 200
     Stock:
-    - Name: DroneHoverZiraxLaser
+    - Name: "DroneHoverZiraxLaser"
       Amount: "4"
-      Type: FighterDrone
+      Extra: -1
+      Type: "FighterDrone"
+    Properties:
+    - Key: "Discovery"
+      Value: "False"
+    - Key: "AIManPatrolFactions"
+      Value: "Zirax, Epsilon, Rados, Ghyst, Xenu"
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "3"
-    - "5"
-    CenterX: "5000"
-    Radius: "3000"
-  - DronesMinMax:
-    - "3"
-    - "5"
-    CenterX: "-5000"
-    Radius: "3000"
-  - DronesMinMax:
-    - "3"
-    - "5"
-    CenterX: "2500"
-    Radius: "3000"
-  - DronesMinMax:
-    - "3"
-    - "5"
-    CenterX: "-2500"
-    Radius: "3000"
-SpawnRateZones:
-- SpawnAt:
-  - R2PolarisTradePlanet
-  Radius: "400"
-  RadiusRandom: "100"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "1.0"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-SpawnZones:
-- SpawnAt:
-  - R2DroneBase
-  BiomesExcluded:
-  - LowMountains
-  - LowMountains_1
-  - Mountains
-  Radius: "500"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxRocketPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - Eden_TribalTempleSun
-  - Eden_TribalTempleMoon
-  Radius: "1500"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.2"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - Eden_TalonShamanPatrol
-    - Eden_TalonCrawlerPatrol
-    - Eden_TalonCrossbowPatrol
-    Biomes:
-    - Any
-    Amount: "35"
-    Period: Always
-    DelayMinMax:
-    - "200"
-    - "240"
-- SpawnAt:
-  - Eden_TribalVillageDesert
-  Radius: "1500"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.2"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - TalonGuardianHerd
-    - Eden_TalonCrawlerPatrol
-    - Eden_TalonCrossbowPatrol
-    Biomes:
-    - Any
-    Amount: "35"
-    Period: Always
-    DelayMinMax:
-    - "200"
-    - "240"
-- SpawnAt:
-  - R2TalonFarm
-  Radius: "200"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - TalonGuardians
-    Biomes:
-    - Any
-    Amount: "50"
-    Period: Always
-    DelayMinMax:
-    - "200"
-    - "240"
-- SpawnAt:
-  - PlanetVesselBase
-  - R2RadosMainT3Desert
-  BiomesExcluded:
-  - LowMountains
-  - LowMountains_1
-  - Mountains
-  Radius: "500"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxRipperDogPatrol
-    Biomes:
-    - Any
-    Amount: "50"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - R2RadosAuxT1Desert
-  BiomesExcluded:
-  - LowMountains
-  - LowMountains_1
-  - Mountains
-  Radius: "100"
-  RadiusRandom: "25"
-  RateMultiplyerCenter: "0.3"
-  RateMultiplyerEdge: "0"
-  Color: 1.0, 1.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxShotgunPatrol
-    - ZiraxRipperDogPatrol
-    Biomes:
-    - Any
-    Amount: "10"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
+  - Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    CenterX: 5000
+    Radius: 3000
+  - Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    CenterX: -5000
+    Radius: 3000
+  - Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    CenterX: 2500
+    Radius: 3000
+  - Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    CenterX: -2500
+    Radius: 3000
 CreatureSpawning:
 - Biomes:
-  - Nest
+  - "Nest"
   Entities:
-  - Name: Spiders03
-    Period: Always
-    Amount: "100"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Spiders03"
+    Amount: 100
+    Color: "1.0, 1.0, 0.3"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1.0, 1.0, 0.3
-  - Name: Spiders02
-    Period: Always
-    Amount: "400"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Spiders02"
+    Amount: 400
+    Color: "1.0, 1.0, 0.7"
     DelayMinMax:
-    - "20"
-    - "24"
-    Color: 1.0, 1.0, 0.7
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - LargeCrater
+  - "LargeCrater"
   Entities:
-  - Name: AlienBugs01
-    Period: Day
-    Amount: "12"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 12
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Otyughs
-    Period: Night
-    Amount: "12"
+    - 20
+    - 24
+    Period: "Day"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Otyughs"
+    Amount: 12
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Wadi
+  - "Wadi"
   Entities:
-  - Name: CaveWormsGrey
-    Period: Always
-    Amount: "20"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormsGrey"
+    Amount: 20
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - Oasis
-  - ShoreOasis
+  - "Oasis"
+  - "ShoreOasis"
   Entities:
-  - Name: LizardMuleHerd
-    Period: Always
-    Amount: "20"
-    Color: 1.0, 1.0, 0
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "LizardMuleHerd"
+    Amount: 20
+    Color: "1.0, 1.0, 0"
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Creepys
-    Period: Night
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Creepys"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Shore
+  - "Shore"
   Entities:
-  - Name: Slimes
-    Period: Always
-    Amount: "20"
-    Color: 1.0, 1.0, 0
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Slimes"
+    Amount: 20
+    Color: "1.0, 1.0, 0"
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Always"
 - Biomes:
-  - OasisEdge
-  - FlowersEdge
+  - "OasisEdge"
+  - "FlowersEdge"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Spiders02
-    Period: Night
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Spiders02"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: MegalonopsesBrown
-    Period: Day
-    Amount: "10"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "MegalonopsesBrown"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Day"
 - Biomes:
-  - Plantation
+  - "Plantation"
   Entities:
-  - Name: TalonGuardians
-    Period: Always
-    Amount: "20"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "TalonGuardians"
+    Amount: 20
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: TalonGuardianHerd
-    Period: Always
-    Amount: "4"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "TalonGuardianHerd"
+    Amount: 4
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: MegalonopsesBrown
-    Period: Day
-    Amount: "10"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "MegalonopsesBrown"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Day"
 - Biomes:
-  - Dunes
-  - Sand
-  - Plains
-  - Plateau
-  - DustBowl
+  - "Dunes"
+  - "Sand"
+  - "Plains"
+  - "Plateau"
+  - "DustBowl"
   Entities:
-  - Name: WormDesertHerd
-    Period: Always
-    Amount: "6"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "WormDesertHerd"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsDesert"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: MegalonopsesBrown
-    Period: Day
-    Amount: "10"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "MegalonopsesBrown"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Eden_TalonLizardMulePatrol
-    Period: Always
-    Amount: "3"
-    Color: 1.0, 1.0, 0
+    - 20
+    - 24
+    Period: "Day"
+  - DelayRange:
+      Min: 72
+      Max: 96
+    Name: "Eden_TalonLizardMulePatrol"
+    Amount: 3
+    Color: "1.0, 1.0, 0"
     DelayMinMax:
-    - "72"
-    - "96"
+    - 72
+    - 96
+    Period: "Always"
 - Biomes:
-  - LowMountains
-  - LowMountains_1
-  - SandDrift
+  - "LowMountains"
+  - "LowMountains_1"
+  - "SandDrift"
   Entities:
-  - Name: CaveWormsGrey
-    Period: Always
-    Amount: "8"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormsGrey"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "6"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsDesert"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+SpawnRateZones:
+- SpawnAt:
+  - "R2PolarisTradePlanet"
+  Radius: 400
+  RadiusRandom: 100
+  RateMultiplyerEdge: 1
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+SpawnZones:
+- SpawnAt:
+  - "R2DroneBase"
+  BiomesExcluded:
+  - "LowMountains"
+  - "LowMountains_1"
+  - "Mountains"
+  Radius: 500
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxRocketPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "Eden_TribalTempleSun"
+  - "Eden_TribalTempleMoon"
+  Radius: 1500
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.2
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 200
+      Max: 240
+    Names:
+    - "Eden_TalonShamanPatrol"
+    - "Eden_TalonCrawlerPatrol"
+    - "Eden_TalonCrossbowPatrol"
+    Biomes:
+    - "Any"
+    Amount: 35
+    DelayMinMax:
+    - 200
+    - 240
+    Period: "Always"
+- SpawnAt:
+  - "Eden_TribalVillageDesert"
+  Radius: 1500
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.2
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 200
+      Max: 240
+    Names:
+    - "TalonGuardianHerd"
+    - "Eden_TalonCrawlerPatrol"
+    - "Eden_TalonCrossbowPatrol"
+    Biomes:
+    - "Any"
+    Amount: 35
+    DelayMinMax:
+    - 200
+    - 240
+    Period: "Always"
+- SpawnAt:
+  - "R2TalonFarm"
+  Radius: 200
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 200
+      Max: 240
+    Names:
+    - "TalonGuardians"
+    Biomes:
+    - "Any"
+    Amount: 50
+    DelayMinMax:
+    - 200
+    - 240
+    Period: "Always"
+- SpawnAt:
+  - "PlanetVesselBase"
+  - "R2RadosMainT3Desert"
+  BiomesExcluded:
+  - "LowMountains"
+  - "LowMountains_1"
+  - "Mountains"
+  Radius: 500
+  RadiusRandom: 25
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 50
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2RadosAuxT1Desert"
+  BiomesExcluded:
+  - "LowMountains"
+  - "LowMountains_1"
+  - "Mountains"
+  Radius: 100
+  RadiusRandom: 25
+  RateMultiplyerCenter: 0.3
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 1.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxShotgunPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 10
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"

@@ -1,265 +1,376 @@
-Description: "\u4E00\u9897\u5E7C\u6708,\u6838\u5FC3\u5C1A\u672A\u56FA\u5316,\u5927\u6C14\u5C42\u53EA\u6709\u5FAE\u5F31\u75D5\u8FF9\u3002\n\u6216\u8BB8\u5B83\u8BDE\u751F\u4E8E\u6052\u661F\u76D8,\u6216\u662F\u6765\u81EA\u4E00\u6B21\u58EE\u89C2\u884C\u661F\u78B0\u649E\u7684\u6B8B\u7559\u7269\u3002"
-PlanetType: MoonLava
-Emissive: "True"
-PlayfieldType: Moon
-Difficulty: "3"
-LandClaimZone: Device
-AtmosphereEnabled: "True"
-DayLightIntensity: "0.65"
-NightLightIntensity: "0.8"
-DayShadowStrength: "1"
-SunFlare: EnvironmentalEffects/SunFlareRed
-AtmosphereColor: 0.88, 0.48, 0.25
-SkyColor: 0.8, 0.1, 0
-SkyHorizonColor: 0.2, 0.005, 0
-AtmosphereParams:
-- "2"
-- "1.6"
-LightZenithColor: 1, 0.95, 0.98
-LightHorizonColor: 1, 0.6, 0.15
-NightLightColor: 0.78, 0.78, 1
-NightShadowStrength: "1"
-FogCloudIntensity: "0.0"
-FogColor: 1, 0, 0
-CloudsDensity: "0.0"
-CloudsSharpness: "1"
-CloudsBrightness: "0.0"
-CloudsOpacity: "0.0"
-CloudsZenithColor: -0.1, -0.2, -0.2
-CloudsHorizonColor: 1, 0.3, 0.1
-WindSpeed: "0"
+PlayfieldType: "Moon"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "MoonLava"
+PlanetSize: 2
+Emissive: true
+Difficulty: 3
+SunFlare: "EnvironmentalEffects/SunFlareRed"
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "0"
-  Lifetime: "1000"
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+AtmosphereEnabled: true
+AtmosphereColor: "0.88, 0.48, 0.25"
+AtmosphereParams:
+- 2
+- 1.6
+SkyColor: "0.8, 0.1, 0"
+SkyHorizonColor: "0.2, 0.005, 0"
+LightZenithColor: "1, 0.95, 0.98"
+LightHorizonColor: "1, 0.6, 0.15"
+NightLightColor: "0.78, 0.78, 1"
+CloudsZenithColor: "-0.1, -0.2, -0.2"
+CloudsHorizonColor: "1, 0.3, 0.1"
+CloudsNightZenithColor: "0.054, 0.094, 0.152"
+CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+DayLightIntensity: 0.65
+NightLightIntensity: 0.8
+DayShadowStrength: 1
+NightShadowStrength: 1
+CloudsSharpness: 1
+FogColor: "1, 0, 0"
+Description: "\u4E00\u9897\u5E7C\u6708,\u6838\u5FC3\u5C1A\u672A\u56FA\u5316,\u5927\u6C14\u5C42\u53EA\u6709\u5FAE\u5F31\u75D5\u8FF9\u3002\n\u6216\u8BB8\u5B83\u8BDE\u751F\u4E8E\u6052\u661F\u76D8,\u6216\u662F\u6765\u81EA\u4E00\u6B21\u58EE\u89C2\u884C\u661F\u78B0\u649E\u7684\u6B8B\u7559\u7269\u3002"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "MoonLava"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: IronResource
-  IsScalingCount: "True"
+- Count:
+    Min: 3
+    Max: 5
+  Size:
+    Min: 8
+    Max: 13
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "5"
+  - 3
+  - 5
   SizeMinMax:
-  - "8"
-  - "13"
+  - 8
+  - 13
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.3"
-  MaxDroneCount: "1"
-- Name: SiliconResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
+- Count:
+    Min: 3
+    Max: 5
+  Size:
+    Min: 8
+    Max: 9
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "5"
+  - 3
+  - 5
   SizeMinMax:
-  - "8"
-  - "9"
+  - 8
+  - 9
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.4"
-- Name: CobaltResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.4
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 6
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "CobaltResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "6"
+  - 5
+  - 6
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
-- Name: MagnesiumResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.7
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "MagnesiumResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 2
+  - 3
+  SizeMinMax:
+  - 3
+  - 4
+  DepthMinMax:
+  - 6
+  - 15
+  DroneProb: 0.7
+  MaxDroneCount: 1
   BiomesExcluded:
-  - SmallCrater
-  - LargeCrater
+  - "SmallCrater"
+  - "LargeCrater"
+- Count:
+    Min: 2
+    Max: 4
+  Size:
+    Min: 3
+    Max: 6
+  Depth:
+    Max: 1
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 4
   SizeMinMax:
-  - "3"
-  - "4"
+  - 3
+  - 6
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
-- Name: PromethiumResource
-  IsScalingCount: "True"
-  Biome:
-  - Mare
-  - MareEdge
-  CountMinMax:
-  - "2"
-  - "4"
-  SizeMinMax:
-  - "3"
-  - "6"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
-  DepthMinMax:
-  - "0"
-  - "1"
+  - 0
+  - 1
   DistTypeCylinder:
-    MaxRadius: "13"
-    YVariance: "10"
-- Name: PentaxidResource
-  IsScalingCount: "True"
+    MaxRadius: 13
+    YVariance: 10
+  DroneProb: 0.7
+  MaxDroneCount: 1
+  Biome:
+  - "Mare"
+  - "MareEdge"
+- Count:
+    Min: 4
+    Max: 5
+  Size:
+    Min: 2
+    Max: 3
+  Depth:
+    Max: 5
+  Name: "PentaxidResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "5"
+  - 4
+  - 5
   SizeMinMax:
-  - "2"
-  - "3"
-  DroneProb: "0.6"
-  MaxDroneCount: "2"
+  - 2
+  - 3
   DepthMinMax:
-  - "0"
-  - "5"
+  - 0
+  - 5
+  DroneProb: 0.6
+  MaxDroneCount: 2
 AsteroidResources:
-- Name: IronResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: SiliconResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: CobaltResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: MagnesiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PentaxidResource
-  Threshold: "0.2"
-  Amount: "0.2"
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CobaltResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "MagnesiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PentaxidResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: DroneBaseT1
-    Faction: Zirax
-    NoShieldReload: "True"
-    IsCommandCenter: "True"
-    DroneBaseSetup: DroneBaseSetup
+  - GroupName: "DroneBaseT1"
+    DroneBaseSetup: "DroneBaseSetup"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    IsCommandCenter: true
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
-    DroneProb: "1.0"
+    - 0
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 4
+      Max: 5
     DronesMinMax:
-    - "4"
-    - "5"
-    ReserveCount: "5"
+    - 4
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: ProgenitorArtifacts
-    Faction: None
+  - GroupName: "ProgenitorArtifacts"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    IsScalingCount: "True"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "4"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 4
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: CrashedShip
-    Faction: None
+  - GroupName: "CrashedShip"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    IsScalingCount: "True"
-    DroneProb: "1.0"
+    - 1
+    - 2
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "4"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 4
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: GhystAuxT1
-    Faction: Ghyst
-    NoShieldReload: "True"
+  - SpawnResRange:
+      Min: 80
+      Max: 400
+    GroupName: "GhystAuxT1"
+    Faction: "Ghyst"
+    Territory: false
+    NoShieldReload: true
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "3"
-    - "4"
-    IsScalingCount: "True"
-    DroneProb: "0.7"
+    - 3
+    - 4
+    DroneProb: 0.7
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnResource:
-    - PentaxidResource:0-1
-    ResourceDistance: "400"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
+    - "PentaxidResource:0-1"
+    SpawnResourceRange:
+    - 80
+    - 400
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "-596"
-    - "104"
-    - "-1063"
-    RotY: "125"
-  - Mode: Survival
-    Spawn: EscapePod
-    Armor: ArmorMedium
+    - -596
+    - 104
+    - -1063
+    RotY: 125
+  - Mode: "Survival"
+    Spawn: "EscapePod"
+    Armor: "ArmorMedium"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "0"
-    PresetStyle: "0"
+  - GroupName: "DroneBaseSetup"
     Stock:
-    - Name: DroneSmallFast01Rocket
+    - Name: "DroneSmallFast01Rocket"
       Amount: "100"
-      Extra: "0"
-    - Name: DroneSmallFast01Minigun
+    - Name: "DroneSmallFast01Minigun"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneLargeSlow01Minigun
+    - Name: "DroneLargeSlow01Minigun"
       Amount: "100"
-      Extra: "0"
-    - Name: DroneSmallSlow01Cannon
+    - Name: "DroneSmallSlow01Cannon"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneSmallAttackBase
+    - Name: "DroneSmallAttackBase"
       Amount: "300"
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMale
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMale"
       Amount: "500"
-      Extra: "3"
-    - Name: RipperDog
+      Extra: 3
+    - Name: "RipperDog"
       Amount: "400"
-      Extra: "3"
+      Extra: 3
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "-2500"
-    Radius: "1500"
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "2500"
-    Radius: "1500"
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: -2500
+    Radius: 1500
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: 2500
+    Radius: 1500

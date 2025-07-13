@@ -1,645 +1,902 @@
-Description: "\u8D38\u6613\u516C\u4F1A\u6BCD\u661F"
-PlanetType: TraderHomeworld
-PlayfieldType: Planet
-AtmosphereEnabled: "True"
-Difficulty: "10"
-LandClaimZone: Device
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "TraderHomeworld"
+PlanetSize: 2
+PvP: true
+Difficulty: 10
+SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
-- Name: DandelionsFew
+- Name: "DandelionsFew"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Crashsite
-  - Grassland
-  - ColdPlains
-  Time: Day
-  MaxHeight: "10"
-- Name: ButterfliesFew
+  - "Crashsite"
+  - "Grassland"
+  - "ColdPlains"
+  FollowPlayerY: false
+- Name: "ButterfliesFew"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Crashsite
-  - Grassland
-  - Oasis
-  Time: Day
-  MaxHeight: "15"
-- Name: Pollen
+  - "Crashsite"
+  - "Grassland"
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "Pollen"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Savanna
-  - SavannaEdge
-  - DustBowl
-  Time: Day
-  MaxHeight: "10"
-- Name: Mosquitos
+  - "Savanna"
+  - "SavannaEdge"
+  - "DustBowl"
+  FollowPlayerY: false
+- Name: "Mosquitos"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Savanna
-  - SavannaEdge
-  - DustBowl
-  - Marsh
-  - Swamp
-  - WaterSwamp
-  - Water
-  Time: Day
-  MaxHeight: "15"
-- Name: ButterfliesBlue
+  - "Savanna"
+  - "SavannaEdge"
+  - "DustBowl"
+  - "Marsh"
+  - "Swamp"
+  - "WaterSwamp"
+  - "Water"
+  FollowPlayerY: false
+- Name: "ButterfliesBlue"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Forest
-  - Marsh
-  Time: Day
-  MaxHeight: "15"
-- Name: Dragonflies
+  - "Forest"
+  - "Marsh"
+  FollowPlayerY: false
+- Name: "Dragonflies"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Marsh
-  - Swamp
-  - WaterSwamp
-  - Water
-  - ShallowWater
-  Time: Day
-  MaxHeight: "15"
-- Name: FireFliesOrange
+  - "Marsh"
+  - "Swamp"
+  - "WaterSwamp"
+  - "Water"
+  - "ShallowWater"
+  FollowPlayerY: false
+- Name: "FireFliesOrange"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Forest
-  - DeepForest
-  - Peaks
-  - Marsh
-  - Swamp
-  - WaterSwamp
-  - Oasis
-  Time: Night
-  MaxHeight: "15"
-- Name: Moths
+  - "Forest"
+  - "DeepForest"
+  - "Peaks"
+  - "Marsh"
+  - "Swamp"
+  - "WaterSwamp"
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "Moths"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - DeepForest
-  - Savanna
-  - SavannaEdge
-  - Grassland
-  - Crashsite
-  Time: Night
-  MaxHeight: "15"
+  - "DeepForest"
+  - "Savanna"
+  - "SavannaEdge"
+  - "Grassland"
+  - "Crashsite"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: BirdFlockBats
+- Name: "BirdFlockBats"
+  SpawnY: 30
+  Time: "Always"
   Biome:
-  - Any
-  Time: Always
-  PlyDist: "100"
-  Struct: Avoid
-  Lifetime: "600"
-  SpawnY: "30"
-- Name: Clear
-  Type: Weather
-  Delay: "2"
-  Lifetime: "1200"
-- Name: CloudsLight
-  Type: Weather
-  Delay: "2"
-  Lifetime: "1200"
-- Name: CloudsMedium
-  Type: Weather
-  InitialDelay: "12"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: Clouds
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "5"
-  Lifetime: "1000"
-- Name: Fog
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "12"
-  Lifetime: "1000"
-- Name: Wind
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "12"
-  Lifetime: "600"
-- Name: RainMedium
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "12"
-  Lifetime: "600"
-- Name: RainHeavy
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "24"
-  Lifetime: "600"
-- Name: Storm
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "24"
-  Lifetime: "600"
-- Name: BirdFlocksCrows
+  - "Any"
+  InitialDelay: 0.5
+  Delay: 1
+  PlyDist: 100
+  Struct: "Avoid"
+  Lifetime: 600
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsLight"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsMedium"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 12
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Clouds"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 5
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "Fog"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "Wind"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "RainMedium"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "RainHeavy"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "Storm"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "BirdFlocksCrows"
+  SpawnY: 30
+  Time: "Day"
   Biome:
-  - Any
-  Time: Day
-  InitialDelay: "1"
-  Delay: "4"
-  PlyDist: "100"
-  Struct: "True"
-  Lifetime: "600"
-  SpawnY: "30"
-AtmosphereColor: 0.674, 0.824, 1.000
-SkyColor: 1, 1, 1
-SkyHorizonColor: 1, 0.5, 0
+  - "Any"
+  InitialDelay: 1
+  Delay: 4
+  PlyDist: 100
+  Lifetime: 600
+AtmosphereEnabled: true
+AtmosphereColor: "0.674, 0.824, 1.000"
 AtmosphereParams:
-- "1"
-- "1.6"
-DayLightIntensity: "1.3999999999999999"
-NightLightIntensity: "0.55000000000000004"
-NightLightColor: 0.78, 0.78, 1
-SunFlare: EnvironmentalEffects/SunFlareBlue
-FogCloudIntensity: "0.80000000000000004"
-CloudsDensity: "0.29999999999999999"
-CloudsSharpness: "0.34999999999999998"
-CloudsBrightness: "0.69999999999999996"
-CloudsOpacity: "0.69999999999999996"
-CloudsZenithColor: 0.89, 0.92, 1
-CloudsHorizonColor: 1, 0.3, 0.1
-WindSpeed: "3"
-PvP: "True"
+- 1
+- 1.6
+SkyColor: "1, 1, 1"
+SkyHorizonColor: "1, 0.5, 0"
+LightZenithColor: "1, 0.95, 0.915"
+LightHorizonColor: "1, 0.6, 0"
+NightLightColor: "0.78, 0.78, 1"
+CloudsZenithColor: "0.89, 0.92, 1"
+CloudsHorizonColor: "1, 0.3, 0.1"
+CloudsNightZenithColor: "0.054, 0.094, 0.152"
+CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+CloudsOpacity: 0.7
+FogCloudIntensity: 0.8
+DayLightIntensity: 1.4
+NightLightIntensity: 0.55
+DayShadowStrength: 0.65
+NightShadowStrength: 0.4
+CloudsDensity: 0.3
+CloudsSharpness: 0.35
+CloudsBrightness: 0.7
+WindSpeed: 3
+FogColor: "0.8, 0.8, 0.8"
+Description: "\u8D38\u6613\u516C\u4F1A\u6BCD\u661F"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "TraderHomeworld"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: IronResource
-  Biome:
-  - Crevice
-  - PlateauTop
-  - Rift
-  - Plains
-  IsScalingCount: "True"
+- Count:
+    Min: 3
+    Max: 5
+  Size:
+    Min: 7
+    Max: 10
+  Depth:
+    Min: 3
+    Max: 15
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "5"
+  - 3
+  - 5
   SizeMinMax:
-  - "7"
-  - "10"
+  - 7
+  - 10
   DepthMinMax:
-  - "3"
-  - "15"
-  DroneProb: "0.20000000000000001"
-  MaxDroneCount: "1"
-- Name: CopperResource
+  - 3
+  - 15
+  DroneProb: 0.2
+  MaxDroneCount: 1
   Biome:
-  - OakTrees
-  - CrystalPlates
-  - RedPlateau
-  - OpenGlades
-  - BaldCypres
-  - Flats
-  IsScalingCount: "True"
+  - "Crevice"
+  - "PlateauTop"
+  - "Rift"
+  - "Plains"
+- Count:
+    Min: 3
+    Max: 5
+  Size:
+    Min: 4
+    Max: 6
+  Depth:
+    Min: 5
+    Max: 15
+  Name: "CopperResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "5"
+  - 3
+  - 5
   SizeMinMax:
-  - "4"
-  - "6"
+  - 4
+  - 6
   DepthMinMax:
-  - "5"
-  - "15"
-  DroneProb: "0.29999999999999999"
-- Name: SiliconResource
+  - 5
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
   Biome:
-  - BaldCypres
-  - Plateau
-  - Crevice
-  - GlacierSnow
-  IsScalingCount: "True"
+  - "OakTrees"
+  - "CrystalPlates"
+  - "RedPlateau"
+  - "OpenGlades"
+  - "BaldCypres"
+  - "Flats"
+- Count:
+    Min: 3
+    Max: 6
+  Size:
+    Min: 4
+    Max: 6
+  Depth:
+    Min: 5
+    Max: 15
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "6"
+  - 3
+  - 6
   SizeMinMax:
-  - "4"
-  - "6"
+  - 4
+  - 6
   DepthMinMax:
-  - "5"
-  - "15"
-  DroneProb: "0.29999999999999999"
-- Name: CobaltResource
+  - 5
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
   Biome:
-  - CrystalPlates
-  - RedPlateau
-  - Crevice
-  - GlacierSnow
-  IsScalingCount: "True"
+  - "BaldCypres"
+  - "Plateau"
+  - "Crevice"
+  - "GlacierSnow"
+- Count:
+    Min: 2
+    Max: 4
+  Size:
+    Min: 4
+    Max: 6
+  Depth:
+    Min: 5
+    Max: 15
+  Name: "CobaltResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "4"
+  - 2
+  - 4
   SizeMinMax:
-  - "4"
-  - "6"
+  - 4
+  - 6
   DepthMinMax:
-  - "5"
-  - "15"
-  DroneProb: "0.29999999999999999"
-- Name: NeodymiumResource
+  - 5
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
   Biome:
-  - RedPlateau
-  - Crevice
-  IsScalingCount: "True"
+  - "CrystalPlates"
+  - "RedPlateau"
+  - "Crevice"
+  - "GlacierSnow"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 4
+    Max: 7
+  Depth:
+    Max: 1
+  Name: "NeodymiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "4"
-  - "7"
+  - 4
+  - 7
   DepthMinMax:
-  - "0"
-  - "1"
-  DroneProb: "0.10000000000000001"
-  MaxDroneCount: "3"
-- Name: MagnesiumResource
+  - 0
+  - 1
+  DroneProb: 0.1
+  MaxDroneCount: 3
   Biome:
-  - ColdPlateau
-  - Crevice
-  - GlacierSnow
-  IsScalingCount: "True"
+  - "RedPlateau"
+  - "Crevice"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 4
+    Max: 7
+  Depth:
+    Max: 1
+  Name: "MagnesiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "4"
-  - "7"
+  - 4
+  - 7
   DepthMinMax:
-  - "0"
-  - "1"
-  DroneProb: "0.10000000000000001"
-  MaxDroneCount: "1"
-- Name: PromethiumResource
+  - 0
+  - 1
+  DroneProb: 0.1
+  MaxDroneCount: 1
   Biome:
-  - Insane Rift
-  - ShallowWater
-  - Plateau
-  IsScalingCount: "True"
+  - "ColdPlateau"
+  - "Crevice"
+  - "GlacierSnow"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 4
+    Max: 5
+  Depth:
+    Max: 1
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
+  - 1
+  - 2
   SizeMinMax:
-  - "4"
-  - "5"
+  - 4
+  - 5
   DepthMinMax:
-  - "0"
-  - "1"
-  DroneProb: "0.80000000000000004"
-- Name: GoldResource
+  - 0
+  - 1
+  DroneProb: 0.8
+  MaxDroneCount: 1
   Biome:
-  - ColdPlateau
-  - Crevice
-  - GlacierSnow
-  IsScalingCount: "True"
+  - "Insane Rift"
+  - "ShallowWater"
+  - "Plateau"
+- Count:
+    Min: 1
+    Max: 1
+  Size:
+    Min: 2
+    Max: 4
+  Depth:
+    Max: 1
+  Name: "GoldResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "1"
+  - 1
+  - 1
   SizeMinMax:
-  - "2"
-  - "4"
+  - 2
+  - 4
   DepthMinMax:
-  - "0"
-  - "1"
-  DroneProb: "0.10000000000000001"
-  MaxDroneCount: "1"
+  - 0
+  - 1
   DistTypeCylinder:
-    MaxRadius: "13"
-    YVariance: "10"
+    MaxRadius: 13
+    YVariance: 10
+  DroneProb: 0.1
+  MaxDroneCount: 1
+  Biome:
+  - "ColdPlateau"
+  - "Crevice"
+  - "GlacierSnow"
 AsteroidResources:
-- Name: IronResource
-  Threshold: "0.20000000000000001"
-  Amount: "0.20000000000000001"
-- Name: CopperResource
-  Threshold: "0.20000000000000001"
-  Amount: "0.20000000000000001"
-- Name: SiliconResource
-  Threshold: "0.20000000000000001"
-  Amount: "0.20000000000000001"
-- Name: TitanResource
-  Threshold: "0.20000000000000001"
-  Amount: "0.20000000000000001"
-- Name: MagnesiumResource
-  Threshold: "0.10000000000000001"
-  Amount: "0.10000000000000001"
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CopperResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "TitanResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "MagnesiumResource"
+  Threshold: 0.1
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: DroneBaseT1
-    Faction: Trader
-    DroneSetupID: DroneBasePolaris
-    NoShieldReload: "True"
+  - GroupName: "DroneBaseT1"
+    DroneSetupID: "DroneBasePolaris"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TraderHQUnique
-    Faction: Trader
-    NoShieldReload: "True"
+  - GroupName: "TraderHQUnique"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "3"
+    - 1
+    - 3
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TraderMain
-    Faction: Trader
-    NoShieldReload: "True"
+  - GroupName: "TraderMain"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
+    - 1
+    - 2
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TraderSettlement
-    Faction: Trader
-    NoShieldReload: "True"
-    IsScalingCount: "True"
+  - GroupName: "TraderSettlement"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 5
     CountMinMax:
-    - "3"
-    - "5"
-    DroneProb: "1.0"
+    - 3
+    - 5
+    DroneProb: 1
+    Drones:
+      Max: 2
     DronesMinMax:
-    - "0"
-    - "2"
+    - 0
+    - 2
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TraderDefenseHQ
-    Faction: Trader
-    NoShieldReload: "True"
+  - SpawnPoiRange:
+      Min: 100
+      Max: 350
+    GroupName: "TraderDefenseHQ"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 3
     CountMinMax:
-    - "1"
-    - "3"
+    - 1
+    - 3
+    Properties:
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - TraderHQUnique
+    - "TraderHQUnique"
     SpawnPOINearRange:
-    - "100"
-    - "350"
-    Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TraderDefenseB
-    Faction: Trader
-    NoShieldReload: "True"
+    - 100
+    - 350
+  - SpawnPoiRange:
+      Min: 100
+      Max: 350
+    GroupName: "TraderDefenseB"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - TraderSettlement
-    SpawnPOINearRange:
-    - "100"
-    - "350"
+    - 1
+    - 2
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TraderDefenseA
-    Faction: Trader
-    NoShieldReload: "True"
+    SpawnPOINear:
+    - "TraderSettlement"
+    SpawnPOINearRange:
+    - 100
+    - 350
+  - SpawnPoiRange:
+      Min: 100
+      Max: 350
+    GroupName: "TraderDefenseA"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - TraderMain
-    SpawnPOINearRange:
-    - "100"
-    - "350"
+    - 1
+    - 2
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
+    SpawnPOINear:
+    - "TraderMain"
+    SpawnPOINearRange:
+    - 100
+    - 350
   FixedPlayerStart:
-  - Mode: Debug
-    Armor: ArmorLight
+  - Mode: "Debug"
     Pos:
-    - "-596"
-    - "104"
-    - "-1063"
-    RotY: "125"
+    - -596
+    - 104
+    - -1063
+    RotY: 125
+    Armor: "ArmorLight"
 DroneBaseSetup:
   DroneBases:
-  - DroneSetupID: DroneBaseTrader
+  - DroneSetupID: "DroneBaseTrader"
     Stock:
-    - Name: DroneSmallFast01Minigun
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneSmallFast01Rocket
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Type: TroopTransport
-    - Name: SoldierAlienAssaultRifle
-      Amount: Infinite
-      Type: GroundTroop
-    - Name: AssaultCyborg
-      Amount: Infinite
-      Type: GroundTroop
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneSmallFast01Rocket"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "TroopTransport"
+    - Name: "SoldierAlienAssaultRifle"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
+    - Name: "AssaultCyborg"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
   PlanetVessels:
-  - Name: OPVTrader
+  - Name: "OPVTrader"
     Position3D:
-    - "500"
-    - "0"
-    - "-400"
-    Faction: Polaris
+    - 500
+    - 0
+    - -400
+    Faction: "Polaris"
     LevelMod: "2"
-    FixedMaxSpeed: "10"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+    FixedMaxSpeed: 10
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       Position3D:
-      - "500"
-      - "0"
-      - "-400"
-      DistToGround: "120"
+      - 500
+      - 0
+      - -400
+      DistToGround: 120
     Stock:
-    - Name: DroneSmallFast01Minigun
-      Amount: Infinite
-      Type: FighterDrone
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
 DroneSpawning:
   Random:
-  - Name: DroneSmallFast01Rocket
+  - Drones:
+      Min: 9
+      Max: 10
+    Name: "DroneSmallFast01Rocket"
     DronesMinMax:
-    - "9"
-    - "10"
-    Faction: Trader
-    POINameAsPositionRef: DroneBaseT1
-    Radius: "6000"
-SpawnRateZones: 
-SpawnZones: 
+    - 9
+    - 10
+    Faction: "Trader"
+    POINameAsPositionRef: "DroneBaseT1"
+    Radius: 6000
 CreatureSpawning:
 - Biomes:
-  - ShallowWater
-  - WaterSwamp
+  - "ShallowWater"
+  - "WaterSwamp"
   Entities:
-  - Name: Telluropods
-    Period: Always
-    Amount: "25"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "Telluropods"
+    Amount: 25
+    AllowInWater: true
     DelayMinMax:
-    - "10"
-    - "12"
-    AllowInWater: "True"
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - OakTrees
-  - BaldCypres
+  - "OakTrees"
+  - "BaldCypres"
   Entities:
-  - Name: GolemsDesert
-    Period: Always
-    Amount: "25"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "GolemsDesert"
+    Amount: 25
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: AlienBugs03
-    Period: Night
-    Amount: "30"
+    - 10
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs03"
+    Amount: 30
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Slimes
-    Period: Day
-    Amount: "15"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Slimes"
+    Amount: 15
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Day"
 - Biomes:
-  - Flats
-  - FertileLand
+  - "Flats"
+  - "FertileLand"
   Entities:
-  - Name: Oviraptors
-    Period: Always
-    Amount: "20"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "Oviraptors"
+    Amount: 20
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: Spinosauruses
-    Period: Always
-    Amount: "20"
+    - 10
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 30
+    Name: "Spinosauruses"
+    Amount: 20
     DelayMinMax:
-    - "20"
-    - "30"
-  - Name: Triceratopses
-    Period: Day
-    Amount: "20"
+    - 20
+    - 30
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 25
+    Name: "Triceratopses"
+    Amount: 20
     DelayMinMax:
-    - "20"
-    - "25"
-  - Name: Creepys
-    Period: Night
-    Amount: "15"
+    - 20
+    - 25
+    Period: "Day"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Creepys"
+    Amount: 15
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Crevice
-  - Rift
+  - "Crevice"
+  - "Rift"
   Entities:
-  - Name: Crawlers
-    Period: Always
-    Amount: "25"
+  - DelayRange:
+      Min: 15
+      Max: 17
+    Name: "Crawlers"
+    Amount: 25
     DelayMinMax:
-    - "15"
-    - "17"
+    - 15
+    - 17
+    Period: "Always"
 - Biomes:
-  - Open Glades
-  - Plains
+  - "Open Glades"
+  - "Plains"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "25"
+  - DelayRange:
+      Min: 10
+      Max: 15
+    Name: "AlienBugs01"
+    Amount: 25
     DelayMinMax:
-    - "10"
-    - "15"
-  - Name: ParasaursFew
-    Period: Night
-    Amount: "15"
+    - 10
+    - 15
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "ParasaursFew"
+    Amount: 15
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Plateau
+  - "Plateau"
   Entities:
-  - Name: Parasaurs
-    Period: Day
-    Amount: "20"
+  - DelayRange:
+      Min: 20
+      Max: 26
+    Name: "Parasaurs"
+    Amount: 20
     DelayMinMax:
-    - "20"
-    - "26"
-  - Name: RaptorHerd
-    Period: Night
-    Amount: "50"
+    - 20
+    - 26
+    Period: "Day"
+  - DelayRange:
+      Min: 17
+      Max: 25
+    Name: "RaptorHerd"
+    Amount: 50
     DelayMinMax:
-    - "17"
-    - "25"
-  - Name: Spinosauruses
-    Period: Day
-    Amount: "30"
+    - 17
+    - 25
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Spinosauruses"
+    Amount: 30
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "25"
+    - 20
+    - 24
+    Period: "Day"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienBugs01"
+    Amount: 25
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: ParasaursFew
-    Period: Always
-    Amount: "20"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 28
+    Name: "ParasaursFew"
+    Amount: 20
     DelayMinMax:
-    - "20"
-    - "28"
+    - 20
+    - 28
+    Period: "Always"
 - Biomes:
-  - RedPlateau
-  - PlateauTop
+  - "RedPlateau"
+  - "PlateauTop"
   Entities:
-  - Name: GolemsDesert
-    Period: Always
-    Amount: "30"
+  - DelayRange:
+      Min: 28
+      Max: 30
+    Name: "GolemsDesert"
+    Amount: 30
+    Color: "0.69,0.77,0.87"
     DelayMinMax:
-    - "28"
-    - "30"
-    Color: 0.69,0.77,0.87
-  - Name: MegalonopsesBrown
-    Period: Day
-    Amount: "20"
+    - 28
+    - 30
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 25
+    Name: "MegalonopsesBrown"
+    Amount: 20
     DelayMinMax:
-    - "20"
-    - "25"
-  - Name: RaptorHerd
-    Period: Night
-    Amount: "10"
+    - 20
+    - 25
+    Period: "Day"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "RaptorHerd"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - GlacierSnow
-  - ColdPlateau
+  - "GlacierSnow"
+  - "ColdPlateau"
   Entities:
-  - Name: CaveWormsWhite
-    Period: Night
-    Amount: "10"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormsWhite"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "10"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsIce"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24

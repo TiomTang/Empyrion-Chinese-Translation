@@ -1,605 +1,794 @@
-Description: "\u6CF0\u9686\u7684\u6BCD\u661F"
-PlanetType: TalonArHomeworld
-PlayfieldType: Planet
-Difficulty: "10"
-LandClaimZone: Device
-AtmosphereEnabled: "True"
-AtmosphereColor: 1.0, 0.86, 0.88
-SkyColor: 1, 0.6, 0.6
-SkyHorizonColor: 1, 0.2, 0.2
-DayLightIntensity: "1.25"
-NightLightIntensity: "0.48"
-DayShadowStrength: "0.95"
-LightZenithColor: 1, 0.75, 0.60
-LightHorizonColor: 1, 0.3, 0.2
-NightLightColor: 0.7, 0.7, 1
-SunFlare: EnvironmentalEffects/SunFlareWhite2
-FogCloudIntensity: "0.8"
-CloudsDensity: "0.4"
-CloudsSharpness: "0.3"
-CloudsBrightness: "1.0"
-CloudsOpacity: "1.0"
-CloudsZenithColor: 0.5, 0.3, 0.4
-CloudsHorizonColor: 1, 0.18, 0.18
-WindSpeed: "4"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "TalonArHomeworld"
+PlanetSize: 2
+Difficulty: 10
+SunFlare: "EnvironmentalEffects/SunFlareWhite2"
 SpecialEffectsLocal:
-- Name: Pollen
+- Name: "Pollen"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Desert
-  - Dunes
-  - Rocks
-  Time: Day
-  MaxHeight: "10"
-- Name: DustDevil
+  - "Desert"
+  - "Dunes"
+  - "Rocks"
+  FollowPlayerY: false
+- Name: "DustDevil"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Desert
-  - Dunes
-  - Rocks
-  Time: Day
-  FollowPlayerY: "True"
-  MaxHeight: "10"
-- Name: FireFliesGreenFew
+  - "Desert"
+  - "Dunes"
+  - "Rocks"
+- Name: "FireFliesGreenFew"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Marsh
-  - Oasis
-  - OasisEdge
-  - OasisThin
-  - Grassland
-  Time: Night
-  MaxHeight: "15"
-- Name: DandelionsFew
+  - "Marsh"
+  - "Oasis"
+  - "OasisEdge"
+  - "OasisThin"
+  - "Grassland"
+  FollowPlayerY: false
+- Name: "DandelionsFew"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Savanna
-  - SavannaEdge
-  Time: Day
-  MaxHeight: "10"
-- Name: ButterfliesBlue
+  - "Savanna"
+  - "SavannaEdge"
+  FollowPlayerY: false
+- Name: "ButterfliesBlue"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Marsh
-  - Oasis
-  - OasisEdge
-  - OasisThin
-  - Grassland
-  Time: Day
-  MaxHeight: "15"
-- Name: TarantulaHawksFew
+  - "Marsh"
+  - "Oasis"
+  - "OasisEdge"
+  - "OasisThin"
+  - "Grassland"
+  FollowPlayerY: false
+- Name: "TarantulaHawksFew"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Marsh
-  - Savanna
-  - SavannaEdge
-  Time: Day
-  MaxHeight: "15"
-- Name: WindLines
+  - "Marsh"
+  - "Savanna"
+  - "SavannaEdge"
+  FollowPlayerY: false
+- Name: "WindLines"
+  MaxHeight: 10
+  Time: "Day"
   Biome:
-  - Desert
-  - Dunes
-  - Rocks
-  - LowMountains
-  - Mountains
-  Time: Day
-  MaxHeight: "10"
+  - "Desert"
+  - "Dunes"
+  - "Rocks"
+  - "LowMountains"
+  - "Mountains"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: CloudsLight
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: CloudsMedium
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "3"
-  Lifetime: "1200"
-- Name: Clouds
-  Type: Weather
-  InitialDelay: "12"
-  Delay: "10"
-  Lifetime: "1000"
-- Name: Wind
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "10"
-  Lifetime: "600"
-- Name: Fog
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "1000"
-- Name: HeatWave
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "1200"
-- Name: FogRadiationGreen
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "600"
-- Name: BirdFlocksVultures
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsLight"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsMedium"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 3
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Clouds"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 12
+  Delay: 10
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "Wind"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 10
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "Fog"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "HeatWave"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "FogRadiationGreen"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "BirdFlocksVultures"
+  SpawnY: 40
+  Time: "Day"
   Biome:
-  - Any
-  Time: Day
-  InitialDelay: "2"
-  Delay: "4"
-  Lifetime: "600"
-  PlyDist: "50"
-  SpawnY: "40"
-  Struct: "True"
-- Name: MeteorShower
+  - "Any"
+  InitialDelay: 2
+  Delay: 4
+  PlyDist: 50
+  Lifetime: 600
+- Name: "MeteorShower"
+  SpawnY: 100
+  Time: "Always"
   Biome:
-  - Savanna
-  - SavannaEdge
-  - Dunes
-  - Desert
-  Time: Always
-  InitialDelay: "3.5"
-  Delay: "5"
-  Lifetime: "60"
-  PlyDist: "200"
-  SpawnY: "100"
-  Struct: Avoid
+  - "Savanna"
+  - "SavannaEdge"
+  - "Dunes"
+  - "Desert"
+  InitialDelay: 3.5
+  Delay: 5
+  PlyDist: 200
+  Struct: "Avoid"
+  Lifetime: 60
+AtmosphereEnabled: true
+AtmosphereColor: "1.0, 0.86, 0.88"
+SkyColor: "1, 0.6, 0.6"
+SkyHorizonColor: "1, 0.2, 0.2"
+LightZenithColor: "1, 0.75, 0.60"
+LightHorizonColor: "1, 0.3, 0.2"
+NightLightColor: "0.7, 0.7, 1"
+CloudsZenithColor: "0.5, 0.3, 0.4"
+CloudsHorizonColor: "1, 0.18, 0.18"
+CloudsNightZenithColor: "0.054, 0.094, 0.152"
+CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+CloudsOpacity: 1
+FogCloudIntensity: 0.8
+DayLightIntensity: 1.25
+NightLightIntensity: 0.48
+DayShadowStrength: 0.95
+NightShadowStrength: 0.4
+CloudsDensity: 0.4
+CloudsSharpness: 0.3
+CloudsBrightness: 1
+WindSpeed: 4
+FogColor: "0.8, 0.8, 0.8"
+Description: "\u6CF0\u9686\u7684\u6BCD\u661F"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "TalonArHomeworld"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: CarbonResource
-  IsScalingCount: "True"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 10
+    Max: 14
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "CarbonResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
+  - 1
+  - 2
   SizeMinMax:
-  - "10"
-  - "14"
+  - 10
+  - 14
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.5"
-  MaxDroneCount: "1"
-- Name: IronResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.5
+  MaxDroneCount: 1
+- Count:
+    Min: 4
+    Max: 5
+  Size:
+    Min: 10
+    Max: 12
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "5"
+  - 4
+  - 5
   SizeMinMax:
-  - "10"
-  - "12"
+  - 10
+  - 12
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.5"
-  MaxDroneCount: "1"
-- Name: CopperResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.5
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 10
+    Max: 12
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "CopperResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "10"
-  - "12"
+  - 10
+  - 12
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
-- Name: TitanResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.7
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 6
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "TitanResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "6"
+  - 5
+  - 6
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "1"
-  MaxDroneCount: "4"
-- Name: NeodymiumResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 1
+  MaxDroneCount: 4
+- Count:
+    Min: 5
+    Max: 6
+  Size:
+    Min: 8
+    Max: 11
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "NeodymiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "5"
-  - "6"
+  - 5
+  - 6
   SizeMinMax:
-  - "8"
-  - "11"
+  - 8
+  - 11
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "1"
-  MaxDroneCount: "4"
-- Name: CobaltResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 1
+  MaxDroneCount: 4
+- Count:
+    Min: 1
+    Max: 3
+  Size:
+    Min: 5
+    Max: 9
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "CobaltResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "3"
+  - 1
+  - 3
   SizeMinMax:
-  - "5"
-  - "9"
+  - 5
+  - 9
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.5"
-- Name: PromethiumResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.5
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 6
+  Depth:
+    Max: 1
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "6"
-  DroneProb: "1"
-  MaxDroneCount: "4"
+  - 5
+  - 6
   DepthMinMax:
-  - "0"
-  - "1"
+  - 0
+  - 1
   DistTypeCylinder:
-    MaxRadius: "13"
-    YVariance: "10"
+    MaxRadius: 13
+    YVariance: 10
+  DroneProb: 1
+  MaxDroneCount: 4
 AsteroidResources:
-- Name: IronResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: CopperResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: NeodymiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: CobaltResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: TitanResource
-  Threshold: "0.2"
-  Amount: "0.2"
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CopperResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "NeodymiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CobaltResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "TitanResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: TalonArDroneBase
-    Faction: Talon
-    NoShieldReload: "True"
-    IsCommandCenter: "True"
-    DroneSetupID: DroneBaseTalonAr
+  - GroupName: "TalonArDroneBase"
+    DroneSetupID: "DroneBaseTalonAr"
+    Faction: "Talon"
+    Territory: false
+    NoShieldReload: true
+    IsCommandCenter: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TalonArUnique
+  - GroupName: "TalonArUnique"
+    Faction: "Talon"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     BiomesExcluded:
-    - Pole
-    - GlacierSnow
-    - Mountains
-    - LowMountains
-    IsImportant: "True"
-    Faction: Talon
-    NoShieldReload: "True"
+    - "Pole"
+    - "GlacierSnow"
+    - "Mountains"
+    - "LowMountains"
+  - GroupName: "TalonArDigsite"
+    Faction: "Talon"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
+    - 3
+    - 5
     Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TalonArDigsite
-    IsImportant: "True"
-    Faction: Talon
-    NoShieldReload: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "3"
-    - "5"
-    Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "-3400"
-    - "100"
-    - "-720"
-    RotY: "125"
-DroneSpawning: 
+    - -3400
+    - 100
+    - -720
+    RotY: 125
 DroneBaseSetup:
   DroneBases:
-  - DroneSetupID: DroneBaseTalonAr
+  - DroneSetupID: "DroneBaseTalonAr"
     Stock:
-    - Name: DroneSmallFast01Minigun
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneSmallFast01Rocket
-      Amount: Infinite
-      Type: FighterDrone
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneSmallFast01Rocket"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
   PlanetVessels:
-  - Name: OPVTalonArT2
-    Faction: Talon
+  - Name: "OPVTalonArT2"
     CountMinMax:
-    - "2"
-    - "2"
+    - 2
+    - 2
+    Faction: "Talon"
     LevelMod: "2"
-    FixedMaxSpeed: "40"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+    FixedMaxSpeed: 40
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - TalonArUnique
-      DistToGround: "300"
+      - "TalonArUnique"
+      DistToGround: 300
     Stock:
-    - Name: DroneSmallFast01Minigun
-      Amount: Infinite
-      Type: FighterDrone
-SpawnRateZones:
-- SpawnAt:
-  - TalonArDigsite
-  - TalonArMain
-  - OmicronPortal
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.5"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-- SpawnAt:
-  - TalonArDigsite
-  - TalonArMain
-  - OmicronPortal
-  Radius: "150"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.3"
-  AffectFriendly: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-SpawnZones:
-- SpawnAt:
-  - TalonArDigsite
-  Radius: "500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  Color: 0.0, 0.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - TalonarPatrolSmall
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "15"
-    - "25"
-- SpawnAt:
-  - TalonArDigsite
-  Radius: "900"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  Color: 0.0, 0.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - TalonarPatrolSmall
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "15"
-    - "25"
-- SpawnAt:
-  - TalonArDigsite
-  - TalonArMain
-  - OmicronPortal
-  BiomesExcluded:
-  - GlacierSnow
-  Radius: "100"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "1.0"
-  Color: 0.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - TalonarDogPatrol
-    Biomes:
-    - Any
-    Amount: "300"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - TalonarPatrolMedium
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - TalonarPatrolSmall
-    Biomes:
-    - Any
-    Amount: "300"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - TalonArDigsite
-  - TalonArMain
-  BiomesExcluded:
-  - GlacierSnow
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - TalonarDogPatrol
-    Biomes:
-    - Any
-    Amount: "250"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - TalonArDigsite
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  - GlacierSnow
-  Radius: "8000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.8"
-  Color: 0.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - TalonarPatrolMedium
-    Biomes:
-    - Any
-    Amount: "20"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - TalonarPatrolMedium
-    Biomes:
-    - Oasis
-    - OasisEdge
-    - SavannaEdge
-    Amount: "50"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - TalonArDigsite
-  Radius: "8000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "1.0"
-  Color: 0.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - TalonarPatrolSmall
-    Biomes:
-    - Any
-    Amount: "20"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
 CreatureSpawning:
 - Biomes:
-  - Desert
-  - Dunes
-  - Sand
-  - Rocks
+  - "Desert"
+  - "Dunes"
+  - "Sand"
+  - "Rocks"
   Entities:
-  - Name: GolemsDesert
-    Period: Night
-    Amount: "10"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "GolemsDesert"
+    Amount: 10
     DelayMinMax:
-    - "10"
-    - "20"
-  - Name: WormDesertHerd
-    Period: Day
-    Amount: "10"
+    - 10
+    - 20
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "WormDesertHerd"
+    Amount: 10
     DelayMinMax:
-    - "10"
-    - "20"
+    - 10
+    - 20
+    Period: "Day"
 - Biomes:
-  - SavannaEdge
-  - Savanna
+  - "SavannaEdge"
+  - "Savanna"
   Entities:
-  - Name: CaveWormGreyHerd
-    Period: Day
-    Amount: "8"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "CaveWormGreyHerd"
+    Amount: 8
     DelayMinMax:
-    - "10"
-    - "20"
-  - Name: WormDesertHerd
-    Period: Day
-    Amount: "10"
+    - 10
+    - 20
+    Period: "Day"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "WormDesertHerd"
+    Amount: 10
     DelayMinMax:
-    - "10"
-    - "20"
-  - Name: Otyughs
-    Period: Night
-    Amount: "5"
+    - 10
+    - 20
+    Period: "Day"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Otyughs"
+    Amount: 5
     DelayMinMax:
-    - "10"
-    - "20"
-  - Name: LizardMuleHerd
-    Period: Always
-    Amount: "15"
+    - 10
+    - 20
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "LizardMuleHerd"
+    Amount: 15
     DelayMinMax:
-    - "10"
-    - "12"
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - Oasis
-  - OasisEdge
+  - "Oasis"
+  - "OasisEdge"
   Entities:
-  - Name: AlienBugs01
-    Period: Always
-    Amount: "15"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "AlienBugs01"
+    Amount: 15
     DelayMinMax:
-    - "10"
-    - "20"
-  - Name: Spiders02
-    Period: Night
-    Amount: "10"
+    - 10
+    - 20
+    Period: "Always"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Spiders02"
+    Amount: 10
     DelayMinMax:
-    - "10"
-    - "20"
-  - Name: LizardMuleHerd
-    Period: Always
-    Amount: "15"
+    - 10
+    - 20
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "LizardMuleHerd"
+    Amount: 15
     DelayMinMax:
-    - "10"
-    - "12"
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - Marsh
-  - Shore
+  - "Marsh"
+  - "Shore"
   Entities:
-  - Name: CaveWormGreyHerd
-    Period: Night
-    Amount: "8"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "CaveWormGreyHerd"
+    Amount: 8
     DelayMinMax:
-    - "10"
-    - "20"
-  - Name: Slimes
-    Period: Day
-    Amount: "12"
+    - 10
+    - 20
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Slimes"
+    Amount: 12
     DelayMinMax:
-    - "10"
-    - "20"
+    - 10
+    - 20
+    Period: "Day"
 - Biomes:
-  - LowMountains
+  - "LowMountains"
   Entities:
-  - Name: Spiders02
-    Period: Day
-    Amount: "8"
+  - DelayRange:
+      Min: 10
+      Max: 20
+    Name: "Spiders02"
+    Amount: 8
     DelayMinMax:
-    - "10"
-    - "20"
+    - 10
+    - 20
+    Period: "Day"
+SpawnRateZones:
+- SpawnAt:
+  - "TalonArDigsite"
+  - "TalonArMain"
+  - "OmicronPortal"
+  Radius: 200
+  RateMultiplyerEdge: 0.5
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+- SpawnAt:
+  - "TalonArDigsite"
+  - "TalonArMain"
+  - "OmicronPortal"
+  Radius: 150
+  RateMultiplyerEdge: 0.3
+  AffectFriendly: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+SpawnZones:
+- SpawnAt:
+  - "TalonArDigsite"
+  Radius: 500
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 15
+      Max: 25
+    Names:
+    - "TalonarPatrolSmall"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "TalonArDigsite"
+  Radius: 900
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 15
+      Max: 25
+    Names:
+    - "TalonarPatrolSmall"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "TalonArDigsite"
+  - "TalonArMain"
+  - "OmicronPortal"
+  BiomesExcluded:
+  - "GlacierSnow"
+  Radius: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TalonarDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 300
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TalonarPatrolMedium"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TalonarPatrolSmall"
+    Biomes:
+    - "Any"
+    Amount: 300
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "TalonArDigsite"
+  - "TalonArMain"
+  BiomesExcluded:
+  - "GlacierSnow"
+  Radius: 200
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TalonarDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 250
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "TalonArDigsite"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  - "GlacierSnow"
+  Radius: 8000
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.8
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TalonarPatrolMedium"
+    Biomes:
+    - "Any"
+    Amount: 20
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TalonarPatrolMedium"
+    Biomes:
+    - "Oasis"
+    - "OasisEdge"
+    - "SavannaEdge"
+    Amount: 50
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "TalonArDigsite"
+  Radius: 8000
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "TalonarPatrolSmall"
+    Biomes:
+    - "Any"
+    Amount: 20
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"

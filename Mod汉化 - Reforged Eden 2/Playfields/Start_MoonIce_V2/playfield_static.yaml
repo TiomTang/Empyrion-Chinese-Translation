@@ -1,421 +1,595 @@
-Description: "\u96BE\u5EA6: [c][00ff00]\u7B80\u5355[-][/c]\n\n\u4E00\u9897\u51B0\u5C01\u7684\u4F34\u661F,\u5176\u5730\u58F3\u4E0E\u5CA9\u8D28\u6838\u5FC3\u4E4B\u95F4\u9690\u85CF\u7740\u6DF1\u9083\u7684\u6D77\u6D0B\u3002\u5FAE\u5F31\u7684\u6709\u673A\u7269\u8D28\u5728\u8868\u9762\u7559\u4E0B\u591A\u5F69\u7684\u75D5\u8FF9\u3002 - \u8FD9\u662F\u5BF9\u66FE\u7ECF\u5728\u592A\u9633\u7CFB\u4E2D\u7684\u4E00\u9897\u536B\u661F\u7684\u56DE\u5FC6..."
-PlanetClass: Ice Moon
-PlanetType: MoonIce
-PlayfieldType: Moon
-Difficulty: "2"
-LandClaimZone: Device
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.30, 0.40, 0.4
-SkyColor: 0, 0, 0
-SkyHorizonColor: 0, 0.1, 0
-AtmosphereParams:
-- "1"
-- "2"
-DayLightIntensity: "0.6"
-NightLightIntensity: "0.4"
-LightZenithColor: 0.98, 0.90, 1
-LightHorizonColor: 1, 0.6, 0.15
-NightLightColor: 0.78, 0.78, 1
-DayShadowStrength: "1"
-NightShadowStrength: "1"
-SunFlare: EnvironmentalEffects/SunFlareWhite3
-FogCloudIntensity: "0.0"
-FogColor: 1, 1, 1
-CloudsDensity: "0.0"
-CloudsSharpness: "1"
-CloudsBrightness: "0.0"
-CloudsOpacity: "0.0"
-CloudsZenithColor: 0.1, 0.1, 0.1
-CloudsHorizonColor: 1, 0.3, 0.1
-WindSpeed: "0"
+PlayfieldType: "Moon"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "MoonIce"
+PlanetSize: 2
+Difficulty: 2
+SunFlare: "EnvironmentalEffects/SunFlareWhite3"
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "0"
-  Lifetime: "3000"
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 0.5
+  Delay: 1
+  PlyDist: 100
+  Lifetime: 3000
+  Type: "Weather"
+AtmosphereEnabled: true
+AtmosphereColor: "0.30, 0.40, 0.4"
+AtmosphereParams:
+- 1
+- 2
+SkyColor: "0, 0, 0"
+SkyHorizonColor: "0, 0.1, 0"
+LightZenithColor: "0.98, 0.90, 1"
+LightHorizonColor: "1, 0.6, 0.15"
+NightLightColor: "0.78, 0.78, 1"
+CloudsZenithColor: "0.1, 0.1, 0.1"
+CloudsHorizonColor: "1, 0.3, 0.1"
+CloudsNightZenithColor: "0.054, 0.094, 0.152"
+CloudsNightHorizonColor: "0.054, 0.094, 0.152"
+CloudsOpacity: 0.9
+FogCloudIntensity: 1
+DayLightIntensity: 0.6
+NightLightIntensity: 0.4
+DayShadowStrength: 1
+NightShadowStrength: 1
+CloudsSharpness: 1
+CloudsBrightness: 0.6
+WindSpeed: 1
+FogColor: "1, 1, 1"
+Description: "\u96BE\u5EA6: [c][00ff00]\u7B80\u5355[-][/c]\n\n\u4E00\u9897\u51B0\u51B7\u7684\u536B\u661F\uFF0C\u5730\u8868\u4E0B\u65B9\u6DF1\u85CF\u7740\u4E00\u7247\u6D77\u6D0B\uFF0C\u5468\u56F4\u73AF\u7ED5\u7740\u5CA9\u77F3\u6838\u5FC3\u3002\u6A21\u7CCA\u6709\u673A\u7269\u5728\u8868\u9762\u7559\u4E0B\u8272\u5F69\u6591\u6593\u7684\u6761\u7EB9\u3002\u2014 \u8FD9\u662F\u5728Sol\u884C\u661F\u7CFB\u4E2D\u4E00\u9897\u536B\u661F\u7684\u8BB0\u5FC6..."
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Ice Moon"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: SiliconResource
+- Count:
+    Min: 3
+    Max: 5
+  Size:
+    Min: 5
+    Max: 7
+  Depth:
+    Min: 3
+    Max: 8
+  Name: "SiliconResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 3
+  - 5
+  SizeMinMax:
+  - 5
+  - 7
+  DepthMinMax:
+  - 3
+  - 8
+  DroneProb: 0.4
+  MaxDroneCount: 1
   Biome:
-  - Mountains
-  - PlainsEdge
-  - Plains
-  - Regolith
-  IsScalingCount: "True"
+  - "Mountains"
+  - "PlainsEdge"
+  - "Plains"
+  - "Regolith"
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 4
+    Max: 9
+  Name: "CobaltResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "5"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "7"
+  - 3
+  - 4
   DepthMinMax:
-  - "3"
-  - "8"
-  DroneProb: "0.4"
-- Name: CobaltResource
+  - 4
+  - 9
+  DroneProb: 0.7
+  MaxDroneCount: 1
   Biome:
-  - Mountains
-  - Regolith
-  IsScalingCount: "True"
+  - "Mountains"
+  - "Regolith"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 2
+    Max: 3
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "MagnesiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 1
+  - 2
   SizeMinMax:
-  - "3"
-  - "4"
+  - 2
+  - 3
   DepthMinMax:
-  - "4"
-  - "9"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
-- Name: MagnesiumResource
+  - 5
+  - 10
+  DroneProb: 0.7
+  MaxDroneCount: 1
   Biome:
-  - Mountains
-  - Regolith
-  IsScalingCount: "True"
+  - "Mountains"
+  - "Regolith"
+- Count:
+    Min: 3
+    Max: 4
+  Size:
+    Min: 6
+    Max: 7
+  Depth:
+    Min: 35
+    Max: 45
+  Name: "MagnesiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
+  - 3
+  - 4
   SizeMinMax:
-  - "2"
-  - "3"
+  - 6
+  - 7
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
-- Name: MagnesiumResource
+  - 35
+  - 45
+  DroneProb: 0.2
+  MaxDroneCount: 1
   Biome:
-  - LayeredIce
-  - IceSheet
-  - CrustedIce
-  IsScalingCount: "True"
+  - "LayeredIce"
+  - "IceSheet"
+  - "CrustedIce"
+- Count:
+    Min: 3
+    Max: 3
+  Size:
+    Min: 8
+    Max: 9
+  Depth:
+    Min: 45
+    Max: 55
+  Name: "CobaltResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "4"
+  - 3
+  - 3
   SizeMinMax:
-  - "6"
-  - "7"
+  - 8
+  - 9
   DepthMinMax:
-  - "35"
-  - "45"
-  DroneProb: "0.2"
-  MaxDroneCount: "1"
-- Name: CobaltResource
+  - 45
+  - 55
+  DroneProb: 0.2
+  MaxDroneCount: 1
   Biome:
-  - LayeredIce
-  - IceSheet
-  - CrustedIce
-  IsScalingCount: "True"
+  - "LayeredIce"
+  - "IceSheet"
+  - "CrustedIce"
+- Count:
+    Min: 5
+    Max: 7
+  Size:
+    Min: 4
+    Max: 7
+  Depth:
+    Min: 2
+    Max: 5
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "3"
+  - 5
+  - 7
   SizeMinMax:
-  - "8"
-  - "9"
+  - 4
+  - 7
   DepthMinMax:
-  - "45"
-  - "55"
-  DroneProb: "0.2"
-  MaxDroneCount: "1"
-- Name: IronResource
-  IsScalingCount: "True"
+  - 2
+  - 5
+  DroneProb: 0.3
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 4
+  Size:
+    Min: 3
+    Max: 6
+  Depth:
+    Max: 1
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "5"
-  - "7"
+  - 2
+  - 4
   SizeMinMax:
-  - "4"
-  - "7"
+  - 3
+  - 6
   DepthMinMax:
-  - "2"
-  - "5"
-  DroneProb: "0.3"
-  MaxDroneCount: "1"
-- Name: PromethiumResource
+  - 0
+  - 1
+  DroneProb: 0.7
+  MaxDroneCount: 1
   Biome:
-  - SmallCrater
-  - Rifts
-  - Regolith
-  IsScalingCount: "True"
+  - "SmallCrater"
+  - "Rifts"
+  - "Regolith"
+- Count:
+    Min: 4
+    Max: 5
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Max: 5
+  Name: "PentaxidResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "4"
+  - 4
+  - 5
   SizeMinMax:
-  - "3"
-  - "6"
-  DroneProb: "0.7"
-  MaxDroneCount: "1"
+  - 3
+  - 4
   DepthMinMax:
-  - "0"
-  - "1"
-- Name: PentaxidResource
+  - 0
+  - 5
+  DroneProb: 0.6
+  MaxDroneCount: 2
   Biome:
-  - SmallCrater
-  IsScalingCount: "True"
-  CountMinMax:
-  - "4"
-  - "5"
-  SizeMinMax:
-  - "3"
-  - "4"
-  DroneProb: "0.6"
-  MaxDroneCount: "2"
-  DepthMinMax:
-  - "0"
-  - "5"
+  - "SmallCrater"
 AsteroidResources:
-- Name: SiliconResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: CobaltResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: MagnesiumResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: IronResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.1"
-- Name: PentaxidResource
-  Threshold: "0.2"
-  Amount: "0.1"
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "CobaltResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "MagnesiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "PentaxidResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: R2DroneBase
-    Faction: Zirax
-    IsCommandCenter: "True"
-    DroneBaseSetup: DroneBaseSetup
-    IsImportant: "True"
+  - GroupName: "R2DroneBase"
+    DroneBaseSetup: "DroneBaseSetup"
+    Faction: "Zirax"
+    Territory: false
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
-    DroneProb: "1.0"
+    - 0
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 4
+      Max: 5
     DronesMinMax:
-    - "4"
-    - "5"
-    ReserveCount: "5"
+    - 4
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: R2XenuAuxT1
-    Faction: Zirax
+  - SpawnPoiRange:
+      Min: 600
+      Max: 800
+    GroupName: "R2XenuAuxT1"
+    Faction: "Zirax"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1"
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 2
+      Max: 3
     DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOINear:
-    - R2DroneBase
-    SpawnPOINearRange:
-    - "600"
-    - "800"
+    - 2
+    - 3
+    ReserveCount: 2
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2XenuDefenseT1
-    Faction: Zirax
-    Territory: "False"
+    SpawnPOINear:
+    - "R2DroneBase"
+    SpawnPOINearRange:
+    - 600
+    - 800
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "R2XenuDefenseT1"
+    Faction: "Zirax"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
-    DroneProb: "0.7"
+    - 2
+    - 3
+    DroneProb: 0.7
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2DroneBase"
     SpawnPOIAvoid:
-    - R2XenuDefenseT3
-    SpawnPOIAvoidDistance: "500"
-    SpawnPOINear:
-    - R2DroneBase
+    - "R2XenuDefenseT3"
     SpawnPOINearRange:
-    - "300"
-    - "400"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2PolarisTradePlanet
-    Faction: Polaris
-    IsImportant: "True"
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
+    - 300
+    - 400
+    SpawnPOIAvoidDistance: 500
+  - SpawnResRange:
+      Min: 150
+      Max: 600
+    GroupName: "R2PolarisTradePlanet"
+    Faction: "Polaris"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0"
+    - 1
+    - 1
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    SpawnResource:
-    - PromethiumResource:0-1
-    SpawnResourceRange:
-    - "150"
-    - "600"
+    - 1
+    - 2
     Properties:
-    - Key: Discovery
+    - Key: "Discovery"
       Value: "False"
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "4320"
-  - GroupName: R2PolarisAuxT1
-    Faction: Polaris
+    SpawnResource:
+    - "PromethiumResource:0-1"
+    SpawnResourceRange:
+    - 150
+    - 600
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 175
+      Max: 300
+    GroupName: "R2PolarisAuxT1"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0"
+    - 1
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - R2PolarisTradePlanet
-    SpawnPOINearRange:
-    - "175"
-    - "300"
+    - 1
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: R2PolarisDefenseT2
-    Faction: Polaris
-    CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "0.3"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
     SpawnPOINear:
-    - R2PolarisTradePlanet
+    - "R2PolarisTradePlanet"
     SpawnPOINearRange:
-    - "250"
-    - "500"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: R2XenuAuxT1
-    Faction: Zirax
-    IsScalingCount: "True"
+    - 175
+    - 300
+  - SpawnPoiRange:
+      Min: 250
+      Max: 500
+    GroupName: "R2PolarisDefenseT2"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "2"
-    - "3"
-    DroneProb: "0.6"
+    - 1
+    - 2
+    DroneProb: 0.3
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "0"
-    TroopTransport: "False"
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisTradePlanet"
+    SpawnPOINearRange:
+    - 250
+    - 500
+  - GroupName: "R2XenuAuxT1"
+    Faction: "Zirax"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    DroneProb: 0.6
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - R2DroneBase
-    SpawnPOIAvoidDistance: "750"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CrashedShip
-    Faction: None
+    - "R2DroneBase"
+    SpawnPOIAvoidDistance: 750
+  - SpawnPoiRange:
+      Min: 400
+      Max: 600
+    GroupName: "CrashedShip"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "4"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 4
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - R2DroneBase
+    - "R2DroneBase"
     SpawnPOINearRange:
-    - "400"
-    - "600"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CrashedShip
-    Faction: None
+    - 400
+    - 600
+  - GroupName: "CrashedShip"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "1"
-    IsScalingCount: "True"
-    DroneProb: "1.0"
+    - 0
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "4"
-    TroopTransport: "False"
-    SpawnPOIAvoid:
-    - R2DroneBase
-    SpawnPOIAvoidDistance: "1000"
+    - 1
+    - 2
+    ReserveCount: 4
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
+    SpawnPOIAvoid:
+    - "R2DroneBase"
+    SpawnPOIAvoidDistance: 1000
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "-596"
-    - "104"
-    - "-1063"
-    RotY: "125"
-  - Mode: Survival
-    Spawn: EscapePod
-    Armor: ArmorMedium
+    - -596
+    - 104
+    - -1063
+    RotY: 125
+  - Mode: "Survival"
+    Spawn: "EscapePod"
+    Armor: "ArmorMedium"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "0"
-    PresetStyle: "0"
+  - GroupName: "DroneBaseSetup"
     Stock:
-    - Name: DroneSmallFast01Rocket
+    - Name: "DroneSmallFast01Rocket"
       Amount: "100"
-      Extra: "0"
-    - Name: DroneSmallFast01Minigun
+      Extra: -1
+    - Name: "DroneSmallFast01Minigun"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneLargeSlow01Minigun
+      Extra: -1
+    - Name: "DroneLargeSlow01Minigun"
       Amount: "100"
-      Extra: "0"
-    - Name: DroneSmallSlow01Cannon
+      Extra: -1
+    - Name: "DroneSmallSlow01Cannon"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneSmallAttackBase
+      Extra: -1
+    - Name: "DroneSmallAttackBase"
       Amount: "300"
-      Extra: "1"
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMinigun
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
       Amount: "500"
-      Extra: "3"
-    - Name: RipperDog
+      Extra: 3
+    - Name: "RipperDog"
       Amount: "400"
-      Extra: "3"
+      Extra: 3
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "-2500"
-    Radius: "1500"
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "2500"
-    Radius: "1500"
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: -2500
+    Radius: 1500
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: 2500
+    Radius: 1500

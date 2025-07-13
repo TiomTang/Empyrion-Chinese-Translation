@@ -1,1045 +1,1442 @@
-PlanetType: Snow
-PlayfieldType: Planet
-Difficulty: "3"
-LandClaimZone: Device
-Description: "\u6C34\u662F\u4F1F\u5927\u7684\u5E73\u8861\u8005\u3002\n\n\u6E29\u5EA6\u8FC7\u9AD8?\u5B83\u4F1A\u5438\u6536\u80FD\u91CF,\u7559\u5F85\u4EE5\u540E\u91CA\u653E\u3002\u2013 \u4F9D\u7136\u4FDD\u6301\u6DB2\u6001!\n\u6216\u8005\u8FC7\u51B7?\u2013 \u6C34\u4F1A\u6D41\u52A8\u5E76\u4F20\u64AD\u70ED\u91CF\u3002\n\n\u800C\u5B83\u7684\u51B0\u4F1A\u6F02\u6D6E,\u9694\u7EDD\u4E0B\u65B9\u6D77\u6D0B\u514D\u4E8E\u5B8C\u5168\u51BB\u7ED3\u3002\n\u7531\u6B64,\u5373\u4FBF\u4E00\u4E2A\u88AB\u51B0\u96EA\u8986\u76D6\u7684\u4E16\u754C\u4E5F\u53EF\u80FD\u53D1\u751F\u53D8\u5316\u3001\u8FDB\u5316\u5E76\u7E41\u8363\u8D77\u6765\u3002\n\n\u6562\u4E0D\u6562\u5728\u53CD\u590D\u65E0\u5E38\u3001\u4E0D\u53EF\u9884\u6D4B\u7684\u6052\u661F\u661F\u65C1\u8FB9\u751F\u5B58?\n\u6216\u8005\u8FDC\u8FDC\u5730\u5B58\u5728\u4E8E\u5B83\u5B9C\u5C45\u8303\u56F4\u7684\u8FB9\u7F18?\n\u2026 \u5728\u51B7\u70ED\u4E4B\u95F4,\u53EA\u8981\u6709[i]\u6C34[/i],\u5C31\u6C38\u8FDC\u6709\u751F\u547D\u5B58\u5728\u7684\u5730\u65B9!\n"
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.95, 1.18, 1.6
-SkyColor: 1, 0.8, 1
-SkyHorizonColor: 1, 0.3, 0
-AtmosphereParams:
-- "0.4"
-- "1.7"
-DayLightIntensity: "1.0"
-NightLightIntensity: "0.02"
-DayShadowStrength: "0.95"
-NightShadowStrength: "0.5"
-LightZenithColor: 0.85, 0.95, 1.15
-LightHorizonColor: 0.8, 0.45, 0.10
-NightLightColor: 0.3, 0.3, 0.7
-SunFlare: EnvironmentalEffects/SunFlareWhite
-FogCloudIntensity: "0.8"
-FogColor: 0.85, 0.85, 1.03
-CloudsDensity: "0.3"
-CloudsSharpness: "0.2"
-CloudsBrightness: "0.6"
-CloudsZenithColor: 0.70, 0.75, 1.0
-CloudsHorizonColor: 1, 0.3, 0
-CloudsNightZenithColor: 0.022, 0.020, 0.025
-CloudsNightHorizonColor: 0.022, 0.020, 0.025
-WindSpeed: "3"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "Snow"
+PlanetSize: 2
+Difficulty: 3
+SunFlare: "EnvironmentalEffects/SunFlareWhite"
 SpecialEffectsLocal:
-- Name: FireFliesOrange
+- Name: "FireFliesOrange"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Taiga
-  - TaigaEdge
-  - TaigaSnow
-  Time: Night
-  MaxHeight: "15"
+  - "Taiga"
+  - "TaigaEdge"
+  - "TaigaSnow"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "3"
-  Lifetime: "1200"
-- Name: CloudsLight
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: Clouds
-  Type: Weather
-  InitialDelay: "5"
-  Delay: "3"
-  Lifetime: "1200"
-- Name: Fog
-  Type: Weather
-  InitialDelay: "12"
-  Delay: "5"
-  Lifetime: "1000"
-- Name: SnowLight
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "5"
-  Lifetime: "600"
-- Name: SnowMedium
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "12"
-  Lifetime: "600"
-- Name: SnowHeavy
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "12"
-  Lifetime: "600"
-- Name: ColdWave
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "1000"
-- Name: Hail
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "600"
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 3
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsLight"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Clouds"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 5
+  Delay: 3
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Fog"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 12
+  Delay: 5
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "SnowLight"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 5
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "SnowMedium"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "SnowHeavy"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "ColdWave"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "Hail"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+AtmosphereEnabled: true
+AtmosphereColor: "0.95, 1.18, 1.6"
+AtmosphereParams:
+- 0.4
+- 1.7
+SkyColor: "1, 0.8, 1"
+SkyHorizonColor: "1, 0.3, 0"
+LightZenithColor: "0.85, 0.95, 1.15"
+LightHorizonColor: "0.8, 0.45, 0.10"
+NightLightColor: "0.3, 0.3, 0.7"
+CloudsZenithColor: "0.70, 0.75, 1.0"
+CloudsHorizonColor: "1, 0.3, 0"
+CloudsNightZenithColor: "0.022, 0.020, 0.025"
+CloudsNightHorizonColor: "0.022, 0.020, 0.025"
+CloudsOpacity: 0.9
+FogCloudIntensity: 0.8
+DayLightIntensity: 1
+NightLightIntensity: 0.02
+DayShadowStrength: 0.95
+NightShadowStrength: 0.5
+CloudsDensity: 0.3
+CloudsSharpness: 0.2
+CloudsBrightness: 0.6
+WindSpeed: 3
+FogColor: "0.85, 0.85, 1.03"
+Description: "\u6C34\u662F\u4F1F\u5927\u7684\u5E73\u8861\u8005\u3002\n\n\u6E29\u5EA6\u8FC7\u9AD8?\u5B83\u4F1A\u5438\u6536\u80FD\u91CF,\u7559\u5F85\u4EE5\u540E\u91CA\u653E\u3002\u2013 \u4F9D\u7136\u4FDD\u6301\u6DB2\u6001!\n\u6216\u8005\u8FC7\u51B7?\u2013 \u6C34\u4F1A\u6D41\u52A8\u5E76\u4F20\u64AD\u70ED\u91CF\u3002\n\n\u800C\u5B83\u7684\u51B0\u4F1A\u6F02\u6D6E,\u9694\u7EDD\u4E0B\u65B9\u6D77\u6D0B\u514D\u4E8E\u5B8C\u5168\u51BB\u7ED3\u3002\n\u7531\u6B64,\u5373\u4FBF\u4E00\u4E2A\u88AB\u51B0\u96EA\u8986\u76D6\u7684\u4E16\u754C\u4E5F\u53EF\u80FD\u53D1\u751F\u53D8\u5316\u3001\u8FDB\u5316\u5E76\u7E41\u8363\u8D77\u6765\u3002\n\n\u6562\u4E0D\u6562\u5728\u53CD\u590D\u65E0\u5E38\u3001\u4E0D\u53EF\u9884\u6D4B\u7684\u6052\u661F\u661F\u65C1\u8FB9\u751F\u5B58?\n\u6216\u8005\u8FDC\u8FDC\u5730\u5B58\u5728\u4E8E\u5B83\u5B9C\u5C45\u8303\u56F4\u7684\u8FB9\u7F18?\n\u2026 \u5728\u51B7\u70ED\u4E4B\u95F4,\u53EA\u8981\u6709[i]\u6C34[/i],\u5C31\u6C38\u8FDC\u6709\u751F\u547D\u5B58\u5728\u7684\u5730\u65B9!\n"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Snow"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: CarbonResource
-  IsScalingCount: "True"
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 10
+    Max: 14
+  Depth:
+    Min: 10
+    Max: 20
+  Name: "CarbonResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
+  - 1
+  - 2
   SizeMinMax:
-  - "10"
-  - "14"
+  - 10
+  - 14
   DepthMinMax:
-  - "10"
-  - "20"
-  DroneProb: "0.2"
-  MaxDroneCount: "2"
-- Name: IronResource
-  IsScalingCount: "True"
+  - 10
+  - 20
+  DroneProb: 0.2
+  MaxDroneCount: 2
+- Count:
+    Min: 2
+    Max: 4
+  Size:
+    Min: 9
+    Max: 12
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "4"
+  - 2
+  - 4
   SizeMinMax:
-  - "9"
-  - "12"
+  - 9
+  - 12
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.2"
-  MaxDroneCount: "2"
-- Name: CopperResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.2
+  MaxDroneCount: 2
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 8
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "CopperResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "8"
+  - 5
+  - 8
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.3"
-- Name: SiliconResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 8
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "8"
+  - 5
+  - 8
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.3"
-- Name: CobaltResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 8
+    Max: 14
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "CobaltResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "8"
-  - "14"
+  - 8
+  - 14
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.2"
-  MaxDroneCount: "3"
-- Name: NeodymiumResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.2
+  MaxDroneCount: 3
+- Count:
+    Min: 4
+    Max: 5
+  Size:
+    Min: 6
+    Max: 9
+  Depth:
+    Min: 5
+    Max: 15
+  Name: "NeodymiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "5"
+  - 4
+  - 5
   SizeMinMax:
-  - "6"
-  - "9"
+  - 6
+  - 9
   DepthMinMax:
-  - "5"
-  - "15"
-  DroneProb: "0.9"
-- Name: TitanResource
-  IsScalingCount: "True"
+  - 5
+  - 15
+  DroneProb: 0.9
+  MaxDroneCount: 1
+- Count:
+    Min: 4
+    Max: 5
+  Size:
+    Min: 10
+    Max: 14
+  Depth:
+    Min: 5
+    Max: 20
+  Name: "TitanResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "5"
+  - 4
+  - 5
   SizeMinMax:
-  - "10"
-  - "14"
+  - 10
+  - 14
   DepthMinMax:
-  - "5"
-  - "20"
-  DroneProb: "0.9"
-  MaxDroneCount: "3"
-- Name: PromethiumResource
-  IsScalingCount: "True"
+  - 5
+  - 20
+  DroneProb: 0.9
+  MaxDroneCount: 3
+- Count:
+    Min: 1
+    Max: 2
+  Size:
+    Min: 5
+    Max: 7
+  Depth:
+    Max: 1
+  Name: "PromethiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "1"
-  - "2"
+  - 1
+  - 2
   SizeMinMax:
-  - "5"
-  - "7"
-  DroneProb: "0.4"
+  - 5
+  - 7
   DepthMinMax:
-  - "0"
-  - "1"
+  - 0
+  - 1
   DistTypeCylinder:
-    MaxRadius: "13"
-    YVariance: "10"
+    MaxRadius: 13
+    YVariance: 10
+  DroneProb: 0.4
+  MaxDroneCount: 1
 AsteroidResources:
-- Name: IronResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: CopperResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: SiliconResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: CobaltResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: NeodymiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: TitanResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CopperResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CobaltResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "NeodymiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "TitanResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: DroneBaseT1
-    Faction: Zirax
-    NoShieldReload: "True"
-    IsCommandCenter: "True"
-    DroneBaseSetup: DroneBaseSetup
+  - GroupName: "DroneBaseT1"
+    DroneBaseSetup: "DroneBaseSetup"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    IsCommandCenter: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrAbandoned
-    Faction: TheLegacy
-    NoShieldReload: "True"
-    IsImportant: "True"
+  - GroupName: "FarrAbandoned"
+    Faction: "TheLegacy"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Max: 1
     DronesMinMax:
-    - "0"
-    - "1"
-    ReserveCount: "5"
+    - 0
+    - 1
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrTradingT2
-    Faction: Farr
-    NoShieldReload: "True"
-    IsImportant: "True"
+  - GroupName: "FarrTradingT2"
+    Faction: "Farr"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Drones:
+      Max: 2
+    DronesMinMax:
+    - 0
+    - 2
+    ReserveCount: 5
+    Properties:
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - FarrAbandoned
-    SpawnPOIAvoidDistance: "1200"
-    DroneProb: "0"
+    - "FarrAbandoned"
+    SpawnPOIAvoidDistance: 1200
+  - SpawnPoiRange:
+      Min: 300
+      Max: 800
+    GroupName: "FarrAuxT2"
+    Faction: "Farr"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    DroneProb: 1
+    Drones:
+      Max: 2
     DronesMinMax:
-    - "0"
-    - "2"
-    ReserveCount: "5"
+    - 0
+    - 2
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrAuxT2
+    SpawnPOINear:
+    - "FarrTradingT2"
+    SpawnPOINearRange:
+    - 300
+    - 800
     BiomesExcluded:
-    - Radiated
-    Faction: Farr
-    NoShieldReload: "True"
-    IsImportant: "True"
+    - "Radiated"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 800
+    GroupName: "FarrAuxT1"
+    Faction: "Farr"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 2
+      Max: 4
     CountMinMax:
-    - "2"
-    - "4"
-    SpawnPOINear:
-    - FarrTradingT2
-    SpawnPOINearRange:
-    - "300"
-    - "800"
-    DroneProb: "1.0"
+    - 2
+    - 4
+    DroneProb: 1
+    Drones:
+      Max: 1
     DronesMinMax:
-    - "0"
-    - "2"
-    ReserveCount: "5"
+    - 0
+    - 1
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrAuxT1
+    SpawnPOINear:
+    - "FarrTradingT2"
+    SpawnPOINearRange:
+    - 300
+    - 800
     BiomesExcluded:
-    - Radiated
-    Faction: Farr
-    NoShieldReload: "True"
-    IsImportant: "True"
+    - "Radiated"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 800
+    GroupName: "FarrDefenseT1"
+    Faction: "Farr"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 3
+      Max: 6
     CountMinMax:
-    - "2"
-    - "4"
-    SpawnPOINear:
-    - FarrTradingT2
-    SpawnPOINearRange:
-    - "300"
-    - "800"
-    DroneProb: "1.0"
+    - 3
+    - 6
+    DroneProb: 1
+    Drones:
+      Max: 1
     DronesMinMax:
-    - "0"
-    - "1"
-    ReserveCount: "5"
+    - 0
+    - 1
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: FarrDefenseT1
+    SpawnPOINear:
+    - "FarrTradingT2"
+    SpawnPOINearRange:
+    - 300
+    - 800
     BiomesExcluded:
-    - Radiated
-    Faction: Farr
-    NoShieldReload: "True"
-    IsImportant: "True"
+    - "Radiated"
+  - GroupName: "PiratesAmbushSnow"
+    Faction: "Pirates"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Max: 3
     CountMinMax:
-    - "3"
-    - "6"
+    - 0
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "PiratesAuxSnow"
+    Faction: "Pirates"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "PiratesDefenseT2Snow"
+    Faction: "Pirates"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 3
+    CountMinMax:
+    - 1
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "PiratesDefenseT1Snow"
+    Faction: "Pirates"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 3
+    CountMinMax:
+    - 1
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - FarrTradingT2
+    - "PiratesAuxSnow"
     SpawnPOINearRange:
-    - "300"
-    - "800"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "0"
-    - "1"
-    ReserveCount: "5"
-    Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: PiratesAmbushSnow
-    Faction: Pirates
-    NoShieldReload: "True"
+    - 100
+    - 250
+  - GroupName: "TraderMain"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Max: 1
     CountMinMax:
-    - "0"
-    - "3"
+    - 0
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PiratesAuxSnow
-    Faction: Pirates
-    NoShieldReload: "True"
+  - GroupName: "TraderSettlementSnow"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 3
+      Max: 5
     CountMinMax:
-    - "1"
-    - "2"
+    - 3
+    - 5
     Properties:
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PiratesDefenseT2Snow
-    Faction: Pirates
-    NoShieldReload: "True"
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "TraderDefenseHQ"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 3
     CountMinMax:
-    - "1"
-    - "3"
+    - 1
+    - 3
     Properties:
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PiratesDefenseT1Snow
-    Faction: Pirates
-    NoShieldReload: "True"
     SpawnPOINear:
-    - PiratesAuxSnow
+    - "TraderMain"
     SpawnPOINearRange:
-    - "100"
-    - "250"
+    - 100
+    - 250
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "TraderDefenseB"
+    Faction: "Trader"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "3"
+    - 1
+    - 2
     Properties:
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TraderMain
-    Faction: Trader
-    NoShieldReload: "True"
-    CountMinMax:
-    - "0"
-    - "1"
-    Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TraderSettlementSnow
-    Faction: Trader
-    NoShieldReload: "True"
-    CountMinMax:
-    - "3"
-    - "5"
-    Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TraderDefenseHQ
-    Faction: Trader
-    NoShieldReload: "True"
-    CountMinMax:
-    - "1"
-    - "3"
     SpawnPOINear:
-    - TraderMain
+    - "TraderSettlementSnow"
     SpawnPOINearRange:
-    - "100"
-    - "250"
-    Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TraderDefenseB
-    Faction: Trader
-    NoShieldReload: "True"
+    - 100
+    - 250
+  - GroupName: "CivilMain"
+    Faction: "Colonists"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "2"
-    SpawnPOINear:
-    - TraderSettlementSnow
-    SpawnPOINearRange:
-    - "100"
-    - "250"
+    - 1
+    - 1
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: CivilMain
-    Territory: "False"
-    Faction: Colonists
-    NoShieldReload: "True"
+  - GroupName: "CivilSettlement"
+    Faction: "Colonists"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "1"
-    - "1"
+    - 3
+    - 4
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: CivilSettlement
-    Territory: "False"
-    Faction: Colonists
-    NoShieldReload: "True"
+  - GroupName: "KrielMain"
+    Faction: "Kriel"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "3"
-    - "4"
+    - 1
+    - 2
     Properties:
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: KrielMain
-    Faction: Kriel
-    NoShieldReload: "True"
+  - GroupName: "KrielDefenseT1"
+    Faction: "Kriel"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 4
     CountMinMax:
-    - "1"
-    - "2"
+    - 1
+    - 4
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: KrielDefenseT1
-    Faction: Kriel
-    NoShieldReload: "True"
+  - GroupName: "TS_Planet"
+    Faction: "Polaris"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "4"
+    - 1
+    - 1
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "SunnySkies"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TS_Planet
-    Faction: Polaris
-    NoShieldReload: "True"
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "1"
     SpawnPOIAvoid:
-    - DroneBaseT1
-    SpawnPOIAvoidDistance: "2000"
-    Properties:
-    - Key: Music
-      Value: SunnySkies
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: PolarisSettlementSnow
-    Faction: Polaris
-    NoShieldReload: "True"
+    - "DroneBaseT1"
+    SpawnPOIAvoidDistance: 2000
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "PolarisSettlementSnow"
+    Faction: "Polaris"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "3"
-    - "4"
+    - 3
+    - 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - TS_Planet
+    - "TS_Planet"
     SpawnPOINearRange:
-    - "100"
-    - "250"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: PolarisDefenceSnow
-    Faction: Polaris
-    NoShieldReload: "True"
+    - 100
+    - 250
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "PolarisDefenceSnow"
+    Faction: "Polaris"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "3"
-    - "4"
+    - 3
+    - 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - TS_Planet
+    - "TS_Planet"
     SpawnPOINearRange:
-    - "300"
-    - "400"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosMainSnow
-    Faction: Rados
-    NoShieldReload: "True"
-    IsImportant: "True"
+    - 300
+    - 400
+  - GroupName: "RadosMainSnow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1"
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 3
+      Max: 4
     DronesMinMax:
-    - "3"
-    - "4"
-    ReserveCount: "4"
-    TroopTransport: "True"
+    - 3
+    - 4
+    ReserveCount: 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - TS_Planet
-    SpawnPOIAvoidDistance: "2000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosAuxT1Snow
-    Faction: Rados
-    NoShieldReload: "True"
-    IsImportant: "True"
+    - "TS_Planet"
+    SpawnPOIAvoidDistance: 2000
+  - SpawnPoiRange:
+      Min: 100
+      Max: 250
+    GroupName: "RadosAuxT1Snow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
-    DroneProb: "0.8"
+    - 2
+    - 3
+    DroneProb: 0.8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "True"
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - RadosMainSnow
+    - "RadosMainSnow"
     SpawnPOINearRange:
-    - "100"
-    - "250"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosDefenseT1Snow
-    Faction: Rados
-    NoShieldReload: "True"
+    - 100
+    - 250
+  - SpawnPoiRange:
+      Min: 200
+      Max: 350
+    GroupName: "RadosDefenseT1Snow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 4
+      Max: 5
     CountMinMax:
-    - "4"
-    - "5"
-    DroneProb: "0.8"
+    - 4
+    - 5
+    DroneProb: 0.8
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - RadosMainSnow
+    - "RadosMainSnow"
     SpawnPOINearRange:
-    - "200"
-    - "350"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosAuxT1Snow
-    Faction: Rados
-    NoShieldReload: "True"
+    - 200
+    - 350
+  - SpawnPoiRange:
+      Min: 350
+      Max: 600
+    GroupName: "RadosAuxT1Snow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
-    DroneProb: "1"
+    - 2
+    - 3
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - DroneBaseT1
+    - "DroneBaseT1"
     SpawnPOINearRange:
-    - "350"
-    - "600"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosMissileBaseSnow
-    Faction: Rados
-    NoShieldReload: "True"
-    IsImportant: "True"
+    - 350
+    - 600
+  - GroupName: "RadosMissileBaseSnow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    IsScalingCount: "True"
-    DroneProb: "1"
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "3"
-    TroopTransport: "True"
+    - 3
+    - 5
+    ReserveCount: 3
+    Properties:
+    - Key: "Music"
+      Value: "lava"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - TS_Planet
-    SpawnPOIAvoidDistance: "2000"
-    Properties:
-    - Key: Music
-      Value: lava
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosMiscSnow
-    Faction: Rados
-    NoShieldReload: "True"
-    IsImportant: "True"
+    - "TS_Planet"
+    SpawnPOIAvoidDistance: 2000
+  - GroupName: "RadosMiscSnow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    IsScalingCount: "True"
-    DroneProb: "1"
+    - 1
+    - 2
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "True"
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "Music"
+      Value: "lava"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - TS_Planet
-    SpawnPOIAvoidDistance: "2000"
-    Properties:
-    - Key: Music
-      Value: lava
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Ruins
-    Faction: None
+    - "TS_Planet"
+    SpawnPOIAvoidDistance: 2000
+  - SpawnPoiRange:
+      Min: 150
+      Max: 250
+    GroupName: "Ruins"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
-    DroneProb: "0.5"
+    - 2
+    - 3
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    TroopTransport: "False"
+    - 1
+    - 3
+    ReserveCount: 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOINear:
-    - RadosMissileBaseSnow
+    - "RadosMissileBaseSnow"
     SpawnPOINearRange:
-    - "150"
-    - "250"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: PolarisSettlementSnow
-    Faction: Polaris
-    NoShieldReload: "True"
+    - 150
+    - 250
+  - GroupName: "PolarisSettlementSnow"
+    Faction: "Polaris"
+    Territory: false
+    NoShieldReload: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    IsScalingCount: "True"
-    DroneProb: "0.8"
+    - 1
+    - 2
+    DroneProb: 0.8
+    Drones:
+      Min: 1
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "3"
-    TroopTransport: "False"
+    - 1
+    - 3
+    ReserveCount: 3
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: RadosAuxT2Snow
-    Faction: Rados
-    NoShieldReload: "True"
+  - GroupName: "RadosAuxT2Snow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
-    IsScalingCount: "True"
-    DroneProb: "0.8"
+    - 2
+    - 3
+    DroneProb: 0.8
+    TroopTransport: true
+    Drones:
+      Min: 4
+      Max: 6
     DronesMinMax:
-    - "4"
-    - "6"
-    ReserveCount: "3"
-    TroopTransport: "True"
+    - 4
+    - 6
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - TS_Planet
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosDefenseT2Snow
-    Faction: Rados
-    NoShieldReload: "True"
+    - "TS_Planet"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "RadosDefenseT2Snow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    IsScalingCount: true
+    Count:
+      Max: 2
     CountMinMax:
-    - "0"
-    - "2"
-    IsScalingCount: "True"
-    DroneProb: "0.8"
+    - 0
+    - 2
+    DroneProb: 0.8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "True"
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - TS_Planet
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosDefenseT3Snow
-    Faction: Rados
-    NoShieldReload: "True"
+    - "TS_Planet"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "RadosDefenseT3Snow"
+    Faction: "Rados"
+    Territory: false
+    NoShieldReload: true
+    IsScalingCount: true
+    Count:
+      Max: 2
     CountMinMax:
-    - "0"
-    - "2"
-    IsScalingCount: "True"
-    DroneProb: "0.8"
+    - 0
+    - 2
+    DroneProb: 0.8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "3"
-    TroopTransport: "True"
+    - 1
+    - 1
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     SpawnPOIAvoid:
-    - TS_Planet
-    SpawnPOIAvoidDistance: "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: CrashedShip
-    Faction: None
+    - "TS_Planet"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "CrashedShip"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
-    IsScalingCount: "True"
-    PlaceAt: Terrain, UnderWater
-    DroneProb: "0.8"
+    - 2
+    - 3
+    DroneProb: 0.8
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "4"
-    TroopTransport: "False"
+    - 1
+    - 2
+    ReserveCount: 4
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: AbandonedPOI
-    Faction: Alien
+    PlaceAt: "ResourceAll"
+  - GroupName: "AbandonedPOI"
+    Faction: "Alien"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    IsScalingCount: "True"
-    DroneProb: "1.0"
+    - 1
+    - 2
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 2
+      Max: 3
     DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "3"
-    TroopTransport: "True"
+    - 2
+    - 3
+    ReserveCount: 3
     Properties:
-    - Key: Music
-      Value: lava
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "lava"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Wreckage
-    Faction: None
+  - GroupName: "Wreckage"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 3
     CountMinMax:
-    - "1"
-    - "3"
-    IsScalingCount: "True"
-    DroneProb: "0.5"
+    - 1
+    - 3
+    DroneProb: 0.5
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    TroopTransport: "True"
+    - 1
+    - 3
+    ReserveCount: 2
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Ruins
-    Faction: None
+  - GroupName: "Ruins"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
     CountMinMax:
-    - "2"
-    - "3"
-    IsScalingCount: "True"
-    DroneProb: "0.5"
+    - 2
+    - 3
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 3
     DronesMinMax:
-    - "1"
-    - "3"
-    ReserveCount: "2"
-    TroopTransport: "False"
+    - 1
+    - 3
+    ReserveCount: 2
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "200"
-    - "80"
-    - "0"
-    RotY: "125"
-  - Mode: Survival
-    Spawn: EscapePod
-    Armor: ArmorMedium
+    - 200
+    - 80
+    - 0
+    RotY: 125
+  - Mode: "Survival"
+    Spawn: "EscapePod"
+    Armor: "ArmorMedium"
 DroneBaseSetup:
   Random:
-  - GroupName: DroneBaseSetup
-    Difficulty: "6"
-    PresetStyle: "3"
+  - GroupName: "DroneBaseSetup"
+    Difficulty: 6
+    PresetStyle: 3
     Stock:
-    - Name: DroneSmallFast01Rocket
+    - Name: "DroneSmallFast01Rocket"
       Amount: "200"
-      Extra: "0"
-    - Name: DroneSmallFast01Plasma
+    - Name: "DroneSmallFast01Plasma"
       Amount: "200"
-      Extra: "0"
-    - Name: EnemyDroneV2Minigun
+    - Name: "EnemyDroneV2Minigun"
       Amount: "300"
-      Extra: "0"
-    - Name: DroneLargeAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: EnemyDroneV2Plasma
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneBomberAttackBase
-      Amount: Infinite
-      Extra: "1"
-    - Name: DroneTroopsTransport01
-      Amount: Infinite
-      Extra: "2"
-    - Name: ZiraxMinigun
+    - Name: "DroneLargeAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "EnemyDroneV2Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneBomberAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneTroopsTransport01"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
       Amount: "500"
-      Extra: "3"
-    - Name: RipperDog
+      Extra: 3
+    - Name: "RipperDog"
       Amount: "400"
-      Extra: "3"
+      Extra: 3
     PlanetVesselBase:
-      Name: PlanetVesselBaseSetup
+      Name: "PlanetVesselBaseSetup"
       Position3D:
-      - "0"
-      - "102"
-      - "0"
-      BaseType: PlanetVesselBase
-      KeyId: "0"
+      - 0
+      - 102
+      - 0
+      BaseType: "PlanetVesselBase"
       PlanetVessel:
-      - Name: PVZiraxT2
-        Mission: PlanetPatrol
-        FixedMaxSpeed: "5"
-        RespawnDelay: "18"
-        InitialDelay: "72"
+      - Name: "PVZiraxT2"
+        Mission: "PlanetPatrol"
+        FixedMaxSpeed: 5
+        RespawnDelay: 18
+        InitialDelay: 72
         RangePatrolTask:
           Position3D:
-          - "1000"
-          - "80"
-          - "0"
-          Radius: "500"
-          DistToGround: "80"
+          - 1000
+          - 80
+          - 0
+          Radius: 500
+          DistToGround: 80
         AttackCVCircleAround:
-          DistToTarget: "200"
+          DistToTarget: 200
 DroneSpawning:
   Random:
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "-5000"
-    Radius: "3000"
-  - DronesMinMax:
-    - "5"
-    - "10"
-    CenterX: "-5000"
-    Radius: "3000"
-SpawnRateZones:
-- SpawnAt:
-  - TS_Planet
-  Radius: "1000"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.7"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-SpawnZones:
-- SpawnAt:
-  - Wreckage
-  - AbandonedPOI
-  - CrashedShip
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "500"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 0.6, 0.2, 0.7
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - CaveWormsWhite
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - NeodymiumResource
-  - TitanResource
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "500"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 0.6, 0.2, 0.7
-  Entities:
-  - Names:
-    - GolemsIce
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - DroneBaseT1
-  - RadosMainSnow
-  - RadosAuxT2Snow
-  - RadosMissileBaseSnow
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "800"
-  RadiusRandom: "100"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 0.6, 0.2, 0.7
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxRocketPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxMechanoidPatrol
-    - ZiraxRipperDogPatrol
-    Biomes:
-    - Any
-    Amount: "250"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: -5000
+    Radius: 3000
+  - Drones:
+      Min: 5
+      Max: 10
+    DronesMinMax:
+    - 5
+    - 10
+    CenterX: -5000
+    Radius: 3000
 CreatureSpawning:
 - Biomes:
-  - Shore
+  - "Shore"
   Entities:
-  - Name: SlimesWhite
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "SlimesWhite"
+    Amount: 10
     DelayMinMax:
-    - "10"
-    - "12"
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - Taiga
-  - TaigaEdge
-  - TaigaSnow
-  - TaigaSnowEdge
+  - "Taiga"
+  - "TaigaEdge"
+  - "TaigaSnow"
+  - "TaigaSnowEdge"
   Entities:
-  - Name: SlimesWhite
-    Period: Day
-    Amount: "8"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "SlimesWhite"
+    Amount: 8
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: Oviraptors
-    Period: Always
-    Amount: "15"
+    - 10
+    - 12
+    Period: "Day"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "Oviraptors"
+    Amount: 15
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: CaveWormWhiteHerd
-    Period: Always
-    Amount: "6"
+    - 10
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormWhiteHerd"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "6"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsIce"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Spiders01
-    Period: Night
-    Amount: "10"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Spiders01"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Dunes
-  - Plains
-  - IceShelf
-  - Tundra
-  - GlacierSnow
-  - Rocks
+  - "Dunes"
+  - "Plains"
+  - "IceShelf"
+  - "Tundra"
+  - "GlacierSnow"
+  - "Rocks"
   Entities:
-  - Name: Oviraptors
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "Oviraptors"
+    Amount: 10
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: CaveWormWhiteHerd
-    Period: Day
-    Amount: "6"
+    - 10
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormWhiteHerd"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Day"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsIce"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - LowMountains
+  - "LowMountains"
   Entities:
-  - Name: GolemsIce
-    Period: Always
-    Amount: "4"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsIce"
+    Amount: 4
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Always"
+SpawnRateZones:
+- SpawnAt:
+  - "TS_Planet"
+  Radius: 1000
+  RadiusRandom: 50
+  RateMultiplyerEdge: 0.7
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+SpawnZones:
+- SpawnAt:
+  - "Wreckage"
+  - "AbandonedPOI"
+  - "CrashedShip"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 500
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.6, 0.2, 0.7"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "CaveWormsWhite"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "NeodymiumResource"
+  - "TitanResource"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 500
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  Color: "1.0, 0.6, 0.2, 0.7"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "GolemsIce"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "DroneBaseT1"
+  - "RadosMainSnow"
+  - "RadosAuxT2Snow"
+  - "RadosMissileBaseSnow"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 800
+  RadiusRandom: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.6, 0.2, 0.7"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxRocketPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 250
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"

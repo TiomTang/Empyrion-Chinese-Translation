@@ -1,2471 +1,3135 @@
-Description: "\u4F4D\u4E8E\u5B9C\u5C45\u5E26\u8FB9\u7F18\u7684\u4E16\u754C,\u6DF1\u9677\u4E25\u91CD\u51B0\u6CB3\u65F6\u4EE3\u3002\u6CE8\u610F\u6E56\u6CCA\u5468\u56F4\u548C\u4F4E\u6D77\u62D4\u5730\u533A\u7684\u70ED\u6C34\u6C60\u548C\u6E29\u6696\u533A\u57DF\u3002\u5927\u6C14\u53EF\u547C\u5438\u3002\n\u8FD9\u662F\u4E00\u4E2A\u5145\u6EE1\u6311\u6218\u7684\u8D77\u70B9,\u4E13\u4E3A\u70ED\u7231\u70ED\u996E\u7684[c][FFFFFF]\u6709\u7ECF\u9A8C\u751F\u5B58\u8005[-][/c]\u8BBE\u8BA1\u3002\n\n[i]- \u5373\u523B\u51BB\u7ED3,\u4F7F\u7528\u52A0\u70ED\u5668\u3002\u591C\u665A\u81F4\u547D!\n- \u9965\u997F\u98CE\u9669\u9AD8;\u8D44\u6E90\u7A00\u5C11\u3002[/i]"
-PlanetClass: Snow
-PlanetType: SnowStarter
-PlayfieldType: Planet
-Difficulty: "3"
-LandClaimZone: Device
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.855, 1.062, 1.44
-SkyColor: 1.02, 0.76, 1.02
-SkyHorizonColor: 1, 0.3, 0
-AtmosphereParams:
-- "0.4"
-- "1.7"
-DayLightIntensity: "0.8"
-NightLightIntensity: "0.25"
-DayShadowStrength: "0.95"
-NightShadowStrength: "0.5"
-LightZenithColor: 0.9, 0.95, 1.10
-LightHorizonColor: 0.8, 0.45, 0.10
-NightLightColor: 0.3, 0.3, 0.7
-SunFlare: EnvironmentalEffects/SunFlareWhite
-FogCloudIntensity: "0.8"
-FogColor: 0.85, 0.85, 1.03
-CloudsDensity: "0.3"
-CloudsSharpness: "0.2"
-CloudsBrightness: "0.6"
-CloudsZenithColor: 0.60, 0.63, 0.86
-CloudsHorizonColor: 0.72, 0.24, 0.08
-CloudsNightZenithColor: 0.015, 0.023, 0.029
-CloudsNightHorizonColor: 0.015, 0.023, 0.029
-WindSpeed: "3"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "SnowStarter"
+PlanetSize: 2
+Difficulty: 3
+SunFlare: "EnvironmentalEffects/SunFlareWhite"
 SpecialEffectsLocal:
-- Name: FireFliesRed
+- Name: "FireFliesRed"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Taiga
-  - TaigaEdge
-  - TaigaSnow
-  - Oasis
-  Time: Night
-  MaxHeight: "15"
-- Name: FireFliesOrange
+  - "Taiga"
+  - "TaigaEdge"
+  - "TaigaSnow"
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "FireFliesOrange"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Shore
-  - Taiga
-  - TaigaEdge
-  - TaigaSnow
-  - Oasis
-  Time: Night
-  MaxHeight: "15"
-- Name: FireFliesRed
+  - "Shore"
+  - "Taiga"
+  - "TaigaEdge"
+  - "TaigaSnow"
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "FireFliesRed"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Oasis
-  Time: Day
-  MaxHeight: "15"
-- Name: FireFliesOrange
+  - "Oasis"
+  FollowPlayerY: false
+- Name: "FireFliesOrange"
+  MaxHeight: 15
+  Time: "Day"
   Biome:
-  - Shore
-  - Taiga
-  - Oasis
-  Time: Day
-  MaxHeight: "15"
+  - "Shore"
+  - "Taiga"
+  - "Oasis"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Lifetime: "7200"
-  Delay: "10000"
-- Name: SnowLight
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "5"
-  Lifetime: "600"
-- Name: Clear
-  Type: Weather
-  InitialDelay: "50"
-  Delay: "12"
-  Lifetime: "1000"
-- Name: SnowMedium
-  Type: Weather
-  InitialDelay: "50"
-  Delay: "12"
-  Lifetime: "800"
-- Name: Clear
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "12"
-  Lifetime: "600"
-- Name: SnowHeavy
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "12"
-  Lifetime: "600"
-- Name: ColdWave
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "24"
-  Lifetime: "1000"
-- Name: Hail
-  Type: Weather
-  InitialDelay: "72"
-  Delay: "48"
-  Lifetime: "600"
-- Name: HeatWave
-  Type: Weather
-  InitialDelay: "90"
-  Delay: "90"
-  Lifetime: "400"
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 10000
+  PlyDist: 100
+  Lifetime: 7200
+  Type: "Weather"
+- Name: "SnowLight"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 5
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 50
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "SnowMedium"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 50
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 800
+  Type: "Weather"
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "SnowHeavy"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "ColdWave"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "Hail"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 72
+  Delay: 48
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "HeatWave"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 90
+  Delay: 90
+  PlyDist: 100
+  Lifetime: 400
+  Type: "Weather"
+AtmosphereEnabled: true
+AtmosphereColor: "0.855, 1.062, 1.44"
+AtmosphereParams:
+- 0.4
+- 1.7
+SkyColor: "1.02, 0.76, 1.02"
+SkyHorizonColor: "1, 0.3, 0"
+LightZenithColor: "0.9, 0.95, 1.10"
+LightHorizonColor: "0.8, 0.45, 0.10"
+NightLightColor: "0.3, 0.3, 0.7"
+CloudsZenithColor: "0.60, 0.63, 0.86"
+CloudsHorizonColor: "0.72, 0.24, 0.08"
+CloudsNightZenithColor: "0.015, 0.023, 0.029"
+CloudsNightHorizonColor: "0.015, 0.023, 0.029"
+CloudsOpacity: 0.9
+FogCloudIntensity: 0.8
+DayLightIntensity: 0.8
+NightLightIntensity: 0.25
+DayShadowStrength: 0.95
+NightShadowStrength: 0.5
+CloudsDensity: 0.3
+CloudsSharpness: 0.2
+CloudsBrightness: 0.6
+WindSpeed: 3
+FogColor: "0.85, 0.85, 1.03"
+Description: "\u4F4D\u4E8E\u5B9C\u5C45\u5E26\u8FB9\u7F18\u7684\u4E16\u754C,\u6DF1\u9677\u4E25\u91CD\u51B0\u6CB3\u65F6\u4EE3\u3002\u6CE8\u610F\u6E56\u6CCA\u5468\u56F4\u548C\u4F4E\u6D77\u62D4\u5730\u533A\u7684\u70ED\u6C34\u6C60\u548C\u6E29\u6696\u533A\u57DF\u3002\u5927\u6C14\u53EF\u547C\u5438\u3002\n\u8FD9\u662F\u4E00\u4E2A\u5145\u6EE1\u6311\u6218\u7684\u8D77\u70B9,\u4E13\u4E3A\u70ED\u7231\u70ED\u996E\u7684[c][FFFFFF]\u6709\u7ECF\u9A8C\u751F\u5B58\u8005[-][/c]\u8BBE\u8BA1\u3002\n\n[i]- \u5373\u523B\u51BB\u7ED3,\u4F7F\u7528\u52A0\u70ED\u5668\u3002\u591C\u665A\u81F4\u547D!\n- \u9965\u997F\u98CE\u9669\u9AD8;\u8D44\u6E90\u7A00\u5C11\u3002[/i]"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "Snow"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: IronResource
-  Biome:
-  - Shore
-  - Taiga
-  - TaigaEdge
-  - TaigaSnow
-  - TaigaSnowEdge
-  - LowMountains
-  - Mountains
-  - Mountains_1
-  - HighMountains
-  - HighMountains_1
-  IsScalingCount: "True"
+- Count:
+    Min: 3
+    Max: 3
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "3"
+  - 3
+  - 3
   SizeMinMax:
-  - "3"
-  - "4"
+  - 3
+  - 4
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.0"
-  MaxDroneCount: "1"
-- Name: CopperResource
+  - 5
+  - 10
+  MaxDroneCount: 1
+  Biome:
+  - "Shore"
+  - "Taiga"
+  - "TaigaEdge"
+  - "TaigaSnow"
+  - "TaigaSnowEdge"
+  - "LowMountains"
+  - "Mountains"
+  - "Mountains_1"
+  - "HighMountains"
+  - "HighMountains_1"
+- Count:
+    Min: 3
+    Max: 3
+  Size:
+    Min: 4
+    Max: 5
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "CopperResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 3
+  - 3
+  SizeMinMax:
+  - 4
+  - 5
+  DepthMinMax:
+  - 5
+  - 10
+  MaxDroneCount: 1
   BiomesExcluded:
-  - Glacier
-  IsScalingCount: "True"
+  - "Glacier"
+- Count:
+    Min: 2
+    Max: 2
+  Size:
+    Min: 3
+    Max: 4
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "3"
-  - "3"
+  - 2
+  - 2
   SizeMinMax:
-  - "4"
-  - "5"
+  - 3
+  - 4
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.0"
-- Name: SiliconResource
+  - 5
+  - 10
+  MaxDroneCount: 1
   Biome:
-  - Shore
-  - LowMountains
-  - Mountains
-  - Mountains_1
-  - HighMountains
-  - HighMountains_1
-  IsScalingCount: "True"
+  - "Shore"
+  - "LowMountains"
+  - "Mountains"
+  - "Mountains_1"
+  - "HighMountains"
+  - "HighMountains_1"
+- Count:
+    Min: 1
+    Max: 1
+  Size:
+    Min: 4
+    Max: 4
+  Depth:
+    Max: 1
+  Name: "PromethiumResource"
+  IsImportant: true
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "2"
+  - 1
+  - 1
   SizeMinMax:
-  - "3"
-  - "4"
+  - 4
+  - 4
   DepthMinMax:
-  - "5"
-  - "10"
-  DroneProb: "0.0"
-- Name: PromethiumResource
+  - 0
+  - 1
+  DroneProb: 1
+  MaxDroneCount: 1
   Biome:
-  - HighMountains
-  - Mountains
-  IsImportant: "True"
-  IsScalingCount: "True"
+  - "HighMountains"
+  - "Mountains"
+- Count:
+    Max: 1
+  Size:
+    Min: 2
+    Max: 2
+  Depth:
+    Min: 5
+    Max: 10
+  Name: "GoldResource"
   CountMinMax:
-  - "1"
-  - "1"
+  - 0
+  - 1
   SizeMinMax:
-  - "4"
-  - "4"
-  DroneProb: "1.0"
+  - 2
+  - 2
   DepthMinMax:
-  - "0"
-  - "1"
-- Name: GoldResource
+  - 5
+  - 10
+  MaxDroneCount: 1
   Biome:
-  - LowMountains
-  - Mountains
-  - HighMountains
-  CountMinMax:
-  - "0"
-  - "1"
-  SizeMinMax:
-  - "2"
-  - "2"
-  DroneProb: "0.0"
-  DepthMinMax:
-  - "5"
-  - "10"
+  - "LowMountains"
+  - "Mountains"
+  - "HighMountains"
 AsteroidResources:
-- Name: IronResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: CopperResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: SiliconResource
-  Threshold: "0.2"
-  Amount: "0.2"
-- Name: PromethiumResource
-  Threshold: "0.2"
-  Amount: "0.2"
+- Name: "IronResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "CopperResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.2
+  InitialDelay: -1
+  Delay: -1
 POIs:
   Random:
-  - GroupName: Junksite
-    Faction: None
-    Biome:
-    - Grove
-    IsImportant: "True"
+  - SpawnPoiRange:
+      Max: 1200
+    SpawnResRange:
+      Min: 50
+      Max: 150
+    GroupName: "Junksite"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "0"
-    - "1200"
-    SpawnResource:
-    - CopperResource:1-1
-    SpawnResourceRange:
-    - "50"
-    - "150"
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: SignalMarker01
-    IsImportant: "True"
-    Faction: None
-    Biome:
-    - Shore
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - LowMountains
-    - Mountains
-    - Mountains_1
-    - HighMountains
-    - HighMountains_1
-    IsScalingCount: "True"
-    CountMinMax:
-    - "3"
-    - "3"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - TribalVillageWoodStory
-    - START
-    SpawnPOIAvoidDistance: "1000"
+    SpawnPOINear:
+    - "START"
     SpawnResource:
-    - IronResource:1-1
+    - "CopperResource:1-1"
+    SpawnPOINearRange:
+    - 0
+    - 1200
     SpawnResourceRange:
-    - "80"
-    - "140"
+    - 50
+    - 150
+    Biome:
+    - "Grove"
+  - SpawnResRange:
+      Min: 80
+      Max: 140
+    GroupName: "SignalMarker01"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 3
+    CountMinMax:
+    - 3
+    - 3
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    ReserveCount: 2
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: MapDistance
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "MapDistance"
       Value: "0"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "0"
-  - GroupName: SignalMarker02
-    IsImportant: "True"
-    Faction: None
+    SpawnPOIAvoid:
+    - "TribalVillageWoodStory"
+    - "START"
+    SpawnResource:
+    - "IronResource:1-1"
+    SpawnPOIAvoidDistance: 1000
+    SpawnResourceRange:
+    - 80
+    - 140
+    Biome:
+    - "Shore"
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "LowMountains"
+    - "Mountains"
+    - "Mountains_1"
+    - "HighMountains"
+    - "HighMountains_1"
+  - SpawnResRange:
+      Min: 80
+      Max: 140
+    GroupName: "SignalMarker02"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 3
+    CountMinMax:
+    - 3
+    - 3
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "0"
+    SpawnPOIAvoid:
+    - "TribalVillageWoodStory"
+    - "START"
+    SpawnResource:
+    - "CopperResource:1-1"
+    SpawnPOIAvoidDistance: 1000
+    SpawnResourceRange:
+    - 80
+    - 140
     BiomesExcluded:
-    - Glacier
-    - CrashSite
-    - CrashSite_1
-    IsScalingCount: "True"
+    - "Glacier"
+    - "CrashSite"
+    - "CrashSite_1"
+  - SpawnResRange:
+      Min: 80
+      Max: 140
+    GroupName: "SignalMarker03"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 2
     CountMinMax:
-    - "3"
-    - "3"
-    DroneProb: "1.0"
+    - 2
+    - 2
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - TribalVillageWoodStory
-    - START
-    SpawnPOIAvoidDistance: "1000"
-    SpawnResource:
-    - CopperResource:1-1
-    SpawnResourceRange:
-    - "80"
-    - "140"
+    - 1
+    - 2
+    ReserveCount: 2
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: MapDistance
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "MapDistance"
       Value: "0"
-    - Key: HudDistance
+    - Key: "HudDistance"
       Value: "0"
-  - GroupName: SignalMarker03
-    IsImportant: "True"
-    Faction: None
+    SpawnPOIAvoid:
+    - "TribalVillageWoodStory"
+    - "START"
+    SpawnResource:
+    - "SiliconResource:1-1"
+    SpawnPOIAvoidDistance: 1000
+    SpawnResourceRange:
+    - 80
+    - 140
     BiomesExcluded:
-    - Glacier
-    - CrashSite
-    - CrashSite_1
-    IsScalingCount: "True"
+    - "Glacier"
+    - "CrashSite"
+    - "CrashSite_1"
+  - SpawnResRange:
+      Min: 80
+      Max: 140
+    GroupName: "SignalMarker04"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "2"
-    - "2"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "0"
     SpawnPOIAvoid:
-    - TribalVillageWoodStory
-    - START
-    SpawnPOIAvoidDistance: "1000"
+    - "TribalVillageWoodStory"
+    - "START"
     SpawnResource:
-    - SiliconResource:1-1
+    - "PromethiumResource:1-1"
+    SpawnPOIAvoidDistance: 800
     SpawnResourceRange:
-    - "80"
-    - "140"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: MapDistance
-      Value: "0"
-    - Key: HudDistance
-      Value: "0"
-  - GroupName: SignalMarker04
-    IsImportant: "True"
-    Faction: None
+    - 80
+    - 140
     Biome:
-    - HighMountains
-    - Mountains
-    IsScalingCount: "True"
+    - "HighMountains"
+    - "Mountains"
+  - SpawnPoiRange:
+      Min: 80
+      Max: 10
+    GroupName: "NullPOI"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "2"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - TribalVillageWoodStory
-    - START
-    SpawnPOIAvoidDistance: "800"
+    - 1
+    - 1
+    SpawnPOINear:
+    - "START"
+    SpawnPOINearRange:
+    - 80
+    - 10
+  - SpawnPoiRange:
+      Min: 100
+      Max: 380
+    SpawnResRange:
+      Min: 150
+      Max: 400
+    GroupName: "StoryDmgComStation"
+    Faction: "None"
+    Territory: false
+    AvoidFactionTerritory: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
     SpawnResource:
-    - PromethiumResource:1-1
+    - "IronResource:1-1"
+    - "SiliconResource:1-1"
+    - "CopperResource:1-1"
+    SpawnPOINearRange:
+    - 100
+    - 380
     SpawnResourceRange:
-    - "80"
-    - "140"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: MapDistance
-      Value: "0"
-    - Key: HudDistance
-      Value: "0"
-  - GroupName: NullPOI
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - START
-    SpawnPOINearDistance: "10"
-    IsImportant: "True"
-  - GroupName: StoryDmgComStation
-    Faction: None
-    Territory: "False"
+    - 150
+    - 400
     Biome:
-    - Grove
-    AvoidFactionTerritory: "True"
+    - "Grove"
+  - SpawnPoiRange:
+      Min: 80
+      Max: 200
+    GroupName: "Junksite"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 4
+      Max: 8
     CountMinMax:
-    - "1"
-    - "1"
-    IsImportant: "True"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "100"
-    - "380"
-    SpawnResource:
-    - IronResource:1-1
-    - SiliconResource:1-1
-    - CopperResource:1-1
-    SpawnResourceRange:
-    - "150"
-    - "400"
-    InitPower: "false"
+    - 4
+    - 8
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: Junksite
-    Faction: None
-    CountMinMax:
-    - "4"
-    - "8"
+    SpawnPOINear:
+    - "StoryDmgComStation"
     SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "80"
-    SpawnPOINear:
-    - StoryDmgComStation
+    - "START"
     SpawnPOINearRange:
-    - "80"
-    - "200"
+    - 80
+    - 200
+    SpawnPOIAvoidDistance: 80
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "JunkT2"
+    Faction: "None"
+    Territory: false
+    AvoidFactionTerritory: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "PersonalContainer"
+      Value: "NutrientSolution:1, MetalPieces:1, Coolant:1, Beer:1"
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: JunkT2
-    Faction: None
+    SpawnPOINear:
+    - "START"
+    SpawnPOINearRange:
+    - 300
+    - 400
     Biome:
-    - Grove
-    - CrashSite
-    - CrashSite_1
-    - Shore
-    - Taiga
-    - TaigaEdge
-    AvoidFactionTerritory: "True"
+    - "Grove"
+    - "CrashSite"
+    - "CrashSite_1"
+    - "Shore"
+    - "Taiga"
+    - "TaigaEdge"
+  - SpawnPoiRange:
+      Min: 1200
+      Max: 1400
+    GroupName: "TribalVillageWoodStory"
+    Faction: "Talon"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    IsImportant: "True"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "300"
-    - "400"
+    - 1
+    - 1
     Properties:
-    - Key: PersonalContainer
-      Value: NutrientSolution:1, MetalPieces:1, Coolant:1, Beer:1
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TribalVillageWoodStory
-    IsImportant: "True"
-    Faction: Talon
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "START"
+    SpawnPOINearRange:
+    - 1200
+    - 1400
+    SpawnPOIAvoidDistance: 1000
     Biome:
-    - Plains
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - Oasis
-    - Shore
+    - "Plains"
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "Oasis"
+    - "Shore"
+  - SpawnPoiRange:
+      Min: 400
+      Max: 600
+    GroupName: "BAStoryCryoStation"
+    Faction: "Alien"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "1000"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "1200"
-    - "1400"
+    - 1
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: BAStoryCryoStation
-    Faction: Alien
-    BiomesExcluded:
-    - Glacier
-    - GlacierHills
-    - LowMountains
-    - Mountains
-    - Mountains_1
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    LevelMod: "+4"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "1200"
-    SpawnPOINear:
-    - TribalVillageWoodStory
-    SpawnPOINearRange:
-    - "400"
-    - "600"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-    - Key: SI
+    - Key: "SI"
       Value: "Off"
-  - GroupName: TribalField
-    Faction: Talon
-    Territory: "False"
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - BAStoryCryoStation
-    SpawnPOIAvoidDistance: "80"
-    SpawnPOINear:
-    - BAStoryCryoStation
-    SpawnPOINearRange:
-    - "80"
-    - "100"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RuinsTribal
-    Faction: None
-    Territory: "False"
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - BAStoryCryoStation
-    SpawnPOIAvoidDistance: "80"
-    SpawnPOINear:
-    - BAStoryCryoStation
-    SpawnPOINearRange:
-    - "80"
-    - "100"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalField
-    Faction: Talon
-    Territory: "False"
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    CountMinMax:
-    - "3"
-    - "5"
-    SpawnPOINear:
-    - TribalVillageWoodStory
-    SpawnPOINearRange:
-    - "80"
-    - "150"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RuinsTribal
-    Faction: Talon
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    CountMinMax:
-    - "2"
-    - "3"
-    SpawnPOINear:
-    - TribalVillageWoodStory
-    SpawnPOINearRange:
-    - "140"
-    - "250"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalDefence
-    Faction: Talon
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    CountMinMax:
-    - "2"
-    - "4"
-    SpawnPOINear:
-    - TribalVillageWoodStory
-    SpawnPOINearRange:
-    - "120"
-    - "200"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalDefence
-    Faction: Talon
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - TribalVillageWoodStory
-    - BAStoryCryoStation
-    SpawnPOINearRange:
-    - "200"
-    - "350"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: UCHHeidelberg
-    Faction: None
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1"
-    DronesMinMax:
-    - "2"
-    - "2"
-    ReserveCount: "0"
-    TroopTransport: "False"
-    SpawnPOIAvoid:
-    - TribalVillageWoodStory
-    - BAStoryCryoStation
-    SpawnPOIAvoidDistance: "1800"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "1500"
-    - "1600"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: DamagedHV
-    Faction: None
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    IsImportant: "True"
-    Type: HV_Player
-    CountMinMax:
-    - "1"
-    - "1"
-    InitPower: "False"
-    SpawnPOINear:
-    - UCHHeidelberg
-    SpawnPOINearRange:
-    - "75"
-    - "150"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-  - GroupName: PolarisSanctuaryStory
-    Faction: Polaris
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    - Tundra
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOIAvoid:
-    - TribalVillageWoodStory
-    - BAStoryCryoStation
-    - TribalField
-    - TribalDefence
-    SpawnPOIAvoidDistance: "3000"
-    SpawnPOINear:
-    - UCHHeidelberg
-    SpawnPOINearRange:
-    - "1500"
-    - "1600"
-    NoShieldReload: "True"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: BurialChamberStory
-    Faction: None
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    LevelMod: "+3"
-    SpawnPOIAvoid:
-    - UCHHeidelberg
-    - TribalVillageWoodStory
-    - BAStoryCryoStation
-    - TribalField
-    - TribalDefence
-    SpawnPOIAvoidDistance: "2000"
-    SpawnPOINear:
-    - PolarisSanctuaryStory
-    SpawnPOINearRange:
-    - "500"
-    - "800"
-    Properties:
-    - Key: Music
-      Value: lava
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: JunkT1
-    Faction: None
-    UseEachGroupPoiOnlyOnce: "True"
-    CountMinMax:
-    - "2"
-    - "3"
-    SpawnPOINear:
-    - PolarisSanctuaryStory
-    SpawnPOINearRange:
-    - "150"
-    - "200"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Ruins
-    Faction: None
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - PolarisSanctuaryStory
-    SpawnPOINearRange:
-    - "180"
-    - "240"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: WreckTeleporterStory
-    Faction: None
-    BiomesExcluded:
-    - PolarSnow
-    - Radiated
-    - RadiatedFog
-    - Shore
-    - IceShelf
-    - LowMountains
-    - Mountains
-    - HighMountains
-    - HighMountains_1
-    - Glacier
-    - GlacierSnow
-    CountMinMax:
-    - "1"
-    - "1"
-    IsImportant: "True"
-    SpawnPOIAvoid:
-    - BurialChamberStory
-    - Artifacts
-    - SignalMarker01
-    - NullPOI
-    SpawnPOIAvoidDistance: "1500"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "5000"
-    - "10000"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-  - GroupName: UCHDartWreck
-    Faction: None
-    BiomesExcluded:
-    - Glacier
-    - Radiated
-    - RadiatedFog
-    Type: SV_Player
-    CountMinMax:
-    - "1"
-    - "1"
-    IsImportant: "True"
-    InitPower: "False"
-    SpawnPOINear:
-    - WreckTeleporterStory
-    SpawnPOINearRange:
-    - "70"
-    - "140"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-  - GroupName: DroneBaseStarter
-    Faction: Zirax
-    NoShieldReload: "True"
-    IsCommandCenter: "True"
-    DroneSetupID: DroneBaseZiraxStarter
-    BiomesExcluded:
-    - Glacier
-    - Radiated
-    - RadiatedFog
-    IsImportant: "True"
     LevelMod: "+4"
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1"
-    DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "5"
-    SpawnPOIAvoid:
-    - WreckTeleporterStory
-    - UCHDartWreck
-    SpawnPOIAvoidDistance: "230"
     SpawnPOINear:
-    - WreckTeleporterStory
+    - "TribalVillageWoodStory"
+    SpawnPOIAvoid:
+    - "START"
     SpawnPOINearRange:
-    - "300"
-    - "800"
-    Properties:
-    - Key: Music
-      Value: lava
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: XenuStarter
-    Faction: Zirax
-    NoShieldReload: "True"
+    - 400
+    - 600
+    SpawnPOIAvoidDistance: 1200
     BiomesExcluded:
-    - Radiated
-    - RadiatedFog
+    - "Glacier"
+    - "GlacierHills"
+    - "LowMountains"
+    - "Mountains"
+    - "Mountains_1"
+  - SpawnPoiRange:
+      Min: 80
+      Max: 100
+    GroupName: "TribalField"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "2"
-    - "4"
-    DroneProb: "0"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "False"
-    SpawnPOIAvoid:
-    - WreckTeleporterStory
-    - UCHDartWreck
-    SpawnPOIAvoidDistance: "230"
-    SpawnPOINear:
-    - DroneBaseStarter
-    SpawnPOINearRange:
-    - "200"
-    - "600"
+    - 1
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: RadosDefenseT1Snow
-    Faction: Zirax
-    NoShieldReload: "True"
-    Territory: "False"
+    SpawnPOINear:
+    - "BAStoryCryoStation"
+    SpawnPOIAvoid:
+    - "BAStoryCryoStation"
+    SpawnPOINearRange:
+    - 80
+    - 100
+    SpawnPOIAvoidDistance: 80
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 80
+      Max: 100
+    GroupName: "RuinsTribal"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "4"
-    - "5"
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "BAStoryCryoStation"
+    SpawnPOIAvoid:
+    - "BAStoryCryoStation"
+    SpawnPOINearRange:
+    - 80
+    - 100
+    SpawnPOIAvoidDistance: 80
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 80
+      Max: 150
+    GroupName: "TribalField"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 3
+      Max: 5
+    CountMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "TribalVillageWoodStory"
+    SpawnPOINearRange:
+    - 80
+    - 150
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 140
+      Max: 250
+    GroupName: "RuinsTribal"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "TribalVillageWoodStory"
+    SpawnPOINearRange:
+    - 140
+    - 250
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 120
+      Max: 200
+    GroupName: "TribalDefence"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "TribalVillageWoodStory"
+    SpawnPOINearRange:
+    - 120
+    - 200
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 200
+      Max: 350
+    GroupName: "TribalDefence"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "TribalVillageWoodStory"
+    - "BAStoryCryoStation"
+    SpawnPOINearRange:
+    - 200
+    - 350
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 1500
+      Max: 1600
+    GroupName: "UCHHeidelberg"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 2
+      Max: 2
+    DronesMinMax:
+    - 2
+    - 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "TribalVillageWoodStory"
+    - "BAStoryCryoStation"
+    SpawnPOINearRange:
+    - 1500
+    - 1600
+    SpawnPOIAvoidDistance: 1800
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 75
+      Max: 150
+    GroupName: "DamagedHV"
+    Faction: "None"
+    Territory: false
+    Type: "HV_Player"
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    SpawnPOINear:
+    - "UCHHeidelberg"
+    SpawnPOINearRange:
+    - 75
+    - 150
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 1500
+      Max: 1600
+    GroupName: "PolarisSanctuaryStory"
+    Faction: "Polaris"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "UCHHeidelberg"
+    SpawnPOIAvoid:
+    - "TribalVillageWoodStory"
+    - "BAStoryCryoStation"
+    - "TribalField"
+    - "TribalDefence"
+    SpawnPOINearRange:
+    - 1500
+    - 1600
+    SpawnPOIAvoidDistance: 3000
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+    - "Tundra"
+  - SpawnPoiRange:
+      Min: 500
+      Max: 800
+    GroupName: "BurialChamberStory"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "lava"
+    - Key: "RegenAfter"
+      Value: "720"
+    LevelMod: "+3"
+    SpawnPOINear:
+    - "PolarisSanctuaryStory"
+    SpawnPOIAvoid:
+    - "UCHHeidelberg"
+    - "TribalVillageWoodStory"
+    - "BAStoryCryoStation"
+    - "TribalField"
+    - "TribalDefence"
+    SpawnPOINearRange:
+    - 500
+    - 800
+    SpawnPOIAvoidDistance: 2000
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 150
+      Max: 200
+    GroupName: "JunkT1"
+    UseEachGroupPoiOnlyOnce: true
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "PolarisSanctuaryStory"
+    SpawnPOINearRange:
+    - 150
+    - 200
+  - SpawnPoiRange:
+      Min: 180
+      Max: 240
+    GroupName: "Ruins"
+    Faction: "None"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "PolarisSanctuaryStory"
+    SpawnPOINearRange:
+    - 180
+    - 240
+  - SpawnPoiRange:
+      Min: 5000
+      Max: 10000
+    GroupName: "WreckTeleporterStory"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "BurialChamberStory"
+    - "Artifacts"
+    - "SignalMarker01"
+    - "NullPOI"
+    SpawnPOINearRange:
+    - 5000
+    - 10000
+    SpawnPOIAvoidDistance: 1500
+    BiomesExcluded:
+    - "PolarSnow"
+    - "Radiated"
+    - "RadiatedFog"
+    - "Shore"
+    - "IceShelf"
+    - "LowMountains"
+    - "Mountains"
+    - "HighMountains"
+    - "HighMountains_1"
+    - "Glacier"
+    - "GlacierSnow"
+  - SpawnPoiRange:
+      Min: 70
+      Max: 140
+    GroupName: "UCHDartWreck"
+    Faction: "None"
+    Territory: false
+    Type: "SV_Player"
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    SpawnPOINear:
+    - "WreckTeleporterStory"
+    SpawnPOINearRange:
+    - 70
+    - 140
+    BiomesExcluded:
+    - "Glacier"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 800
+    GroupName: "DroneBaseStarter"
+    DroneSetupID: "DroneBaseZiraxStarter"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 2
+      Max: 3
+    DronesMinMax:
+    - 2
+    - 3
+    ReserveCount: 5
+    Properties:
+    - Key: "Music"
+      Value: "lava"
+    - Key: "RegenAfter"
+      Value: "720"
+    LevelMod: "+4"
+    SpawnPOINear:
+    - "WreckTeleporterStory"
+    SpawnPOIAvoid:
+    - "WreckTeleporterStory"
+    - "UCHDartWreck"
+    SpawnPOINearRange:
+    - 300
+    - 800
+    SpawnPOIAvoidDistance: 230
+    BiomesExcluded:
+    - "Glacier"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 200
+      Max: 600
+    GroupName: "XenuStarter"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "DroneBaseStarter"
+    SpawnPOIAvoid:
+    - "WreckTeleporterStory"
+    - "UCHDartWreck"
+    SpawnPOINearRange:
+    - 200
+    - 600
+    SpawnPOIAvoidDistance: 230
+    BiomesExcluded:
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 500
+      Max: 700
+    GroupName: "RadosDefenseT1Snow"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 4
+      Max: 5
+    CountMinMax:
+    - 4
+    - 5
+    DroneProb: 0.8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     LevelMod: "+1"
-    DroneProb: "0.8"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - WreckTeleporterStory
-    - UCHDartWreck
-    SpawnPOIAvoidDistance: "230"
     SpawnPOINear:
-    - DroneBaseStarter
+    - "DroneBaseStarter"
+    SpawnPOIAvoid:
+    - "WreckTeleporterStory"
+    - "UCHDartWreck"
     SpawnPOINearRange:
-    - "500"
-    - "700"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosDefenseT1Snow
-    Faction: Zirax
-    NoShieldReload: "True"
-    Territory: "False"
+    - 500
+    - 700
+    SpawnPOIAvoidDistance: 230
+  - SpawnPoiRange:
+      Min: 800
+      Max: 1000
+    GroupName: "RadosDefenseT1Snow"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 4
+      Max: 5
     CountMinMax:
-    - "4"
-    - "5"
+    - 4
+    - 5
+    DroneProb: 0.8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     LevelMod: "+1"
-    DroneProb: "0.8"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "True"
-    SpawnPOIAvoid:
-    - WreckTeleporterStory
-    - XenuDefenceT1
-    - UCHDartWreck
-    SpawnPOIAvoidDistance: "230"
     SpawnPOINear:
-    - DroneBaseStarter
-    SpawnPOINearRange:
-    - "800"
-    - "1000"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: PlanetVesselBase
-    Faction: Zirax
-    NoShieldReload: "True"
-    IsImportant: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
-    DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "3"
-    TroopTransport: "True"
+    - "DroneBaseStarter"
     SpawnPOIAvoid:
-    - START
-    - WreckTeleporterStory
-    - UCHDartWreck
-    - UCHPelicanWreck
-    SpawnPOIAvoidDistance: "3000"
-    SpawnPOINear:
-    - DroneBaseStarter
+    - "WreckTeleporterStory"
+    - "XenuDefenceT1"
+    - "UCHDartWreck"
     SpawnPOINearRange:
-    - "1500"
-    - "1500"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RadosAuxT2Snow
-    Faction: Zirax
-    NoShieldReload: "True"
+    - 800
+    - 1000
+    SpawnPOIAvoidDistance: 230
+  - SpawnPoiRange:
+      Min: 1500
+      Max: 1500
+    GroupName: "PlanetVesselBase"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 2
+      Max: 3
+    DronesMinMax:
+    - 2
+    - 3
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "DroneBaseStarter"
+    SpawnPOIAvoid:
+    - "START"
+    - "WreckTeleporterStory"
+    - "UCHDartWreck"
+    - "UCHPelicanWreck"
+    SpawnPOINearRange:
+    - 1500
+    - 1500
+    SpawnPOIAvoidDistance: 3000
+  - SpawnPoiRange:
+      Min: 150
+      Max: 300
+    GroupName: "RadosAuxT2Snow"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 0.8
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
     LevelMod: "+2"
-    DroneProb: "0.8"
+    SpawnPOINear:
+    - "PlanetVesselBase"
+    SpawnPOINearRange:
+    - 150
+    - 300
+  - SpawnPoiRange:
+      Min: 300
+      Max: 500
+    GroupName: "RadosDefenseT1Snow"
+    Faction: "Zirax"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 2
+      Max: 2
+    CountMinMax:
+    - 2
+    - 2
+    DroneProb: 0.8
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
     DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "False"
-    SpawnPOINear:
-    - PlanetVesselBase
-    SpawnPOINearRange:
-    - "150"
-    - "300"
+    - 1
+    - 2
+    ReserveCount: 3
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: RadosDefenseT1Snow
-    Faction: Zirax
-    NoShieldReload: "True"
-    Territory: "False"
-    CountMinMax:
-    - "2"
-    - "2"
-    LevelMod: "+1"
-    DroneProb: "0.8"
-    DronesMinMax:
-    - "1"
-    - "2"
-    ReserveCount: "3"
-    TroopTransport: "True"
-    SpawnPOINear:
-    - PlanetVesselBase
-    SpawnPOINearRange:
-    - "300"
-    - "500"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalZiggurat
-    Faction: Talon
-    Biome:
-    - Oasis
-    IsImportant: "True"
-    IsCommandCenter: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    LevelMod: "+3"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "4000"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "4000"
-    - "17000"
-    Properties:
-    - Key: Music
-      Value: Ghost
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalZiggurat
-    Faction: Talon
-    Biome:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Shore
-    - Oasis
-    IsImportant: "True"
-    IsCommandCenter: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    LevelMod: "+3"
-    SpawnPOIAvoid:
-    - TribalZiggurat
-    SpawnPOIAvoidDistance: "40000"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "4000"
-    - "17000"
-    Properties:
-    - Key: Music
-      Value: Ghost
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RuinsTribalTower
-    Faction: None
-    IsImportant: "True"
-    Biome:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Shore
-    - Oasis
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - TribalZiggurat
-    SpawnPOINearRange:
-    - "250"
-    - "300"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalBurialChamber
-    Faction: None
-    IsImportant: "True"
-    Biome:
-    - Tundra
-    - Plains
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Shore
-    - Oasis
-    CountMinMax:
-    - "1"
-    - "1"
-    LevelMod: "+3"
-    SpawnPOINear:
-    - TribalZiggurat
-    SpawnPOINearRange:
-    - "500"
-    - "1200"
-    Properties:
-    - Key: Music
-      Value: lava
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalBazar
-    IsImportant: "True"
-    Faction: Talon
-    Territory: "False"
-    Biome:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Oasis
-    IsCommandCenter: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    LevelMod: "+3"
-    SpawnPOINear:
-    - TribalZiggurat
-    SpawnPOINearRange:
-    - "150"
-    - "300"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalTalonTemple
-    Faction: Talon
-    Territory: "False"
-    IsImportant: "True"
-    Biome:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Oasis
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - TribalZiggurat
-    SpawnPOINearRange:
-    - "500"
-    - "1500"
-    Properties:
-    - Key: Music
-      Value: EvilWhispering
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalBazarAux
-    Faction: Talon
-    Territory: "False"
-    Biome:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Shore
-    - Oasis
-    CountMinMax:
-    - "1"
-    - "4"
     LevelMod: "+1"
     SpawnPOINear:
-    - TribalZiggurat
+    - "PlanetVesselBase"
     SpawnPOINearRange:
-    - "100"
-    - "300"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalField
-    Faction: Talon
-    Territory: "False"
-    Biome:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Shore
-    - Oasis
+    - 300
+    - 500
+  - SpawnPoiRange:
+      Min: 4000
+      Max: 17000
+    GroupName: "TribalZiggurat"
+    Faction: "Talon"
+    Territory: false
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "4"
-    - "6"
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "Ghost"
+    - Key: "RegenAfter"
+      Value: "720"
+    LevelMod: "+3"
     SpawnPOINear:
-    - TribalZiggurat
-    SpawnPOINearRange:
-    - "30"
-    - "200"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalDefenseTower
-    Faction: Talon
-    Territory: "False"
-    Biome:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Oasis
-    CountMinMax:
-    - "2"
-    - "5"
-    SpawnPOINear:
-    - TribalZiggurat
-    SpawnPOINearRange:
-    - "300"
-    - "400"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: TribalVillage
-    Faction: Talon
-    Biome:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    CountMinMax:
-    - "1"
-    - "1"
-    IsScalingCount: "True"
-    AvoidFactionTerritory: "True"
+    - "START"
     SpawnPOIAvoid:
-    - NullPOI
-    - DroneBaseStarter
-    - UCHDartWreck
-    - Artifacts
-    - TribalBazar
-    - TribalVillage
-    SpawnPOIAvoidDistance: "4000"
-    SpawnPOINear:
-    - START
+    - "START"
     SpawnPOINearRange:
-    - "3000"
-    - "20000"
+    - 4000
+    - 17000
+    SpawnPOIAvoidDistance: 4000
+    Biome:
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 4000
+      Max: 17000
+    GroupName: "TribalZiggurat"
+    Faction: "Talon"
+    Territory: false
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "Ghost"
+    - Key: "RegenAfter"
       Value: "720"
+    LevelMod: "+3"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "TribalZiggurat"
+    SpawnPOINearRange:
+    - 4000
+    - 17000
+    SpawnPOIAvoidDistance: 40000
+    Biome:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Shore"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 250
+      Max: 300
+    GroupName: "RuinsTribalTower"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "TribalZiggurat"
+    SpawnPOINearRange:
+    - 250
+    - 300
+    Biome:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Shore"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 500
+      Max: 1200
+    GroupName: "TribalBurialChamber"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "lava"
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    LevelMod: "+3"
+    SpawnPOINear:
+    - "TribalZiggurat"
+    SpawnPOINearRange:
+    - 500
+    - 1200
+    Biome:
+    - "Tundra"
+    - "Plains"
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Shore"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 150
+      Max: 300
+    GroupName: "TribalBazar"
+    Faction: "Talon"
+    Territory: false
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    LevelMod: "+3"
+    SpawnPOINear:
+    - "TribalZiggurat"
+    SpawnPOINearRange:
+    - 150
+    - 300
+    Biome:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 500
+      Max: 1500
+    GroupName: "TribalTalonTemple"
+    Faction: "Talon"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "EvilWhispering"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "TribalZiggurat"
+    SpawnPOINearRange:
+    - 500
+    - 1500
+    Biome:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 100
+      Max: 300
+    GroupName: "TribalBazarAux"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 4
+    CountMinMax:
+    - 1
+    - 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    LevelMod: "+1"
+    SpawnPOINear:
+    - "TribalZiggurat"
+    SpawnPOINearRange:
+    - 100
+    - 300
+    Biome:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Shore"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 30
+      Max: 200
+    GroupName: "TribalField"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 4
+      Max: 6
+    CountMinMax:
+    - 4
+    - 6
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "TribalZiggurat"
+    SpawnPOINearRange:
+    - 30
+    - 200
+    Biome:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Shore"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 400
+    GroupName: "TribalDefenseTower"
+    Faction: "Talon"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 5
+    CountMinMax:
+    - 2
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "TribalZiggurat"
+    SpawnPOINearRange:
+    - 300
+    - 400
+    Biome:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Oasis"
+  - SpawnPoiRange:
+      Min: 3000
+      Max: 20000
+    GroupName: "TribalVillage"
+    Faction: "Talon"
+    Territory: false
+    AvoidFactionTerritory: true
     AuxiliaryPOIs:
-    - TribalField
-    - TribalDefence
-  - GroupName: TribalField
-    Faction: Talon
-    Territory: "False"
-    BiomesExcluded:
-    - Glacier
-    - Radiated
-    - RadiatedFog
+    - "TribalField"
+    - "TribalDefence"
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "3"
-    - "3"
-    SpawnPOINearRange:
-    - "110"
-    - "125"
+    - 1
+    - 1
     Properties:
-    - Key: RegenAfter
+    - Key: "RegenAfter"
       Value: "720"
-    IsAuxPOI: "True"
-  - GroupName: TribalDefence
-    Faction: Talon
-    BiomesExcluded:
-    - Glacier
-    - Radiated
-    - RadiatedFog
-    CountMinMax:
-    - "3"
-    - "3"
-    SpawnPOINearRange:
-    - "115"
-    - "150"
-    SpawnPOIAvoid:
-    - TribalDefence
-    POIDistance: "200"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-    IsAuxPOI: "True"
-  - GroupName: AbandonedStarter
-    IsImportant: "True"
-    Faction: Alien
-    Biome:
-    - Plains
-    - Tundra
-    - TundraEdge
-    - LowMountains
-    - Mountains
-    - Mountains_1
-    - HighMountains
-    - HighMountains_1
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "0.5"
-    DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "1"
-    TroopTransport: "False"
-    SpawnPOIAvoid:
-    - PolarisSanctuaryStory
-    - TribalVillageWoodStory
-    - NullPOI
-    SpawnPOIAvoidDistance: "2000"
     SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "3000"
-    - "16000"
-    Properties:
-    - Key: Music
-      Value: DarkSoundscape
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Artifacts
-    Faction: TheLegacy
-    IsImportant: "True"
-    Biome:
-    - Mountains
-    - HighMountains
-    IsScalingCount: "True"
-    CountMinMax:
-    - "1"
-    - "2"
+    - "START"
     SpawnPOIAvoid:
-    - Artifacts
-    - NullPOI
-    - TribalVillageWoodStory
-    SpawnPOIAvoidDistance: "2000"
+    - "NullPOI"
+    - "DroneBaseStarter"
+    - "UCHDartWreck"
+    - "Artifacts"
+    - "TribalBazar"
+    - "TribalVillage"
+    SpawnPOINearRange:
+    - 3000
+    - 20000
+    SpawnPOIAvoidDistance: 4000
+    Biome:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+  - SpawnPoiRange:
+      Min: 110
+      Max: 125
+    GroupName: "TribalField"
+    Faction: "Talon"
+    Territory: false
+    IsAuxPOI: true
+    Count:
+      Min: 3
+      Max: 3
+    CountMinMax:
+    - 3
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINearRange:
+    - 110
+    - 125
+    BiomesExcluded:
+    - "Glacier"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 80
+      Max: 200
+    GroupName: "TribalDefence"
+    Faction: "Talon"
+    Territory: false
+    IsAuxPOI: true
+    Count:
+      Min: 3
+      Max: 3
+    CountMinMax:
+    - 3
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "TribalDefence"
+    SpawnPOINearRange:
+    - 80
+    - 200
+    SpawnPOIAvoidDistance: 200
+    BiomesExcluded:
+    - "Glacier"
+    - "Radiated"
+    - "RadiatedFog"
+  - SpawnPoiRange:
+      Min: 3000
+      Max: 16000
+    GroupName: "AbandonedStarter"
+    Faction: "Alien"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    ReserveCount: 1
+    Properties:
+    - Key: "Music"
+      Value: "DarkSoundscape"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "PolarisSanctuaryStory"
+    - "TribalVillageWoodStory"
+    - "NullPOI"
+    SpawnPOINearRange:
+    - 3000
+    - 16000
+    SpawnPOIAvoidDistance: 2000
+    Biome:
+    - "Plains"
+    - "Tundra"
+    - "TundraEdge"
+    - "LowMountains"
+    - "Mountains"
+    - "Mountains_1"
+    - "HighMountains"
+    - "HighMountains_1"
+  - SpawnResRange:
+      Min: 150
+      Max: 400
+    GroupName: "Artifacts"
+    Faction: "TheLegacy"
+    Territory: false
+    IsImportant: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "Music"
+      Value: "EvilWhispering"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "Artifacts"
+    - "NullPOI"
+    - "TribalVillageWoodStory"
     SpawnResource:
-    - GoldResource:1-1
+    - "GoldResource:1-1"
+    SpawnPOIAvoidDistance: 2000
     SpawnResourceRange:
-    - "150"
-    - "400"
-    Properties:
-    - Key: Music
-      Value: EvilWhispering
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: Wreckage
-    IsImportant: "True"
-    Faction: None
+    - 150
+    - 400
     Biome:
-    - Mountains
-    - Mountains_1
-    - HighMountains
-    - HighMountains_1
+    - "Mountains"
+    - "HighMountains"
+  - SpawnPoiRange:
+      Min: 2000
+      Max: 16000
+    GroupName: "Wreckage"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "1"
-    TroopTransport: "False"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "2000"
-    SpawnPOINear:
-    - START
-    SpawnPOINearRange:
-    - "2000"
-    - "16000"
+    - 1
+    - 1
+    ReserveCount: 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: PersonalContainer
-      Value: SteelPlate:15, IronOre:3, ShotgunShells:8, Flashlight:1, CannedMeat:1, RottenFood:8
-    - Key: RegenAfter
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "PersonalContainer"
+      Value: "SteelPlate:15, IronOre:3, ShotgunShells:8, Flashlight:1, CannedMeat:1, RottenFood:8"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: TribalBurialChamber
-    Faction: None
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "START"
+    SpawnPOINearRange:
+    - 2000
+    - 16000
+    SpawnPOIAvoidDistance: 2000
     Biome:
-    - Shore
-    - TaigaEdge
-    - Taiga
-    - TaigaSnow
-    - Plains
-    IsScalingCount: "True"
+    - "Mountains"
+    - "Mountains_1"
+    - "HighMountains"
+    - "HighMountains_1"
+  - SpawnPoiRange:
+      Min: 1500
+      Max: 20000
+    GroupName: "TribalBurialChamber"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
+    - 1
+    - 2
+    Properties:
+    - Key: "Music"
+      Value: "lava"
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
     SpawnPOIAvoid:
-    - NullPOI
-    - DroneBaseStarter
-    - UCHDartWreck
-    - TribalBurialChamber
-    - PolarisSanctuaryStory
-    SpawnPOIAvoidDistance: "1200"
-    SpawnPOINear:
-    - START
+    - "NullPOI"
+    - "DroneBaseStarter"
+    - "UCHDartWreck"
+    - "TribalBurialChamber"
+    - "PolarisSanctuaryStory"
     SpawnPOINearRange:
-    - "1500"
-    - "20000"
-    Properties:
-    - Key: Music
-      Value: lava
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: BAStarterLab
-    Faction: Alien
-    Territory: "False"
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - BAStoryCryoStation
-    SpawnPOINearRange:
-    - "300"
-    - "500"
-    Properties:
-    - Key: EvilWhispering
-      Value: "720"
-  - GroupName: BAStarterConvoy
-    Faction: Alien
-    Territory: "False"
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - UCHHeidelberg
-    SpawnPOINearRange:
-    - "150"
-    - "300"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: BAStarterBunker
-    Faction: Alien
-    Territory: "False"
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - PolarisSanctuaryStory
-    SpawnPOINearRange:
-    - "250"
-    - "600"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: BAStarterWreckageCV
-    Faction: Zirax
-    Territory: "False"
-    CountMinMax:
-    - "1"
-    - "1"
-    SpawnPOINear:
-    - UCHDartWreck
-    SpawnPOINearRange:
-    - "70"
-    - "150"
-    Properties:
-    - Key: RegenAfter
-      Value: "720"
-  - GroupName: RuinsTribal
-    Faction: None
+    - 1500
+    - 20000
+    SpawnPOIAvoidDistance: 1200
     Biome:
-    - Shore
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Tundra
-    - Plains
-    - LowMountains
-    - Mountains
-    - Mountains_1
-    - HighMountains
+    - "Shore"
+    - "TaigaEdge"
+    - "Taiga"
+    - "TaigaSnow"
+    - "Plains"
+  - SpawnPoiRange:
+      Min: 300
+      Max: 500
+    GroupName: "BAStarterLab"
+    Faction: "Alien"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "2"
-    - "2"
-    IsScalingCount: "True"
-    SpawnPOIAvoid:
-    - RuinsTribal
-    - START
-    SpawnPOIAvoidDistance: "1000"
+    - 1
+    - 1
     Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
+    - Key: "EvilWhispering"
       Value: "720"
-  - GroupName: Ruins
-    Faction: None
+    SpawnPOINear:
+    - "BAStoryCryoStation"
+    SpawnPOINearRange:
+    - 300
+    - 500
+  - SpawnPoiRange:
+      Min: 150
+      Max: 300
+    GroupName: "BAStarterConvoy"
+    Faction: "Alien"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "UCHHeidelberg"
+    SpawnPOINearRange:
+    - 150
+    - 300
+  - SpawnPoiRange:
+      Min: 250
+      Max: 600
+    GroupName: "BAStarterBunker"
+    Faction: "Alien"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "PolarisSanctuaryStory"
+    SpawnPOINearRange:
+    - 250
+    - 600
+  - SpawnPoiRange:
+      Min: 70
+      Max: 150
+    GroupName: "BAStarterWreckageCV"
+    Faction: "Zirax"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "UCHDartWreck"
+    SpawnPOINearRange:
+    - 70
+    - 150
+  - GroupName: "RuinsTribal"
+    Faction: "None"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 2
+    CountMinMax:
+    - 2
+    - 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "RuinsTribal"
+    - "START"
+    SpawnPOIAvoidDistance: 1000
+    Biome:
+    - "Shore"
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Tundra"
+    - "Plains"
+    - "LowMountains"
+    - "Mountains"
+    - "Mountains_1"
+    - "HighMountains"
+  - GroupName: "Ruins"
+    Faction: "None"
+    Territory: false
+    AvoidFactionTerritory: true
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "START"
+    SpawnPOIAvoidDistance: 1500
     BiomesExcluded:
-    - Glacier
-    AvoidFactionTerritory: "True"
-    CountMinMax:
-    - "1"
-    - "2"
-    IsScalingCount: "True"
-    SpawnPOIAvoid:
-    - START
-    SpawnPOIAvoidDistance: "1500"
-    Properties:
-    - Key: MapMarker
-      Value: Neutral
-    - Key: RegenAfter
-      Value: "720"
+    - "Glacier"
   FixedPlayerStart:
-  - Mode: Debug
+  - Mode: "Debug"
     Pos:
-    - "200"
-    - "80"
-    - "0"
-    RotY: "125"
-    Armor: ArmorMedium
-  - Mode: Survival
-    Spawn: EscapePodLandAtPos
+    - 200
+    - 80
+    - 0
+    RotY: 125
+    Armor: "ArmorMedium"
+  - Mode: "Survival"
+    Spawn: "EscapePodLandAtPos"
     Pos:
-    - "0"
-    - "70"
-    - "0"
-    RotY: "160"
-    PlayerArmor:
-    - 'ArmorLight, ArmorLight, None, #FreshStart:ArmorLight'
-    Status:
-    - 'Food: 500, Health: 500'
-    - 'Food: 300, Health: 300'
-    - 'Food: 150, Health: 150'
-    - '#FreshStart:Food: 250, Health: 250'
+    - 0
+    - 70
+    - 0
+    RotY: 160
     Items:
-    - 'SurvivalTool:1#Drop, Flashlight:1#Drop, Pistol:1, 50Caliber: 70, MobileAirCon:1, HotBeverage: 15, EmergencyRations:1, ConstructorSurvival:1, PlayerBike:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, Medikit04:3, IronIngot:50, SiliconIngot:40, TomatoStage1:1, Core:1'
-    - 'SurvivalTool:1#Drop, Flashlight:1#Drop, Pistol:1, 50Caliber: 50, MobileAirCon:1, HotBeverage: 5, ConstructorSurvival:1, PlayerBikeKit:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, Medikit04:2, Core:1'
-    - 'SurvivalTool:1#Drop, Flashlight:1#Drop, Pistol:1, 50Caliber: 40, MobileAirCon:1, Bandages:2, AntibioticOintment:2, Medikit04:1'
-    - '#FreshStart: SurvivalTool:1#Drop, Flashlight:1#Drop, Pistol:1, 50Caliber: 50, MobileAirCon:1, ConstructorSurvival, PlayerBike:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, Medikit04:2, Core:1'
+    - "SurvivalTool:1#Drop, Flashlight:1#Drop, Pistol:1, 50Caliber: 70, MobileAirCon:1, HotBeverage: 15, EmergencyRations:1, ConstructorSurvival:1, PlayerBike:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, Medikit04:3, IronIngot:50, SiliconIngot:40, TomatoStage1:1, Core:1"
+    - "SurvivalTool:1#Drop, Flashlight:1#Drop, Pistol:1, 50Caliber: 50, MobileAirCon:1, HotBeverage: 5, ConstructorSurvival:1, PlayerBikeKit:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, Medikit04:2, Core:1"
+    - "SurvivalTool:1#Drop, Flashlight:1#Drop, Pistol:1, 50Caliber: 40, MobileAirCon:1, Bandages:2, AntibioticOintment:2, Medikit04:1"
+    - "#FreshStart: SurvivalTool:1#Drop, Flashlight:1#Drop, Pistol:1, 50Caliber: 50, MobileAirCon:1, ConstructorSurvival, PlayerBike:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, Medikit04:2, Core:1"
+    Status:
+    - "Food: 500, Health: 500"
+    - "Food: 300, Health: 300"
+    - "Food: 150, Health: 150"
+    - "#FreshStart:Food: 250, Health: 250"
+    PlayerArmor:
+    - "ArmorLight, ArmorLight, None, #FreshStart:ArmorLight"
 DroneBaseSetup:
   DroneBases:
-  - DroneSetupID: DroneBaseZiraxStarter
+  - DroneSetupID: "DroneBaseZiraxStarter"
     Stock:
-    - Name: DroneSmallFast01Minigun
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneSmallFast01Rocket
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneSmallFast01Plasma
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: EnemyDroneV2Plasma
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Type: TroopTransport
-    - Name: ZiraxMinigun
-      Amount: Infinite
-      Type: GroundTroop
-    - Name: ZiraxShotgun
-      Amount: Infinite
-      Type: GroundTroop
-    - Name: ZiraxRocket
-      Amount: Infinite
-      Type: GroundTroop
-    - Name: RipperDog
-      Amount: Infinite
-      Type: GroundTroop
-    - Name: Mechanoid
-      Amount: Infinite
-      Type: GroundTroop
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneSmallFast01Rocket"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneSmallFast01Plasma"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "EnemyDroneV2Plasma"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "TroopTransport"
+    - Name: "ZiraxMinigun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
+    - Name: "ZiraxShotgun"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
+    - Name: "ZiraxRocket"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
+    - Name: "RipperDog"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
+    - Name: "Mechanoid"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "GroundTroop"
 DroneSpawning:
   Random:
-  - Name: DroneSmallFast01Plasma
+  - Drones:
+      Min: 4
+      Max: 6
+    Name: "DroneSmallFast01Plasma"
     DronesMinMax:
-    - "4"
-    - "6"
-    Faction: Zirax
-    POINameAsPositionRef: DroneBaseStarter
-    Radius: "6000"
-  - Name: DroneSmallFast01Rocket
+    - 4
+    - 6
+    Faction: "Zirax"
+    POINameAsPositionRef: "DroneBaseStarter"
+    Radius: 6000
+  - Drones:
+      Min: 6
+      Max: 8
+    Name: "DroneSmallFast01Rocket"
     DronesMinMax:
-    - "6"
-    - "8"
-    Faction: Zirax
-    POINameAsPositionRef: DroneBaseStarter
-    Radius: "6000"
-SpawnRateZones:
-- SpawnAt:
-  - START
-  Radius: "1000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "1.0"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-- SpawnAt:
-  - RuinsTribalTower
-  - TribalZiggurat
-  Radius: "400"
-  RadiusRandom: "100"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.0"
-  AffectEnemies: "true"
-  Color: 0.0, 0.8, 0.2, 0.7
-- SpawnAt:
-  - PolarisTradingPlanet
-  Radius: "400"
-  RadiusRandom: "10"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.1"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-- SpawnAt:
-  - DroneBaseStarter
-  - RadosMainSnow
-  - RadosMissileBaseSnow
-  Radius: "600"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "0.4"
-  AffectEnemies: "true"
-  Color: 1.0, 1.0, 1.0, 0.7
-SpawnZones:
-- SpawnAt:
-  - StoryDmgComStation
-  - JunkT2
-  - UCHDartWreck
-  - AlienTowerSmallStory
-  - BAStoryCryoStation
-  - UCHHeidelberg
-  - TribalVillageWoodStory
-  - PolarisSanctuaryStory
-  - WreckTeleporterStory
-  - PlanetVesselBase
-  - TribalBazar
-  - TribalZiggurat
-  - TribalBurialChamber
-  - BurialChamberStory
-  Radius: "280"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1, 0.3, 1.0
-  Entities:
-  - Names:
-    - AlienAssassinGreysInfected
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "99"
-    - "99"
-- SpawnAt:
-  - StoryDmgComStation
-  - JunkT2
-  - BAStoryCryoStation
-  - UCHHeidelberg
-  - TribalVillageWoodStory
-  - PolarisSanctuaryStory
-  - BurialChamberStory
-  - WreckTeleporterStory
-  - PlanetVesselBase
-  Radius: "380"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1, 0.3, 1.0
-  Entities:
-  - Names:
-    - AlienAssassinGreysInfected
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "99"
-    - "99"
-- SpawnAt:
-  - UCHHeidelberg
-  - PolarisSanctuaryStory
-  Radius: "400"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 1, 0.3, 1.0
-  Entities:
-  - Names:
-    - AlienAssassinGreysInfected
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "99"
-    - "99"
-- SpawnAt:
-  - PolarisSanctuaryStory
-  Radius: "1250"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 0.0, 0, 1.0, 0.4
-  Entities:
-  - Names:
-    - AlienAssassinGreysInfected
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "99"
-    - "99"
-- SpawnAt:
-  - TribalField
-  - TribalDefence
-  Radius: "1250"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 0.0, 1, 0.0, 0.15
-  Entities:
-  - Names:
-    - AlienAssassinGreysInfected
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "99"
-    - "99"
-- SpawnAt:
-  - Artifacts
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 0, 1.0, 1.0
-  Entities:
-  - Names:
-    - AlienAssassinGreysInfected
-    Biomes:
-    - Any
-    Amount: "400"
-    Period: Always
-    DelayMinMax:
-    - "15"
-    - "25"
-- SpawnAt:
-  - DamagedHV
-  Radius: "120"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "1.0"
-  Color: 0.7, 0.0, 0.0, 0.7
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - AlienAssassinGreysInfected
-    Biomes:
-    - Any
-    Amount: "2000"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - TribalBurialChamber
-  - CrashedShip
-  - AbandonedStarter
-  - Ruins
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "200"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.7, 0.0, 0.0, 0.7
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - AlienAssassinGreysInfected
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - TribalBurialChamber
-  BiomesExcluded:
-  - Mountains
-  Radius: "100"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.7, 0.7, 0.7, 0.7
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - CaveWormsWhite
-    Biomes:
-    - Any
-    Amount: "600"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - Artifacts
-  - AbandonedStarter
-  - CrashedShip
-  - Ruins
-  - RuinsTribal
-  BiomesExcluded:
-  - Mountains
-  Radius: "100"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.7, 0.7, 0.7, 0.7
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - CaveWormsWhite
-    Biomes:
-    - Any
-    Amount: "100"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SiliconResource
-  - PromethiumResource
-  Radius: "300"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.3, 0.3, 0.3, 0.8
-  Entities:
-  - Names:
-    - GolemsIce
-    Biomes:
-    - Mountains
-    - HighMountains
-    - HighMountains_1
-    Amount: "80"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - SignalMarker01
-  - SignalMarker02
-  - SignalMarker03
-  - SignalMarker04
-  Radius: "300"
-  RadiusRandom: "100"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.3"
-  Color: 0.2, 0.2, 0.4, 0.8
-  Entities:
-  - Names:
-    - GolemsIce
-    Biomes:
-    - Mountains
-    - HighMountains
-    - HighMountains_1
-    Amount: "50"
-    Period: Night
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PolarisIndustrialMain
-  - CivilSettlementSnow
-  - PolarisSettlementSnow
-  - PolarisLogisticsMain
-  - PolarisMiningMain
-  - PolarisIndustrialAux
-  - TS_Planet
-  Radius: "100"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.4"
-  Color: 0.0, 0.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - AssaultCyborgs
-    Biomes:
-    - Any
-    Amount: "400"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - AlienCivilians1
-    Biomes:
-    - Any
-    Amount: "50"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PolarisIndustrialMain
-  Radius: "500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.4"
-  Color: 0.0, 0.0, 1.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - AssaultCyborgs
-    Biomes:
-    - Any
-    Amount: "100"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - DroneBaseStarter
-  - RadosMainSnow
-  - RadosAuxT2Snow
-  - RadosMissileBaseSnow
-  BiomesExcluded:
-  - Pole
-  - Mountains
-  - HighMountains
-  Radius: "300"
-  RadiusRandom: "100"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 0.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxMechanoidPatrol
-    - ZiraxMechanoidPatrol
-    - ZiraxMechanoidPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Any
-    Amount: "80"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxRipperDogPatrol
-    - ZiraxRipperDogPatrol
-    - ZiraxRipperDogPatrol
-    Biomes:
-    - Plains
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Taiga
-    - TaigaEdge
-    Amount: "350"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - DroneBaseStarter
-  - RadosMissileBaseSnow
-  BiomesExcluded:
-  - Pole
-  - Mountains
-  - HighMountains
-  Radius: "1500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.8"
-  Color: 1.0, 0.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxMechanoidPatrol
-    - ZiraxMechanoidPatrol
-    - ZiraxMechanoidPatrol
-    - ZiraxMechanoidPatrol
-    Biomes:
-    - Glacier
-    - Tundra
-    - Dunes
-    - IceShelf
-    - LowMountains
-    - Mountains
-    - Mountains_1
-    Amount: "40"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - ZiraxMinigunPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxRipperDogPatrol
-    - ZiraxRipperDogPatrol
-    - ZiraxRipperDogPatrol
-    Biomes:
-    - Plains
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Taiga
-    - TaigaEdge
-    Amount: "40"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - RadosMiscSnow
-  Radius: "100"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.6"
-  Color: 1.0, 0.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - ZiraxRocketPatrol
-    - ZiraxShotgunPatrol
-    - ZiraxMinigunPatrol
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - TribalVillageWoodStory
-  - TribalZiggurat
-  BiomesExcluded:
-  - Pole
-  - IceShelf
-  - Glacier
-  - HighMountains
-  - HighMountains_1
-  - Mountains
-  - Mountains_1
-  Radius: "600"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1"
-  RateMultiplyerEdge: "0.3"
-  Color: 0.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - TalonGuardianHerd
-    Biomes:
-    - Any
-    Amount: "400"
-    Period: Always
-    DelayMinMax:
-    - "10"
-    - "16"
-    Color: 0.0, 1, 0.0
-- SpawnAt:
-  - TribalVillageWoodStory
-  BiomesExcluded:
-  - Pole
-  - IceShelf
-  - Glacier
-  - HighMountains
-  - HighMountains_1
-  - Mountains
-  - Mountains_1
-  Radius: "400"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.0, 0.7, 0.0, 0.7
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - LizardMuleHerd
-    Biomes:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Shore
-    - Oasis
-    Amount: "400"
-    Period: Always
-    DelayMinMax:
-    - "16"
-    - "24"
-- SpawnAt:
-  - TribalZiggurat
-  BiomesExcluded:
-  - Pole
-  - IceShelf
-  - Glacier
-  - HighMountains
-  - HighMountains_1
-  - Mountains
-  - Mountains_1
-  Radius: "400"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1"
-  RateMultiplyerEdge: "0.5"
-  Color: 0.0, 0.7, 0.0, 0.7
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - LizardMuleHerd
-    Biomes:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Shore
-    - Oasis
-    Amount: "100"
-    Period: Always
-    DelayMinMax:
-    - "16"
-    - "24"
-- SpawnAt:
-  - TribalVillageWoodStory
-  - TribalZiggurat
-  BiomesExcluded:
-  - Pole
-  - IceShelf
-  - Glacier
-  - HighMountains
-  - HighMountains_1
-  - Mountains
-  - Mountains_1
-  Radius: "1500"
-  RadiusRandom: "200"
-  RateMultiplyerCenter: "1"
-  RateMultiplyerEdge: "0.0"
-  Color: 0.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - TalonGuardianHerd
-    Biomes:
-    - Any
-    Amount: "30"
-    Period: Always
-    DelayMinMax:
-    - "16"
-    - "30"
-    Color: 0.0, 1, 0.0
-- SpawnAt:
-  - TribalVillageWoodStory
-  - TribalZiggurat
-  - TribalTalonTemple
-  Radius: "200"
-  RadiusRandom: "50"
-  RateMultiplyerCenter: "1"
-  RateMultiplyerEdge: "0.8"
-  Color: 0.0, 1.0, 0.0, 1.0
-  SpawnOnlyIfPoiIsAlien: "true"
-  Entities:
-  - Names:
-    - TalonGuardianHerd
-    Biomes:
-    - Any
-    Amount: "500"
-    Period: Always
-    DelayMinMax:
-    - "16"
-    - "30"
-    Color: 0.0, 1, 0.0
+    - 6
+    - 8
+    Faction: "Zirax"
+    POINameAsPositionRef: "DroneBaseStarter"
+    Radius: 6000
 CreatureSpawning:
 - Biomes:
-  - Shore
-  - CrashSite_1
+  - "Shore"
+  - "CrashSite_1"
   Entities:
-  - Name: SlimesWhite
-    Period: Always
-    Amount: "10"
-    Color: 1, 1, 1
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "SlimesWhite"
+    Amount: 10
+    Color: "1, 1, 1"
     DelayMinMax:
-    - "70"
-    - "90"
+    - 70
+    - 90
+    Period: "Always"
 - Biomes:
-  - ShallowWater
+  - "ShallowWater"
   Entities:
-  - Name: Telluropods
-    Period: Always
-    Amount: "40"
-    AllowInWater: "true"
-    Color: 1.0, 0.7, 0.0
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Telluropods"
+    Amount: 40
+    Color: "1.0, 0.7, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "70"
-    - "90"
+    - 70
+    - 90
+    Period: "Always"
 - Biomes:
-  - Shore
+  - "Shore"
   Entities:
-  - Name: Telluropods
-    Period: Always
-    Amount: "10"
-    AllowInWater: "true"
-    Color: 1.0, 0.7, 0.0
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Telluropods"
+    Amount: 10
+    Color: "1.0, 0.7, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: AlienBugs04
-    Period: Always
-    Amount: "10"
-    AllowInWater: "true"
-    Color: 0.9, 0.9, 0.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "AlienBugs04"
+    Amount: 10
+    Color: "0.9, 0.9, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "70"
-    - "90"
+    - 70
+    - 90
+    Period: "Always"
 - Biomes:
-  - CrashSite
+  - "CrashSite"
   Entities:
-  - Name: SlimesWhite
-    Period: Day
-    Amount: "5"
-    Color: 1, 1, 1
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "SlimesWhite"
+    Amount: 5
+    Color: "1, 1, 1"
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: Oviraptors
-    Period: Always
-    Amount: "10"
-    Color: 0.6, 0.6, 1
+    - 10
+    - 12
+    Period: "Day"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Oviraptors"
+    Amount: 10
+    Color: "0.6, 0.6, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: AlienBugs04
-    Period: Always
-    Amount: "10"
-    AllowInWater: "true"
-    Color: 0.9, 0.9, 0.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "AlienBugs04"
+    Amount: 10
+    Color: "0.9, 0.9, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: AlienAssassinGreysInfected
-    Period: Night
-    Amount: "20"
-    Color: 0.8, 0.0, 0.8
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienAssassinGreysInfected"
+    Amount: 20
+    Color: "0.8, 0.0, 0.8"
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Grove
+  - "Grove"
   Entities:
-  - Name: SlimesWhite
-    Period: Day
-    Amount: "8"
-    Color: 1, 1, 1
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "SlimesWhite"
+    Amount: 8
+    Color: "1, 1, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: Oviraptors
-    Period: Always
-    Amount: "15"
-    Color: 0.6, 0.6, 1
+    - 70
+    - 90
+    Period: "Day"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Oviraptors"
+    Amount: 15
+    Color: "0.6, 0.6, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: AlienBugs04
-    Period: Always
-    Amount: "30"
-    AllowInWater: "true"
-    Color: 0.9, 0.9, 0.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "AlienBugs04"
+    Amount: 30
+    Color: "0.9, 0.9, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: CaveWormWhiteHerd
-    Period: Night
-    Amount: "20"
-    Color: 0.7, 0.0, 0.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 90
+    Name: "CaveWormWhiteHerd"
+    Amount: 20
+    Color: "0.7, 0.0, 0.0"
     DelayMinMax:
-    - "20"
-    - "90"
-  - Name: AlienAssassinGreysInfected
-    Period: Night
-    Amount: "20"
-    Color: 0.8, 0.0, 0.8
+    - 20
+    - 90
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienAssassinGreysInfected"
+    Amount: 20
+    Color: "0.8, 0.0, 0.8"
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Taiga
+  - "Taiga"
   Entities:
-  - Name: SlimesWhite
-    Period: Day
-    Amount: "16"
-    Color: 1, 1, 1
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "SlimesWhite"
+    Amount: 16
+    Color: "1, 1, 1"
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: Oviraptors
-    Period: Always
-    Amount: "20"
-    Color: 0.6, 0.6, 1
+    - 10
+    - 12
+    Period: "Day"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Oviraptors"
+    Amount: 20
+    Color: "0.6, 0.6, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: AlienBugs04
-    Period: Always
-    Amount: "20"
-    AllowInWater: "true"
-    Color: 0.9, 0.9, 0.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "AlienBugs04"
+    Amount: 20
+    Color: "0.9, 0.9, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: AlienAssassinGreysInfected
-    Period: Always
-    Amount: "15"
-    Color: 1.0, 0.0, 1.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienAssassinGreysInfected"
+    Amount: 15
+    Color: "1.0, 0.0, 1.0"
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: AlienAssassinGreysInfected
-    Period: Night
-    Amount: "60"
-    Color: 0.8, 0.0, 0.8
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienAssassinGreysInfected"
+    Amount: 60
+    Color: "0.8, 0.0, 0.8"
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: CaveWormWhiteHerd
-    Period: Night
-    Color: 0.9, 0.9, 0.0
-    Amount: "15"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 90
+    Name: "CaveWormWhiteHerd"
+    Amount: 15
+    Color: "0.9, 0.9, 0.0"
     DelayMinMax:
-    - "20"
-    - "90"
+    - 20
+    - 90
 - Biomes:
-  - TaigaEdge
-  - TaigaSnow
-  - TaigaSnowEdge
+  - "TaigaEdge"
+  - "TaigaSnow"
+  - "TaigaSnowEdge"
   Entities:
-  - Name: SlimesWhite
-    Period: Day
-    Amount: "8"
-    Color: 1, 1, 1
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "SlimesWhite"
+    Amount: 8
+    Color: "1, 1, 1"
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: Oviraptors
-    Period: Always
-    Amount: "15"
-    Color: 0.6, 0.6, 1
+    - 10
+    - 12
+    Period: "Day"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Oviraptors"
+    Amount: 15
+    Color: "0.6, 0.6, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: AlienBugs04
-    Period: Always
-    Amount: "5"
-    AllowInWater: "true"
-    Color: 0.9, 0.9, 0.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "AlienBugs04"
+    Amount: 5
+    Color: "0.9, 0.9, 0.0"
+    AllowInWater: true
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: AlienAssassinGreysInfected
-    Period: Always
-    Amount: "6"
-    Color: 1.0, 0.0, 1.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienAssassinGreysInfected"
+    Amount: 6
+    Color: "1.0, 0.0, 1.0"
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: AlienAssassinGreysInfected
-    Period: Night
-    Amount: "30"
-    Color: 0.8, 0.0, 0.8
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "AlienAssassinGreysInfected"
+    Amount: 30
+    Color: "0.8, 0.0, 0.8"
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: CaveWormWhiteHerd
-    Period: Night
-    Amount: "6"
-    Color: 0.7, 0.0, 0.0
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 90
+    Name: "CaveWormWhiteHerd"
+    Amount: 6
+    Color: "0.7, 0.0, 0.0"
     DelayMinMax:
-    - "20"
-    - "90"
+    - 20
+    - 90
 - Biomes:
-  - Plains
+  - "Plains"
   Entities:
-  - Name: Oviraptors
-    Period: Always
-    Amount: "3"
-    Color: 0.6, 0.6, 1
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Oviraptors"
+    Amount: 3
+    Color: "0.6, 0.6, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: CaveWormWhiteHerd
-    Period: Night
-    Amount: "3"
-    Color: 0.7, 0.0, 0.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 90
+    Name: "CaveWormWhiteHerd"
+    Amount: 3
+    Color: "0.7, 0.0, 0.0"
     DelayMinMax:
-    - "20"
-    - "90"
+    - 20
+    - 90
 - Biomes:
-  - Dunes
+  - "Dunes"
   Entities:
-  - Name: SlimesWhite
-    Period: Always
-    Amount: "1"
-    Color: 1, 1, 1
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "SlimesWhite"
+    Amount: 1
+    Color: "1, 1, 1"
     DelayMinMax:
-    - "70"
-    - "90"
+    - 70
+    - 90
+    Period: "Always"
 - Biomes:
-  - Tundra
+  - "Tundra"
   Entities:
-  - Name: SlimesWhite
-    Period: Always
-    Amount: "2"
-    Color: 1, 1, 1
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "SlimesWhite"
+    Amount: 2
+    Color: "1, 1, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: Oviraptors
-    Period: Always
-    Amount: "1"
-    Color: 0.6, 0.6, 1
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Oviraptors"
+    Amount: 1
+    Color: "0.6, 0.6, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "1"
-    Color: 0.0, 0.0, 0.0
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "GolemsIce"
+    Amount: 1
+    Color: "0.0, 0.0, 0.0"
     DelayMinMax:
-    - "70"
-    - "90"
+    - 70
+    - 90
 - Biomes:
-  - GlacierHills
-  - IceShelf
+  - "GlacierHills"
+  - "IceShelf"
   Entities:
-  - Name: SlimesWhite
-    Period: Always
-    Amount: "2"
-    Color: 1, 1, 1
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "SlimesWhite"
+    Amount: 2
+    Color: "1, 1, 1"
     DelayMinMax:
-    - "70"
-    - "90"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "3"
-    Color: 0.0, 0.0, 0.3
+    - 70
+    - 90
+    Period: "Always"
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "GolemsIce"
+    Amount: 3
+    Color: "0.0, 0.0, 0.3"
     DelayMinMax:
-    - "70"
-    - "90"
+    - 70
+    - 90
 - Biomes:
-  - LowMountains
-  - Mountains
+  - "LowMountains"
+  - "Mountains"
   Entities:
-  - Name: GolemsIce
-    Period: Always
-    Amount: "3"
-    Color: 0.2, 0.2, 0.2
+  - DelayRange:
+      Min: 24
+      Max: 34
+    Name: "GolemsIce"
+    Amount: 3
+    Color: "0.2, 0.2, 0.2"
     DelayMinMax:
-    - "24"
-    - "34"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "3"
-    Color: 0.0, 0.0, 0.3
+    - 24
+    - 34
+    Period: "Always"
+  - DelayRange:
+      Min: 30
+      Max: 74
+    Name: "GolemsIce"
+    Amount: 3
+    Color: "0.0, 0.0, 0.3"
     DelayMinMax:
-    - "30"
-    - "74"
+    - 30
+    - 74
 - Biomes:
-  - HighMountains
-  - HighMountains_1
+  - "HighMountains"
+  - "HighMountains_1"
   Entities:
-  - Name: GolemsIce
-    Period: Always
-    Amount: "5"
-    Color: 0.2, 0.2, 0.2
+  - DelayRange:
+      Min: 24
+      Max: 34
+    Name: "GolemsIce"
+    Amount: 5
+    Color: "0.2, 0.2, 0.2"
     DelayMinMax:
-    - "24"
-    - "34"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "10"
-    Color: 0.0, 0.0, 0.3
+    - 24
+    - 34
+    Period: "Always"
+  - DelayRange:
+      Min: 30
+      Max: 74
+    Name: "GolemsIce"
+    Amount: 10
+    Color: "0.0, 0.0, 0.3"
     DelayMinMax:
-    - "30"
-    - "74"
+    - 30
+    - 74
 - Biomes:
-  - Oasis
+  - "Oasis"
   Entities:
-  - Name: Oviraptors
-    Period: Always
-    Amount: "15"
-    Color: 0.6, 0.6, 1
+  - DelayRange:
+      Min: 70
+      Max: 90
+    Name: "Oviraptors"
+    Amount: 15
+    Color: "0.6, 0.6, 1"
     DelayMinMax:
-    - "70"
-    - "90"
+    - 70
+    - 90
+    Period: "Always"
+SpawnRateZones:
+- SpawnAt:
+  - "START"
+  Radius: 1000
+  RateMultiplyerEdge: 1
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+- SpawnAt:
+  - "RuinsTribalTower"
+  - "TribalZiggurat"
+  Radius: 400
+  RadiusRandom: 100
+  AffectEnemies: true
+  Color: "0.0, 0.8, 0.2, 0.7"
+- SpawnAt:
+  - "PolarisTradingPlanet"
+  Radius: 400
+  RadiusRandom: 10
+  RateMultiplyerEdge: 0.1
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+- SpawnAt:
+  - "DroneBaseStarter"
+  - "RadosMainSnow"
+  - "RadosMissileBaseSnow"
+  Radius: 600
+  RateMultiplyerEdge: 0.4
+  AffectEnemies: true
+  Color: "1.0, 1.0, 1.0, 0.7"
+SpawnZones:
+- SpawnAt:
+  - "StoryDmgComStation"
+  - "JunkT2"
+  - "UCHDartWreck"
+  - "AlienTowerSmallStory"
+  - "BAStoryCryoStation"
+  - "UCHHeidelberg"
+  - "TribalVillageWoodStory"
+  - "PolarisSanctuaryStory"
+  - "WreckTeleporterStory"
+  - "PlanetVesselBase"
+  - "TribalBazar"
+  - "TribalZiggurat"
+  - "TribalBurialChamber"
+  - "BurialChamberStory"
+  Radius: 280
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  Color: "1.0, 1, 0.3, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 99
+      Max: 99
+    Names:
+    - "AlienAssassinGreysInfected"
+    DelayMinMax:
+    - 99
+    - 99
+    Period: "Always"
+- SpawnAt:
+  - "StoryDmgComStation"
+  - "JunkT2"
+  - "BAStoryCryoStation"
+  - "UCHHeidelberg"
+  - "TribalVillageWoodStory"
+  - "PolarisSanctuaryStory"
+  - "BurialChamberStory"
+  - "WreckTeleporterStory"
+  - "PlanetVesselBase"
+  Radius: 380
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  Color: "1.0, 1, 0.3, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 99
+      Max: 99
+    Names:
+    - "AlienAssassinGreysInfected"
+    DelayMinMax:
+    - 99
+    - 99
+    Period: "Always"
+- SpawnAt:
+  - "UCHHeidelberg"
+  - "PolarisSanctuaryStory"
+  Radius: 400
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  Color: "1.0, 1, 0.3, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 99
+      Max: 99
+    Names:
+    - "AlienAssassinGreysInfected"
+    DelayMinMax:
+    - 99
+    - 99
+    Period: "Always"
+- SpawnAt:
+  - "PolarisSanctuaryStory"
+  Radius: 1250
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  Color: "0.0, 0, 1.0, 0.4"
+  Entities:
+  - DelayRange:
+      Min: 99
+      Max: 99
+    Names:
+    - "AlienAssassinGreysInfected"
+    DelayMinMax:
+    - 99
+    - 99
+    Period: "Always"
+- SpawnAt:
+  - "TribalField"
+  - "TribalDefence"
+  Radius: 1250
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  Color: "0.0, 1, 0.0, 0.15"
+  Entities:
+  - DelayRange:
+      Min: 99
+      Max: 99
+    Names:
+    - "AlienAssassinGreysInfected"
+    DelayMinMax:
+    - 99
+    - 99
+    Period: "Always"
+- SpawnAt:
+  - "Artifacts"
+  Radius: 200
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  Color: "1.0, 0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 15
+      Max: 25
+    Names:
+    - "AlienAssassinGreysInfected"
+    Biomes:
+    - "Any"
+    Amount: 400
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "DamagedHV"
+  Radius: 120
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.7, 0.0, 0.0, 0.7"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienAssassinGreysInfected"
+    Biomes:
+    - "Any"
+    Amount: 2000
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "TribalBurialChamber"
+  - "CrashedShip"
+  - "AbandonedStarter"
+  - "Ruins"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 200
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.7, 0.0, 0.0, 0.7"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienAssassinGreysInfected"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "TribalBurialChamber"
+  BiomesExcluded:
+  - "Mountains"
+  Radius: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.7, 0.7, 0.7, 0.7"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "CaveWormsWhite"
+    Biomes:
+    - "Any"
+    Amount: 600
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "Artifacts"
+  - "AbandonedStarter"
+  - "CrashedShip"
+  - "Ruins"
+  - "RuinsTribal"
+  BiomesExcluded:
+  - "Mountains"
+  Radius: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.7, 0.7, 0.7, 0.7"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "CaveWormsWhite"
+    Biomes:
+    - "Any"
+    Amount: 100
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SiliconResource"
+  - "PromethiumResource"
+  Radius: 300
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "0.3, 0.3, 0.3, 0.8"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "GolemsIce"
+    Biomes:
+    - "Mountains"
+    - "HighMountains"
+    - "HighMountains_1"
+    Amount: 80
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker01"
+  - "SignalMarker02"
+  - "SignalMarker03"
+  - "SignalMarker04"
+  Radius: 300
+  RadiusRandom: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.3
+  Color: "0.2, 0.2, 0.4, 0.8"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "GolemsIce"
+    Biomes:
+    - "Mountains"
+    - "HighMountains"
+    - "HighMountains_1"
+    Amount: 50
+    DelayMinMax:
+    - -1
+    - -1
+- SpawnAt:
+  - "PolarisIndustrialMain"
+  - "CivilSettlementSnow"
+  - "PolarisSettlementSnow"
+  - "PolarisLogisticsMain"
+  - "PolarisMiningMain"
+  - "PolarisIndustrialAux"
+  - "TS_Planet"
+  Radius: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.4
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AssaultCyborgs"
+    Biomes:
+    - "Any"
+    Amount: 400
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AlienCivilians1"
+    Biomes:
+    - "Any"
+    Amount: 50
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PolarisIndustrialMain"
+  Radius: 500
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.4
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "AssaultCyborgs"
+    Biomes:
+    - "Any"
+    Amount: 100
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "DroneBaseStarter"
+  - "RadosMainSnow"
+  - "RadosAuxT2Snow"
+  - "RadosMissileBaseSnow"
+  BiomesExcluded:
+  - "Pole"
+  - "Mountains"
+  - "HighMountains"
+  Radius: 300
+  RadiusRandom: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Any"
+    Amount: 80
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxRipperDogPatrol"
+    - "ZiraxRipperDogPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Plains"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Taiga"
+    - "TaigaEdge"
+    Amount: 350
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "DroneBaseStarter"
+  - "RadosMissileBaseSnow"
+  BiomesExcluded:
+  - "Pole"
+  - "Mountains"
+  - "HighMountains"
+  Radius: 1500
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.8
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxMechanoidPatrol"
+    Biomes:
+    - "Glacier"
+    - "Tundra"
+    - "Dunes"
+    - "IceShelf"
+    - "LowMountains"
+    - "Mountains"
+    - "Mountains_1"
+    Amount: 40
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxRipperDogPatrol"
+    - "ZiraxRipperDogPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Plains"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Taiga"
+    - "TaigaEdge"
+    Amount: 40
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "RadosMiscSnow"
+  Radius: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.6
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "ZiraxRocketPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxMinigunPatrol"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "TribalVillageWoodStory"
+  - "TribalZiggurat"
+  BiomesExcluded:
+  - "Pole"
+  - "IceShelf"
+  - "Glacier"
+  - "HighMountains"
+  - "HighMountains_1"
+  - "Mountains"
+  - "Mountains_1"
+  Radius: 600
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.3
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 10
+      Max: 16
+    Names:
+    - "TalonGuardianHerd"
+    Biomes:
+    - "Any"
+    Amount: 400
+    Color: "0.0, 1, 0.0"
+    DelayMinMax:
+    - 10
+    - 16
+    Period: "Always"
+- SpawnAt:
+  - "TribalVillageWoodStory"
+  BiomesExcluded:
+  - "Pole"
+  - "IceShelf"
+  - "Glacier"
+  - "HighMountains"
+  - "HighMountains_1"
+  - "Mountains"
+  - "Mountains_1"
+  Radius: 400
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.0, 0.7, 0.0, 0.7"
+  Entities:
+  - DelayRange:
+      Min: 16
+      Max: 24
+    Names:
+    - "LizardMuleHerd"
+    Biomes:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Shore"
+    - "Oasis"
+    Amount: 400
+    DelayMinMax:
+    - 16
+    - 24
+    Period: "Always"
+- SpawnAt:
+  - "TribalZiggurat"
+  BiomesExcluded:
+  - "Pole"
+  - "IceShelf"
+  - "Glacier"
+  - "HighMountains"
+  - "HighMountains_1"
+  - "Mountains"
+  - "Mountains_1"
+  Radius: 400
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.0, 0.7, 0.0, 0.7"
+  Entities:
+  - DelayRange:
+      Min: 16
+      Max: 24
+    Names:
+    - "LizardMuleHerd"
+    Biomes:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Shore"
+    - "Oasis"
+    Amount: 100
+    DelayMinMax:
+    - 16
+    - 24
+    Period: "Always"
+- SpawnAt:
+  - "TribalVillageWoodStory"
+  - "TribalZiggurat"
+  BiomesExcluded:
+  - "Pole"
+  - "IceShelf"
+  - "Glacier"
+  - "HighMountains"
+  - "HighMountains_1"
+  - "Mountains"
+  - "Mountains_1"
+  Radius: 1500
+  RadiusRandom: 200
+  RateMultiplyerCenter: 1
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 16
+      Max: 30
+    Names:
+    - "TalonGuardianHerd"
+    Biomes:
+    - "Any"
+    Amount: 30
+    Color: "0.0, 1, 0.0"
+    DelayMinMax:
+    - 16
+    - 30
+    Period: "Always"
+- SpawnAt:
+  - "TribalVillageWoodStory"
+  - "TribalZiggurat"
+  - "TribalTalonTemple"
+  Radius: 200
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.8
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 16
+      Max: 30
+    Names:
+    - "TalonGuardianHerd"
+    Biomes:
+    - "Any"
+    Amount: 500
+    Color: "0.0, 1, 0.0"
+    DelayMinMax:
+    - 16
+    - 30
+    Period: "Always"

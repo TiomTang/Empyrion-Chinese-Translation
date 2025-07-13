@@ -1,630 +1,835 @@
-PlanetType: PrennHomeworld
-PlayfieldType: Planet
-Difficulty: "10"
-LandClaimZone: Device
-Description: "\u666E\u4F26\u8054\u90A6\u548C\u5546\u4EBA\u516C\u4F1A\u7684\u6BCD\u661F"
-AtmosphereEnabled: "True"
-AtmosphereColor: 0.95, 1.18, 1.6
-SkyColor: 1, 0.8, 1
-SkyHorizonColor: 1, 0.3, 0
-AtmosphereParams:
-- "0.4"
-- "1.7"
-DayLightIntensity: "1.0"
-NightLightIntensity: "0.02"
-DayShadowStrength: "0.95"
-NightShadowStrength: "0.5"
-LightZenithColor: 0.85, 0.95, 1.15
-LightHorizonColor: 0.8, 0.45, 0.10
-NightLightColor: 0.3, 0.3, 0.7
-SunFlare: EnvironmentalEffects/SunFlareWhite
-FogCloudIntensity: "0.8"
-FogColor: 0.85, 0.85, 1.03
-CloudsDensity: "0.3"
-CloudsSharpness: "0.2"
-CloudsBrightness: "0.6"
-CloudsZenithColor: 0.70, 0.75, 1.0
-CloudsHorizonColor: 1, 0.3, 0
-CloudsNightZenithColor: 0.022, 0.020, 0.025
-CloudsNightHorizonColor: 0.022, 0.020, 0.025
-WindSpeed: "3"
+PlayfieldType: "Planet"
+AtmosphereO2: 0.1
+TemperatureDay: -2147483648
+PlanetType: "PrennHomeworld"
+PlanetSize: 2
+Difficulty: 10
+SunFlare: "EnvironmentalEffects/SunFlareWhite"
 SpecialEffectsLocal:
-- Name: FireFliesOrange
+- Name: "FireFliesOrange"
+  MaxHeight: 15
+  Time: "Night"
   Biome:
-  - Taiga
-  - TaigaEdge
-  - TaigaSnow
-  Time: Night
-  MaxHeight: "15"
+  - "Taiga"
+  - "TaigaEdge"
+  - "TaigaSnow"
+  FollowPlayerY: false
 SpecialEffectsGlobal:
-- Name: Clear
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "3"
-  Lifetime: "1200"
-- Name: CloudsLight
-  Type: Weather
-  InitialDelay: "0"
-  Delay: "2"
-  Lifetime: "1200"
-- Name: Clouds
-  Type: Weather
-  InitialDelay: "5"
-  Delay: "3"
-  Lifetime: "1200"
-- Name: Fog
-  Type: Weather
-  InitialDelay: "12"
-  Delay: "5"
-  Lifetime: "1000"
-- Name: SnowLight
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "5"
-  Lifetime: "600"
-- Name: SnowMedium
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "12"
-  Lifetime: "600"
-- Name: SnowHeavy
-  Type: Weather
-  InitialDelay: "24"
-  Delay: "12"
-  Lifetime: "600"
-- Name: ColdWave
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "1000"
-- Name: Hail
-  Type: Weather
-  InitialDelay: "48"
-  Delay: "24"
-  Lifetime: "600"
+- Name: "Clear"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 3
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "CloudsLight"
+  SpawnY: 50
+  Time: "Always"
+  Delay: 2
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Clouds"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 5
+  Delay: 3
+  PlyDist: 100
+  Lifetime: 1200
+  Type: "Weather"
+- Name: "Fog"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 12
+  Delay: 5
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "SnowLight"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 5
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "SnowMedium"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "SnowHeavy"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 24
+  Delay: 12
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+- Name: "ColdWave"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 1000
+  Type: "Weather"
+- Name: "Hail"
+  SpawnY: 50
+  Time: "Always"
+  InitialDelay: 48
+  Delay: 24
+  PlyDist: 100
+  Lifetime: 600
+  Type: "Weather"
+AtmosphereEnabled: true
+AtmosphereColor: "0.95, 1.18, 1.6"
+AtmosphereParams:
+- 0.4
+- 1.7
+SkyColor: "1, 0.8, 1"
+SkyHorizonColor: "1, 0.3, 0"
+LightZenithColor: "0.85, 0.95, 1.15"
+LightHorizonColor: "0.8, 0.45, 0.10"
+NightLightColor: "0.3, 0.3, 0.7"
+CloudsZenithColor: "0.70, 0.75, 1.0"
+CloudsHorizonColor: "1, 0.3, 0"
+CloudsNightZenithColor: "0.022, 0.020, 0.025"
+CloudsNightHorizonColor: "0.022, 0.020, 0.025"
+CloudsOpacity: 0.9
+FogCloudIntensity: 0.8
+DayLightIntensity: 1
+NightLightIntensity: 0.02
+DayShadowStrength: 0.95
+NightShadowStrength: 0.5
+CloudsDensity: 0.3
+CloudsSharpness: 0.2
+CloudsBrightness: 0.6
+WindSpeed: 3
+FogColor: "0.85, 0.85, 1.03"
+Description: "\u666E\u4F26\u8054\u90A6\u548C\u5546\u4EBA\u516C\u4F1A\u7684\u6BCD\u661F"
+Seed: -2147483648
+TerrainHeightMapMax: -1
+BaseAttackCount: 1
+AllowSavingBlueprints: true
+PlanetClass: "PrennHomeworld"
+UseRandom: true
+AllowSV: false
+AllowCV: false
+AllowHV: false
+AllowBA: false
+AllowBlueprintSV: false
+AllowBlueprintCV: false
+AllowBlueprintHV: false
+AllowBlueprintBA: false
+AllowBPFactory: false
+RestrictToOrigin: 255
+LandClaimZone: "Device"
 RandomResources:
-- Name: IronResource
-  IsScalingCount: "True"
+- Count:
+    Min: 2
+    Max: 4
+  Size:
+    Min: 9
+    Max: 12
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "IronResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "4"
+  - 2
+  - 4
   SizeMinMax:
-  - "9"
-  - "12"
+  - 9
+  - 12
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.2"
-  MaxDroneCount: "2"
-- Name: CopperResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.2
+  MaxDroneCount: 2
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 8
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "CopperResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "8"
+  - 5
+  - 8
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.3"
-- Name: SiliconResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 5
+    Max: 8
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "SiliconResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "5"
-  - "8"
+  - 5
+  - 8
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.3"
-- Name: CobaltResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.3
+  MaxDroneCount: 1
+- Count:
+    Min: 2
+    Max: 3
+  Size:
+    Min: 8
+    Max: 14
+  Depth:
+    Min: 6
+    Max: 15
+  Name: "CobaltResource"
+  IsScalingCount: true
   CountMinMax:
-  - "2"
-  - "3"
+  - 2
+  - 3
   SizeMinMax:
-  - "8"
-  - "14"
+  - 8
+  - 14
   DepthMinMax:
-  - "6"
-  - "15"
-  DroneProb: "0.2"
-  MaxDroneCount: "3"
-- Name: NeodymiumResource
-  IsScalingCount: "True"
+  - 6
+  - 15
+  DroneProb: 0.2
+  MaxDroneCount: 3
+- Count:
+    Min: 4
+    Max: 5
+  Size:
+    Min: 6
+    Max: 9
+  Depth:
+    Min: 5
+    Max: 15
+  Name: "NeodymiumResource"
+  IsScalingCount: true
   CountMinMax:
-  - "4"
-  - "5"
+  - 4
+  - 5
   SizeMinMax:
-  - "6"
-  - "9"
+  - 6
+  - 9
   DepthMinMax:
-  - "5"
-  - "15"
-  DroneProb: "0.9"
-AsteroidResources: 
+  - 5
+  - 15
+  DroneProb: 0.9
+  MaxDroneCount: 1
 POIs:
   Random:
-  - GroupName: DroneBaseT1
-    Faction: PrennFederation
-    NoShieldReload: "True"
-    IsCommandCenter: "True"
-    DroneSetupID: DroneBasePrenn
+  - GroupName: "DroneBaseT1"
+    DroneSetupID: "DroneBasePrenn"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    IsCommandCenter: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: moonstone
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "moonstone"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennCapital
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennCapital"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennStockExchange
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennStockExchange"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 1
     CountMinMax:
-    - "1"
-    - "1"
-    DroneProb: "1.0"
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennMain
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennMain"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 1
+      Max: 2
     CountMinMax:
-    - "1"
-    - "2"
-    DroneProb: "1.0"
+    - 1
+    - 2
+    DroneProb: 1
+    Drones:
+      Min: 2
+      Max: 3
     DronesMinMax:
-    - "2"
-    - "3"
-    ReserveCount: "5"
+    - 2
+    - 3
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennAuxT2
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennAuxT2"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 3
+      Max: 4
     CountMinMax:
-    - "3"
-    - "4"
-    DroneProb: "1.0"
+    - 3
+    - 4
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
     DronesMinMax:
-    - "3"
-    - "5"
-    ReserveCount: "5"
+    - 3
+    - 5
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennAuxT1
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennAuxT1"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 4
+      Max: 6
     CountMinMax:
-    - "4"
-    - "6"
-    DroneProb: "1.0"
+    - 4
+    - 6
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "5"
+    - 1
+    - 1
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennAuxT0
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennAuxT0"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 5
+      Max: 8
     CountMinMax:
-    - "5"
-    - "8"
-    DroneProb: "1.0"
+    - 5
+    - 8
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "5"
+    - 1
+    - 1
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennDefenceT3
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennDefenceT3"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 2
+      Max: 4
     CountMinMax:
-    - "2"
-    - "4"
-    DroneProb: "1.0"
+    - 2
+    - 4
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "5"
+    - 1
+    - 1
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennDefenceT2
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennDefenceT2"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 2
+      Max: 4
     CountMinMax:
-    - "2"
-    - "4"
-    DroneProb: "1.0"
+    - 2
+    - 4
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "5"
+    - 1
+    - 1
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
-  - GroupName: PrennDefenceT1
-    Faction: PrennFederation
-    NoShieldReload: "True"
+  - GroupName: "PrennDefenceT1"
+    Faction: "PrennFederation"
+    Territory: false
+    NoShieldReload: true
+    Count:
+      Min: 3
+      Max: 6
     CountMinMax:
-    - "3"
-    - "6"
-    DroneProb: "1.0"
+    - 3
+    - 6
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 1
     DronesMinMax:
-    - "1"
-    - "1"
-    ReserveCount: "5"
+    - 1
+    - 1
+    ReserveCount: 5
     Properties:
-    - Key: Music
-      Value: AlteredPhase
-    - Key: RegenAfter
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
       Value: "720"
   FixedPlayerStart:
-  - Mode: Debug
-    Armor: ArmorLight
+  - Mode: "Debug"
     Pos:
-    - "-596"
-    - "104"
-    - "-1063"
-    RotY: "125"
-DroneSpawning:
-  Random:
-  - Name: DroneSmallFast01Rocket
-    DronesMinMax:
-    - "9"
-    - "10"
-    Faction: PrennFederation
-    POINameAsPositionRef: ArkenianDroneBase
-    Radius: "6000"
+    - -596
+    - 104
+    - -1063
+    RotY: 125
+    Armor: "ArmorLight"
 DroneBaseSetup:
   DroneBases:
-  - DroneSetupID: DroneBasePrenn
+  - DroneSetupID: "DroneBasePrenn"
     Stock:
-    - Name: DroneSmallTraderPlasma
-      Amount: Infinite
-      Type: FighterDrone
-    - Name: DroneTroopsTransport
-      Amount: Infinite
-      Type: TroopTransport
-    - Name: SoldierAlienAssaultRifle
-      Amount: Infinite
-      Type: 
-    - Name: SoldierAlienShotgun
-      Amount: Infinite
-      Type: 
+    - Name: "DroneSmallTraderPlasma"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "TroopTransport"
+    - Name: "SoldierAlienAssaultRifle"
+      Amount: "Infinite"
+      Extra: -1
+    - Name: "SoldierAlienShotgun"
+      Amount: "Infinite"
+      Extra: -1
   PlanetVessels:
-  - Name: OPVPrennT2
-    Faction: PrennFederation
+  - Name: "OPVPrennT2"
     CountMinMax:
-    - "1"
-    - "1"
+    - 1
+    - 1
+    Faction: "PrennFederation"
     LevelMod: "2"
-    FixedMaxSpeed: "40"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+    FixedMaxSpeed: 40
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - DroneBaseT1
-      DistToGround: "300"
+      - "DroneBaseT1"
+      DistToGround: 300
     Stock:
-    - Name: DroneSmallTraderPlasma
-      Amount: Infinite
-      Type: FighterDrone
-  - Name: PrennMicroCV
-    Faction: PrennFederation
-    LevelMod: "2"
-    FixedMaxSpeed: "100"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+    - Name: "DroneSmallTraderPlasma"
+      Amount: "Infinite"
+      Extra: -1
+      Type: "FighterDrone"
+  - Name: "PrennMicroCV"
     CountMinMax:
-    - "2"
-    - "4"
+    - 2
+    - 4
+    Faction: "PrennFederation"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - PrennStockExchange
-      Radius: "500"
-      DistToGround: "300"
-  - Name: PrennMicroCV
-    Faction: PrennFederation
-    LevelMod: "2"
-    FixedMaxSpeed: "100"
-    DelayBetweenRespawn: "600"
-    DelayBeforeSelfDestruction: "300"
-    IsRespawnAfterDestruction: "True"
+      - "PrennStockExchange"
+      Radius: 500
+      DistToGround: 300
+  - Name: "PrennMicroCV"
     CountMinMax:
-    - "2"
-    - "4"
+    - 2
+    - 4
+    Faction: "PrennFederation"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - PrennMain
-      Radius: "500"
-      DistToGround: "300"
-SpawnRateZones:
-- SpawnAt:
-  - PrennStockExchange
-  Radius: "250"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0.0"
-  RateMultiplyerEdge: "1.0"
-  AffectEnemies: "true"
-  Color: 0.0, 1.0, 0.0, 0.7
-SpawnZones:
-- SpawnAt:
-  - PrennStockExchange
-  Radius: "500"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  Color: 0.0, 0.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - PrennPatrolSmall
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "15"
-    - "25"
-- SpawnAt:
-  - PrennStockExchange
-  Radius: "900"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "0"
-  RateMultiplyerEdge: "0"
-  Color: 0.0, 0.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - PrennPatrolSmall
-    Biomes:
-    - Any
-    Amount: "0"
-    Period: Always
-    DelayMinMax:
-    - "15"
-    - "25"
-- SpawnAt:
-  - PrennStockExchange
-  - PrennMain
-  BiomesExcluded:
-  - GlacierSnow
-  Radius: "70"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "1.0"
-  Color: 1.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - PrennMixedPatrol
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PrennStockExchange
-  - PrennMain
-  BiomesExcluded:
-  - GlacierSnow
-  - IceShelf
-  - Mountains
-  Radius: "300"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - PrennShotgunPatrolMedium
-    Biomes:
-    - Any
-    Amount: "200"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PrennStockExchange
-  BiomesExcluded:
-  - LowMountains
-  - Mountains
-  Radius: "8000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.8"
-  Color: 1.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - PrennPatrolMedium
-    Biomes:
-    - Any
-    Amount: "10"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-  - Names:
-    - PrennMixedPatrol
-    Biomes:
-    - Taiga
-    - TaigaEdge
-    - TaigaSnow
-    - TaigaSnowEdge
-    - Shore
-    Amount: "10"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PrennStockExchange
-  Radius: "8000"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "1.0"
-  Color: 1.0, 0.0, 1.0, 1.0
-  Entities:
-  - Names:
-    - PrennRobotPatrolMedium
-    Biomes:
-    - Any
-    Amount: "5"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
-- SpawnAt:
-  - PrennAuxT2
-  - PrennAuxT1
-  - PrennAuxT0
-  Radius: "50"
-  RadiusRandom: "0"
-  RateMultiplyerCenter: "1.0"
-  RateMultiplyerEdge: "0.5"
-  Color: 1.0, 1.0, 0.0, 1.0
-  Entities:
-  - Names:
-    - PrennShotgunPatrolMedium
-    Biomes:
-    - Any
-    Amount: "1000"
-    Period: Always
-    DelayMinMax:
-    - "-1"
-    - "-1"
+      - "PrennMain"
+      Radius: 500
+      DistToGround: 300
+DroneSpawning:
+  Random:
+  - Drones:
+      Min: 9
+      Max: 10
+    Name: "DroneSmallFast01Rocket"
+    DronesMinMax:
+    - 9
+    - 10
+    Faction: "PrennFederation"
+    POINameAsPositionRef: "ArkenianDroneBase"
+    Radius: 6000
 CreatureSpawning:
 - Biomes:
-  - Shore
+  - "Shore"
   Entities:
-  - Name: SlimesWhite
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "SlimesWhite"
+    Amount: 10
     DelayMinMax:
-    - "10"
-    - "12"
+    - 10
+    - 12
+    Period: "Always"
 - Biomes:
-  - Taiga
-  - TaigaEdge
-  - TaigaSnow
-  - TaigaSnowEdge
+  - "Taiga"
+  - "TaigaEdge"
+  - "TaigaSnow"
+  - "TaigaSnowEdge"
   Entities:
-  - Name: SlimesWhite
-    Period: Day
-    Amount: "8"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "SlimesWhite"
+    Amount: 8
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: Oviraptors
-    Period: Always
-    Amount: "15"
+    - 10
+    - 12
+    Period: "Day"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "Oviraptors"
+    Amount: 15
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: CaveWormWhiteHerd
-    Period: Always
-    Amount: "6"
+    - 10
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormWhiteHerd"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "6"
+    - 20
+    - 24
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsIce"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: Spiders01
-    Period: Night
-    Amount: "10"
+    - 20
+    - 24
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "Spiders01"
+    Amount: 10
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - Dunes
-  - Plains
-  - IceShelf
-  - Tundra
-  - GlacierSnow
-  - Rocks
+  - "Dunes"
+  - "Plains"
+  - "IceShelf"
+  - "Tundra"
+  - "GlacierSnow"
+  - "Rocks"
   Entities:
-  - Name: Oviraptors
-    Period: Always
-    Amount: "10"
+  - DelayRange:
+      Min: 10
+      Max: 12
+    Name: "Oviraptors"
+    Amount: 10
     DelayMinMax:
-    - "10"
-    - "12"
-  - Name: CaveWormWhiteHerd
-    Period: Day
-    Amount: "6"
+    - 10
+    - 12
+    Period: "Always"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "CaveWormWhiteHerd"
+    Amount: 6
     DelayMinMax:
-    - "20"
-    - "24"
-  - Name: GolemsIce
-    Period: Night
-    Amount: "8"
+    - 20
+    - 24
+    Period: "Day"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsIce"
+    Amount: 8
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
 - Biomes:
-  - LowMountains
+  - "LowMountains"
   Entities:
-  - Name: GolemsIce
-    Period: Always
-    Amount: "4"
+  - DelayRange:
+      Min: 20
+      Max: 24
+    Name: "GolemsIce"
+    Amount: 4
     DelayMinMax:
-    - "20"
-    - "24"
+    - 20
+    - 24
+    Period: "Always"
+SpawnRateZones:
+- SpawnAt:
+  - "PrennStockExchange"
+  Radius: 250
+  RateMultiplyerEdge: 1
+  AffectEnemies: true
+  Color: "0.0, 1.0, 0.0, 0.7"
+SpawnZones:
+- SpawnAt:
+  - "PrennStockExchange"
+  Radius: 500
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 15
+      Max: 25
+    Names:
+    - "PrennPatrolSmall"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "PrennStockExchange"
+  Radius: 900
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: 15
+      Max: 25
+    Names:
+    - "PrennPatrolSmall"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "PrennStockExchange"
+  - "PrennMain"
+  BiomesExcluded:
+  - "GlacierSnow"
+  Radius: 70
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  Color: "1.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "PrennMixedPatrol"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PrennStockExchange"
+  - "PrennMain"
+  BiomesExcluded:
+  - "GlacierSnow"
+  - "IceShelf"
+  - "Mountains"
+  Radius: 300
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "1.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "PrennShotgunPatrolMedium"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PrennStockExchange"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 8000
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.8
+  Color: "1.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "PrennPatrolMedium"
+    Biomes:
+    - "Any"
+    Amount: 10
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "PrennMixedPatrol"
+    Biomes:
+    - "Taiga"
+    - "TaigaEdge"
+    - "TaigaSnow"
+    - "TaigaSnowEdge"
+    - "Shore"
+    Amount: 10
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PrennStockExchange"
+  Radius: 8000
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  Color: "1.0, 0.0, 1.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "PrennRobotPatrolMedium"
+    Biomes:
+    - "Any"
+    Amount: 5
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "PrennAuxT2"
+  - "PrennAuxT1"
+  - "PrennAuxT0"
+  Radius: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - DelayRange:
+      Min: -1
+      Max: -1
+    Names:
+    - "PrennShotgunPatrolMedium"
+    Biomes:
+    - "Any"
+    Amount: 1000
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
