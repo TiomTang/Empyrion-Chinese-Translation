@@ -8,26 +8,25 @@ SpecialEffectsLocal:
   Time: "Day"
   Biome:
   - "Forest"
-  FollowPlayerY: false
 - Name: "FireFliesGreenFew"
   MaxHeight: 15
   Biome:
   - "Forest"
   - "Grassland"
-  FollowPlayerY: false
 - Name: "FireFliesGreen"
   MaxHeight: 15
   Time: "Night"
   Biome:
   - "Shore"
   - "ShallowWater"
-  FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clear"
+  InitialDelay: 0
   Delay: 2
   Lifetime: 1200
   Type: "Weather"
 - Name: "CloudsLight"
+  InitialDelay: 0
   Delay: 2
   Lifetime: 600
   Type: "Weather"
@@ -93,16 +92,6 @@ FogColor: "0, 0.3, 0.7"
 Description: "\u96BE\u5EA6\uFF1A[c][ff0000]\u56F0\u96BE[-][/c]\n[c][ffff00]\u8B66\u544A\uFF1A\u65B0\u7684\u88C5\u9970\u7CFB\u7EDF\u6B63\u5728\u6D4B\u8BD5\u4E2D\u3002\u5982\u679C\u8FDB\u5165\u6B64\u6E38\u620F\u573A\u5730\uFF0C\u53EF\u80FD\u4F1A\u9047\u5230\u610F\u5916\u95EE\u9898\u3002[-][/c]\n\n\u6709\u4E9B\u65F6\u5019\uFF0C\u4E00\u4E2A\u8352\u51C9\u536B\u661F\u4F1A\u5F62\u6210\u4E00\u4E2A\u9AD8\u5EA6\u7ED3\u6676\u5316\u7684\u5916\u58F3\u3002\u8FD9\u4E9B\u6240\u8C13\u7684\u7ED3\u6676\u536B\u661F\u56E0\u4E3A\u5176\u5305\u542B\u7684\u81EA\u7136\u8D44\u6E90\u6216\u4F5C\u4E3A\u7CBE\u795E\u5723\u5730\u800C\u5907\u53D7\u9752\u7750\u3002\u53EF\u4EE5\u63A2\u6D4B\u5230\u5927\u91CF\u7684\u94B7\u3002"
 PlanetClass: "Crystalline Moon"
 UseRandom: true
-AllowSV: false
-AllowCV: false
-AllowHV: false
-AllowBA: false
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintHV: false
-AllowBlueprintBA: false
-AllowBPFactory: false
-RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
 - Name: "IronResource"
@@ -183,7 +172,6 @@ POIs:
   - GroupName: "R2DroneBase"
     DroneBaseSetup: "DroneBaseSetup"
     Faction: "Zirax"
-    Territory: false
     Count:
       Min: 1
       Max: 1
@@ -205,7 +193,6 @@ POIs:
       Value: "4320"
   - GroupName: "R2GhystMain"
     Faction: "Zirax"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -235,7 +222,6 @@ POIs:
     - 300
   - GroupName: "R2GhystDunT4"
     Faction: "Zirax"
-    Territory: false
     IsImportant: true
     Count:
       Max: 1
@@ -266,7 +252,6 @@ POIs:
     - 300
   - GroupName: "R2GhystAuxT2"
     Faction: "Zirax"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -292,7 +277,6 @@ POIs:
     - 200
   - GroupName: "R2GhystAuxT1"
     Faction: "Zirax"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -318,7 +302,6 @@ POIs:
     - 200
   - GroupName: "R2GhystDefenseT2"
     Faction: "Zirax"
-    Territory: false
     Count:
       Min: 7
       Max: 12
@@ -345,7 +328,6 @@ POIs:
     SpawnPOIAvoidDistance: 600
   - GroupName: "R2GhystAuxT2"
     Faction: "Zirax"
-    Territory: false
     Count:
       Min: 1
       Max: 1
@@ -385,7 +367,6 @@ POIs:
     - "ShallowWater"
   - GroupName: "R2GhystAuxT2"
     Faction: "Zirax"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -406,7 +387,6 @@ POIs:
       Value: "720"
   - GroupName: "R2GhystDefenseT2"
     Faction: "Zirax"
-    Territory: false
     Count:
       Min: 3
       Max: 5
@@ -435,7 +415,6 @@ POIs:
     Faction: "Eden_Wreck"
     FactionTerritory:
     - "All"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -462,7 +441,6 @@ POIs:
     - "Crystal"
   - GroupName: "Eden_ArchRock"
     Faction: "None"
-    Territory: false
     IsImportant: true
     Count:
       Max: 1
@@ -488,7 +466,6 @@ POIs:
     - "Crystal"
   - GroupName: "Eden_TR_SpireProm"
     Faction: "None"
-    Territory: false
     Count:
       Min: 15
       Max: 30
@@ -516,7 +493,6 @@ POIs:
     Faction: "None"
     FactionTerritory:
     - "All"
-    Territory: false
     Count:
       Min: 100
       Max: 125
@@ -557,8 +533,10 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneHoverZiraxLaser"
       Amount: "200"
+      Extra: 0
     - Name: "DroneLargeZiraxPlasma"
       Amount: "200"
+      Extra: 0
     - Name: "DroneBomberAttackBase"
       Amount: "Infinite"
       Extra: 1

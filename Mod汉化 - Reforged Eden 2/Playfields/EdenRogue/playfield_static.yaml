@@ -6,10 +6,8 @@ SunFlare: "EnvironmentalEffects/SunFlareNone"
 SpecialEffectsLocal:
 - Name: "Grime"
   MaxHeight: 20
-  FollowPlayerY: false
 - Name: "SnowLight"
   MaxHeight: 800
-  FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clear"
   InitialDelay: 2400
@@ -19,6 +17,7 @@ SpecialEffectsGlobal:
 - Name: "MeteorShower"
   SpawnY: 100
   Time: "Day"
+  InitialDelay: 0
   Delay: 2
   PlyDist: 200
   Struct: "Avoid"
@@ -42,25 +41,18 @@ CloudsZenithColor: "0,0,0"
 CloudsHorizonColor: "0,0,0"
 CloudsNightZenithColor: "0, 0, 0"
 CloudsNightHorizonColor: "0, 0, 0"
+CloudsOpacity: 0
 FogCloudIntensity: 0.8
 DayLightIntensity: 1
 NightLightIntensity: 0.3
 DayShadowStrength: 0.95
-CloudsSharpness: 1
+CloudsSharpness: 0
+CloudsBrightness: 0
+WindSpeed: 0
 FogColor: "0, 0, 0"
 Description: "\u96BE\u5EA6: [c][ff0000][b]\u56F0\u96BE[/b][-][/c]\n\u4E00\u9897\u6D41\u6D6A\u884C\u661F\u3002"
 PlanetClass: "Rogue"
 UseRandom: true
-AllowSV: false
-AllowCV: false
-AllowHV: false
-AllowBA: false
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintHV: false
-AllowBlueprintBA: false
-AllowBPFactory: false
-RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
 - Name: "IronResource"
@@ -200,7 +192,6 @@ POIs:
   Random:
   - GroupName: "Eden_HarvestVoidiumT2"
     Faction: "None"
-    Territory: false
     Count:
       Min: 1
       Max: 1
@@ -222,7 +213,6 @@ POIs:
       Value: "4320"
   - GroupName: "Eden_HarvestVoidiumT2"
     Faction: "None"
-    Territory: false
     Count:
       Max: 1
     CountMinMax:
@@ -253,7 +243,6 @@ POIs:
     - "Eden_DroneHome"
     - "TheLegacy"
     - "Tesch"
-    Territory: false
     Count:
       Max: 1
     CountMinMax:
@@ -279,7 +268,6 @@ POIs:
     - 250
   - GroupName: "Eden_HarvestVoidiumT1"
     Faction: "None"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -303,7 +291,6 @@ POIs:
     Faction: "None"
     FactionTerritory:
     - "Eden_DroneHome"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -329,7 +316,6 @@ POIs:
     - "TheLegacy"
     - "Eden_DroneHome"
     - "Xenu"
-    Territory: false
     IsScalingCount: true
     Count:
       Min: 3
@@ -356,7 +342,6 @@ POIs:
     Faction: "None"
     FactionTerritory:
     - "Wastelanders"
-    Territory: false
     IsScalingCount: true
     Count:
       Min: 1
@@ -408,6 +393,7 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Plasma"
       Amount: "Infinite"
+      Extra: 0
     - Name: "DroneBomberAttackBase"
       Amount: "Infinite"
       Extra: 1

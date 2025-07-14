@@ -8,17 +8,16 @@ SpecialEffectsLocal:
   Biome:
   - "DriedLakeBed"
   - "Sand"
-  FollowPlayerY: false
 - Name: "WindLines"
   MaxHeight: 5
   Biome:
   - "Sand"
   - "LowMountains"
   - "Mountains"
-  FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "CloudsDark"
-  Delay: 1
+  InitialDelay: 0
+  Delay: 0
   Lifetime: 1200
   Type: "Weather"
 AtmosphereColor: "0.4, 0.4, 0.4"
@@ -43,22 +42,11 @@ WindSpeed: 12
 Description: "\u96BE\u5EA6: [c][ffff00]\u4E2D\u7B49[-][/c]\nDead type 6.\n\n\u8FD9\u9897\u661F\u7403\u6B63\u5904\u4E8E\u6838\u51AC\u5929\u4E4B\u4E2D\u3002"
 PlanetClass: "Dead Type 6"
 UseRandom: true
-AllowSV: false
-AllowCV: false
-AllowHV: false
-AllowBA: false
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintHV: false
-AllowBlueprintBA: false
-AllowBPFactory: false
-RestrictToOrigin: 255
 LandClaimZone: "Device"
 POIs:
   Random:
   - GroupName: "Eden_DeadSignal6"
     Faction: "Admin"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -78,7 +66,6 @@ POIs:
       Value: "Neutral"
   - GroupName: "Eden_EscapeRocketPad"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -104,7 +91,6 @@ POIs:
     - "PolarSnow"
   - GroupName: "Eden_RuinsLaunchAuxT2"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 3
@@ -134,7 +120,6 @@ POIs:
     - 300
   - GroupName: "Eden_RuinsLogisticsAuxT1"
     Faction: "Alien"
-    Territory: false
     Count:
       Min: 6
       Max: 9
@@ -164,7 +149,6 @@ POIs:
     - 400
   - GroupName: "Eden_RuinsIndustryAuxT1"
     Faction: "Alien"
-    Territory: false
     Count:
       Min: 3
       Max: 4
@@ -193,7 +177,6 @@ POIs:
     - 400
   - GroupName: "Eden_RuinsLaunchAuxT0"
     Faction: "None"
-    Territory: false
     Count:
       Min: 3
       Max: 5
@@ -222,7 +205,6 @@ POIs:
     - 300
   - GroupName: "Eden_RuinsSpaceportMain"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -253,7 +235,6 @@ POIs:
     - "PolarSnow"
   - GroupName: "Eden_RuinsLaunchAuxT2"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 4
@@ -283,7 +264,6 @@ POIs:
     - 300
   - GroupName: "Eden_RuinsLogisticsAuxT1"
     Faction: "Alien"
-    Territory: false
     Count:
       Min: 6
       Max: 9
@@ -313,7 +293,6 @@ POIs:
     - 400
   - GroupName: "Eden_RuinsLaunchAuxT0"
     Faction: "None"
-    Territory: false
     Count:
       Min: 2
       Max: 3
@@ -342,7 +321,6 @@ POIs:
     - 300
   - GroupName: "Eden_RuinsSkyhookBase"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -374,7 +352,6 @@ POIs:
     - "DriedLakeBed"
   - GroupName: "Eden_RuinsSkyhookCarriage"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -404,7 +381,6 @@ POIs:
     - 350
   - GroupName: "Eden_RuinsSpaceTether"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -429,7 +405,6 @@ POIs:
       Value: "720"
   - GroupName: "Eden_RuinsSpaceTetherPart"
     Faction: "None"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -459,7 +434,6 @@ POIs:
     - 800
   - GroupName: "Eden_RuinsSpaceRadar"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -494,7 +468,6 @@ POIs:
     - "PolarSnow"
   - GroupName: "Eden_RuinsRadarDish"
     Faction: "Alien"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -527,7 +500,6 @@ POIs:
     - "PolarSnow"
   - GroupName: "Eden_RuinsSpaceRadarAuxT1"
     Faction: "Alien"
-    Territory: false
     Count:
       Min: 2
       Max: 3
@@ -560,7 +532,6 @@ POIs:
     - "PolarSnow"
   - GroupName: "Eden_RuinsLogisticsAuxT1"
     Faction: "Alien"
-    Territory: false
     Count:
       Min: 2
       Max: 6
@@ -593,7 +564,6 @@ POIs:
     - "PolarSnow"
     - "Craters"
   - GroupName: "NullPOI"
-    Territory: false
     AuxiliaryPOIs:
     - "Eden_RuinsCity"
     Count:
@@ -609,7 +579,6 @@ POIs:
     - "Craters"
   - GroupName: "Eden_RuinsCity"
     Faction: "None"
-    Territory: false
     IsAuxPOI: true
     Count:
       Min: 10
@@ -668,8 +637,10 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "300"
+      Extra: 0
     - Name: "DroneSmallFast01Rocket"
       Amount: "100"
+      Extra: 0
     - Name: "DroneBomberAttackBase"
       Amount: "Infinite"
       Extra: 1

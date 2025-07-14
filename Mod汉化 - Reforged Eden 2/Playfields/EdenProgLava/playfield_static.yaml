@@ -6,28 +6,24 @@ SunFlare: "EnvironmentalEffects/SunFlareBlue"
 SpecialEffectsLocal:
 - Name: "Grime"
   MaxHeight: 20
-  FollowPlayerY: false
 - Name: "SnowLight"
   MaxHeight: 800
-  FollowPlayerY: false
 - Name: "SnowLight"
   MaxHeight: 800
-  FollowPlayerY: false
 - Name: "SnowLight"
   MaxHeight: 800
-  FollowPlayerY: false
 - Name: "SnowLight"
   MaxHeight: 800
-  FollowPlayerY: false
 - Name: "SnowLight"
   MaxHeight: 800
-  FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "Clouds"
+  InitialDelay: 0
   Delay: 2
   Lifetime: 1500
   Type: "Weather"
 - Name: "CloudsDark"
+  InitialDelay: 0
   Delay: 2
   Lifetime: 1200
   Type: "Weather"
@@ -51,12 +47,14 @@ SpecialEffectsGlobal:
   Lifetime: 60
 - Name: "ThunderAndLightningPurple"
   SpawnY: 500
+  Time: "Night"
   InitialDelay: 1.5
   Delay: 4
   Struct: "Avoid"
   Lifetime: 300
 - Name: "ThunderAndLightningWhite"
   SpawnY: 500
+  Time: "Night"
   InitialDelay: 1.5
   Delay: 4
   Struct: "Avoid"
@@ -86,16 +84,10 @@ FogColor: "0.3, 0.5, 1"
 Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\n\u8FD9\u662F\u4E00\u9897\u8352\u829C\u3001\u6BEB\u65E0\u751F\u673A\u7684\u661F\u7403\uFF0C\u66FE\u662F\u88AB\u79F0\u4E3A\u5148\u7956\u6587\u660E\u6240\u5C45\u4F4F\u7684\u661F\u7403\u3002"
 PlanetClass: "Decayed Lava"
 UseRandom: true
-AllowSV: false
-AllowCV: false
-AllowHV: false
-AllowBA: false
 AllowBlueprintSV: false
 AllowBlueprintCV: false
 AllowBlueprintHV: false
 AllowBlueprintBA: false
-AllowBPFactory: false
-RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
 - Name: "MagnesiumResource"
@@ -180,7 +172,6 @@ POIs:
   Random:
   - GroupName: "Eden_ProgInterface"
     Faction: "Alien"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -203,7 +194,6 @@ POIs:
       Value: "720"
   - GroupName: "Eden_ProgenitorMain"
     Faction: "Alien"
-    Territory: false
     Count:
       Max: 1
     CountMinMax:
@@ -222,7 +212,6 @@ POIs:
       Value: "720"
   - GroupName: "Eden_RuinsProgenitorObelisk"
     Faction: "Alien"
-    Territory: false
     Count:
       Max: 12
     CountMinMax:
@@ -246,7 +235,6 @@ POIs:
     - 400
   - GroupName: "Eden_RuinsProgenitorMain"
     Faction: "Alien"
-    Territory: false
     IsScalingCount: true
     Count:
       Max: 3
@@ -266,7 +254,6 @@ POIs:
       Value: "720"
   - GroupName: "Eden_RuinsProgenitorObeliskF"
     Faction: "Alien"
-    Territory: false
     Count:
       Min: 1
       Max: 1
@@ -286,7 +273,6 @@ POIs:
       Value: "720"
   - GroupName: "Eden_RuinsProgenitorObeliskF"
     Faction: "Alien"
-    Territory: false
     Count:
       Min: 5
       Max: 10
@@ -311,7 +297,6 @@ POIs:
     - 200
   - GroupName: "ProgenitorArtifacts"
     Faction: "Alien"
-    Territory: false
     IsScalingCount: true
     Count:
       Max: 15
@@ -331,7 +316,6 @@ POIs:
       Value: "720"
   - GroupName: "Eden_RuinsProgenitorObelisk"
     Faction: "Alien"
-    Territory: false
     IsScalingCount: true
     Count:
       Max: 3
@@ -351,7 +335,6 @@ POIs:
       Value: "720"
   - GroupName: "Eden_RuinsProgenitorSphere"
     Faction: "Alien"
-    Territory: false
     IsScalingCount: true
     Count:
       Max: 6
@@ -371,7 +354,6 @@ POIs:
       Value: "720"
   - GroupName: "Eden_CrystalsBlackXL"
     Faction: "None"
-    Territory: false
     Count:
       Min: 25
       Max: 50
@@ -408,8 +390,10 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "300"
+      Extra: 0
     - Name: "DroneSmallFast01Rocket"
       Amount: "100"
+      Extra: 0
     - Name: "DroneBomberAttackBase"
       Amount: "Infinite"
       Extra: 1

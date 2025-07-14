@@ -4,13 +4,14 @@ Difficulty: 2
 SunFlare: "EnvironmentalEffects/SunFlareYellow"
 SpecialEffectsLocal:
 - Name: "Grime"
-  FollowPlayerY: false
 SpecialEffectsGlobal:
 - Name: "CloudsDark"
+  InitialDelay: 0
   Delay: 36
   Lifetime: 600
   Type: "Weather"
 - Name: "Wind"
+  InitialDelay: 0
   Delay: 12
   Lifetime: 600
   Type: "Weather"
@@ -34,6 +35,7 @@ SpecialEffectsGlobal:
   Lifetime: 60
 - Name: "ThunderAndLightningPurple"
   SpawnY: 500
+  Time: "Night"
   InitialDelay: 1.5
   Delay: 4
   Struct: "Avoid"
@@ -67,16 +69,6 @@ FogStartDistance: 300
 Description: "\u96BE\u5EA6: [c][ffff00]\u4E2D\u7B49[-][/c] \n\n\u8FD9\u9897\u51B0\u51B7\u7684\u536B\u661F\u8986\u76D6\u7740\u539A\u539A\u7684\u786B\u78FA\u5C42\u548C\u6DF1\u5C42\u7684\u6DB2\u6001\u7532\u70F7\u6C60\u3002\n\n[c][808080][i]\u6700\u521D\u7531Techie\u521B\u5EFA\u3002[/i][-][/c]"
 PlanetClass: "Methane Moon"
 UseRandom: true
-AllowSV: false
-AllowCV: false
-AllowHV: false
-AllowBA: false
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintHV: false
-AllowBlueprintBA: false
-AllowBPFactory: false
-RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
 - Name: "CopperResource"
@@ -157,7 +149,6 @@ POIs:
   - GroupName: "R2DroneBase"
     DroneBaseSetup: "DroneBaseSetup"
     Faction: "Zirax"
-    Territory: false
     IsCommandCenter: true
     IsImportant: true
     Count:
@@ -240,7 +231,6 @@ POIs:
     - 300
   - GroupName: "CrashedShip"
     Faction: "None"
-    Territory: false
     Count:
       Max: 1
     CountMinMax:
@@ -267,7 +257,6 @@ POIs:
     Faction: "Rados"
     FactionTerritory:
     - "Zirax"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -341,7 +330,6 @@ POIs:
     Faction: "Zirax"
     FactionTerritory:
     - "Zirax"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -495,7 +483,6 @@ POIs:
     Faction: "Polaris"
     FactionTerritory:
     - "Eden_PolarisTerritory"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -655,7 +642,6 @@ POIs:
     Faction: "Polaris"
     FactionTerritory:
     - "Eden_PolarisTerritory"
-    Territory: false
     IsImportant: true
     Count:
       Max: 1
@@ -718,7 +704,6 @@ POIs:
     Faction: "Polaris"
     FactionTerritory:
     - "Eden_PolarisTerritory"
-    Territory: false
     Count:
       Min: 2
       Max: 4
@@ -831,7 +816,6 @@ POIs:
     Faction: "Polaris"
     FactionTerritory:
     - "Eden_PolarisTerritory"
-    Territory: false
     Count:
       Min: 1
       Max: 1
@@ -857,7 +841,6 @@ POIs:
     Faction: "Polaris"
     FactionTerritory:
     - "Eden_PolarisTerritory"
-    Territory: false
     Count:
       Min: 2
       Max: 3
@@ -941,7 +924,6 @@ POIs:
     Faction: "Zirax"
     FactionTerritory:
     - "Zirax"
-    Territory: false
     AuxiliaryPOIs:
     - "R2RadosDefenseT1"
     - "R2RadosDecoMining"
@@ -983,7 +965,6 @@ POIs:
     Faction: "Zirax"
     FactionTerritory:
     - "Zirax"
-    Territory: false
     AuxiliaryPOIs:
     - "R2RadosDefenseT1"
     - "R2RadosDecoMining"
@@ -1106,7 +1087,6 @@ POIs:
     - 200
   - GroupName: "Eden_HarvestVoidiumT2"
     Faction: "None"
-    Territory: false
     Count:
       Min: 1
       Max: 1
@@ -1133,7 +1113,6 @@ POIs:
     - "Eden_DroneHome"
     - "TheLegacy"
     - "Tesch"
-    Territory: false
     Count:
       Max: 1
     CountMinMax:
@@ -1165,7 +1144,6 @@ POIs:
     - "TheLegacy"
     - "Eden_DroneHome"
     - "Xenu"
-    Territory: false
     Count:
       Min: 2
       Max: 3
@@ -1191,7 +1169,6 @@ POIs:
     Faction: "None"
     FactionTerritory:
     - "Wastelanders"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -1221,8 +1198,10 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneAeroZiraxCannon"
       Amount: "200"
+      Extra: 0
     - Name: "DroneAeroZiraxRocket"
       Amount: "200"
+      Extra: 0
     - Name: "DroneBomberAttackBase"
       Amount: "Infinite"
       Extra: 1

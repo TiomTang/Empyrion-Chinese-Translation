@@ -4,7 +4,8 @@ Difficulty: 3
 SunFlare: "EnvironmentalEffects/SunFlareWhiteMoon"
 SpecialEffectsGlobal:
 - Name: "Clear"
-  Delay: 1
+  InitialDelay: 0
+  Delay: 0
   Lifetime: 3000
   Type: "Weather"
 AtmosphereColor: "0.30, 0.35, 0.35"
@@ -18,25 +19,18 @@ LightHorizonColor: "0.5, 0.4, 0.45"
 NightLightColor: "0.78, 0.78, 1"
 CloudsZenithColor: "0.0, -0.1, -0.1"
 CloudsHorizonColor: "1, 0.3, 0.1"
-FogCloudIntensity: 1
+CloudsOpacity: 0
+FogCloudIntensity: 0
 DayLightIntensity: 1.6
 DayShadowStrength: 1
 NightShadowStrength: 1
 CloudsSharpness: 1
+CloudsBrightness: 0
+WindSpeed: 0
 FogColor: "0.9, 0.9, 0.1"
 Description: "\u96BE\u5EA6: [c][00ff00]\u7B80\u5355[-][/c]\n\n\u8FD9\u9897\u536B\u661F\u7684\u5927\u6C14\u975E\u5E38\u7A00\u8584\u2014\u2014\u5B83\u88AB\u9644\u8FD1\u884C\u661F\u5F02\u5E38\u5F3A\u5927\u7684\u78C1\u573A\u4FDD\u62A4\u7740\uFF0C\u536B\u661F\u8DB3\u591F\u5BC6\u96C6\uFF0C\u53EF\u4EE5\u963B\u6B62\u4E00\u4E9B\u6C14\u4F53\u6F02\u5411\u592A\u7A7A\u3002\u56E0\u6B64\uFF0C\u8FD9\u91CC\u7D2F\u79EF\u4E86\u6781\u7AEF\u6570\u91CF\u7684\u6C99\u6F20\u6D82\u6599\u3002"
 PlanetClass: "Desert Moon"
 UseRandom: true
-AllowSV: false
-AllowCV: false
-AllowHV: false
-AllowBA: false
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintHV: false
-AllowBlueprintBA: false
-AllowBPFactory: false
-RestrictToOrigin: 255
 LandClaimZone: "Device"
 RandomResources:
 - Name: "IronResource"
@@ -165,7 +159,6 @@ POIs:
   - GroupName: "R2DroneBase"
     DroneBaseSetup: "DroneBaseSetup"
     Faction: "Zirax"
-    Territory: false
     IsCommandCenter: true
     Count:
       Min: 1
@@ -186,7 +179,6 @@ POIs:
       Value: "720"
   - GroupName: "FarrAuxT2RG"
     Faction: "Farr"
-    Territory: false
     IsImportant: true
     Count:
       Min: 1
@@ -210,7 +202,6 @@ POIs:
     - "Radiated"
   - GroupName: "FarrAuxT1RG"
     Faction: "Farr"
-    Territory: false
     IsImportant: true
     Count:
       Min: 2
@@ -239,7 +230,6 @@ POIs:
     - "Radiated"
   - GroupName: "FarrDefenseT1RG"
     Faction: "Farr"
-    Territory: false
     IsImportant: true
     Count:
       Min: 3
@@ -268,7 +258,6 @@ POIs:
     - "Radiated"
   - GroupName: "R2TraderAuxT1"
     Faction: "Trader"
-    Territory: false
     Count:
       Min: 3
       Max: 5
@@ -282,7 +271,6 @@ POIs:
       Value: "720"
   - GroupName: "R2TraderDefenseT1"
     Faction: "Trader"
-    Territory: false
     Count:
       Min: 1
       Max: 2
@@ -301,7 +289,6 @@ POIs:
     - 250
   - GroupName: "R2PirateMain"
     Faction: "Pirates"
-    Territory: false
     Count:
       Max: 1
     CountMinMax:
@@ -312,7 +299,6 @@ POIs:
       Value: "720"
   - GroupName: "R2PirateAuxT1"
     Faction: "Pirates"
-    Territory: false
     Count:
       Max: 3
     CountMinMax:
@@ -323,7 +309,6 @@ POIs:
       Value: "720"
   - GroupName: "R2PirateDefenseT1"
     Faction: "Pirates"
-    Territory: false
     Count:
       Min: 1
       Max: 3
@@ -352,7 +337,6 @@ POIs:
       Value: "720"
   - GroupName: "CrashedShipLargeDesert"
     Faction: "None"
-    Territory: false
     Count:
       Min: 1
       Max: 1
@@ -374,7 +358,6 @@ POIs:
       Value: "720"
   - GroupName: "R2GhystAuxT1"
     Faction: "Zirax"
-    Territory: false
     Count:
       Min: 3
       Max: 4
@@ -413,12 +396,16 @@ DroneBaseSetup:
     Stock:
     - Name: "DroneSmallFast01Rocket"
       Amount: "100"
+      Extra: 0
     - Name: "DroneSmallFast01Minigun"
       Amount: "200"
+      Extra: 0
     - Name: "DroneLargeSlow01Minigun"
       Amount: "100"
+      Extra: 0
     - Name: "DroneSmallSlow01Cannon"
       Amount: "200"
+      Extra: 0
     - Name: "DroneSmallAttackBase"
       Amount: "300"
       Extra: 1
