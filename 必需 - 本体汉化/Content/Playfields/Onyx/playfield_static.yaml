@@ -1,0 +1,135 @@
+PlayfieldType: "Planet"
+PlanetType: "Megastructure"
+Difficulty: 4
+SunFlare: "EnvironmentalEffects/SunFlareWhite"
+SpecialEffectsLocal:
+- Name: "FireFliesGreen"
+  MaxHeight: 15
+  Time: "Night"
+  Biome:
+  - "Canyon"
+- Name: "Grime"
+  MaxHeight: 15
+  Biome:
+  - "Canyon"
+SpecialEffectsGlobal:
+- Name: "ThunderAndLightning"
+  SpawnY: 500
+  Biome:
+  - "Any"
+  InitialDelay: 0
+  Delay: 0
+  Struct: "Avoid"
+  Lifetime: 500
+- Name: "ThunderAndLightning"
+  SpawnY: 500
+  Biome:
+  - "Any"
+  InitialDelay: 0
+  Delay: 0
+  Struct: "Avoid"
+  Lifetime: 500
+- Name: "ThunderAndLightningWhite"
+  SpawnY: 500
+  Biome:
+  - "Any"
+  InitialDelay: 0
+  Delay: 0
+  Struct: "Avoid"
+  Lifetime: 500
+- Name: "Clear"
+  InitialDelay: 0
+  Delay: 0
+  Lifetime: 1200
+  Type: "Weather"
+AtmosphereColor: "0, 0.85, 0.85"
+AtmosphereParams:
+- 30
+- 10
+OrbitUsesLightColor: true
+SkyColor: "0.05, 0.10, 0.00"
+SkyHorizonColor: "0.4, 0.1, 0"
+LightZenithColor: "0.46, 0.41, 0.47"
+LightHorizonColor: "0.098, 0.168, 0.168"
+NightLightColor: "0.41, 0.39, 0.48"
+CloudsZenithColor: "0.4, 0.108, 0.0"
+CloudsHorizonColor: "0.4, 0.07, 0.05"
+CloudsNightZenithColor: "0.03, 0.010, 0.01"
+CloudsNightHorizonColor: "0.03, 0.010, 0.01"
+CloudsOpacity: 0
+FogCloudIntensity: 0.8
+DayLightIntensity: 2
+NightLightIntensity: 1
+DayShadowStrength: 0.95
+CloudsSharpness: 0.05
+CloudsBrightness: 0.3
+WindSpeed: 4
+FogColor: "0.49, 0.81, 0.49"
+Description: "\u4E00\u4E2A\u6765\u6E90\u4E0D\u660E\u7684\u884C\u661F\u7EA7\u7ED3\u6784\u3002\n"
+PlanetClass: "Megastructure"
+UseRandom: true
+LandClaimZone: "Device"
+POIs:
+  Random:
+  - GroupName: "ProgenitorControlStation"
+    Faction: "Progenitor"
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOINearRange:
+    - 0
+    - 300
+    Biome:
+    - "Tower"
+  - GroupName: "ProgenitorArtifacts"
+    Faction: "Progenitor"
+    IsImportant: true
+    Count:
+      Min: 4
+      Max: 4
+    CountMinMax:
+    - 4
+    - 4
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "ProgenitorArtifacts"
+    SpawnPOINearRange:
+    - 500
+    - 800
+    SpawnPOIAvoidDistance: 400
+    Biome:
+    - "Proximity"
+    - "Structure"
+    - "Active"
+  - GroupName: "ProgenitorArtifacts"
+    Faction: "Progenitor"
+    IsScalingCount: true
+    Count:
+      Min: 20
+      Max: 20
+    CountMinMax:
+    - 20
+    - 20
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "ProgenitorArtifacts"
+    SpawnPOIAvoidDistance: 600
+    Biome:
+    - "Structure"
+    - "Canyon"

@@ -136,8 +136,10 @@ CloudsDensity: 0.4
 CloudsSharpness: 0.3
 CloudsBrightness: 1
 WindSpeed: 4
-Description: "\u6CF0\u9686\u7684\u6BCD\u661F"
+Description: "\u6CF0\u9686\u4EBA\u7684\u6BCD\u661F"
+Seed: 272253
 PlanetClass: "TalonArHomeworld"
+UseFixed: true
 UseRandom: true
 LandClaimZone: "Device"
 RandomResources:
@@ -264,6 +266,82 @@ AsteroidResources:
   Delay: -1
 POIs:
   Random:
+  - GroupName: "BAOTalonArShipyard"
+    Faction: "Talon"
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    PlaceAt: "OnWater"
+    Biome:
+    - "DeepWater"
+  - GroupName: "TalonArCapital"
+    Faction: "Talon"
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "BAOTalonArShipyard"
+    SpawnPOINearRange:
+    - 500
+    - 1200
+  - GroupName: "TashVisionSecretStation"
+    Faction: "Talon"
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Drones:
+      Min: 3
+      Max: 5
+    DronesMinMax:
+    - 3
+    - 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "0"
+    SpawnPOINear:
+    - "TalonArCapital"
+    SpawnPOINearRange:
+    - 500
+    - 1200
   - GroupName: "TalonArDroneBase"
     DroneSetupID: "DroneBaseTalonAr"
     Faction: "Talon"
@@ -288,31 +366,11 @@ POIs:
       Value: "moonstone"
     - Key: "RegenAfter"
       Value: "720"
-  - GroupName: "TalonArUnique"
-    Faction: "Talon"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    BiomesExcluded:
-    - "Pole"
-    - "GlacierSnow"
-    - "Mountains"
-    - "LowMountains"
+    SpawnPOINear:
+    - "BAOTalonArShipyard"
+    SpawnPOINearRange:
+    - 500
+    - 1200
   - GroupName: "TalonArDigsite"
     Faction: "Talon"
     NoShieldReload: true
@@ -333,6 +391,39 @@ POIs:
     Properties:
     - Key: "RegenAfter"
       Value: "720"
+    SpawnPOINear:
+    - "BAOTalonArShipyard"
+    SpawnPOINearRange:
+    - 500
+    - 1200
+  - GroupName: "BAOTalonArSpire"
+    Faction: "Talon"
+    NoShieldReload: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 10
+    CountMinMax:
+    - 1
+    - 10
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "BAOTalonArShipyard"
+    PlaceAt: "OnWater"
+    SpawnPOIAvoidDistance: 1500
+    Biome:
+    - "ShallowWater"
+    - "Water"
+    - "DeepWater"
   FixedPlayerStart:
   - Mode: "Debug"
     Pos:
@@ -353,8 +444,8 @@ DroneBaseSetup:
   PlanetVessels:
   - Name: "OPVTalonArT2"
     CountMinMax:
-    - 2
-    - 2
+    - 1
+    - 1
     Faction: "Talon"
     LevelMod: "2"
     FixedMaxSpeed: 40
@@ -363,12 +454,105 @@ DroneBaseSetup:
     IsRespawnAfterDestruction: true
     RangePatrolTask:
       POINameAsPositionRef:
-      - "TalonArUnique"
-      DistToGround: 300
+      - "BAOTalonArShipyard"
+      DistToGround: 100
     Stock:
     - Name: "DroneSmallFast01Minigun"
       Amount: "Infinite"
       Type: "FighterDrone"
+  - Name: "OPVTalonArT2"
+    CountMinMax:
+    - 1
+    - 1
+    Faction: "Talon"
+    LevelMod: "2"
+    FixedMaxSpeed: 40
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - "BAOTalonArShipyard"
+      DistToGround: 250
+    Stock:
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "Infinite"
+      Type: "FighterDrone"
+  - Name: "OPVTalonArT1"
+    CountMinMax:
+    - 1
+    - 2
+    Faction: "Talon"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - "TalonArCapital"
+      Radius: 500
+      DistToGround: 100
+  - Name: "OPVTalonArT1"
+    CountMinMax:
+    - 1
+    - 2
+    Faction: "Talon"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - "BAOTalonArSpire"
+      Radius: 500
+      DistToGround: 100
+  - Name: "OPVTalonArT1"
+    CountMinMax:
+    - 1
+    - 2
+    Faction: "Talon"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - "TalonArDigsite"
+      Radius: 500
+      DistToGround: 100
+  - Name: "OPVTalonArCiv"
+    CountMinMax:
+    - 2
+    - 4
+    Faction: "Talon"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - "TalonArDigsite"
+      Radius: 500
+      DistToGround: 100
+  - Name: "OPVTalonArCiv"
+    CountMinMax:
+    - 2
+    - 4
+    Faction: "Talon"
+    LevelMod: "2"
+    FixedMaxSpeed: 100
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 300
+    IsRespawnAfterDestruction: true
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - "BAOTalonArSpire"
+      Radius: 500
+      DistToGround: 100
 CreatureSpawning:
 - Biomes:
   - "Desert"

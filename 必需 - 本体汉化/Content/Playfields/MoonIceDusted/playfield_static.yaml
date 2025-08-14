@@ -1,0 +1,770 @@
+PlayfieldType: "Moon"
+PlanetType: "MoonIceDusted"
+Difficulty: 2
+SunFlare: "EnvironmentalEffects/SunFlareWhiteMoon"
+SpecialEffectsLocal:
+- Name: "EnvironmentalEffects/Sparks"
+  MaxHeight: 10
+  Time: "Day"
+  Biome:
+  - "LavaFields"
+SpecialEffectsGlobal:
+- Name: "MeteorFireRain"
+  Time: "Day"
+  Biome:
+  - "LavaFields"
+  InitialDelay: 0
+  Delay: 0
+  Lifetime: 5
+AtmosphereEnabled: false
+FogCloudIntensity: 1
+DayLightIntensity: 1.6
+DayShadowStrength: 0.95
+NightShadowStrength: 0.5
+CloudsSharpness: 1
+Description: "[c]\u6CE8\u610F\uFF1A\u6B64\u6E38\u620F\u573A\u5730\u4ECD\u5728\u5F00\u53D1\u4E2D\u3002[-][/c] \n[c][808080][i]  \u6E38\u620F\u4E16\u754C\u672A\u6765\u53EF\u80FD\u8FD8\u4F1A\u53D8\u52A8\uFF0C\u5F53\u524D\u73A9\u6CD5\u6709\u9650\u3002[-][/i][-][/c]\n\n[c]\u8D44\u6E90\u7A00\u5C11\u3002- \u5E9F\u6599\u573A\u3002[-][/c]\n\n\u8FD9\u9897\u536B\u661F\u4F4D\u4E8E\u884C\u661F\u4FDD\u62A4\u78C1\u5C42\u4E4B\u5916\uFF0C\u4F46\u4ECD\u9760\u8FD1\u5176\u73AF\u7CFB\u3002\n\n\u56E0\u6B64\uFF0C\u5176\u524D\u8FDB\u4FA7\u79EF\u805A\u4E86\u5927\u91CF\u5C18\u57C3\u2026\u2026\u5E76\u53EF\u80FD\u626B\u96C6\u8BB8\u591A\u73AF\u7ED5\u6C14\u6001\u5DE8\u661F\u7684\u5176\u4ED6\u7269\u8D28\u3002"
+PlanetClass: "MoonIceDusted"
+UseRandom: true
+LandClaimZone: "Device"
+RandomResources:
+- Name: "IronResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 3
+  - 5
+  SizeMinMax:
+  - 5
+  - 6
+  DepthMinMax:
+  - 3
+  - 7
+  DroneProb: 0.3
+  Biome:
+  - "SmallCrater"
+  - "SmallCrater_1"
+  - "LargeCrater"
+  - "DustCenter"
+  - "Dust"
+  - "DustEdge"
+  - "DeepDust"
+- Name: "MagnesiumResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 1
+  - 2
+  SizeMinMax:
+  - 2
+  - 3
+  DepthMinMax:
+  - 5
+  - 10
+  DroneProb: 0.7
+  Biome:
+  - "Mountains"
+  - "Regolith"
+  - "RegolithEdge"
+- Name: "MagnesiumResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 1
+  - 2
+  SizeMinMax:
+  - 6
+  - 7
+  DepthMinMax:
+  - 70
+  - 80
+  DroneProb: 0.2
+  Biome:
+  - "Regolith"
+  - "RegolithEdge"
+  - "DustCenter"
+- Name: "PromethiumResource"
+  CountMinMax:
+  - 1
+  - 1
+  SizeMinMax:
+  - 5
+  - 6
+  DepthMinMax:
+  - 5
+  - 10
+  DroneProb: 1
+  MaxDroneCount: 2
+  Biome:
+  - "CrustedIce"
+  - "DeepDust"
+AsteroidResources:
+- Name: "IronResource"
+  Threshold: 0.1
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+POIs:
+  Random:
+  - GroupName: "SignalMarker01"
+    Faction: "None"
+    Territory: false
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    - Key: "Discovery"
+      Value: "True"
+    - Key: "HudDistance"
+      Value: "0"
+    - Key: "MapDistance"
+      Value: "0"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "START"
+    PlaceAt: "Terrain, OnWater"
+    SpawnPOINearRange:
+    - 2500
+    - 2600
+    SpawnPOIAvoidDistance: 2500
+    Biome:
+    - "Regolith"
+    - "RegolithEdge"
+    - "Cliffs"
+    - "CrustedIce"
+    - "LargeCrater"
+  - GroupName: "JunkT2"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 7
+      Max: 7
+    CountMinMax:
+    - 7
+    - 7
+    DroneProb: 0.1
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "SignalMarker01"
+    SpawnPOIAvoid:
+    - "JunkT2"
+    SpawnPOINearRange:
+    - 0
+    - 400
+    SpawnPOIAvoidDistance: 300
+  - GroupName: "JunkT1"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 15
+      Max: 20
+    CountMinMax:
+    - 15
+    - 20
+    DroneProb: 0.2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOINearRange:
+    - 0
+    - 1000
+    Biome:
+    - "SmallCrater"
+    - "SmallCrater_1"
+    - "LargeCrater"
+    - "DustCenter"
+    - "DeepDust"
+    - "CrustedIce"
+  - GroupName: "JunkT3_Engine"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 3
+    CountMinMax:
+    - 1
+    - 3
+    DroneProb: 0.2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOINearRange:
+    - 0
+    - 1000
+    Biome:
+    - "SmallCrater"
+    - "SmallCrater_1"
+    - "LargeCrater"
+    - "DustCenter"
+    - "DeepDust"
+    - "CrustedIce"
+  - GroupName: "PlatformShellSpawnLarge"
+    Faction: "None"
+    IsImportant: true
+    AuxiliaryPOIs:
+    - "CV_ClaimShell2"
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 2
+    CountMinMax:
+    - 2
+    - 2
+    DroneProb: 0.2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "Discovery"
+      Value: "True"
+    - Key: "HudDistance"
+      Value: "0"
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "PlatformShellSpawnLarge"
+    SpawnPOINearRange:
+    - 0
+    - 2000
+    SpawnPOIAvoidDistance: 300
+    Biome:
+    - "DustCenter"
+    - "DeepDust"
+    - "CrustedIce"
+  - GroupName: "CV_ClaimShell2"
+    Faction: "None"
+    Type: "CV_Player"
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    SpawnPOINear:
+    - "PlatformShellSpawnLarge"
+    SpawnPOINearRange:
+    - 0
+    - 5
+    Biome:
+    - "DustCenter"
+    - "DeepDust"
+    - "DustBottom"
+  - GroupName: "CV_ClaimShell2"
+    Faction: "None"
+    Type: "CV_Player"
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    SpawnPOINear:
+    - "PlatformShellSpawnLarge"
+    SpawnPOIAvoid:
+    - "CV_ClaimShell2"
+    SpawnPOINearRange:
+    - 0
+    - 2
+    SpawnPOIAvoidDistance: 200
+    Biome:
+    - "DustCenter"
+    - "DeepDust"
+    - "DustBottom"
+  - GroupName: "Ruins"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 2
+    CountMinMax:
+    - 2
+    - 2
+    DroneProb: 0.2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "HudDistance"
+      Value: "150"
+    - Key: "MapDistance"
+      Value: "150"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "PlatformShellSpawnLarge"
+    SpawnPOIAvoid:
+    - "Ruins"
+    SpawnPOINearRange:
+    - 100
+    - 180
+    SpawnPOIAvoidDistance: 150
+  - GroupName: "JunkT1"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 7
+      Max: 10
+    CountMinMax:
+    - 7
+    - 10
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "OPVWarlordT5"
+    SpawnPOINearRange:
+    - 0
+    - 150
+  - GroupName: "CrashedShip"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 6
+      Max: 8
+    CountMinMax:
+    - 6
+    - 8
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOIAvoid:
+    - "CrashedShip"
+    SpawnPOINearRange:
+    - 300
+    - 1800
+    SpawnPOIAvoidDistance: 300
+    Biome:
+    - "SmallCrater"
+    - "SmallCrater_1"
+    - "LargeCrater"
+    - "DustCenter"
+    - "DeepDust"
+    - "CrustedIce"
+  - GroupName: "JunkT1"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 10
+      Max: 12
+    CountMinMax:
+    - 10
+    - 12
+    DroneProb: 0.2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "HudDistance"
+      Value: "250"
+    - Key: "MapDistance"
+      Value: "250"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "START"
+    SpawnPOINearRange:
+    - 0
+    - 3000
+    Biome:
+    - "SmallCrater"
+    - "SmallCrater_1"
+    - "LargeCrater"
+    - "DustCenter"
+    - "Dust"
+    - "DustEdge"
+  - GroupName: "CrashedShip"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 5
+    CountMinMax:
+    - 3
+    - 5
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "HudDistance"
+      Value: "250"
+    - Key: "MapDistance"
+      Value: "250"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "CrashedShip"
+    SpawnPOIAvoidDistance: 500
+    Biome:
+    - "SmallCrater"
+    - "SmallCrater_1"
+    - "LargeCrater"
+  - GroupName: "JunkT1"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 4
+      Max: 6
+    CountMinMax:
+    - 4
+    - 6
+    DroneProb: 0.2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "HudDistance"
+      Value: "250"
+    - Key: "MapDistance"
+      Value: "250"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "SignalMarker01"
+    SpawnPOINearRange:
+    - 0
+    - 500
+    Biome:
+    - "SmallCrater"
+    - "SmallCrater_1"
+    - "LargeCrater"
+    - "DustCenter"
+    - "Dust"
+    - "DustEdge"
+  - GroupName: "CrashedShip"
+    Faction: "None"
+    IsScalingCount: true
+    Count:
+      Min: 5
+      Max: 5
+    CountMinMax:
+    - 5
+    - 5
+    DroneProb: 1
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "HudDistance"
+      Value: "250"
+    - Key: "MapDistance"
+      Value: "250"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "SignalMarker01"
+    SpawnPOIAvoid:
+    - "CrashedShip"
+    SpawnPOINearRange:
+    - 0
+    - 1000
+    SpawnPOIAvoidDistance: 300
+    Biome:
+    - "DustEdge"
+    - "DustCenter"
+  - GroupName: "DroneBaseT1"
+    DroneBaseSetup: "DroneBaseSetup"
+    Faction: "Zirax"
+    NoShieldReload: true
+    IsCommandCenter: true
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 4
+      Max: 5
+    DronesMinMax:
+    - 4
+    - 5
+    ReserveCount: 5
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "GhystAuxT1"
+    Faction: "Zirax"
+    NoShieldReload: true
+    IsScalingCount: true
+    Count:
+      Min: 10
+      Max: 10
+    CountMinMax:
+    - 10
+    - 10
+    DroneProb: 0.7
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "SignalMarker01"
+    SpawnPOINearRange:
+    - 0
+    - 500
+  FixedPlayerStart:
+  - Mode: "Debug"
+    Pos:
+    - 2000
+    - 70
+    - 0
+    RotY: 125
+    Armor: "ArmorMedium"
+  - Mode: "Survival"
+    Pos:
+    - 2000
+    - 70
+    - 0
+    RotY: 125
+    Armor: "ArmorMedium"
+DroneBaseSetup:
+  Random:
+  - GroupName: "DroneBaseSetup"
+    Stock:
+    - Name: "DroneSmallFast01Rocket"
+      Amount: "100"
+      Extra: 0
+    - Name: "DroneSmallFast01Minigun"
+      Amount: "200"
+      Extra: 0
+    - Name: "DroneLargeSlow01Minigun"
+      Amount: "100"
+      Extra: 0
+    - Name: "DroneSmallSlow01Cannon"
+      Amount: "200"
+      Extra: 0
+    - Name: "DroneSmallAttackBase"
+      Amount: "300"
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
+      Amount: "500"
+      Extra: 3
+    - Name: "ZiraxRocketPatrol"
+      Amount: "100"
+      Extra: 3
+DroneSpawning:
+  Random:
+  - DronesMinMax:
+    - 5
+    - 10
+    CenterX: -5000
+    Radius: 2000
+  - DronesMinMax:
+    - 5
+    - 10
+    CenterX: -2500
+    Radius: 1500
+  - DronesMinMax:
+    - 5
+    - 10
+    CenterX: 2500
+    Radius: 1500
+  - DronesMinMax:
+    - 5
+    - 10
+    CenterX: 5000
+    Radius: 2000
+SpawnZones:
+- SpawnAt:
+  - "START"
+  Radius: 2500
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "CyborgsDamagedHerd"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "SignalMarker01"
+  Radius: 600
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "CyborgsDamagedHerd"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "CrashedShip"
+  Radius: 120
+  Color: "1.0, 1.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "CyborgsDamagedHerd"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "PiratesDroneBase"
+  - "PiratesMain"
+  Radius: 500
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "CyborgsDamagedHerd"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "PiratesDroneBase"
+  Radius: 900
+  Color: "0.0, 0.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "CyborgsDamagedHerd"
+    Biomes:
+    - "Any"
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "PiratesDroneBase"
+  - "PiratesMain"
+  Radius: 100
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 1
+  Color: "0.4, 1.0, 1.0, 1.0"
+  Entities:
+  - Names:
+    - "PiratesRobotPatrolSmall"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+  - Names:
+    - "PiratesMixedPatrol"
+    Biomes:
+    - "Any"
+    Amount: 200
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
