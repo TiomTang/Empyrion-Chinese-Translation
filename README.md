@@ -26,20 +26,23 @@ RE2的文档8/17加入施工，不定时更新。(已完成)
 
 1. 下载：
 
-    右上角绿色Code→Download ZIP，解压按下面方法覆盖游戏原文件即可。
+    - 右上角绿色Code→Download ZIP，解压后按下面方法覆盖游戏原文件即可。
 2. 本体汉化：
 
-    - 找到游戏本体所在的目录如：C:\Steam\steamapps\common\Empyrion - Galactic Survival
+    - 找到游戏本体所在的目录，在Steam库页面，左边目录找到游戏名称，右键点击游戏选择【管理】>【浏览本地文件】，如：C:\Steam\steamapps\common\Empyrion - Galactic Survival
     - 将【必需 - 本体汉化】里面文件复制到该目录，覆盖原文件即可。
-3. Reforged Eden Mod汉化：
-4. 将【Mod汉化 - Reforged Eden 1】/【Mod汉化 - Reforged Eden 2】里面文件复制到相应Mod根目录目录。
+3. Reforged Eden 1/2 Mod汉化：
+
+	将【Mod汉化 - Reforged Eden 1】/【Mod汉化 - Reforged Eden 2】里面文件复制到相应Mod根目录目录。（请按你们实际的steam安装游戏路径，假如都装C盘即如下路径）
 
     - RE1目录：C:\Steam\steamapps\workshop\content\383120\2550354956
     - RE2目录：C:\Steam\steamapps\workshop\content\383120\3143225812
 
 ### 二、Epic
 
-1. 下载同上。
+1. 下载：
+
+	- 右上角绿色Code→Download ZIP，解压后按下面方法覆盖游戏原文件即可。
 2. 本体汉化：
 
     - 将目录 【必需 - 本体汉化】 里面的【Content】覆盖到游戏根目录同名目录。
@@ -50,8 +53,8 @@ RE2的文档8/17加入施工，不定时更新。(已完成)
 
 ### 三、服务器
 
-1. 先把本体汉化打上
-2. 再到RE mod的位置，把相应版本的汉化打上
+1. 使用【本体汉化】里Content目录覆盖游戏根目录下的Content文件夹。
+2. 使用剧本启动游戏，如Reforged Eden 2，则到如下路径 Content\Scenarios\Reforged Eden 2，把汉化文件覆盖上去。
 
 ### 四、关于玩RE2服务器，而服务器又不及时更新汉化文件解决方法
 
