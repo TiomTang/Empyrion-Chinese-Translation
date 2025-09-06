@@ -1,0 +1,1194 @@
+PlayfieldType: "Moon"
+PlanetType: "Sandy Barren Moon"
+Difficulty: 2
+SunFlare: "EnvironmentalEffects/SunFlareYellow3"
+AtmosphereEnabled: false
+FogCloudIntensity: 1
+DayLightIntensity: 1.6
+NightLightIntensity: 0.9
+DayShadowStrength: 0.95
+CloudsSharpness: 1
+Description: "\u96BE\u5EA6: [c][00ff00]\u7B80\u5355[-][/c]\n\n\u5BCC\u542B\u7845\u7684\u6C99\u8D28\u536B\u661F\u901A\u5E38\u4F1A\u5438\u5F15\u5927\u91CF\u5E73\u6C11\u5B58\u5728\uFF0C\u53EF\u80FD\u662F\u7531\u8D38\u6613\u3001\u7814\u7A76\u6216\u5DE5\u4E1A\u6240\u5438\u5F15\u3002"
+PlanetClass: "Sandy Barren Moon"
+UseRandom: true
+LandClaimZone: "Device"
+RandomResources:
+- Name: "SiliconResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 8
+  - 12
+  SizeMinMax:
+  - 5
+  - 6
+  DepthMinMax:
+  - 0
+  - 2
+- Name: "CopperResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 2
+  - 3
+  SizeMinMax:
+  - 5
+  - 6
+  DepthMinMax:
+  - 5
+  - 10
+- Name: "MagnesiumResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 2
+  - 3
+  SizeMinMax:
+  - 4
+  - 5
+  DepthMinMax:
+  - 12
+  - 16
+  DroneProb: 0.7
+- Name: "AluminiumResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 1
+  - 2
+  SizeMinMax:
+  - 4
+  - 5
+  DepthMinMax:
+  - 5
+  - 10
+- Name: "PromethiumResource"
+  IsScalingCount: true
+  CountMinMax:
+  - 2
+  - 4
+  SizeMinMax:
+  - 3
+  - 6
+  DepthMinMax:
+  - 5
+  - 10
+AsteroidResources:
+- Name: "SiliconResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "CopperResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "MagnesiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "AluminiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+- Name: "PromethiumResource"
+  Threshold: 0.2
+  Amount: 0.1
+  InitialDelay: -1
+  Delay: -1
+POIs:
+  Random:
+  - GroupName: "R2DroneBase"
+    DroneBaseSetup: "DroneBaseSetup"
+    Faction: "Zirax"
+    IsCommandCenter: true
+    IsImportant: true
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    DroneProb: 1
+    Drones:
+      Min: 2
+      Max: 4
+    DronesMinMax:
+    - 2
+    - 4
+    ReserveCount: 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "4320"
+    SpawnResource:
+    - "SiliconResource:0-1"
+    - "PromethiumResource:0-1"
+    - "MagnesiumResource:0-1"
+    SpawnResourceRange:
+    - 150
+    - 400
+  - GroupName: "R2XenuDefenseT1"
+    Faction: "Zirax"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    DroneProb: 1
+    TroopTransport: true
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2DroneBase"
+    SpawnPOIAvoid:
+    - "R2XenuDefenseT1"
+    SpawnPOINearRange:
+    - 300
+    - 400
+    SpawnPOIAvoidDistance: 250
+  - GroupName: "R2XenuDeco"
+    Faction: "Zirax"
+    Territory: false
+    Count:
+      Max: 2
+    CountMinMax:
+    - 0
+    - 2
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "500"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2DroneBase"
+    SpawnPOINearRange:
+    - 150
+    - 300
+  - GroupName: "RE2_StarterRandomExit"
+    Faction: "Civilian"
+    FactionTerritory:
+    - "All"
+    AvoidFactionTerritory: true
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "SI"
+      Value: "Off"
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "0"
+    InitPower: true
+    SpawnPOIAvoid:
+    - "Eden_ApocDroneBase"
+    SpawnPOIAvoidDistance: 1500
+  - GroupName: "Eden_DummyPolaris"
+    Faction: "Polaris"
+    Territory: false
+    IsImportant: true
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "0"
+    - Key: "RegenAfter"
+      Value: "4320"
+    SpawnResource:
+    - "SiliconResource:1-2"
+    - "AluminiumResource:1-2"
+    - "MagnesiumResource:1-2"
+    SpawnResourceRange:
+    - 100
+    - 600
+    Biome:
+    - "LargeCrater"
+  - GroupName: "R2PolarisAuxT2"
+    Faction: "Polaris"
+    Count:
+      Max: 2
+    CountMinMax:
+    - 0
+    - 2
+    DroneProb: 0.3
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_DummyPolaris"
+    SpawnPOINearRange:
+    - 75
+    - 150
+  - GroupName: "R2PolarisAuxT1"
+    Faction: "Polaris"
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    DroneProb: 0.3
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_DummyPolaris"
+    SpawnPOINearRange:
+    - 125
+    - 250
+  - GroupName: "MineT2PolarisRG"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.3
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_DummyPolaris"
+    SpawnPOINearRange:
+    - 75
+    - 250
+  - GroupName: "MineT1PolarisRG"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    DroneProb: 0.3
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_DummyPolaris"
+    SpawnPOINearRange:
+    - 150
+    - 300
+  - GroupName: "R2PolarisDefenseT1"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    DroneProb: 0.3
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_DummyPolaris"
+    SpawnPOINearRange:
+    - 150
+    - 350
+  - GroupName: "R2PolarisDecoMining"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 8
+      Max: 12
+    CountMinMax:
+    - 8
+    - 12
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "500"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_DummyPolaris"
+    SpawnPOINearRange:
+    - 50
+    - 250
+  - GroupName: "R2PolarisDeco"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Max: 6
+    CountMinMax:
+    - 0
+    - 6
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "500"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_DummyPolaris"
+    SpawnPOINearRange:
+    - 25
+    - 150
+  - GroupName: "Eden_PolPentaCorp"
+    Faction: "Trader"
+    IsImportant: true
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "SunnySkies"
+    - Key: "RegenAfter"
+      Value: "720"
+    - Key: "StationInterface"
+      Value: "Warp:2,IfNeutral:1.5,IfHonored:-0.10"
+    SpawnPOIAvoid:
+    - "R2DroneBase"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "R2TraderAuxT1"
+    Faction: "Trader"
+    Count:
+      Max: 2
+    CountMinMax:
+    - 0
+    - 2
+    Properties:
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_PolPentaCorp"
+    SpawnPOINearRange:
+    - 100
+    - 250
+  - GroupName: "R2TraderDefenseT1"
+    Faction: "Trader"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_PolPentaCorp"
+    SpawnPOINearRange:
+    - 100
+    - 250
+  - GroupName: "R2TraderDefenseT1"
+    Faction: "Trader"
+    Territory: false
+    Count:
+      Max: 2
+    CountMinMax:
+    - 0
+    - 2
+    Properties:
+    - Key: "Music"
+      Value: "AlteredPhase"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2TraderAuxT1"
+    SpawnPOINearRange:
+    - 100
+    - 250
+  - GroupName: "Eden_PolPentaCorp"
+    Faction: "Polaris"
+    IsImportant: true
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    Properties:
+    - Key: "Music"
+      Value: "SunnySkies"
+    - Key: "RegenAfter"
+      Value: "720"
+    - Key: "StationInterface"
+      Value: "Warp:2,IfNeutral:1.5,IfHonored:-0.10"
+    SpawnPOIAvoid:
+    - "R2DroneBase"
+    SpawnPOIAvoidDistance: 1000
+  - GroupName: "MineT1PolarisRG"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Max: 3
+    CountMinMax:
+    - 0
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_PolPentaCorp"
+    SpawnResource:
+    - "SiliconResource:0-1"
+    SpawnPOINearRange:
+    - 150
+    - 250
+    SpawnResourceRange:
+    - 100
+    - 125
+  - GroupName: "R2PolarisMain"
+    Faction: "Polaris"
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "4320"
+    SpawnPOIAvoid:
+    - "Eden_PolPentaCorp"
+    SpawnResource:
+    - "SiliconResource:1-2"
+    - "PromethiumResource:1-2"
+    SpawnPOIAvoidDistance: 750
+    SpawnResourceRange:
+    - 150
+    - 300
+  - GroupName: "R2PolarisAuxT2"
+    Faction: "Polaris"
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisMain"
+    SpawnPOINearRange:
+    - 100
+    - 200
+  - GroupName: "R2PolarisAuxT1"
+    Faction: "Polaris"
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisAuxT2"
+    SpawnPOINearRange:
+    - 100
+    - 200
+  - GroupName: "R2PolarisAuxT1"
+    Faction: "Polaris"
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisAuxT2"
+    SpawnPOINearRange:
+    - 100
+    - 200
+  - GroupName: "R2PolarisDefenseT1"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisMain"
+    SpawnPOINearRange:
+    - 300
+    - 400
+  - GroupName: "MineT1PolarisRG"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Max: 2
+    CountMinMax:
+    - 0
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisMain"
+    SpawnResource:
+    - "SiliconResource:0-1"
+    SpawnPOINearRange:
+    - 150
+    - 250
+    SpawnResourceRange:
+    - 100
+    - 125
+  - GroupName: "Eden_PolHabitat"
+    Faction: "Polaris"
+    IsImportant: true
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "100"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOIAvoid:
+    - "Eden_PolPentaCorp"
+    - "R2PolarisMain"
+    SpawnResource:
+    - "SiliconResource:1-2"
+    SpawnPOIAvoidDistance: 750
+    SpawnResourceRange:
+    - 150
+    - 300
+  - GroupName: "Eden_PolHabitat"
+    Faction: "Polaris"
+    IsImportant: true
+    Count:
+      Min: 2
+      Max: 4
+    CountMinMax:
+    - 2
+    - 4
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "100"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_PolHabitat"
+    SpawnPOINearRange:
+    - 50
+    - 150
+  - GroupName: "MineT2PolarisRG"
+    Faction: "Polaris"
+    Territory: false
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_PolHabitat"
+    SpawnResource:
+    - "SiliconResource:0-1"
+    SpawnPOINearRange:
+    - 250
+    - 400
+    SpawnResourceRange:
+    - 100
+    - 125
+  - GroupName: "MineT1PolarisRG"
+    Faction: "Polaris"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 2
+      Max: 3
+    CountMinMax:
+    - 2
+    - 3
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnResource:
+    - "SiliconResource:0-1"
+    SpawnResourceRange:
+    - 100
+    - 125
+  - GroupName: "R2FactoryPolaris1"
+    Faction: "Polaris"
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisMain"
+    SpawnPOINearRange:
+    - 350
+    - 600
+  - GroupName: "R2FactoryPolaris2"
+    Faction: "Polaris"
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisMain"
+    SpawnPOINearRange:
+    - 350
+    - 600
+  - GroupName: "R2FactoryPolaris3"
+    Faction: "Polaris"
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisMain"
+    SpawnPOINearRange:
+    - 350
+    - 600
+  - GroupName: "Eden_PolCrawler"
+    Faction: "Polaris"
+    Territory: false
+    IsImportant: true
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "R2PolarisAuxT1"
+    Faction: "Polaris"
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "Eden_SoilAnalyzer"
+    Faction: "Polaris"
+    Territory: false
+    IsScalingCount: true
+    Count:
+      Min: 4
+      Max: 6
+    CountMinMax:
+    - 4
+    - 6
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "100"
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "Eden_NestLarge"
+    Faction: "Alien"
+    Count:
+      Max: 1
+    CountMinMax:
+    - 0
+    - 1
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "RegenAfter"
+      Value: "720"
+    Biome:
+    - "Dunes"
+    - "Plains"
+    - "Mare"
+    - "Regolith"
+  - GroupName: "Eden_Nest"
+    Faction: "Alien"
+    Count:
+      Max: 3
+    CountMinMax:
+    - 0
+    - 3
+    Drones:
+      Min: 1
+      Max: 1
+    DronesMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "Eden_NestLarge"
+    SpawnPOINearRange:
+    - 500
+    - 1500
+    Biome:
+    - "Dunes"
+    - "Plains"
+    - "Mare"
+    - "Regolith"
+  - GroupName: "R2ColonistAux"
+    Faction: "Colonists"
+    Territory: false
+    Count:
+      Max: 2
+    CountMinMax:
+    - 0
+    - 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "MineT1PolarisRG"
+    Faction: "Colonists"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisAuxT1"
+    SpawnPOINearRange:
+    - 200
+    - 600
+  - GroupName: "MineGraphitePolarisRG"
+    Faction: "Colonists"
+    Territory: false
+    Count:
+      Min: 1
+      Max: 1
+    CountMinMax:
+    - 1
+    - 1
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+    SpawnPOINear:
+    - "R2PolarisAuxT1"
+    SpawnPOINearRange:
+    - 500
+    - 1000
+  - GroupName: "R2GhystAuxT1"
+    Faction: "Zirax"
+    IsScalingCount: true
+    Count:
+      Min: 3
+      Max: 4
+    CountMinMax:
+    - 3
+    - 4
+    DroneProb: 0.7
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 2
+    Properties:
+    - Key: "RegenAfter"
+      Value: "720"
+  - GroupName: "Eden_HarvestTungsten"
+    Faction: "None"
+    FactionTerritory:
+    - "Warlord"
+    IsScalingCount: true
+    Count:
+      Min: 1
+      Max: 2
+    CountMinMax:
+    - 1
+    - 2
+    DroneProb: 0.5
+    Drones:
+      Min: 1
+      Max: 2
+    DronesMinMax:
+    - 1
+    - 2
+    ReserveCount: 3
+    Properties:
+    - Key: "MapMarker"
+      Value: "Neutral"
+    - Key: "SI"
+      Value: "Off"
+    - Key: "RegenAfter"
+      Value: "4320"
+  FixedPlayerStart:
+  - Mode: "Debug"
+    Pos:
+    - -596
+    - 104
+    - -1063
+    RotY: 125
+  - Mode: "Survival"
+    Spawn: "EscapePod"
+    Armor: "ArmorMedium"
+DroneBaseSetup:
+  Random:
+  - GroupName: "DroneBaseSetup"
+    Difficulty: 6
+    PresetStyle: 3
+    Stock:
+    - Name: "DroneHoverZiraxMinigun"
+      Amount: "200"
+      Extra: 0
+    - Name: "DroneBomberAttackBase"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "EnemyDroneV2Plasma"
+      Amount: "Infinite"
+      Extra: 1
+    - Name: "DroneTroopsTransport"
+      Amount: "Infinite"
+      Extra: 2
+    - Name: "ZiraxMinigun"
+      Amount: "500"
+      Extra: 3
+    - Name: "ZiraxRocket"
+      Amount: "500"
+      Extra: 3
+    - Name: "RipperDog"
+      Amount: "150"
+      Extra: 3
+    - Name: "Mechanoid"
+      Amount: "300"
+      Extra: 3
+  PlanetVessels:
+  - Name: "R2OPVPolarisT1"
+    CountMinMax:
+    - 1
+    - 1
+    Faction: "Polaris"
+    LevelMod: "2"
+    FixedMaxSpeed: 10
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 1800
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - "R2PolarisMain"
+      Radius: 750
+      DistToGround: 200
+    Stock:
+    - Name: "DroneSmallPolarisLaser"
+      Amount: "2"
+      Type: "FighterDrone"
+    Properties:
+    - Key: "Discovery"
+      Value: "False"
+DroneSpawning:
+  Random:
+  - DronesMinMax:
+    - 2
+    - 3
+    CenterX: 5000
+    Radius: 3000
+  - DronesMinMax:
+    - 2
+    - 3
+    CenterX: -5000
+    Radius: 3000
+  - DronesMinMax:
+    - 2
+    - 3
+    CenterX: 2500
+    Radius: 3000
+  - DronesMinMax:
+    - 2
+    - 3
+    CenterX: -2500
+    Radius: 3000
+CreatureSpawning:
+- Biomes:
+  - "Dunes"
+  Entities:
+  - Name: "Creepys"
+    Color: "0.2, 1.0, 0"
+    DelayMinMax:
+    - 10
+    - 12
+    Period: "Day"
+SpawnZones:
+- SpawnAt:
+  - "R2DroneBase"
+  - "R2XenuMain"
+  - "R2EpsilonMain"
+  - "R2GhystMain"
+  - "R2RadosMainT3"
+  - "R2RadosMainT3Snow"
+  - "R2RadosMainT3Desert"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 400
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.1
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxRocketPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 50
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2XenuAuxT2"
+  - "R2EpsilonAuxT2"
+  - "R2GhystAuxT2"
+  - "R2RadosAuxT2"
+  - "R2RadosAuxT2Snow"
+  - "R2RadosAuxT2Desert"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 350
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.1
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "ZiraxMinigunPatrol"
+    - "ZiraxRocketPatrol"
+    - "ZiraxShotgunPatrol"
+    - "ZiraxMechanoidPatrol"
+    - "ZiraxRipperDogPatrol"
+    Biomes:
+    - "Any"
+    Amount: 25
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "R2RadosAuxT1"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 250
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "Eden_ZiraxMiningDronesGuarded"
+    Biomes:
+    - "Any"
+    Amount: 50
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "MineT1PolarisRG"
+  - "MineT2PolarisRG"
+  - "MineT3PolarisRG"
+  - "MineT4PolarisRG"
+  BiomesExcluded:
+  - "LowMountains"
+  - "Mountains"
+  Radius: 250
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  SpawnOnlyIfPoiIsAlien: true
+  Color: "1.0, 0.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "Eden_PolarisMiningDronesGuarded"
+    Biomes:
+    - "Any"
+    Amount: 50
+    DelayMinMax:
+    - -1
+    - -1
+    Period: "Always"
+- SpawnAt:
+  - "Eden_NestLarge"
+  Radius: 200
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "0.0, 1.0, 0.0, 1.0"
+  Entities:
+  - Names:
+    - "Creepys"
+    Biomes:
+    - "Dunes"
+    - "Plains"
+    - "Mare"
+    - "Regolith"
+    Amount: 50
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
+- SpawnAt:
+  - "Eden_Nest"
+  Radius: 100
+  RadiusRandom: 50
+  RateMultiplyerCenter: 1
+  RateMultiplyerEdge: 0.5
+  Color: "0.0, 0.0, 0.0, 0.5"
+  Entities:
+  - Names:
+    - "Creepys"
+    Biomes:
+    - "Dunes"
+    - "Plains"
+    - "Mare"
+    - "Regolith"
+    Amount: 25
+    DelayMinMax:
+    - 15
+    - 25
+    Period: "Always"
