@@ -91,7 +91,7 @@ CloudsSharpness: 0.9
 CloudsBrightness: 0.02
 WindSpeed: 2
 FogColor: "0.7, 0, 0.1"
-Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n[c][ffff00]\u8B66\u544A\uFF1A\u65B0\u7684\u88C5\u9970\u7CFB\u7EDF\u6B63\u5728\u6D4B\u8BD5\u4E2D\u3002\u8FDB\u5165\u6B64\u6E38\u620F\u573A\u5730\u53EF\u80FD\u4F1A\u9047\u5230\u610F\u5916\u95EE\u9898\u3002[-][/c]\n\n\u6709\u65F6\u4E00\u9897\u8D2B\u7620\u7684\u6708\u7403\u4F1A\u5F62\u6210\u9AD8\u5EA6\u7ED3\u6676\u5316\u7684\u5730\u58F3\u3002\u8FD9\u4E9B\u6240\u8C13\u7684\u7ED3\u6676\u6708\u7403\u56E0\u5176\u6240\u542B\u7684\u81EA\u7136\u8D44\u6E90\u6216\u4F5C\u4E3A\u7CBE\u795E\u610F\u4E49\u7684\u573A\u6240\u800C\u5907\u53D7\u73CD\u89C6\u3002"
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n[c][ffff00]\u8B66\u544A\uFF1A\u65B0\u7684\u661F\u533A\u6B63\u5728\u6D4B\u8BD5\u4E2D\u3002\u8FDB\u5165\u6B64\u6E38\u620F\u573A\u5730\u53EF\u80FD\u4F1A\u9047\u5230\u610F\u5916\u95EE\u9898\u3002[-][/c]\n\n\u6709\u65F6\uFF0C\u8D2B\u7620\u7684\u536B\u661F\u4F1A\u5F62\u6210\u9AD8\u5EA6\u6676\u5316\u7684\u5730\u58F3\u3002\u8FD9\u79CD\u6240\u8C13\u7684\u6676\u8D28\u536B\u661F\u56E0\u5176\u6240\u542B\u7684\u81EA\u7136\u8D44\u6E90\u6216\u7CBE\u795E\u8C61\u5F81\u610F\u4E49\u800C\u5907\u53D7\u8FFD\u6367\u3002"
 PlanetClass: "Crystalline Moon"
 UseRandom: true
 LandClaimZone: "Device"
@@ -731,55 +731,58 @@ POIs:
 DroneBaseSetup:
   Random:
   - GroupName: "DroneBaseSetup"
-    Difficulty: 7
+    Difficulty: 6
     PresetStyle: 3
     Stock:
-    - Name: "DroneSmallFast01Plasma"
+    - Name: "DroneHoverZiraxLaser"
       Amount: "200"
       Extra: 0
-    - Name: "DroneLargeAttackBase"
-      Amount: "Infinite"
-      Extra: 1
+    - Name: "DroneLargeZiraxPlasma"
+      Amount: "200"
+      Extra: 0
     - Name: "DroneBomberAttackBase"
       Amount: "Infinite"
       Extra: 1
     - Name: "EnemyDroneV2Plasma"
       Amount: "Infinite"
       Extra: 1
-    - Name: "DroneTroopsTransport01"
+    - Name: "DroneTroopsTransport"
       Amount: "Infinite"
       Extra: 2
     - Name: "ZiraxMinigun"
       Amount: "500"
       Extra: 3
+    - Name: "ZiraxRocket"
+      Amount: "500"
+      Extra: 3
     - Name: "RipperDog"
-      Amount: "250"
+      Amount: "150"
       Extra: 3
     - Name: "Mechanoid"
-      Amount: "250"
+      Amount: "300"
       Extra: 3
-    PlanetVesselBase:
-      Name: "PlanetVesselBaseSetup"
-      Position3D:
-      - 0
-      - 102
-      - 0
-      BaseType: "PlanetVesselBase"
-      PlanetVessel:
-      - Name: "Patol-M-Medium"
-        Mission: "PlanetPatrol"
-        FixedMaxSpeed: 10
-        RespawnDelay: 12
-        InitialDelay: 48
-        RangePatrolTask:
-          Position3D:
-          - -1000
-          - 80
-          - 0
-          Radius: 800
-          DistToGround: 80
-        AttackCVCircleAround:
-          DistToTarget: 190
+  PlanetVessels:
+  - Name: "R2PVZiraxT0"
+    CountMinMax:
+    - 0
+    - 1
+    Faction: "Zirax"
+    LevelMod: "2"
+    FixedMaxSpeed: 10
+    DelayBetweenRespawn: 600
+    DelayBeforeSelfDestruction: 1800
+    RangePatrolTask:
+      POINameAsPositionRef:
+      - "R2DroneBase"
+      Radius: 1000
+      DistToGround: 200
+    Stock:
+    - Name: "DroneHoverZiraxLaser"
+      Amount: "4"
+      Type: "FighterDrone"
+    Properties:
+    - Key: "Discovery"
+      Value: "False"
 DroneSpawning:
   Random:
   - DronesMinMax:
