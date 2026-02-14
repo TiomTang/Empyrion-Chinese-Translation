@@ -1,1805 +1,1166 @@
-UseFixed: "True"
-PlayfieldType: "Space"
-Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\u9AD8\u5EA6\u8F90\u5C04\u7684\u5C0F\u884C\u661F\u5E26\u3002\u68C0\u6D4B\u5230\u5927\u91CF\u7FD8\u66F2\u6C34\u6676\uFF08Pentaxid\uFF09\uFF0C\u4F46\u4E5F\u5B58\u5728\u9AD8\u6C34\u5E73\u7684\u5371\u9669\u8F90\u5C04\u3002\u5EFA\u8BAE\u914D\u5907\u5F3A\u529B\u62A4\u76FE\u3002\n[sup][c][ffff00]\u672C\u661F\u533A\u7684\u91D1\u5C5E\u5C18\u4E91\u5E72\u6270\u5149\u5B66\u548C\u96F7\u8FBE\u626B\u63CF\uFF0C\u906E\u853D\u4E86\u904D\u5E03\u533A\u57DF\u7684\u5BCC\u542B\u8D44\u6E90\u7684\u5C0F\u884C\u661F\uFF0C\u5E76\u964D\u4F4E\u4E86\u63A2\u6D4B\u5668\u7684\u63A2\u6D4B\u8303\u56F4\u3002[-][/c][/sup]\n[sup][c][ffffff][i]\u5F00\u91C7\u88AB\u6D3E\u7CFB\u5360\u9886\u7684\u5C0F\u884C\u661F\u88AB\u89C6\u4E3A\u6218\u4E89\u884C\u4E3A\u3002\u533A\u57DF\u5185\u5B58\u5728\u53D7\u94F6\u6CB3\u6D3E\u7CFB\u9886\u5730\u5F71\u54CD\u7684\u5174\u8DA3\u70B9\uFF08POI\uFF09\u3002[/i][-][/c][/sup]"
-PlanetType: "Radiated Asteroid Field"
-Radiation:
-- 50
-- 75
-TemperatureDay:
-- 150
-- 250
-Music:
-- "AlteredPhase"
-- "Apogee"
-- "Encryptor"
-- "FarEntropy"
-- "Ghost"
-- "Helios"
-- "lava2"
-- "Obelisk"
-- "Praxis"
-- "Resurgence"
-- "Sanctuary"
-- "Vanguard"
-PlayfieldLevelOverride:
-- 1
-- 2
+# Playfield Characteristics
+Description: "Difficulty: [c][ff0000]Hard[-][/c]
+
+A highly radiated asteroid field. Large quantities of pentaxid are detected but so are high levels of dangerous radiation. Strong shields are recommended.
+
+[sup][c][ffff00]Clouds of metallic dust in this sector interfere with both optical and radar scans obscuring resource-rich asteroids throughout the area and lowering the range of detectors.[-][/c][/sup]
+
+[sup][c][ffffff][i]Mining asteroids claimed by a faction is considered an act of war. Presence of POIs affected by galaxy faction territory.[/i][-][/c][/sup]"
+
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0
+UseFixed: True
+
+# Radiated area
+Radiation: [50,75] # radiated area
+TemperatureDay: [150,250] # High temperature this close to the star
+# Danger Music
+Music: [AlteredPhase, Apogee, Encryptor, FarEntropy, Ghost, Helios, lava2, Obelisk, Praxis, Resurgence, Sanctuary, Vanguard]
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: Radiated Asteroid Field
+PlayfieldLevelOverride: [1,2]
+
+### Resource Asteroids
 Resources:
-- Name:
-  - "AsteroidVoxel01Iron"
-  - "AsteroidVoxel02Iron"
-  - "AsteroidVoxel03Iron"
-  DisplayName: "Iron Asteroid"
-  CountMinMax:
-  - 1
-  - 3
-  Position:
-    PosYMax: 2000
-  Properties:
-  - Key: "RegenAfter"
-    Value: "180"
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 0.0
+      Properties:
+        - Key: RegenAfter
+          Value: 180
+
+### POIs
 POIs:
-- Name:
-  - "AsteroidFieldBoxExclude"
-  - "AsteroidFieldFewBoxExclude"
-  - "AsteroidFieldRing"
-  FieldName:
-  - "AsteroidFieldBoxExclude"
-  - "AsteroidFieldFewBoxExclude"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.2
-  BaseField: true
-- Name:
-  - "Eden_AnomalyRadiationBlue"
-  - "Eden_AnomalyRadiationPurple"
-  FieldName:
-  - "Eden_AnomalyRadiationBlue"
-  - "Eden_AnomalyRadiationPurple"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-- Name:
-  - "Eden_SectorNebulaNewBlueStorm"
-  - "Eden_SectorNebulaNewBlueStormBright"
-  - "Eden_SectorNebulaNewPurpleStorm"
-  - "Eden_SectorNebulaNewPurpleStormBright"
-  - "Eden_SectorNebulaNewBlueFog"
-  - "Eden_SectorNebulaNewBlueFog2"
-  - "Eden_SectorNebulaNewBlueFog3"
-  - "Eden_SectorNebulaNewPurpleFog"
-  - "Eden_SectorNebulaNewPurpleFog2"
-  - "Eden_SectorNebulaNewPurpleFog3"
-  - "Eden_NebulaL_RandomBlue"
-  - "Eden_NebulaL_RandomBlue2"
-  - "Eden_NebulaL_RandomBlueDark"
-  - "Eden_NebulaL_RandomBlueStorm"
-  - "Eden_NebulaL_RandomPink"
-  - "Eden_NebulaL_RandomPink2"
-  - "Eden_NebulaL_RandomPurple"
-  - "Eden_NebulaL_RandomPurple2"
-  - "Eden_NebulaL_RandomPurpleDark"
-  - "Eden_NebulaL_RandomPurpleStorm"
-  - "Eden_AsteroidFieldXL_DarkPurple"
-  - "Eden_AsteroidFieldXL_DarkPurple2"
-  - "Eden_AsteroidFieldXL_DarkPurple3"
-  - "Eden_AsteroidFieldXL_DarkCyan"
-  - "Eden_IonStormNew_BlueL"
-  - "Eden_IonStormNew_BlueL2"
-  FieldName:
-  - "Eden_SectorNebulaNewBlueStorm"
-  - "Eden_SectorNebulaNewBlueStormBright"
-  - "Eden_SectorNebulaNewPurpleStorm"
-  - "Eden_SectorNebulaNewPurpleStormBright"
-  - "Eden_SectorNebulaNewBlueFog"
-  - "Eden_SectorNebulaNewBlueFog2"
-  - "Eden_SectorNebulaNewBlueFog3"
-  - "Eden_SectorNebulaNewPurpleFog"
-  - "Eden_SectorNebulaNewPurpleFog2"
-  - "Eden_SectorNebulaNewPurpleFog3"
-  - "Eden_NebulaL_RandomBlue"
-  - "Eden_NebulaL_RandomBlue2"
-  - "Eden_NebulaL_RandomBlueDark"
-  - "Eden_NebulaL_RandomBlueStorm"
-  - "Eden_NebulaL_RandomPink"
-  - "Eden_NebulaL_RandomPink2"
-  - "Eden_NebulaL_RandomPurple"
-  - "Eden_NebulaL_RandomPurple2"
-  - "Eden_NebulaL_RandomPurpleDark"
-  - "Eden_NebulaL_RandomPurpleStorm"
-  - "Eden_AsteroidFieldXL_DarkPurple"
-  - "Eden_AsteroidFieldXL_DarkPurple2"
-  - "Eden_AsteroidFieldXL_DarkPurple3"
-  - "Eden_AsteroidFieldXL_DarkCyan"
-  - "Eden_IonStormNew_BlueL"
-  - "Eden_IonStormNew_BlueL2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.5
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-- Name:
-  - "Eden_AsteroidFieldL_Black"
-  - "Eden_AsteroidFieldL_Black2"
-  - "Eden_AsteroidFieldL_BlackThick"
-  - "Eden_AsteroidFieldL_BlackThick2"
-  - "Eden_AsteroidFieldL_BlackThick3"
-  FieldName:
-  - "Eden_AsteroidFieldL_Black"
-  - "Eden_AsteroidFieldL_Black2"
-  - "Eden_AsteroidFieldL_BlackThick"
-  - "Eden_AsteroidFieldL_BlackThick2"
-  - "Eden_AsteroidFieldL_BlackThick3"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.5
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI"
-  DisplayName: "Radiated Asteroid Field"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 7
-    - 8
-    Probability: 1
-    Name:
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    DistanceMinMax:
-    - 750
-    - 4000
-  Properties:
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "Discovery"
-    Value: "False"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI"
-  DisplayName: "Radiated Asteroid Field"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 5
-    - 6
-    Probability: 1
-    Name:
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    DistanceMinMax:
-    - 200
-    - 1000
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 1000
-  - 150
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI2"
-  DisplayName: "Asteroid Cluster"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 5
-    - 6
-    Probability: 1
-    Name:
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    - "CompoundAsteroidPentT3"
-    DistanceMinMax:
-    - 200
-    - 1000
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - -500
-  - 0
-  - 750
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 1000
-  - 150
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - -500
-  - 0
-  - 750
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.75
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 1750
-  - 350
-  - 1000
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.75
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - -2000
-  - -1000
-  - 400
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - -800
-  - -800
-  - -2500
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.75
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 3000
-  - 250
-  - -1200
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.75
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - -4500
-  - 2000
-  - 500
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.75
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 500
-  - 1500
-  - 1500
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.75
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - -600
-  - 550
-  - -3000
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.5
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - -500
-  - 3500
-  - -750
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_AnomalyUnstablePurple"
-  Name:
-  - "Eden_AnomalyUnstablePurple"
-  DisplayName: "Unstable Anomaly"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.5
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    Name:
-    - "CompoundDangerRadiation"
-    DistanceMinMax:
-    - 1
-    - 3
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 500
-  - -3500
-  - 250
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI2"
-  DisplayName: "Asteroid Field"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 4
-    - 7
-    Probability: 1
-    Name:
-    - "CompoundSmugglerT0"
-    - "CompoundSmugglerT0"
-    - "CompoundSmugglerT1"
-    - "CompoundAsteroidT1"
-    - "CompoundSmugglerT0"
-    - "CompoundSmugglerT0"
-    - "CompoundAsteroidT2"
-    DistanceMinMax:
-    - 1000
-    - 4500
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Warlord"
-  FactionTerritory:
-  - "Warlord"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI2"
-  DisplayName: "Asteroid Field"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 3
-    - 5
-    Probability: 1
-    Name:
-    - "CompoundBanditSpaceDefense"
-    - "CompoundBanditSpaceDefense"
-    - "CompoundBanditSpaceDefense"
-    - "CompoundBanditSpaceDefense"
-    - "CompoundBanditSpaceDefense"
-    DistanceMinMax:
-    - 350
-    - 2500
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Warlord"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI3"
-  DisplayName: "Patrol Route"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 3500
-  - -500
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Warlord"
-  FactionTerritory:
-  - "All"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI3"
-  DisplayName: "Patrol Route"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - -3500
-  - 500
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Warlord"
-  FactionTerritory:
-  - "All"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI2"
-  DisplayName: "Derelict Mines"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 3
-    Probability: 1
-    Name:
-    - "CompoundDerelictMine"
-    - "CompoundDerelictMine"
-    - "CompoundDerelictMine"
-    DistanceMinMax:
-    - 500
-    - 2500
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI2"
-  DisplayName: "Derelict Mines"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.5
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 5
-    Probability: 1
-    Name:
-    - "CompoundWreckT1All"
-    - "CompoundWreckT1All"
-    - "CompoundWreckT2All"
-    - "CompoundWreckT1All"
-    - "CompoundWreckT2All"
-    DistanceMinMax:
-    - 500
-    - 2500
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI2"
-  DisplayName: "Asteroid Field"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 5
-    Probability: 1
-    Name:
-    - "CompoundPirateSpaceDefense"
-    - "CompoundSmugglerPirateT0"
-    - "CompoundSmugglerPirateT0"
-    - "CompoundSmugglerPirateT0"
-    - "CompoundPirateSpaceDefense"
-    DistanceMinMax:
-    - 350
-    - 2500
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Pirates"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI2"
-  DisplayName: "Asteroid Field"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.25
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 1
-    - 3
-    Probability: 1
-    Name:
-    - "CompoundSatellitePirate"
-    - "CompoundSatellitePirate"
-    - "CompoundSatellitePirate"
-    DistanceMinMax:
-    - 5000
-    - 10000
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Colonists"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundDangerRadiation"
-  GroupName: "RE2_DangerRadiationT2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 1
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Eden_Abandoned"
-  FactionTerritory:
-  - "All"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundBanditSpaceDefense"
-  GroupName: "Eden_BAOBanditDefT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Warlord"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundSmugglerT0"
-  GroupName: "Eden_SmugglerSpaceAuxT0"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Warlord"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundSmugglerT1"
-  GroupName: "RE2_SmugglerSpaceT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Warlord"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundPirateSpaceDefense"
-  GroupName: "R2PirateSpaceDefense"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Pirates"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundSatellitePirate"
-  GroupName: "R2SatellitePirate"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Pirates"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundSmugglerPirateT0"
-  GroupName: "Eden_SmugglerSpaceAuxT0"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Pirates"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundColonistMine"
-  GroupName: "R2ColonistSpaceMine"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Colonists"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundSatelliteColonist"
-  GroupName: "R2SatelliteColonist"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Colonists"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundDerelictMine"
-  GroupName: "R2DerelictSpaceMine"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundWreckT1All"
-  GroupName: "Eden_SpaceJunkT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.5
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "3000"
-  - Key: "HudDistance"
-    Value: "3000"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Eden_Wreck"
-  FactionTerritory:
-  - "All"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundWreckT2All"
-  GroupName: "Eden_SpaceJunkT2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 750
-    - 7000
-    PosYMax: 5000
-  Probability: 0.5
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "3000"
-  - Key: "HudDistance"
-    Value: "3000"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "4320"
-  Mode: "Survival"
-  Faction: "Eden_Wreck"
-  FactionTerritory:
-  - "All"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT1"
-  GroupName: "Eden_AsteroidT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT2"
-  GroupName: "Eden_AsteroidT2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT3Cold"
-  GroupName: "Eden_AsteroidT3Cold"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT3Hot"
-  GroupName: "Eden_AsteroidT3Hot"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT4"
-  GroupName: "Eden_AsteroidT4"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidIce"
-  GroupName: "Eden_AsteroidIceT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidPent"
-  GroupName: "EdenAsteroidPentaxidT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidPentT3"
-  GroupName: "RE2_AsteroidPentT3"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "3000"
-  - Key: "HudDistance"
-    Value: "3000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidFieldRing]
+      FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude]   # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.2
+      BaseField: True
+      # RandomRotation: True
+
+    # - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidField, AsteroidFieldRectangle2]
+      # # FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidField, AsteroidFieldRectangle2]
+      # FieldName: [AsteroidField]
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 1
+      # Pos: [0, 0, -500]
+      # Rot: [0, 0, 0]
+
+# Radiation
+    - Name: [Eden_AnomalyRadiationBlue, Eden_AnomalyRadiationPurple]
+      FieldName: [Eden_AnomalyRadiationBlue, Eden_AnomalyRadiationPurple]
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+
+# Nebula
+    - Name: [Eden_SectorNebulaNewBlueStorm, Eden_SectorNebulaNewBlueStormBright, Eden_SectorNebulaNewPurpleStorm, Eden_SectorNebulaNewPurpleStormBright, Eden_SectorNebulaNewBlueFog, Eden_SectorNebulaNewBlueFog2, Eden_SectorNebulaNewBlueFog3, Eden_SectorNebulaNewPurpleFog, Eden_SectorNebulaNewPurpleFog2, Eden_SectorNebulaNewPurpleFog3, Eden_NebulaL_RandomBlue, Eden_NebulaL_RandomBlue2, Eden_NebulaL_RandomBlueDark, Eden_NebulaL_RandomBlueStorm, Eden_NebulaL_RandomPink, Eden_NebulaL_RandomPink2, Eden_NebulaL_RandomPurple, Eden_NebulaL_RandomPurple2, Eden_NebulaL_RandomPurpleDark, Eden_NebulaL_RandomPurpleStorm, Eden_AsteroidFieldXL_DarkPurple, Eden_AsteroidFieldXL_DarkPurple2, Eden_AsteroidFieldXL_DarkPurple3, Eden_AsteroidFieldXL_DarkCyan, Eden_IonStormNew_BlueL, Eden_IonStormNew_BlueL2]
+      FieldName: [Eden_SectorNebulaNewBlueStorm, Eden_SectorNebulaNewBlueStormBright, Eden_SectorNebulaNewPurpleStorm, Eden_SectorNebulaNewPurpleStormBright, Eden_SectorNebulaNewBlueFog, Eden_SectorNebulaNewBlueFog2, Eden_SectorNebulaNewBlueFog3, Eden_SectorNebulaNewPurpleFog, Eden_SectorNebulaNewPurpleFog2, Eden_SectorNebulaNewPurpleFog3, Eden_NebulaL_RandomBlue, Eden_NebulaL_RandomBlue2, Eden_NebulaL_RandomBlueDark, Eden_NebulaL_RandomBlueStorm, Eden_NebulaL_RandomPink, Eden_NebulaL_RandomPink2, Eden_NebulaL_RandomPurple, Eden_NebulaL_RandomPurple2, Eden_NebulaL_RandomPurpleDark, Eden_NebulaL_RandomPurpleStorm, Eden_AsteroidFieldXL_DarkPurple, Eden_AsteroidFieldXL_DarkPurple2, Eden_AsteroidFieldXL_DarkPurple3, Eden_AsteroidFieldXL_DarkCyan, Eden_IonStormNew_BlueL, Eden_IonStormNew_BlueL2]
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+
+# Asteroid fields
+    - Name: [Eden_AsteroidFieldL_Black, Eden_AsteroidFieldL_Black2, Eden_AsteroidFieldL_BlackThick, Eden_AsteroidFieldL_BlackThick2, Eden_AsteroidFieldL_BlackThick3]
+      FieldName: [Eden_AsteroidFieldL_Black, Eden_AsteroidFieldL_Black2, Eden_AsteroidFieldL_BlackThick, Eden_AsteroidFieldL_BlackThick2, Eden_AsteroidFieldL_BlackThick3]
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+
+# ======================================================================================================================================================================================================
+# ================================================================================================================================================================================= Asteroid Fields
+# ======================================================================================================================================================================================================
+# #Asteroid Fields----------------------------------------------------------
+
+# Asteroid marker and outer cluster
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI]
+      DisplayName: Radiated Asteroid Field
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [7, 8]
+        Probability: 1
+        Name: [CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3]
+        DistanceMinMax: [750, 4000]
+        Rotate: false
+      Properties:
+        - Key: HudDistance
+          Value: 0
+        - Key: Discovery
+          Value: False
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# Asteroid Cluster inner
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI]
+      DisplayName: Radiated Asteroid Field
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [1000, 150, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [5, 6]
+        Probability: 1
+        Name: [CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3]
+        DistanceMinMax: [200, 1000]
+        Rotate: false
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI2]
+      DisplayName: Asteroid Cluster
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-500, 0, 750]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [5, 6]
+        Probability: 1
+        Name: [CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3, CompoundAsteroidPentT3]
+        DistanceMinMax: [200, 1000]
+        Rotate: false
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+
+# Dangerous anomalies. Spawns POIs next to them that deal constant damage.
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [1000, 150, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-500, 0, 750]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.75
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [1750, 350, 1000]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.75
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-2000, -1000, 400]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-800, -800, -2500]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.75
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [3000, 250, -1200]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.75
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-4500, 2000, 500]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.75
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [500, 1500, 1500]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.75
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-600, 550, -3000]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-500, 3500, -750]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: Eden_AnomalyUnstablePurple
+      Name: [Eden_AnomalyUnstablePurple]
+      DisplayName: Unstable Anomaly
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [500, -3500, 250]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundDangerRadiation]
+        DistanceMinMax: [1, 3]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+
+# Warlord Cluster
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI2]
+      DisplayName: Asteroid Field
+      Faction: Warlord
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [3, 5]
+        Probability: 1
+        Name: [CompoundBanditSpaceDefense, CompoundBanditSpaceDefense, CompoundBanditSpaceDefense, CompoundBanditSpaceDefense, CompoundBanditSpaceDefense]
+        DistanceMinMax: [350, 2500]
+        Rotate: false
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# Warlord patrol route
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI3]
+      DisplayName: Patrol Route
+      Faction: Warlord
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [3500, -500, 0]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# Warlord patrol route
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI3]
+      DisplayName: Patrol Route
+      Faction: Warlord
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-3500, 500, 0]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# Derelict Cluster
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI2]
+      DisplayName: Derelict Mines
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 3]
+        Probability: 1
+        Name: [CompoundDerelictMine, CompoundDerelictMine, CompoundDerelictMine]
+        DistanceMinMax: [500, 2500]
+        Rotate: false
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# Wreck Cluster
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI2]
+      DisplayName: Derelict Mines
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 5]
+        Probability: 1
+        Name: [CompoundWreckT1All, CompoundWreckT1All, CompoundWreckT2All, CompoundWreckT1All, CompoundWreckT2All]
+        DistanceMinMax: [500, 2500]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# Satellite Cluster
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI2]
+      DisplayName: Asteroid Field
+      Faction: Colonists
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [1, 3]
+        Probability: 1
+        Name: [CompoundSatellitePirate, CompoundSatellitePirate, CompoundSatellitePirate]
+        DistanceMinMax: [5000, 10000]
+        Rotate: false
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# ======================================================================================================================================================================================================
+# ================================================================================================================================================================================= Definitions for Compounds
+# ======================================================================================================================================================================================================
+
+# ----------------------------------------------- Dangerous Radiation
+    - Type: BA_Alien
+      Name: [CompoundDangerRadiation]
+      GroupName: RE2_DangerRadiationT2
+      Faction: Eden_Abandoned
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# ----------------------------------------------- Bandit Defense T1
+    - Type: BA_Alien
+      Name: [CompoundBanditSpaceDefense]
+      GroupName: Eden_BAOBanditDefT1
+      Faction: Warlord
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 720
+
+# ----------------------------------------------- Pirate Defense T1
+    - Type: BA_Alien
+      Name: [CompoundPirateSpaceDefense]
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 720
+
+# Pirate satellites
+    - Type: BA_Alien
+      Name: [CompoundSatellitePirate]
+      GroupName: R2SatellitePirate
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 720
+
+# Colonist Mines
+    - Type: BA_Alien
+      Name: [CompoundColonistMine]
+      GroupName: R2ColonistSpaceMine
+      Faction: Colonists
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 720
+
+# Colonist satellites
+    - Type: BA_Alien
+      Name: [CompoundSatelliteColonist]
+      GroupName: R2SatelliteColonist
+      Faction: Colonists
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 720
+
+# Derelict Mines
+    - Type: BA_Alien
+      Name: [CompoundDerelictMine]
+      GroupName: R2DerelictSpaceMine
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# Wrecks
+# Wreckage Tier 1 Compound
+    - Type: BA_Alien
+      Name: [CompoundWreckT1All]
+      GroupName: Eden_SpaceJunkT1
+      Faction: Eden_Wreck
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# Wreckage Tier 2 Compound All.
+    - Type: BA_Alien
+      Name: [CompoundWreckT2All]
+      GroupName: Eden_SpaceJunkT2
+      Faction: Eden_Wreck
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 4320
+
+
+
+# Asteroids for compounds.
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT1]
+      GroupName: Eden_AsteroidT1
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT2]
+      GroupName: Eden_AsteroidT2
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT3Cold]
+      GroupName: Eden_AsteroidT3Cold
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT3Hot]
+      GroupName: Eden_AsteroidT3Hot
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT4]
+      GroupName: Eden_AsteroidT4
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidIce]
+      GroupName: Eden_AsteroidIceT1
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidPent]
+      GroupName: EdenAsteroidPentaxidT1
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidPentT3]
+      GroupName: RE2_AsteroidPentT3
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+# ================================================================================================================================================================================= Drone Base Setup
 DroneBaseSetup:
-- FreeDrones:
-  - Name:
-    - "SpaceDroneLaser"
-    - "SpaceDronePlasma"
-    Faction: "Warlord"
-    POINameAsPositionRef:
-    - "Eden_BA_DummyPOI"
-    Count:
-    - 0
-    - 0
-    Radius:
-    - 500
-    - 3000
-    Properties:
-    - Key: "AIManMaxPursuitRange"
-      Value: "5000"
-  SpaceVessels:
-  - Name:
-    - "RE2_OPVBanditT0"
-    CountMinMax:
-    - 2
-    - 3
-    FixedMaxSpeed:
-    - 70
-    - 80
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 3600
-      - 3600
-      DelayBeforeSelfDestructionMinMax:
-      - 3600
-      - 3600
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 3000
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 4500
-        PosYMax: 500
-      POINameAsPositionRef:
-      - "Eden_BA_DummyPOI"
-    StockDescription:
-      Name:
-      - "SpaceDroneLaser"
-      - "SpaceDronePlasma"
-      AmountMinMax:
-      - 0
-      - 0
-      ExtraMinMax:
-      - 0
-      - 0
-      Type: "FighterDrone"
-    Properties:
-    - Key: "MapDistance"
-      Value: "6000"
-    - Key: "HudDistance"
-      Value: "6000"
-    - Key: "AIManPatrolFactions"
-      Value: "Warlord, Eden_Resource"
-    - Key: "AIManMaxPursuitRange"
-      Value: "6000"
-    Faction: "Warlord"
-  - Name:
-    - "RE2_OPVRaiderT1"
-    CountMinMax:
-    - 2
-    - 2
-    FixedMaxSpeed:
-    - 40
-    - 50
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 3600
-      - 3600
-      DelayBeforeSelfDestructionMinMax:
-      - 3600
-      - 3600
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 3000
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 4500
-        PosYMax: 500
-      POINameAsPositionRef:
-      - "Eden_BA_DummyPOI"
-    StockDescription:
-      Name:
-      - "SpaceDroneLaser"
-      - "SpaceDronePlasma"
-      AmountMinMax:
-      - 0
-      - 0
-      ExtraMinMax:
-      - 0
-      - 0
-      Type: "FighterDrone"
-    Properties:
-    - Key: "MapDistance"
-      Value: "6000"
-    - Key: "HudDistance"
-      Value: "6000"
-    - Key: "AIManPatrolFactions"
-      Value: "Warlord, Eden_Resource"
-    - Key: "AIManMaxPursuitRange"
-      Value: "6000"
-    Faction: "Warlord"
-  - Name:
-    - "R2OPVZiraxT0"
-    CountMinMax:
-    - 1
-    - 2
-    FixedMaxSpeed:
-    - 80
-    - 90
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 3600
-      - 3600
-      DelayBeforeSelfDestructionMinMax:
-      - 3600
-      - 3600
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 3000
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 4500
-        PosYMax: 500
-      POINameAsPositionRef:
-      - "Eden_BA_DummyPOI"
-    StockDescription:
-      Name:
-      - "SpaceDroneLaser"
-      - "SpaceDronePlasma"
-      AmountMinMax:
-      - 0
-      - 0
-      ExtraMinMax:
-      - 0
-      - 0
-      Type: "FighterDrone"
-    Properties:
-    - Key: "MapDistance"
-      Value: "6000"
-    - Key: "HudDistance"
-      Value: "6000"
-    - Key: "AIManPatrolFactions"
-      Value: "Warlord, Eden_Resource"
-    - Key: "AIManMaxPursuitRange"
-      Value: "6000"
-    Faction: "Rados"
-  - Name:
-    - "R2OPVZiraxT1"
-    CountMinMax:
-    - 1
-    - 1
-    FixedMaxSpeed:
-    - 60
-    - 80
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 3600
-      - 3600
-      DelayBeforeSelfDestructionMinMax:
-      - 3600
-      - 3600
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 3000
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 4500
-        PosYMax: 500
-      POINameAsPositionRef:
-      - "Eden_BA_DummyPOI"
-    StockDescription:
-      Name:
-      - "SpaceDroneLaser"
-      - "SpaceDronePlasma"
-      AmountMinMax:
-      - 0
-      - 0
-      ExtraMinMax:
-      - 0
-      - 0
-      Type: "FighterDrone"
-    Properties:
-    - Key: "MapDistance"
-      Value: "6000"
-    - Key: "HudDistance"
-      Value: "6000"
-    - Key: "AIManPatrolFactions"
-      Value: "Warlord, Eden_Resource"
-    - Key: "AIManMaxPursuitRange"
-      Value: "6000"
-    Faction: "Rados"
-LandClaimZone: "Device"
+
+# ================================================================================================================================================================================= Drones
+      - FreeDrones:
+
+# ------------------------------------------------------------------------------------------------- Faction Main
+# Warlord
+          - Name: [SpaceDroneLaser, SpaceDronePlasma]
+            Faction: Warlord
+            CanNotBeControlledByMasterAI: False
+            POINameAsPositionRef: [Eden_BA_DummyPOI]
+            Count: [0, 0]
+            Radius: [500, 3000]
+            Properties:
+              # - Key: AIManPatrolGroups
+                # Value: "Eden_DummyPOI"
+              # - Key: AIManPatrolFactions
+                # Value: "Warlord, Eden_Resource"
+              - Key: AIManMaxPursuitRange
+                Value: 5000
+
+# ================================================================================================================================================================================= Ships
+        SpaceVessels:
+# ================================================================================================================================================================================= Patrol Vessels and Freighters and Bases
+
+# Warlord
+          - Name: [RE2_OPVBanditT0]
+            Faction: Warlord
+            CountMinMax: [2, 3]
+            Probability: 0
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [70, 80]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [750, 3000]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1000, 4500]
+                PosYMax: 500
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: MapDistance
+                Value: 6000
+              - Key: HudDistance
+                Value: 6000
+              - Key: AIManPatrolFactions
+                Value: "Warlord, Eden_Resource"
+              - Key: AIManMaxPursuitRange
+                Value: 6000
+
+          - Name: [RE2_OPVRaiderT1]
+            Faction: Warlord
+            CountMinMax: [2, 2]
+            Probability: 0
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [40, 50]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [750, 3000]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1000, 4500]
+                PosYMax: 500
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: MapDistance
+                Value: 6000
+              - Key: HudDistance
+                Value: 6000
+              - Key: AIManPatrolFactions
+                Value: "Warlord, Eden_Resource"
+              - Key: AIManMaxPursuitRange
+                Value: 6000
+
+# ------------------------------------------------------------------------------------------------- Faction Zirax
+
+# Rados patrol vessels, only in Zirax empire territory.
+# Patrol vessels tier 0
+          - Name: [R2OPVZiraxT0]
+            Faction: Rados
+            CountMinMax: [1, 2]
+            Probability: 0
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [80, 90]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [750, 3000]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1000, 4500]
+                PosYMax: 500
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: MapDistance
+                Value: 6000
+              - Key: HudDistance
+                Value: 6000
+              - Key: AIManPatrolFactions
+                Value: "Warlord, Eden_Resource"
+              - Key: AIManMaxPursuitRange
+                Value: 6000
+
+# Patrol vessels tier 1
+          - Name: [R2OPVZiraxT1]
+            Faction: Rados
+            CountMinMax: [1, 1]
+            Probability: 0
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [60, 80]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [750, 3000]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1000, 4500]
+                PosYMax: 500
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: MapDistance
+                Value: 6000
+              - Key: HudDistance
+                Value: 6000
+              - Key: AIManPatrolFactions
+                Value: "Warlord, Eden_Resource"
+              - Key: AIManMaxPursuitRange
+                Value: 6000

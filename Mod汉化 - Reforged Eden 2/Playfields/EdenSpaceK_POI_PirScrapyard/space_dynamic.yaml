@@ -1,0 +1,1390 @@
+# Playfield Characteristics
+Description: "Difficulty: [c][ffff00]Medium[-][/c]
+
+
+A Pirate controlled scrapyard is rumored to be hiding in this dense gas anomaly.
+
+[c][ffff00]WARNING:[-][/c] Sector may be attacked by hostile forces. Use caution and watch your fire.
+
+
+[c][ffffff][i]Mining asteroids claimed by a faction is considered an act of war. Presence of POIs affected by galaxy faction territory.[/i][-][/c]"
+
+Gravity: 0                         
+AtmosphereEnabled: False          
+PvPProb: 0
+UseFixed: True                       
+
+# Hot Star
+Radiation: [10,15]
+TemperatureDay: [-175,-75]
+# Hot Orbit Music
+Music: [AlteredPhase, DistantWorlds, EnergyMatrix, FarEntropy, Fragments, Ghost, Helios, Obelisk, Orbiting, Resurgence, space]
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: Black Market Scrapyard
+PlayfieldLevelOverride: [1,2]
+
+# ===========================================================================================================================================================================================
+# ===========================================================================================================================================================================================
+# ===========================================================================================================================================================================================
+
+### Resource Asteroid
+Resources:
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0.2
+      Properties:
+        - Key: RegenAfter
+          Value: 180
+
+### POIs
+POIs:
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude] 
+      FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude] # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      BaseField: True
+      RandomRotation: True
+
+# Asteroid Field
+    - Name: [Eden_AsteroidFieldL_Brown, Eden_AsteroidFieldL_Brown2, Eden_AsteroidFieldL_Brown3, Eden_AsteroidFieldL_Brown4, Eden_AsteroidFieldL_BrownThick, Eden_AsteroidFieldL_BrownThick2, Eden_AsteroidFieldL_BrownThick3, Eden_AsteroidFieldL_BrownThick4, Eden_AsteroidFieldL_Orange, Eden_AsteroidFieldL_Lava, Eden_AsteroidFieldL_Lava2]
+      FieldName: [Eden_AsteroidFieldL_Brown, Eden_AsteroidFieldL_Brown2, Eden_AsteroidFieldL_Brown3, Eden_AsteroidFieldL_Brown4, Eden_AsteroidFieldL_BrownThick, Eden_AsteroidFieldL_BrownThick2, Eden_AsteroidFieldL_BrownThick3, Eden_AsteroidFieldL_BrownThick4, Eden_AsteroidFieldL_Orange, Eden_AsteroidFieldL_Lava, Eden_AsteroidFieldL_Lava2]
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.35
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+
+# Thick nebula or ion storm to hide in
+    - Name: [Eden_IonStormNew_BlueL, Eden_IonStormNew_BlueL2, Eden_IonStormNew_RedL, Eden_IonStormNew_RedL2, Eden_NebulaL_RandomBlueStorm, Eden_NebulaL_RandomOrangeStorm, Eden_NebulaL_RandomRedStorm, Eden_NebulaL_RandomYellowStorm, Eden_NebulaL_RandomBlueDark, Eden_NebulaL_RandomOrangeDark, Eden_NebulaL_RandomRedDark, Eden_NebulaL_RandomYellowDark]
+      FieldName: [Eden_IonStormNew_BlueL, Eden_IonStormNew_BlueL2, Eden_IonStormNew_RedL, Eden_IonStormNew_RedL2, Eden_NebulaL_RandomBlueStorm, Eden_NebulaL_RandomOrangeStorm, Eden_NebulaL_RandomRedStorm, Eden_NebulaL_RandomYellowStorm, Eden_NebulaL_RandomBlueDark, Eden_NebulaL_RandomOrangeDark, Eden_NebulaL_RandomRedDark, Eden_NebulaL_RandomYellowDark]
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+
+    # - Type: Eden_NebulaOrangeL
+      # # Name: [Eden_BA_DummyPOI3]
+      # Name: [Eden_NebulaOrangeL]
+      # DisplayName: Nebula
+      # Faction: None
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 1
+      # InitPower: True
+      # Position:
+         # PosXZMinMax: [50, 100]
+         # PosYMax: 50
+
+    # - Type: Eden_NebulaOrange
+      # Name: [Eden_BA_DummyPOI3]
+      # # Name: [Eden_NebulaOrange]
+      # DisplayName: Nebula
+      # Faction: None
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 1
+      # InitPower: True
+      # Position:
+         # PosXZMinMax: [25000, 40000]
+         # PosYMax: 5000
+
+# Map marker
+    - Type: BA_Alien
+      # GroupName: Eden_DummyPOI
+      Name: [Eden_BA_DummyPOI3]
+      DisplayName: Suspicious Signals
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 250, 0]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: HudDistance
+          Value: 0
+        - Key: Discovery
+          Value: False
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# Main salvage yard
+    - Type: BA_Alien
+      GroupName: RE2_PirSpaceScrapyard
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: StationInterface
+          Value: "Repair:1.4,IfNeutral:0.15,IfHonored:-0.15"
+
+# Defense Sentries around salvage yard
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [200, 300, 200]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.7
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-200, 300, 200]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.7
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [200, 300, -200]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-200, 300, -200]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.7
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [200, -150, 200]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-200, -150, 200]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [200, -150, -200]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.7
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-200, -150, -200]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.7
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-1050, 75, 700]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      GroupName: R2PirateSpaceDefense
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.7
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-1050, 75, -700]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+# Rust clouds
+    # - Type: BA_Alien
+    - Type: Eden_NebulaRustSmall
+      # GroupName: Eden_GasCloudRust
+      Name: [Eden_NebulaRustSmall]
+      Faction: Eden_Wreck
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-600, 0, 400]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    # - Type: BA_Alien
+    - Type: Eden_NebulaRustSmall
+      # GroupName: Eden_GasCloudRust
+      Name: [Eden_NebulaRustSmall]
+      Faction: Eden_Wreck
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-600, 0, -400]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# =============================================== Yard 1
+# Holding area
+    - Type: BA_Alien
+      GroupName: Eden_ColSpaceYardHold
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-350, -50, 600]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+# Salvaged ships
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-230, -50, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-310, -50, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-390, -50, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-470, -50, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+# =============================================== Yard 2
+
+# Holding area
+    - Type: BA_Alien
+      GroupName: Eden_ColSpaceYardHold
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-800, -50, 600]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+# Salvaged ships
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-680, -50, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-760, -50, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-840, -50, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-920, -50, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+
+# =============================================== Yard 3
+# Holding area
+    - Type: BA_Alien
+      GroupName: Eden_ColSpaceYardHold
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-350, -50, -600]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+# Salvaged ships
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-230, -50, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-310, -50, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-390, -50, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-470, -50, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+# =============================================== Yard 4
+# Holding area
+    - Type: BA_Alien
+      GroupName: Eden_ColSpaceYardHold
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-800, -50, -600]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+# Salvaged ships
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-680, -50, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-760, -50, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-840, -50, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-920, -50, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+# Second set
+# =============================================== Yard 1
+# Holding area
+    - Type: BA_Alien
+      GroupName: Eden_ColSpaceYardHold
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-350, 150, 600]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+# Salvaged ships
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-230, 150, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-310, 150, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.2
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-390, 150, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-470, 150, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+# =============================================== Yard 2
+
+# Holding area
+    - Type: BA_Alien
+      GroupName: Eden_ColSpaceYardHold
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-800, 150, 600]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+# Salvaged ships
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.15
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-680, 150, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.15
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-760, 150, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-840, 150, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-920, 150, 450]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+# =============================================== Yard 3
+# Holding area
+    - Type: BA_Alien
+      GroupName: Eden_ColSpaceYardHold
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-350, 150, -600]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+# Salvaged ships
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-230, 150, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-310, 150, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-390, 150, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-470, 150, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+# =============================================== Yard 4
+# Holding area
+    - Type: BA_Alien
+      GroupName: Eden_ColSpaceYardHold
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [-800, 150, -600]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+# Salvaged ships
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-680, 150, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT2
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-760, 150, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-840, 150, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+    - Type: CV_Alien
+      GroupName: Eden_SpaceJunkT1
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 1, 1]
+      Probability: 0.1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: False
+      Pos: [-920, 150, -450]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+
+
+
+# Junk group 1
+    - Type: BA_Alien
+      Name: [CompoundWreckT2]
+      GroupName: JunkYardSpaceBAO
+      Faction: Pirates
+      FactionTerritory: [Colonists]
+      Mode: Survival
+      CountMinMax: [ 1, 3 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [100, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 1000
+        - Key: RegenAfter
+          Value: 720
+
+    - Type: BA_Alien
+      Name: [CompoundGasCloudRust]
+      GroupName: Eden_GasCloudRust
+      Faction: Eden_Wreck
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.25
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [100, 7000]
+         PosYMax: 5000 
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# Raider Attack
+    - Type: BA_Alien
+      Name: [Eden_BA_DummyPOI]
+      DisplayName: Pirate Staging Area
+      Faction: None
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Position:
+         PosXZMinMax: [30000, 35000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# Second wave
+    - Type: BA_Alien
+      Name: [Eden_BA_DummyPOI2]
+      DisplayName: Pirate Staging Area
+      Faction: None
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Position:
+         PosXZMinMax: [70000, 75000]
+         PosYMax: 10000
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+    # - Type: BA_Alien
+      # Name: [TestCoreDummy]
+      # DisplayName: Pirate Target
+      # Faction: Eden_Defender
+      # FactionTerritory: [All]
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 0.5
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # InitPower: True
+      # Pos: [0, 0, 0]
+      # Rot: [0, 0, 0]
+      # # Position:
+         # # PosXZMinMax: [15000, 20000]
+         # # PosYMax: 5000 
+      # Properties:
+        # - Key: MapDistance
+          # Value: 0
+        # - Key: HudDistance
+          # Value: 0
+        # - Key: RegenAfter
+          # Value: 720
+
+
+
+# ================================================================================================================================================================================= Drone Base Setup
+DroneBaseSetup:
+
+# ================================================================================================================================================================================= Drones
+      - FreeDrones:
+
+# ------------------------------------------------------------------------------------------------- Faction Pirates
+          - Name: [Eden_SpaceDroneBanditGatling, Eden_SpaceDroneBanditBolter, Eden_SpaceDroneBanditMissile]
+            Faction: Pirates
+            CanNotBeControlledByMasterAI: False
+            Count: [10, 14]
+            Radius: [1000, 5000]
+            Properties:
+              # - Key: AIManPatrolGroups
+                # Value: "TSO_AkuaOrbit, RBAO_PolarisGasRefinery, RBAO_PolarisAlloySynthesis"
+              - Key: AIManPatrolFactions
+                Value: "Pirates"
+              - Key: AIManMaxPursuitRange
+                Value: 5000
+
+# ================================================================================================================================================================================= Ships
+        SpaceVessels:
+# ================================================================================================================================================================================= Patrol Vessels and Freighters and Bases
+
+# ------------------------------------------------------------------------------------------------- Faction Pirates
+# Patrol vessels
+          - Name: [R2OPVPirateT1]
+            Faction: Pirates
+            CountMinMax: [1, 1]
+            Probability: 1
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [15, 30]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [500, 1000]
+              # POINameAsPositionRef: [Eden_ColSpaceScrapyard]
+              Position:
+                PosXZMinMax: [500, 1000]
+                PosYMax: 500
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [2, 4]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: AIManMaxPursuitRange
+                Value: 3000
+              - Key: AIManPatrolRoute #you can specify a precise patrol route, you can use only the precise patrol route or the "POI" generated patrol route, they can not be combined
+                Value: "-1200,100,900;800,100,900;800,100,-900;-1200,100,-900"
+
+          - Name: [R2OPVPirateT1]
+            Faction: Pirates
+            CountMinMax: [1, 1]
+            Probability: 1
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [15, 30]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [500, 1000]
+              Position:
+                PosXZMinMax: [500, 1000]
+                PosYMax: 500
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [2, 4]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: AIManMaxPursuitRange
+                Value: 3000
+              - Key: AIManPatrolRoute
+                Value: "-1200,-100,900;800,-100,900;800,-100,-900;-1200,-100,-900"
+
+# Pirate attack
+          - Name: [RE2_OPVRaiderT1]
+            Faction: Warlord
+            CountMinMax: [4, 6]
+            Probability: 0.15
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [50, 50]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: False
+              RadiusMinMax: [1000, 1500]
+              # POINameAsPositionRef: [Eden_GasCloudOrangeL]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [75, 150]
+                PosYMax: 100
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              # - Key: SelfDestructionWithNoCore
+                # Value: True
+              # - Key: Discovery
+                # Value: Discovery
+              - Key: MapDistance
+                Value: 15000
+              - Key: HudDistance
+                Value: 15000
+              # - Key: AIManPatrolGroups #which POI groups can the vessel patrol? Asteroids will be ignored
+                # Value: "Eden_BA_DummyPOI2"
+              - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
+                Value: "Pirates"
+              # - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
+                # Value: "Pirates"
+              - Key: AIManMaxPursuitRange
+                Value: 3000
+
+# Wave 2
+          - Name: [RE2_OPVRaiderT1]
+            Faction: Warlord
+            CountMinMax: [4, 6]
+            Probability: 0.1
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [50, 50]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: False
+              RadiusMinMax: [1000, 1500]
+              # POINameAsPositionRef: [Eden_GasCloudOrangeL]
+              POINameAsPositionRef: [Eden_BA_DummyPOI2]
+              Position:
+                PosXZMinMax: [75, 150]
+                PosYMax: 100
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              # - Key: SelfDestructionWithNoCore
+                # Value: True
+              # - Key: Discovery
+                # Value: Discovery
+              - Key: MapDistance
+                Value: 15000
+              - Key: HudDistance
+                Value: 15000
+              # - Key: AIManPatrolGroups #which POI groups can the vessel patrol? Asteroids will be ignored
+                # Value: "Eden_BA_DummyPOI2"
+              - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
+                Value: "Pirates"
+              # - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
+                # Value: "Pirates"
+              - Key: AIManMaxPursuitRange
+                Value: 3000
