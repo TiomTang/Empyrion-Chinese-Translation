@@ -1,478 +1,592 @@
-# Playfield Characteristics
-Description: "Difficulty: [c][00ff00]Easy[-][/c]
-
-Sovereignty: [c][FFA500]Polaris[-][/c]
-
-
-A Polaris Megacorp operated trade hub in neutral territory. These trade hubs offer less services than the full trade station sectors that are found in faction territory.
-
-
-[c][ffffff][i]Mining asteroids claimed by a faction is considered an act of war. Presence of POIs affected by galaxy faction territory.[/i][-][/c]"
-
-Gravity: 0
-AtmosphereEnabled: False
-PvPProb: 0
-UseFixed: True
-
-# Standard Star
-Radiation: [5,10]
-TemperatureDay: [-200,-100]
-# Habitable Orbit Music
-Music: [Artefact, ColdDivide, DistantWorlds, FirstHours, Migration, moonstone, Orbiting, space, Transit]
-
-PlayfieldType: Space
-LandClaimZone: Device
-PlanetType: Polaris Trade Hub Starter
-PlayfieldLevelOverride: [1,1]
-
-### Resource Asteroid
+UseFixed: "True"
+PlayfieldType: "Space"
+Description: "\u96BE\u5EA6: [c][00ff00]\u7B80\u5355[-][/c]\n\u4E3B\u6743: [c][FFA500]\u6781\u661F[-][/c]\n\n\u4E00\u4E2A\u7531\u6781\u661F\u8D85\u7EA7\u4F01\u4E1A\u8FD0\u8425\u7684\u4F4D\u4E8E\u4E2D\u7ACB\u533A\u57DF\u7684\u8D38\u6613\u67A2\u7EBD\u3002\u8FD9\u4E9B\u8D38\u6613\u67A2\u7EBD\u63D0\u4F9B\u7684\u670D\u52A1\u6BD4\u4F4D\u4E8E\u9635\u8425\u9886\u571F\u5185\u7684\u5B8C\u6574\u8D38\u6613\u7A7A\u95F4\u7AD9\u661F\u533A\u8981\u5C11\u3002\n\n[c][ffffff][i]\u91C7\u77FF\u7531\u67D0\u9635\u8425\u5360\u9886\u7684\u5C0F\u884C\u661F\u88AB\u89C6\u4E3A\u5BA3\u6218\u884C\u4E3A\u3002POI \u7684\u5B58\u5728\u4F1A\u53D7\u5230\u94F6\u6CB3\u9635\u8425\u9886\u571F\u7684\u5F71\u54CD\u3002[/i][-][/c]"
+PlanetType: "Polaris Trade Hub Starter"
+Radiation:
+- 5
+- 10
+TemperatureDay:
+- -200
+- -100
+Music:
+- "Artefact"
+- "ColdDivide"
+- "DistantWorlds"
+- "FirstHours"
+- "Migration"
+- "moonstone"
+- "Orbiting"
+- "space"
+- "Transit"
+PlayfieldLevelOverride:
+- 1
+- 1
 Resources:
-    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
-      DisplayName: Iron Asteroid
-      CountMinMax: [ 1, 1 ]
-      Probability: 0.5
-      Properties:
-        - Key: RegenAfter
-          Value: 720
- 
-    - Name: [ AsteroidVoxel01Copper, AsteroidVoxel02Copper, AsteroidVoxel03Copper]
-      DisplayName: Copper Asteroid
-      CountMinMax: [ 1, 1 ]
-      Probability: 0.4 
-      Properties:
-        - Key: RegenAfter
-          Value: 720
- 
-    - Name: [ AsteroidVoxel01Silicon, AsteroidVoxel02Silicon, AsteroidVoxel03Silicon]
-      DisplayName: Silicon Asteroid
-      CountMinMax: [ 1, 1 ]
-      Probability: 0.4
-      Properties:
-        - Key: RegenAfter
-          Value: 720
-
-### POIs
+- Name:
+  - "AsteroidVoxel01Iron"
+  - "AsteroidVoxel02Iron"
+  - "AsteroidVoxel03Iron"
+  DisplayName: "Iron Asteroid"
+  CountMinMax:
+  - 1
+  - 1
+  Probability: 0.5
+  Position:
+    PosYMax: 2000
+  Properties:
+  - Key: "RegenAfter"
+    Value: "720"
+- Name:
+  - "AsteroidVoxel01Copper"
+  - "AsteroidVoxel02Copper"
+  - "AsteroidVoxel03Copper"
+  DisplayName: "Copper Asteroid"
+  CountMinMax:
+  - 1
+  - 1
+  Probability: 0.4
+  Position:
+    PosYMax: 2000
+  Properties:
+  - Key: "RegenAfter"
+    Value: "720"
+- Name:
+  - "AsteroidVoxel01Silicon"
+  - "AsteroidVoxel02Silicon"
+  - "AsteroidVoxel03Silicon"
+  DisplayName: "Silicon Asteroid"
+  CountMinMax:
+  - 1
+  - 1
+  Probability: 0.4
+  Position:
+    PosYMax: 2000
+  Properties:
+  - Key: "RegenAfter"
+    Value: "720"
 POIs:
-# ======================================================================================================================================================================================================
-# ================================================================================================================================================================================= Asteroid Fields
-# ======================================================================================================================================================================================================
-#Main Field ----------------------------------------------------------
-    - Name: [AsteroidFieldBoxExclude, AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidFieldFewBoxExclude, AsteroidRingPlanet, AsteroidRingPlanet, AsteroidFieldRing, AsteroidFieldRingOld]
-      FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude] # used if playfield is not an orbit
-      CountMinMax: [ 1, 1 ]
-      Probability: 0.15
-      BaseField: True
-      RandomRotation: True
-
-    - Name: [Eden_NebulaL_RandomBlue, Eden_NebulaL_RandomBlue2, Eden_NebulaL_RandomBlueDim, Eden_NebulaL_RandomBrown, Eden_NebulaL_RandomBrown2, Eden_NebulaL_RandomBrownDim, Eden_NebulaL_RandomCyan, Eden_NebulaL_RandomCyan2, Eden_NebulaL_RandomCyanDim, Eden_NebulaL_RandomGreen, Eden_NebulaL_RandomGreen2, Eden_NebulaL_RandomGreenDim, Eden_NebulaL_RandomOrange, Eden_NebulaL_RandomOrange2, Eden_NebulaL_RandomOrangeDim, Eden_NebulaL_RandomPink, Eden_NebulaL_RandomPink2, Eden_NebulaL_RandomPinkDim, Eden_NebulaL_RandomPurple, Eden_NebulaL_RandomPurple2, Eden_NebulaL_RandomPurpleDim, Eden_NebulaL_RandomRed, Eden_NebulaL_RandomRed2, Eden_NebulaL_RandomRedDim, Eden_NebulaL_RandomYellow, Eden_NebulaL_RandomYellow2, Eden_NebulaL_RandomYellowDim, Eden_SectorNebulaXLDustDim, Eden_SectorNebulaXLDustDim]
-      FieldName: [Eden_NebulaL_RandomBlue, Eden_NebulaL_RandomBlue2, Eden_NebulaL_RandomBlueDim, Eden_NebulaL_RandomBrown, Eden_NebulaL_RandomBrown2, Eden_NebulaL_RandomBrownDim, Eden_NebulaL_RandomCyan, Eden_NebulaL_RandomCyan2, Eden_NebulaL_RandomCyanDim, Eden_NebulaL_RandomGreen, Eden_NebulaL_RandomGreen2, Eden_NebulaL_RandomGreenDim, Eden_NebulaL_RandomOrange, Eden_NebulaL_RandomOrange2, Eden_NebulaL_RandomOrangeDim, Eden_NebulaL_RandomPink, Eden_NebulaL_RandomPink2, Eden_NebulaL_RandomPinkDim, Eden_NebulaL_RandomPurple, Eden_NebulaL_RandomPurple2, Eden_NebulaL_RandomPurpleDim, Eden_NebulaL_RandomRed, Eden_NebulaL_RandomRed2, Eden_NebulaL_RandomRedDim, Eden_NebulaL_RandomYellow, Eden_NebulaL_RandomYellow2, Eden_NebulaL_RandomYellowDim, Eden_SectorNebulaXLDustDim, Eden_SectorNebulaXLDustDim] # used if playfield is not an orbit
-      CountMinMax: [ 1, 1 ]
-      Probability: 0.15
-      Position:
-         PosXZMinMax: [50, 100]
-         PosYMax: 50
-
-# Dummy POI for anchor
-    - Type: BA_Alien
-      Name: [Eden_BA_DummyPOI]
-      DisplayName: Dummy
-      Faction: None
-      FactionTerritory: [All]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [0, 0, 0]
-      Rot: [0, 0, 0]
-      Properties:
-        - Key: MapDistance
-          Value: 0
-        - Key: HudDistance
-          Value: 0
-        - Key: RegenAfter
-          Value: 720
-
-# Dummy POI for Civilian patrols at Distribution Headquarters
-    - Type: BA_Alien
-      Name: [Eden_BA_DummyPOI2]
-      DisplayName: Dummy
-      Faction: Civilian
-      FactionTerritory: [All]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [2500, 500, 0]
-      Rot: [0, 0, 0]
-      Properties:
-        - Key: MapDistance
-          Value: 0
-        - Key: HudDistance
-          Value: 0
-        - Key: RegenAfter
-          Value: 720
-
-# Dummy POI for Civilian at Bounty Hunter Office
-    - Type: BA_Alien
-      Name: [Eden_BA_DummyPOI3]
-      DisplayName: Dummy
-      Faction: Civilian
-      FactionTerritory: [All]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [-2500, 500, 0]
-      Rot: [0, 0, 0]
-      Properties:
-        - Key: MapDistance
-          Value: 0
-        - Key: HudDistance
-          Value: 0
-        - Key: RegenAfter
-          Value: 720
-
-# Dummy POIs for Civilian patrols
-    - Type: BA_Alien
-      Name: [Eden_BA_DummyPOI4]
-      DisplayName: Dummy
-      Faction: Civilian
-      FactionTerritory: [All]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [0, 250, 2500]
-      Rot: [0, 0, 0]
-      Properties:
-        - Key: MapDistance
-          Value: 0
-        - Key: HudDistance
-          Value: 0
-        - Key: RegenAfter
-          Value: 720
-
-    - Type: BA_Alien
-      Name: [Eden_BA_DummyPOI4]
-      DisplayName: Dummy
-      Faction: Civilian
-      FactionTerritory: [All]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [0, -250, -2500]
-      Rot: [0, 0, 0]
-      Properties:
-        - Key: MapDistance
-          Value: 0
-        - Key: HudDistance
-          Value: 0
-        - Key: RegenAfter
-          Value: 720
-
-    - Type: BA_Alien
-      Name: [Eden_BA_DummyPOI4]
-      DisplayName: Dummy
-      Faction: Civilian
-      FactionTerritory: [All]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [1500, 0, 2000]
-      Rot: [0, 0, 0]
-      Properties:
-        - Key: MapDistance
-          Value: 0
-        - Key: HudDistance
-          Value: 0
-        - Key: RegenAfter
-          Value: 720
-
-    - Type: BA_Alien
-      Name: [Eden_BA_DummyPOI4]
-      DisplayName: Dummy
-      Faction: Civilian
-      FactionTerritory: [All]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [-2000, 0, 1500]
-      Rot: [0, 0, 0]
-      Properties:
-        - Key: MapDistance
-          Value: 0
-        - Key: HudDistance
-          Value: 0
-        - Key: RegenAfter
-          Value: 720
-
-# Sector audio
-    - Type: Eden_SectorAudio_Polaris
-      Name: [Eden_SectorAudio_Polaris]
-      DisplayName: Ambience
-      Faction: None
-      FactionTerritory: [Eden_PolarisTerritory]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [0, 0, 0]
-      Rot: [0, 0, 0]
-      Properties:
-        - Key: MapDistance
-          Value: 0
-        - Key: HudDistance
-          Value: 0
-
-# Main trading station
-    - Type: BA_Alien
-      GroupName: R2PolarisSpaceTrade
-      Faction: Polaris
-      # FactionTerritory: [Eden_PolarisTerritory]
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 1
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [0, 0, 0]
-      Rot: [0, 0, 0]
-      Properties: 
-        - Key: Discovery
-          Value: False
-        - Key: PvEArea
-          Value: 500
-        - Key: Music
-          Value: NebularClouds
-        - Key: RegenAfter
-          Value: 720
-        - Key: StationInterface
-          Value: "Fuel:1.5,O2:1.5,Warp:1.5,Ammo:1.5,Repair:1.75,Shield:1.5,IfNeutral:0.15,IfHonored:-0.15"
-
-    # - Type: BA_Alien
-      # GroupName: BAOPolarisRG
-      # Faction: Polaris
-      # # NoShieldReload: True
-      # Mode: Survival
-      # CountMinMax: [ 1, 1 ]
-      # Probability: 0.75
-      # SpaceDefenseOverrideDefaults: True
-      # SpaceDefenseProbability: 0
-      # InitPower: True
-      # Pos: [-600, 0, 0]
-      # Rot: [0, 0, 0]
-      # Properties: 
-        # - Key: RegenAfter
-          # Value: 720
-
-    # - Type: BA_Alien
-      # GroupName: BAOPolarisRG
-      # Faction: Polaris
-      # # NoShieldReload: True
-      # Mode: Survival
-      # CountMinMax: [ 1, 1 ]
-      # Probability: 0.75
-      # SpaceDefenseOverrideDefaults: True
-      # SpaceDefenseProbability: 0
-      # InitPower: True
-      # Pos: [600, 0, 0]
-      # Rot: [0, 0, 0]
-      # Properties: 
-        # - Key: RegenAfter
-          # Value: 720
-
-# Refinery
-    - Type: BA_Alien
-      GroupName: RE2_TSOPolRefinery
-      Faction: Polaris
-      # NoShieldReload: True
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 0
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [0, 0, 1200]
-      Rot: [0, 0, 0]
-      Properties: 
-        - Key: Discovery
-          Value: False
-        - Key: PvEArea
-          Value: 500
-        - Key: RegenAfter
-          Value: 720
-
-# Reforged Factory
-    - Type: BA_Alien
-      GroupName: R2FactoryPolarisSpace
-      Faction: Polaris
-      # NoShieldReload: True
-      Mode: Survival
-      CountMinMax: [ 1, 1 ]
-      Probability: 0.5
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Pos: [0, 0, -1200]
-      Rot: [0, 0, 0]
-      Properties: 
-        - Key: RegenAfter
-          Value: 720
-
-    # - Type: BA_Alien
-      # GroupName: R2FactoryPolarisSpace
-      # Faction: Polaris
-      # Mode: Survival
-      # CountMinMax: [ 1, 1 ]
-      # Probability: 0.5
-      # InitPower: True
-      # Position:
-         # PosXZMinMax: [750, 2500]
-         # PosYMax: 2500
-      # Properties: 
-        # - Key: Music
-          # Value: NebularClouds
-        # - Key: RegenAfter
-          # Value: 720
-
-    # - Type: BA_Alien
-      # GroupName: BAOPolarisRG
-      # Faction: Polaris
-      # Mode: Survival
-      # CountMinMax: [ 2, 4 ]
-      # Probability: 0.65
-      # InitPower: True
-      # Position:
-         # PosXZMinMax: [750, 6000]
-         # PosYMax: 3500
-      # Properties:
-        # - Key: RegenAfter
-          # Value: 720
-
-# Abandoned Pallet. Typically contains specific ore. 50/50 chance of exploding.
-    - Type: BA_Alien
-      GroupName: Eden_SpaceJunkPalletT1
-      Faction: Eden_Wreck
-      FactionTerritory: [All]
-      Mode: Survival
-      CountMinMax: [ 1, 10 ]
-      Probability: 0.45
-      SpaceDefenseOverrideDefaults: True
-      SpaceDefenseProbability: 0
-      InitPower: True
-      Position:
-         PosXZMinMax: [750, 7000]
-         PosYMax: 5000
-      Properties:
-        - Key: MapDistance
-          Value: 3000
-        - Key: HudDistance
-          Value: 3000
-        - Key: MapMarker
-          Value: Neutral
-        - Key: RegenAfter
-          Value: 720
-
-# Smaller unguarded Pentaxid asteroids.
-    - Type: AsteroidVoxel01Pentaxid
-      # Name: [Eden_Asteroid_PentT1_1, Eden_Asteroid_PentT1_2, Eden_Asteroid_PentT1_3, Eden_Asteroid_PentT1_4]
-      GroupName: EdenAsteroidPentaxidT1
-      Faction: None
-      Mode: Survival
-      CountMinMax: [ 2, 3 ]
-      Probability: 1
-      Properties:
-        - Key: MapDistance
-          Value: 6500
-        - Key: HudDistance
-          Value: 6500
-        - Key: RegenAfter
-          Value: 720
-
-
-# ================================================================================================================================================================================= Drone Base Setup
+- Name:
+  - "AsteroidFieldBoxExclude"
+  - "AsteroidFieldBoxExclude"
+  - "AsteroidFieldFewBoxExclude"
+  - "AsteroidFieldFewBoxExclude"
+  - "AsteroidRingPlanet"
+  - "AsteroidRingPlanet"
+  - "AsteroidFieldRing"
+  - "AsteroidFieldRingOld"
+  FieldName:
+  - "AsteroidFieldBoxExclude"
+  - "AsteroidFieldFewBoxExclude"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 0.15
+  BaseField: true
+  RandomRotation: true
+- Name:
+  - "Eden_NebulaL_RandomBlue"
+  - "Eden_NebulaL_RandomBlue2"
+  - "Eden_NebulaL_RandomBlueDim"
+  - "Eden_NebulaL_RandomBrown"
+  - "Eden_NebulaL_RandomBrown2"
+  - "Eden_NebulaL_RandomBrownDim"
+  - "Eden_NebulaL_RandomCyan"
+  - "Eden_NebulaL_RandomCyan2"
+  - "Eden_NebulaL_RandomCyanDim"
+  - "Eden_NebulaL_RandomGreen"
+  - "Eden_NebulaL_RandomGreen2"
+  - "Eden_NebulaL_RandomGreenDim"
+  - "Eden_NebulaL_RandomOrange"
+  - "Eden_NebulaL_RandomOrange2"
+  - "Eden_NebulaL_RandomOrangeDim"
+  - "Eden_NebulaL_RandomPink"
+  - "Eden_NebulaL_RandomPink2"
+  - "Eden_NebulaL_RandomPinkDim"
+  - "Eden_NebulaL_RandomPurple"
+  - "Eden_NebulaL_RandomPurple2"
+  - "Eden_NebulaL_RandomPurpleDim"
+  - "Eden_NebulaL_RandomRed"
+  - "Eden_NebulaL_RandomRed2"
+  - "Eden_NebulaL_RandomRedDim"
+  - "Eden_NebulaL_RandomYellow"
+  - "Eden_NebulaL_RandomYellow2"
+  - "Eden_NebulaL_RandomYellowDim"
+  - "Eden_SectorNebulaXLDustDim"
+  - "Eden_SectorNebulaXLDustDim"
+  FieldName:
+  - "Eden_NebulaL_RandomBlue"
+  - "Eden_NebulaL_RandomBlue2"
+  - "Eden_NebulaL_RandomBlueDim"
+  - "Eden_NebulaL_RandomBrown"
+  - "Eden_NebulaL_RandomBrown2"
+  - "Eden_NebulaL_RandomBrownDim"
+  - "Eden_NebulaL_RandomCyan"
+  - "Eden_NebulaL_RandomCyan2"
+  - "Eden_NebulaL_RandomCyanDim"
+  - "Eden_NebulaL_RandomGreen"
+  - "Eden_NebulaL_RandomGreen2"
+  - "Eden_NebulaL_RandomGreenDim"
+  - "Eden_NebulaL_RandomOrange"
+  - "Eden_NebulaL_RandomOrange2"
+  - "Eden_NebulaL_RandomOrangeDim"
+  - "Eden_NebulaL_RandomPink"
+  - "Eden_NebulaL_RandomPink2"
+  - "Eden_NebulaL_RandomPinkDim"
+  - "Eden_NebulaL_RandomPurple"
+  - "Eden_NebulaL_RandomPurple2"
+  - "Eden_NebulaL_RandomPurpleDim"
+  - "Eden_NebulaL_RandomRed"
+  - "Eden_NebulaL_RandomRed2"
+  - "Eden_NebulaL_RandomRedDim"
+  - "Eden_NebulaL_RandomYellow"
+  - "Eden_NebulaL_RandomYellow2"
+  - "Eden_NebulaL_RandomYellowDim"
+  - "Eden_SectorNebulaXLDustDim"
+  - "Eden_SectorNebulaXLDustDim"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosXZMinMax:
+    - 50
+    - 100
+    PosYMax: 50
+  Probability: 0.15
+- Type: "BA_Alien"
+  Name:
+  - "Eden_BA_DummyPOI"
+  DisplayName: "Dummy"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "0"
+  - Key: "HudDistance"
+    Value: "0"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - 0
+  - 0
+  - 0
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "None"
+  FactionTerritory:
+  - "All"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  Name:
+  - "Eden_BA_DummyPOI2"
+  DisplayName: "Dummy"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "0"
+  - Key: "HudDistance"
+    Value: "0"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - 2500
+  - 500
+  - 0
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Civilian"
+  FactionTerritory:
+  - "All"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  Name:
+  - "Eden_BA_DummyPOI3"
+  DisplayName: "Dummy"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "0"
+  - Key: "HudDistance"
+    Value: "0"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - -2500
+  - 500
+  - 0
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Civilian"
+  FactionTerritory:
+  - "All"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  Name:
+  - "Eden_BA_DummyPOI4"
+  DisplayName: "Dummy"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "0"
+  - Key: "HudDistance"
+    Value: "0"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - 0
+  - 250
+  - 2500
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Civilian"
+  FactionTerritory:
+  - "All"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  Name:
+  - "Eden_BA_DummyPOI4"
+  DisplayName: "Dummy"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "0"
+  - Key: "HudDistance"
+    Value: "0"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - 0
+  - -250
+  - -2500
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Civilian"
+  FactionTerritory:
+  - "All"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  Name:
+  - "Eden_BA_DummyPOI4"
+  DisplayName: "Dummy"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "0"
+  - Key: "HudDistance"
+    Value: "0"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - 1500
+  - 0
+  - 2000
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Civilian"
+  FactionTerritory:
+  - "All"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  Name:
+  - "Eden_BA_DummyPOI4"
+  DisplayName: "Dummy"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "0"
+  - Key: "HudDistance"
+    Value: "0"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - -2000
+  - 0
+  - 1500
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Civilian"
+  FactionTerritory:
+  - "All"
+  SpaceDefenseOverrideDefaults: true
+- Type: "Eden_SectorAudio_Polaris"
+  Name:
+  - "Eden_SectorAudio_Polaris"
+  DisplayName: "Ambience"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "0"
+  - Key: "HudDistance"
+    Value: "0"
+  Mode: "Survival"
+  Pos:
+  - 0
+  - 0
+  - 0
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "None"
+  FactionTerritory:
+  - "Eden_PolarisTerritory"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  GroupName: "R2PolarisSpaceTrade"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  InitPower: "True"
+  Properties:
+  - Key: "Discovery"
+    Value: "False"
+  - Key: "PvEArea"
+    Value: "500"
+  - Key: "Music"
+    Value: "NebularClouds"
+  - Key: "RegenAfter"
+    Value: "720"
+  - Key: "StationInterface"
+    Value: "Fuel:1.5,O2:1.5,Warp:1.5,Ammo:1.5,Repair:1.75,Shield:1.5,IfNeutral:0.15,IfHonored:-0.15"
+  Mode: "Survival"
+  Pos:
+  - 0
+  - 0
+  - 0
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Polaris"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  GroupName: "RE2_TSOPolRefinery"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  InitPower: "True"
+  Properties:
+  - Key: "Discovery"
+    Value: "False"
+  - Key: "PvEArea"
+    Value: "500"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - 0
+  - 0
+  - 1200
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Polaris"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  GroupName: "R2FactoryPolarisSpace"
+  CountMinMax:
+  - 1
+  - 1
+  Position:
+    PosYMax: 2000
+  Probability: 0.5
+  InitPower: "True"
+  Properties:
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Pos:
+  - 0
+  - 0
+  - -1200
+  Rot:
+  - 0
+  - 0
+  - 0
+  Faction: "Polaris"
+  SpaceDefenseOverrideDefaults: true
+- Type: "BA_Alien"
+  GroupName: "Eden_SpaceJunkPalletT1"
+  CountMinMax:
+  - 1
+  - 10
+  Position:
+    PosXZMinMax:
+    - 750
+    - 7000
+    PosYMax: 5000
+  Probability: 0.45
+  InitPower: "True"
+  Properties:
+  - Key: "MapDistance"
+    Value: "3000"
+  - Key: "HudDistance"
+    Value: "3000"
+  - Key: "MapMarker"
+    Value: "Neutral"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Faction: "Eden_Wreck"
+  FactionTerritory:
+  - "All"
+  SpaceDefenseOverrideDefaults: true
+- Type: "AsteroidVoxel01Pentaxid"
+  GroupName: "EdenAsteroidPentaxidT1"
+  CountMinMax:
+  - 2
+  - 3
+  Position:
+    PosYMax: 2000
+  Probability: 1
+  Properties:
+  - Key: "MapDistance"
+    Value: "6500"
+  - Key: "HudDistance"
+    Value: "6500"
+  - Key: "RegenAfter"
+    Value: "720"
+  Mode: "Survival"
+  Faction: "None"
 DroneBaseSetup:
-
-# ================================================================================================================================================================================= Drones
-      - FreeDrones:
-
-# ------------------------------------------------------------------------------------------------- Faction Main
-# Asteroid Patrols
-          - Name: [SpaceDronePolarisLaser]
-          # - Name: [Eden_SpaceDroneCargoShuttle2]
-            Faction: None
-            CanNotBeControlledByMasterAI: False
-            POINameAsPositionRef: [Eden_BA_DummyPOI]
-            Count: [0, 0]
-            Radius: [500, 2000]
-            Properties:
-              # - Key: AIManPatrolGroups
-                # Value: "TSO_AkuaOrbit, RBAO_PolarisGasRefinery, RBAO_PolarisAlloySynthesis"
-              - Key: AIManPatrolFactions
-                Value: "Zirax, Polaris, Trader, Colonists, Pirates, Farr"
-              - Key: AIManMaxPursuitRange
-                Value: 0
-
-# ================================================================================================================================================================================= Ships
-        SpaceVessels:
-# ================================================================================================================================================================================= Patrol Vessels and Freighters and Bases
-
-# ------------------------------------------------------------------------------------------------- Faction Polaris
-# Polaris Freighters
-          - Name: [Eden_OPVTraderTSO]
-          # - Name: [Eden_OPV_TraderTSO1]
-            Faction: Civilian
-            CountMinMax: [4, 8]
-            Probability: 1
-            CanNotBeControlledByMasterAI: False
-            FixedMaxSpeed: [15, 15]
-            Mission: SpacePatrol
-            MissionDescription:
-              DelayBetweenRespawnMinMax: [3600, 3600]
-              DelayBeforeSelfDestructionMinMax: [3600, 3600]
-              IsRespawnAfterDestruction: False
-              RadiusMinMax: [750, 7500]
-              # POINameAsPositionRef: [Eden_GasCloudOrangeL]
-              POINameAsPositionRef: [Eden_BA_DummyPOI]
-              Position:
-                PosXZMinMax: [500, 3000]
-                PosYMax: 1000
-            StockDescription:
-              Name: [SpaceDronePolarisLaser]
-              AmountMinMax: [1, 2]
-              ExtraMinMax: [0,0]
-              Type: FighterDrone
-            Properties:
-              - Key: MapDistance
-                Value: 0
-              - Key: HudDistance
-                Value: 3000
-              # - Key: Discovery
-                # Value: Discovery
-              # - Key: AIManPatrolGroups #which POI groups can the vessel patrol? Asteroids will be ignored
-                # Value: "Eden_BA_DummyPOI2"
-              - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
-                Value: "Polaris, Civilian"
-              # - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
-                # Value: "Pirates"
-              - Key: AIManMaxPursuitRange
-                Value: 10000
+- FreeDrones:
+  - Name:
+    - "SpaceDronePolarisLaser"
+    Faction: "None"
+    POINameAsPositionRef:
+    - "Eden_BA_DummyPOI"
+    Count:
+    - 0
+    - 0
+    Radius:
+    - 500
+    - 2000
+    Properties:
+    - Key: "AIManPatrolFactions"
+      Value: "Zirax, Polaris, Trader, Colonists, Pirates, Farr"
+    - Key: "AIManMaxPursuitRange"
+      Value: "0"
+  SpaceVessels:
+  - Name:
+    - "Eden_OPVTraderTSO"
+    CountMinMax:
+    - 4
+    - 8
+    Probability: 1
+    FixedMaxSpeed:
+    - 15
+    - 15
+    Mission: "SpacePatrol"
+    MissionDescription:
+      DelayBetweenRespawnMinMax:
+      - 3600
+      - 3600
+      DelayBeforeSelfDestructionMinMax:
+      - 3600
+      - 3600
+      RadiusMinMax:
+      - 750
+      - 7500
+      Position:
+        PosXZMinMax:
+        - 500
+        - 3000
+        PosYMax: 1000
+      POINameAsPositionRef:
+      - "Eden_BA_DummyPOI"
+    StockDescription:
+      Name:
+      - "SpaceDronePolarisLaser"
+      AmountMinMax:
+      - 1
+      - 2
+      ExtraMinMax:
+      - 0
+      - 0
+      Type: "FighterDrone"
+    Properties:
+    - Key: "MapDistance"
+      Value: "0"
+    - Key: "HudDistance"
+      Value: "3000"
+    - Key: "AIManPatrolFactions"
+      Value: "Polaris, Civilian"
+    - Key: "AIManMaxPursuitRange"
+      Value: "10000"
+    Faction: "Civilian"
+LandClaimZone: "Device"
