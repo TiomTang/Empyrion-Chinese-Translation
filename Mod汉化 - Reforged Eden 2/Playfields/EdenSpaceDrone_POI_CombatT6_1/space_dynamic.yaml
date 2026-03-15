@@ -1,669 +1,548 @@
-UseFixed: "True"
-PlayfieldType: "Space"
-Description: "\u7C7B\u578B\uFF1A[c][ff0000]\u6218\u6597\u533A\u57DF[-][/c] - [c][ff00ff]6\u7EA7[-][/c]\n\u52BF\u529B\uFF1A[c][FF6600]\u65E0\u4EBA\u673A\u7FA4[-][/c]\n\u4F20\u611F\u5668\u63A2\u6D4B\u5230\u9AD8\u5F3A\u5EA6\u7684\u65E0\u7EBF\u7535\u4FE1\u53F7\u3002\n\n[c][ffffff][i]\u5F00\u91C7\u88AB\u52BF\u529B\u5BA3\u79F0\u7684\u5C0F\u884C\u661F\u88AB\u89C6\u4E3A\u6218\u4E89\u884C\u4E3A\u3002POI\u7684\u5206\u5E03\u53D7\u661F\u7CFB\u52BF\u529B\u9886\u5730\u7684\u5F71\u54CD\u3002[/i][-][/c]"
-PlanetType: "Drone Swarm Nursery"
-Radiation:
-- 10
-- 15
-TemperatureDay:
-- -270
-- -250
-Music:
-- "alien2"
-- "AnAridPlace"
-- "barren"
-- "Blight"
-- "Cypher"
-- "DarkSoundscape"
-- "DarkSoundscape2"
-- "DarkSoundscape3"
-- "lava2"
-PlayfieldLevelOverride:
-- 1
-- 2
+# Playfield Characteristics
+Description: "\u7C7B\u578B: [c][ff0000]\u4F5C\u6218\u5730\u70B9[-][/c] - [c][ff00ff]6\u7EA7[-][/c]
+
+\u9635\u8425: [c][FF6600]\u65E0\u4EBA\u673A\u7FA4[-][/c]
+
+\u4F20\u611F\u5668\u68C0\u6D4B\u5230\u9AD8\u5F3A\u5EA6\u65E0\u7EBF\u7535\u4FE1\u53F7\u3002
+
+
+[c][ffffff][i]\u5728\u88AB\u67D0\u4E2A\u9635\u8425\u5360\u9886\u7684\u91C7\u77FF\u5C0F\u884C\u661F\u4E0A\u8FDB\u884C\u91C7\u77FF\u88AB\u89C6\u4E3A\u6218\u4E89\u884C\u4E3A\u3002POI \u7684\u5B58\u5728\u53D7\u94F6\u6CB3\u9635\u8425\u9886\u571F\u5F71\u54CD\u3002[/i][-][/c]"
+
+
+
+
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0
+UseFixed: True
+
+Radiation: [10,15]
+TemperatureDay: [-270,-250]
+# Dark Ambient Music
+Music: [alien2, AnAridPlace, barren, Blight, Cypher, DarkSoundscape, DarkSoundscape2, DarkSoundscape3, lava2]
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: Drone Swarm Nursery
+PlayfieldLevelOverride: [1,2]
+# ===========================================================================================================================================================================================
+# ===========================================================================================================================================================================================
+# ===========================================================================================================================================================================================
+
+### Resource Asteroid
 Resources:
-- Name:
-  - "AsteroidVoxel01Iron"
-  - "AsteroidVoxel02Iron"
-  - "AsteroidVoxel03Iron"
-  DisplayName: "Iron Asteroid"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Properties:
-  - Key: "RegenAfter"
-    Value: "720"
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0
+      Properties:
+        - Key: RegenAfter
+          Value: 720
+
+### POIs
 POIs:
-- Name:
-  - "AsteroidFieldFewBoxExclude"
-  FieldName:
-  - "AsteroidFieldFewBoxExclude"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.25
-  BaseField: true
-- Name:
-  - "Eden_SectorNebulaNewOrangeStorm"
-  - "Eden_SectorNebulaNewOrangeStormBright"
-  - "Eden_SectorNebulaNewRedStorm"
-  - "Eden_SectorNebulaNewDustFog"
-  - "Eden_SectorNebulaNewDustFog2"
-  - "Eden_SectorNebulaNewDustFog3"
-  - "Eden_SectorNebulaNewOrangeFog"
-  - "Eden_SectorNebulaNewOrangeFog2"
-  - "Eden_SectorNebulaNewOrangeFog3"
-  - "Eden_SectorNebulaNewRedFog"
-  - "Eden_SectorNebulaNewRedFog2"
-  - "Eden_SectorNebulaNewRedFog3"
-  FieldName:
-  - "Eden_SectorNebulaNewOrangeStorm"
-  - "Eden_SectorNebulaNewOrangeStormBright"
-  - "Eden_SectorNebulaNewRedStorm"
-  - "Eden_SectorNebulaNewDustFog"
-  - "Eden_SectorNebulaNewDustFog2"
-  - "Eden_SectorNebulaNewDustFog3"
-  - "Eden_SectorNebulaNewOrangeFog"
-  - "Eden_SectorNebulaNewOrangeFog2"
-  - "Eden_SectorNebulaNewOrangeFog3"
-  - "Eden_SectorNebulaNewRedFog"
-  - "Eden_SectorNebulaNewRedFog2"
-  - "Eden_SectorNebulaNewRedFog3"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.5
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-- Type: "Eden_SectorAudio_DroneSwarm"
-  Name:
-  - "Eden_SectorAudio_DroneSwarm"
-  DisplayName: "Ambience"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  Mode: "Survival"
-  Faction: "None"
-  FactionTerritory:
-  - "Eden_Drone"
-  - "Eden_DroneHome"
-  SpaceDefenseOverrideDefaults: true
-- Type: "Eden_SectorNebulaRockField"
-  Name:
-  - "Eden_SectorNebulaRockField"
-  DisplayName: "Rich Asteroid Field"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Compound:
-    CountMinMax:
-    - 6
-    - 10
-    Probability: 1
-    Name:
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    - "CompoundEdenAsteroidRichT4"
-    DistanceMinMax:
-    - 750
-    - 1000
-    Rotate: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "None"
-  FactionTerritory:
-  - "Eden_DroneHome"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "Eden_BA_DummyPOI"
-  DisplayName: "Class 5 Combat Site"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Eden_DroneHome"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  GroupName: "RE2_RogueSpaceNursery"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "Discovery"
-    Value: "False"
-  - Key: "RegenAfter"
-    Value: "4320"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Eden_DroneHome"
-- Type: "BA_Alien"
-  GroupName: "RE2_RogueSpaceHealerT2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "RegenAfter"
-    Value: "4320"
-  Mode: "Survival"
-  Pos:
-  - 500
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 270
-  - 0
-  Faction: "Eden_EnemySupport"
-  FactionTerritory:
-  - "Eden_DroneHome"
-- Type: "BA_Alien"
-  GroupName: "RE2_RogueSpaceHealerT2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "RegenAfter"
-    Value: "4320"
-  Mode: "Survival"
-  Pos:
-  - -500
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 90
-  - 0
-  Faction: "Eden_EnemySupport"
-  FactionTerritory:
-  - "Eden_DroneHome"
-- Type: "BA_Alien"
-  GroupName: "RE2_RogueSpaceHealerT2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "RegenAfter"
-    Value: "4320"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 500
-  Rot:
-  - 0
-  - 180
-  - 0
-  Faction: "Eden_EnemySupport"
-  FactionTerritory:
-  - "Eden_DroneHome"
-- Type: "BA_Alien"
-  GroupName: "RE2_RogueSpaceHealerT2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "RegenAfter"
-    Value: "4320"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - -500
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Eden_EnemySupport"
-  FactionTerritory:
-  - "Eden_DroneHome"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundRogueT1"
-  GroupName: "RE2_OPVRogueT1"
-  DisplayName: "Drone"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 500
-    - 4000
-    PosYMax: 3000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "3000"
-  - Key: "HudDistance"
-    Value: "3000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Eden_Drone"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundRogueT1Home"
-  GroupName: "RE2_OPVRogueT1"
-  DisplayName: "Drone"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosXZMinMax:
-    - 500
-    - 4000
-    PosYMax: 3000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "3000"
-  - Key: "HudDistance"
-    Value: "3000"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "Eden_DroneHome"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundEdenAsteroidRichT4"
-  GroupName: "Eden_AsteroidRichT4"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  InitPower: "True"
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "3000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "Eden_Resource"
-  FactionTerritory:
-  - "Eden_DroneHome"
-  SpaceDefenseOverrideDefaults: true
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT1"
-  GroupName: "Eden_AsteroidT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT2"
-  GroupName: "Eden_AsteroidT2"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT3Cold"
-  GroupName: "Eden_AsteroidT3Cold"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT3Hot"
-  GroupName: "Eden_AsteroidT3Hot"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidT4"
-  GroupName: "Eden_AsteroidT4"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.8
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "BA_Alien"
-  Name:
-  - "CompoundAsteroidMagmaciteT1"
-  GroupName: "Eden_AsteroidMagmaciteT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  IsCompoundSubDesc: true
-  Properties:
-  - Key: "MapDistance"
-    Value: "6000"
-  - Key: "HudDistance"
-    Value: "6000"
-  - Key: "RegenAfter"
-    Value: "4320"
-  - Key: "MapMarker"
-    Value: "Neutral"
-  Mode: "Survival"
-  Faction: "None"
+
+# Asteroid Fields and sector nebula
+    - Name: [AsteroidFieldFewBoxExclude]
+      FieldName: [AsteroidFieldFewBoxExclude]
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.25
+      BaseField: True
+
+    - Name: [Eden_SectorNebulaNewOrangeStorm, Eden_SectorNebulaNewOrangeStormBright, Eden_SectorNebulaNewRedStorm, Eden_SectorNebulaNewDustFog, Eden_SectorNebulaNewDustFog2, Eden_SectorNebulaNewDustFog3, Eden_SectorNebulaNewOrangeFog, Eden_SectorNebulaNewOrangeFog2, Eden_SectorNebulaNewOrangeFog3, Eden_SectorNebulaNewRedFog, Eden_SectorNebulaNewRedFog2, Eden_SectorNebulaNewRedFog3]
+      FieldName: [Eden_SectorNebulaNewOrangeStorm, Eden_SectorNebulaNewOrangeStormBright, Eden_SectorNebulaNewRedStorm, Eden_SectorNebulaNewDustFog, Eden_SectorNebulaNewDustFog2, Eden_SectorNebulaNewDustFog3, Eden_SectorNebulaNewOrangeFog, Eden_SectorNebulaNewOrangeFog2, Eden_SectorNebulaNewOrangeFog3, Eden_SectorNebulaNewRedFog, Eden_SectorNebulaNewRedFog2, Eden_SectorNebulaNewRedFog3]
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+
+    - Type: Eden_SectorAudio_DroneSwarm
+      Name: [Eden_SectorAudio_DroneSwarm]
+      DisplayName: Ambience
+      Faction: None
+      FactionTerritory: [Eden_Drone, Eden_DroneHome]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+
+
+    - Type: Eden_SectorNebulaRockField
+      Name: [Eden_SectorNebulaRockField]
+      DisplayName: Rich Asteroid Field
+      Faction: None
+      FactionTerritory: [Eden_DroneHome]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [6, 10]
+        Probability: 1
+        Name: [CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4, CompoundEdenAsteroidRichT4]
+        DistanceMinMax: [750, 1000]
+        Rotate: true
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+        - Key: RegenAfter
+          Value: 720
+
+# Home
+    # - Type: AsteroidVoxel01Iron
+      # Name: [Eden_BA_DummyPOI]
+      # DisplayName: EdenAsteroidScaninfo
+      # Faction: None
+      # FactionTerritory: [Eden_DroneHome]
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # InitPower: True
+      # Pos: [0, 0, 0]
+      # Rot: [0, 0, 0]
+      # # Compound:
+        # # CountMinMax: [4, 6]
+        # # Probability: 1
+        # # Name: [CompoundRogueT1Home, CompoundRogueT1Home, CompoundRogueT1Home, CompoundRogueT1Home, CompoundRogueT1Home, CompoundRogueT1Home]
+        # # DistanceMinMax: [500, 2500]
+        # # Rotate: false
+      # Properties:
+        # - Key: MapDistance
+          # Value: 0
+        # - Key: HudDistance
+          # Value: 0
+
+# Central Marker
+    - Type: BA_Alien
+      Name: [Eden_BA_DummyPOI]
+      DisplayName: Class 5 Combat Site
+      Faction: Eden_DroneHome
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      # Compound:
+        # CountMinMax: [8, 12]
+        # Probability: 1
+        # Name: [CompoundAsteroidT4, CompoundAsteroidT4, CompoundAsteroidT3Cold, CompoundAsteroidT2, CompoundAsteroidT2, CompoundAsteroidT3Cold, CompoundAsteroidMagmaciteT1, CompoundAsteroidT1, CompoundAsteroidT1, CompoundAsteroidMagmaciteT1, CompoundAsteroidT4]
+        # DistanceMinMax: [1000, 3000]
+        # Rotate: false
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+
+
+# Drone Swarm Main Outpost
+    - Type: BA_Alien
+      GroupName: RE2_RogueSpaceNursery
+      Faction: Eden_DroneHome
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      # Compound:
+        # CountMinMax: [1, 3]
+        # Probability: 1
+        # Name: [CompoundRaiderDefenseT2, CompoundRaiderDefenseT2, CompoundRaiderDefenseT2]
+        # DistanceMinMax: [500, 800]
+        # Rotate: false
+      Properties:
+        - Key: Discovery
+          Value: False
+        - Key: RegenAfter
+          Value: 4320
+
+# Drone Swarm Shield Boosters
+    - Type: BA_Alien
+      GroupName: RE2_RogueSpaceHealerT2
+      Faction: Eden_EnemySupport
+      FactionTerritory: [Eden_DroneHome]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      InitPower: True
+      Pos: [500, 0, 0]
+      Rot: [0, 270, 0]
+      Properties:
+        - Key: RegenAfter
+          Value: 4320
+
+    - Type: BA_Alien
+      GroupName: RE2_RogueSpaceHealerT2
+      Faction: Eden_EnemySupport
+      FactionTerritory: [Eden_DroneHome]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      InitPower: True
+      Pos: [-500, 0, 0]
+      Rot: [0, 90, 0]
+      Properties:
+        - Key: RegenAfter
+          Value: 4320
+
+    - Type: BA_Alien
+      GroupName: RE2_RogueSpaceHealerT2
+      Faction: Eden_EnemySupport
+      FactionTerritory: [Eden_DroneHome]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      InitPower: True
+      Pos: [0, 0, 500]
+      Rot: [0, 180, 0]
+      Properties:
+        - Key: RegenAfter
+          Value: 4320
+
+    - Type: BA_Alien
+      GroupName: RE2_RogueSpaceHealerT2
+      Faction: Eden_EnemySupport
+      FactionTerritory: [Eden_DroneHome]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      InitPower: True
+      Pos: [0, 0, -500]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: RegenAfter
+          Value: 4320
+
+
+
+#Rogue Drone Compound Definitions----------------------------------------------------------
+    - Type: BA_Alien
+      Name: [CompoundRogueT1]
+      GroupName: RE2_OPVRogueT1
+      DisplayName: Drone
+      Faction: Eden_Drone
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [500, 4000]
+         PosYMax: 3000
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720   
+
+# Home
+    - Type: BA_Alien
+      Name: [CompoundRogueT1Home]
+      GroupName: RE2_OPVRogueT1
+      DisplayName: Drone
+      Faction: Eden_DroneHome
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [500, 4000]
+         PosYMax: 3000
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720   
+
+# Asteroids for compounds.
+# Tier 4
+    - Type: BA_Alien
+      Name: [CompoundEdenAsteroidRichT4]
+      GroupName: Eden_AsteroidRichT4
+      Faction: Eden_Resource
+      FactionTerritory: [Eden_DroneHome]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      InitPower: True
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT1]
+      GroupName: Eden_AsteroidT1
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT2]
+      GroupName: Eden_AsteroidT2
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT3Cold]
+      GroupName: Eden_AsteroidT3Cold
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT3Hot]
+      GroupName: Eden_AsteroidT3Hot
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT4]
+      GroupName: Eden_AsteroidT4
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidMagmaciteT1]
+      GroupName: Eden_AsteroidMagmaciteT1
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 6000
+        - Key: HudDistance
+          Value: 6000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+
+
+# ================================================================================================================================================================================= Drone Base Setup
 DroneBaseSetup:
-- FreeDrones:
-  - Name:
-    - "Eden_RogueDroneSwarmerLaser"
-    - "Eden_RogueDroneSwarmerIon"
-    Faction: "Eden_DroneHome"
-    Count:
-    - 15
-    - 25
-    Radius:
-    - 1500
-    - 5000
-    Properties:
-    - Key: "AIManMaxPursuitRange"
-      Value: "50000"
-  SpaceVessels:
-  - Name:
-    - "RE2_OPVRogueT0"
-    CountMinMax:
-    - 5
-    - 6
-    Probability: 1
-    FixedMaxSpeed:
-    - 80
-    - 100
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 3600
-      - 3600
-      DelayBeforeSelfDestructionMinMax:
-      - 3600
-      - 3600
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 500
-      - 3000
-      Position:
-        PosXZMinMax:
-        - 500
-        - 2500
-        PosYMax: 500
-    StockDescription:
-      Name:
-      - "Eden_RogueDroneSwarmerLaser"
-      - "Eden_RogueDroneSwarmerIon"
-      AmountMinMax:
-      - 5
-      - 10
-      ExtraMinMax:
-      - 0
-      - 0
-      Type: "FighterDrone"
-    Properties:
-    - Key: "AIManPatrolFactions"
-      Value: "Eden_DroneHome, Eden_Drone"
-    - Key: "AIManMaxPursuitRange"
-      Value: "50000"
-    Faction: "Eden_DroneHome"
-  - Name:
-    - "RE2_OPVRogueHealerT1"
-    CountMinMax:
-    - 4
-    - 6
-    Probability: 1
-    FixedMaxSpeed:
-    - 15
-    - 30
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 3600
-      - 3600
-      DelayBeforeSelfDestructionMinMax:
-      - 3600
-      - 3600
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 1000
-      - 2000
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 1500
-      POINameAsPositionRef:
-      - "Eden_BA_DummyPOI"
-    StockDescription:
-      Name:
-      - "Eden_RogueDroneSwarmerLaser"
-      - "Eden_RogueDroneSwarmerIon"
-      AmountMinMax:
-      - 5
-      - 10
-      ExtraMinMax:
-      - 0
-      - 0
-      Type: "FighterDrone"
-    Properties:
-    - Key: "AIManPatrolFactions"
-      Value: "Eden_Drone"
-    - Key: "AIManMaxPursuitRange"
-      Value: "50000"
-    Faction: "Eden_DroneHome"
-  - Name:
-    - "RE2_OPVRogueMinerT1"
-    CountMinMax:
-    - 4
-    - 6
-    Probability: 1
-    FixedMaxSpeed:
-    - 6
-    - 15
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 3600
-      - 3600
-      DelayBeforeSelfDestructionMinMax:
-      - 3600
-      - 3600
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 1000
-      - 1500
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 1500
-        PosYMax: 500
-      POINameAsPositionRef:
-      - "Eden_BA_DummyPOI"
-    StockDescription:
-      Name:
-      - "SpaceDroneLaser"
-      - "SpaceDronePlasma"
-      AmountMinMax:
-      - 0
-      - 0
-      ExtraMinMax:
-      - 0
-      - 0
-      Type: "FighterDrone"
-    Properties:
-    - Key: "AIManPatrolFactions"
-      Value: "Eden_Resource"
-    - Key: "AIManMaxPursuitRange"
-      Value: "0"
-    Faction: "Eden_DroneHome"
-LandClaimZone: "Device"
+
+# ================================================================================================================================================================================= Drones
+      - FreeDrones:
+# ------------------------------------------------------------------------------------------------- Faction Main
+
+# Asteroid Patrols
+          - Name: [Eden_RogueDroneSwarmerLaser, Eden_RogueDroneSwarmerIon]
+            Faction: Eden_DroneHome
+            CanNotBeControlledByMasterAI: False
+            Count: [15, 25]
+            Radius: [1500, 5000]
+            Properties:
+              - Key: AIManMaxPursuitRange
+                Value: 50000
+
+# ================================================================================================================================================================================= Ships
+        SpaceVessels:
+# ================================================================================================================================================================================= Patrol Vessels and Freighters and Bases
+
+# Home
+          - Name: [RE2_OPVRogueT0]
+            Faction: Eden_DroneHome
+            CountMinMax: [5, 6]
+            Probability: 1
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [80, 100]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [500, 3000]
+              Position:
+                PosXZMinMax: [500, 2500]
+                PosYMax: 500
+            StockDescription:
+              Name: [Eden_RogueDroneSwarmerLaser, Eden_RogueDroneSwarmerIon] 
+              AmountMinMax: [5, 10]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
+                Value: "Eden_DroneHome, Eden_Drone"
+              - Key: AIManMaxPursuitRange
+                Value: 50000
+
+          # - Name: [RE2_OPVRogueT2]
+            # Faction: Eden_DroneHome
+            # CountMinMax: [1, 1]
+            # Probability: 1
+            # CanNotBeControlledByMasterAI: False
+            # FixedMaxSpeed: [20, 40]
+            # Mission: SpacePatrol
+            # MissionDescription:
+              # DelayBetweenRespawnMinMax: [3600, 3600]
+              # DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              # IsRespawnAfterDestruction: True
+              # RadiusMinMax: [1500, 2000]
+              # POINameAsPositionRef: [Eden_BA_DummyPOI]
+              # Position:
+                # PosXZMinMax: [1500, 2000]
+                # PosYMax: 1000
+            # StockDescription:
+              # Name: [Eden_RogueDroneSwarmerLaser, Eden_RogueDroneSwarmerIon] 
+              # AmountMinMax: [20, 30]
+              # ExtraMinMax: [0,0]
+              # Type: FighterDrone
+            # Properties:
+              # - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
+                # Value: "Eden_DroneHome, Eden_Drone"
+              # - Key: AIManMaxPursuitRange
+                # Value: 50000
+
+# Patrolling support drones
+          - Name: [RE2_OPVRogueHealerT1]
+            Faction: Eden_DroneHome
+            CountMinMax: [4, 6]
+            Probability: 1
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [15, 30]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [1000, 2000]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 1500
+            StockDescription:
+              Name: [Eden_RogueDroneSwarmerLaser, Eden_RogueDroneSwarmerIon] 
+              AmountMinMax: [5, 10]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: AIManPatrolFactions #POI's of which factions can be patrolled?
+                Value: "Eden_Drone"
+              - Key: AIManMaxPursuitRange
+                Value: 50000
+
+# Miners
+          - Name: [RE2_OPVRogueMinerT1]
+            Faction: Eden_DroneHome
+            CountMinMax: [4, 6]
+            Probability: 1
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [6, 15]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [1000, 1500]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1000, 1500]
+                PosYMax: 500
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: AIManPatrolFactions
+                Value: "Eden_Resource"
+              - Key: AIManMaxPursuitRange
+                Value: 0

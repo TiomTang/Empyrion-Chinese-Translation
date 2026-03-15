@@ -1,0 +1,520 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]
+
+\u4F20\u611F\u5668\u5E72\u6270: [c][ffff00]POI\u63A2\u6D4B\u8303\u56F4\u51CF\u5C11\u3002[-][/c]
+
+
+\u6709\u65F6\uFF0C\u4E00\u9897\u8352\u5E9F\u7684\u536B\u661F\u4F1A\u5F62\u6210\u9AD8\u5EA6\u6676\u5316\u7684\u5730\u58F3\u3002\u8FD9\u4E9B\u6240\u8C13\u7684\u6676\u4F53\u536B\u661F\u56E0\u5176\u6240\u542B\u7684\u81EA\u7136\u8D44\u6E90\u6216\u7CBE\u795E\u610F\u4E49\u800C\u5907\u53D7\u8FFD\u6367\u3002\u53EF\u63A2\u6D4B\u5230\u5927\u91CF\u7684\u7FD8\u66F2\u6C34\u6676\uFF08\u539F\u6599\uFF09\u3002"
+
+
+
+
+PlanetType: Crystalline Moon
+PlayfieldType: Moon
+Difficulty: 3
+
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.3, 0, 0.4" 
+SkyColor: "0.3, 0.05, 0.3"
+SkyHorizonColor: "0.02, 0, 0.02"
+AtmosphereParams: [2, 2]       
+
+# Light
+DayLightIntensity: 1
+NightLightIntensity: 0.8
+DayShadowStrength: 0.95
+
+LightZenithColor: "0.8,0.2,1"
+LightHorizonColor: "0.4,0,0.4"
+NightLightColor: "0.6,0.2,0.8"
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite
+
+
+# Fog
+FogColor: "0.3, 0, 0.5"
+FogCloudIntensity: 0.8
+# AtmosphereFog: 0.95
+# GroundFogIntensity: 0.24
+# GroundFogHeight: 45
+
+# Clouds and Wind
+CloudsDensity: 0.3
+CloudsSharpness: 0.2
+CloudsBrightness: 0.05
+CloudsOpacity: 0.03
+
+CloudsZenithColor: "0.5,0,0.5" 
+CloudsHorizonColor: "1, 0.5, 1"
+CloudsNightZenithColor: "0.2, 0, 0.3"
+CloudsNightHorizonColor: "0.3, 0, 0.5"
+
+WindSpeed: 2
+
+SpecialEffectsGlobal:
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 120
+    Delay: 120
+    Lifetime: 30
+
+# Special Effects
+SpecialEffectsLocal:
+  - Name: FireFliesGreenFew
+    Biome: [ Grassland ]
+    Time: Always
+    MaxHeight: 15
+  - Name: FireFliesGreen
+    Biome: [ Shore, ShallowWater ]
+    Time: Night
+    MaxHeight: 15
+# Fungus Pollen
+  - Name: Pollen
+    Biome: [ Fungus ]
+    Time: Always
+    MaxHeight: 15
+  - Name: Pollen
+    Biome: [ Fungus ]
+    Time: Always
+    MaxHeight: 15
+  - Name: Pollen
+    Biome: [ Fungus ]
+    Time: Always
+    MaxHeight: 15
+  - Name: Pollen
+    Biome: [ Fungus ]
+    Time: Always
+    MaxHeight: 15
+
+
+SpecialEffectsGlobal:
+# Weather
+    # Basic
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 2
+    Delay: 2
+    Lifetime: 600
+
+    # Rare
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 72
+    Delay: 96
+    Lifetime: 300
+  - Name: FogRadiationPurple
+    Type: Weather
+    InitialDelay: 96
+    Delay: 120
+    Lifetime: 300
+
+
+# Global Effects
+  # - Name: ThunderAndLightningWhite
+    # Biome: [ Any ]
+    # Time: Always
+    # InitialDelay: 0.5
+    # Delay: 6
+    # Lifetime: 30
+    # PlyDist: 100
+    # SpawnY: 500
+    # Struct: Avoid
+
+# ==============================================================
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 8
+# ======================================================================================================
+      # DistTypeWorm:
+        # FreqDirChange: 0.2
+        # DirChangeMagnitude: 0.2
+        # MaxLength: 50
+        # DeepnessType: 0 #Depth Style 0=Undefined, 1=Free, 2=Shallow
+# ======================================================================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: CopperResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 5, 6 ]
+      DepthMinMax: [ 4, 10 ]
+      DroneProb: 0
+      MaxDroneCount: 2
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 8
+
+    - Name: NeodymiumResource
+      IsScalingCount: True
+      CountMinMax: [ 1, 2 ]
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 20, 30 ]
+      DroneProb: 0
+      MaxDroneCount: 1
+      #DistTypeCylinder:
+        #MaxRadius: 3
+        #YVariance: 25
+
+    - Name: PromethiumResource
+      Biome: [ Crystal ]
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 4, 5 ]
+      DroneProb: 0
+      MaxDroneCount: 5
+      DepthMinMax: [ 20, 40 ]
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 8
+
+    - Name: PentaxidResource
+      Biome: [ Crystal ]
+      IsScalingCount: True
+      CountMinMax: [ 4, 5 ]
+      SizeMinMax: [ 4, 6 ]
+      DroneProb: 1
+      MaxDroneCount: 8
+      DepthMinMax: [ 49, 65 ]
+      #DistTypeCylinder:
+        #MaxRadius: 32
+        #YVariance: 24
+
+    - Name: PentaxidResource
+      Biome: [ Plains ]
+      IsScalingCount: True
+      CountMinMax: [ 3, 4 ]
+      SizeMinMax: [ 4, 5 ]
+      DroneProb: 0.5
+      MaxDroneCount: 2
+      DepthMinMax: [ 30, 60 ]
+      #DistTypeCylinder:
+        #MaxRadius: 32
+        #YVariance: 10
+
+### Resource Asteroids
+AsteroidResources:
+    - Name: CopperResource
+      Threshold: 0.2
+      Amount: 0.1
+    - Name: NeodymiumResource
+      Threshold: 0.2
+      Amount: 0.1
+    - Name: PromethiumResource
+      Threshold: 0.2
+      Amount: 0.1
+    - Name: PentaxidResource
+      Threshold: 0.2
+      Amount: 0.1
+
+### POIs
+POIs:
+    Random:
+        - GroupName: Eden_KrielDroneBase
+          Faction: Kriel
+          # NoShieldReload: True    
+#          # NoShieldReload: True
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 5, 8 ]
+          ReserveCount: 5
+          SpawnResource: ["PentaxidResource:2-3","NeodymiumResource:0-1"]
+          SpawnResourceRange: [115,250]
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: MapDistance
+              Value: 250
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+# Kriel POIs
+        - GroupName: Eden_KrielAuxT2
+          Faction: Kriel
+          # NoShieldReload: True
+          Biome: [ Crystal ]
+          CountMinMax: [ 1, 2 ]
+          # IsScalingCount: True 
+          DroneProb: 0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 1
+          TroopTransport: False
+          SpawnResource: ["PentaxidResource:1-2","NeodymiumResource:0-1"]
+          SpawnResourceRange: [115,250]
+          AuxiliaryPOIs: [R2RadosDefenseT1]
+          Properties:
+            - Key: MapDistance
+              Value: 250
+            - Key: RegenAfter
+              Value: 720
+
+# Rare Enlightened shrine in water.
+        - GroupName: Eden_LightShrineWater
+          Faction: Talon
+          IsImportant: True
+          Territory: False
+          Biome: [ ShallowWater ]
+          CountMinMax: [ 0, 1 ]
+          PlaceAt: OnWater
+          Properties: 
+            - Key: MapDistance
+              Value: 250
+            - Key: RegenAfter
+              Value: 720
+
+# Rados Drill Rigs
+        - GroupName: Eden_RadosDrillT2
+          Faction: Zirax
+          # NoShieldReload: True
+          Biome: [ Crystal ]
+          CountMinMax: [ 4, 5 ]
+          # IsScalingCount: True 
+          DroneProb: 0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 1
+          TroopTransport: False
+          SpawnResource: ["PentaxidResource:1-1","NeodymiumResource:0-1"]
+          SpawnResourceRange: [105,125]
+          SpawnPOIAvoid: [Eden_RadosDrillT2]
+          SpawnPOIAvoidDistance: 750
+          AuxiliaryPOIs: [R2RadosDefenseT1]
+          Properties:
+            - Key: MapDistance
+              Value: 250
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: R2RadosDefenseT1
+          Faction: Zirax
+          # NoShieldReload: True    
+          CountMinMax: [ 4, 5 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          IsAuxPOI: True
+          SpawnPOINearRange: [300, 375]
+          SpawnPOIAvoid: [R2RadosDefenseT1]
+          SpawnPOIAvoidDistance: 200
+          Properties: 
+            - Key: MapDistance
+              Value: 250
+            - Key: RegenAfter
+              Value: 720
+
+# Random defense outposts
+        - GroupName: R2RadosDefenseT1
+          Faction: Zirax
+          # NoShieldReload: True    
+          CountMinMax: [ 8, 12 ]
+          # IsScalingCount: True 
+          DroneProb: 0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOIAvoid: [R2RadosDefenseT1]
+          SpawnPOIAvoidDistance: 500
+          Properties:
+            - Key: MapDistance
+              Value: 250
+            - Key: RegenAfter
+              Value: 720
+
+# Crystal Caves
+        - GroupName: Eden_CavernPurple 
+          Faction: Eden_Wreck
+          FactionTerritory: [All]
+          # NoShieldReload: True
+          Biome: [ Crystal ]
+          CountMinMax: [ 1, 2 ]
+          IsImportant: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+# Crystal Caves
+        - GroupName: Eden_CaveCrystalPurple 
+          Faction: Eden_Wreck
+          FactionTerritory: [All]
+          # NoShieldReload: True
+          Biome: [ Crystal ]
+          CountMinMax: [ 3, 4 ]
+          # IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+# Harvestable Pentaxid Crystals
+        # - GroupName: Eden_HarvestPentaxid 
+          # Faction: Alien
+          # Biome: [ Crystal ]
+          # CountMinMax: [ 10, 30 ]
+          # # IsScalingCount: True
+          # DroneProb: 0.2
+          # DronesMinMax: [ 1, 1 ]
+          # ReserveCount: 0
+          # TroopTransport: False
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 100
+            # - Key: HudDistance
+              # Value: 100
+            # - Key: RegenAfter
+              # Value: 720
+
+# Spires
+        - GroupName: Eden_SpireTall 
+          Faction: Eden_Wreck
+          FactionTerritory: [All]
+          Biome: [ Crystal, Plains ]
+          # CountMinMax: [ 8, 12 ]
+          CountMinMax: [ 1, 2 ]
+          # IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: RegenAfter
+              Value: 720
+
+# Spikes
+        - GroupName: Eden_SpikesPurple 
+          Faction: Eden_Wreck
+          FactionTerritory: [All]
+          Biome: [ Crystal, Plains ]
+          # CountMinMax: [ 8, 12 ]
+          CountMinMax: [ 1, 2 ]
+          # IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: RegenAfter
+              Value: 720
+
+# Glowing Crystals
+        - GroupName: Eden_CrystalsPurpleXL
+          Faction: Eden_Wreck
+          FactionTerritory: [All]
+          Biome: [ Crystal ]
+          # CountMinMax: [ 100, 125 ]
+          CountMinMax: [ 5, 10 ]
+          # IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ 300, 170, 160 ] 
+          RotY: 160
+          Armor: ArmorMedium
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+# ==============================================================
+# ==============================================================
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup  
+          Difficulty: 7
+          PresetStyle: 3
+          Stock:
+              - Name: DroneSmallFast01Plasma
+                Amount: 200
+                Extra: 0
+
+              - Name: EnemyDroneV2Plasma
+                Amount: 400
+                Extra: 0
+
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport01
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 250
+                Extra: 3
+
+              - Name: Mechanoid
+                Amount: 250
+                Extra: 3
+
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 1, 2 ]
+          CenterX: 2500
+          Radius: 3000
+
+        - DronesMinMax: [ 1, 2 ]
+          CenterX: -2500
+          Radius: 3000

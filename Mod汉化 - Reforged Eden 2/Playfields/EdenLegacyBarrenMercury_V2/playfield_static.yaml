@@ -1,149 +1,202 @@
-PlayfieldType: "Planet"
-PlanetType: "Barren"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]
+
+[c][ffff00]\u8B66\u544A\uFF1A\u65B0\u7684\u88C5\u9970\u7CFB\u7EDF\u6B63\u5728\u6D4B\u8BD5\u4E2D\u3002\u8FDB\u5165\u6B64\u6E38\u620F\u573A\u5730\u53EF\u80FD\u4F1A\u9047\u5230\u610F\u5916\u95EE\u9898\u3002[-][/c]
+
+\u8FD9\u9897\u884C\u661F\u6CA1\u6709\u4EFB\u4F55\u81EA\u7136\u751F\u547D\uFF0C\u767D\u5929\u56E0\u9760\u8FD1\u592A\u9633\u800C\u88AB\u7099\u70E4\uFF0C\u591C\u665A\u5219\u51B0\u5BD2\u523A\u9AA8\u3002\u5BCC\u542B\u8D44\u6E90\u7684\u9668\u77F3\u8986\u76D6\u5728\u5730\u8868\uFF0C\u800C\u5730\u8868\u6DF1\u5904\u5219\u8574\u85CF\u7740\u4E30\u5BCC\u7684\u77FF\u85CF\u3002"
+
+
+
+
+
+PlanetType: Barren
+PlayfieldType: Planet
 Difficulty: 2
-SunFlare: "EnvironmentalEffects/SunFlareWhiteMoon"
-AtmosphereEnabled: false
-FogCloudIntensity: 1
+
+LandClaimZone: Device
+
+
+# Atmosphere and Sky
+AtmosphereEnabled: False
+
+# Light
 DayLightIntensity: 1.6
+NightLightIntensity: 0.7
+
 DayShadowStrength: 0.95
-CloudsSharpness: 1
-Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n[c][ffff00]\u8B66\u544A\uFF1A\u65B0\u7684\u661F\u533A\u6B63\u5728\u6D4B\u8BD5\u4E2D\u3002\u8FDB\u5165\u6B64\u6E38\u620F\u573A\u5730\u53EF\u80FD\u4F1A\u9047\u5230\u610F\u5916\u95EE\u9898\u3002[-][/c]\n\n\u8FD9\u9897\u884C\u661F\u6CA1\u6709\u4EFB\u4F55\u81EA\u7136\u751F\u547D\uFF0C\u5B83\u56E0\u4E0E\u592A\u9633\u8DDD\u79BB\u8FC7\u8FD1\u800C\u5728\u767D\u5929\u88AB\u7099\u70E4\uFF0C\u591C\u95F4\u53C8\u8FC5\u901F\u51B0\u51BB\u3002\u8D44\u6E90\u4E30\u5BCC\u7684\u9668\u77F3\u8986\u76D6\u8868\u9762\uFF0C\u800C\u4E30\u5BCC\u7684\u77FF\u85CF\u9690\u85CF\u5728\u5730\u4E0B\u6DF1\u5904\u3002"
-PlanetClass: "Barren"
-UseRandom: true
-LandClaimZone: "Device"
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhiteMoon
+# ==============================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "IronResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 9
-  - 10
-  DepthMinMax:
-  - 40
-  - 50
-  DroneProb: 1
-  MaxDroneCount: 5
-- Name: "MagnesiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 3
-  SizeMinMax:
-  - 6
-  - 7
-  DepthMinMax:
-  - 6
-  - 15
-  DroneProb: 1
-  MaxDroneCount: 5
-- Name: "SathiumResource"
-  CountMinMax:
-  - 2
-  - 2
-  SizeMinMax:
-  - 11
-  - 12
-  DepthMinMax:
-  - 40
-  - 50
-  DroneProb: 1
-  MaxDroneCount: 5
-- Name: "SathiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 5
-  - 6
-  SizeMinMax:
-  - 9
-  - 11
-  DepthMinMax:
-  - 40
-  - 50
-  DroneProb: 1
-  MaxDroneCount: 5
-- Name: "GoldResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 5
-  - 6
-  SizeMinMax:
-  - 2
-  - 3
-  DepthMinMax:
-  - 20
-  - 30
-  DroneProb: 1
-  MaxDroneCount: 5
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+    - Name: IronResource
+      IsScalingCount: True
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 9, 10 ]
+      DepthMinMax: [ 40, 50 ]
+      DroneProb: 1
+      MaxDroneCount: 5
+      #DistTypeCylinder:
+        #MaxRadius: 3
+        #YVariance: 3
+
+    - Name: MagnesiumResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 6, 7 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 1
+      MaxDroneCount: 5
+      #DistTypeCylinder:
+        #MaxRadius: 32
+        #YVariance: 3
+
+    - Name: SathiumResource
+      # IsScalingCount: True
+      CountMinMax: [ 2, 2 ]
+      SizeMinMax: [ 11, 12 ]
+      DroneProb: 1
+      MaxDroneCount: 5
+      DepthMinMax: [ 40, 50 ]
+      #DistTypeCylinder:
+        #MaxRadius: 32
+        #YVariance: 3
+
+    - Name: SathiumResource
+      IsScalingCount: True
+      CountMinMax: [ 5, 6 ]
+      SizeMinMax: [ 9, 11 ]
+      DroneProb: 1
+      MaxDroneCount: 5
+      DepthMinMax: [ 40, 50 ]
+      #DistTypeCylinder:
+        #MaxRadius: 3
+        #YVariance: 3
+
+    - Name: GoldResource
+      IsScalingCount: True
+      CountMinMax: [ 5, 6 ]
+      SizeMinMax: [ 2, 3 ]
+      DroneProb: 1
+      MaxDroneCount: 5
+      DepthMinMax: [ 20, 30 ]
+      #DistTypeCylinder:
+        #MaxRadius: 2
+        #YVariance: 2
+
+### Resource Asteroids
 AsteroidResources:
-- Name: "IronResource"
-  Threshold: 0.1
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "MagnesiumResource"
-  Threshold: 0.1
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "SathiumResource"
-  Threshold: 0.1
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
+     - Name: IronResource
+       Threshold: 0.1
+       Amount: 0.2
+     - Name: MagnesiumResource
+       Threshold: 0.1
+       Amount: 0.2
+     - Name: SathiumResource
+       Threshold: 0.1
+       Amount: 0.2
+
+### POIs
 POIs:
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - -835
-    - 165
-    - -1000
-    RotY: 125
-    Armor: "ArmorMedium"
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Armor: "ArmorMedium"
-DroneBaseSetup:
-  Random:
-  - GroupName: "DroneBaseSetup"
-    Difficulty: 6
-    PresetStyle: 3
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneBomberAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "EnemyDroneV2Plasma"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMinigun"
-      Amount: "500"
-      Extra: 3
-    - Name: "ZiraxRocket"
-      Amount: "500"
-      Extra: 3
-    - Name: "Crawler"
-      Amount: "150"
-      Extra: 3
-    - Name: "AlienAssassinGrey"
-      Amount: "300"
-      Extra: 3
-DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: -5000
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: 5000
+    Random:
+
+
+
+
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -835, 165, -1000 ]
+          RotY: 125
+          Armor: ArmorMedium
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+# Drones
+# ------------ Aerodrones with propellers.
+# DroneSmallZiraxEMP
+# DroneAeroZiraxMinigun
+# DroneAeroZiraxCannon
+# DroneAeroZiraxRocket
+
+# ------------ Small hoverdrones
+# DroneHoverZiraxMinigun
+# DroneHoverZiraxLaser
+# DroneHoverZiraxRocket
+
+# ------------ Large gunships
+# DroneLargeZiraxMinigun
+# DroneLargeZiraxRocket
+# DroneLargeZiraxPlasma
+
+### Drones
+DroneBaseSetup: 
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 6
+          PresetStyle: 3
+          Stock:
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0  
+    
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: Crawler
+                Amount: 150
+                Extra: 3
+
+              - Name: AlienAssassinGrey
+                Amount: 300
+                Extra: 3
+   
+
+
+# Drones that patrol on whole planet 
+DroneSpawning:    
+    Random:
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: -5000
+
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: 5000

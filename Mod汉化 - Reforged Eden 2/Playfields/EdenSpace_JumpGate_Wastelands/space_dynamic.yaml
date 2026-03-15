@@ -1,98 +1,73 @@
-UseFixed: "True"
-PlayfieldType: "Space"
-Description: "\u4E00\u4E2A\u5C06\u4F60\u5E26\u5230\u94F6\u6CB3\u7CFB\u9065\u8FDC\u533A\u57DF\u7684\u8DC3\u8FC1\u4E4B\u95E8\u3002\n\u6B64\u8DC3\u8FC1\u4E4B\u95E8\u901A\u5F80\u94F6\u6CB3\u7CFB\u7684\u4E1C\u5357\u4FA7\uFF0C\u5728\u4F7F\u7528\u524D\u9700\u8981\u4FEE\u590D\u3002\n\n[c][ffffff][i]\u91C7\u77FF\u9635\u8425\u5360\u9886\u7684\u5C0F\u884C\u661F\u88AB\u89C6\u4E3A\u6218\u4E89\u884C\u4E3A\u3002\u5B58\u5728\u53D7\u94F6\u6CB3\u9635\u8425\u9886\u571F\u5F71\u54CD\u7684 POI\u3002[/i][-][/c]"
-PlanetType: "Jump Gate"
-Radiation:
-- 3
-- 6
-TemperatureDay:
-- -150
-- -100
-Music:
-- "2473"
-- "Adrift"
-- "Anomalous"
-- "ColdSpace"
-- "EnergyMatrix"
-- "FirstHours"
-- "Magnitude"
-- "moonstone"
-- "MorningLight"
-- "Transit"
-- "Voyage"
-PlayfieldLevelOverride:
-- 1
-- 2
+# Playfield Characteristics
+Description: "\u4E00\u4E2A\u8DC3\u8FC1\u4E4B\u95E8\uFF0C\u53EF\u4EE5\u5C06\u4F60\u4F20\u9001\u5230\u94F6\u6CB3\u7CFB\u7684\u9065\u8FDC\u533A\u57DF\u3002
+
+\u8FD9\u4E2A\u8DC3\u8FC1\u4E4B\u95E8\u901A\u5411\u94F6\u6CB3\u7CFB\u7684\u4E1C\u5357\u4FA7\u3002\u5728\u4F7F\u7528\u4E4B\u524D\u9700\u8981\u8FDB\u884C\u4FEE\u7406\u3002
+
+[c][ffffff][i]\u5F00\u91C7\u88AB\u67D0\u9635\u8425\u5360\u9886\u7684\u5C0F\u884C\u661F\u88AB\u89C6\u4E3A\u6218\u4E89\u884C\u4E3A\u3002\u94F6\u6CB3\u7CFB\u9635\u8425\u9886\u5730\u5185\u7684POI\u4F1A\u53D7\u5230\u5F71\u54CD\u3002[/i][-][/c]"
+
+
+
+
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0
+UseFixed: True
+
+Radiation: [3,6]
+TemperatureDay: [-150,-100]
+Music: [2473, Adrift, Anomalous, ColdSpace, EnergyMatrix, FirstHours, Magnitude, moonstone, MorningLight, Transit, Voyage]
+
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: Jump Gate
+PlayfieldLevelOverride: [1,2]
+
+    # # # ---------------------------------------------------------------------
+# ===========================================================================================================================================================================================
+# ===========================================================================================================================================================================================
+# ===========================================================================================================================================================================================
+
+### Resource Asteroid
 Resources:
-- Name:
-  - "AsteroidVoxel01Iron"
-  - "AsteroidVoxel02Iron"
-  - "AsteroidVoxel03Iron"
-  DisplayName: "Iron Asteroid"
-  CountMinMax:
-  - 0
-  - 0
-  Position:
-    PosYMax: 2000
-  Properties:
-  - Key: "RegenAfter"
-    Value: "180"
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 0, 0 ]
+      Probability: 0
+      Properties:
+        - Key: RegenAfter
+          Value: 180
+
+### POIs
 POIs:
-- Name:
-  - "Eden_SectorNebulaNewBlueFog"
-  - "Eden_SectorNebulaNewBlueFog2"
-  - "Eden_SectorNebulaNewCyanFog"
-  - "Eden_SectorNebulaNewCyanFog2"
-  - "Eden_SectorNebulaNewDustFog"
-  - "Eden_SectorNebulaNewDustFog2"
-  - "Eden_SectorNebulaNewOrangeFog"
-  - "Eden_SectorNebulaNewOrangeFog2"
-  - "Eden_SectorNebulaNewBlueStorm"
-  FieldName:
-  - "Eden_SectorNebulaNewBlueFog"
-  - "Eden_SectorNebulaNewBlueFog2"
-  - "Eden_SectorNebulaNewCyanFog"
-  - "Eden_SectorNebulaNewCyanFog2"
-  - "Eden_SectorNebulaNewDustFog"
-  - "Eden_SectorNebulaNewDustFog2"
-  - "Eden_SectorNebulaNewOrangeFog"
-  - "Eden_SectorNebulaNewOrangeFog2"
-  - "Eden_SectorNebulaNewBlueStorm"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-- Type: "BA_Admin"
-  GroupName: "RE2_JumpGateT1"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "Discovery"
-    Value: "False"
-  Mode: "Survival"
-  Pos:
-  - -6000
-  - 0
-  - -6000
-  Rot:
-  - 0
-  - 46
-  - 0
-  Faction: "Civilian"
-  FactionTerritory:
-  - "All"
-LandClaimZone: "Device"
+    # - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidFieldRing] 
+      # FieldName: [AsteroidFieldRing] # used if playfield is not an orbit
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 1
+      # BaseField: True  
+      # RandomRotation: True
+
+    - Name: [Eden_SectorNebulaNewBlueFog, Eden_SectorNebulaNewBlueFog2, Eden_SectorNebulaNewCyanFog, Eden_SectorNebulaNewCyanFog2, Eden_SectorNebulaNewDustFog, Eden_SectorNebulaNewDustFog2, Eden_SectorNebulaNewOrangeFog, Eden_SectorNebulaNewOrangeFog2, Eden_SectorNebulaNewBlueStorm]
+      FieldName: [Eden_SectorNebulaNewBlueFog, Eden_SectorNebulaNewBlueFog2, Eden_SectorNebulaNewCyanFog, Eden_SectorNebulaNewCyanFog2, Eden_SectorNebulaNewDustFog, Eden_SectorNebulaNewDustFog2, Eden_SectorNebulaNewOrangeFog, Eden_SectorNebulaNewOrangeFog2, Eden_SectorNebulaNewBlueStorm] # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]
+      Probability: 0
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      # Position:
+         # PosXZMinMax: [50, 100]
+         # PosYMax: 50
+
+# Jump Gate
+    - Type: BA_Admin
+      GroupName: RE2_JumpGateT1
+      Faction: Civilian
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      InitPower: True
+      Pos: [-6000, 0, -6000]
+      Rot: [0, 46, 0]
+      Properties:
+        - Key: Discovery
+          Value: False

@@ -1,56 +1,51 @@
-UseFixed: "True"
-PlayfieldType: "Space"
-Description: "\u4E00\u4E2A\u6052\u661F\u7684\u7FD8\u66F2\u62B5\u8FBE\u70B9\u3002\n[c][ffff00]\u7FD8\u66F2\u88C2\u7F1D\uFF1A[-][/c] [c][ffffff]\u60A8\u65E0\u6CD5\u9501\u5B9A\u6B64\u661F\u533A\u6216\u76F4\u63A5\u8FDB\u884C\u7FD8\u66F2\u8DF3\u8DC3\u3002\u60A8\u53EA\u80FD\u4ECE\u4E0D\u540C\u661F\u7CFB\u6216\u901A\u8FC7\u822A\u70B9\u6765\u7FD8\u66F2\u81F3\u6B64\u5904\u3002\u84DD\u56FE\u5DE5\u5382\u5DF2\u7981\u7528\u3002[-][/c]\n[c][ffffff][i]\u5207\u52FF\u9057\u7559\u4EFB\u4F55\u7269\u54C1\u3002[/i][-][/c]"
-PlanetType: "SunOrbit"
-Radiation:
-- 5
-- 10
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintBA: false
-AllowBlueprintHV: false
-TemperatureDay:
-- -200
-- -100
-Music:
-- "alien2"
-- "AnAridPlace"
-- "barren"
-- "Blight"
-- "Cypher"
-- "DarkSoundscape"
-- "DarkSoundscape2"
-- "DarkSoundscape3"
-- "lava2"
-PlayfieldLevelOverride:
-- 1
-- 2
+# Playfield Characteristics
+Description: "\u6052\u661F\u7684\u7FD8\u66F2\u62B5\u8FBE\u70B9\u3002
+
+[c][ffff00]\u7FD8\u66F2\u88C2\u9699:[-][/c] [c][ffffff]\u6B64\u661F\u533A\u65E0\u6CD5\u9501\u5B9A\u6216\u76F4\u63A5\u7FD8\u66F2\u5230\u8FBE\u3002\u4F60\u53EA\u80FD\u4ECE\u5176\u4ED6\u6052\u661F\u7CFB\u6216\u901A\u8FC7\u822A\u8DEF\u70B9\u7FD8\u66F2\u5230\u8FBE\u3002\u84DD\u56FE\u5DE5\u5382\u5DF2\u7981\u7528\u3002[-][/c]
+
+[c][ffffff][i]\u4E0D\u8981\u7559\u4E0B\u4EFB\u4F55\u4E1C\u897F\u3002[/i][-][/c]"
+
+
+
+
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0 #Starter
+UseFixed: True
+
+# Standard Star
+Radiation: [5,10]
+TemperatureDay: [-200,-100]
+# Dark Ambient Music
+Music: [alien2, AnAridPlace, barren, Blight, Cypher, DarkSoundscape, DarkSoundscape2, DarkSoundscape3, lava2]
+
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: SunOrbit
+# PlanetClass: Sun Warp Target
+PlayfieldLevelOverride: [1,2]
+
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+AllowBlueprintBA: False
+AllowBlueprintHV: False
+
+### Resource Asteroid
 Resources:
-- Name:
-  - "AsteroidVoxel01Iron"
-  - "AsteroidVoxel02Iron"
-  - "AsteroidVoxel03Iron"
-  DisplayName: "Iron Asteroid"
-  CountMinMax:
-  - 1
-  - 2
-  Position:
-    PosYMax: 2000
-  Properties:
-  - Key: "RegenAfter"
-    Value: "720"
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0
+      Properties:
+        - Key: RegenAfter
+          Value: 720
+
+### POIs
 POIs:
-- Name:
-  - "AsteroidFieldBoxExclude"
-  - "AsteroidFieldFewBoxExclude"
-  FieldName:
-  - "AsteroidFieldBoxExclude"
-  - "AsteroidFieldFewBoxExclude"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  BaseField: true
-  RandomRotation: true
-LandClaimZone: "Device"
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude]
+      FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude] # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]
+      Probability: 0
+      BaseField: True
+      RandomRotation: True

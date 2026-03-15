@@ -1,549 +1,526 @@
-PlayfieldType: "Planet"
-PlanetType: "Midnight"
-Emissive: true
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+
+Description: "\u96BE\u5EA6: [c][ff0000]***[-][/c][c][ff00ff][b] \u6781\u9650 [/b][-][/c][c][ff0000]***[-][/c]
+
+[c][ffffff][i](\u6781\u9650\u96BE\u5EA6\u4F1A\u5E26\u6765\u6781\u7AEF\u6311\u6218\uFF0C\u5E76\u4E14\u53EF\u80FD\u5728\u6BEB\u65E0\u9884\u8B66\u7684\u60C5\u51B5\u4E0B\u5BFC\u81F4\u4F60\u7684\u98DE\u8239\u635F\u6BC1)[-][/i][/c]
+
+            
+[c][ffff00]\u9AD8\u91CD\u529B\u8B66\u544A[-][/c]
+
+
+\u8FD9\u9897\u884C\u661F\u88AB\u6D53\u539A\u7684\u5927\u6C14\u8986\u76D6\uFF0C\u5730\u8868\u5438\u6536\u4E86\u5927\u90E8\u5206\u5149\u7EBF\uFF0C\u6E29\u5EA6\u88AB\u52A0\u70ED\u5230\u6781\u7AEF\u9AD8\u6E29\u3002\u884C\u661F\u8868\u9762\u5B8C\u5168\u65E0\u6CD5\u53EF\u89C1\uFF0C\u4F46\u4F20\u611F\u5668\u663E\u793A\u8FD9\u91CC\u8574\u85CF\u7740\u5927\u91CF\u7684\u91D1\u77FF\u77F3\u3002"
+
+
+
+
+
+PlanetType: Midnight
+Emissive: True
+PlayfieldType: Planet
 Difficulty: 2
-SunFlare: "EnvironmentalEffects/SunFlareRed"
-SpecialEffectsLocal:
-- Name: "Grime"
-  MaxHeight: 20
-  Biome:
-  - "LargeCrater"
-  - "Unknown"
-- Name: "Grime"
-  MaxHeight: 20
-- Name: "Grime"
-  MaxHeight: 40
-- Name: "Grime"
-  MaxHeight: 60
-- Name: "Grime"
-  MaxHeight: 80
-  Biome:
-  - "LargeCrater"
-  - "Unknown"
-- Name: "Grime"
-  MaxHeight: 100
-  Biome:
-  - "LargeCrater"
-  - "Unknown"
-- Name: "Grime"
-  MaxHeight: 800
-- Name: "Grime"
-  MaxHeight: 800
-- Name: "Grime"
-  MaxHeight: 800
-SpecialEffectsGlobal:
-- Name: "CloudsDark"
-  InitialDelay: 0
-  Delay: 0
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "MeteorFireRain"
-  InitialDelay: 12
-  Delay: 24
-  Lifetime: 180
-  Type: "Weather"
-- Name: "FireRain"
-  InitialDelay: 12
-  Delay: 24
-  Lifetime: 180
-  Type: "Weather"
-AtmosphereColor: "0.1, 0, 0"
-AtmosphereParams:
-- 10
-- 3
-OrbitUsesLightColor: true
+
+LandClaimZone: Device
+
+
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.1, 0, 0" 
 SkyColor: "0,0,0"
-LightZenithColor: "0.01,0.01,0.01"
-LightHorizonColor: "0.0,0,0"
-NightLightColor: "0.4, 0, 0"
-CloudsZenithColor: "0,0,0"
-CloudsHorizonColor: "0,0,0"
-CloudsOpacity: 1
-FogCloudIntensity: 0.8
+AtmosphereParams: [10, 3]          # [Rayleigh Multiplier, Atmosphere Contrast], default is AtmosphereParams: [1, 1.6]   
+                                     # RayleighMultiplier between 0 and 10 - higher values make SkyColor / SkyHorizonColor more pronounced
+                                     # Atmosphere Contrast between 0 and 3 - lower values wash out SkyColor / SkyHorizonColor 
+
+# Light
 DayLightIntensity: 0
 NightLightIntensity: 0.9
 DayShadowStrength: 0.95
+
+LightZenithColor: "0.01,0.01,0.01"
+LightHorizonColor: "0.0,0,0"
+NightLightColor: "0.4, 0, 0"
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareRed
+OrbitUsesLightColor: True
+
+# Special Effects
+SpecialEffectsLocal:
+  - Name: Grime
+    Biome: [ LargeCrater, Unknown ]
+    MaxHeight: 20
+  - Name: Grime
+    MaxHeight: 20
+  - Name: Grime
+    MaxHeight: 40
+  - Name: Grime
+    MaxHeight: 60
+  - Name: Grime
+    Biome: [ LargeCrater, Unknown ]
+    MaxHeight: 80
+  - Name: Grime
+    MaxHeight: 100
+    Biome: [ LargeCrater, Unknown ]
+  - Name: Grime
+    MaxHeight: 800
+  - Name: Grime
+    MaxHeight: 800
+  - Name: Grime
+    MaxHeight: 800
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 1200
+  - Name: MeteorFireRain
+    Type: Weather
+    InitialDelay: 12
+    Delay: 24
+    Lifetime: 180
+  - Name: FireRain
+    Type: Weather
+    InitialDelay: 12
+    Delay: 24
+    Lifetime: 180
+
+# ==============================================================
+
+# Fog
+FogColor: "0, 0, 0"
+FogCloudIntensity: 0.8
+# AtmosphereFog: 0.95
+# GroundFogIntensity: 0.24
+# GroundFogHeight: 45
+
+# Clouds and Wind
 CloudsDensity: 1
 CloudsSharpness: 0
 CloudsBrightness: 0
+CloudsOpacity: 1
+CloudsZenithColor: "0,0,0"
+CloudsHorizonColor: "0,0,0"
 WindSpeed: 0
-FogColor: "0, 0, 0"
-Description: "\u96BE\u5EA6: [c][ff0000]***[-][/c][c][ff00ff][b] \u6781\u96BE [/b][-][/c][c][ff0000]***[-][/c]\n[c][ffffff][i](\u8BE5\u6A21\u5F0F\u96BE\u5EA6\u6781\u9AD8\uFF0C\u53EF\u80FD\u5728\u6CA1\u6709\u9884\u8B66\u7684\u60C5\u51B5\u4E0B\u5BFC\u81F4\u98DE\u8239\u635F\u5931)[-][/i][/c]\n\n[c][ffff00]\u91CD\u529B\u8B66\u544A[-][/c]\n\n\u88AB\u6D53\u539A\u7684\u6C14\u5C42\u8986\u76D6\u4E14\u8868\u9762\u5438\u6536\u5927\u90E8\u5206\u5149\u7EBF\uFF0C\u8FD9\u9897\u884C\u661F\u88AB\u52A0\u70ED\u81F3\u6781\u7AEF\u9AD8\u6E29\u3002\u6240\u6709\u80FD\u89C1\u5EA6\u5DF2\u6D88\u5931\u5728\u884C\u661F\u8868\u9762\uFF0C\u4F46\u4F20\u611F\u5668\u663E\u793A\u8FD9\u91CC\u6709\u5927\u91CF\u9EC4\u91D1\u77FF\u77F3\u3002"
-PlanetClass: "Midnight"
-UseRandom: true
-LandClaimZone: "Device"
+
+# ==============================================================
+
+# ==============================================================
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 5
+# ======================================================================================================
+      # DistTypeWorm:
+        # FreqDirChange: 0.2
+        # DirChangeMagnitude: 0.2
+        # MaxLength: 50
+        # DeepnessType: 0 #Depth Style 0=Undefined, 1=Free, 2=Shallow
+# ======================================================================================================
+        
+### Resource Deposits
 RandomResources:
-- Name: "IronResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 5
-  SizeMinMax:
-  - 8
-  - 13
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.3
-- Name: "GoldResource"
-  CountMinMax:
-  - 3
-  - 3
-  SizeMinMax:
-  - 13
-  - 13
-  DepthMinMax:
-  - 0
-  - 0
-  DroneProb: 1
-  MaxDroneCount: 5
-  Biome:
-  - "LargeCrater"
-- Name: "GoldResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 2
-  SizeMinMax:
-  - 11
-  - 12
-  DepthMinMax:
-  - 0
-  - 0
-  DroneProb: 0.7
-  MaxDroneCount: 2
-  Biome:
-  - "LargeCrater"
-- Name: "PlatinResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 4
-  SizeMinMax:
-  - 6
-  - 7
-  DepthMinMax:
-  - 3
-  - 6
-  DroneProb: 1
-  MaxDroneCount: 3
-- Name: "ZascosiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 3
-  SizeMinMax:
-  - 7
-  - 8
-  DepthMinMax:
-  - 3
-  - 6
-  DroneProb: 1
-  MaxDroneCount: 3
-- Name: "PromethiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 4
-  SizeMinMax:
-  - 3
-  - 6
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.7
+    - Name: IronResource
+      IsScalingCount: True
+      CountMinMax: [ 3, 5 ]
+      SizeMinMax: [ 8, 13 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.3
+      MaxDroneCount: 1
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 5
+
+        # Taken up by the Ghyst POI Complex
+    - Name: GoldResource
+      Biome: [ LargeCrater ]
+      # IsScalingCount: True
+      CountMinMax: [ 3, 3 ]
+      SizeMinMax: [ 13, 13 ]
+      DepthMinMax: [ 0, 0 ]
+      DroneProb: 1
+      MaxDroneCount: 5
+      # DistTypeWorm:
+
+    - Name: GoldResource
+      Biome: [ LargeCrater ]
+      IsScalingCount: True
+      CountMinMax: [ 1, 2 ]
+      SizeMinMax: [ 11, 12 ]
+      DepthMinMax: [ 0, 0 ]
+      DroneProb: 0.7
+      MaxDroneCount: 2
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 5
+
+    - Name: PlatinResource
+      IsScalingCount: True
+      CountMinMax: [ 3, 4 ]
+      SizeMinMax: [ 6, 7 ]
+      DepthMinMax: [ 3, 6 ]
+      DroneProb: 1
+      MaxDroneCount: 3
+      #DistTypeCylinder:
+        #MaxRadius: 3
+        #YVariance: 3
+
+    - Name: ZascosiumResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 7, 8 ]
+      DepthMinMax: [ 3, 6 ]
+      DroneProb: 1
+      MaxDroneCount: 3
+      #DistTypeCylinder:
+        #MaxRadius: 3
+        #YVariance: 3
+
+    - Name: PromethiumResource
+      IsScalingCount: True
+      CountMinMax: [ 2, 4 ]
+      SizeMinMax: [ 3, 6 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      #DistTypeCylinder:
+        #MaxRadius: 8
+        #YVariance: 10
+
+### Resource Asteroids
 AsteroidResources:
-- Name: "IronResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
-- Name: "GoldResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
-- Name: "ZascosiumResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
-- Name: "PromethiumResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: GoldResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: ZascosiumResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.1
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "R2DroneBase"
-    DroneBaseSetup: "DroneBaseSetup"
-    Faction: "Zirax"
-    Count:
-      Max: 1
-    CountMinMax:
-    - 0
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 4
-      Max: 5
-    DronesMinMax:
-    - 4
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "4320"
-  - GroupName: "R2GhystMain"
-    Faction: "Ghyst"
-    FactionTerritory:
-    - "Zirax"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "4320"
-    SpawnResource:
-    - "GoldResource:1-2"
-    SpawnResourceRange:
-    - 100
-    - 125
-    Biome:
-    - "LargeCrater"
-  - GroupName: "R2GhystAuxT2"
-    Faction: "Ghyst"
-    FactionTerritory:
-    - "Zirax"
-    Count:
-      Min: 5
-      Max: 8
-    CountMinMax:
-    - 5
-    - 8
-    DroneProb: 0.7
-    TroopTransport: true
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "R2GhystMain"
-    SpawnResource:
-    - "GoldResource:0-1"
-    SpawnPOINearRange:
-    - 250
-    - 500
-    SpawnResourceRange:
-    - 100
-    - 125
-  - GroupName: "R2GhystDefenseT2"
-    Faction: "Ghyst"
-    FactionTerritory:
-    - "Zirax"
-    Count:
-      Min: 3
-      Max: 5
-    CountMinMax:
-    - 3
-    - 5
-    DroneProb: 0.5
-    TroopTransport: true
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "R2GhystMain"
-    SpawnPOINearRange:
-    - 600
-    - 1000
-  - GroupName: "R2GhystAuxT2"
-    Faction: "Ghyst"
-    FactionTerritory:
-    - "Zirax"
-    AuxiliaryPOIs:
-    - "R2GhystAuxT1"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    ReserveCount: 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnResource:
-    - "GoldResource:0-1"
-    - "ZascosiumResource:0-1"
-    SpawnResourceRange:
-    - 100
-    - 125
-  - GroupName: "R2GhystAuxT1"
-    Faction: "Ghyst"
-    FactionTerritory:
-    - "Zirax"
-    Territory: false
-    IsAuxPOI: true
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    DroneProb: 0.5
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "R2GhystAuxT1"
-    SpawnPOINearRange:
-    - 200
-    - 400
-    SpawnPOIAvoidDistance: 150
-  - GroupName: "R2GhystAuxT1"
-    Faction: "Zirax"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    DroneProb: 0.7
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnResource:
-    - "GoldResource:0-1"
-    - "ZascosiumResource:0-1"
-    SpawnResourceRange:
-    - 100
-    - 125
-  - GroupName: "Eden_HarvestVoidiumT2"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "4320"
-  - GroupName: "Eden_HarvestVoidiumT2"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "4320"
-    SpawnPOINear:
-    - "Eden_HarvestVoidiumT2"
-    SpawnPOINearRange:
-    - 35
-    - 250
-  - GroupName: "Eden_HarvestVoidiumT2"
-    Faction: "None"
-    FactionTerritory:
-    - "Kriel"
-    - "Eden_DroneHome"
-    - "TheLegacy"
-    - "Tesch"
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "4320"
-    SpawnPOINear:
-    - "Eden_HarvestVoidiumT2"
-    SpawnPOINearRange:
-    - 35
-    - 250
-  - GroupName: "Eden_HarvestVoidiumT1"
-    Faction: "None"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "4320"
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    DroneProb: 0.4
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - -596
-    - 104
-    - -1063
-    RotY: 125
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Armor: "ArmorMedium"
+    Random:  
+        - GroupName: R2DroneBase
+          Faction: Zirax
+          # NoShieldReload: True  
+#          # NoShieldReload: True
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 0, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 5 ] 
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 4320
+
+              #Ghyst Compound =================================================
+        - GroupName: R2GhystMain
+          Faction: Ghyst
+          FactionTerritory: [Zirax]
+          # NoShieldReload: True  
+          Biome: [ LargeCrater ]
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          DroneProb: 1
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnResource: ["GoldResource:1-2"]
+          SpawnResourceRange: [100,125]
+          Properties: 
+            - Key: RegenAfter
+              Value: 4320
+
+              # Auxillary POIs for Ghyst Compound
+        - GroupName: R2GhystAuxT2
+          Faction: Ghyst
+          FactionTerritory: [Zirax]
+          CountMinMax: [ 5, 8 ]
+          # IsImportant: True
+          DroneProb: 0.7
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 0
+          TroopTransport: True
+          SpawnPOINear: [R2GhystMain]
+          SpawnPOINearRange: [250, 500]
+          SpawnResource: ["GoldResource:0-1"]
+          SpawnResourceRange: [100,125]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: R2GhystDefenseT2
+          Faction: Ghyst
+          FactionTerritory: [Zirax]
+          CountMinMax: [ 3, 5 ]
+          # IsImportant: True
+          DroneProb: 0.5
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 0
+          TroopTransport: True
+          SpawnPOINear: [R2GhystMain]
+          SpawnPOINearRange: [600, 1000]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        # Random Ghyst Compounds ====================================
+        - GroupName: R2GhystAuxT2 
+          Faction: Ghyst
+          FactionTerritory: [Zirax]
+          CountMinMax: [ 1, 2 ]
+          # IsImportant: True
+          IsScalingCount: True
+          DroneProb: 1
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 3
+          TroopTransport: True
+          AuxiliaryPOIs: [R2GhystAuxT1]
+          SpawnResource: ["GoldResource:0-1","ZascosiumResource:0-1"]
+          SpawnResourceRange: [100,125]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: R2GhystAuxT1
+          Faction: Ghyst
+          FactionTerritory: [Zirax]
+          Territory: False         
+          IsAuxPOI: True
+          SpawnPOINearRange: [200, 400]
+          CountMinMax: [ 3, 4 ]
+          DroneProb: 0.5
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [R2GhystAuxT1] 
+          SpawnPOIAvoidDistance: 150 
+          TroopTransport: False
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        # Rogue Drone Harvesters ====================================
+        # - GroupName: Eden_RogueHarvestAnchor
+          # Faction: Alien
+          # # NoShieldReload: True
+          # CountMinMax: [ 5, 6 ]
+          # # IsImportant: True
+          # IsScalingCount: True
+          # DroneProb: 0
+          # DronesMinMax: [ 1, 1 ]
+          # ReserveCount: 3
+          # TroopTransport: False
+          # AuxiliaryPOIs: [Eden_RogueHarvest]
+          # SpawnResource: ["GoldResource:0-1","ZascosiumResource:0-1","PromethiumResource:0-1"]
+          # SpawnResourceRange: [150,300]
+          # Properties: 
+            # - Key: SI
+              # Value: Off
+            # - Key: RegenAfter
+              # Value: 720
+
+        # - GroupName: Eden_RogueHarvest
+          # Faction: Alien
+          # # NoShieldReload: True
+          # Territory: False         
+          # IsAuxPOI: True
+          # SpawnPOINearRange: [100, 200]
+          # CountMinMax: [ 2, 3 ]
+          # DroneProb: 0
+          # DronesMinMax: [ 1, 1 ]
+          # ReserveCount: 0
+          # TroopTransport: False
+          # # SpawnPOIAvoid: [R2GhystAuxT1] 
+          # # SpawnPOIAvoidDistance: 150 
+          # TroopTransport: False
+          # Properties: 
+            # - Key: SI
+              # Value: Off
+            # - Key: RegenAfter
+              # Value: 720
+
+              # Random Ghyst POIs
+        - GroupName: R2GhystAuxT1
+          Faction: Zirax
+          # NoShieldReload: True  
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True 
+          DroneProb: 0.7
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          SpawnResource: ["GoldResource:0-1","ZascosiumResource:0-1"]
+          SpawnResourceRange: [100,125]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+# Harvestable Voidium
+        - GroupName: Eden_HarvestVoidiumT2
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+        - GroupName: Eden_HarvestVoidiumT2
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [Eden_HarvestVoidiumT2]
+          SpawnPOINearRange: [35, 250]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+        - GroupName: Eden_HarvestVoidiumT2
+          Faction: None
+          FactionTerritory: [Kriel, Eden_DroneHome, TheLegacy, Tesch]
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [Eden_HarvestVoidiumT2]
+          SpawnPOINearRange: [35, 250]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+        - GroupName: Eden_HarvestVoidiumT1
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+              # Crashed Ships.
+        - GroupName: CrashedShip    
+          Faction: None      
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          DroneProb: 0.4
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
 DroneBaseSetup:
-  Random:
-  - GroupName: "DroneBaseSetup"
-    Stock:
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneLargeSlow01Minigun"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallSlow01Cannon"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneSmallAttackBase"
-      Amount: "300"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMinigun"
-      Amount: "500"
-      Extra: 3
-    - Name: "ZiraxRocketPatrol"
-      Amount: "100"
-      Extra: 3
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 0
+          PresetStyle: 0
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeSlow01Minigun
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallAttackBase
+                Amount: 300
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              # - Name: RipperDog  # No atmosphere. But Zirax wear at least masks.
+                # Amount: 400
+                # Extra: 3
+
+              - Name: ZiraxRocketPatrol
+                Amount: 100
+                Extra: 3
+                
 DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 5
-    - 10
-    CenterX: -5000
-    Radius: 2000
-  - DronesMinMax:
-    - 5
-    - 10
-    CenterX: -2500
-    Radius: 1500
-  - DronesMinMax:
-    - 5
-    - 10
-    CenterX: 2500
-    Radius: 1500
-  - DronesMinMax:
-    - 5
-    - 10
-    CenterX: 5000
-    Radius: 2000
+    Random:
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -5000
+          Radius: 2000
+    
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 2500
+          Radius: 1500
+          
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 5000
+          Radius: 2000
+          

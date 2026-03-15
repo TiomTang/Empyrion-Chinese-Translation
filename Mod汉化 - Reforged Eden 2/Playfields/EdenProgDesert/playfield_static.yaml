@@ -1,450 +1,495 @@
-PlayfieldType: "Planet"
-PlanetType: "Decayed Desert"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]
+
+
+\u4E00\u9897\u8352\u829C\u65E0\u751F\u547D\u7684\u4E16\u754C\uFF0C\u66FE\u7ECF\u7531\u88AB\u79F0\u4E3A\u5148\u9A71\u8005\u7684\u6587\u660E\u5C45\u4F4F\u3002"
+
+
+
+
+PlanetClass: Decayed Desert
+PlanetType: Decayed Desert
+PlayfieldType: Planet
 Difficulty: 4
-SunFlare: "EnvironmentalEffects/SunFlareWhite"
+
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+AllowBlueprintBA: False
+AllowBlueprintHV: False
+
+LandClaimZone: Device
+
+# Special Effects 
+SpecialEffectsLocal:
+
 SpecialEffectsGlobal:
-- Name: "Clear"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "HeatWave"
-  InitialDelay: 48
-  Delay: 12
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "Wind"
-  InitialDelay: 20
-  Delay: 8
-  Lifetime: 500
-  Type: "Weather"
-AtmosphereColor: "0.3, 0.7, 0.3"
-AtmosphereParams:
-- 8
-- 2.5
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 1200
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 20
+    Delay: 8
+    Lifetime: 500
+# Global Effects
+
+# =========================== First Sky - Blue
+
+# # Atmosphere and Sky
+# AtmosphereEnabled: True
+# AtmosphereColor: "0.3, 0.3, 0.8"  
+# SkyColor: "0.3, 0.3, 0.8"
+# SkyHorizonColor: "0.4, 0.4, 0.5"
+# AtmosphereParams: [2, 2.5]       
+
+# # Light
+# DayLightIntensity: 0.7
+# NightLightIntensity: 0.6
+# LightZenithColor: "0.65, 0.67, 0.7"
+# LightHorizonColor: "0.7, 0.7, 0.8"
+# NightLightColor: "0.5, 0.9, 0.5"
+# DayShadowStrength: 1
+# NightShadowStrength: 1
+
+# # Sun
+# SunFlare: EnvironmentalEffects/SunFlareWhite
+
+# # Fog
+# AtmosphereFog: 0.35
+# FogColor: "0.7, 0.7, 0.7"
+# FogCloudIntensity: 0.8
+# GroundFogIntensity: 0.05
+# GroundFogHeight: 60
+
+# # Clouds & Wind
+# CloudsDensity: 0.1
+# CloudsSharpness: 0.05
+# CloudsOpacity: 0.3
+
+# CloudsBrightness: 0.7
+# CloudsZenithColor: "0.25, 0, 0.3"
+# CloudsHorizonColor: "2, 0.3, 2"
+# CloudsNightZenithColor: "0.1, 0, 0"
+# CloudsNightHorizonColor: "0.4, 0.6, 0"
+
+# WindSpeed: 3
+
+
+# =========================== Second Sky - Green
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.3, 0.7, 0.3"  
 SkyColor: "0.2, 0.5, 0.2"
 SkyHorizonColor: "0.4, 0.4, 0.5"
+AtmosphereParams: [8, 2.5]       
+
+# Light
+DayLightIntensity: 0.7
+NightLightIntensity: 0.6
 LightZenithColor: "0.3, 0.95, 0.4"
 LightHorizonColor: "0.7, 0.7, 0.8"
 NightLightColor: "0.5, 0.9, 0.5"
+DayShadowStrength: 1
+NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite
+
+# Fog
+AtmosphereFog: 0.35
+FogColor: "0.7, 0.7, 0.7"
+FogCloudIntensity: 0.8
+GroundFogIntensity: 0.05
+GroundFogHeight: 60
+
+# Clouds & Wind
+CloudsDensity: 0.1
+CloudsSharpness: 0.05
+CloudsOpacity: 0.3
+
+CloudsBrightness: 0.7
 CloudsZenithColor: "0.25, 0.4, 0.25"
 CloudsHorizonColor: "2, 0.3, 2"
 CloudsNightZenithColor: "0.1, 0, 0"
 CloudsNightHorizonColor: "0.4, 0.6, 0"
-CloudsOpacity: 0.3
-FogCloudIntensity: 0.8
-DayLightIntensity: 0.7
-NightLightIntensity: 0.6
-DayShadowStrength: 1
-NightShadowStrength: 1
-AtmosphereFog: 0.35
-CloudsDensity: 0.1
-CloudsSharpness: 0.05
-CloudsBrightness: 0.7
+
 WindSpeed: 3
-FogColor: "0.7, 0.7, 0.7"
-GroundFogIntensity: 0.05
-GroundFogHeight: 60
-Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\n\u8FD9\u662F\u4E00\u9897\u8D2B\u7620\u3001\u6CA1\u6709\u751F\u547D\u7684\u4E16\u754C\uFF0C\u66FE\u7ECF\u88AB\u4E00\u4E2A\u88AB\u79F0\u4E3A\u201C\u5148\u7956\u201D\u7684\u6587\u660E\u6240\u5C45\u4F4F\u3002"
-PlanetClass: "Decayed Desert"
-UseRandom: true
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintHV: false
-AllowBlueprintBA: false
-LandClaimZone: "Device"
+
+
+
+# ==============================================================
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 5
+# ======================================================================================================
+      # DistTypeWorm:
+        # FreqDirChange: 0.2
+        # DirChangeMagnitude: 0.2
+        # MaxLength: 50
+        # DeepnessType: 0 #Depth Style 0=Undefined, 1=Free, 2=Shallow
+# ======================================================================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "IronResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 4
-  - 6
-  SizeMinMax:
-  - 6
-  - 7
-  DepthMinMax:
-  - 15
-  - 30
-  Biome:
-  - "Sand"
-  - "Dunes"
-- Name: "SiliconResource"
-  IsImportant: true
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 5
-  SizeMinMax:
-  - 6
-  - 7
-  DepthMinMax:
-  - 15
-  - 30
-  Biome:
-  - "Wadi"
-  - "Flowers"
-  - "Nest"
-- Name: "CopperResource"
-  IsImportant: true
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 5
-  SizeMinMax:
-  - 6
-  - 7
-  DepthMinMax:
-  - 15
-  - 30
-  Biome:
-  - "Wadi"
-  - "Flowers"
-  - "Nest"
-- Name: "NeodymiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 5
-  SizeMinMax:
-  - 7
-  - 8
-  DepthMinMax:
-  - 10
-  - 15
-  Biome:
-  - "Mountains"
-  - "LowMountains"
-  - "LowMountains_1"
-  - "LowMountains_2"
+    - Name: IronResource
+      Biome: [ Sand, Dunes ]
+      CountMinMax: [ 4, 6 ] 
+      IsScalingCount: True
+      SizeMinMax: [ 6, 7 ] 
+      DepthMinMax: [ 15, 30 ] 
+      DroneProb: 0
+
+    - Name: SiliconResource
+      Biome: [ Wadi, Flowers, Nest ]
+      IsImportant: True
+      CountMinMax: [ 3, 5 ]
+      IsScalingCount: True
+      SizeMinMax: [ 6, 7 ]
+      DepthMinMax: [ 15, 30 ] 
+      DroneProb: 0
+
+    - Name: CopperResource
+      Biome: [ Wadi, Flowers, Nest ]
+      IsImportant: True
+      CountMinMax: [ 3, 5 ]
+      IsScalingCount: True
+      SizeMinMax: [ 6, 7 ]
+      DepthMinMax: [ 15, 30 ] 
+      DroneProb: 0
+
+    - Name: NeodymiumResource
+      Biome: [ Mountains, LowMountains, LowMountains_1, LowMountains_2 ]
+      CountMinMax: [ 3, 5 ]
+      IsScalingCount: True
+      SizeMinMax: [ 7, 8 ]
+      DepthMinMax: [ 10, 15 ] 
+      DroneProb: 0
+
+### Resource Asteroids
 AsteroidResources:
-- Name: "IronResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
-- Name: "SiliconResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
-- Name: "CopperResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
-- Name: "NeodymiumResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: NeodymiumResource
+       Threshold: 0.2
+       Amount: 0.1
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "Eden_ProgInterface"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "Discovery"
-      Value: "False"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_ProgenitorMain"
-    Faction: "Alien"
-    Count:
-      Max: 1
-    CountMinMax:
-    - 0
-    - 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_RuinsProgenitorObelisk"
-    Faction: "Alien"
-    Count:
-      Min: 6
-      Max: 12
-    CountMinMax:
-    - 6
-    - 12
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "Eden_ProgenitorMain"
-    SpawnPOINearRange:
-    - 150
-    - 400
-  - GroupName: "Eden_RuinsProgenitorMain"
-    Faction: "Alien"
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_RuinsProgenitorObeliskF"
-    Faction: "Alien"
-    Count:
-      Max: 1
-    CountMinMax:
-    - 0
-    - 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_RuinsProgenitorObeliskF"
-    Faction: "Alien"
-    Count:
-      Min: 3
-      Max: 10
-    CountMinMax:
-    - 3
-    - 10
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "Eden_RuinsProgenitorObeliskF"
-    SpawnPOINearRange:
-    - 50
-    - 200
-  - GroupName: "ProgenitorArtifacts"
-    Faction: "Alien"
-    IsScalingCount: true
-    Count:
-      Min: 9
-      Max: 15
-    CountMinMax:
-    - 9
-    - 15
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_RuinsProgenitorObelisk"
-    Faction: "Alien"
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_RuinsProgenitorSphere"
-    Faction: "Alien"
-    IsScalingCount: true
-    Count:
-      Min: 4
-      Max: 6
-    CountMinMax:
-    - 4
-    - 6
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_CrystalsBlackXL"
-    Faction: "None"
-    Count:
-      Min: 25
-      Max: 50
-    CountMinMax:
-    - 25
-    - 50
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "0"
-    - Key: "RegenAfter"
-      Value: "720"
-  FixedPlayerStart:
-  - Mode: "Creative"
-    SubMode: "Empty"
-    Pos:
-    - 0
-    - 147
-    - 0
-    RotY: 160
-    Armor: "ArmorLight"
-  - Mode: "Creative"
-    SubMode: "Normal"
-    Pos:
-    - 0
-    - 52
-    - 0
-    RotY: 30
-    Armor: "ArmorLight"
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 147
-    - 0
-    RotY: 160
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Items:
-    - "SurvivalTent, Flashlight, AntibioticOintment:2, Bandages:2, StomachPills:2, PowerBar:2, EnergyDrink:1"
-    - "SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1"
-    - "SurvivalTent, Flashlight, Bandages:1"
-    - "#FreshStart: SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1"
-    Armor: "ArmorLight"
-DroneBaseSetup:
-  Random:
-  - GroupName: "DroneBaseSetup"
-    Difficulty: 6
-    PresetStyle: 3
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneBomberAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "EnemyDroneV2Plasma"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMinigun"
-      Amount: "500"
-      Extra: 3
-    - Name: "ZiraxRocket"
-      Amount: "500"
-      Extra: 3
-    - Name: "Crawler"
-      Amount: "150"
-      Extra: 3
-    - Name: "AlienAssassinGrey"
-      Amount: "300"
-      Extra: 3
-DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: -5000
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: 5000
+    Random:
+
+# VOID drone base & perimeter defenses ====            # Forced to spawn on mountains. Allows different attack vectors
+        # - GroupName: Eden_VoidDroneBaseT1 
+          # Faction: Alien
+          # # NoShieldReload: True  
+          # IsCommandCenter: True
+          # DroneBaseSetup: DroneBaseSetup
+          # Biome: [ Dunes, Sand ]
+          # IsImportant: True
+          # CountMinMax: [ 1 ]
+          # DroneProb: 1.0
+          # DronesMinMax: [ 6, 8 ]
+          # ReserveCount: 8
+          # SpawnResource: ["IronResource:0-1","PromethiumResource:0-1"]
+          # SpawnResourceRange: [150,400]
+          # Properties:
+            # - Key: RegenAfter
+              # Value: 720
+
+# Progenitor Interface for story
+        - GroupName: Eden_ProgInterface
+          Faction: Alien
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: Discovery
+              Value: False
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+# Main Progenitor
+        - GroupName: Eden_ProgenitorMain
+          Faction: Alien
+          CountMinMax: [ 0, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+# Obelisks near main group
+        - GroupName: Eden_RuinsProgenitorObelisk
+          Faction: Alien
+          CountMinMax: [ 6, 12 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [Eden_ProgenitorMain]
+          SpawnPOINearRange: [150, 400]
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+# Main Progenitor Ruin
+        - GroupName: Eden_RuinsProgenitorMain
+          Faction: Alien
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True 
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+# Floating Obelisks Cluster
+        - GroupName: Eden_RuinsProgenitorObeliskF
+          Faction: Alien
+          CountMinMax: [ 0, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Eden_RuinsProgenitorObeliskF
+          Faction: Alien
+          CountMinMax: [ 3, 10 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [Eden_RuinsProgenitorObeliskF]
+          SpawnPOINearRange: [50, 200]
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+# Random Progenitor Ruins
+        - GroupName: ProgenitorArtifacts      
+          Faction: Alien
+          CountMinMax: [ 9, 15 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Eden_RuinsProgenitorObelisk
+          Faction: Alien
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Eden_RuinsProgenitorSphere
+          Faction: Alien
+          CountMinMax: [ 4, 6 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+# Unpowered Crystals scattered around the planet
+        - GroupName: Eden_CrystalsBlackXL 
+          Faction: None
+          # Biome: [ Dunes ]
+          CountMinMax: [ 25, 50 ]
+          # IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart:
+        - Mode: Creative
+          SubMode: Empty
+          Armor: ArmorLight
+          Pos: [ 0, 147, 0 ]
+          RotY: 160
+
+        - Mode: Creative
+          SubMode: Normal
+          Armor: ArmorLight
+          Pos: [ 0, 52, 0 ]
+          RotY: 30
+
+        - Mode: Debug
+          Pos: [ 0, 147, 0 ]
+          RotY: 160
+
+        - Mode: Survival
+          Spawn: EscapePod
+          # Spawn: Structure
+          # Structure: "Wreckage"
+          Armor: ArmorLight
+          Items: [ "SurvivalTent, Flashlight, AntibioticOintment:2, Bandages:2, StomachPills:2, PowerBar:2, EnergyDrink:1", "SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1", "SurvivalTent, Flashlight, Bandages:1", "#FreshStart: SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1" ]
+
+
+### Drones
+DroneBaseSetup: 
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 6
+          PresetStyle: 3
+          Stock:
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0  
+    
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: Crawler
+                Amount: 150
+                Extra: 3
+
+              - Name: AlienAssassinGrey
+                Amount: 300
+                Extra: 3
+   
+
+
+# Drones that patrol on whole planet 
+DroneSpawning:    
+    Random:
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: -5000
+
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: 5000
+
+SpawnRateZones:
+   # - SpawnAt: [START]
+     # Radius: 400
+     # RadiusRandom: 0
+     # RateMultiplyerCenter: 0
+     # RateMultiplyerEdge: 0
+     # AffectEnemies: true
+     # # AffectFriendly: true
+     # Color: "0.0, 1.0, 0.0, 0.7" 
+      
+SpawnZones:  
+
+    # Monuments attract golems
+   - SpawnAt: [Eden_RuinsProgenitorObeliskF, Eden_RuinsProgenitorObelisk]
+     # BiomesExcluded: [Grassland, Forest, DeepForest, Oasis, WaterSwamp, Marsh, Swamp, Beach, LowMountains, Mountains, GlacierSnow, Crashsite ]
+     Radius: 75
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1
+     Color: "1.0, 1.0, 1.0, 0.7" 
+     Entities:
+       - Names: [Eden_GolemsDesertMega]
+         Biomes: [Any]
+         Amount: 125
+         Period: Always
+         DelayMinMax: [48, 72]
+
+
+### Creatures ===========================
 CreatureSpawning:
-- Biomes:
-  - "Flats"
-  Entities:
-  - Name: "Eden_GolemsDesertMega"
-    Color: "0, 0, 1.0"
-    DelayMinMax:
-    - 6
-    - 8
-    Period: "Always"
-SpawnZones:
-- SpawnAt:
-  - "Eden_RuinsProgenitorObeliskF"
-  - "Eden_RuinsProgenitorObelisk"
-  Radius: 75
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  Color: "1.0, 1.0, 1.0, 0.7"
-  Entities:
-  - Names:
-    - "Eden_GolemsDesertMega"
-    Biomes:
-    - "Any"
-    Amount: 125
-    DelayMinMax:
-    - 48
-    - 72
-    Period: "Always"
+
+    - Biomes: [Flats] 
+      Entities:
+
+        - Name: Eden_GolemsDesertMega
+          Period: Always
+          Amount: 0
+          DelayMinMax: [6, 8]
+          Color: "0, 0, 1.0"

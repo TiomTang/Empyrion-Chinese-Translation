@@ -1,192 +1,293 @@
-PlayfieldType: "Planet"
-PlanetType: "Progenitor Core"
-Emissive: true
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "\u96BE\u5EA6: [c][ffffff]\u672A\u77E5[-][/c]
+
+[c][ffff00]\u91CD\u529B\u5F02\u5E38:[-][/c] [c][ffffff]\u8BE5\u9057\u7269\u6B63\u5728\u7A7A\u95F4-\u65F6\u95F4\u7ED3\u6784\u4E2D\u4EA7\u751F\u91CD\u529B\u6D4B\u91CF\u7578\u53D8\uFF0C\u91CD\u529B\u53EF\u80FD\u4E0D\u4F1A\u50CF\u5E73\u5E38\u4E00\u6837\u8FD0\u4F5C\u3002\u5EFA\u8BAE\u6781\u5EA6\u8C28\u614E\u3002[-][/c]
+
+
+\u8FD9\u9897\u884C\u661F\u7684\u5730\u58F3\u7531\u4E00\u79CD\u65E0\u6CD5\u7A7F\u900F\u7684\u5408\u91D1\u6784\u6210\u3002\u4EBA\u7C7B\u8054\u5408\u7406\u4E8B\u4F1A\u7684\u79D1\u5B66\u5BB6\u5DF2\u7ECF\u786E\u5B9A\uFF0C\u8FDB\u5165\u5730\u8868\u4E0A\u7684\u4EFB\u4F55\u5EFA\u7B51\u90FD\u9700\u8981\u4E00\u628A\u7279\u6B8A\u7684\u94A5\u5319\u3002"
+
+
+
+
+PlanetType: Progenitor Core
+PlayfieldType: Planet
+Emissive: True
+
 Difficulty: 2
-SunFlare: "EnvironmentalEffects/SunFlareWhite4Space"
-SpecialEffectsGlobal:
-- Name: "Clear"
-  InitialDelay: 120
-  Delay: 120
-  Lifetime: 30
-  Type: "Weather"
-AtmosphereEnabled: false
+
+IndestructibleTerrain: True
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: False
 AtmosphereColor: "0.1, 0.5, 0.2"
-AtmosphereParams:
-- 1
-- 2
-SkyColor: "0, 0, 0"
+
+SkyColor: "0, 0, 0" 
 SkyHorizonColor: "0.1, 0, 0"
+AtmosphereParams: [1, 2]     
+
+# Light
+DayLightIntensity: 0.4
+NightLightIntensity: 0.4
+
 LightZenithColor: "0.90, 0.98, 0.90"
 LightHorizonColor: "0.15, 1, 0.15"
 NightLightColor: "0.78, 1, 0.78"
-CloudsZenithColor: "0.1, 0.03, 0.03"
-CloudsHorizonColor: "1, 0.3, 0.1"
-CloudsOpacity: 0
-FogCloudIntensity: 0
-DayLightIntensity: 0.4
-NightLightIntensity: 0.4
+
 DayShadowStrength: 1
 NightShadowStrength: 1
-CloudsSharpness: 1
-CloudsBrightness: 0
-WindSpeed: 0
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite4Space
+
+# Fog
+# AtmosphereFog: 0.00
+FogCloudIntensity: 0.0
 FogColor: "1, 1, 1"
-Description: "\u96BE\u5EA6: [c][ffffff]\u672A\u77E5[-][/c]\n[c][ffff00]\u91CD\u529B\u5F02\u5E38:[-][/c] [c][ffffff]\u8BE5\u4EBA\u5DE5\u5236\u54C1\u6B63\u5728\u4EA7\u751F\u65F6\u7A7A\u7ED3\u6784\u4E2D\u7684\u6D4B\u5730\u626D\u66F2\u3002\u91CD\u529B\u53EF\u80FD\u4E0D\u4F1A\u50CF\u6B63\u5E38\u90A3\u6837\u8868\u73B0\u3002\u5EFA\u8BAE\u6781\u7AEF\u8C28\u614E\u3002[-][/c]\n\n\u8BE5\u884C\u661F\u7684\u5730\u58F3\u7531\u4E00\u79CD\u4E0D\u53EF\u7A7F\u900F\u7684\u5408\u91D1\u6784\u6210\u3002\u4EBA\u7C7B\u8054\u5408\u7406\u4E8B\u4F1A\uFF08UCH\uFF09\u7684\u79D1\u5B66\u5BB6\u5DF2\u786E\u5B9A\uFF0C\u9700\u8981\u4E00\u628A\u7279\u6B8A\u94A5\u5319\u624D\u80FD\u8BBF\u95EE\u884C\u661F\u8868\u9762\u7684\u4EFB\u4F55\u7ED3\u6784\u3002"
-PlanetClass: "Progenitor Core"
-UseRandom: true
-IndestructibleTerrain: true
-LandClaimZone: "Device"
+# GroundFogIntensity: 0.07
+# GroundFogHeight: 130
+
+# Clouds and Wind
+CloudsDensity: 0.0
+CloudsSharpness: 1
+CloudsBrightness: 0.0
+CloudsOpacity: 0.0
+CloudsZenithColor: "0.1, 0.03, 0.03"
+CloudsHorizonColor: "1, 0.3, 0.1"
+
+WindSpeed: 0
+
+SpecialEffectsGlobal:
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 120
+    Delay: 120
+    Lifetime: 30
+# ==============================================================
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 8
+# ======================================================================================================
+      # DistTypeWorm:
+        # FreqDirChange: 0.2
+        # DirChangeMagnitude: 0.2
+        # MaxLength: 50
+        # DeepnessType: 0 #Depth Style 0=Undefined, 1=Free, 2=Shallow
+# ======================================================================================================
+
+### Resource Deposits
+RandomResources:
+    # - Name: IronResource
+      # IsScalingCount: True 
+      # CountMinMax: [ 2, 3 ] 
+      # SizeMinMax: [ 4, 4 ] 
+      # DepthMinMax: [ 50, 60 ]
+      # DroneProb: 0
+      # MaxDroneCount: 1
+      # # #DistTypeCylinder:
+        # # #MaxRadius: 13
+        # # #YVariance: 8
+      
+    # - Name: GoldResource
+      # Biome: [ Metal ]
+      # IsScalingCount: True 
+      # CountMinMax: [ 7, 9 ]
+      # SizeMinMax: [ 7, 8 ]
+      # DepthMinMax: [ 10, 15 ]
+      # DroneProb: 0
+      # MaxDroneCount: 1
+      # # #DistTypeCylinder:
+        # # #MaxRadius: 13
+        # # #YVariance: 3
+
+    # - Name: PromethiumResource
+      # Biome: [ Metal ]
+      # IsScalingCount: True 
+      # CountMinMax: [ 2, 4 ]
+      # SizeMinMax: [ 3, 6 ]
+      # DroneProb: 0
+      # MaxDroneCount: 1
+      # DepthMinMax: [ 15, 20 ]
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 10
+      
+### Resource Asteroids
+AsteroidResources:
+     # - Name: GoldResource
+       # Threshold: 0.2
+       # Amount: 0.1
+     # - Name: PromethiumResource
+       # Threshold: 0.2
+       # Amount: 0.1
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "Eden_ProgenitorEntry"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "Discovery"
-      Value: "False"
-  - GroupName: "Eden_ProgenitorArray"
-    Faction: "Alien"
-    Count:
-      Min: 10
-      Max: 15
-    CountMinMax:
-    - 10
-    - 15
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "0"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "ProgenitorArtifacts"
-    Faction: "Alien"
-    Count:
-      Min: 12
-      Max: 16
-    CountMinMax:
-    - 12
-    - 16
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "0"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_HarvestVoidiumT2"
-    Faction: "None"
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "4320"
-  - GroupName: "Eden_ProgenitorSymbols"
-    Faction: "Alien"
-    Count:
-      Min: 50
-      Max: 75
-    CountMinMax:
-    - 50
-    - 75
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "0"
-    - Key: "RegenAfter"
-      Value: "720"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - -596
-    - 104
-    - -1063
-    RotY: 125
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Armor: "ArmorMedium"
+    Random:
+        # - GroupName: R2DroneBase  #CommandCenter
+          # Faction: Zirax  
+          # # NoShieldReload: True
+          # IsCommandCenter: True
+          # DroneBaseSetup: DroneBaseSetup
+          # CountMinMax: [ 0, 1 ]
+          # DroneProb: 1.0
+          # DronesMinMax: [ 4, 5 ]
+          # ReserveCount: 5
+          # Properties: 
+            # - Key: RegenAfter
+              # Value: 720
+
+              # Entries into the planet
+        - GroupName: Eden_ProgenitorEntry
+          Faction: Alien
+          # NoShieldReload: True  
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          Properties:
+            # - Key: PersonalContainer
+              # Value: "SmallOptronicMatrix:1, LargeOptronicBridge:1, AutoMinerCore:2, GoldIngot:25, PentaxidOre:200, TechnicalArtifact:25"
+            - Key: Discovery
+              Value: False
+
+# Progenitor Artifacts
+        - GroupName: Eden_ProgenitorArray
+          Faction: Alien
+          CountMinMax: [ 10, 15 ]
+          # IsScalingCount: True 
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: ProgenitorArtifacts
+          Faction: Alien
+          CountMinMax: [ 12, 16 ]
+          # IsScalingCount: True 
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: RegenAfter
+              Value: 720
+
+# Harvestable Voidium
+        - GroupName: Eden_HarvestVoidiumT2
+          Faction: None
+          CountMinMax: [ 3, 4 ]
+          # IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+# Progenitor Symbols on surface
+        - GroupName: Eden_ProgenitorSymbols
+          Faction: Alien
+          CountMinMax: [ 50, 75 ]
+          # IsScalingCount: True 
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
 DroneBaseSetup:
-  Random:
-  - GroupName: "DroneBaseSetup"
-    Stock:
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneLargeSlow01Minigun"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallSlow01Cannon"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneSmallAttackBase"
-      Amount: "300"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMinigun"
-      Amount: "500"
-      Extra: 3
-    - Name: "RipperDog"
-      Amount: "400"
-      Extra: 3
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 0
+          PresetStyle: 0
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeSlow01Minigun
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallAttackBase
+                Amount: 300
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 400
+                Extra: 3
+
 DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: -2500
-    Radius: 1500
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: 2500
-    Radius: 1500
+    Random:
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: 2500
+          Radius: 1500

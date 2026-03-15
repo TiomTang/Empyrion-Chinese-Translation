@@ -1,76 +1,80 @@
-UseFixed: "True"
-PlayfieldType: "Space"
-Description: "\u6052\u661F\u7684\u7FD8\u66F2\u5230\u8FBE\u70B9\u3002  \n[c][ffff00]\u7FD8\u66F2\u88C2\u7F1D:[-][/c] [c][ffffff]\u6B64\u661F\u533A\u65E0\u6CD5\u88AB\u9501\u5B9A\u6216\u76F4\u63A5\u7FD8\u66F2\u5230\u8FBE\u3002\u4F60\u53EA\u80FD\u4ECE\u5176\u4ED6\u6052\u661F\u7CFB\u6216\u901A\u8FC7\u822A\u70B9\u7FD8\u66F2\u5230\u6B64\u5904\u3002\u84DD\u56FE\u5DE5\u5382\u5DF2\u7981\u7528\u3002[-][/c]  \n[c][ffffff][i]\u4E0D\u8981\u9057\u7559\u4EFB\u4F55\u7269\u54C1\u3002[/i][-][/c]  "
-PlanetType: "SunOrbit"
-Radiation:
-- 5
-- 10
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintBA: false
-AllowBlueprintHV: false
-TemperatureDay:
-- -200
-- -100
-Music:
-- "2473"
-- "Adrift"
-- "Anomalous"
-- "ColdSpace"
-- "EnergyMatrix"
-- "FirstHours"
-- "Magnitude"
-- "moonstone"
-- "MorningLight"
-- "Transit"
-- "Voyage"
-PlayfieldLevelOverride:
-- 1
-- 2
+# Playfield Characteristics
+Description: "\u6052\u661F\u7684\u7FD8\u66F2\u5230\u8FBE\u70B9\u3002
+
+[c][ffff00]\u7FD8\u66F2\u88C2\u7F1D:[-][/c] [c][ffffff]\u6B64\u661F\u533A\u65E0\u6CD5\u9501\u5B9A\u6216\u76F4\u63A5\u7FD8\u66F2\u5230\u8FBE\u3002\u4F60\u53EA\u80FD\u4ECE\u5176\u4ED6\u6052\u661F\u7CFB\u6216\u901A\u8FC7\u822A\u70B9\u7FD8\u66F2\u5230\u8FBE\u6B64\u5904\u3002\u84DD\u56FE\u5DE5\u5382\u5DF2\u7981\u7528\u3002[-][/c]
+
+[c][ffffff][i]\u4E0D\u8981\u9057\u7559\u4EFB\u4F55\u4E1C\u897F\u3002[/i][-][/c]"
+
+
+
+
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0 #Starter
+UseFixed: True
+
+# Standard Star
+Radiation: [5,10]
+TemperatureDay: [-200,-100]
+# Space Ambient Music
+Music: [2473, Adrift, Anomalous, ColdSpace, EnergyMatrix, FirstHours, Magnitude, moonstone, MorningLight, Transit, Voyage]
+
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: SunOrbit
+# PlanetClass: Sun Warp Target
+PlayfieldLevelOverride: [1,2]
+
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+AllowBlueprintBA: False
+AllowBlueprintHV: False
+
+### Resource Asteroid
 Resources:
-- Name:
-  - "AsteroidVoxel01Iron"
-  - "AsteroidVoxel02Iron"
-  - "AsteroidVoxel03Iron"
-  DisplayName: "Iron Asteroid"
-  CountMinMax:
-  - 1
-  - 2
-  Position:
-    PosYMax: 2000
-  Properties:
-  - Key: "RegenAfter"
-    Value: "720"
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0
+      Properties:
+        - Key: RegenAfter
+          Value: 720
+
+### POIs
 POIs:
-- Name:
-  - "AsteroidFieldBoxExclude"
-  - "AsteroidFieldFewBoxExclude"
-  FieldName:
-  - "AsteroidFieldBoxExclude"
-  - "AsteroidFieldFewBoxExclude"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 0.1
-  BaseField: true
-  RandomRotation: true
-- Type: "BA_Alien"
-  GroupName: "RE2_JumpExit"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "MapDistance"
-    Value: "0"
-  - Key: "HudDistance"
-    Value: "0"
-  Mode: "Survival"
-  Faction: "None"
-  SpaceDefenseOverrideDefaults: true
-LandClaimZone: "Device"
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude]
+      FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude] # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.1
+      BaseField: True
+      RandomRotation: True
+# Zirax
+    # - Type: BA_Alien
+      # GroupName: R2SatelliteZirax
+      # Faction: Zirax
+      # Mode: Survival
+      # CountMinMax: [ 1, 2 ]
+      # Probability: 0
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # InitPower: True
+      # Properties:
+        # - Key: RegenAfter
+          # Value: 720
+
+# Jump Exits.
+    - Type: BA_Alien
+      GroupName: RE2_JumpExit
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0

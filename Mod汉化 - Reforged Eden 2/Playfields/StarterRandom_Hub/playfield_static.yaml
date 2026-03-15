@@ -1,184 +1,394 @@
-PlayfieldType: "Planet"
-PlanetType: "Random Start"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+Description: "[sup]\u4F4D\u7F6E: [c][A9A9A9][-][/c][c][[c][FFFFFF][b]\u968F\u673A[/b][-][/c][c]][-][/c]                                                                   [c][6F6F6F]15 of 15[-][/c]
+
+\u6052\u661F\u7CFB:  [c][[c][FFFFFF][b]\u968F\u673A[/b][-][/c][c]][-][/c]
+
+\u96BE\u5EA6: [c][00FFFF][b]\u521D\u5B66\u8005[/b][-][/c] \u81F3 [c][FF00FF][b]\u6781\u9650[/b][-][/c]              \u8D77\u70B9: [c][FFFFFF]\u968F\u673A[-][/c]
+
+\u521D\u59CB\u4EFB\u52A1: [c][FFFFFF]\u65E0[-][/c]                             \u88C5\u5907: [c][FFFFFF]\u4E2D\u7B49[-][/c]
+
+[c][A9A9A9]- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[-][/c]
+
+\u5728\u94F6\u6CB3\u7CFB\u4E2D\u7684\u67D0\u4E00\u9897\u968F\u673A\u884C\u661F\u6216\u536B\u661F\u4E0A\u5F00\u59CB\u3002
+
+[c][FFFF00]\u8B66\u544A:[-][/c] \u6B64\u8D77\u59CB\u4F4D\u7F6E\u662F [u]\u968F\u673A[/u]\u3002 \u4F60\u53EF\u80FD\u4F1A\u53D1\u73B0\u751F\u5B58\u6216\u53D1\u5C55\u51E0\u4E4E\u4E0D\u53EF\u80FD\u3002\u9009\u62E9\u6B64\u9009\u9879\u9700\u81EA\u884C\u627F\u62C5\u98CE\u9669\u3002
+
+\u4F60\u4E4B\u540E\u65E0\u6CD5\u66F4\u6539\u8D77\u59CB\u4F4D\u7F6E\uFF0C\u4E0E\u5176\u4ED6\u73A9\u5BB6\u4F1A\u5408\u53EF\u80FD\u5F88\u56F0\u96BE\u3002\u4E0D\u4F1A\u6709\u4EFB\u4F55\u6551\u63F4\u3002"
+
+
+
+
+
+# Description: "Difficulty: [c][ff0000][b]Very Hard[/b][-][/c]
+
+# Dead, [c][ff0000][b]Dead2[/b][-][/c], Rogue
+
+# [c][FFFFFF]_______________________________________________[-][/c]
+
+# Start: [c][FFFFFF]Old Bunker[-][/c]                 Equipment: [c][FFFFFF]Minimal[-][/c]
+
+# Missions: [c][FFFFFF]None[-][/c]                     Solar System: [c][FFFFFF]Epsilon[-][/c]
+
+
+# A dead world, devoid of any natural resources. You will have to scavenge together what you need from the ruins of an extinct civilization and leave the planet before your emergency rations run out.
+
+
+# [c][ffffff][i]Information on the scenario can be accessed in the Empyriopedia section of the PDA (F1).[-][/i][/c]"
+
+PlanetType: Random Start
+PlayfieldType: Planet
 Difficulty: 50
-SunFlare: "EnvironmentalEffects/SunFlareWhite"
-SpecialEffectsLocal:
-- Name: "DustDevil"
-  MaxHeight: 5
-  Biome:
-  - "DriedLakeBed"
-  - "Sand"
-- Name: "WindLines"
-  MaxHeight: 5
-  Biome:
-  - "Sand"
-  - "LowMountains"
-  - "Mountains"
-SpecialEffectsGlobal:
-- Name: "ThunderAndLightningRed"
-  SpawnY: 300
-  Time: "Day"
-  InitialDelay: 8
-  Delay: 48
-  Struct: "Avoid"
-  Lifetime: 30
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
 AtmosphereColor: "0.4, 0.3, 0.1"
-AtmosphereParams:
-- 1
-- 1.6
-OrbitUsesLightColor: true
-SkyColor: "0.4, 0.2, 0.1"
+
+SkyColor: "0.4, 0.2, 0.1" 
 SkyHorizonColor: "0.2, 0, 0"
+AtmosphereParams: [1, 1.6]          # [Rayleigh Multiplier, Atmosphere Contrast], default is AtmosphereParams: [1, 1.6]   
+                                     # RayleighMultiplier between 0 and 10 - higher values make SkyColor / SkyHorizonColor more pronounced
+                                     # Atmosphere Contrast between 0 and 3 - lower values wash out SkyColor / SkyHorizonColor 
+
+# Light
+DayLightIntensity: 1.2
+NightLightIntensity: 0.40
 LightZenithColor: "0.92, 0.75, 0.75"
+LightHorizonColor: "1, 0.6, 0"
 NightLightColor: "1, 0.78, 0.78"
+
+DayShadowStrength: 0.5
+NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite
+OrbitUsesLightColor: True
+
+# Fog
+# AtmosphereFog: 0.35
+FogCloudIntensity: 0.8
+# GroundFogIntensity: 0
+# GroundFogHeight: 0
+
+
+# Clouds and Wind
+CloudsDensity: 1
+CloudsSharpness: 1
+CloudsBrightness: 0.3
+CloudsOpacity: 0.1
 CloudsZenithColor: "0.1, 0, 0.1"
 CloudsHorizonColor: "0.2, 0, 0.2"
 CloudsNightZenithColor: "0.1, 0, 0.1"
 CloudsNightHorizonColor: "0.2, 0, 0.2"
-CloudsOpacity: 0.1
-FogCloudIntensity: 0.8
-DayLightIntensity: 1.2
-NightLightIntensity: 0.4
-DayShadowStrength: 0.5
-NightShadowStrength: 1
-CloudsDensity: 1
-CloudsSharpness: 1
-CloudsBrightness: 0.3
+
 WindSpeed: 50
-Description: "[sup]\u4F4D\u7F6E: [c][A9A9A9][-][/c][c][[c][FFFFFF][b]\u968F\u673A[/b][-][/c][c]][-][/c]                                                                   [c][6F6F6F]15 of 15[-][/c]\n\u6052\u661F\u7CFB:  [c][[c][FFFFFF][b]\u968F\u673A[/b][-][/c][c]][-][/c]\n\u96BE\u5EA6: [c][00FFFF][b]\u521D\u5B66\u8005[/b][-][/c] \u5230 [c][FF00FF][b]\u4E0D\u53EF\u80FD[/b][-][/c]              \u8D77\u70B9: [c][FFFFFF]\u968F\u673A[-][/c]\n\u521D\u59CB\u4EFB\u52A1: [c][FFFFFF]\u65E0[-][/c]                             \u88C5\u5907: [c][FFFFFF]\u4E2D\u7B49[-][/c]\n[c][A9A9A9]- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -[-][/c]\n\u4ECE\u94F6\u6CB3\u7CFB\u4E2D\u67D0\u4E2A\u968F\u673A\u7684\u884C\u661F\u6216\u536B\u661F\u5F00\u59CB\u3002\n[c][FFFF00]\u8B66\u544A\uFF1A[-][/c] \u6B64\u8D77\u59CB\u4F4D\u7F6E\u4E3A[u]\u968F\u673A[/u]\u3002\u4F60\u53EF\u80FD\u4F1A\u53D1\u73B0\u751F\u5B58\u6216\u8FDB\u5C55\u6781\u5176\u56F0\u96BE\u3002\u8BF7\u9009\u62E9\u6B64\u9009\u9879\u9700\u81EA\u62C5\u98CE\u9669\u3002\n\u4F60\u4E4B\u540E\u65E0\u6CD5\u66F4\u6539\u8D77\u59CB\u4F4D\u7F6E\uFF0C\u4E14\u4E0E\u5176\u4ED6\u73A9\u5BB6\u4F1A\u9762\u7684\u673A\u4F1A\u53EF\u80FD\u5F88\u96BE\u3002\u4E0D\u4F1A\u6709\u6551\u63F4\u3002"
+
 Seed: 666
-PlanetClass: "Random Start"
-UseRandom: true
-LandClaimZone: "Device"
+
+# Special Effects 
+SpecialEffectsLocal:
+  - Name: DustDevil
+    Biome: [ DriedLakeBed, Sand ]  
+    Time: Always
+    FollowPlayerY: True
+    MaxHeight: 5
+  - Name: WindLines
+    Biome: [ Sand, LowMountains, Mountains ]
+    Time: Always
+    MaxHeight: 5
+
+SpecialEffectsGlobal:
+# Weather
+  # - Name: Clear
+    # Type: Weather
+    # InitialDelay: 0
+    # Delay: 0
+    # Lifetime: 1200
+  # - Name: CloudsLight
+    # Type: Weather
+    # InitialDelay: 6
+    # Delay: 12
+    # Lifetime: 600
+  # - Name: CloudsMedium
+    # Type: Weather
+    # InitialDelay: 0
+    # Delay: 2
+    # Lifetime: 1200
+  # - Name: Clouds
+    # Type: Weather
+    # InitialDelay: 10
+    # Delay: 5
+    # Lifetime: 1000
+  # - Name: Fog
+    # Type: Weather
+    # InitialDelay: 24
+    # Delay: 12
+    # Lifetime: 1000
+  # - Name: Wind
+    # Type: Weather
+    # InitialDelay: 24
+    # Delay: 12
+    # Lifetime: 600
+  # - Name: RainMedium
+    # Type: Weather
+    # InitialDelay: 24
+    # Delay: 12
+    # Lifetime: 600
+  # - Name: RainHeavy
+    # Type: Weather
+    # InitialDelay: 48
+    # Delay: 24
+    # Lifetime: 600
+  # - Name: Storm
+    # Type: Weather
+    # InitialDelay: 48
+    # Delay: 24
+    # Lifetime: 600
+  # - Name: FogRadiationPurple
+    # Type: Weather
+    # InitialDelay: 24
+    # Delay: 72
+    # Lifetime: 300
+# Global Effect
+  # - Name: BirdFlocksCrows
+    # Biome: [ Any ]
+    # Time: Day
+    # InitialDelay: 1
+    # Delay: 4
+    # Lifetime: 600
+    # PlyDist: 100
+    # SpawnY: 30
+    # Struct: True
+
+# Global Effect
+  - Name: ThunderAndLightningRed
+    Time: Day
+    InitialDelay: 8   
+    Delay: 48
+    Lifetime: 30     
+    PlyDist: 100
+    SpawnY: 300
+    Struct: Avoid    
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+    # - Name: IronResource
+      # # IsScalingCount: True 
+      # CountMinMax: [ 2, 3 ]  
+      # SizeMinMax: [ 3, 5 ] 
+      # DepthMinMax: [ 6, 12 ] 
+      # DroneProb: 0
+      # MaxDroneCount: 1
+      # #DistTypeCylinder:
+        # #MaxRadius: 10
+        # #YVariance: 7
+
+# ==================== example resource ======================================
+    # - Name: PentaxidResource
+      # IsScalingCount: True 
+      # Biome: [ Mountains, LowMountains ]
+      # CountMinMax: [ 2, 4 ]
+      # SizeMinMax: [ 2, 4 ]
+      # DepthMinMax: [ 0, 1 ] 
+      # DroneProb: 0.8
+      # MaxDroneCount: 2
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 10
+# ==================== example resource ======================================
+
+### Resource Asteroids =============================================================
+AsteroidResources:
+     # - Name: IronResource
+       # Threshold: 0.2
+       # Amount: 0.1
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "RE2_StarterRandomHub"
-    Faction: "Admin"
-    FactionTerritory:
-    - "All"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "SI"
-      Value: "Off"
-    - Key: "Discovery"
-      Value: "False"
-    InitPower: true
-  Fixed:
-  - Type: "BA_Player"
-    Prefab: "RE2_BA_StartRandomHub"
-    Mode: "Creative"
-    SubMode: "Normal"
-    Name: "Creative Random Hub"
-    InitPower: true
-    Faction: "Admin"
-    Pos:
-    - -1460
-    - 200
-    - 1555
-    Rot:
-    - 0
-    - 90
-    - 0
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - -596
-    - 104
-    - -1063
-    RotY: 125
-  - Mode: "Creative"
-    SubMode: "Empty"
-    Pos:
-    - -1455
-    - 39.1
-    - 1548
-    RotY: 135
-    Items:
-    - "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000"
-    - "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000"
-    - "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000"
-    - "#FreshStart: Token:1:6999, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000"
-    Armor: "ArmorLight"
-  - Mode: "Creative"
-    SubMode: "Normal"
-    Pos:
-    - -1455
-    - 39.1
-    - 1548
-    RotY: 135
-    Items:
-    - "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000"
-    - "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000"
-    - "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000"
-    - "#FreshStart: Token:1:6999, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000"
-    Armor: "ArmorLight"
-  - Mode: "Survival"
-    Spawn: "Structure"
-    Structure: "RE2_StarterRandomHub"
-    Items:
-    - "Token:1:6999, Token:1:6998, Token:1:6996, CombatKnife, SurvivalTool, RadarSuitT1, Pistol, 9mmBullet:250, Explosives:4, MoneyCard:10000, EmergencyRations:2, PowerBar:6, BloodyZirax:1, BioFuel:20, OxygenBottleSmall:20, WaterBottle:20, HotBeverage:20, Bandages:6, AntibioticOintment:3, RadiationPills:3, AntiRadiationOintment:3, RadiationImmunityShot:1, AntiToxicPills:3, IronOre:7"
-    - "Token:1:6999, Token:1:6998, Token:1:6996, CombatKnife, SurvivalTool, RadarSuitT1, Pistol, 9mmBullet:200, Explosives:3, MoneyCard:7500, EmergencyRations:1, PowerBar:4, BioFuel:15, OxygenBottleSmall:15, WaterBottle:15, HotBeverage:15, Bandages:4, AntibioticOintment:2, RadiationPills:2, AntiRadiationOintment:2, AntiToxicPills:2, IronOre:5"
-    - "Token:1:6999, Token:1:6998, Token:1:6996, CombatKnife, SurvivalTool, RadarSuitT1, Pistol, 9mmBullet:100, Explosives:1, MoneyCard:5000, PowerBar:4, BioFuel:4, OxygenBottleSmall:10, WaterBottle:10, HotBeverage:10, Bandages:2, AntibioticOintment:1, RadiationPills:1, AntiRadiationOintment:1, AntiToxicPills:1, IronOre:2"
-    - "#FreshStart: Token:1:6999, Token:1:6998, Token:1:6996, CombatKnife, SurvivalTool, RadarSuitT1, Pistol, 9mmBullet:50, OxygenBottleSmall:3, WaterBottle:5, HotBeverage:5"
-    Status:
-    - "Food: 500, Health: 500"
-    - "Food: 500, Health: 500"
-    - "Food: 500, Health: 500"
-    - "#FreshStart:Food: 250, Health: 250"
-    PlayerArmor:
-    - "ArmorLight, ArmorLight, ArmorLight, #FreshStart:ArmorLight"
-DroneBaseSetup:
-  Random:
-  - GroupName: "DroneBaseSetup"
-    Difficulty: 6
-    PresetStyle: 3
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneBomberAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "EnemyDroneV2Plasma"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMinigun"
-      Amount: "500"
-      Extra: 3
-    - Name: "ZiraxRocket"
-      Amount: "500"
-      Extra: 3
-    - Name: "Crawler"
-      Amount: "150"
-      Extra: 3
-    - Name: "AlienAssassinGrey"
-      Amount: "300"
-      Extra: 3
-DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: -5000
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: 5000
+    Random:
+
+# Starter Base =================================================================
+        - GroupName: RE2_StarterRandomHub
+          Faction: Admin
+          FactionTerritory: [All]
+          # Biome: [ Crashsite ]
+          # AvoidFactionTerritory: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0 
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          IsImportant: True
+          InitPower: True
+          Properties: 
+            # - Key: PersonalContainer
+              # Value: "ArmorLight, MultiTool, MultiCharge:3, ConstructorSurvival, RadarSuitT1, Flashlight, Chainsaw, BioFuel:5, IronIngot:10, SiliconIngot:5, CopperIngot:5, WaterBottle:4, CornStage1, SnakeweedStage1, PearthingStage1, DurianRoot, Fiber:10"
+              # Value: "ArmorMedium, ArmorLight, Flashlight, Bandages:4, AssaultRifle, Shotgun, 5.8mmBullet:200, ShotgunShells:30, Explosives:2, OxygenBottleSmall:3, BioFuel:2"
+            - Key: SI
+              Value: Off
+            - Key: Discovery
+              Value: False
+
+    Fixed:
+        - Type: BA_Player
+          Faction: Admin
+          Prefab: RE2_BA_StartRandomHub
+          Mode: Creative
+          SubMode: Normal
+          Name: Creative Random Hub
+          # Pos: [ -1143, 28.9, 1482.5 ]
+          # Pos: [ -2390, 34.5, 1100 ]
+          Pos: [ -1460, 200, 1555 ]
+          # Rot: [ 0, -85, 0 ]
+          Rot: [ 0, 90, 0 ]
+          InitPower: True
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Creative             
+          SubMode: Empty             
+          Armor: ArmorLight
+          # Pos: [ -2385, 40.6, 1093 ]
+          Pos: [ -1455, 39.1, 1548 ]
+          RotY: 135
+          Items: [ 
+          "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000", 
+          "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000", 
+          "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000",
+          "#FreshStart: Token:1:6999, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000" ]
+
+        - Mode: Creative             
+          SubMode: Normal            
+          Armor: ArmorLight   
+          # Pos: [-1114.4, 44.9, 1476 ]  
+          # RotY: 150   
+          Pos: [ -1455, 39.1, 1548 ]
+          RotY: 135
+          Items: [ 
+          "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000", 
+          "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000", 
+          "Token:1:6997, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000", 
+          "#FreshStart: Token:1:6999, Token:1:6998, FusionCell:4000, OxygenBottleLarge:4000, PentaxidCrystal:4000, MultiCharge:4000, MultiToolT2, TextureColorTool, Core:1000, SpawnNewBase:1000, SpawnNewGV:1000, SpawnNewSV:1000, SpawnNewCV:1000" ]
+
+        - Mode: Survival
+          # Spawn: EscapePod
+          # Pos: [ -350, 0 ]      # fixed x,z position of escape pod start      
+          # Armor: ArmorLight
+          Spawn: Structure
+          Structure: "RE2_StarterRandomHub"
+          PlayerArmor: ["ArmorLight, ArmorLight, ArmorLight, #FreshStart:ArmorLight"]     
+          Status: [ "Food: 500, Health: 500", "Food: 500, Health: 500", "Food: 500, Health: 500", "#FreshStart:Food: 250, Health: 250" ]
+          Items: [ 
+          "Token:1:6999, Token:1:6998, Token:1:6996, CombatKnife, SurvivalTool, RadarSuitT1, Pistol, 9mmBullet:250, Explosives:4, MoneyCard:10000, EmergencyRations:2, PowerBar:6, BloodyZirax:1, BioFuel:20, OxygenBottleSmall:20, WaterBottle:20, HotBeverage:20, Bandages:6, AntibioticOintment:3, RadiationPills:3, AntiRadiationOintment:3, RadiationImmunityShot:1, AntiToxicPills:3, IronOre:7", 
+          "Token:1:6999, Token:1:6998, Token:1:6996, CombatKnife, SurvivalTool, RadarSuitT1, Pistol, 9mmBullet:200, Explosives:3, MoneyCard:7500, EmergencyRations:1, PowerBar:4, BioFuel:15, OxygenBottleSmall:15, WaterBottle:15, HotBeverage:15, Bandages:4, AntibioticOintment:2, RadiationPills:2, AntiRadiationOintment:2, AntiToxicPills:2, IronOre:5", 
+          "Token:1:6999, Token:1:6998, Token:1:6996, CombatKnife, SurvivalTool, RadarSuitT1, Pistol, 9mmBullet:100, Explosives:1, MoneyCard:5000, PowerBar:4, BioFuel:4, OxygenBottleSmall:10, WaterBottle:10, HotBeverage:10, Bandages:2, AntibioticOintment:1, RadiationPills:1, AntiRadiationOintment:1, AntiToxicPills:1, IronOre:2", 
+          "#FreshStart: Token:1:6999, Token:1:6998, Token:1:6996, CombatKnife, SurvivalTool, RadarSuitT1, Pistol, 9mmBullet:50, OxygenBottleSmall:3, WaterBottle:5, HotBeverage:5" ]
+
+### Drones
+DroneBaseSetup: 
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 6
+          PresetStyle: 3
+          Stock:
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0  
+    
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: Crawler
+                Amount: 150
+                Extra: 3
+
+              - Name: AlienAssassinGrey
+                Amount: 300
+                Extra: 3
+   
+
+
+# Drones that patrol on whole planet 
+DroneSpawning:    
+    Random:
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: -5000
+
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: 5000
+
+# ==============================================================
+# ==============================================================
+
+# SpawnRateZones:
+   # - SpawnAt: [R2PolarisTradePlanet]
+     # Radius: 1000
+     # RadiusRandom: 50
+     # RateMultiplyerCenter: 0.0
+     # RateMultiplyerEdge: 0.7
+     # AffectEnemies: true
+     # Color: "0.0, 1.0, 0.0, 0.7"  
+      
+# SpawnZones:
+   # - SpawnAt: [CrashedShip, PromethiumResource, Ruins, Wreckage, R2AbandonedPOI]
+     # BiomesExcluded: [ LowMountains, Mountains ]
+     # Radius: 500
+     # RadiusRandom: 50
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.5
+     # Color: "1.0, 1.0, 1.0, 1.0"
+     # Entities:
+       # - Names: [AlienBugs03, Spiders01]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+### Creatures
+# CreatureSpawning:
+    # - Biomes: [DriedLakeBed]
+      # Entities:
+        # - Name: GolemsDesert   
+          # Period: Always
+          # Amount: 1
+          # DelayMinMax: [48, 72]
+          # Color: "1.0, 0, 0"
+

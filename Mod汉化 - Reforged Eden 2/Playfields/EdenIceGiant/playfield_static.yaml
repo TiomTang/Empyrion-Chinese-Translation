@@ -1,279 +1,340 @@
-PlayfieldType: "Planet"
-PlanetType: "Ice Giant"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+#Based on Gas Giants by Needleship.
+
+Description: "\u96BE\u5EA6: [c][ff0000]***[-][/c][c][ff00ff][b] \u6781\u9650 [/b][-][/c][c][ff0000]***[-][/c]
+
+[c][ffffff][i](\u6781\u9650\u96BE\u5EA6\u5448\u73B0\u51FA\u6781\u7AEF\u6311\u6218\uFF0C\u5E76\u53EF\u80FD\u5728\u6BEB\u65E0\u9884\u8B66\u7684\u60C5\u51B5\u4E0B\u5BFC\u81F4\u4F60\u7684\u98DE\u8239\u635F\u6BC1)[-][/i][/c]
+
+            
+\u4F20\u611F\u5668\u5E72\u6270: [c][ffff00]POI\u8BC6\u522B\u8303\u56F4\u7F29\u51CF\u3002[-][/c]
+
+
+\u8FD9\u9897\u884C\u661F\u4ECD\u5728\u5F00\u53D1\u4E2D\uFF0C\u5C1A\u672A\u5B8C\u6210\u3002
+
+
+\u51B0\u5DE8\u661F\u62E5\u6709\u7531\u6C22\u548C\u6C26\u7EC4\u6210\u7684\u539A\u5927\u6C14\u5C42\uFF0C\u8868\u9762\u98CE\u901F\u53EF\u8FBE2,000\u516C\u91CC/\u5C0F\u65F6\uFF0C\u662F\u592A\u9633\u7CFB\u4E2D\u73AF\u5883\u6700\u6781\u7AEF\u7684\u5929\u4F53\u4E4B\u4E00\u3002
+
+\u8868\u9762\u4E0A\u7684\u4FE1\u53F7\u706F\u5854\u8B66\u544A\u65C5\u884C\u8005\u8FDC\u79BB\u9694\u79BB\u533A\u3002
+
+
+\u6765\u81EA\u661F\u7403\u51B0\u8D28\u5730\u58F3\u4E0B\u65B9\u7684\u5F02\u5E38\u4F20\u611F\u5668\u8BFB\u6570\u88AB\u63A2\u6D4B\u5230\u3002
+
+
+[c][808080][i]\u6700\u521D\u7531 Needleship \u521B\u4F5C\u3002[/i][-][/c]"
+
+
+
+
+
+PlanetType: Ice Giant
+PlayfieldType: Planet
 Difficulty: 10
-SunFlare: "EnvironmentalEffects/SunFlareWhite3Space"
-SpecialEffectsGlobal:
-- Name: "CloudsLight"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "CloudsMedium"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "Clouds"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "Wind"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "AcidRainHeay"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "SnowHeavy"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "Storm"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "Hail"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "RockFall"
-  InitialDelay: 0
-  Delay: 4
-  Lifetime: 180
-  Type: "Weather"
-- Name: "MeteorFireRain"
-  InitialDelay: 24
-  Delay: 48
-  Lifetime: 180
-  Type: "Weather"
-- Name: "ThunderAndLightningPurple"
-  SpawnY: 100
-  Time: "Day"
-  InitialDelay: 4
-  Delay: 16
-  PlyDist: 50
-  Struct: "Avoid"
-  Lifetime: 300
-- Name: "ThunderAndLightning"
-  SpawnY: 100
-  Time: "Night"
-  InitialDelay: 4
-  Delay: 16
-  PlyDist: 50
-  Struct: "Avoid"
-  Lifetime: 300
+
+LandClaimZone: Device
+
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
 AtmosphereColor: "0, 0.3, 1.5"
-AtmosphereParams:
-- 1
-- 2
-OrbitUsesLightColor: true
-SkyColor: "0, 0.3, 0.5"
+
+SkyColor: "0, 0.3, 0.5" 
 SkyHorizonColor: "0, 0.5, 0.5"
+AtmosphereParams: [1, 2]     
+
+# Light
+DayLightIntensity: 0.6
+NightLightIntensity: 0.55
+
 LightZenithColor: "0.85, 0.85, 1"
 LightHorizonColor: "0, 0.8, 1"
 NightLightColor: "0.78, 0.78, 1"
+
+DayShadowStrength: 1
+NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite3Space
+OrbitUsesLightColor: True
+
+# Fog
+AtmosphereFog: 0.5
+FogCloudIntensity: 0.4
+FogColor: "0, 0.6, 1"
+GroundFogIntensity: 0.2
+GroundFogHeight: 800
+
+# Clouds and Wind
+CloudsDensity: 1
+CloudsSharpness: 0.6
+CloudsBrightness: 2
+CloudsOpacity: 2
 CloudsZenithColor: "0, 0.3, 1"
 CloudsHorizonColor: "0, 1, 1"
 CloudsNightZenithColor: "0, 0.4, 0.4"
 CloudsNightHorizonColor: "0, 1, 1"
-CloudsOpacity: 2
-FogCloudIntensity: 0.4
-NightLightIntensity: 0.55
-DayShadowStrength: 1
-NightShadowStrength: 1
-AtmosphereFog: 0.5
-CloudsDensity: 1
-CloudsSharpness: 0.6
-CloudsBrightness: 2
+
 WindSpeed: 140
-FogColor: "0, 0.6, 1"
-GroundFogIntensity: 0.2
-GroundFogHeight: 800
-Description: "\u96BE\u5EA6: [c][ff0000]***[-][/c][c][ff00ff][b] \u6781\u9650 [/b][-][/c][c][ff0000]***[-][/c]\n[c][ffffff][i](\u6781\u9650\u96BE\u5EA6\u5C06\u5E26\u6765\u6781\u7AEF\u6311\u6218\uFF0C\u53EF\u80FD\u4F1A\u5BFC\u81F4\u5728\u6CA1\u6709\u8B66\u544A\u7684\u60C5\u51B5\u4E0B\u5931\u53BB\u60A8\u7684\u98DE\u8239)[/i][-][/c]\n\n\u4F20\u611F\u5668\u5E72\u6270: [c][ffff00]POI\u8BC6\u522B\u8303\u56F4\u964D\u4F4E\u3002[-][/c]\n\n\u8FD9\u9897\u884C\u661F\u6B63\u5728\u5F00\u53D1\u4E2D\uFF0C\u5C1A\u672A\u5B8C\u6210\u3002\n\n\u539A\u539A\u7684\u5927\u6C14\u4E3B\u8981\u7531\u6C22\u548C\u6C26\u6784\u6210\uFF0C\u8868\u9762\u98CE\u901F\u53EF\u8FBE2,000km/h\uFF0C\u51B0\u5DE8\u884C\u661F\u62E5\u6709\u5728\u592A\u9633\u7CFB\u4E2D\u53D1\u73B0\u7684\u6700\u4E3A\u6781\u7AEF\u7684\u73AF\u5883\u4E4B\u4E00\u3002\n\u8868\u9762\u7684\u4E00\u4E2A\u4FE1\u53F7\u4FE1\u6807\u8B66\u793A\u65C5\u884C\u8005\u907F\u5F00\u9694\u79BB\u533A\u3002\n\n\u5947\u5F02\u7684\u4F20\u611F\u5668\u8BFB\u6570\u6765\u81EA\u884C\u661F\u51B0\u5C42\u4E4B\u4E0B\u7684\u533A\u57DF\u3002\n\n[c][808080][i]\u6700\u521D\u7531Needleship\u521B\u5EFA\u3002[-][/i][/c]"
-PlanetClass: "Ice Giant"
-UseRandom: true
-LandClaimZone: "Device"
+
+
+# Special Effects
+SpecialEffectsLocal:
+
+SpecialEffectsGlobal:
+  # - Name: Clear
+    # Type: Weather
+    # InitialDelay: 0
+    # Delay: 3
+    # Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: Wind             # wind ist gut (soundkulisse), aber irgendwann wird es schlagartig zu nebel...
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: AcidRainHeay
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: SnowHeavy
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: Hail
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: RockFall
+    Type: Weather
+    InitialDelay: 0
+    Delay: 4
+    Lifetime: 180
+  - Name: MeteorFireRain
+    Type: Weather
+    InitialDelay: 24
+    Delay: 48
+    Lifetime: 180
+# Global Effect
+  - Name: ThunderAndLightningPurple
+    Time: Day
+    InitialDelay: 4   
+    Delay: 16
+    Lifetime: 300     
+    PlyDist: 50
+    SpawnY: 100
+    Struct: Avoid    
+  - Name: ThunderAndLightning
+    Time: Night
+    InitialDelay: 4   
+    Delay: 16
+    Lifetime: 300     
+    PlyDist: 50
+    SpawnY: 100
+    Struct: Avoid    
+
+# ==============================================================
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 5
+# ======================================================================================================
+      # DistTypeWorm:
+        # FreqDirChange: 0.2
+        # DirChangeMagnitude: 0.2
+        # MaxLength: 50
+        # DeepnessType: 0 #Depth Style 0=Undefined, 1=Free, 2=Shallow
+# ======================================================================================================
+        
+### Resource Deposits
 RandomResources:
-- Name: "ErestrumResource"
-  CountMinMax:
-  - 35
-  - 50
-  SizeMinMax:
-  - 5
-  - 6
-  DepthMinMax:
-  - 100
-  - 250
-  Biome:
-  - "CryoVolcano"
-  - "Mountains"
-- Name: "PentaxidResource"
-  CountMinMax:
-  - 35
-  - 50
-  SizeMinMax:
-  - 3
-  - 3
-  DepthMinMax:
-  - 75
-  - 175
-  Biome:
-  - "CryoVolcano"
-  - "Mountains"
+    - Name: ErestrumResource
+      # IsScalingCount: True 
+      CountMinMax: [ 35, 50 ]
+      Biome: [ CryoVolcano, Mountains ]
+      SizeMinMax: [ 5, 6 ]
+      DepthMinMax: [ 100, 250 ]
+      DroneProb: 0
+      #DistTypeCylinder:
+        #MaxRadius: 2
+        #YVariance: 5
+
+    - Name: PentaxidResource
+      # IsScalingCount: True 
+      CountMinMax: [ 35, 50 ]
+      Biome: [ CryoVolcano, Mountains ]
+      SizeMinMax: [ 3, 3 ]
+      DepthMinMax: [ 75, 175 ]
+      DroneProb: 0
+      #DistTypeCylinder:
+        #MaxRadius: 2
+        #YVariance: 5
+
+### Resource Asteroids
+AsteroidResources:
+
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "Eden_DeepCoreMine"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapDistance"
-      Value: "100"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnResource:
-    - "PentaxidResource:1-2"
-    SpawnResourceRange:
-    - 1
-    - 10
-  - GroupName: "Eden_SignalQuarantine"
-    Faction: "Admin"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapDistance"
-      Value: "25000"
-    - Key: "HudDistance"
-      Value: "2500"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "Eden_DeepCoreMine"
-    SpawnPOINearRange:
-    - 300
-    - 400
-  - GroupName: "Eden_DeepCoreDefense"
-    Faction: "Alien"
-    Count:
-      Min: 6
-      Max: 8
-    CountMinMax:
-    - 6
-    - 8
-    Properties:
-    - Key: "MapDistance"
-      Value: "100"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "Eden_DeepCoreMine"
-    SpawnPOIAvoid:
-    - "Eden_DeepCoreDefense"
-    SpawnPOINearRange:
-    - 125
-    - 250
-    SpawnPOIAvoidDistance: 50
-  - GroupName: "NullPOI"
-    IsImportant: true
-    Count:
-      Min: 25
-      Max: 25
-    CountMinMax:
-    - 25
-    - 25
-    SpawnPOIAvoid:
-    - "NullPOI"
-    SpawnResource:
-    - "ErestrumResource:4-7"
-    - "PentaxidResource:4-7"
-    SpawnPOIAvoidDistance: 2000
-    SpawnResourceRange:
-    - 125
-    - 500
-    Biome:
-    - "CryoVolcano"
-    - "Mountains"
-  - GroupName: "Eden_PolCrawler"
-    Faction: "Polaris"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapDistance"
-      Value: "100"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_BuriedCVT3"
-    Faction: "None"
-    IsScalingCount: true
-    Count:
-      Min: 8
-      Max: 12
-    CountMinMax:
-    - 8
-    - 12
-    Properties:
-    - Key: "MapDistance"
-      Value: "25"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Eden_BuriedPod"
-    Faction: "Alien"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapDistance"
-      Value: "25"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "720"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 120
-    - 0
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Armor: "ArmorMedium"
+    Random:
+       # ================================
+              # Deep Core Mining Station
+        - GroupName: Eden_DeepCoreMine
+          Faction: Alien
+          # NoShieldReload: True  
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnResource: ["PentaxidResource:1-2"]
+          SpawnResourceRange: [1,10]
+          Properties:
+            - Key: MapDistance
+              Value: 100
+            # - Key: HudDistance
+              # Value: 1000
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Eden_SignalQuarantine
+          Faction: Admin  
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [Eden_DeepCoreMine]
+          SpawnPOINearRange: [300, 400]
+          Properties: 
+            - Key: MapDistance
+              Value: 25000
+            - Key: HudDistance
+              Value: 2500
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Eden_DeepCoreDefense
+          Faction: Alien
+          # NoShieldReload: True  
+          CountMinMax: [ 6, 8 ]
+          SpawnPOINear: [Eden_DeepCoreMine]
+          SpawnPOINearRange: [125, 250]
+          SpawnPOIAvoid: [Eden_DeepCoreDefense] 
+          SpawnPOIAvoidDistance: 50 
+          Properties: 
+            - Key: MapDistance
+              Value: 100
+            - Key: RegenAfter
+              Value: 720
+
+# =========================== Random POIs
+# Spawn anchors for resourcves
+        - GroupName: NullPOI
+          IsImportant: True
+          CountMinMax: [ 25, 25 ]
+          Biome: [ CryoVolcano, Mountains ]
+          SpawnPOIAvoid: [NullPOI]
+          SpawnPOIAvoidDistance: 2000  
+          SpawnResource: ["ErestrumResource:4-7","PentaxidResource:4-7"]
+          SpawnResourceRange: [125,500]
+
+              # Polaris Research Crawler
+        - GroupName: Eden_PolCrawler
+          Faction: Polaris
+          # NoShieldReload: True  
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True
+          Properties:
+            - Key: MapDistance
+              Value: 100  
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+              # Buried Alien Wrecks
+        - GroupName: Eden_BuriedCVT3
+          Faction: None  
+          # IsImportant: True
+          CountMinMax: [ 8, 12 ]
+          IsScalingCount: True
+          Properties:
+            - Key: MapDistance
+              Value: 25  
+            # - Key: HudDistance
+              # Value: 100  
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Eden_BuriedPod
+          Faction: Alien
+          # NoShieldReload: True  
+          # IsImportant: True
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True
+          Properties:
+            - Key: MapDistance
+              Value: 25  
+            # - Key: HudDistance
+              # Value: 100  
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+### Drones
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ 0, 120, 0 ]
+          RotY: 0
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
 DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: -2500
-    Radius: 2000
-  - DronesMinMax:
-    - 0
-    - 0
-    CenterX: 2500
-    Radius: 2000
+    Random:
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: -2500
+          Radius: 2000
+
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: 2500
+          Radius: 2000
+
+# ==============================================================
+# ==============================================================
+
+SpawnRateZones:
+
+
+SpawnZones:
+
+### Creatures
+CreatureSpawning:

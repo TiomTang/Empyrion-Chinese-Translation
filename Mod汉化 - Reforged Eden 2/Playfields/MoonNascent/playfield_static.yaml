@@ -1,1092 +1,958 @@
-PlayfieldType: "Moon"
-PlanetType: "Nascent"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]
+
+
+[c][e0e020]\u6CE8\u610F:[-][/c]   [c]\u5179\u745E\u514B\u65AF\u8D44\u6E90\u52D8\u6D4B\u6B63\u5728\u8FDB\u884C\u4E2D\u3002[-][/c] \n\n\u4E00\u9897\u5E74\u8F7B\u7684\u4E16\u754C\uFF1A\u5927\u6C14\u5DF2\u7ECF\u51B7\u5374\u5230\u8DB3\u4EE5\u964D\u96E8\u3002\u661F\u7403\u90BB\u8FD1\u533A\u57DF\u7684\u6700\u540E\u788E\u7247\u649E\u51FB\u5730\u8868\uFF0C\u731B\u70C8\u7684\u6025\u6D41\u4EA7\u751F\u51B0\u96F9\u3002\n\u4F46\u5728\u8FD9\u4E00\u5207\u6DF7\u4E71\u4E2D\uFF0C\u7B2C\u4E00\u6279\u751F\u547D\u5728\u6F6E\u6C60\u4E2D\u8BDE\u751F\u2014\u2014\u4E3A\u6C34\u4F53\u67D3\u4E0A\u4E86\u65E9\u671F\u5149\u5408\u4F5C\u7528\u7684\u8272\u5F69\u3002"
+
+
+
+
+PlanetClass: Nascent Moon
+PlanetType: Nascent
+PlayfieldType: Moon
 Difficulty: 5
-SunFlare: "EnvironmentalEffects/SunFlareBlue"
+
+LandClaimZone: Device
+
+# Special Effects 
 SpecialEffectsLocal:
-- Name: "Pollen"
-  MaxHeight: 150
-  Time: "Day"
-  Biome:
-  - "Sediment"
-  - "Biofilm"
-  - "LargeCrater"
-- Name: "FireFliesGreen"
-  MaxHeight: 70
-  Time: "Night"
-  Biome:
-  - "Biofilm"
-  - "Water"
-  - "ShallowWater"
-  - "Shore"
-  - "LargeCrater"
-SpecialEffectsGlobal:
-- Name: "RainMedium"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 600
-  Type: "Weather"
-- Name: "RainHeavy"
-  InitialDelay: 0
-  Delay: 10
-  Lifetime: 300
-  Type: "Weather"
-- Name: "Storm"
-  InitialDelay: 0
-  Delay: 10
-  Lifetime: 300
-  Type: "Weather"
-- Name: "CloudsDark"
-  InitialDelay: 5
-  Delay: 10
-  Lifetime: 1000
-  Type: "Weather"
-- Name: "SnowHeavy"
-  InitialDelay: 15
-  Delay: 25
-  Lifetime: 300
-  Type: "Weather"
-- Name: "Hail"
-  InitialDelay: 15
-  Delay: 25
-  Lifetime: 300
-  Type: "Weather"
-- Name: "FireRain"
-  InitialDelay: 3
-  Delay: 25
-  Lifetime: 300
-  Type: "Weather"
-- Name: "AcidRainHeavy"
-  InitialDelay: 15
-  Delay: 35
-  Lifetime: 300
-  Type: "Weather"
-- Name: "CloudsLight"
-  InitialDelay: 5
-  Delay: 25
-  Lifetime: 800
-  Type: "Weather"
-- Name: "Clear"
-  InitialDelay: 30
-  Delay: 30
-  Lifetime: 600
-  Type: "Weather"
-AtmosphereColor: "0.7, 0.8, 0.9"
-AtmosphereParams:
-- 3
-- 1.5
+  - Name: Pollen
+    Biome: [ Sediment, Biofilm, LargeCrater ]
+    Time: Day
+    MaxHeight: 150
+  - Name: FireFliesGreen
+    Biome: [ Biofilm, Water, ShallowWater, Shore, LargeCrater ]
+    Time: Night
+    MaxHeight: 70
+
+SpecialEffectsGlobal:     # Turbulent atmosphere; rapid weather changes
+# Weather
+    # Standard bad weather
+  - Name: RainMedium
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 600
+  - Name: RainHeavy
+    Type: Weather
+    InitialDelay: 0
+    Delay: 10
+    Lifetime: 300
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 0
+    Delay: 10
+    Lifetime: 300
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 5
+    Delay: 10
+    Lifetime: 1000
+    # Worse weather
+  - Name: SnowHeavy
+    Type: Weather
+    InitialDelay: 15
+    Delay: 25
+    Lifetime: 300
+  - Name: Hail
+    Type: Weather
+    InitialDelay: 15
+    Delay: 25
+    Lifetime: 300
+  - Name: FireRain
+    Type: Weather
+    InitialDelay: 3
+    Delay: 25
+    Lifetime: 300
+  - Name: AcidRainHeavy
+    Type: Weather
+    InitialDelay: 15
+    Delay: 35
+    Lifetime: 300
+    # Rare
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 5
+    Delay: 25
+    Lifetime: 800
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 30
+    Delay: 30
+    Lifetime: 600
+
+
+# Global Effects     # no animals on this planet except imported monsters
+
+
+# Atmosphere & Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.7, 0.8, 0.9"   
 SkyColor: "0.90, 0.3, 0.3"
 SkyHorizonColor: "1, 0.2, 0"
+AtmosphereParams: [3, 1.5]     
+
+# Light
+DayLightIntensity: 1.4
+NightLightIntensity: 0.7
+
 LightZenithColor: "1, 0.7, 0.7"
 LightHorizonColor: "1, 0.5, 0"
 NightLightColor: "0.78, 0.78, 1"
-CloudsZenithColor: "1.0, 0.5, 0.6"
-CloudsHorizonColor: "1, 0.3, 0.1"
-CloudsOpacity: 0.7
-FogCloudIntensity: 0.8
-DayLightIntensity: 1.4
+
 DayShadowStrength: 1
 NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Fog
+# AtmosphereFog: 0.35
+FogColor: "0.5, 0.8, 0.7"
+FogCloudIntensity: 0.8
+# GroundFogIntensity: 0.05
+# GroundFogHeight: 60
+
+# Clouds & Wind
 CloudsDensity: 0.1
 CloudsSharpness: 0.05
+CloudsOpacity: 0.7
+
 CloudsBrightness: 0.7
+CloudsZenithColor: "1.0, 0.5, 0.6"
+CloudsHorizonColor: "1, 0.3, 0.1"
+
 WindSpeed: 15
-FogColor: "0.5, 0.8, 0.7"
-Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\n[c][e0e020]\u6CE8\u610F:[-][/c]   [c]\u5179\u745E\u514B\u65AF\u5E1D\u56FD\u8D44\u6E90\u52D8\u63A2\u6B63\u5728\u8FDB\u884C\u7684\u661F\u533A\u3002[-][/c] \n\n\u4E00\u9897\u5E74\u5E7C\u7684\u661F\u7403\uFF1A\u5927\u6C14\u5C42\u5DF2\u7ECF\u51B7\u5374\u5230\u80FD\u591F\u964D\u4E0B\u96E8\u6C34\u3002\u884C\u661F\u788E\u7247\u6B63\u5728\u4E0D\u65AD\u5760\u5165\u661F\u7403\u8868\u9762\uFF0C\u5E76\u4E14\u5267\u70C8\u7684\u6C14\u6D41\u98CE\u66B4\u4F1A\u5E26\u6765\u51B0\u96F9\u3002\n\u4F46\u5728\u8FD9\u7247\u6DF7\u4E71\u4E4B\u4E2D\uFF0C\u7B2C\u4E00\u79CD\u751F\u547D\u5728\u6F6E\u6C50\u6C60\u4E2D\u8BDE\u751F\u2014\u2014\u5B83\u4EEC\u8FDB\u884C\u65E9\u671F\u5149\u5408\u4F5C\u7528\uFF0C\u5C06\u6C34\u4F53\u67D3\u4E0A\u72EC\u7279\u7684\u8272\u5F69\u3002"
-PlanetClass: "Nascent Moon"
-UseRandom: true
-LandClaimZone: "Device"
+
+
+# ==============================================================
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 8
+# ======================================================================================================
+      # DistTypeWorm:
+        # FreqDirChange: 0.2
+        # DirChangeMagnitude: 0.2
+        # MaxLength: 50
+        # DeepnessType: 0 #Depth Style 0=Undefined, 1=Free, 2=Shallow
+# ======================================================================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "CobaltResource"
-  IsImportant: true
-  IsScalingCount: true
-  CountMinMax:
-  - 5
-  - 6
-  SizeMinMax:
-  - 7
-  - 10
-  DepthMinMax:
-  - 15
-  - 40
-  DroneProb: 0.3
-  MaxDroneCount: 2
-  Biome:
-  - "Regolith"
-  - "RegolithEdge"
-  - "SandDrift"
-  - "Dunes"
-  - "Plateau"
-  - "Rifts"
-  - "LargeCrater"
-- Name: "CopperResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 4
-  - 5
-  SizeMinMax:
-  - 7
-  - 11
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.1
-  Biome:
-  - "Rocks"
-  - "LowMountains"
-  - "LowMountains_1"
-  - "Mountains"
-  - "Moss"
-  - "HighMountains"
-- Name: "SiliconResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 5
-  - 8
-  SizeMinMax:
-  - 8
-  - 10
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.3
-  MaxDroneCount: 2
-  Biome:
-  - "SandDrift"
-  - "Dunes"
-  - "Plateau"
-  - "RegolithEdge"
-  - "Regolith"
-- Name: "ZascosiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 4
-  - 5
-  SizeMinMax:
-  - 4
-  - 5
-  DepthMinMax:
-  - 15
-  - 30
-  DroneProb: 0.7
-  MaxDroneCount: 2
-  Biome:
-  - "Sediment"
-  - "Biofilm"
-- Name: "PentaxidResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 4
-  - 5
-  SizeMinMax:
-  - 4
-  - 7
-  DepthMinMax:
-  - 0
-  - 10
-  DroneProb: 0.7
-  MaxDroneCount: 2
-  Biome:
-  - "Sediment"
-  - "Biofilm"
-- Name: "PromethiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 3
-  SizeMinMax:
-  - 6
-  - 8
-  DepthMinMax:
-  - 0
-  - 1
-  DroneProb: 0.8
-  MaxDroneCount: 2
-  Biome:
-  - "LargeCrater"
-  - "Rocks"
-  - "LowMountains"
-  - "LowMountains_1"
-  - "Moss"
-  - "Mountains"
-  - "HighMountains"
+
+
+    - Name: CobaltResource    # poor
+      Biome: [ Regolith, RegolithEdge, SandDrift, Dunes, Plateau, Rifts, LargeCrater ]
+      IsImportant: True
+      CountMinMax: [ 5, 6 ]
+      IsScalingCount: True
+      SizeMinMax: [ 7, 10 ]
+      DepthMinMax: [ 15, 40 ] 
+      DroneProb: 0.3
+      MaxDroneCount: 2
+
+    - Name: CopperResource     # extremely poor
+      Biome: [ Rocks, LowMountains, LowMountains_1, Mountains, Moss, HighMountains ]
+      CountMinMax: [ 4, 5 ]
+      IsScalingCount: True
+      SizeMinMax: [ 7, 11 ]
+      DepthMinMax: [ 5, 10 ] 
+      DroneProb: 0.1
+      MaxDroneCount: 1
+
+    - Name: SiliconResource    # rich
+      Biome: [ SandDrift, Dunes, Plateau, RegolithEdge, Regolith ]
+      CountMinMax: [ 5, 8 ]
+      IsScalingCount: True
+      SizeMinMax: [ 8, 10 ]
+      DepthMinMax: [ 5, 10 ] 
+      DroneProb: 0.3
+      MaxDroneCount: 2
+
+    - Name: ZascosiumResource   # Mostly claimed by POI
+      Biome: [ Sediment, Biofilm ]
+      IsScalingCount: True
+      CountMinMax: [ 4, 5 ]
+      SizeMinMax: [ 4, 5 ]
+      DepthMinMax: [ 15, 30 ]
+      DroneProb: 0.7
+      MaxDroneCount: 2
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 8
+
+    - Name: PentaxidResource
+      Biome: [ Sediment, Biofilm ]
+      IsScalingCount: True
+      CountMinMax: [ 4, 5 ]
+      SizeMinMax: [ 4, 7 ]
+      DroneProb: 0.7
+      MaxDroneCount: 2
+      DepthMinMax: [ 0, 10 ]
+
+    - Name: PromethiumResource
+      Biome: [ LargeCrater, Rocks, LowMountains, LowMountains_1, Moss, Mountains, HighMountains ]
+      CountMinMax: [ 2, 3 ]
+      IsScalingCount: True
+      SizeMinMax: [ 6, 8 ]
+      DroneProb: 0.8
+      MaxDroneCount: 2
+      DepthMinMax: [ 0, 1 ]
+
+
+### Resource Asteroids
 AsteroidResources:
-- Name: "SiliconResource"
-  Threshold: 0.5
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
-- Name: "CobaltResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
-- Name: "PromethiumResource"
-  Threshold: 0.2
-  Amount: 0.1
-  InitialDelay: -1
-  Delay: -1
+
+     - Name: SiliconResource
+       Threshold: 0.5
+       Amount: 0.1
+
+     - Name: CobaltResource
+       Threshold: 0.2
+       Amount: 0.1
+
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.1
+       
+     # - Name: ErestrumResource
+       # Threshold: 0.2
+       # Amount: 0.1
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "R2DroneBase"
-    DroneBaseSetup: "DroneBaseSetup"
-    Faction: "Zirax"
-    IsCommandCenter: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 2
-      Max: 4
-    DronesMinMax:
-    - 2
-    - 4
-    ReserveCount: 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "4320"
-    SpawnResource:
-    - "CobaltResource:0-1"
-    - "PromethiumResource:0-1"
-    - "ZascosiumResource:0-1"
-    SpawnResourceRange:
-    - 150
-    - 400
-  - GroupName: "R2XenuDefenseT1"
-    Faction: "Zirax"
-    Territory: false
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "R2DroneBase"
-    SpawnPOIAvoid:
-    - "R2XenuDefenseT1"
-    SpawnPOINearRange:
-    - 300
-    - 400
-    SpawnPOIAvoidDistance: 250
-  - GroupName: "R2XenuDeco"
-    Faction: "Zirax"
-    Territory: false
-    Count:
-      Max: 2
-    CountMinMax:
-    - 0
-    - 2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "500"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "R2DroneBase"
-    SpawnPOINearRange:
-    - 150
-    - 300
-  - GroupName: "R2RadosAuxT1"
-    Faction: "Zirax"
-    FactionTerritory:
-    - "Zirax"
-    AuxiliaryPOIs:
-    - "R2RadosDecoMining"
-    - "R2RadosDeco"
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 5
-      Max: 5
-    DronesMinMax:
-    - 5
-    - 5
-    ReserveCount: 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "R2DroneBase"
-    - "R2RadosAuxT1"
-    SpawnResource:
-    - "ZascosiumResource:1-1"
-    - "CopperResource:0-1"
-    SpawnPOIAvoidDistance: 500
-    SpawnResourceRange:
-    - 150
-    - 600
-    BiomesExcluded:
-    - "PolarSnow"
-    - "Radiated"
-    - "RadiatedFog"
-  - GroupName: "Eden_HarvestPalladium"
-    Faction: "None"
-    FactionTerritory:
-    - "Zirax"
-    IsImportant: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    ReserveCount: 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "4320"
-    SpawnPOINear:
-    - "R2RadosAuxT1"
-    SpawnPOINearRange:
-    - 75
-    - 125
-  - GroupName: "R2RadosAuxT1"
-    Faction: "Zirax"
-    FactionTerritory:
-    - "Zirax"
-    AuxiliaryPOIs:
-    - "R2RadosDefenseT1"
-    - "R2RadosDecoMining"
-    - "R2RadosDeco"
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 5
-      Max: 5
-    DronesMinMax:
-    - 5
-    - 5
-    ReserveCount: 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "R2DroneBase"
-    - "R2RadosAuxT1"
-    SpawnResource:
-    - "PentaxidResource:1-1"
-    - "SiliconResource:0-1"
-    SpawnPOIAvoidDistance: 500
-    SpawnResourceRange:
-    - 150
-    - 600
-    BiomesExcluded:
-    - "PolarSnow"
-    - "Radiated"
-    - "RadiatedFog"
-  - GroupName: "R2RadosAuxT1"
-    Faction: "Zirax"
-    FactionTerritory:
-    - "Zirax"
-    AuxiliaryPOIs:
-    - "R2RadosDefenseT1"
-    - "R2RadosDecoMining"
-    - "R2RadosDeco"
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 5
-      Max: 5
-    DronesMinMax:
-    - 5
-    - 5
-    ReserveCount: 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "R2DroneBase"
-    - "R2RadosAuxT1"
-    SpawnResource:
-    - "CobaltResource:1-1"
-    - "PromethiumResource:0-1"
-    SpawnPOIAvoidDistance: 500
-    SpawnResourceRange:
-    - 150
-    - 600
-    BiomesExcluded:
-    - "PolarSnow"
-    - "Radiated"
-    - "RadiatedFog"
-  - GroupName: "R2RadosDefenseT1"
-    Faction: "Zirax"
-    FactionTerritory:
-    - "Zirax"
-    Territory: false
-    IsAuxPOI: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "500"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINearRange:
-    - 125
-    - 250
-  - GroupName: "R2RadosDecoMining"
-    Faction: "Zirax"
-    FactionTerritory:
-    - "Zirax"
-    Territory: false
-    IsAuxPOI: true
-    Count:
-      Min: 3
-      Max: 6
-    CountMinMax:
-    - 3
-    - 6
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "500"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINearRange:
-    - 75
-    - 200
-  - GroupName: "R2RadosDeco"
-    Faction: "Zirax"
-    FactionTerritory:
-    - "Zirax"
-    Territory: false
-    IsAuxPOI: true
-    Count:
-      Max: 4
-    CountMinMax:
-    - 0
-    - 4
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "500"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINearRange:
-    - 75
-    - 200
-  - GroupName: "R2ColonistMain"
-    Faction: "Colonists"
-    Territory: false
-    IsImportant: true
-    Count:
-      Max: 1
-    CountMinMax:
-    - 0
-    - 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "4320"
-    SpawnResource:
-    - "PromethiumResource:0-1"
-    SpawnResourceRange:
-    - 150
-    - 600
-    BiomesExcluded:
-    - "PolarSnow"
-    - "Radiated"
-    - "RadiatedFog"
-  - GroupName: "R2ColonistAux"
-    Faction: "Colonists"
-    Territory: false
-    IsImportant: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "R2ColonistMain"
-    SpawnPOINearRange:
-    - 100
-    - 300
-  - GroupName: "R2ColonistDefense"
-    Faction: "Colonists"
-    Territory: false
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    DroneProb: 0.3
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "R2ColonistMain"
-    SpawnPOIAvoid:
-    - "R2ColonistDefense"
-    SpawnPOINearRange:
-    - 500
-    - 600
-    SpawnPOIAvoidDistance: 300
-  - GroupName: "R2ColonistDeco"
-    Faction: "Colonists"
-    Territory: false
-    Count:
-      Max: 2
-    CountMinMax:
-    - 0
-    - 2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "500"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "R2ColonistMain"
-    SpawnPOINearRange:
-    - 100
-    - 300
-  - GroupName: "R2RadosDecoMining"
-    Faction: "Zirax"
-    FactionTerritory:
-    - "Zirax"
-    Territory: false
-    IsScalingCount: true
-    Count:
-      Min: 4
-      Max: 6
-    CountMinMax:
-    - 4
-    - 6
-    DroneProb: 0.3
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "R2DroneBase"
-    - "R2RadosAuxT1"
-    SpawnResource:
-    - "ZascosiumResource:0-1"
-    - "CopperResource:0-1"
-    - "PentaxidResource:0-1"
-    SpawnPOIAvoidDistance: 500
-    SpawnResourceRange:
-    - 150
-    - 600
-    BiomesExcluded:
-    - "PolarSnow"
-    - "Radiated"
-    - "RadiatedFog"
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 4
-      Max: 4
-    CountMinMax:
-    - 4
-    - 4
-    DroneProb: 0.3
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "CrashedShip"
-    SpawnPOINearRange:
-    - 80
-    - 600
-    SpawnPOIAvoidDistance: 600
-    Biome:
-    - "LargeCrater"
-  - GroupName: "Eden_HarvestTungsten"
-    Faction: "None"
-    FactionTerritory:
-    - "Warlord"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    DroneProb: 0.3
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "RegenAfter"
-      Value: "4320"
-  FixedPlayerStart:
-  - Mode: "Creative"
-    SubMode: "Empty"
-    Pos:
-    - 0
-    - 147
-    - 0
-    RotY: 160
-    Armor: "ArmorLight"
-  - Mode: "Creative"
-    SubMode: "Normal"
-    Pos:
-    - 0
-    - 52
-    - 0
-    RotY: 30
-    Armor: "ArmorLight"
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 147
-    - 0
-    RotY: 160
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Items:
-    - "SurvivalTent, Flashlight, AntibioticOintment:2, Bandages:2, StomachPills:2, PowerBar:2, EnergyDrink:1"
-    - "SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1"
-    - "SurvivalTent, Flashlight, Bandages:1"
-    - "#FreshStart: SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1"
-    Armor: "ArmorLight"
+    Random:
+
+# =================================================================================================
+# Main POIs. Important or larger POIs and POI compounds.
+# =================================================================================================
+
+# =============================================== Faction Zirax Main
+# ====================== Drone Base
+# Zirax Drone base
+        - GroupName: R2DroneBase
+          Faction: Zirax
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetup
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 3
+          SpawnResource: ["CobaltResource:0-1","PromethiumResource:0-1","ZascosiumResource:0-1"]
+          SpawnResourceRange: [150,400]
+          Properties:
+            - Key: RegenAfter
+              Value: 4320
+
+# Defenses for Drone Base
+        - GroupName: R2XenuDefenseT1
+          Faction: Zirax
+          Territory: False
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOIAvoid: [R2XenuDefenseT1]
+          SpawnPOIAvoidDistance: 250
+          SpawnPOINear: [R2DroneBase]
+          SpawnPOINearRange: [300, 400]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Deco
+        - GroupName: R2XenuDeco
+          Faction: Zirax
+          Territory: False
+          CountMinMax: [ 0, 2 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [R2DroneBase]
+          SpawnPOINearRange: [150, 300]
+          Properties:
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+
+# ====================== Rados mining operations scattered around the moon.
+# Claims zascosium
+        - GroupName: R2RadosAuxT1
+          Faction: Zirax
+          FactionTerritory: [Zirax]
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ]
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          AuxiliaryPOIs: [R2RadosDecoMining, R2RadosDeco]
+          DroneProb: 1.0
+          DronesMinMax: [ 5, 5 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOIAvoid: [R2DroneBase, R2RadosAuxT1]
+          SpawnPOIAvoidDistance: 500
+          SpawnResource: ["ZascosiumResource:1-1","CopperResource:0-1"]
+          SpawnResourceRange: [150,600]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Palladium near one of the Zirax POIs
+        - GroupName: Eden_HarvestPalladium
+          Faction: None
+          FactionTerritory: [Zirax]
+          IsImportant: True
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 2
+          TroopTransport: False
+          SpawnPOINear: [R2RadosAuxT1]
+          SpawnPOINearRange: [75, 125]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+# # Dummy POI for patrolling Bandit patrol vessels
+        # - GroupName: Eden_DummyPOI
+          # Faction: Warlord
+          # FactionTerritory: [Warlord]
+          # Territory: False
+          # AvoidFactionTerritory: False
+          # IsImportant: True
+          # CountMinMax: [ 1, 1 ]
+          # DroneProb: 0
+          # DronesMinMax: [ 1, 1 ]
+          # ReserveCount: 0
+          # TroopTransport: False
+          # SpawnPOINear: [Eden_HarvestPalladium]
+          # SpawnPOINearRange: [50, 100]
+          # Properties:
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: RegenAfter
+              # Value: 4320
+
+# # Dummy POI for spawning Bandit patrol vessels
+        # - GroupName: Eden_DummyBandit
+          # Faction: None
+          # Territory: False
+          # IsImportant: True
+          # CountMinMax: [ 1, 1 ]
+          # DroneProb: 0
+          # DronesMinMax: [ 1, 1 ]
+          # ReserveCount: 0
+          # TroopTransport: False
+          # SpawnPOINear: [Eden_HarvestPalladium]
+          # SpawnPOINearRange: [1000, 1500]
+          # Properties:
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: RegenAfter
+              # Value: 4320
+
+# Claims pentaxid
+        - GroupName: R2RadosAuxT1
+          Faction: Zirax
+          FactionTerritory: [Zirax]
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ]
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          AuxiliaryPOIs: [R2RadosDefenseT1, R2RadosDecoMining, R2RadosDeco]
+          DroneProb: 1.0
+          DronesMinMax: [ 5, 5 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOIAvoid: [R2DroneBase, R2RadosAuxT1]
+          SpawnPOIAvoidDistance: 500
+          SpawnResource: ["PentaxidResource:1-1","SiliconResource:0-1"]
+          SpawnResourceRange: [150,600]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Claims cobalt
+        - GroupName: R2RadosAuxT1
+          Faction: Zirax
+          FactionTerritory: [Zirax]
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ]
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          AuxiliaryPOIs: [R2RadosDefenseT1, R2RadosDecoMining, R2RadosDeco]
+          DroneProb: 1.0
+          DronesMinMax: [ 5, 5 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOIAvoid: [R2DroneBase, R2RadosAuxT1]
+          SpawnPOIAvoidDistance: 500
+          SpawnResource: ["CobaltResource:1-1","PromethiumResource:0-1"]
+          SpawnResourceRange: [150,600]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Defense aux
+        - GroupName: R2RadosDefenseT1
+          Faction: Zirax
+          FactionTerritory: [Zirax]
+          Territory: False
+          IsAuxPOI: True
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINearRange: [125, 250]
+          Properties:
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+# Mining Deco aux
+        - GroupName: R2RadosDecoMining
+          Faction: Zirax
+          FactionTerritory: [Zirax]
+          Territory: False
+          IsAuxPOI: True
+          CountMinMax: [ 3, 6 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINearRange: [75, 200]
+          Properties:
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+# Deco aux
+        - GroupName: R2RadosDeco
+          Faction: Zirax
+          FactionTerritory: [Zirax]
+          Territory: False
+          IsAuxPOI: True
+          CountMinMax: [ 0, 4 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINearRange: [75, 200]
+          Properties:
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+# =============================================== Faction Colonists Main
+# ====================== Main Compound.
+        - GroupName: R2ColonistMain
+          Faction: Colonists
+          Territory: False
+          IsImportant: True
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ]
+          CountMinMax: [ 0, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnResource: ["PromethiumResource:0-1"]
+          SpawnResourceRange: [150,600]
+          Properties:
+            - Key: RegenAfter
+              Value: 4320
+
+        - GroupName: R2ColonistAux
+          Faction: Colonists
+          Territory: False
+          IsImportant: True
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [R2ColonistMain]
+          SpawnPOINearRange: [100, 300]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: R2ColonistDefense
+          Faction: Colonists
+          Territory: False
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0.3
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [R2ColonistDefense]
+          SpawnPOIAvoidDistance: 300
+          SpawnPOINear: [R2ColonistMain]
+          SpawnPOINearRange: [500, 600]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Deco
+        - GroupName: R2ColonistDeco
+          Faction: Colonists
+          Territory: False
+          CountMinMax: [ 0, 2 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [R2ColonistMain]
+          SpawnPOINearRange: [100, 300]
+          Properties:
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+# Random mining sites
+        - GroupName: R2RadosDecoMining
+          Faction: Zirax
+          FactionTerritory: [Zirax]
+          Territory: False
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ]
+          CountMinMax: [ 4, 6 ]
+          IsScalingCount: True
+          DroneProb: 0.3
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [R2DroneBase, R2RadosAuxT1]
+          SpawnPOIAvoidDistance: 500
+          SpawnResource: ["ZascosiumResource:0-1","CopperResource:0-1","PentaxidResource:0-1"]
+          SpawnResourceRange: [150,600]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# === Crashed ship with seed cargo, infecting the planet with greens ===
+        - GroupName: CrashedShip   
+          Faction: None  
+          Biome: [ LargeCrater ]
+          IsImportant: True
+          CountMinMax: [ 4, 4 ]         # To heighten spawning chances
+          DroneProb: 0.3
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [CrashedShip]  # to prevent double-spawing on same biome spot
+          POIDistance: 600
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+# Tungsten
+        - GroupName: Eden_HarvestTungsten
+          Faction: None
+          FactionTerritory: [Warlord]
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True
+          DroneProb: 0.3
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+
+
+
+
+    FixedPlayerStart:
+        - Mode: Creative
+          SubMode: Empty
+          Armor: ArmorLight
+          Pos: [ 0, 147, 0 ]
+          RotY: 160
+
+        - Mode: Creative
+          SubMode: Normal
+          Armor: ArmorLight
+          Pos: [ 0, 52, 0 ]
+          RotY: 30
+
+        - Mode: Debug
+          Pos: [ 0, 147, 0 ]
+          RotY: 160
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorLight
+          Items: [ "SurvivalTent, Flashlight, AntibioticOintment:2, Bandages:2, StomachPills:2, PowerBar:2, EnergyDrink:1", "SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1", "SurvivalTent, Flashlight, Bandages:1", "#FreshStart: SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1" ]
+
+# ==============================================================
+
+# Drones
+# ------------ Aerodrones with propellers.
+# DroneSmallZiraxEMP
+# DroneAeroZiraxMinigun
+# DroneAeroZiraxCannon
+# DroneAeroZiraxRocket
+
+# ------------ Small hoverdrones
+# DroneHoverZiraxMinigun
+# DroneHoverZiraxLaser
+# DroneHoverZiraxRocket
+
+# ------------ Large gunships
+# DroneLargeZiraxMinigun
+# DroneLargeZiraxRocket
+# DroneLargeZiraxPlasma
+
 DroneBaseSetup:
-  Random:
-  - GroupName: "DroneBaseSetup"
-    Difficulty: 3
-    PresetStyle: 3
-    Stock:
-    - Name: "DroneAeroZiraxMinigun"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneAeroZiraxCannon"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneAeroZiraxRocket"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneLargeZiraxRocket"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneBomberAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "EnemyDroneV2Plasma"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMinigun"
-      Amount: "500"
-      Extra: 3
-    - Name: "ZiraxRocket"
-      Amount: "500"
-      Extra: 3
-    - Name: "RipperDog"
-      Amount: "150"
-      Extra: 3
-    - Name: "Mechanoid"
-      Amount: "300"
-      Extra: 3
-  PlanetVessels:
-  - Name: "R2PVZiraxT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Zirax"
-    LevelMod: "2"
-    FixedMaxSpeed: 20
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 1800
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "R2DroneBase"
-      Radius: 1000
-      DistToGround: 200
-    Stock:
-    - Name: "DroneHoverZiraxLaser"
-      Amount: "4"
-      Type: "FighterDrone"
-    Properties:
-    - Key: "Discovery"
-      Value: "False"
-  - Name: "R2PVZiraxT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Zirax"
-    LevelMod: "2"
-    FixedMaxSpeed: 10
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 1800
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "Eden_HarvestPalladium"
-      Radius: 350
-      DistToGround: 225
-    Stock:
-    - Name: "DroneHoverZiraxLaser"
-      Amount: "4"
-      Type: "FighterDrone"
-    Properties:
-    - Key: "Discovery"
-      Value: "False"
-  - Name: "R2PVZiraxT0"
-    CountMinMax:
-    - 1
-    - 2
-    Faction: "Zirax"
-    LevelMod: "2"
-    FixedMaxSpeed: 5
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 1800
-    RangePatrolTask:
-      DistToGround: 250
-    Stock:
-    - Name: "DroneHoverZiraxLaser"
-      Amount: "0"
-      Type: "FighterDrone"
-    Properties:
-    - Key: "Discovery"
-      Value: "False"
-    - Key: "AIManPatrolFactions"
-      Value: "Zirax, Epsilon, Rados, Ghyst, Xenu"
-  - Name: "R2PVZiraxT1"
-    CountMinMax:
-    - 0
-    - 1
-    Faction: "Xenu"
-    LevelMod: "2"
-    FixedMaxSpeed: 50
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 1800
-    RangePatrolTask:
-      DistToGround: 175
-    Stock:
-    - Name: "DroneHoverZiraxLaser"
-      Amount: "4"
-      Type: "FighterDrone"
-    Properties:
-    - Key: "Discovery"
-      Value: "False"
-    - Key: "AIManPatrolFactions"
-      Value: "Zirax, Epsilon, Rados, Ghyst, Xenu"
-  - Name: "RE2_OPVBanditT1"
-    CountMinMax:
-    - 0
-    - 1
-    Faction: "Warlord"
-    LevelMod: "2"
-    FixedMaxSpeed: 15
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 1800
-    RangePatrolTask:
-      Radius: 3000
-      DistToGround: 160
-    Stock:
-    - Name: "DroneHoverZiraxLaser"
-      Amount: "0"
-      Type: "FighterDrone"
-    Properties:
-    - Key: "Discovery"
-      Value: "False"
-    - Key: "AIManPatrolFactions"
-      Value: "Zirax, Epsilon, Rados, Ghyst, Xenu"
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 3
+          PresetStyle: 3
+          Stock:
+
+              - Name: DroneAeroZiraxMinigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneAeroZiraxCannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneAeroZiraxRocket
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeZiraxRocket
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 150
+                Extra: 3
+
+              - Name: Mechanoid
+                Amount: 300
+                Extra: 3
+
+    PlanetVessels:
+# Guarding drone base
+              - Name: R2PVZiraxT1
+                Faction: Zirax
+                CountMinMax: [1, 1]
+                LevelMod: 2
+                FixedMaxSpeed: 20
+                DelayBetweenRespawn: 600
+                DelayBeforeSelfDestruction: 1800
+                IsRespawnAfterDestruction: False
+                RangePatrolTask:
+                  POINameAsPositionRef: [R2DroneBase]
+                  Radius: 1000
+                  DistToGround: 200
+                Properties:
+                  - Key: Discovery
+                    Value: False
+                Stock:
+                  - Name: DroneHoverZiraxLaser
+                    Amount: 4
+                    Type: FighterDrone
+
+# Guarding Palladium
+              - Name: R2PVZiraxT1
+                Faction: Zirax
+                CountMinMax: [1, 1]
+                LevelMod: 2
+                FixedMaxSpeed: 10
+                DelayBetweenRespawn: 600
+                DelayBeforeSelfDestruction: 1800
+                IsRespawnAfterDestruction: False
+                RangePatrolTask:
+                  POINameAsPositionRef: [Eden_HarvestPalladium]
+                  Radius: 350
+                  DistToGround: 225
+                Properties:
+                  - Key: Discovery
+                    Value: False
+                Stock:
+                  - Name: DroneHoverZiraxLaser
+                    Amount: 4
+                    Type: FighterDrone
+
+# Patrolling whole planet. Slow moving resource surveys.
+              - Name: R2PVZiraxT0
+                Faction: Zirax
+                CountMinMax: [1, 2]
+                LevelMod: 2
+                FixedMaxSpeed: 5
+                DelayBetweenRespawn: 600
+                DelayBeforeSelfDestruction: 1800
+                IsRespawnAfterDestruction: False
+                RangePatrolTask:
+                  # POINameAsPositionRef: [R2DroneBase, R2RadosAuxT1]
+                  DistToGround: 250
+                Properties:
+                  - Key: Discovery
+                    Value: False
+                  - Key: AIManPatrolFactions
+                    Value: "Zirax, Epsilon, Rados, Ghyst, Xenu"
+             #     # - Key: AIManPatrolGroups
+                    # Value: " "
+                Stock:
+                  - Name: DroneHoverZiraxLaser
+                    Amount: 0
+                    Type: FighterDrone
+
+# Patrolling whole planet. Only in Zirax territory.
+              - Name: R2PVZiraxT1
+                Faction: Xenu
+                CountMinMax: [0, 1]
+                LevelMod: 2
+                FixedMaxSpeed: 50
+                DelayBetweenRespawn: 600
+                DelayBeforeSelfDestruction: 1800
+                IsRespawnAfterDestruction: False
+                RangePatrolTask:
+                  # POINameAsPositionRef: [R2DroneBase]
+                  DistToGround: 175
+                Properties:
+                  - Key: Discovery
+                    Value: False
+                  - Key: AIManPatrolFactions
+                    Value: "Zirax, Epsilon, Rados, Ghyst, Xenu"
+             #     # - Key: AIManPatrolGroups
+                    # Value: " "
+                Stock:
+                  - Name: DroneHoverZiraxLaser
+                    Amount: 4
+                    Type: FighterDrone
+
+# Bandits coming to raid the Zirax.
+              - Name: RE2_OPVBanditT1
+                Faction: Warlord
+                CountMinMax: [0, 1]
+                # Probability: 0.25
+                LevelMod: 2
+                FixedMaxSpeed: 15
+                DelayBetweenRespawn: 600
+                DelayBeforeSelfDestruction: 1800
+                IsRespawnAfterDestruction: False
+                RangePatrolTask:
+                  # POINameAsPositionRef: [Eden_HarvestPalladium]
+                  Radius: 3000
+                  DistToGround: 160
+                Properties:
+                  - Key: Discovery
+                    Value: False
+                  - Key: AIManPatrolFactions
+                    Value: "Zirax, Epsilon, Rados, Ghyst, Xenu"
+                    # Value: "Warlord"
+             #     # - Key: AIManPatrolGroups
+                    # Value: " "
+                Stock:
+                  - Name: DroneHoverZiraxLaser
+                    Amount: 0
+                    Type: FighterDrone
+
 DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 2
-    - 3
-    CenterX: 5000
-    Radius: 3000
-  - DronesMinMax:
-    - 2
-    - 3
-    CenterX: -5000
-    Radius: 3000
-  - DronesMinMax:
-    - 2
-    - 3
-    CenterX: 2500
-    Radius: 3000
-  - DronesMinMax:
-    - 2
-    - 3
-    CenterX: -2500
-    Radius: 3000
-CreatureSpawning:
-- Biomes:
-  - "Any"
-  Entities:
-  - Name: "AlienAssassinReds"
-    Amount: 8
-    DelayMinMax:
-    - 10
-    - 16
-    Period: "Always"
+    Random:
+        - DronesMinMax: [ 2, 3 ]
+          CenterX: 5000
+          Radius: 3000
+
+        - DronesMinMax: [ 2, 3 ]
+          CenterX: -5000
+          Radius: 3000
+
+        - DronesMinMax: [ 2, 3 ]
+          CenterX: 2500
+          Radius: 3000
+
+        - DronesMinMax: [ 2, 3 ]
+          CenterX: -2500
+          Radius: 3000
+
+
+# ==============================================================    # Most of POI defence is done by spawned ZiraxRocketPatrols
+
 SpawnRateZones:
-- SpawnAt:
-  - "R2PolarisTradePlanet"
-  Radius: 1000
-  RadiusRandom: 50
-  RateMultiplyerEdge: 0.7
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
-- SpawnAt:
-  - "R2AbandonedPOI"
-  Radius: 150
-  RadiusRandom: 25
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
+   - SpawnAt: [R2PolarisTradePlanet]
+     Radius: 1000
+     RadiusRandom: 50
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0.7
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7"
+
+# Clears out hostile spawns next to abandoned POIs.
+   - SpawnAt: [R2AbandonedPOI]
+     Radius: 150
+     RadiusRandom: 25
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7"
+
 SpawnZones:
-- SpawnAt:
-  - "R2DroneBase"
-  - "R2XenuMain"
-  - "R2EpsilonMain"
-  - "R2GhystMain"
-  - "R2RadosMainT3"
-  - "R2RadosMainT3Snow"
-  - "R2RadosMainT3Desert"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 400
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.1
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "ZiraxMinigunPatrol"
-    - "ZiraxRocketPatrol"
-    - "ZiraxShotgunPatrol"
-    - "ZiraxMechanoidPatrol"
-    - "ZiraxRipperDogPatrol"
-    Biomes:
-    - "Any"
-    Amount: 50
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "R2XenuAuxT2"
-  - "R2EpsilonAuxT2"
-  - "R2GhystAuxT2"
-  - "R2RadosAuxT2"
-  - "R2RadosAuxT2Snow"
-  - "R2RadosAuxT2Desert"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 350
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.1
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "ZiraxMinigunPatrol"
-    - "ZiraxRocketPatrol"
-    - "ZiraxShotgunPatrol"
-    - "ZiraxMechanoidPatrol"
-    - "ZiraxRipperDogPatrol"
-    Biomes:
-    - "Any"
-    Amount: 25
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "R2RadosAuxT1"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 250
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "Eden_ZiraxMiningDronesGuarded"
-    - "ZiraxMinigunPatrol"
-    Biomes:
-    - "Any"
-    Amount: 75
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "R2RadosDecoMining"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 200
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "Eden_ZiraxMiningDrones"
-    Biomes:
-    - "Any"
-    Amount: 50
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "MineT1PolarisRG"
-  - "MineT2PolarisRG"
-  - "MineT3PolarisRG"
-  - "MineT4PolarisRG"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 250
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "Eden_PolarisMiningDronesGuarded"
-    Biomes:
-    - "Any"
-    Amount: 50
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
+# ====================== Spawn Zones Zirax
+# Drone Base and Main POIs
+   - SpawnAt: [R2DroneBase, R2XenuMain, R2EpsilonMain, R2GhystMain, R2RadosMainT3, R2RadosMainT3Snow, R2RadosMainT3Desert]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 400
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.1
+     Color: "1.0, 0.0, 0.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 50
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+# T2 POIs
+   - SpawnAt: [R2XenuAuxT2, R2EpsilonAuxT2, R2GhystAuxT2, R2RadosAuxT2, R2RadosAuxT2Snow, R2RadosAuxT2Desert]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 350
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.1
+     Color: "1.0, 0.0, 0.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+# Mining Drones
+   - SpawnAt: [R2RadosAuxT1]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 250
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 0.0, 0.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Eden_ZiraxMiningDronesGuarded, ZiraxMinigunPatrol]
+         Biomes: [Any]
+         Amount: 75
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [R2RadosDecoMining]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 200
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 0.0, 0.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Eden_ZiraxMiningDrones]
+         Biomes: [Any]
+         Amount: 50
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+# ====================== Spawn Zones Polaris
+# Mining Drones
+   - SpawnAt: [MineT1PolarisRG, MineT2PolarisRG, MineT3PolarisRG, MineT4PolarisRG]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 250
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 0.0, 0.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Eden_PolarisMiningDronesGuarded]
+         Biomes: [Any]
+         Amount: 50
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+### Creatures. Needed to prevent error.
+CreatureSpawning:
+    - Biomes: [Nest]
+      Entities:
+        - Name: Spiders03
+          Period: Always
+          Amount: 0
+          DelayMinMax: [20, 24]
+          Color: "1.0, 1.0, 0.3"
+
+
+### Creatures - Only imported lifeforms here.
+CreatureSpawning:
+
+    - Biomes: [Any]
+      Entities:
+        - Name: AlienAssassinReds  # Terrain survey
+          Period: Always
+          Amount: 8
+          DelayMinMax: [10, 16]
