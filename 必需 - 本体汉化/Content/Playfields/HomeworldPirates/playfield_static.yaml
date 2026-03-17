@@ -1,854 +1,722 @@
-PlayfieldType: "Planet"
-PlanetType: "PiratesHomeworld"
+---
+#PlanetType: Desert
+#Biomes: Pole, Water, ShallowWater, Shore, Oasis, DustBowl, SandDrift, Mountains, Flowers, FlowersEdge, Dunes, Sand, Plantation, Technical_Height, Plateau, LowMountains, LowMountains_1, Nest, LargeCrater, Wadi, Plains
+
+Description: "\u6D77\u76D7\u7684\u6BCD\u661F\u7CFB\u3002\u770B\u597D\u4F60\u7684\u94B1\u888B\u3002"
+
+PlanetType: PiratesHomeworld
+PlayfieldType: Planet
 Difficulty: 10
-SunFlare: "EnvironmentalEffects/SunFlareBlue"
+
+LandClaimZone: Device
+
+# Special Effects 
 SpecialEffectsLocal:
-- Name: "FireFliesRed"
-  MaxHeight: 40
-  Time: "Night"
-  Biome:
-  - "Water"
-  - "ShallowWater"
-  - "Shore"
-- Name: "FireFliesGreenFew"
-  MaxHeight: 150
-  Time: "Night"
-  Biome:
-  - "Plains"
-  - "Sand"
-  - "Flowers"
-  - "FlowersEdge"
-  - "Wadi"
-  - "DustBowl"
-- Name: "Pollen"
-  MaxHeight: 150
-  Time: "Day"
-  Biome:
-  - "Plains"
-  - "DustBowl"
-  - "Plantation"
-  - "Flowers"
-  - "FlowersEdge"
-  - "Oasis"
-- Name: "FireFliesGreen"
-  MaxHeight: 150
-  Time: "Night"
-  Biome:
-  - "Oasis"
-  - "Plantation"
+  - Name: FireFliesRed
+    Biome: [ Water, ShallowWater, Shore ]
+    Time: Night
+    MaxHeight: 40
+  - Name: FireFliesGreenFew
+    Biome: [ Plains, Sand, Flowers, FlowersEdge, Wadi, DustBowl ]
+    Time: Night
+    MaxHeight: 150
+  - Name: Pollen
+    Biome: [ Plains, DustBowl, Plantation, Flowers, FlowersEdge, Oasis ]
+    Time: Day
+    MaxHeight: 150
+  - Name: FireFliesGreen
+    Biome: [ Oasis, Plantation ]
+    Time: Night
+    MaxHeight: 150
+
 SpecialEffectsGlobal:
-- Name: "Clear"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "HeatWave"
-  InitialDelay: 48
-  Delay: 12
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "Wind"
-  InitialDelay: 20
-  Delay: 8
-  Lifetime: 500
-  Type: "Weather"
-- Name: "BirdFlocksVultures"
-  SpawnY: 40
-  Time: "Day"
-  Biome:
-  - "Dunes"
-  - "Plains"
-  - "Mountains"
-  - "Water"
-  - "Flowers"
-  - "Plantation"
-  InitialDelay: 2
-  Delay: 4
-  PlyDist: 50
-  Lifetime: 600
-AtmosphereColor: "0.77, 0.57, 0.44"
-AtmosphereParams:
-- 5
-- 1.5
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 1200
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 20
+    Delay: 8
+    Lifetime: 500
+# Global Effects
+  - Name: BirdFlocksVultures
+    Biome: [ Dunes, Plains, Mountains, Water, Flowers, Plantation ]
+    Time: Day
+    InitialDelay: 2
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 50
+    SpawnY: 40
+    Struct: True
+# ==================
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.77, 0.57, 0.44"  
 SkyColor: "0.90, 0.3, 0.3"
 SkyHorizonColor: "1, 0.2, 0"
+AtmosphereParams: [5, 1.5]       
+
+# Light
+DayLightIntensity: 1.4
+NightLightIntensity: 0.3
 LightZenithColor: "1, 0.7, 0.7"
 LightHorizonColor: "1, 0.5, 0"
 NightLightColor: "0.78, 0.78, 1"
-CloudsZenithColor: "0.85, 0.36, 0.20"
-CloudsHorizonColor: "0.2, 0.04, 0.03"
-CloudsNightZenithColor: "0.03, 0.012, 0.012"
-CloudsNightHorizonColor: "0.03, 0.012, 0.012"
-CloudsOpacity: 0.3
-FogCloudIntensity: 0.8
-DayLightIntensity: 1.4
-NightLightIntensity: 0.3
 DayShadowStrength: 1
 NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Fog
 AtmosphereFog: 0.35
-CloudsDensity: 0.1
-CloudsSharpness: 0.05
-CloudsBrightness: 0.7
-WindSpeed: 3
 FogColor: "0.8, 0.4, 0.2"
+FogCloudIntensity: 0.8
 GroundFogIntensity: 0.05
 GroundFogHeight: 60
-Description: "\u6D77\u76D7\u7684\u6BCD\u661F\u3002\u5C0F\u5FC3\u4F60\u7684\u94B1\u5305\u3002"
-PlanetClass: "PiratesHomeworld"
-UseRandom: true
-LandClaimZone: "Device"
+
+# Clouds & Wind
+CloudsDensity: 0.1
+CloudsSharpness: 0.05
+CloudsOpacity: 0.3
+
+CloudsBrightness: 0.7
+CloudsZenithColor: "0.85, 0.36, 0.20" 
+CloudsHorizonColor: "0.2, 0.04, 0.03" 
+CloudsNightZenithColor: "0.03, 0.012, 0.012"
+CloudsNightHorizonColor: "0.03, 0.012, 0.012"
+
+WindSpeed: 3
+
+
+# ==============================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "CarbonResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 4
-  SizeMinMax:
-  - 2
-  - 6
-  DepthMinMax:
-  - 5
-  - 15
-  DroneProb: 0.2
-- Name: "IronResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 3
-  SizeMinMax:
-  - 5
-  - 7
-  DepthMinMax:
-  - 5
-  - 15
-  DroneProb: 0.2
-  Biome:
-  - "Sand"
-  - "Dunes"
-- Name: "CobaltResource"
-  IsImportant: true
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 2
-  SizeMinMax:
-  - 2
-  - 5
-  DepthMinMax:
-  - 10
-  - 15
-  DroneProb: 0.3
-  Biome:
-  - "Wadi"
-  - "Oasis"
-  - "Flowers"
-  - "Nest"
-- Name: "CopperResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 3
-  SizeMinMax:
-  - 4
-  - 6
-  DepthMinMax:
-  - 10
-  - 15
-  DroneProb: 0.3
-  Biome:
-  - "Plateau"
-- Name: "TitanResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 4
-  SizeMinMax:
-  - 3
-  - 6
-  DepthMinMax:
-  - 15
-  - 20
-  DroneProb: 0.8
-  MaxDroneCount: 4
-  Biome:
-  - "Sand"
-  - "Dunes"
-- Name: "NeodymiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 4
-  - 6
-  SizeMinMax:
-  - 7
-  - 9
-  DepthMinMax:
-  - 10
-  - 15
-  DroneProb: 0.8
-  MaxDroneCount: 4
-  Biome:
-  - "Mountains"
-  - "LowMountains"
-  - "LowMountains_1"
-- Name: "PromethiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 3
-  SizeMinMax:
-  - 3
-  - 5
-  DepthMinMax:
-  - 0
-  - 1
-  DistTypeCylinder:
-    MaxRadius: 13
-    YVariance: 10
-  DroneProb: 0.8
-  Biome:
-  - "Mountains"
-  - "LowMountains"
-  - "LowMountains_1"
+#T0
+#Carbon: Poor/Medium
+    - Name: CarbonResource
+     # Biome: [ Sand, Dunes ]
+      CountMinMax: [ 3, 4 ] 
+      IsScalingCount: True
+      SizeMinMax: [ 2, 6 ] 
+      DepthMinMax: [ 5, 15 ] 
+      DroneProb: 0.2 
+#T1
+    - Name: IronResource
+      Biome: [ Sand, Dunes ]
+      CountMinMax: [ 2, 3 ] 
+      IsScalingCount: True
+      SizeMinMax: [ 5, 7 ] 
+      DepthMinMax: [ 5, 15 ] 
+      DroneProb: 0.2 
+
+    - Name: CobaltResource
+      Biome: [ Wadi, Oasis, Flowers, Nest ]
+      IsImportant: True
+      CountMinMax: [ 1, 2 ]
+      IsScalingCount: True
+      SizeMinMax: [ 2, 5 ]
+      DepthMinMax: [ 10, 15 ] 
+      DroneProb: 0.3
+
+    - Name: CopperResource
+      Biome: [ Plateau ]
+      CountMinMax: [ 1, 3 ]
+      IsScalingCount: True
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 10, 15 ] 
+      DroneProb: 0.3
+#T2
+    - Name: TitanResource
+      Biome: [ Sand, Dunes ]
+      CountMinMax: [ 3, 4 ]
+      IsScalingCount: True
+      SizeMinMax: [ 3, 6 ]
+      DepthMinMax: [ 15, 20 ] 
+      DroneProb: 0.8
+      MaxDroneCount: 4 
+
+    - Name: NeodymiumResource
+      Biome: [ Mountains, LowMountains, LowMountains_1 ]
+      CountMinMax: [ 4, 6 ]
+      IsScalingCount: True
+      SizeMinMax: [ 7, 9 ]
+      DepthMinMax: [ 10, 15 ] 
+      DroneProb: 0.8
+      MaxDroneCount: 4 
+#Special
+    - Name: PromethiumResource
+      Biome: [ Mountains, LowMountains, LowMountains_1 ]
+      CountMinMax: [ 2, 3 ]
+      IsScalingCount: True
+      SizeMinMax: [ 3, 5 ]
+      DroneProb: 0.8
+      DepthMinMax: [ 0, 1 ]
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+
+### Resource Asteroids
 AsteroidResources:
-- Name: "IronResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "CobaltResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "CopperResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "TitanResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "NeodymiumResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "PromethiumResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CobaltResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: TitanResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: NeodymiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "PiratesDroneBase"
-    DroneSetupID: "DroneBasePirates"
-    Faction: "Pirates"
-    NoShieldReload: true
-    IsCommandCenter: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    BiomesExcluded:
-    - "Plains"
-  - GroupName: "PiratesMain"
-    Faction: "Pirates"
-    NoShieldReload: true
-    AuxiliaryPOIs:
-    - "PiratesDefenseDesert"
-    Count:
-      Min: 2
-      Max: 4
-    CountMinMax:
-    - 2
-    - 4
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    BiomesExcluded:
-    - "Plains"
-  - GroupName: "Pirates"
-    Faction: "Pirates"
-    NoShieldReload: true
-    AuxiliaryPOIs:
-    - "PiratesDefenseDesert"
-    Count:
-      Min: 3
-      Max: 5
-    CountMinMax:
-    - 3
-    - 5
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "PiratesDefenseDesert"
-    Faction: "Pirates"
-    NoShieldReload: true
-    IsAuxPOI: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINearRange:
-    - 500
-    - 1500
-  - GroupName: "Junksite"
-    Faction: "Pirates"
-    NoShieldReload: true
-    Count:
-      Min: 6
-      Max: 8
-    CountMinMax:
-    - 6
-    - 8
-    DroneProb: 0.2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PiratesMain"
-    SpawnPOIAvoid:
-    - "Junksite"
-    SpawnPOINearRange:
-    - 150
-    - 400
-    SpawnPOIAvoidDistance: 250
-  - GroupName: "Junksite"
-    Faction: "Pirates"
-    NoShieldReload: true
-    Count:
-      Min: 4
-      Max: 6
-    CountMinMax:
-    - 4
-    - 6
-    DroneProb: 0.2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PiratesDroneBase"
-    SpawnPOIAvoid:
-    - "Junksite"
-    SpawnPOINearRange:
-    - 150
-    - 400
-    SpawnPOIAvoidDistance: 250
-  - GroupName: "Junksite"
-    Faction: "Pirates"
-    NoShieldReload: true
-    Count:
-      Min: 10
-      Max: 12
-    CountMinMax:
-    - 10
-    - 12
-    DroneProb: 0.2
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "SkyminerPirates"
-    Faction: "Pirates"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    BiomesExcluded:
-    - "Plains"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 147
-    - 0
-    RotY: 160
-DroneBaseSetup:
-  DroneBases:
-  - DroneSetupID: "DroneBasePirates"
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-    - Name: "DroneBatteredCannon"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Type: "TroopTransport"
-    - Name: "SoldierAlienAssaultRifle"
-      Amount: "Infinite"
-  PlanetVessels:
-  - Name: "OPVPiratesT3"
-    CountMinMax:
-    - 2
-    - 2
-    Faction: "Pirates"
-    LevelMod: "2"
-    FixedMaxSpeed: 40
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "PiratesDroneBase"
-      DistToGround: 300
-    Stock:
-    - Name: "DroneBatteredCannon"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "CivilianDroneCVfast"
-    CountMinMax:
-    - 1
-    - 2
-    Faction: "Pirates"
-    LevelMod: "2"
-    FixedMaxSpeed: 100
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "PiratesMain"
-      Radius: 500
-      DistToGround: 300
-  - Name: "CivilianMicroCV"
-    CountMinMax:
-    - 1
-    - 2
-    Faction: "Pirates"
-    LevelMod: "2"
-    FixedMaxSpeed: 80
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "PiratesMain"
-      Radius: 1000
-      DistToGround: 300
-  - Name: "CivilianDroneCV"
-    CountMinMax:
-    - 1
-    - 2
-    Faction: "Pirates"
-    LevelMod: "2"
-    FixedMaxSpeed: 100
-    DelayBetweenRespawn: 600
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "PiratesMain"
-      Radius: 1500
-      DistToGround: 120
+    Random:
+
+# Dronebase 
+        - GroupName: PiratesDroneBase                  #CommandCenter
+          BiomesExcluded: [ Plains ]
+          Faction: Pirates  
+          NoShieldReload: True
+          IsCommandCenter: True
+          DroneSetupID: DroneBasePirates
+       #   Biome: [ Plateau, LowMountains, LowMountains_1, Mountains, SandDrift ]
+          IsImportant: True
+          CountMinMax: [ 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+   #       SpawnResource: ["IronResource:0-1","PromethiumResource:0-1","CopperResource:0-1"]
+    #      SpawnResourceRange: [150,400]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Unique
+
+# Solo
+
+# MainRandom
+
+        - GroupName: PiratesMain
+          BiomesExcluded: [ Plains ]
+          Faction: Pirates  
+          NoShieldReload: True 
+          CountMinMax: [ 2, 4 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 5
+          AuxiliaryPOIs: [PiratesDefenseDesert]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+# Aux
+
+        - GroupName: Pirates
+          Faction: Pirates  
+          NoShieldReload: True 
+          CountMinMax: [ 3, 5 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 5
+          AuxiliaryPOIs: [PiratesDefenseDesert]
+       #   IsAuxPOI: True
+      #    SpawnPOINearRange: [250, 800]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+# Defenses
+        - GroupName: PiratesDefenseDesert
+          Faction: Pirates  
+          NoShieldReload: True 
+          CountMinMax: [ 1, 2 ]
+      #    DroneProb: 1.0
+      ##    DronesMinMax: [ 1, 2 ]
+       #   ReserveCount: 5
+          IsAuxPOI: True
+          SpawnPOINearRange: [500, 1500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+# Randoms
+
+        - GroupName: Junksite       # next to Pirate centers
+          Faction: Pirates  
+          NoShieldReload: True 
+          CountMinMax: [ 6, 8 ]
+          DroneProb: 0.2
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          SpawnPOIAvoid: [Junksite]  
+          SpawnPOIAvoidDistance: 250
+          SpawnPOINear: [PiratesMain]
+          SpawnPOINearRange: [150, 400]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Junksite       # next to Pirate centers
+          Faction: Pirates  
+          NoShieldReload: True 
+          CountMinMax: [ 4, 6 ]
+          DroneProb: 0.2
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          SpawnPOIAvoid: [Junksite]  
+          SpawnPOIAvoidDistance: 250
+          SpawnPOINear: [PiratesDroneBase]
+          SpawnPOINearRange: [150, 400]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: Junksite
+          Faction: Pirates  
+          NoShieldReload: True 
+          CountMinMax: [ 10, 12 ]  # was [2,5]
+          DroneProb: 0.2
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+        #  AuxiliaryPOIs: [PiratesDefenseDesert]
+       #   IsAuxPOI: True
+      #    SpawnPOINearRange: [250, 800]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: SkyminerPirates
+          BiomesExcluded: [ Plains ]
+          Faction: Pirates  
+          NoShieldReload: True 
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 5
+     #     AuxiliaryPOIs: [PiratesDefenseDesert]
+       #   IsAuxPOI: True
+      #    SpawnPOINearRange: [250, 800]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart: 
+        - Mode: Debug
+          Pos: [ 0, 147, 0 ]
+          RotY: 160 
+
+# ==============================================================
 DroneSpawning:
-  Random:
-  - Name: "DroneBatteredCannon"
-    DronesMinMax:
-    - 9
-    - 10
-    Faction: "Pirates"
-    POINameAsPositionRef: "PiratesDroneBase"
-    Radius: 6000
-CreatureSpawning:
-- Biomes:
-  - "Nest"
-  Entities:
-  - Name: "Spiders03"
-    Amount: 100
-    Color: "1.0, 1.0, 0.3"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-  - Name: "Spiders02"
-    Amount: 400
-    Color: "1.0, 1.0, 0.7"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-- Biomes:
-  - "LargeCrater"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 12
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Day"
-  - Name: "Otyughs"
-    Amount: 12
-    DelayMinMax:
-    - 20
-    - 24
-- Biomes:
-  - "Wadi"
-  Entities:
-  - Name: "CaveWormsGrey"
-    Amount: 20
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-- Biomes:
-  - "Oasis"
-  - "Shore"
-  Entities:
-  - Name: "Slimes"
-    Amount: 20
-    Color: "1.0, 1.0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-  - Name: "AlienBugs01"
-    Amount: 8
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-- Biomes:
-  - "Flowers"
-  - "FlowersEdge"
-  - "Plantation"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 10
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-  - Name: "Spiders02"
-    Amount: 8
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "MegalonopsesBrown"
-    Amount: 10
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Day"
-- Biomes:
-  - "Dunes"
-  - "Sand"
-  - "Plains"
-  - "Plateau"
-  - "DustBowl"
-  Entities:
-  - Name: "WormDesertHerd"
-    Amount: 6
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-  - Name: "GolemsDesert"
-    Amount: 8
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "MegalonopsesBrown"
-    Amount: 10
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Day"
-- Biomes:
-  - "LowMountains"
-  - "LowMountains_1"
-  - "SandDrift"
-  Entities:
-  - Name: "CaveWormsGrey"
-    Amount: 8
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-  - Name: "GolemsDesert"
-    Amount: 6
-    DelayMinMax:
-    - 20
-    - 24
-SpawnRateZones:
-- SpawnAt:
-  - "PiratesDroneBase"
-  Radius: 250
-  RateMultiplyerEdge: 1
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
+    Random:
+      - Name: DroneBatteredCannon
+        DronesMinMax: [ 9, 10 ]
+        Faction: Pirates
+       # CenterX: 5
+        POINameAsPositionRef: PiratesDroneBase     
+        Radius: 6000        
+        
+DroneBaseSetup:
+  DroneBases:                               
+    - DroneSetupID: DroneBasePirates
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+        - Name: DroneBatteredCannon
+          Amount: Infinite
+          Type: FighterDrone
+
+        - Name: DroneTroopsTransport
+          Amount: Infinite
+          Type: TroopTransport
+
+        - Name: SoldierAlienAssaultRifle
+          Amount: Infinite
+          Type: 
+
+  PlanetVessels:
+    - Name: OPVPiratesT3 
+      Faction: Pirates                                  
+      CountMinMax: [2, 2]
+      LevelMod: 2
+      FixedMaxSpeed: 40 
+      DelayBetweenRespawn: 600
+      DelayBeforeSelfDestruction: 300
+      IsRespawnAfterDestruction: True
+      RangePatrolTask: 
+        POINameAsPositionRef: [PiratesDroneBase] 
+        DistToGround: 300 
+   #   Properties:
+    #    - Key: AIManPatrolFactions  
+   #       Value: "Farr"
+   #     # - Key: AIManPatrolGroups  
+          # Value: " "
+      Stock:
+        - Name: DroneBatteredCannon               
+          Amount: Infinite                                  
+          Type: FighterDrone                           
+
+# Aerial Traffic around the Command center / HQ on the Homeworld
+
+    - Name: CivilianDroneCVfast    # Fast Air Traffic DRONES
+      Faction: Pirates                                  
+      LevelMod: 2        
+      FixedMaxSpeed: 100 
+      DelayBetweenRespawn: 600
+      DelayBeforeSelfDestruction: 300
+      IsRespawnAfterDestruction: True
+      CountMinMax: [1, 2]
+      RangePatrolTask: 
+        POINameAsPositionRef: [PiratesMain] 
+        Radius: 500
+        DistToGround: 300   
+
+    - Name: CivilianMicroCV   # CivilianMicroCV 
+      Faction: Pirates                                  
+      LevelMod: 2
+      FixedMaxSpeed: 80      
+      DelayBetweenRespawn: 600
+      DelayBeforeSelfDestruction: 300
+      IsRespawnAfterDestruction: True
+      CountMinMax: [1, 2]
+      RangePatrolTask: 
+        POINameAsPositionRef: [PiratesMain] 
+        Radius: 1000
+        DistToGround: 300     
+
+ 
+    - Name: CivilianDroneCV # Transporters
+      Faction: Pirates                                  
+      LevelMod: 2
+      FixedMaxSpeed: 100      
+      DelayBetweenRespawn: 600
+      DelayBeforeSelfDestruction: 300
+      IsRespawnAfterDestruction: True
+      CountMinMax: [1, 2]
+      RangePatrolTask: 
+        POINameAsPositionRef: [PiratesMain] 
+        Radius: 1500
+        DistToGround: 120    
+# ==============================================================
+# ==============================================================
+
+SpawnRateZones: 
+
+
+
+      # All creatures next to the dronebase already got killed.
+   - SpawnAt: [PiratesDroneBase]
+     Radius: 250
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 1.0
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
+
+
 SpawnZones:
-- SpawnAt:
-  - "PiratesDroneBase"
-  - "PiratesMain"
-  Radius: 500
-  Color: "0.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "CyborgsDamagedHerd"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "PiratesDroneBase"
-  Radius: 900
-  Color: "0.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "CyborgsDamagedHerd"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "PiratesDroneBase"
-  - "PiratesMain"
-  Radius: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  Color: "0.4, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "PiratesRobotPatrolSmall"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-  - Names:
-    - "PiratesMixedPatrol"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "PiratesDroneBase"
-  - "PiratesMain"
-  Radius: 200
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.4, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "PiratesDogPatrolMedium"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "Pirates"
-  Radius: 150
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "PiratesDogPatrolSmall"
-    Biomes:
-    - "Any"
-    Amount: 75
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-  - Names:
-    - "PiratesMixedPatrol"
-    Biomes:
-    - "Any"
-    Amount: 75
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-  - Names:
-    - "PiratesShotgunPatrolSmall"
-    Biomes:
-    - "Any"
-    Amount: 75
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "PiratesDroneBase"
-  - "PiratesMain"
-  Radius: 1200
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  Color: "0.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "PiratesPatrolSmall"
-    Biomes:
-    - "Plantation"
-    Amount: 60
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-  - Names:
-    - "PiratesDogPatrolMedium"
-    Biomes:
-    - "Oasis"
-    - "DustBowl"
-    - "Flowers"
-    - "FlowersEdge"
-    - "LargeCrater"
-    - "Wadi"
-    Amount: 30
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-  - Names:
-    - "PiratesDogPatrolSmall"
-    Biomes:
-    - "Plateau"
-    - "LargeCrater"
-    Amount: 5
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "PiratesDroneBase"
-  - "PiratesMain"
-  Radius: 3000
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  Color: "0.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "PiratesPatrolSmall"
-    Biomes:
-    - "Nest"
-    Amount: 300
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-  - Names:
-    - "PiratesPatrolSmall"
-    Biomes:
-    - "Sand"
-    - "Dunes"
-    Amount: 1
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "Junksite"
-  Radius: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "PiratesMixedPatrol"
-    Biomes:
-    - "Sand"
-    - "Dunes"
-    Amount: 200
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "PiratesDefenseDesert"
-  Radius: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "PiratesMixedPatrol"
-    Biomes:
-    - "Any"
-    Amount: 1000
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
+
+
+     # ====================
+     # MARKER ZONES
+     # (To easily find important POI in the SSG  - - has no other function. 
+     # Please keep these active.)
+     # ====================
+
+   - SpawnAt: [PiratesDroneBase, PiratesMain]  # Marker
+     Radius: 500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "0.0, 0.0, 0.0, 1.0"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+   - SpawnAt: [PiratesDroneBase]  # Marker
+     Radius: 900
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "0.0, 0.0, 0.0, 1.0"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+
+
+
+
+     # ====================
+     # TROOP ZONES
+     # ====================
+
+
+
+
+
+   - SpawnAt: [PiratesDroneBase, PiratesMain]    # Troops closest to base. 'Doorstoppers'
+     # BiomesExcluded: [RadiatedFog, Hotspot]
+     Radius: 100
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "0.4, 1.0, 1.0, 1.0" 
+     Entities:
+       - Names: [PiratesRobotPatrolSmall]  # (x2 creatures)
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]  # troops do not respawn
+       - Names: [PiratesMixedPatrol]      # (x2 creatures)
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]  # troops do not respawn
+
+
+
+   - SpawnAt: [PiratesDroneBase, PiratesMain]          # Troops in the near vicinity
+     # BiomesExcluded: [RadiatedFog, Hotspot]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.4, 1.0, 1.0, 1.0"  
+     Entities:
+       - Names: [PiratesDogPatrolMedium]  # (x4 creatures)
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [Pirates]    # Pirate riffraff :D  - Keeping distance.
+     Radius: 150
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 1.0, 1.0, 1.0" 
+     Entities:
+       - Names: [PiratesDogPatrolSmall]  # (x2)
+         Biomes: [Any]
+         Amount: 75
+         Period: Always
+         DelayMinMax: [-1, -1]
+       - Names: [PiratesMixedPatrol]  # (x2)
+         Biomes: [Any]
+         Amount: 75
+         Period: Always
+         DelayMinMax: [-1, -1]
+       - Names: [PiratesShotgunPatrolSmall] # (x1)
+         Biomes: [Any]
+         Amount: 75
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+     # "Civilisation spawns"
+     # ====
+     # ((This is a desert world, and Pirates are not too social...  
+     # => Less spread over the planet. People in the dunes might be even Pirate _outcasts_, having somehow irked someone in power?
+     # Only at very large, very important places, they tend to cluster.))
+
+     # In-group
+   - SpawnAt: [PiratesDroneBase, PiratesMain]
+     Radius: 1200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "0.0, 1.0, 1.0, 1.0" 
+     Entities:
+       - Names: [PiratesPatrolSmall]  # (x1)
+         Biomes: [Plantation]                   # (Even Pirates have hobbies!))
+         Amount: 60
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+       - Names: [PiratesDogPatrolMedium]  # (x4)
+         Biomes: [Oasis, DustBowl, Flowers, FlowersEdge, LargeCrater, Wadi]    # (Dogs need to get outside)
+         Amount: 30
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+       - Names: [PiratesDogPatrolSmall]  # (x2)
+         Biomes: [Plateau, LargeCrater]                       # (Dogs need to get outside) - Bigger biome, less density
+         Amount: 5
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+     # Outcasts
+   - SpawnAt: [PiratesDroneBase, PiratesMain]
+     Radius: 3000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "0.0, 1.0, 1.0, 1.0" 
+     Entities:
+
+       - Names: [PiratesPatrolSmall]  # (x1)
+         Biomes: [Nest]                         # ("You should have thought twice about calling the Boss out" And: "If he is so smart, then let _him_ do it!!")
+         Amount: 300               # (Tiny target biome: Needs large numbers)
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+       - Names: [PiratesPatrolSmall]  # (x1)
+         Biomes: [Sand, Dunes]                       # ("Then let him walk back to base.")
+         Amount: 1
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [Junksite]    #
+     Radius: 50
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 1.0, 1.0, 1.0"
+     Entities:
+       - Names: [PiratesMixedPatrol] #(x2)
+         Biomes: [Sand, Dunes]                       # ( "I'm telling you, there _is_ something valuable there!!")
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+     # Pirate defenders
+   - SpawnAt: [PiratesDefenseDesert]    # Troops just catching some 'fresh air'.
+     Radius: 50
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 1.0, 1.0, 1.0" 
+     Entities:
+       - Names: [PiratesMixedPatrol]  # x2
+         Biomes: [Any]
+         Amount: 1000
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+
+
+
+CreatureSpawning:
+    - Biomes: [Nest] 
+      Entities:
+        - Name: Spiders03     
+          Period: Always
+          Amount: 100
+          DelayMinMax: [20, 24]
+          Color: "1.0, 1.0, 0.3"
+        - Name: Spiders02   
+          Period: Always
+          Amount: 400
+          DelayMinMax: [20, 24]
+          Color: "1.0, 1.0, 0.7"
+
+    - Biomes: [LargeCrater]
+      Entities:
+        - Name: AlienBugs01
+          Period: Day
+          Amount: 12
+          DelayMinMax: [20, 24]
+        - Name: Otyughs
+          Period: Night
+          Amount: 12
+          DelayMinMax: [20, 24]
+
+    - Biomes: [Wadi]
+      Entities:
+        - Name: CaveWormsGrey
+          Period: Always
+          Amount: 20
+          DelayMinMax: [20, 24]
+
+    - Biomes: [Oasis, Shore]
+      Entities:
+        - Name: Slimes
+          Period: Always
+          Amount: 20
+          Color: "1.0, 1.0, 0"
+          DelayMinMax: [20, 24]
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 8
+          DelayMinMax: [20, 24]
+
+    - Biomes: [Flowers, FlowersEdge, Plantation]
+      Entities:
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 10
+          DelayMinMax: [20, 24]
+        - Name: Spiders02
+          Period: Night
+          Amount: 8
+          DelayMinMax: [20, 24]
+        - Name: MegalonopsesBrown
+          Period: Day
+          Amount: 10
+          DelayMinMax: [20, 24]
+
+    - Biomes: [Dunes, Sand, Plains, Plateau, DustBowl]
+      Entities:
+        - Name: WormDesertHerd
+          Period: Always
+          Amount: 6
+          DelayMinMax: [20, 24]
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 8
+          DelayMinMax: [20, 24]
+        - Name: MegalonopsesBrown
+          Period: Day
+          Amount: 10
+          DelayMinMax: [20, 24]
+          
+    - Biomes: [LowMountains, LowMountains_1, SandDrift]
+      Entities:
+        - Name: CaveWormsGrey
+          Period: Always
+          Amount: 8
+          DelayMinMax: [20, 24]
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+
+

@@ -1,756 +1,623 @@
-UseFixed: "True"
-PlayfieldType: "Space"
-Description: "\u4E00\u4E2A\u4FE1\u6807\u53CD\u590D\u64AD\u653E\u7740\u5B83\u7684\u4FE1\u606F\uFF1A\n[i]\u201C\u6700\u4F18\u4EF7\u683C\uFF01\u7ED9\u4F60\u7684\u7F50\u5B50\u52A0\u6EE1\u71C3\u6599\uFF01\u5168\u9762\u4FEE\u7406\u98DE\u8239\uFF01\n  \u8865\u7ED9\u521A\u5230\uFF0C\u8FD9\u662F\u4E00\u6B21\u6027\u4F18\u60E0\uFF01\n  \u7ACB\u5373\u8054\u7CFB\u6211\u4EEC\uFF01\u201D[/i]\n\n[c]\uFF08\u8981\u8FDB\u5165[b]\u8D38\u6613\u7A7A\u95F4\u7AD9\u754C\u9762[/b]\uFF0C\u9A7E\u9A76\u98DE\u8239\u9760\u8FD1\u5B83\uFF0C\u7136\u540E\u5728\u98DE\u8239\u7684\u63A7\u5236\u9762\u677F\u4E2D\u9009\u62E9\u7EFF\u8272\u9009\u9879\u3002\uFF09[/c]\n"
-PlanetType: "StationTrading"
-Radiation:
-- 5
-- 10
-TemperatureDay:
-- -200
-- -100
-Music:
-- "moonstone"
-- "space"
-- "DistantWorlds"
-- "Migration"
+# Playfield Characteristics
+
+# Civilian trading station. Needs its own template to not get into trouble with the GalaxyConfig spawn chances.
+
+Gravity: 0                         
+AtmosphereEnabled: False          
+PvPProb: 0
+UseFixed: True                       
+Radiation: [5,10]                    
+TemperatureDay: [-200,-100]    
+Music: [moonstone, space, DistantWorlds, Migration]          
+ 
+PlayfieldType: Space  
+PlanetType: StationTrading            
+
+### Resource Asteroid
+
+
+Description: |
+  \u4E00\u4E2A\u4FE1\u6807\u6B63\u5728\u53CD\u590D\u5E7F\u64AD\u5B83\u7684\u6D88\u606F\uFF1A 
+  [i]\u201C\u6700\u4F18\u60E0\u7684\u4EF7\u683C\uFF01\u52A0\u6EE1\u4F60\u7684\u6CB9\u7BB1\uFF01\u98DE\u8239\u5168\u9762\u7EF4\u4FEE\uFF01
+  \u8865\u7ED9\u521A\u5230\u8D27\uFF0C\u673A\u4F1A\u4EC5\u6B64\u4E00\u6B21\uFF01
+  \u9A6C\u4E0A\u8054\u7CFB\u6211\u4EEC\uFF01\u201D[/i]
+
+
+
+  [c]\uFF08\u8981\u8FDB\u5165[b]\u8D38\u6613\u7A7A\u95F4\u7AD9\u754C\u9762[/b]\uFF0C\u9760\u8FD1\u5B83\uFF0C\u5E76\u5728\u4F60\u7684\u98DE\u8239\u63A7\u5236\u9762\u677F\u4E2D\u9009\u62E9\u7EFF\u8272\u9009\u9879\u3002\uFF09
+
+
+### POIs
 POIs:
-- Type: "BA_Alien"
-  GroupName: "BAOColonists"
-  DisplayName: "Waystation"
-  CountMinMax:
-  - 1
-  - 1
-  Position:
-    PosYMax: 2000
-  Probability: 1
-  InitPower: "True"
-  Properties:
-  - Key: "Music"
-    Value: "NebularClouds"
-  - Key: "Discovery"
-    Value: "False"
-  - Key: "PvEArea"
-    Value: "500"
-  - Key: "StationInterface"
-    Value: "Fuel:1.1,O2:1.1,Warp:1.1,Ammo:2,Repair:2,Shield:2,IfNeutral:1,IfFriendly:-0.08,IfHonored:-0.16"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Pos:
-  - 0
-  - 0
-  - 0
-  Rot:
-  - 0
-  - 0
-  - 0
-  Faction: "Colonists"
-  FactionTerritory:
-  - "All"
-- Type: "BA_Alien"
-  GroupName: "JunkYardSpaceBAO"
-  CountMinMax:
-  - 0
-  - 4
-  Position:
-    PosYMax: 2000
-  Probability: 0.1
-  InitPower: "True"
-  Properties:
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "CV_Alien"
-  GroupName: "JunkYardSpaceCV"
-  CountMinMax:
-  - 0
-  - 6
-  Position:
-    PosYMax: 2000
-  Probability: 0.05
-  InitPower: "True"
-  Properties:
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "None"
-- Type: "SV_Player"
-  GroupName: "JunkYardSpaceSV"
-  CountMinMax:
-  - 0
-  - 8
-  Position:
-    PosYMax: 2000
-  Probability: 0.2
-  InitPower: "True"
-  Properties:
-  - Key: "MapMarker"
-    Value: "Neutral"
-  - Key: "RegenAfter"
-    Value: "720"
-  Mode: "Survival"
-  Faction: "None"
-DroneBaseSetup:
-- FreeDrones:
-  - Name:
-    - "SpaceDroneLaser"
-    - "SpaceDronePlasma"
-    Faction: "Zirax"
-    Count:
-    - 6
-    - 8
-    Radius:
-    - 2500
-    - 10000
-    Properties:
-    - Key: "AIManMaxPursuitRange"
-      Value: "2500"
-  - Name:
-    - "SpaceDronePolarisLaser"
-    Faction: "Polaris"
-    Count:
-    - 6
-    - 8
-    Radius:
-    - 2500
-    - 10000
-    Properties:
-    - Key: "AIManMaxPursuitRange"
-      Value: "2500"
-  - Name:
-    - "SpaceDronePolarisLaser"
-    Faction: "Farr"
-    Count:
-    - 6
-    - 8
-    Radius:
-    - 2500
-    - 10000
-    Properties:
-    - Key: "AIManMaxPursuitRange"
-      Value: "2500"
-  - Name:
-    - "SpaceDroneTraderLaser"
-    Faction: "Trader"
-    Count:
-    - 6
-    - 8
-    Radius:
-    - 2500
-    - 10000
-    Properties:
-    - Key: "AIManMaxPursuitRange"
-      Value: "2500"
-  - Name:
-    - "SpaceDroneBattered01"
-    - "SpaceDroneBattered02"
-    Faction: "Pirates"
-    Count:
-    - 6
-    - 8
-    Radius:
-    - 2500
-    - 10000
-    Properties:
-    - Key: "AIManMaxPursuitRange"
-      Value: "2500"
-  - Name:
-    - "SpaceDroneKrielLaser"
-    Faction: "Kriel"
-    Count:
-    - 6
-    - 8
-    Radius:
-    - 2500
-    - 10000
-    Properties:
-    - Key: "AIManMaxPursuitRange"
-      Value: "2500"
-  SpaceVessels:
-  - Name:
-    - "Freighter"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDroneLaser"
-      - "SpaceDronePlasma"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Zirax"
-  - Name:
-    - "Freighter"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDroneKrielLaser"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Kriel"
-  - Name:
-    - "Freighter"
-    CountMinMax:
-    - 1
-    - 3
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      - "SpaceDroneTraderLaser"
-      - "SpaceDroneBattered01"
-      - "SpaceDroneBattered02"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Colonists"
-  - Name:
-    - "Freighter"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Polaris"
-  - Name:
-    - "Freighter"
-    CountMinMax:
-    - 1
-    - 3
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDroneTraderLaser"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Trader"
-  - Name:
-    - "Freighter"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDroneBattered01"
-      - "SpaceDroneBattered02"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Pirates"
-  - Name:
-    - "Freighter"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      - "SpaceDroneTraderLaser"
-      - "SpaceDroneBattered01"
-      - "SpaceDroneBattered02"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Warlord"
-  - Name:
-    - "OPVFarr"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Farr"
-  - Name:
-    - "OPVARC"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "ARC"
-  - Name:
-    - "OPVWST"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 40
-    Mission: "Freighter"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      Position:
-        PosXZMinMax:
-        - 1000
-        - 2500
-        PosYMax: 2500
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      AmountMinMax:
-      - 1
-      - 2
-      Type: "FighterDrone"
-    Faction: "Wastelanders"
-  - Name:
-    - "OPVPolaris"
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 50
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 10000
-      Position:
-        PosYMax: 2000
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      AmountMinMax:
-      - 2
-      - 4
-      Type: "FighterDrone"
-    Properties:
-    - Key: "SelfDestructionWithNoCore"
-      Value: "True"
-    - Key: "AIManMaxPursuitRange"
-      Value: "4000"
-    Faction: "Polaris"
-  - Name:
-    - "OPVTrader"
-    CountMinMax:
-    - 1
-    - 1
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 50
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 10000
-      Position:
-        PosYMax: 2000
-    StockDescription:
-      Name:
-      - "SpaceDroneTraderLaser"
-      AmountMinMax:
-      - 2
-      - 4
-      Type: "FighterDrone"
-    Properties:
-    - Key: "SelfDestructionWithNoCore"
-      Value: "True"
-    - Key: "AIManMaxPursuitRange"
-      Value: "4000"
-    Faction: "Trader"
-  - Name:
-    - "OPVPirates"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 50
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 10000
-      Position:
-        PosYMax: 2000
-    StockDescription:
-      Name:
-      - "SpaceDroneBattered01"
-      - "SpaceDroneBattered02"
-      AmountMinMax:
-      - 2
-      - 4
-      Type: "FighterDrone"
-    Properties:
-    - Key: "SelfDestructionWithNoCore"
-      Value: "True"
-    - Key: "AIManMaxPursuitRange"
-      Value: "4000"
-    Faction: "Pirates"
-  - Name:
-    - "OPVColonistsT0"
-    - "OPVColonistsT1"
-    - "OPVColonistsT2"
-    - "OPVColonistsT3"
-    - "OPVColonistsT4"
-    - "OPVColonistsT5"
-    - "OPVColonistsT6"
-    - "OPVColonistsT7"
-    - "OPVColonistsT8"
-    CountMinMax:
-    - 1
-    - 2
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 50
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 10000
-      Position:
-        PosYMax: 2000
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      - "SpaceDroneTraderLaser"
-      - "SpaceDroneBattered01"
-      - "SpaceDroneBattered02"
-      AmountMinMax:
-      - 2
-      - 4
-      Type: "FighterDrone"
-    Properties:
-    - Key: "SelfDestructionWithNoCore"
-      Value: "True"
-    - Key: "AIManMaxPursuitRange"
-      Value: "4000"
-    Faction: "Colonists"
-  - Name:
-    - "OPVFarr"
-    CountMinMax:
-    - 2
-    - 3
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 50
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 10000
-      Position:
-        PosYMax: 2000
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      AmountMinMax:
-      - 2
-      - 4
-      Type: "FighterDrone"
-    Properties:
-    - Key: "SelfDestructionWithNoCore"
-      Value: "True"
-    - Key: "AIManMaxPursuitRange"
-      Value: "4000"
-    Faction: "Farr"
-  - Name:
-    - "OPVARC"
-    CountMinMax:
-    - 2
-    - 3
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 50
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 10000
-      Position:
-        PosYMax: 2000
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      AmountMinMax:
-      - 2
-      - 4
-      Type: "FighterDrone"
-    Properties:
-    - Key: "SelfDestructionWithNoCore"
-      Value: "True"
-    - Key: "AIManMaxPursuitRange"
-      Value: "4000"
-    Faction: "ARC"
-  - Name:
-    - "OPVWST"
-    CountMinMax:
-    - 2
-    - 3
-    Probability: 1
-    FixedMaxSpeed:
-    - 20
-    - 50
-    Mission: "SpacePatrol"
-    MissionDescription:
-      DelayBetweenRespawnMinMax:
-      - 300
-      - 600
-      DelayBeforeSelfDestructionMinMax:
-      - 200
-      - 250
-      IsRespawnAfterDestruction: true
-      RadiusMinMax:
-      - 750
-      - 10000
-      Position:
-        PosYMax: 2000
-    StockDescription:
-      Name:
-      - "SpaceDronePolarisLaser"
-      AmountMinMax:
-      - 2
-      - 4
-      Type: "FighterDrone"
-    Properties:
-    - Key: "SelfDestructionWithNoCore"
-      Value: "True"
-    - Key: "AIManMaxPursuitRange"
-      Value: "4000"
-    Faction: "Wastelanders"
+
+# Civilian
+
+    - Type: BA_Alien
+      GroupName: BAOColonists  
+      DisplayName: Waystation
+      Faction: Colonists
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      InitPower: True
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Properties: 
+        - Key: Music
+          Value: NebularClouds  
+        - Key: Discovery
+          Value: False
+        - Key: PvEArea
+          Value: 500
+        - Key: StationInterface
+          Value: "Fuel:1.1,O2:1.1,Warp:1.1,Ammo:2,Repair:2,Shield:2,IfNeutral:1,IfFriendly:-0.08,IfHonored:-0.16"  #
+        - Key: RegenAfter
+          Value: 720 
+
+ 
+
+
+#None  - JUNKYARDS
+
+    - Type: BA_Alien
+      GroupName: JunkYardSpaceBAO
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0, 4 ]
+      Probability: 0.1
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# CV single
+    - Type: CV_Alien
+      GroupName: JunkYardSpaceCV
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0,6 ]
+      Probability: 0.05
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# SV single
+    - Type: SV_Player
+      GroupName: JunkYardSpaceSV
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0, 8 ]
+      Probability: 0.2
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+ 
+DroneBaseSetup:                                                # Note: not ALL possible settings are used in that config. Check +ExampleSpace folder > space_dynamic.yaml
+      - FreeDrones:                                             #FreeDrones = only relevant for NPC Factions that have a galactic territory: Zirax, Polaris, Trader, Kriel, Pirates, Legacy. Will not spawn in non-territory!
+          - Name: [SpaceDroneLaser, SpaceDronePlasma]
+            Faction: Zirax                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [6, 8]                       
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions                                              #Drones shall only partrol RESOURCES; OPV shall patrol POIs  
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2500
+          - Name: [SpaceDronePolarisLaser]
+            Faction: Polaris                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [6, 8]                         
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2500
+          - Name: [SpaceDronePolarisLaser]
+            Faction: Farr                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [6, 8]                         
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2500
+          - Name: [SpaceDroneTraderLaser]
+            Faction: Trader                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [6, 8]                         
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2500
+          - Name: [SpaceDroneBattered01, SpaceDroneBattered02]
+            Faction: Pirates                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [6, 8]                          
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2500
+          - Name: [SpaceDroneKrielLaser]
+            Faction: Kriel                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [6, 8]                          
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2500
+          # - Name: [SpaceDroneLegacyLaser]
+            # Faction: TheLegacy                               
+            # CanNotBeControlledByMasterAI: False          
+            # Count: [6, 8]                          
+            # Radius: [2500, 8000]
+            # Properties:
+             # # - Key: AIManPatrolFactions 
+             # #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              # - Key: AIManMaxPursuitRange 
+                # Value: 2500
+        SpaceVessels:
+# ==============
+# Freighters   
+# non-territory and overlapping  (no freighters for Legacy, Alien, Warlord, Progenitor and VOID)
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 2]
+            Probability: 1
+            Faction: Zirax                              
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [FreighterKriel] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 2]
+            Probability: 1
+            Faction: Kriel                              
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneKrielLaser]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 3]
+            Probability: 1
+            Faction: Colonists                              
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser, SpaceDroneTraderLaser, SpaceDroneBattered01, SpaceDroneBattered02]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 2]
+            Probability: 1
+            Faction: Polaris                              
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 3]
+            Probability: 1
+            Faction: Trader                            
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneTraderLaser]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 2]
+            Probability: 1
+            Faction: Pirates                            
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneBattered01, SpaceDroneBattered02]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 2]
+            Probability: 1
+            Faction: Warlord                            
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser, SpaceDroneTraderLaser, SpaceDroneBattered01, SpaceDroneBattered02]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [OPVFarr] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 2]
+            Probability: 1
+            Faction: Farr                              
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [OPVARC] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 2]
+            Probability: 1
+            Faction: ARC                              
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [OPVWST] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 2]
+            Probability: 1
+            Faction: Wastelanders                              
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+
+# ========= Patrol Vessels =================
+# Note: definition for EACH faction REQUIRED as each faction has their own design and vessels!!  
+# Note: Do not add VOID, Progenitor, DESC (for now), UCH or GLaD as they are only "story factions"; Do not use ALIEN as this faction is reserved for POI/Wreckages/Dungeons only, not for ships)
+
+
+
+          - Name: [OPVPolaris]     
+            Faction: Polaris
+            CountMinMax: [1, 1]
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000]         
+            #  POINameAsPositionRef: [BAO_PolarisAsteroidMining]
+            StockDescription:
+              Name: [SpaceDronePolarisLaser] 
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000
+
+          - Name: [OPVTrader]     
+            Faction: Trader
+            CountMinMax: [1, 1]
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000]
+           #   POINameAsPositionRef: [BAO_TraderGasRefinery]
+            StockDescription:
+              Name: [SpaceDroneTraderLaser] 
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000
+
+          - Name: [OPVPirates]     
+            Faction: Pirates
+            CountMinMax: [1, 2]
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000]        #[Min radius, Max radius] defines the boundaries the patrol area radius in meter drawn randomly; Default: 1000
+           #   POINameAsPositionRef: [BAO_PiratesBlackMarket, BAO_PiratesHideout, BAO_PiratesSlaveMarket]
+            StockDescription:
+              Name: [SpaceDroneBattered01, SpaceDroneBattered02] 
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000
+
+
+          - Name: [OPVColonistsT0,OPVColonistsT1,OPVColonistsT2,OPVColonistsT3,OPVColonistsT4,OPVColonistsT5,OPVColonistsT6,OPVColonistsT7,OPVColonistsT8]                  #Mostly small milita / colony armed forces to defend freighter routes from Pirates.
+            Faction: Colonists
+            CountMinMax: [1, 2] 
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000] 
+           #   POINameAsPositionRef: [BAO_Waystation-01, BAO_Waystation-02, BAO_Waystation-03, BAO_Waystation-04, BAO_SecretArtefactSite, BAO_DESC_v1, BAO_CivilMinOutpost]
+            StockDescription:
+              Name: [SpaceDronePolarisLaser, SpaceDroneTraderLaser, SpaceDroneBattered01, SpaceDroneBattered02]    
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000
+
+          - Name: [OPVFarr]                  #Mostly small milita / colony armed forces to defend freighter routes from Pirates.
+            Faction: Farr
+            CountMinMax: [2, 3]   
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000] 
+           #   POINameAsPositionRef: [BAO_Waystation-01, BAO_Waystation-02, BAO_Waystation-03, BAO_Waystation-04, BAO_SecretArtefactSite, BAO_DESC_v1, BAO_CivilMinOutpost]
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]    
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000
+
+# ARC
+
+          - Name: [OPVARC]                  #Mostly small milita / colony armed forces to defend freighter routes from Pirates.
+            Faction: ARC
+            CountMinMax: [2, 3]   
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000] 
+           #   POINameAsPositionRef: [BAO_Waystation-01, BAO_Waystation-02, BAO_Waystation-03, BAO_Waystation-04, BAO_SecretArtefactSite, BAO_DESC_v1, BAO_CivilMinOutpost]
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]    
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000
+                
+
+          - Name: [OPVWST]                  #Mostly small milita / colony armed forces to defend freighter routes from Pirates.
+            Faction: Wastelanders
+            CountMinMax: [2, 3]   
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000] 
+           #   POINameAsPositionRef: [BAO_Waystation-01, BAO_Waystation-02, BAO_Waystation-03, BAO_Waystation-04, BAO_SecretArtefactSite, BAO_DESC_v1, BAO_CivilMinOutpost]
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]    
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000
+
+          # - Name: [OPVLegacyT0,OPVLegacyT1,OPVLegacyT2,OPVLegacyT3,OPVLegacyT4,OPVLegacyT5,OPVLegacyT6,OPVLegacyT7,OPVLegacyT8]                  # Legacy is available in other playfields, but should not appear outside TheLegacy Territory or playfields due to LORE/Story context > only use in specifically made playfields, like AlienLegacy or SpaceAsteroidFieldLegacy !!
+            # Faction: TheLegacy
+            # CountMinMax: [2, 3]   
+            # Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            # CanNotBeControlledByMasterAI: False 
+            # FixedMaxSpeed: [20, 50] 
+            # Mission: SpacePatrol   
+            # MissionDescription:
+              # DelayBetweenRespawnMinMax: [300, 600]  
+              # DelayBeforeSelfDestructionMinMax: [200, 250]  
+              # IsRespawnAfterDestruction: True               
+              # RadiusMinMax: [750, 10000]        			  
+           # #   POINameAsPositionRef: [BAO_Waystation-01, BAO_Waystation-02, BAO_Waystation-03, BAO_Waystation-04, BAO_SecretArtefactSite, BAO_DESC_v1, BAO_CivilMinOutpost]
+            # StockDescription:
+              # Name: [SpaceDroneLegacyLaser] 
+              # AmountMinMax: [2, 4]  
+              # Type: FighterDrone  
+            # Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              # - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                # Value: True                        
+              # - Key: AIManMaxPursuitRange 
+                # Value: 4000
+                
+                
+                #
+# TSO Traffic
+
+
+          # - Name: [CivilianDroneCV]      
+            # Faction: Main
+            # CountMinMax: [5, 10]   
+            # Probability: 1  
+            # CanNotBeControlledByMasterAI: True 
+            # FixedMaxSpeed: [50, 110] 
+            # Mission: SpacePatrol   
+            # MissionDescription:
+              # DelayBetweenRespawnMinMax: [300, 600]  
+              # DelayBeforeSelfDestructionMinMax: [200, 250]  
+              # IsRespawnAfterDestruction: True               
+              # RadiusMinMax: [100, 250]        
+            # StockDescription:
+              # Name: [SpaceDroneLaser] 
+              # AmountMinMax: [0, 0]  
+              # Type: FighterDrone  
+            # Properties:                      
+              # - Key: SelfDestructionWithNoCore 
+                # Value: True                        
+              # - Key: AIManMaxPursuitRange 
+                # Value: 4000
+              # # - Key: AIManPatrolFactions  
+                # # Value: "ARC"
+              # - Key: AIManPatrolGroups  
+                # Value: "TSOTrader, TSOZirax, TSOPolaris, BAOFarrTrading, BAOColonists, BAOWSTTrading, BAOARCTrading"
+                
+          # - Name: [CivilianMicroCV]     
+            # Faction: Main
+            # CountMinMax: [5, 10]   
+            # Probability: 1  
+            # CanNotBeControlledByMasterAI: True 
+            # FixedMaxSpeed: [80, 120] 
+            # Mission: SpacePatrol   
+            # MissionDescription:
+              # DelayBetweenRespawnMinMax: [300, 600]  
+              # DelayBeforeSelfDestructionMinMax: [200, 250]  
+              # IsRespawnAfterDestruction: True               
+              # RadiusMinMax: [100, 250]        
+            # StockDescription:
+              # Name: [SpaceDroneLaser] 
+              # AmountMinMax: [0, 0]  
+              # Type: FighterDrone  
+            # Properties:                      
+              # - Key: SelfDestructionWithNoCore 
+                # Value: True                        
+              # - Key: AIManMaxPursuitRange 
+                # Value: 4000
+              # - Key: AIManPatrolGroups  
+                # Value: "TSOTrader, TSOZirax, TSOPolaris, BAOFarrTrading, BAOColonists, BAOWSTTrading, BAOARCTrading"
+                
+          # - Name: [BillboardDrone]     
+            # Faction: Main
+            # CountMinMax: [5, 10]   
+            # Probability: 1  
+            # CanNotBeControlledByMasterAI: True 
+            # FixedMaxSpeed: [80, 120] 
+            # Mission: SpacePatrol   
+            # MissionDescription:
+              # DelayBetweenRespawnMinMax: [300, 600]  
+              # DelayBeforeSelfDestructionMinMax: [200, 250]  
+              # IsRespawnAfterDestruction: True               
+              # RadiusMinMax: [100, 250]        
+            # StockDescription:
+              # Name: [SpaceDroneLaser] 
+              # AmountMinMax: [0, 0]  
+              # Type: FighterDrone  
+            # Properties:                      
+              # - Key: SelfDestructionWithNoCore 
+                # Value: True                        
+              # - Key: AIManMaxPursuitRange 
+                # Value: 4000
+              # - Key: AIManPatrolGroups  
+                # Value: "TSOTrader, TSOZirax, TSOPolaris, BAOFarrTrading, BAOColonists, BAOWSTTrading, BAOARCTrading"

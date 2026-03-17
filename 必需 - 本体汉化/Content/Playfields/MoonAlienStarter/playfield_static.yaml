@@ -1,973 +1,1048 @@
-PlayfieldType: "Moon"
-PlanetType: "AlienSwampStarter"
-SunFlare: "EnvironmentalEffects/SunFlareYellow3"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+#Description: "A moon teeming with life. The constant struggle for survival in this seething ecosphere has its consequences! Those who cannot defend themselves will be eaten. Constant mutations caused by the high radiation in some areas shift the structure anew every decade. Drones that are out of control also increase the danger for all living creatures.\n\n Suitable for survivalists that want to fight their way to the stars."
+Description: |
+  \u8FD9\u4E2A\u4E16\u754C\u968F\u7740\u6BCF\u4E00\u6B21\u5FC3\u8DF3\u53D8\u5F97\u66F4\u52A0\u51F6\u9669\u3002  
+  \u53D8\u5F02\u751F\u7269\u5728\u65E0\u4F11\u6B62\u7684\u4E89\u6597\u4E2D\u4E92\u76F8\u730E\u6740\uFF0C\u5931\u63A7\u7684\u519B\u7528\u65E0\u4EBA\u673A\u4F1A\u5411\u5F71\u5B50\u5F00\u706B\u3002  
+  \u65E0\u6559\u7A0B\u652F\u6301\uFF01  
+  \u9002\u5408\u90A3\u4E9B\u60F3\u8981\u901A\u8FC7\u6218\u6597\u95EF\u5411\u661F\u8FB0\u7684\u751F\u5B58\u8005\u3002
+
+
+PlanetClass: Alien Swamp
+PlanetType: AlienSwampStarter  # This definition will be shown in starmap 
+PlayfieldType: Moon #'Planet' will be shown with an orbit line in the system map, and not be grouped to gas giants!
+Difficulty: 1
+
+LandClaimZone: Device
+
+# ==============================================================
+# Special parameters:
+# ==============================================================
+
+#AllowBlueprintSV: False         # Dis-allow to spawn SV Blueprint in this playfield, default is True
+#AllowBlueprintCV: False         # Dis-allow to spawn CV Blueprint in this playfield, default is True
+#AllowBlueprintBA: False         # Dis-allow to spawn BA Blueprint in this playfield, default is True
+#AllowBlueprintHV: False         # Dis-allow to spawn HV Blueprint in this playfield, default is True
+
+Seed: 575561                    # Integer [1, 999999] If set overwrites main Seed 
+#UseFixed: True  			   	   # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
+#UseRandom: True				   # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
+#IndestructibleTerrain: True     # If set to True terrain on this playfield will be indestructible
+
+# ==============================================================
+# Special Effects
 SpecialEffectsLocal:
-- Name: "FireFliesGreen"
-  MaxHeight: 20
-  Time: "Night"
-  Biome:
-  - "Water"
-  - "ShallowWater"
-  - "Shore"
-  - "Morass_1"
-  - "AlienSwamp"
-- Name: "FireFliesGreenFew"
-  MaxHeight: 40
-  Time: "Night"
-  Biome:
-  - "Flats"
-- Name: "Pollen"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Plains"
-  - "Heath"
-  - "DustBowl"
-- Name: "TarantulaHawksFew"
-  MaxHeight: 15
-  Biome:
-  - "Swamp"
-  - "SwampUpper"
-- Name: "Mosquitos"
-  MaxHeight: 20
-  Time: "Night"
-  Biome:
-  - "Morass"
-  - "Morass_1"
-  - "ShallowWater"
-  - "Water"
-- Name: "ButterfliesBlue"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "LowMountains"
-  - "LowMountains_1"
-  - "LowMountains_2"
-  - "Marsh"
-  - "Plains"
-- Name: "Dragonflies"
-  MaxHeight: 20
-  Time: "Day"
-  Biome:
-  - "Flats"
-- Name: "Moths"
-  MaxHeight: 15
-  Time: "Night"
-  Biome:
-  - "LowMountains"
-  - "LowMountains_1"
-  - "LowMountains_2"
-  - "TallTrees"
-  - "SwampUpper"
-  - "Swamp"
-  - "SwampEdge"
-  - "Morass"
-- Name: "Moths"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "AlienSwamp"
-  - "Flats"
-- Name: "FireFliesGreenFew"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "AlienSwamp"
+
+
+  - Name: FireFliesGreen
+    Biome: [ Water, ShallowWater, Shore, Morass_1, AlienSwamp ]
+    Time: Night
+    MaxHeight: 20
+  - Name: FireFliesGreenFew
+    Biome: [ Flats]
+    Time: Night
+    MaxHeight: 40
+
+  - Name: Pollen
+    Biome: [ Plains, Heath, DustBowl ]
+    Time: Day
+    MaxHeight: 15
+
+ # - Name: Mosquitos  # Multiple entries due to being infested with mosquitoes! ;)
+ #   Biome: [ Water, ShallowWater, Morass, Morass_1, SwampEdge, Swamp, SwampUpper ]
+ #   Time: Day
+ #   MaxHeight: 15
+ # - Name: Mosquitos
+ #   Biome: [ ShallowWater, Morass, Morass_1, SwampEdge, Swamp ]
+ #   Time: Day
+ #   MaxHeight: 20
+ # - Name: Mosquitos
+ #   Biome: [ ShallowWater, Morass, Morass_1 ]
+ #   Time: Day
+  #  MaxHeight: 15
+
+  - Name: TarantulaHawksFew
+    Biome: [ Swamp, SwampUpper ]
+    Time: Always
+    MaxHeight: 15
+    
+  - Name: Mosquitos
+    Biome: [ Morass, Morass_1, ShallowWater, Water ]
+    Time: Night
+    MaxHeight: 20
+    
+  - Name: ButterfliesBlue
+    Biome: [ LowMountains, LowMountains_1, LowMountains_2, Marsh, Plains ]
+    Time: Day
+    MaxHeight: 15
+  - Name: Dragonflies
+    Biome: [ Flats ]
+    Time: Day
+    MaxHeight: 20
+    
+  - Name: Moths
+    Biome: [ LowMountains, LowMountains_1, LowMountains_2, TallTrees, SwampUpper, Swamp, SwampEdge, Morass ]
+    Time: Night
+    MaxHeight: 15
+
+  - Name: Moths
+    Biome: [ AlienSwamp, Flats ]
+    Time: Day
+    MaxHeight: 15
+  - Name: FireFliesGreenFew
+    Biome: [ AlienSwamp ]
+    Time: Day
+    MaxHeight: 15
+
+    
+
 SpecialEffectsGlobal:
-- Name: "CloudsMedium"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "CloudsLight"
-  InitialDelay: 4
-  Delay: 2
-  Lifetime: 1000
-  Type: "Weather"
-- Name: "Clear"
-  InitialDelay: 8
-  Delay: 2
-  Lifetime: 800
-  Type: "Weather"
-- Name: "CloudsDark"
-  InitialDelay: 8
-  Delay: 2
-  Lifetime: 800
-  Type: "Weather"
-- Name: "Fog"
-  InitialDelay: 8
-  Delay: 3
-  Lifetime: 800
-  Type: "Weather"
-- Name: "RainMedium"
-  InitialDelay: 12
-  Delay: 12
-  Lifetime: 1000
-  Type: "Weather"
-- Name: "RainHeavy"
-  InitialDelay: 30
-  Delay: 24
-  Lifetime: 600
-  Type: "Weather"
-- Name: "Storm"
-  InitialDelay: 48
-  Delay: 24
-  Lifetime: 500
-  Type: "Weather"
-- Name: "AcidRainHeavy"
-  InitialDelay: 96
-  Delay: 48
-  Lifetime: 400
-  Type: "Weather"
-- Name: "BirdFlocksCrows"
-  Time: "Day"
-  Biome:
-  - "Any"
-  InitialDelay: 1
-  Delay: 2
-  Lifetime: 600
-- Name: "BirdFlocksCrows"
-  Time: "Day"
-  Biome:
-  - "Any"
-  InitialDelay: 1
-  Delay: 1
-  PlyDist: 200
-  Lifetime: 600
+# Standard weather: White clouds vs. multi-coloured sunsets
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 4
+    Delay: 2
+    Lifetime: 1000
+  - Name: Clear  
+    Type: Weather
+    InitialDelay: 8
+    Delay: 2
+    Lifetime: 800
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 8
+    Delay: 2
+    Lifetime: 800
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 8
+    Delay: 3
+    Lifetime: 800
+# Alternate weather: Deep blue-green fog
+  - Name: RainMedium
+    Type: Weather
+    InitialDelay: 12
+    Delay: 12
+    Lifetime: 1000
+  - Name: RainHeavy
+    Type: Weather
+    InitialDelay: 30
+    Delay: 24
+    Lifetime: 600
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 500
+  - Name: AcidRainHeavy
+    Type: Weather
+    InitialDelay: 96
+    Delay: 48
+    Lifetime: 400
+
+
+# Global Effects
+  - Name: BirdFlocksCrows
+    Biome: [ Any ]
+    Time: Day
+    InitialDelay: 1
+    Delay: 2
+    Lifetime: 600
+    PlyDist: 100
+    SpawnY: 50
+    Struct: True
+  - Name: BirdFlocksCrows
+    Biome: [ Any ]
+    Time: Day
+    InitialDelay: 1
+    Delay: 1
+    Lifetime: 600
+    PlyDist: 200
+    SpawnY: 50
+    Struct: True
+    
+# ==================
+
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
 AtmosphereColor: "0.57, 0.85, 0.71"
 SkyColor: "0.07, 0.60, 0.25"
 SkyHorizonColor: "1, 0.2, 0"
-LightZenithColor: "0.71, 0.83, 0.54"
-LightHorizonColor: "1, 0.5, 0.2"
-NightLightColor: "0.85, 0.78, 1"
-CloudsZenithColor: "0.9, 1.4, 1.5"
-CloudsHorizonColor: "1.7, 0.35, 0.25"
-CloudsOpacity: 0.4
-FogCloudIntensity: 0.3
+
+# Light
 DayLightIntensity: 1.4
 NightLightIntensity: 0.37
+
+LightZenithColor: "0.71, 0.83, 0.54"  
+LightHorizonColor: "1, 0.5, 0.2" 
+NightLightColor: "0.85, 0.78, 1"
+
 DayShadowStrength: 1
 NightShadowStrength: 1
+
+SunFlare: EnvironmentalEffects/SunFlareYellow3
+
+# Fog
+AtmosphereFog: 0.0  
+FogColor: "0.7, 0.85, 0.85" 
+
+FogCloudIntensity: 0.3
+
+# GroundFogIntensity: 0.25   # (See playfield_dynamic)
+# GroundFogHeight: 45
+
+
+# Clouds & Wind
 CloudsDensity: 0.35
 CloudsSharpness: 0.8
-CloudsBrightness: 1
+CloudsOpacity: 0.4 
+
+CloudsBrightness: 1.0
+CloudsZenithColor: "0.9, 1.4, 1.5" 
+CloudsHorizonColor: "1.7, 0.35, 0.25"
+
 WindSpeed: 3
-FogColor: "0.7, 0.85, 0.85"
-Description: "\u8FD9\u4E2A\u4E16\u754C\u5728\u6BCF\u4E00\u6B21\u5FC3\u8DF3\u4E2D\u751F\u51FA\u66F4\u591A\u7684\u7360\u7259\u3002\n\u53D8\u5F02\u751F\u7269\u5F7C\u6B64\u730E\u6740\uFF0C\u6301\u7EED\u6323\u624E\uFF0C\u4E0D\u53D7\u63A7\u5236\u7684\u519B\u4E8B\u65E0\u4EBA\u673A\u5411\u9634\u5F71\u5F00\u706B\u3002\n\u65E0\u6559\u7A0B\u652F\u6301\uFF01\n\u9002\u5408\u60F3\u8981\u51ED\u501F\u6218\u6597\u95EF\u5411\u661F\u8FB0\u7684\u751F\u5B58\u8005\u3002"
-Seed: 575561
-PlanetClass: "Alien Swamp"
-UseRandom: true
-LandClaimZone: "Device"
+
+
+# ==============================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "CarbonResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 4
-  SizeMinMax:
-  - 5
-  - 7
-  DepthMinMax:
-  - 0
-  - 5
-  DroneProb: 0.2
-- Name: "IronResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 4
-  SizeMinMax:
-  - 5
-  - 7
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.2
-- Name: "CopperResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 4
-  SizeMinMax:
-  - 4
-  - 6
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.3
-- Name: "SiliconResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 6
-  SizeMinMax:
-  - 4
-  - 6
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.3
-- Name: "TitanResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 4
-  SizeMinMax:
-  - 3
-  - 4
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.3
-- Name: "PentaxidResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 4
-  SizeMinMax:
-  - 3
-  - 4
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.3
+    - Name: CarbonResource
+    #  Biome: [ Heath, Savanna, Hills, Plains, SavannaEdge, Grassland_1, Grassland ]
+      IsScalingCount: True   # Medium Planet: 6-8 Deposits, Large planet 9-12
+      CountMinMax: [ 1, 4 ]  # (was [ 5, 8 ] unscaled)
+      SizeMinMax: [ 5, 7 ]
+      DepthMinMax: [ 0, 5 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+      
+    - Name: IronResource
+    #  Biome: [ HighMountains, Mountains, LowMountains, Hills, IronOreClusters]
+      IsScalingCount: True   # Medium Planet: 6-8 Deposits, Large planet 9-12
+      CountMinMax: [ 1, 4 ]  # (was [ 5, 8 ] unscaled)
+      SizeMinMax: [ 5, 7 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+
+    - Name: CopperResource
+    #  Biome: [ Meadow, Forest_Water, Forest_1, Forest, CopperOreClusters]
+      IsScalingCount: True   # Medium Planet: 4-8 Deposits, Large planet 6-12
+      CountMinMax: [ 1, 4 ]  # (was [ 4, 7 ] unscaled)
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.3
+
+    - Name: SiliconResource
+      # Biome: [ Savanna, SavannaEdge, Sand, Swamp, Marsh, DustBowl]
+   #   Biome: [ DeepWater, Water, ShallowWater, WaterRifts, WaterSwamp, Beach, Marsh, Forest_Water, Grassland_1Water]
+      IsScalingCount: True   # Medium Planet: 4-6 Deposits, Large planet 6-9
+      CountMinMax: [ 1, 6 ]  # (was [ 4, 7 ] unscaled)
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.3  
+      
+    - Name: TitanResource
+    #  Biome: [ Meadow, Forest_Water, Forest_1, Forest, CopperOreClusters]
+      IsScalingCount: True   # Medium Planet: 4-8 Deposits, Large planet 6-12
+      CountMinMax: [ 1, 4 ]  # (was [ 4, 7 ] unscaled)
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.3
+      
+    - Name: PentaxidResource
+    #  Biome: [ Meadow, Forest_Water, Forest_1, Forest, CopperOreClusters]
+      IsScalingCount: True   # Medium Planet: 4-8 Deposits, Large planet 6-12
+      CountMinMax: [ 1, 4 ]  # (was [ 4, 7 ] unscaled)
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.3
+        
+### Resource Asteroids
 AsteroidResources:
-- Name: "IronResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "CopperResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "SiliconResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "CarbonResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CarbonResource
+       Threshold: 0.2
+       Amount: 0.2
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "NullPOI"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    SpawnPOINear:
-    - "START"
-    SpawnResource:
-    - "IronResource:1-1"
-    - "CopperResource:1-1"
-    - "SiliconResource:1-1"
-    SpawnPOINearRange:
-    - 80
-    - 10
-    SpawnResourceRange:
-    - 300
-    - 400
-  - GroupName: "TOTObeliskAlien"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "PersonalContainer"
-      Value: "Token::9981"
-    SpawnPOINear:
-    - "START"
-    SpawnPOINearRange:
-    - 300
-    - 600
-    BiomesExcluded:
-    - "Flats"
-    - "Beach"
-    - "SwampEdge"
-    - "DustBowl"
-    - "ColdPlains"
-  - GroupName: "TOTCampObeliskAlien"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "PersonalContainer"
-      Value: "Token::9981"
-    SpawnPOINear:
-    - "TOTObeliskAlien"
-    SpawnPOINearRange:
-    - 30
-    - 100
-  - GroupName: "TOTVerticalVessel"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOIAvoid:
-    - "START"
-    SpawnPOIAvoidDistance: 1000
-  - GroupName: "TOTFontD"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOIAvoid:
-    - "START"
-    SpawnPOIAvoidDistance: 1200
-    BiomesExcluded:
-    - "Flats"
-    - "Beach"
-    - "SwampEdge"
-    - "DustBowl"
-    - "ColdPlains"
-  - GroupName: "TOTCampFontAlien"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "PersonalContainer"
-      Value: "Token::9981"
-    SpawnPOINear:
-    - "TOTFontD"
-    SpawnPOINearRange:
-    - 30
-    - 70
-  - GroupName: "TOTAbandonedDronebase"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "SI"
-      Value: "Off"
-    - Key: "PersonalContainer"
-      Value: "Token::9981"
-    SpawnPOIAvoid:
-    - "START"
-    SpawnPOIAvoidDistance: 2500
-  - GroupName: "TOTActivator"
-    Faction: "None"
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-  - GroupName: "TemperateStarterTribalTower"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOINear:
-    - "START"
-    SpawnPOIAvoid:
-    - "START"
-    SpawnPOINearRange:
-    - 700
-    - 1200
-    SpawnPOIAvoidDistance: 700
-    BiomesExcluded:
-    - "Flats"
-    - "Beach"
-    - "SwampEdge"
-    - "DustBowl"
-    - "ColdPlains"
-  - GroupName: "WreckageT2"
-    Faction: "Alien"
-    Count:
-      Min: 3
-      Max: 5
-    CountMinMax:
-    - 3
-    - 5
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    BiomesExcluded:
-    - "ColdPlains"
-    - "Plains"
-  - GroupName: "EggsLarge"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 3
-      Max: 5
-    CountMinMax:
-    - 3
-    - 5
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOIAvoid:
-    - "NullPOI"
-    - "EggsLarge"
-    - "TemperateStarterTribalTower"
-    SpawnPOIAvoidDistance: 750
-    Biome:
-    - "Swamp"
-    - "AlienSwamp"
-  - GroupName: "Eggs"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 3
-      Max: 8
-    CountMinMax:
-    - 3
-    - 8
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOIAvoid:
-    - "NullPOI"
-    - "TemperateStarterTribalTower"
-    SpawnPOIAvoidDistance: 750
-    Biome:
-    - "Swamp"
-    - "AlienSwamp"
-  - GroupName: "EggsStarter"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 8
-      Max: 8
-    CountMinMax:
-    - 8
-    - 8
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOIAvoid:
-    - "EggsStarter"
-    SpawnPOIAvoidDistance: 300
-    Biome:
-    - "LowMountains"
-    - "LowMountains_1"
-    - "LowMountains_2"
-    - "TallTrees"
-    - "Fungus"
-  - GroupName: "EggsStarter"
-    Faction: "None"
-    Count:
-      Min: 3
-      Max: 8
-    CountMinMax:
-    - 3
-    - 8
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    Biome:
-    - "Hills"
-    - "TallTrees"
-    - "Fungus"
-    - "DustBowl"
-    - "Flats"
-    - "Plateau"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 147
-    - 0
-    RotY: 160
-    Armor: "ArmorLight"
-  - Mode: "Survival"
-    Spawn: "EscapePodLandAtPos"
-    Pos:
-    - 0
-    - 70
-    - 0
-    RotY: 160
-    Items:
-    - "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:3#Drop, PowerBar:3#Drop"
-    - "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:2#Drop, PowerBar:2#Drop"
-    - "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:1#Drop, PowerBar:1#Drop"
-    - "#FreshStart: SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:1#Drop, PowerBar:1#Drop"
-    Status:
-    - "Food: 400, Health: 400"
-    - "Food: 250, Health: 250"
-    - "Food: 150, Health: 150"
-    - "#FreshStart:Food: 250, Health: 250"
-DroneBaseSetup:
-  DroneBases:
-  - DroneSetupID: "DroneBaseSetup"
-    Stock:
-    - Name: "DroneSmallFast01Stun"
-      Amount: "Infinite"
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-    - Name: "ZiraxMinigun"
-      Amount: "Infinite"
-    - Name: "ZiraxRocket"
-      Amount: "Infinite"
-    - Name: "RipperDog"
-      Amount: "Infinite"
-DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 3
-    - 3
-    CenterX: -3500
-  - DronesMinMax:
-    - 3
-    - 3
-    CenterX: 3500
+    Random:
+#============================================================
+# Basic layout is as follows
+# Playfield has several required POI, which can be different per planet type
+# Always placed: Obelisk & Font of Knowledge + Activators
+# 1 camp/wreckage nearby the Obelisk
+# 1 main PoI relevant for story log
+# 1 POI that CAN have a story log but merely is something to discover for the player
+# random, thematicall fitting POI scattered around the planet.
+# ======================= CRASHSITE  ======================= 
+
+          # 'Distance holder POI'
+        - GroupName: NullPOI                # PLZ KEEP THIS POI! - - Used for 'security' spacing of POI
+          CountMinMax: [ 1, 1 ]             # (The parameter 'SpawnPOIAvoid' does not work well if it is defined as a combination of START and a POI.)
+          SpawnPOINear: [START]             # (NullPOI acts still as 'POI', is used instead of START.)
+          SpawnPOINearDistance: 10          # (Due to the fixed shape of the Crashsite and the nonexistent size of NullPOI, this POI should never fail to spawn)
+          IsImportant: True     # (Will not have any spawn problems, just to be sure. Should spawn immediately, so no loss in performance.)
+
+          # STARTER RESOURCE NODES
+          SpawnResource: ["IronResource:1-1", "CopperResource:1-1", "SiliconResource:1-1" ]
+          SpawnResourceRange: [300, 400]
+
+
+ # REQUIRED POI
+ 
+        - GroupName: TOTObeliskAlien         # Cluster anchor to 'TOTCampObeliskAlien'   # REQUIRED!
+          IsImportant: True
+          BiomesExcluded: [ Flats, Beach, SwampEdge, DustBowl, ColdPlains]  # To prevent problems  
+          Faction: Alien          
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [ START ]
+          SpawnPOINearRange: [300,600]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer         # Personal Container
+              Value: "Token::9981"    # Content of Personal Container; Each player can pick THIS stuff once. Works in SP and MP! Syntax: <item/block/device>:<amount>
+
+# REPLACE WITH DIFFERENT POI!  (starter hut)
+        - GroupName: TOTCampObeliskAlien           # REQUIRED!
+          IsImportant: True
+       #   Biome: [ColdPlains_Danger, Tundra]   
+          Faction: None          
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [ TOTObeliskAlien ]
+          SpawnPOINearRange: [30,100]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer         # Personal Container
+              Value: "Token::9981"    # Content of Personal Container; Each player can pick THIS stuff once. Works in SP and MP! Syntax: <item/block/device>:<amount>
+
+        - GroupName: TOTVerticalVessel           # Should spawn close to Crashsite in visible distance, but probably footprint too large
+          IsImportant: True
+          Faction: Alien          
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+      #    SpawnPOIAvoid: [ NullPOI ]
+      #    SpawnPOIAvoidDistance: 4000
+          SpawnPOIAvoid: [ START ]
+          SpawnPOIAvoidDistance: 1000
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+          #  - Key: PersonalContainer 
+          #    Value: "Token::9981" 
+
+
+
+        - GroupName: TOTFontD         # Spawn Anchor for 'TOTCampFontAlien'
+          IsImportant: True
+          Faction: None          
+          CountMinMax: [ 1, 1 ]
+          BiomesExcluded: [ Flats, Beach, SwampEdge, DustBowl, ColdPlains] 
+       #   Biome: [ColdPlains_Danger, Tundra]   
+       #   SpawnPOINear: [ START ]
+       #   SpawnPOINearRange: [500,1000]
+          SpawnPOIAvoid: [ START ]
+          SpawnPOIAvoidDistance: 1200
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+        - GroupName: TOTCampFontAlien           # REQUIRED!
+          IsImportant: True
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+          SpawnPOINear: [ TOTFontD ]
+          SpawnPOINearRange: [30,70]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer 
+              Value: "Token::9981" 
+
+        - GroupName: TOTAbandonedDronebase            
+          IsImportant: True
+          Faction: Alien          
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+      #    SpawnPOIAvoid: [ NullPOI ]
+      #    SpawnPOIAvoidDistance: 4000
+          SpawnPOIAvoid: [ START ]
+          SpawnPOIAvoidDistance: 2500
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: SI
+              Value: Off
+            - Key: PersonalContainer 
+              Value: "Token::9981" 
+
+# Vessels (Required)
+
+        # - GroupName: DamagedHV                                      #REQUIRED
+          # Faction: None  
+        # #  BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          # IsImportant: True
+          # Type: HV_Player  
+          # CountMinMax: [ 1, 1 ]
+          # InitPower: False
+          # SpawnPOINear: [TOTCampObeliskAlien]
+          # SpawnPOINearRange: [25, 50]
+          # Properties:
+        # #    - Key: MapDistance
+        # #      Value: 30   
+            # - Key: MapMarker 
+              # Value: Neutral  
+            # - Key: RegenAfter
+              # Value: 360
+
+        # - GroupName: DamagedHV                                      #REQUIRED
+          # Faction: None  
+        # #  BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          # IsImportant: True
+          # Type: HV_Player  
+          # CountMinMax: [ 1, 1 ]
+          # InitPower: False
+          # SpawnPOINear: [TOTDigSiteTerminus]
+          # SpawnPOINearRange: [25, 50]
+          # Properties:
+        # #    - Key: MapDistance
+        # #      Value: 30   
+            # - Key: MapMarker 
+              # Value: Neutral  
+            # - Key: RegenAfter
+              # Value: 360
+
+        # - GroupName: DamagedHV                                      #REQUIRED
+          # Faction: None  
+        # #  BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          # IsImportant: True
+          # Type: HV_Player  
+          # CountMinMax: [ 1, 1 ]
+          # InitPower: False
+          # SpawnPOINear: [TOTScientistCamp]
+          # SpawnPOINearRange: [25, 50]
+          # Properties:
+        # #    - Key: MapDistance
+        # #      Value: 30   
+            # - Key: MapMarker 
+              # Value: Neutral  
+            # - Key: RegenAfter
+              # Value: 360
+
+        # - GroupName: TOTSV                                          # Required as  agift SHOULD BE HEAVILY DEFENDED by CREATURES (as this is not a damaged vessel)
+          # Faction: None  
+     # #     BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ] 
+          # Type: SV_Player
+          # CountMinMax: [ 1, 1 ]
+          # IsImportant: True
+          # InitPower: False
+          # SpawnPOINear: [ToTAbandonedDronebase]
+          # SpawnPOINearRange: [25, 50]
+          # Properties:
+        # #    - Key: MapDistance
+        # #      Value: 120   
+            # - Key: MapMarker 
+              # Value: Neutral
+
+
+
+# Secondary POI
+
+        - GroupName: TOTActivator         # Optional 
+        #  IsImportant: True
+          Faction: None          
+          CountMinMax: [ 2, 3 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+      #    SpawnPOIAvoid: [ NullPOI ]
+      #    SpawnPOIAvoidDistance: 4000
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+
+
+
+# Flavor & Fillers
+
+
+        - GroupName: TemperateStarterTribalTower           # Should spawn close to Crashsite in visible distance, but probably footprint too large
+          #IsImportant: True
+          Faction: None          
+          CountMinMax: [ 1, 1 ]
+          BiomesExcluded: [ Flats, Beach, SwampEdge, DustBowl, ColdPlains]  # To prevent problems for this cluster  
+       #   Biome: [ColdPlains_Danger, Tundra]   
+          SpawnPOIAvoid: [ START ]
+          SpawnPOIAvoidDistance: 700
+          SpawnPOINear: [START]
+          SpawnPOINearRange: [700, 1200]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+        # - GroupName: TemperateStarterTribalField           # At least ONE needs to spawn
+          # IsImportant: True
+          # Faction: None          
+          # CountMinMax: [ 3, 6 ]  #1,8
+       # #   Biome: [ColdPlains_Danger, Tundra]   
+          # SpawnPOINear: [ TemperateStarterTribalTower ]
+          # SpawnPOINearRange: [50,200]
+          # Properties: 
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: RegenAfter
+              # Value: 360
+
+        - GroupName: WreckageT2             
+         # IsImportant: True
+          Faction: Alien          
+          BiomesExcluded: [ ColdPlains, Plains] 
+          CountMinMax: [ 3, 5 ]  #1,6
+       #   Biome: [ColdPlains_Danger, Tundra]   
+       #   SpawnPOINear: [ RuinsTribalTower ]
+       #   SpawnPOINearRange: [100,1000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+
+
+
+
+         # ======================
+         # ======================
+         # Night challenge egg piles. Safety distance to crashsite
+        - GroupName: EggsLarge             
+          IsImportant: True     # (Small target biome)
+          Faction: None          
+          CountMinMax: [ 3, 5 ]   # 1,6
+          Biome: [Swamp, AlienSwamp]   
+          SpawnPOIAvoid: [ NullPOI, EggsLarge, TemperateStarterTribalTower ]
+          SpawnPOIAvoidDistance: 750
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+        - GroupName: Eggs
+          IsImportant: True     # (Small target biome)
+          Faction: None
+          CountMinMax: [ 3, 8 ]    # 1,10
+          Biome: [Swamp, AlienSwamp]
+          SpawnPOIAvoid: [ NullPOI, TemperateStarterTribalTower]
+          SpawnPOIAvoidDistance: 750
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+        # ======================
+
+        # Plateau Filler spider nests
+        - GroupName: EggsStarter
+          IsImportant: True     # (Small-ish target biome)
+          Faction: None
+          CountMinMax: [ 8, 8 ]
+          Biome: [LowMountains, LowMountains_1, LowMountains_2, TallTrees, Fungus]   
+          SpawnPOIAvoid: [ EggsStarter ]
+          SpawnPOIAvoidDistance: 300
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+        - GroupName: EggsStarter
+         # IsImportant: True
+          Faction: None
+          CountMinMax: [ 3, 8 ]    # 1,10
+          Biome: [Hills, TallTrees, Fungus, DustBowl, Flats, Plateau ]  
+       #   Biome: [ColdPlains_Danger, Tundra]   
+       #   SpawnPOINear: [ RuinsTribalTower ]
+       #   SpawnPOINearRange: [100,1000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+
+
+
+
+         # ======================
+         # ======================
+
+
+
+        # - GroupName: EggsLarge             
+         # # IsImportant: True
+          # Faction: None          
+          # CountMinMax: [ 3, 5 ]   # 1,6
+       # #   Biome: [ColdPlains_Danger, Tundra]   
+       # #   SpawnPOINear: [ RuinsTribalTower ]
+       # #   SpawnPOINearRange: [100,1000]
+          # Properties: 
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: RegenAfter
+              # Value: 360
+
+        # - GroupName: Eggs             
+         # # IsImportant: True
+          # Faction: None          
+          # CountMinMax: [ 3, 8 ]    # 1,10
+       # #   Biome: [ColdPlains_Danger, Tundra]   
+       # #   SpawnPOINear: [ RuinsTribalTower ]
+       # #   SpawnPOINearRange: [100,1000]
+          # Properties: 
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: RegenAfter
+              # Value: 360
+
+
+
+
+
+        # - GroupName: EggsFloat             
+         # # IsImportant: True
+          # Faction: None          
+          # CountMinMax: [ 1, 6 ]
+       # #   Biome: [ColdPlains_Danger, Tundra]   
+       # #   SpawnPOINear: [ RuinsTribalTower ]
+       # #   SpawnPOINearRange: [100,1000]
+          # Properties: 
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: RegenAfter
+              # Value: 360
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Armor: ArmorLight
+          Pos: [ 0, 147, 0 ]
+          RotY: 160 
+
+        - Mode: Survival
+          Spawn: EscapePodLandAtPos      #Escape Pod cannot be controlled in that mode
+          Pos: [0, 70, 0]                  # Equator at mid-day.
+          RotY: 160
+          Status: [ "Food: 400, Health: 400", "Food: 250, Health: 250", "Food: 150, Health: 150", "#FreshStart:Food: 250, Health: 250" ]      # NEW
+          Items: [ "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:3#Drop, PowerBar:3#Drop", "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:2#Drop, PowerBar:2#Drop", "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:1#Drop, PowerBar:1#Drop", "#FreshStart: SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:1#Drop, PowerBar:1#Drop" ]
+
+# ==============================================================
+# ==============================================================
+### Drones
+
+DroneBaseSetup: 
+    DroneBases:
+        - DroneSetupID: DroneBaseSetup
+#          Difficulty: 2
+#          PresetStyle: 4
+          Stock:
+
+              - Name: DroneSmallFast01Stun
+                Amount: Infinite
+ 
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+ 
+              - Name: ZiraxMinigun
+                Amount: Infinite
+ 
+              - Name: ZiraxRocket
+                Amount: Infinite
+ 
+              - Name: RipperDog
+                Amount: Infinite
+
+
+# Drones that patrol on whole planet 
+# Type determined by stock of drone base (default drone - type = 0)
+DroneSpawning:    
+    Random:
+        - DronesMinMax: [ 3, 3 ]
+          CenterX: -3500
+
+        - DronesMinMax: [ 3, 3 ]
+          CenterX: 3500
+ 
+# ==============================================================
+# Crashsite
+
+# Pole
+
+# DeepWater
+# Water
+# Shore
+# ShallowWaterLilies
+# ShallowWater
+
+# Morass_1
+# Morass
+
+# SwampEdge
+# AlienSwamp
+# Swamp
+# SwampUpper
+
+# Marsh
+# Fungus
+
+# Beach
+# Plateau
+# Flats
+# DustBowl
+# Peat
+# Plains
+
+# Heath
+# Rifts
+# Rocks
+
+# LargeCrater
+# TallTrees
+
+# Hills
+# LowMountains_1
+# LowMountains_2
+# LowMountains
+# Mountains
+
+# ColdPlains
+
+# ========================
+SpawnRateZones: 
+
+# STARTER  ====
+   # - SpawnAt: [START]
+     # Radius: 1000
+     # RadiusRandom: 0
+     # RateMultiplyerCenter: 0.0
+     # RateMultiplyerEdge: 1.0
+     # AffectEnemies: true
+     # Color: "0.0, 1.0, 0.0, 0.7" 
+
+SpawnZones:  
+
+# TOTObeliskSnow, TOTZiraxConvoy, TOTCampFontSnow DamagedHVo2,  ... , TOTMineralSynthLab, TOTFontB, TemperateStarterTribalTower... TOTActivator
+
+     # ====================
+     # Comment in for testing- MARKER ZONES
+     # (To easily find story POI in the SSG  - - has no other function)
+     # ====================
+   - SpawnAt: [TOTFontD, TOTCampFontAlien] 
+   # - SpawnAt: [TOTObeliskSnow, TOTZiraxConvoy, TOTCampFontSnow, DamagedHVo2, TOTMineralSynthLab, TOTFontB, TemperateStarterTribalTower, TOTActivator] 
+     Radius: 280
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [AlienAssassinGreysInfected]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+
+     # ====================
+     # ====================
+
+
+     # ====================
+     # Night swamp survival challenge part 1 - Danger zones tied to POIs  ====
+     # Hexapod nest 
+   - SpawnAt: [ Eggs, CrashedShip]
+     Radius: 600
+     RadiusRandom: 100
+     RateMultiplyerCenter: 1
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 1.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [HexapodsInfected]
+         Biomes: [Swamp, SwampEdge, Morass]
+         Amount: 400
+         Period: Always
+         DelayMinMax: [15, 25]
+
+    # Hexapod nest... "loot"
+   - SpawnAt: [ Eggs ]
+     Radius: 400
+     RadiusRandom: 100
+     RateMultiplyerCenter: 1
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 0.0, 0.0, 0.5" 
+     Entities:
+       - Names: [GolemsDesert]         # Desert. (IIRC the swamp golem loot was worthless?)
+         Biomes: [Swamp, SwampEdge, Morass]
+         Amount: 150
+         Period: Night
+         DelayMinMax: [15, 25]
+
+     # Large 
+   - SpawnAt: [ EggsLarge ]
+     Radius: 600
+     RadiusRandom: 100
+     RateMultiplyerCenter: 1
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 1.0, 0.0, 1.0" 
+     Entities:
+       - Names: [HexapodsInfected]
+         Biomes: [Swamp, SwampEdge, Morass]
+         Amount: 600
+         Period: Always
+         DelayMinMax: [15, 25]
+
+    # Large Loot
+   - SpawnAt: [ EggsLarge ]
+     Radius: 350
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1
+     RateMultiplyerEdge: 0.0
+     Color: "0.0, 0.0, 0.0, 0.5" 
+     Entities:
+       - Names: [GolemsDesert]      # (Desert. See above, needs useful loot for all this trouble)
+         Biomes: [Swamp, SwampEdge, Morass]
+         Amount: 300
+         Period: Night
+         DelayMinMax: [15, 25]
+     # ====================
+
+
+     # Some spider nests on the mountains
+   - SpawnAt: [ EggsStarter]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 0.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Spiders01]
+         Biomes: [LowMountains, LowMountains_1, LowMountains_2, TallTrees, Fungus]
+         Amount: 400
+         Period: Always
+         DelayMinMax: [15, 25]
+
+
+
+
+
+
+
+
+
+
+### Creatures
 CreatureSpawning:
-- Biomes:
-  - "SwampEdge"
-  - "AlienSwamp"
-  - "Swamp"
-  - "SwampUpper"
-  - "Morass_1"
-  - "Morass"
-  - "Beach"
-  - "Shore"
-  - "ShallowWater"
-  - "ShallowWaterLilies"
-  - "Crashsite"
-  - "Crashsite_1"
-  Entities:
-  - Name: "AnnoyingMosquitosPrimitive"
-    Amount: 15
-    Color: "0, 0, 0.7"
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-  - Name: "AnnoyingMosquitosGray"
-    Amount: 15
-    Color: "0, 0, 0.7"
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-  - Name: "AnnoyingMosquitosRed"
-    Amount: 15
-    Color: "0, 0, 0.7"
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-  - Name: "AnnoyingMosquitosGreen"
-    Amount: 15
-    Color: "0, 0, 0.7"
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-- Biomes:
-  - "Water"
-  - "ShallowWater"
-  - "Morass_1"
-  - "Morass"
-  - "Shore"
-  Entities:
-  - Name: "Telluropods"
-    Amount: 50
-    Color: "0, 0, 0.7"
-    AllowInWater: true
-    DelayMinMax:
-    - 8
-    - 10
-    Period: "Always"
-- Biomes:
-  - "AlienSwamp"
-  - "ShallowWater"
-  - "ShallowWaterLilies"
-  - "DeepWater"
-  Entities:
-  - Name: "Slimes"
-    Amount: 30
-    Color: "0.7, 1, 0.8"
-    AllowInWater: true
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "DeepWater"
-  - "ShallowWaterLilies"
-  Entities:
-  - Name: "Slimes"
-    Amount: 50
-    Color: "0.8, 0.7, 1"
-    AllowInWater: true
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "Morass"
-  - "Flats"
-  - "SwampEdge"
-  - "Swamp"
-  - "SwampUpper"
-  Entities:
-  - Name: "HexapodsInfected"
-    Amount: 10
-    DelayMinMax:
-    - 6
-    - 8
-    Period: "Always"
-- Biomes:
-  - "Morass"
-  - "Flats"
-  - "SwampEdge"
-  - "Swamp"
-  Entities:
-  - Name: "Creepys"
-    Amount: 15
-    DelayMinMax:
-    - 6
-    - 8
-    Period: "Day"
-- Biomes:
-  - "SwampEdge"
-  - "Swamp"
-  - "AlienSwamp"
-  - "Fungus"
-  Entities:
-  - Name: "AlienAssassinGreysInfected"
-    Amount: 120
-    Color: "0.9, 0.2, 0.9"
-    DelayMinMax:
-    - 6
-    - 8
-- Biomes:
-  - "Morass"
-  - "SwampEdge"
-  - "Swamp"
-  - "AlienSwamp"
-  - "Flats"
-  Entities:
-  - Name: "Spiders03"
-    Amount: 20
-    DelayMinMax:
-    - 8
-    - 10
-- Biomes:
-  - "LargeCrater"
-  - "Swamp"
-  - "SwampEdge"
-  - "AlienSwamp"
-  Entities:
-  - Name: "AlienAssassinGreysInfected"
-    Amount: 90
-    Color: "1, 0, 0"
-    DelayMinMax:
-    - 8
-    - 10
-- Biomes:
-  - "Marsh"
-  - "Swamp"
-  Entities:
-  - Name: "GolemsSwamp"
-    Amount: 15
-    Color: "1.0, 0, 1"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- Biomes:
-  - "Marsh"
-  Entities:
-  - Name: "AlienBugs02"
-    Amount: 5
-    Color: "1.0, 0, 1"
-    DelayMinMax:
-    - 16
-    - 24
-    Period: "Always"
-- Biomes:
-  - "Marsh"
-  Entities:
-  - Name: "Alien02_03_BattleGroup"
-    Amount: 20
-    Color: "1, 0.8, 0.4"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- Biomes:
-  - "LargeCrater"
-  Entities:
-  - Name: "Alien02_03_BattleGroup"
-    Amount: 10
-    Color: "1, 0.8, 0.4"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-  - Name: "Alien02_03_BattleGroupLarge"
-    Amount: 5
-    Color: "1, 0.9, 0.4"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- Biomes:
-  - "Marsh"
-  - "Heath"
-  - "TallTrees"
-  - "DustBowl"
-  - "Plains"
-  - "Rifts"
-  - "Hills"
-  - "Plateau"
-  - "Peat"
-  - "Beach"
-  Entities:
-  - Name: "RaptorsNight"
-    Amount: 25
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "Marsh"
-  - "Heath"
-  - "TallTrees"
-  - "DustBowl"
-  - "Plains"
-  - "LargeCrater"
-  - "Hills"
-  - "Peat"
-  - "Beach"
-  - "LowMountains"
-  - "LowMountains_1"
-  - "LowMountains_2"
-  - "Crashsite"
-  Entities:
-  - Name: "Pangolins"
-    Amount: 15
-    DelayMinMax:
-    - 8
-    - 12
-    Period: "Always"
-- Biomes:
-  - "LowMountains"
-  - "LowMountains_1"
-  - "LowMountains_2"
-  - "Plateau"
-  - "SwampUpper"
-  - "Heath"
-  - "TallTrees"
-  - "Plains"
-  - "Peat"
-  - "Fungus"
-  - "Hills"
-  - "DustBowl"
-  - "Beach"
-  Entities:
-  - Name: "AlienAssassinGreysInfected"
-    Amount: 20
-    DelayMinMax:
-    - 10
-    - 12
-- Biomes:
-  - "DeepWater"
-  - "Water"
-  - "ShallowWater"
-  Entities:
-  - Name: "ShoalofFishesSmall"
-    Amount: 10
-    Color: "1, 1.0, 0.0"
-    AllowInWater: true
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-SpawnZones:
-- SpawnAt:
-  - "TOTFontD"
-  - "TOTCampFontAlien"
-  Radius: 280
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  Color: "1.0, 1, 0.3, 1.0"
-  Entities:
-  - Names:
-    - "AlienAssassinGreysInfected"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- SpawnAt:
-  - "Eggs"
-  - "CrashedShip"
-  Radius: 600
-  RadiusRandom: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0.0, 1.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "HexapodsInfected"
-    Biomes:
-    - "Swamp"
-    - "SwampEdge"
-    - "Morass"
-    Amount: 400
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "Eggs"
-  Radius: 400
-  RadiusRandom: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.0, 0.0, 0.0, 0.5"
-  Entities:
-  - Names:
-    - "GolemsDesert"
-    Biomes:
-    - "Swamp"
-    - "SwampEdge"
-    - "Morass"
-    Amount: 150
-    DelayMinMax:
-    - 15
-    - 25
-- SpawnAt:
-  - "EggsLarge"
-  Radius: 600
-  RadiusRandom: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.0, 1.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "HexapodsInfected"
-    Biomes:
-    - "Swamp"
-    - "SwampEdge"
-    - "Morass"
-    Amount: 600
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "EggsLarge"
-  Radius: 350
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  Color: "0.0, 0.0, 0.0, 0.5"
-  Entities:
-  - Names:
-    - "GolemsDesert"
-    Biomes:
-    - "Swamp"
-    - "SwampEdge"
-    - "Morass"
-    Amount: 300
-    DelayMinMax:
-    - 15
-    - 25
-- SpawnAt:
-  - "EggsStarter"
-  Radius: 200
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "Spiders01"
-    Biomes:
-    - "LowMountains"
-    - "LowMountains_1"
-    - "LowMountains_2"
-    - "TallTrees"
-    - "Fungus"
-    Amount: 400
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
+
+    # - Biomes: [Crashsite] 
+      # Entities: 
+       # - Name: AnnoyingMosquitosMixed
+         # Period: Always
+         # Amount: 10
+         # DelayMinMax: [0, 1]
+         # Color: "0, 0, 1.0"
+
+         # Swamp Mosquitos
+
+    - Biomes: [SwampEdge, AlienSwamp, Swamp, SwampUpper, Morass_1, Morass, Beach, Shore, ShallowWater, ShallowWaterLilies, Crashsite, Crashsite_1]
+      Entities:
+        - Name: AnnoyingMosquitosPrimitive
+          Period: Always
+          Amount: 15
+          DelayMinMax: [0, 1] 
+         # AllowInWater: true 
+          Color: "0, 0, 0.7" 
+        - Name: AnnoyingMosquitosGray
+          Period: Always
+          Amount: 15
+          DelayMinMax: [0, 1] 
+         # AllowInWater: true 
+          Color: "0, 0, 0.7" 
+        - Name: AnnoyingMosquitosRed
+          Period: Always
+          Amount: 15
+          DelayMinMax: [0, 1] 
+         # AllowInWater: true 
+          Color: "0, 0, 0.7" 
+        - Name: AnnoyingMosquitosGreen
+          Period: Always
+          Amount: 15
+          DelayMinMax: [0, 1] 
+         # AllowInWater: true 
+          Color: "0, 0, 0.7" 
+
+      # Water  ===
+    - Biomes: [Water, ShallowWater, Morass_1, Morass, Shore]
+      Entities:
+        - Name: Telluropods
+          Period: Always
+          Amount: 50
+          DelayMinMax: [8, 10] 
+          AllowInWater: true 
+          Color: "0, 0, 0.7"
+          
+    - Biomes: [AlienSwamp, ShallowWater, ShallowWaterLilies, DeepWater]
+      Entities:
+        - Name: Slimes
+          Period: Always
+          Amount: 30
+          DelayMinMax: [10, 12]
+          AllowInWater: true
+          Color: "0.7, 1, 0.8"
+    - Biomes: [DeepWater, ShallowWaterLilies]
+      Entities:
+        - Name: Slimes
+          Period: Always
+          Amount: 50
+          DelayMinMax: [10, 12]  
+          AllowInWater: true
+          Color: "0.8, 0.7, 1"
+
+
+     # Night swamp challenge, Part 2 - 'Standard dangerous' swamp   ===
+     # Fast respawn rate, to enable another try. Most of them tied to night
+    - Biomes: [Morass, Flats, SwampEdge, Swamp, SwampUpper]
+      Entities:
+        - Name: HexapodsInfected
+          Period: Always
+          Amount: 10
+          DelayMinMax: [6, 8] 
+    - Biomes: [Morass, Flats, SwampEdge, Swamp]
+      Entities:
+        - Name: Creepys
+          Period: Day
+          Amount: 15
+          DelayMinMax: [6, 8]
+    - Biomes: [SwampEdge, Swamp, AlienSwamp, Fungus]
+      Entities:
+        - Name: AlienAssassinGreysInfected
+          Period: Night
+          Amount: 120
+          DelayMinMax: [6, 8]
+          Color: "0.9, 0.2, 0.9"
+    - Biomes: [Morass, SwampEdge, Swamp, AlienSwamp, Flats]
+      Entities:
+        - Name: Spiders03
+          Period: Night
+          Amount: 20
+          DelayMinMax: [8, 10] 
+
+    - Biomes: [LargeCrater, Swamp, SwampEdge, AlienSwamp]
+      Entities:
+        - Name: AlienAssassinGreysInfected
+          Period: Night
+          Amount: 90
+          DelayMinMax: [8, 10]
+          Color: "1, 0, 0"
+
+    - Biomes: [Marsh, Swamp]
+      Entities:
+        - Name: GolemsSwamp
+          Period: Always
+          Amount: 15
+          DelayMinMax: [15, 25]
+          Color: "1.0, 0, 1"
+
+
+      # Non-Swamp creatures  ===
+    - Biomes: [Marsh]
+      Entities:
+        - Name: AlienBugs02
+          Period: Always
+          Amount: 5
+          DelayMinMax: [16, 24]
+          Color: "1.0, 0, 1"
+
+     # BATTLEGROUPS
+    - Biomes: [Marsh]
+      Entities:
+        - Name: Alien02_03_BattleGroup
+          Period: Always
+          Amount: 20
+          DelayMinMax: [99, 99]
+          Color: "1, 0.8, 0.4"
+
+    - Biomes: [LargeCrater]
+      Entities:
+        - Name: Alien02_03_BattleGroup
+          Period: Always
+          Amount: 10
+          DelayMinMax: [99, 99]
+          Color: "1, 0.8, 0.4"
+          
+        - Name: Alien02_03_BattleGroupLarge
+          Period: Always
+          Amount: 5
+          DelayMinMax: [99, 99]
+          Color: "1, 0.9, 0.4" 
+          
+    - Biomes: [Marsh, Heath, TallTrees, DustBowl, Plains, Rifts, Hills, Plateau, Peat, Beach]
+      Entities:
+        - Name: RaptorsNight 
+          Period: Always
+          Amount: 25
+          DelayMinMax: [10, 12]
+          
+    - Biomes: [Marsh, Heath, TallTrees, DustBowl, Plains, LargeCrater, Hills, Peat, Beach, LowMountains, LowMountains_1, LowMountains_2, Crashsite]
+      Entities:
+        - Name: Pangolins
+          Period: Always
+          Amount: 15
+          DelayMinMax: [8, 12]
+
+    - Biomes: [LowMountains, LowMountains_1, LowMountains_2, Plateau, SwampUpper, Heath, TallTrees, Plains, Peat, Fungus, Hills, DustBowl, Beach]
+      Entities:
+        - Name: AlienAssassinGreysInfected
+          Period: Night
+          Amount: 20
+          DelayMinMax: [10, 12]
+
+    - Biomes: [DeepWater, Water, ShallowWater]
+      Entities: 
+        - Name: ShoalofFishesSmall
+          Period: Always
+          Amount: 10
+          AllowInWater: true
+          DelayMinMax: [0, 1]
+          Color: "1, 1.0, 0.0" 

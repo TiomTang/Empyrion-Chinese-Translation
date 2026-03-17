@@ -2,64 +2,15 @@
 # Playfield Configuration
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
 
-PlanetType: TahsVision
+Description: ""
+
+PlanetType: ContAr1a95Planet
 PlayfieldType: Planet
-Difficulty: 3
-Description: "\u4E00\u4E2A\u964C\u751F\u7684\u5730\u65B9"
-# ==============================================================
-# Special parameters:
-# ==============================================================
+Difficulty: 2
 
-AllowHV: False                  # Dis-allow HVs to enter/spawn in this playfield, default is True
-AllowSV: False                  # Dis-allow SVs to enter/spawn in this playfield, default is True
-AllowCV: False                  # Dis-allow CVs to enter/spawn in this playfield, default is True
-AllowBA: False                  # Dis-allow BAs to enter/spawn in this playfield, default is True
-
-AllowMaxCPUTierBA: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
-AllowMaxCPUTierSV: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
-AllowMaxCPUTierHV: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
-AllowMaxCPUTierCV: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
-
-#RestrictToOrigin: Human         # Only players of the defined origin are allowed to enter the playfield
-
-AllowBlueprintSV: False         # Dis-allow to spawn SV Blueprint in this playfield, default is True
-AllowBlueprintCV: False         # Dis-allow to spawn CV Blueprint in this playfield, default is True
-AllowBlueprintBA: False         # Dis-allow to spawn BA Blueprint in this playfield, default is True
-AllowBlueprintHV: False         # Dis-allow to spawn HV Blueprint in this playfield, default is True
-
-# ==============================================================
-
-#Seed: 123456                    # Integer [1, 999999] If set overwrites main Seed 
-#UseFixed: True  			   	   # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
-#UseRandom: True				   # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
-IndestructibleTerrain: True     # If set to True terrain on this playfield will be indestructible
-
-# ==============================================================
-
-# Removing or not using any of the following LandClaimZone settings has the same effect than using the 'LandClaimZone: Default' mode!
-# Note: The LandClaimZone settings also apply to alien POIs. If you want to protect a POI with the LandClaimZone: Device mode active, the POI needs a Landclaim Device!
-# Note: Antigrief zones set up for deposits in the gameoptions.yaml will ALWAYS exist and are NOT affected by any LandClaimZone mode. If you do (not) want deposits to be protected, please use the setup in the gameoptions.yaml
-# Note: The gameoptions.yaml can be found at the top level in the games scenario folder and will be copied  over to the savegame folder when starting a new game. In this case, changes for a savegame need to be made there, and not in the scenario folder!
-
-#LandClaimZone: Default          # Use gameoptions.yaml to setup detailed values for either using AntiGriefDistancePvE and/or AntiGriefDistancePvP
-LandClaimZone: Device           # IF either one or both AntiGriefDistancePvE and AntiGriefDistancePvP are activated in gameoptions.yaml, Antigrief zones will only exist for structures that have a Landclaim Device
-#LandClaimZone: Off              # This negates the settings made for both AntiGriefDistancePvE and AntiGriefDistancePvP in the gameoptions.yaml by setting all AntiGriefZones to OFF for this playfield only. 
-
-# ==============================================================
-
-Instance:
-  Time: 240                        # Minutes until this instance has to be completed and players are kicked
-  MaxPlayers: 1                    # Portal closes after this amount of players entered
-  PortalOpen: 60                   # Seconds the portal is open
-  Cooldown: 7200                   # Seconds the portal is closed after it was open (cooldown time)
-  DropInventory: True              # When you do not solve the instance within the given "Time", you will be kicked and your inventory stays behind
-  AllowBlueprints: False            # Allow to spawn blueprints in an instance
- # RestrictToOrigin: 3              # Only Origin with ID <xyz> can enter portal, see sectors.yaml origin ID
-  LockOnFaction: True              # Only members of the same faction can enter portal
-  EnterWithEmptyInventory: False    # If you have items in your inventory those will be dropped
-  NoVolumeWeightForPlayer: True    # To Disable the Volume/Weight Check in an Instance. When outside it applies again!
-
-# # ==============================================================
+LandClaimZone: Device
+UseFixed: True
+UseRandom: True
 
 # Sun
 SunFlare: EnvironmentalEffects/SunFlareBlue
@@ -237,71 +188,71 @@ SpecialEffectsGlobal:
 ### Resource Deposits
 
 RandomResources:
-    # - Name: IronResource
-      # Biome: [ Grassland, Grassland_1, ColdPlains, LowMountains, HighMountains ]
-      # IsScalingCount: True   # Medium Planet: 6-8 Deposits, Large planet 9-12
-      # CountMinMax: [ 3, 4 ]  # (was [ 5, 8 ] unscaled)
-      # SizeMinMax: [ 5, 7 ]
-      # DepthMinMax: [ 5, 10 ]
-      # # DroneProb: 0.2
-      # MaxDroneCount: 1
+    - Name: IronResource
+      Biome: [ Grassland, Grassland_1, ColdPlains, LowMountains, HighMountains ]
+      IsScalingCount: True   # Medium Planet: 6-8 Deposits, Large planet 9-12
+      CountMinMax: [ 3, 4 ]  # (was [ 5, 8 ] unscaled)
+      SizeMinMax: [ 5, 7 ]
+      DepthMinMax: [ 5, 10 ]
+      # DroneProb: 0.2
+      MaxDroneCount: 1
 
-    # - Name: CopperResource
-      # Biome: [ Forest, Forest_1, DeepForest, LowMountains, HighMountains ]
-      # IsScalingCount: True   # Medium Planet: 4-8 Deposits, Large planet 6-12
-      # CountMinMax: [ 2, 4 ]  # (was [ 4, 7 ] unscaled)
-      # SizeMinMax: [ 4, 6 ]
-      # DepthMinMax: [ 5, 10 ]
-      # # DroneProb: 0.3
+    - Name: CopperResource
+      Biome: [ Forest, Forest_1, DeepForest, LowMountains, HighMountains ]
+      IsScalingCount: True   # Medium Planet: 4-8 Deposits, Large planet 6-12
+      CountMinMax: [ 2, 4 ]  # (was [ 4, 7 ] unscaled)
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 5, 10 ]
+      # DroneProb: 0.3
 
-    # - Name: SiliconResource
-      # Biome: [ Savanna, SavannaEdge, Sand, Swamp, Marsh, DustBowl]
-      # IsScalingCount: True   # Medium Planet: 4-6 Deposits, Large planet 6-9
-      # CountMinMax: [ 2, 3 ]  # (was [ 4, 7 ] unscaled)
-      # SizeMinMax: [ 4, 6 ]
-      # DepthMinMax: [ 5, 10 ]
-      # # DroneProb: 0.3
+    - Name: SiliconResource
+      Biome: [ Savanna, SavannaEdge, Sand, Swamp, Marsh, DustBowl]
+      IsScalingCount: True   # Medium Planet: 4-6 Deposits, Large planet 6-9
+      CountMinMax: [ 2, 3 ]  # (was [ 4, 7 ] unscaled)
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 5, 10 ]
+      # DroneProb: 0.3
 
 
-    # - Name: PromethiumResource               # Guarded by Alien02_03_BattleGroup!
-      # Biome: [ Radiated, RadiatedFog ]
-      # IsImportant: True
-      # IsScalingCount: True   # Medium Planet: 2-4 Deposits, Large planet 3-6
-      # CountMinMax: [ 1, 2 ]  # (was [ 0, 1 ] unscaled)
-      # SizeMinMax: [ 4, 7 ]
-      # # DroneProb: 0.8
-      # DepthMinMax: [ 0, 1 ]
+    - Name: PromethiumResource               # Guarded by Alien02_03_BattleGroup!
+      Biome: [ Radiated, RadiatedFog ]
+      IsImportant: True
+      IsScalingCount: True   # Medium Planet: 2-4 Deposits, Large planet 3-6
+      CountMinMax: [ 1, 2 ]  # (was [ 0, 1 ] unscaled)
+      SizeMinMax: [ 4, 7 ]
+      # DroneProb: 0.8
+      DepthMinMax: [ 0, 1 ]
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    # =======  Nice find -
+    - Name: GoldResource  # Useful, if you miss the Oasis biome.
+      Biome: [ LowMountains, Mountains, HighMountains, Glacier, GlacierSnow ]
+      CountMinMax: [ 0, 1 ]
+      SizeMinMax: [ 2, 2 ]      # 2 => 20 ore
+      # DroneProb: 0.0
+      DepthMinMax: [ 5, 10 ]
       # DistTypeCylinder:
         # MaxRadius: 13
         # YVariance: 10
-
-    # # =======  Nice find -
-    # - Name: GoldResource  # Useful, if you miss the Oasis biome.
-      # Biome: [ LowMountains, Mountains, HighMountains, Glacier, GlacierSnow ]
-      # CountMinMax: [ 0, 1 ]
-      # SizeMinMax: [ 2, 2 ]      # 2 => 20 ore
-      # # DroneProb: 0.0
-      # DepthMinMax: [ 5, 10 ]
-      # # DistTypeCylinder:
-        # # MaxRadius: 13
-        # # YVariance: 10
         
         
         
 ### Resource Asteroids
 AsteroidResources:
-     # - Name: IronResource
-       # Threshold: 0.2
-       # Amount: 0.2
-     # - Name: CopperResource
-       # Threshold: 0.2
-       # Amount: 0.2
-     # - Name: SiliconResource
-       # Threshold: 0.2
-       # Amount: 0.2
-     # - Name: PromethiumResource
-       # Threshold: 0.2
-       # Amount: 0.2
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
 
 ### POIs
 POIs:
@@ -316,23 +267,6 @@ POIs:
           SpawnPOINearDistance: 10
         #  SpawnResource: ["IronResource:1-2","PromethiumResource:1-1","CopperResource:1-1"]
         #  SpawnResourceRange: [1000,2000]
-        
-        
-        - GroupName: LegacyInfectorTashVision               
-         # BiomesExcluded: [ Radiated ]
-          Biome: [SavannaEdge]
-          Faction: Alien    
-          NoShieldReload: True
-          IsImportant: True
-          CountMinMax: [ 1, 1 ]
-       #   DroneProb: 0
-       #   DronesMinMax: [ 0, 3 ]
-        #  ReserveCount: 5
-          Properties: 
-            - Key: Music
-              Value: moonstone
-            - Key: RegenAfter
-              Value: 720 
 
 # ======================================= 
 

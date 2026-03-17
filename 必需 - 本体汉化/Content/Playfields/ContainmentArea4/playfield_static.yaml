@@ -1,449 +1,599 @@
-PlayfieldType: "Planet"
-PlanetType: "ContainmentArea4Planet"
-Emissive: true
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "[c][e0e020]\u8B66\u544A:[-][/c]   [c][b]\u5C01\u9501\u533A\u57DF[/b]\u3002\u8FDB\u5165\u9700\u81EA\u884C\u627F\u62C5\u98CE\u9669\uFF01[-][/c]"
+
+PlanetType: ContainmentArea4Planet
+Emissive: True
+PlayfieldType: Planet
 Difficulty: 7
-SunFlare: "EnvironmentalEffects/SunFlareYellow"
-SpecialEffectsLocal:
-- Name: "Grime"
-  MaxHeight: 20
-SpecialEffectsGlobal:
-- Name: "MeteorFireRain"
-  InitialDelay: 0
-  Delay: 5
-  Lifetime: 330
-  Type: "Weather"
-- Name: "Clouds"
-  InitialDelay: 1
-  Delay: 5
-  Lifetime: 500
-  Type: "Weather"
-- Name: "CloudsLight"
-  InitialDelay: 1
-  Delay: 5
-  Lifetime: 600
-  Type: "Weather"
-- Name: "CloudsMedium"
-  InitialDelay: 2
-  Delay: 5
-  Lifetime: 600
-  Type: "Weather"
-- Name: "CloudsDark"
-  InitialDelay: 2
-  Delay: 5
-  Lifetime: 500
-  Type: "Weather"
-- Name: "FireRain"
-  InitialDelay: 5
-  Delay: 5
-  Lifetime: 330
-  Type: "Weather"
-- Name: "Storm"
-  InitialDelay: 35
-  Delay: 30
-  Lifetime: 400
-  Type: "Weather"
-- Name: "Fog"
-  InitialDelay: 48
-  Delay: 20
-  Lifetime: 400
-  Type: "Weather"
-- Name: "Hail"
-  InitialDelay: 35
-  Delay: 10
-  Lifetime: 340
-  Type: "Weather"
-- Name: "MeteorShower"
-  SpawnY: 100
-  InitialDelay: 0
-  Delay: 0
-  PlyDist: 60
-  Struct: "Avoid"
-  Lifetime: 60
-- Name: "MeteorShower"
-  SpawnY: 100
-  InitialDelay: 0
-  Delay: 0
-  PlyDist: 70
-  Struct: "Avoid"
-  Lifetime: 60
-- Name: "MeteorShower"
-  SpawnY: 100
-  InitialDelay: 0
-  Delay: 0
-  PlyDist: 80
-  Struct: "Avoid"
-  Lifetime: 60
-- Name: "MeteorShower"
-  SpawnY: 100
-  InitialDelay: 0
-  Delay: 0
-  PlyDist: 900
-  Struct: "Avoid"
-  Lifetime: 60
-- Name: "ThunderAndLightningPurple"
-  SpawnY: 500
-  InitialDelay: 0
-  Delay: 0
-  Struct: "Avoid"
-  Lifetime: 350
-- Name: "ThunderAndLightningWhite"
-  SpawnY: 500
-  InitialDelay: 0
-  Delay: 1
-  Struct: "Avoid"
-  Lifetime: 300
+
+LandClaimZone: Device
+
+
+# == Atmosphere and Sky
+
+SunFlare: EnvironmentalEffects/SunFlareYellow
+
+AtmosphereEnabled: True
 AtmosphereColor: "0.3, 0.65, 0.65"
-AtmosphereParams:
-- 1
-- 1.6
+
+# Basic colours
+AtmosphereParams: [1, 1.6] 
 SkyColor: "0.40, 0.5, 0.25"
 SkyHorizonColor: "0.0, 0.50, 0.50"
+FogColor: "0.4, 0.50, 0.4"
+
+# Fog
+FogCloudIntensity: 0.8
+AtmosphereFog: 0
+GroundFogIntensity: 0.01
+GroundFogHeight: 100
+
+# Clouds
+CloudsZenithColor: "0.7, 0.3, 0.1"
+CloudsHorizonColor: "0.2, 0.0, 0.0"
+CloudsNightHorizonColor: "0.048, 0.025, 0.015"
+CloudsNightZenithColor: "0.048, 0.025, 0.015"
+WindSpeed: 50
+
+# Light
+
+DayLightIntensity: 0.8
+NightLightIntensity: 0.7
+
 LightZenithColor: "0.9, 1.0, 0.7"
 LightHorizonColor: "1, 0.5, 0"
 NightLightColor: "0.5, 0.8, 0.8"
-CloudsZenithColor: "0.7, 0.3, 0.1"
-CloudsHorizonColor: "0.2, 0.0, 0.0"
-CloudsNightZenithColor: "0.048, 0.025, 0.015"
-CloudsNightHorizonColor: "0.048, 0.025, 0.015"
-CloudsOpacity: 0.7
-FogCloudIntensity: 0.8
-DayLightIntensity: 0.8
-DayShadowStrength: 0.95
-NightShadowStrength: 0.5
+
+
+# ==== Parameters with low effect on playfield:
+
+DayShadowStrength: 0.95   # hardcoded
+NightShadowStrength: 0.5  # hardcoded
+
+# Clouds, non-colour. (Will only matter if NO weather effect is in the playfield!)
 CloudsDensity: 1
 CloudsSharpness: 0.2
 CloudsBrightness: 0.3
-WindSpeed: 50
-FogColor: "0.4, 0.50, 0.4"
-GroundFogIntensity: 0.01
-GroundFogHeight: 100
-Description: "[c][e0e020]\u8B66\u544A\uFF1A[-][/c]   [c][b]\u9694\u79BB\u533A[/b]\u3002\u8FDB\u5165\u9700\u81EA\u62C5\u98CE\u9669\uFF01[-][/c]"
-PlanetClass: "ContainmentArea4Planet"
-UseRandom: true
-LandClaimZone: "Device"
+CloudsOpacity: 0.7
+
+
+
+
+# Special effects around the player
+SpecialEffectsLocal:
+  - Name: Grime
+    MaxHeight: 20
+
+SpecialEffectsGlobal:
+# Weather
+
+    # Main weather - hot planet, minimal rain. Fast switching between thick clouds and sunshine
+
+  - Name: MeteorFireRain # Danger
+    Type: Weather
+    InitialDelay: 0
+    Delay: 5
+    Lifetime: 330
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 1
+    Delay: 5  
+    Lifetime: 500
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 1
+    Delay: 5
+    Lifetime: 600
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 2
+    Delay: 5
+    Lifetime: 600
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 2
+    Delay: 5  
+    Lifetime: 500
+  - Name: FireRain       # Danger
+    Type: Weather
+    InitialDelay: 5
+    Delay: 5
+    Lifetime: 330
+
+    # Uncommon - rain
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 35
+    Delay: 30
+    Lifetime: 400
+
+    # Rare
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 48
+    Delay: 20
+    Lifetime: 400
+  - Name: Hail          # Danger
+    Type: Weather
+    InitialDelay: 35
+    Delay: 10
+    Lifetime: 340
+
+    
+# Global Effects
+
+  - Name: MeteorShower   # Young world, still 'clearing the neighbourhood' 
+    Time: Always
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 60
+    PlyDist: 60
+    SpawnY: 100
+    Struct: Avoid
+  - Name: MeteorShower
+    Time: Always
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 60
+    PlyDist: 70
+    SpawnY: 100
+    Struct: Avoid
+  - Name: MeteorShower
+    Time: Always
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 60
+    PlyDist: 80
+    SpawnY: 100
+    Struct: Avoid
+  - Name: MeteorShower
+    Time: Always
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 60
+    PlyDist: 900
+    SpawnY: 100
+    Struct: Avoid
+
+
+
+  - Name: ThunderAndLightningPurple   # Atmosphere hasn't rained down yet, lots of friction
+    Time: Always
+    InitialDelay: 0 
+    Delay: 0
+    Lifetime: 350     
+    PlyDist: 100
+    SpawnY: 500
+    Struct: Avoid    
+  - Name: ThunderAndLightningWhite
+    Time: Always
+    InitialDelay: 0 
+    Delay: 1
+    Lifetime: 300     
+    PlyDist: 100
+    SpawnY: 500
+    Struct: Avoid    
+       
+# ==============================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "SathiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 2
-  SizeMinMax:
-  - 7
-  - 11
-  DepthMinMax:
-  - 3
-  - 15
-  DroneProb: 0.7
-  MaxDroneCount: 2
-  Biome:
-  - "LavaPlains"
-  - "CrystallizedRocks"
-  - "Cliffs"
-- Name: "GoldResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 3
-  - 4
-  DepthMinMax:
-  - 10
-  - 25
-  DistTypeCylinder:
-    MaxRadius: 13
-    YVariance: 10
-  DroneProb: 1
-  MaxDroneCount: 3
-  Biome:
-  - "LavaFolds"
-  - "CrystallizedRocks"
-- Name: "PentaxidResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 4
-  - 4
-  SizeMinMax:
-  - 4
-  - 4
-  DepthMinMax:
-  - 0
-  - 5
-  DistTypeCylinder:
-    MaxRadius: 13
-    YVariance: 10
-  DroneProb: 1
-  MaxDroneCount: 4
-  Biome:
-  - "Hotspot"
-  - "Rifts_1"
-  - "LavaPlains"
-  - "CrystallizedRocks"
-  - "Canyon"
-  - "Abyss"
-  - "LavaEdge"
-- Name: "ErestrumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 4
-  SizeMinMax:
-  - 6
-  - 11
-  DepthMinMax:
-  - 3
-  - 7
-  DroneProb: 1
-  MaxDroneCount: 4
-  Biome:
-  - "LavaPlains"
-  - "CrystallizedRocks"
-- Name: "PromethiumResource"
-  CountMinMax:
-  - 3
-  - 3
-  SizeMinMax:
-  - 7
-  - 11
-  DepthMinMax:
-  - 0
-  - 5
-  DistTypeCylinder:
-    MaxRadius: 8
-    YVariance: 15
-  Biome:
-  - "LavaFolds"
-  - "Rifts_1"
-  - "Hotspot"
-  - "Rifts"
-  - "CrystallizedRocks"
-  - "Bubble"
-  - "Cliffs"
-  - "Canyon"
-  - "Abyss"
-- Name: "PromethiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 3
-  SizeMinMax:
-  - 4
-  - 7
-  DepthMinMax:
-  - 3
-  - 15
-  DistTypeCylinder:
-    MaxRadius: 8
-    YVariance: 15
-  DroneProb: 0.8
-  MaxDroneCount: 3
-  Biome:
-  - "LavaFolds"
-  - "Rifts_1"
-  - "Hotspot"
-  - "Rifts"
-  - "CrystallizedRocks"
-  - "Bubble"
-  - "Cliffs"
-  - "Canyon"
-  - "Abyss"
-- Name: "ZascosiumResource"
-  CountMinMax:
-  - 3
-  - 3
-  SizeMinMax:
-  - 7
-  - 8
-  DepthMinMax:
-  - 3
-  - 7
-  DroneProb: 1
-  MaxDroneCount: 4
-  Biome:
-  - "Hotspot"
-  - "Rifts_1"
-  - "CrystallizedRocks"
-  - "Cliffs"
-  - "Canyon"
-  - "Abyss"
-- Name: "ZascosiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 3
-  - 3
-  SizeMinMax:
-  - 4
-  - 5
-  DepthMinMax:
-  - 15
-  - 30
-  DroneProb: 1
-  MaxDroneCount: 5
-  Biome:
-  - "Hotspot"
-  - "Rifts_1"
-  - "Cliffs"
-  - "CrystallizedRocks"
-  - "Canyon"
-  - "Abyss"
+
+      # EVENLY DISTRIBUTED resources
+    # - Name: IronResource
+      # Biome: [ LavaPlains, LowMountains, LowMountains_1, Mountains, HighMountains ]
+      # IsScalingCount: True 
+      # CountMinMax: [ 4, 4 ]
+      # SizeMinMax: [ 8, 16 ]
+      # DepthMinMax: [ 5, 15 ]
+      # DroneProb: 0.2
+
+    # - Name: CopperResource
+      # Biome: [ LowMountains, LowMountains_1, Mountains, HighMountains ]
+      # IsScalingCount: True 
+      # CountMinMax: [ 2, 3 ]
+      # SizeMinMax: [ 6, 16 ]
+      # DepthMinMax: [ 5, 15 ]
+      # DroneProb: 0.5
+      # MaxDroneCount: 3
+
+    - Name: SathiumResource
+      IsScalingCount: True 
+      Biome: [ LavaPlains, CrystallizedRocks, Cliffs ]
+      CountMinMax: [ 1, 2 ]
+      SizeMinMax: [ 7, 11 ]
+      DepthMinMax: [ 3, 15 ]
+      MaxDroneCount: 2
+      DroneProb: 0.7
+
+    - Name: GoldResource
+      Biome: [ LavaFolds, CrystallizedRocks ]
+      IsScalingCount: True
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 10, 25 ]
+      DroneProb: 1
+      MaxDroneCount: 3
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: PentaxidResource # Some of those will get grabbed by the Zirax, Polaris POI. (High-value POI have more deposits.)
+      Biome: [ Hotspot, Rifts_1, LavaPlains, CrystallizedRocks, Canyon, Abyss, LavaEdge ] 
+      IsScalingCount: True 
+      CountMinMax: [ 4, 4 ]
+      SizeMinMax: [ 4, 4 ]    # About 67 ores (Pentaxid has a 50% 'penalty')
+      DroneProb: 1.0
+      MaxDroneCount: 4
+      DepthMinMax: [ 0, 5 ]
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: ErestrumResource
+      Biome: [ LavaPlains, CrystallizedRocks]
+      IsScalingCount: True
+      CountMinMax: [ 3, 4 ]
+      SizeMinMax: [ 6, 11 ]  # About 540-3300 ores
+      DepthMinMax: [ 3, 7 ]
+      DroneProb: 1  
+      MaxDroneCount: 4 
+
+
+      # WEIGHTED resources
+      # (= "Deposits close to POI are bigger, more valuable; planetary deposits less so")
+
+      # => _Two_ entries for deposits of the same resource are defined
+      # => Resource deposits that are defined first will be taken by POI, an then, if numbers not sufficient, the resources of the second entry.
+      # => The remaining deposits will be spread over the planet
+      # => Highest 'CountMinMax' of both entries is the total number of deposits, of that ore, on playfield
+      
+      # Weighted
+    - Name: PromethiumResource     # Rich. Will get grabbed by POI.
+      Biome: [ LavaFolds, Rifts_1, Hotspot, Rifts, CrystallizedRocks, Bubble, Cliffs, Canyon, Abyss ]
+      CountMinMax: [ 3, 3 ]        # Defines number of high-value deposits.
+      SizeMinMax: [ 7, 11 ]
+      DepthMinMax: [ 0, 5 ]
+      DroneProb: 0.0
+      DistTypeCylinder:
+        MaxRadius: 8
+        YVariance: 15
+    - Name: PromethiumResource    # Normal, spread over planet
+      IsScalingCount: True 
+      Biome: [ LavaFolds, Rifts_1, Hotspot, Rifts, CrystallizedRocks, Bubble, Cliffs, Canyon, Abyss ]
+      CountMinMax: [ 3, 3 ]       # Total number of Promethium resources on playfield (since this is the higher value of both entries, due to scaling)
+      SizeMinMax: [ 4, 7 ]        # Size of the remaining Promethium resources on playfield
+      DepthMinMax: [ 3, 15 ]
+      DroneProb: 0.8
+      MaxDroneCount: 3
+      DistTypeCylinder:
+        MaxRadius: 8
+        YVariance: 15
+
+      # Weighted
+    - Name: ZascosiumResource    # Rich. Will get grabbed by POI
+      Biome: [ Hotspot, Rifts_1, CrystallizedRocks, Cliffs, Canyon, Abyss ]
+      CountMinMax: [ 3, 3 ] 
+      SizeMinMax: [ 7, 8 ]       # ca. 860-1200 ore
+      DepthMinMax: [ 3, 7 ]
+      DroneProb: 1.0
+      MaxDroneCount: 4
+    - Name: ZascosiumResource    # Normal
+      Biome: [ Hotspot, Rifts_1, Cliffs, CrystallizedRocks, Canyon, Abyss ]
+      IsScalingCount: True 
+      CountMinMax: [ 3, 3 ]
+      SizeMinMax: [ 4, 5 ]
+      DepthMinMax: [ 15, 30 ]
+      DroneProb: 1
+      MaxDroneCount: 5
+
+
+
+### Resource Asteroids
 AsteroidResources:
-- Name: "IronResource"
-  Threshold: 0.2
-  Amount: 0.3
-  InitialDelay: -1
-  Delay: -1
-- Name: "CopperResource"
-  Threshold: 0.2
-  Amount: 0.3
-  InitialDelay: -1
-  Delay: -1
-- Name: "PromethiumResource"
-  Threshold: 0.2
-  Amount: 0.3
-  InitialDelay: -1
-  Delay: -1
-- Name: "SathiumResource"
-  Threshold: 0.1
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "ErestrumResource"
-  Threshold: 0.2
-  Amount: 0.3
-  InitialDelay: -1
-  Delay: -1
-- Name: "ZascosiumResource"
-  Threshold: 0.2
-  Amount: 0.3
-  InitialDelay: -1
-  Delay: -1
+
+       # # Standard meteorite bombardment
+     # - Name: IronResource
+       # Amount: 200              # Amount of ore that is spawned per event. ((Minimum right now is 3000!))
+       # InitialDelay: 1
+       # Delay: 1
+       # DespawnDelay: 10
+
+     # - Name: IronResource
+       # Amount: 100
+       # InitialDelay: 3
+       # Delay: 2
+       # DespawnDelay: 10
+       
+     # - Name: CopperResource
+       # Amount: 200
+       # InitialDelay: 3
+       # Delay: 3
+       # DespawnDelay: 10
+       
+     # - Name: SiliconResource
+       # Amount: 200
+       # InitialDelay: 5
+       # Delay: 3
+       # DespawnDelay: 10
+
+     # - Name: PromethiumResource
+       # Amount: 100
+       # InitialDelay: 6
+       # Delay: 13
+       # DespawnDelay: 13
+       
+     # - Name: ErestrumResource
+       # Amount: 50
+       # InitialDelay: 20
+       # Delay: 21
+       # DespawnDelay: 21
+
+
+
+       # Threshold meteorites
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.3
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.3
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.3
+     - Name: SathiumResource
+       Threshold: 0.1
+       Amount: 0.2
+     - Name: ErestrumResource
+       Threshold: 0.2
+       Amount: 0.3
+     - Name: ZascosiumResource
+       Threshold: 0.2
+       Amount: 0.3
+
+
+       
+       
+# =====================================================    
+#   POIs
+# =====================================================  
+
 POIs:
-  Random:
-  - GroupName: "DeepMineStory"
-    Faction: "Alien"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 0.2
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 3
-    Properties:
-    - Key: "Music"
-      Value: "EvilWhispering"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "ProgenitorArtifacts"
-    Faction: "Alien"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 10
-    CountMinMax:
-    - 3
-    - 10
-    DroneProb: 0.2
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 3
-    Properties:
-    - Key: "Music"
-      Value: "EvilWhispering"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "ProgenitorArtifactsMain"
-    Faction: "Alien"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    DroneProb: 0.2
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 3
-    Properties:
-    - Key: "Music"
-      Value: "EvilWhispering"
-    - Key: "RegenAfter"
-      Value: "720"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 120
-    - -0
-    Armor: "ArmorLight"
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Armor: "ArmorMedium"
+    Random:  
+
+        - GroupName: DeepMineStory
+          Faction: Alien  
+          NoShieldReload: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.2
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 3
+       #   TroopTransport: True
+       #   SpawnPOINear: [TOP]
+       #   SpawnPOINearRange: [500, 1500]
+          Properties: 
+            - Key: Music
+              Value: EvilWhispering 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: ProgenitorArtifacts
+          Faction: Alien  
+          NoShieldReload: True
+          CountMinMax: [ 3, 10 ]
+          DroneProb: 0.2
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 3
+       #   TroopTransport: True
+       #   SpawnPOINear: [TOP]
+       #   SpawnPOINearRange: [500, 1500]
+          Properties: 
+            - Key: Music
+              Value: EvilWhispering 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: ProgenitorArtifactsMain
+          Faction: Alien  
+          NoShieldReload: True
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0.2
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 3
+       #   TroopTransport: True
+       #   SpawnPOINear: [TOP]
+       #   SpawnPOINearRange: [500, 1500]
+          Properties: 
+            - Key: Music
+              Value: EvilWhispering 
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ 0, 120, -0 ]
+          RotY: 0
+          Armor: ArmorLight
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+
+
+### Drones
+DroneBaseSetup:
+    # Random:
+        # - GroupName: DroneBaseSetup
+          # Difficulty: 7
+          # PresetStyle: 3
+          # Stock:
+              # - Name: DroneSmallFast01Plasma
+                # Amount: 500
+                # Extra: 0  
+
+              # - Name: DroneSmallFast01Rocket
+                # Amount: 300
+                # Extra: 0
+                
+              # - Name: EnemyDroneV2Plasma
+                # Amount: 100
+                # Extra: 0
+
+              # - Name: DroneLargeSlow02Cannon
+                # Amount: 100
+                # Extra: 0
+
+
+              # - Name: DroneBomberAttackBase
+                # Amount: Infinite
+                # Extra: 1
+
+              # - Name: DroneSmallFast01Plasma
+                # Amount: Infinite
+                # Extra: 1
+
+              # - Name: EnemyDroneV2Plasma
+                # Amount: Infinite
+                # Extra: 1
+
+              # - Name: DroneTroopsTransport
+                # Amount: Infinite
+                # Extra: 2
+
+              # - Name: ZiraxRocket 
+                # Amount: 500
+                # Extra: 3
+
+              # - Name: TurretRobotV2
+                # Amount: 250
+                # Extra: 3
+                
+              # - Name: Mechanoid
+                # Amount: 250
+                # Extra: 3
+                
+              # - Name: ArmoredGolem
+                # Amount: 100
+                # Extra: 3
+
+          # PlanetVesselBase:
+              # Name: PlanetVesselBaseSetup   # Two DroneBases => 2 PV (might travel together)
+              # Position3D: [ 0, 102, 0]
+              # BaseType: PlanetVesselBase
+              # KeyId: 0
+              # PlanetVessel:
+                # - Name: PVZiraxT2  # Patrol-Rados-S-Hard-HG
+                  # Mission: PlanetPatrol
+                  # FixedMaxSpeed: 45 # Very fast. -Sneaking attacks, beware!
+                  # RespawnDelay: 12
+
+                  # RangePatrolTask:
+                    # Position3D: [ 16000, 80, 0 ]  # Out of map => Vessel will go anywhere
+                    # Radius: 1000
+                    # DistToGround: 100
+
+                  # AttackCVCircleAround:
+                    # DistToTarget: 220
+
+ 
+
+# DroneSpawning:
+    # Random:
+        # - DronesMinMax: [ 4, 6 ]
+          # CenterX: -7500
+          # Radius: 8000
+        # - DronesMinMax: [ 3, 5 ]
+          # CenterX: -7500
+          # Radius: 4000
+
+        # - DronesMinMax: [ 4, 6 ]
+          # CenterX: -5000
+          # Radius: 8000
+        # - DronesMinMax: [ 3, 5 ]
+          # CenterX: -5000
+          # Radius: 4000
+          
+        # - DronesMinMax: [ 4, 6 ]
+          # CenterX: -2500
+          # Radius: 8000
+        # - DronesMinMax: [ 3, 5 ]
+          # CenterX: -2500
+          # Radius: 4000
+          
+        # - DronesMinMax: [ 4, 6 ]
+          # CenterX: 0
+          # Radius: 8000
+        # - DronesMinMax: [ 3, 5 ]
+          # CenterX: 0
+          # Radius: 4000
+          
+        # - DronesMinMax: [ 4, 6 ]
+          # CenterX: 2500
+          # Radius: 8000
+        # - DronesMinMax: [ 3, 5 ]
+          # CenterX: 2500
+          # Radius: 4000
+
+        # - DronesMinMax: [ 4, 6 ]
+          # CenterX: 5000
+          # Radius: 8000
+        # - DronesMinMax: [ 3, 5 ]
+          # CenterX: 5000
+          # Radius: 4000
+          
+        # - DronesMinMax: [ 4, 6 ]
+          # CenterX: 7500
+          # Radius: 8000
+        # - DronesMinMax: [ 3, 5 ]
+          # CenterX: 7500
+          # Radius: 4000
+
+          
+# ==============================================================
+# ==============================================================
+
+SpawnRateZones:   
+
+
+
+SpawnZones:
+
+### Creatures =========
 CreatureSpawning:
-- Biomes:
-  - "Sand"
-  - "BarrenRocks"
-  - "LavaPlains"
-  - "LavaFolds"
-  - "CrystallizedRocks"
-  - "Hotspot"
-  Entities:
-  - Name: "AlienBugs02"
-    Amount: 25
-    Color: "1.0, 0.0, 0.0"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- Biomes:
-  - "Rifts_1"
-  - "LavaPlains"
-  - "CrystallizedRocks"
-  - "Bubble"
-  - "Canyon"
-  - "Abyss"
-  - "Cliffs"
-  Entities:
-  - Name: "TotalHorrors"
-    Amount: 25
-    Color: "1.0, 1.0, 1.0"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-- Biomes:
-  - "Canyon"
-  - "Abyss"
-  Entities:
-  - Name: "AlienBugs02"
-    Amount: 15
-    Color: "1.0, 0.0, 1.0"
-    DelayMinMax:
-    - 25
-    - 48
-    Period: "Always"
-- Biomes:
-  - "LowMountains"
-  - "LowMountains_1"
-  - "Mountains"
-  Entities:
-  - Name: "AlienBugs03"
-    Amount: 15
-    Color: "0.5, 1.0, 0.0"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Day"
+
+    - Biomes: [Sand, BarrenRocks, LavaPlains, LavaFolds, CrystallizedRocks, Hotspot ]
+      Entities:
+        - Name: AlienBugs02
+          Period: Always
+          Amount: 25
+          DelayMinMax: [-1, -1]
+          Color: "1.0, 0.0, 0.0"
+
+    - Biomes: [Rifts_1, LavaPlains, CrystallizedRocks, Bubble, Canyon, Abyss, Cliffs]
+      Entities:
+        - Name: TotalHorrors
+          Period: Always
+          Amount: 25
+          DelayMinMax: [20, 24]
+          Color: "1.0, 1.0, 1.0"
+        
+    - Biomes: [Canyon, Abyss]
+      Entities:
+        - Name: AlienBugs02
+          Period: Always
+          Amount: 15
+          DelayMinMax: [25, 48]
+          Color: "1.0, 0.0, 1.0" 
+          
+    # Ex-stowaways
+    - Biomes: [LowMountains, LowMountains_1, Mountains] 
+      Entities:
+        - Name: AlienBugs03
+          Period: Day
+          Amount: 15
+          DelayMinMax: [-1, -1]
+          Color: "0.5, 1.0, 0.0"

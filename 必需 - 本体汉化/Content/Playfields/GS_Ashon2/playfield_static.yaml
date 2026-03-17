@@ -1,392 +1,566 @@
-PlayfieldType: "Planet"
-PlanetType: "Lava"
-Emissive: true
-Difficulty: 3
-SunFlare: "EnvironmentalEffects/SunFlareYellow2"
-SpecialEffectsLocal:
-- Name: "Grime"
-  MaxHeight: 20
-SpecialEffectsGlobal:
-- Name: "Clouds"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 1500
-  Type: "Weather"
-- Name: "CloudsDark"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 700
-  Type: "Weather"
-- Name: "Fog"
-  InitialDelay: 48
-  Delay: 12
-  Lifetime: 700
-  Type: "Weather"
-- Name: "HeatWave"
-  InitialDelay: 12
-  Delay: 12
-  Lifetime: 1000
-  Type: "Weather"
-- Name: "MeteorFireRain"
-  InitialDelay: 48
-  Delay: 24
-  Lifetime: 80
-  Type: "Weather"
-- Name: "FireRain"
-  InitialDelay: 48
-  Delay: 24
-  Lifetime: 160
-  Type: "Weather"
-- Name: "MeteorShower"
-  SpawnY: 100
-  Time: "Day"
-  InitialDelay: 0
-  Delay: 0
-  PlyDist: 60
-  Struct: "Avoid"
-  Lifetime: 60
-- Name: "MeteorShower"
-  SpawnY: 100
-  Time: "Day"
-  InitialDelay: 0
-  Delay: 0
-  PlyDist: 70
-  Struct: "Avoid"
-  Lifetime: 60
-- Name: "MeteorShower"
-  SpawnY: 100
-  InitialDelay: 0
-  Delay: 0
-  PlyDist: 80
-  Struct: "Avoid"
-  Lifetime: 60
-- Name: "MeteorShower"
-  SpawnY: 100
-  InitialDelay: 0
-  Delay: 0
-  PlyDist: 900
-  Struct: "Avoid"
-  Lifetime: 60
-- Name: "MeteorFireRain"
-  InitialDelay: 96
-  Delay: 24
-  Lifetime: 25
-  Type: "Weather"
-- Name: "FireRain"
-  InitialDelay: 48
-  Delay: 24
-  Lifetime: 50
-  Type: "Weather"
-- Name: "ThunderAndLightningPurple"
-  SpawnY: 500
-  Time: "Night"
-  InitialDelay: 1.5
-  Delay: 4
-  Struct: "Avoid"
-  Lifetime: 300
-AtmosphereColor: "1.053, 0.684, 0.045"
-AtmosphereParams:
-- 3
-- 1.7
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+PlanetType: Lava
+Emissive: True
+PlayfieldType: Planet
+Difficulty: 3   # was: 4 LaS: reduced difficulty to make enemies less tanky
+
+LandClaimZone: Device
+
+Description: |
+  Ashon\uFF0C\u8FD9\u9897\u884C\u661F\u66FE\u7ECF\u5386\u8FC7\u4E0E\u539F\u59CB\u5730\u7403\u548C\u5FD2\u4F0A\u4E9A\u76F8\u540C\u7684\u707E\u96BE\u3002
+  \u5B83\u521A\u521A\u52C9\u5F3A\u6062\u590D\u8FC7\u6765\u2026\u2026\u649E\u51FB\u4F53\u7684\u6B8B\u9AB8\u4ECD\u5728\u8F68\u9053\u4E0A\u7ED5\u884C\u2014\u2014\u6B63\u7F13\u6162\u5F62\u6210\u53E6\u4E00\u9897\u536B\u661F\u3002
+
+  \u2014\u2014\u63A2\u6D4B\u5230\u5730\u8868\u5B58\u5728\u96F6\u661F\u7684\u751F\u547D\u4F53\uFF0C\u4F46\u6CA1\u6709\u8DB3\u4EE5\u7EF4\u6301\u5B83\u4EEC\u7684\u751F\u6001\u5708\u2014\u2014\u8FD9\u662F\u5426\u610F\u5473\u7740\u5B83\u4EEC\u6765\u6E90\u4E8E\u4EBA\u5DE5\u521B\u9020\uFF1F
+  \u5179\u745E\u514B\u65AF\u7684\u57FA\u5730\u53EF\u80FD\u80A9\u8D1F\u7814\u7A76\u8FD9\u4E9B\u751F\u7269\u7684\u4EFB\u52A1\u2014\u2014\u6216\u8005\uFF0C\u66F4\u6709\u53EF\u80FD\u662F\u5C06\u5B83\u4EEC\u5F7B\u5E95\u6D88\u706D\u3002
+
+# ==============================================================
+# Special parameters:
+# ==============================================================
+
+AllowBlueprintSV: False         # Dis-allow to spawn SV Blueprint in this playfield, default is True
+AllowBlueprintCV: False         # Dis-allow to spawn CV Blueprint in this playfield, default is True
+AllowBlueprintBA: False         # Dis-allow to spawn BA Blueprint in this playfield, default is True
+AllowBlueprintHV: False         # Dis-allow to spawn HV Blueprint in this playfield, default is True
+
+Seed: 250780                    # Integer [1, 999999] If set overwrites main Seed 
+UseFixed: True  			   	   # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
+UseRandom: True				   # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
+#IndestructibleTerrain: True     # If set to True terrain on this playfield will be indestructible
+
+# ==============================================================
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: 1.053, 0.684, 0.045
 SkyColor: "0.0, 0.0, 0.2"
 SkyHorizonColor: "0.35, 0.15, 0"
+AtmosphereParams: [3, 1.7]
+
+# Light
+DayLightIntensity: 0.6
+NightLightIntensity: 0.7
+
 LightZenithColor: "1, 0.95, 0.95"
 LightHorizonColor: "1, 0.5, 0"
 NightLightColor: "1, 0.55, 0.3"
-CloudsZenithColor: "0.6, -0.1, -0.4"
-CloudsHorizonColor: "2, 0.1, 0.45"
-CloudsNightZenithColor: "0.8, 0.15, 0.00"
-CloudsNightHorizonColor: "0.8, 0.15, 0.00"
-CloudsOpacity: 0.7
-FogCloudIntensity: 0.8
+
 DayShadowStrength: 0.95
 NightShadowStrength: 0.5
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareYellow2
+
+# Fog
+FogColor: "1.2, 0.4, 0.0"
+FogCloudIntensity: 0.8
+# AtmosphereFog: 0.95
+# GroundFogIntensity: 0.02
+# GroundFogHeight: 35
+
+# Clouds and Wind
 CloudsDensity: 1
 CloudsSharpness: 0.2
 CloudsBrightness: 0.3
+CloudsOpacity: 0.7
+CloudsZenithColor: "0.6, -0.1, -0.4"
+CloudsHorizonColor: "2, 0.1, 0.45"
+CloudsNightHorizonColor: "0.8, 0.15, 0.00"
+CloudsNightZenithColor: "0.8, 0.15, 0.00"
 WindSpeed: 30
-FogColor: "1.2, 0.4, 0.0"
-Description: "Ashon\uFF0C\u8FD9\u9897\u884C\u661F\u7ECF\u5386\u4E86\u66FE\u7ECF\u964D\u4E34\u4E8E\u539F\u5730\u7403\u548C\u5FD2\u4E9A\u7684\u540C\u6837\u707E\u96BE\u3002\n\u5B83\u624D\u521A\u521A\u52C9\u5F3A\u6062\u590D\u8FC7\u6765\u2026\u2026\u649E\u51FB\u4F53\u7684\u6B8B\u9AB8\u4ECD\u5728\u8F68\u9053\u4E0A\u76D8\u65CB\u2014\u2014\u7F13\u6162\u5730\u5F62\u6210\u53E6\u4E00\u9897\u536B\u661F\u3002\n\n- \u4FA6\u6D4B\u5230\u5730\u8868\u751F\u547D\u4F53\u7684\u5C40\u90E8\u5B58\u5728\uFF0C\u4F46\u6CA1\u6709\u80FD\u7EF4\u6301\u5B83\u4EEC\u7684\u751F\u6001\u7CFB\u7EDF\u3002- \u8FD9\u610F\u5473\u7740\u5B83\u4EEC\u53EF\u80FD\u5177\u6709\u4EBA\u5DE5\u8D77\u6E90\uFF1F\n\u5179\u745E\u514B\u65AF\u7684\u57FA\u5730\u53EF\u80FD\u88AB\u6307\u6D3E\u6765\u7814\u7A76\u8FD9\u4E9B\u751F\u7269\u2014\u2014\u6216\u66F4\u6709\u53EF\u80FD\uFF0C\u662F\u6765\u6D88\u706D\u5B83\u4EEC\u3002"
-Seed: 250780
-PlanetClass: "Lava"
-UseFixed: true
-UseRandom: true
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintHV: false
-AllowBlueprintBA: false
-LandClaimZone: "Device"
-RandomResources:
-- Name: "IronResource"
-  IsImportant: true
-  CountMinMax:
-  - 10
-  - 10
-  SizeMinMax:
-  - 4
-  - 4
-  DepthMinMax:
-  - 4
-  - 8
-- Name: "CopperResource"
-  CountMinMax:
-  - 4
-  - 4
-  SizeMinMax:
-  - 4
-  - 4
-  DepthMinMax:
-  - 4
-  - 8
-- Name: "SiliconResource"
-  CountMinMax:
-  - 4
-  - 4
-  SizeMinMax:
-  - 4
-  - 4
-  DepthMinMax:
-  - 4
-  - 8
-- Name: "MagnesiumResource"
-  CountMinMax:
-  - 3
-  - 4
-  SizeMinMax:
-  - 2
-  - 3
-  DepthMinMax:
-  - 2
-  - 6
-- Name: "CobaltResource"
-  IsImportant: true
-  CountMinMax:
-  - 4
-  - 4
-  SizeMinMax:
-  - 4
-  - 4
-  DepthMinMax:
-  - 4
-  - 8
-- Name: "TitanResource"
-  IsImportant: true
-  CountMinMax:
-  - 4
-  - 4
-  SizeMinMax:
-  - 4
-  - 4
-  DepthMinMax:
-  - 4
-  - 8
+
+
+# Special effects around the player
+SpecialEffectsLocal:
+  - Name: Grime
+    MaxHeight: 20
+
+SpecialEffectsGlobal:
+# Weather
+
+ # Do not use the weathers CloudsLight, CloudsMedium, Wind, ColdWave here! (Their clouds react extremely to colouring)
+ # weather Clear >>  Already in HeatWave
+
+
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1500
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2  
+    Lifetime: 700
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 700
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 12
+    Delay: 12
+    Lifetime: 1000
+  - Name: MeteorFireRain
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 80
+  - Name: FireRain
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 160
+
+# Global Effect
+  # - Name: MeteorShower
+    # Time: Day
+    # InitialDelay: 2
+    # Delay: 1    # was 5  LaS: Increase pressure
+    # Lifetime: 60
+    # PlyDist: 200
+    # SpawnY: 100
+    # Struct: Avoid
+
+  # - Name: MeteorShower
+    # Time: Day
+    # InitialDelay: 1
+    # Delay: 1    # was 5  LaS: Increase pressure
+    # Lifetime: 60
+    # PlyDist: 200
+    # SpawnY: 100
+    # Struct: Avoid
+
+
+  - Name: MeteorShower   # Young world, still 'clearing the neighbourhood' 
+    Time: Day
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 60
+    PlyDist: 60
+    SpawnY: 100
+    Struct: Avoid
+  - Name: MeteorShower
+    Time: Day
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 60
+    PlyDist: 70
+    SpawnY: 100
+    Struct: Avoid
+  - Name: MeteorShower
+    Time: Always
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 60
+    PlyDist: 80
+    SpawnY: 100
+    Struct: Avoid
+  - Name: MeteorShower
+    Time: Always
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 60
+    PlyDist: 900
+    SpawnY: 100
+    Struct: Avoid
+# Weather Theat
+  - Name: MeteorFireRain
+    Type: Weather
+    InitialDelay: 96
+    Delay: 24
+    Lifetime: 25
+  - Name: FireRain
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 50
+
+
+  - Name: ThunderAndLightningPurple
+    Time: Night
+    InitialDelay: 1.5
+    Delay: 4
+    Lifetime: 300
+    PlyDist: 100
+    SpawnY: 500
+    Struct: Avoid
+# ==============================================================
+
+### Resource Deposits
+RandomResources: 
+
+# Basics
+    - Name: IronResource    # poor
+    #  Biome: [ Regolith, RegolithEdge, SandDrift, Dunes, Plateau, Rifts, LargeCrater ]
+      IsImportant: True
+      CountMinMax: [ 10, 10 ]
+    #  IsScalingCount: True
+      SizeMinMax: [ 4, 4 ]
+      DepthMinMax: [ 4, 8 ] 
+
+    - Name: CopperResource     # extremely poor
+   #   Biome: [ Rocks, LowMountains, LowMountains_1, Mountains, Moss, HighMountains ]
+      CountMinMax: [ 4, 4 ]
+  #    IsScalingCount: True
+      SizeMinMax: [ 4, 4 ]
+      DepthMinMax: [ 4, 8 ] 
+
+    - Name: SiliconResource    # rich
+   #   Biome: [ SandDrift, Dunes, Plateau, RegolithEdge, Regolith ]
+      CountMinMax: [ 4, 4 ]
+    #  IsScalingCount: True
+      SizeMinMax: [ 4, 4 ]
+      DepthMinMax: [ 4, 8 ]  
+# Weapons
+
+    - Name: MagnesiumResource    # rich
+    #  Biome: [ SandDrift, Dunes, Plateau, RegolithEdge, Regolith ]
+      CountMinMax: [ 3, 4 ]
+    #  IsScalingCount: True
+      SizeMinMax: [ 2, 3 ]
+      DepthMinMax: [ 2, 6 ] 
+     
+
+# Progress: Detector CV, 
+    - Name: CobaltResource    # poor
+    #  Biome: [ Regolith, RegolithEdge, SandDrift, Dunes, Plateau, Rifts, LargeCrater ]
+      IsImportant: True
+      CountMinMax: [ 4, 4 ]
+     # IsScalingCount: True
+      SizeMinMax: [ 4, 4 ]
+      DepthMinMax: [ 4, 8 ]  
+      
+    - Name: TitanResource    # poor
+    #  Biome: [ Regolith, RegolithEdge, SandDrift, Dunes, Plateau, Rifts, LargeCrater ]
+      IsImportant: True
+      CountMinMax: [ 4, 4 ]
+    #  IsScalingCount: True
+      SizeMinMax: [ 4, 4 ]
+      DepthMinMax: [ 4, 8 ]  
+
+
+### Resource Asteroids
+#AsteroidResources:
+     # - Name: MagnesiumResource
+       # Threshold: 0.2
+       # Amount: 0.3
+     # - Name: ErestrumResource
+       # Threshold: 0.2
+       # Amount: 0.3
+     # - Name: PromethiumResource
+       # Threshold: 0.2
+       # Amount: 0.3
+     # - Name: ZascosiumResource
+       # Threshold: 0.2
+       # Amount: 0.3
+     # - Name: GoldResource
+       # Threshold: 0.1
+       # Amount: 0.2
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "AshonLavaShelter"
-    Faction: "none"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    Biome:
-    - "HighMountains"
-    - "Mountains"
-  - GroupName: "NtyEnergyConverter"
-    Faction: "none"
-    Count:
-      Min: 1
-      Max: 30
-    CountMinMax:
-    - 1
-    - 30
-    Properties:
-    - Key: "Music"
-      Value: "moonstone"
-    - Key: "RegenAfter"
-      Value: "720"
-    PlaceAt: "ResourceAll"
-    Biome:
-    - "Lava"
-    - "LavaFolds"
-    - "LavaEdge"
-    - "Hotspot"
-  - GroupName: "NtyWaterCondenser"
-    Faction: "none"
-    Count:
-      Min: 1
-      Max: 10
-    CountMinMax:
-    - 1
-    - 10
-    Properties:
-    - Key: "Music"
-      Value: "moonstone"
-    - Key: "RegenAfter"
-      Value: "720"
-    Biome:
-    - "HighMountains"
-    - "Mountains"
-    - "LowMountains"
-    - "LowMountains_1"
-  - GroupName: "NtyWaterCondenser"
-    Faction: "none"
-    Count:
-      Min: 1
-      Max: 15
-    CountMinMax:
-    - 1
-    - 15
-    Properties:
-    - Key: "Music"
-      Value: "moonstone"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "NtyWaterCondenser"
-    Faction: "none"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "Music"
-      Value: "moonstone"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "AshonLavaShelter"
-    SpawnPOINearRange:
-    - 50
-    - 120
-  - GroupName: "NtyEnergyConverter"
-    Faction: "none"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "Music"
-      Value: "moonstone"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "AshonLavaShelter"
-    SpawnPOINearRange:
-    - 50
-    - 300
-  - GroupName: "Ruins"
-    Faction: "None"
-    Count:
-      Min: 4
-      Max: 6
-    CountMinMax:
-    - 4
-    - 6
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Ruins"
-    Faction: "None"
-    Count:
-      Min: 4
-      Max: 6
-    CountMinMax:
-    - 4
-    - 6
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "CrashedShip"
-    Count:
-      Min: 1
-      Max: 5
-    CountMinMax:
-    - 1
-    - 5
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "CrashedShip"
-    PlaceAt: "ResourceAll"
-    SpawnPOIAvoidDistance: 700
-    Biome:
-    - "LavaEdge"
-  - GroupName: "Wreckage"
-    Faction: "None"
-    Count:
-      Min: 4
-      Max: 6
-    CountMinMax:
-    - 4
-    - 6
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "Junksite"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 10
-    CountMinMax:
-    - 1
-    - 10
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "Junksite"
-    SpawnPOIAvoidDistance: 1000
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 120
-    - 0
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Armor: "ArmorMedium"
+    Random:
+
+#Shelter Base
+        - GroupName: AshonLavaShelter 
+          Faction: none  
+      #    NoShieldReload: True
+          Biome: [ HighMountains, Mountains ]
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+# N'ty
+        - GroupName: NtyEnergyConverter              #CommandCenter
+          Faction: none   
+          Biome: [ Lava, LavaFolds, LavaEdge, Hotspot ]  
+          CountMinMax: [ 1, 30 ]
+          PlaceAt: UnderWater, Terrain
+        #  IsScalingCount: True
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+              
+        - GroupName: NtyWaterCondenser              #CommandCenter
+          Faction: none   
+          Biome: [ HighMountains, Mountains, LowMountains, LowMountains_1 ]  
+          CountMinMax: [ 1, 10 ]
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+              
+        - GroupName: NtyWaterCondenser              #CommandCenter
+          Faction: none   
+      #    Biome: [ HighMountains, Mountains, LowMountains, LowMountains_1 ]  
+          CountMinMax: [ 1, 15 ]
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720  
+              
+              
+#= Engine Compartment Teaser
+        - GroupName: NtyWaterCondenser              #CommandCenter
+          Faction: none   
+      #    Biome: [ HighMountains, Mountains, LowMountains, LowMountains_1 ]  
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [AshonLavaShelter]
+          SpawnPOINearRange: [50, 120]
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+              
+        - GroupName: NtyEnergyConverter              #CommandCenter
+          Faction: none   
+      #    Biome: [ HighMountains, Mountains, LowMountains, LowMountains_1 ]  
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [AshonLavaShelter]
+          SpawnPOINearRange: [50, 300]
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+# # alien / loot
+
+        - GroupName: Ruins 
+          Faction: None
+      #    BiomesExcluded: [ LavaFolds, LavaEdge, Hotspot, Plains ] 
+          CountMinMax: [ 4, 6 ]  
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+              
+        - GroupName: Ruins
+          Faction: None
+       #   BiomesExcluded: [ LavaFolds, LavaEdge, Hotspot, Plains ] 
+          CountMinMax: [ 4, 6 ]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+        # Different POIs scattered around planet 
+        - GroupName: CrashedShip    
+          CountMinMax: [ 1, 5 ] 
+          Biome: [LavaEdge] 
+          PlaceAt: UnderWater, Terrain
+     #     IsScalingCount: True  
+          SpawnPOIAvoid: [CrashedShip]
+          SpawnPOIAvoidDistance: 700
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: Wreckage 
+          Faction: None  
+       #   BiomesExcluded: [ LavaFolds, LavaEdge, Hotspot, Plains ] 
+          CountMinMax: [ 4, 6 ]  
+          Properties:  
+            - Key: MapMarker 
+              Value: Neutral 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Junksite         
+          Faction: None   
+          CountMinMax: [ 1, 10 ] 
+          SpawnPOIAvoid: [Junksite]
+          SpawnPOIAvoidDistance: 1000
+          Properties:  
+            - Key: MapMarker 
+              Value: Neutral 
+            - Key: RegenAfter
+              Value: 720 
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ 0, 120, 0 ]
+          RotY: 0
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
+DroneBaseSetup:
+   
+
+# ==============================================================
+# ==============================================================
+
+SpawnRateZones:                  # used for creating "safe" zones with less creatures around certain POIs and resource deposits 
+   - SpawnAt: [AshonLavaShelter]            # location of the zone
+     Radius: 300                # radius
+     RadiusRandom: 100           # radius = radius + random(0, radiusRandom) 
+     RateMultiplyerCenter: 0.0   # how much we want to change the Amount from creature spawning (0..1) at the center
+     RateMultiplyerEdge: 1.0     # the same as RateMultiplyerCenter but at the edge of the zone
+     AffectEnemies: true         # which type of creature is affected 
+#      AffectFriendly: true   
+     Color: "0.0, 1.0, 0.0, 0.7" # color of circle in SSG
+     
+SpawnZones:
+
+   # - SpawnAt: [NtyWaterCondenser] 
+     # Radius: 100
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.6
+     # Color: "0.0, 0, 1.0, 1"
+     # Entities:
+       # - Names: [Ntys]
+         # Amount: 0
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+   # - SpawnAt: [NtyEnergyConverter ] 
+     # Radius: 100
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.6
+     # Color: "0.0, 0, 1.0, 1"
+     # Entities:
+       # - Names: [Ntys]
+         # Amount: 0
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
 CreatureSpawning:
-- Biomes:
-  - "MetalVeins"
-  - "Mountains"
-  - "LowMountains"
-  - "CrystallizedRocks"
-  - "LavaLake"
-  - "LavaEdge"
-  - "Hotspot"
-  - "LavaFolds"
-  - "Plains"
-  - "Dunes"
-  - "Rocks"
-  - "Flats"
-  Entities:
-  - Name: "Ntys"
-    Amount: 175
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-SpawnRateZones:
-- SpawnAt:
-  - "AshonLavaShelter"
-  Radius: 300
-  RadiusRandom: 100
-  RateMultiplyerEdge: 1
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
+    - Biomes: [MetalVeins, Mountains, LowMountains, CrystallizedRocks, LavaLake, LavaEdge, Hotspot, LavaFolds, Plains, Dunes, Rocks, Flats]
+      Entities:
+        - Name: Ntys
+          Period: Always
+          Amount: 175
+          DelayMinMax: [-1, -1]
+          
+    # - Biomes: [LavaEdge, LavaFolds]
+      # Entities:
+        # - Name: Ntys
+          # Period: Always
+          # Amount: 15
+          # DelayMinMax: [20, 24]
+          
+    # - Biomes: [LavaEdge, LavaFolds, Plains]
+      # Entities:
+        # - Name: Ntys
+          # Period: Always
+          # Amount: 15
+          # DelayMinMax: [20, 24]
+
+    # - Biomes: [Barren, CrystallizedRocks]
+      # Entities:
+        # - Name: Ntys
+          # Period: Day
+          # Amount: 15
+          # # DelayMinMax: [20, 24]
+          # DelayMinMax: [99, 99]
+          # Color: "0.7, 0.7, 1"
+
+        # - Name: Ntys    # LavaStarter: New
+          # Period: Day
+          # Amount: 5
+          # DelayMinMax: [20, 24]
+          
+
+    # - Biomes: [Hotspot]
+      # Entities:
+        # - Name: Ntys
+          # Period: Always
+          # Amount: 15
+          # DelayMinMax: [20, 24]
+          
+        # - Name: Ntys
+          # Period: Always
+          # Amount: 80
+          # DelayMinMax: [99, 9]
+          # Color: "0.9, 0.00, 1"
+
+        # - Name: Ntys
+          # Period: Night
+          # Amount: 100
+          # DelayMinMax: [99, 9]
+          # Color: "0.7, 0.7, 1"
+
+
+    # - Biomes: [Dunes]
+      # Entities:
+
+        # # - Name: Alien02_03_BattleGroup
+          # # Period: Always
+          # # Amount: 10
+          # # DelayMinMax: [99, 99]
+          # # Color: "1, 0.2, 1"
+
+        # # - Name: Overseers
+          # # Period: Night
+          # # Amount: 15
+          # # # DelayMinMax: [20, 24]
+          # # DelayMinMax: [99, 99]
+          # # Color: "1, 1, 1"
+
+        # - Name: Ntys
+          # Period: Always
+          # Amount: 20
+          # DelayMinMax: [99, 99]
+
+
+    # - Biomes: [Rocks]
+      # Entities:
+      
+        # # - Name: Overseers
+          # # Period: Day
+          # # Amount: 15
+          # # # DelayMinMax: [20, 24]
+          # # DelayMinMax: [99, 99]
+          # # Color: "1, 1, 1"
+
+        # - Name: Ntys
+          # Period: Always
+          # Amount: 60
+          # DelayMinMax: [99, 99]
+          # Color: "0.9, 0.00, 1"
+
+        # - Name: Ntys
+          # Period: Always
+          # Amount: 15
+          # DelayMinMax: [99, 9]
+          # Color: "1, 1, 1"
+
+
+        # # - Name: Alien02_03_BattleGroup
+          # # Period: Always
+          # # Amount: 10
+          # # DelayMinMax: [99, 99]
+          # # Color: "1, 0.2, 1"
+        # # - Name: Alien02_03_BattleGroupLarge
+          # # Period: Always
+          # # Amount: 2
+          # # DelayMinMax: [99, 99]
+          # # Color: "1, 0.6, 1"
+
+
+
+
+
+    # - Biomes: [LowMountains]
+      # Entities:
+        # - Name: Ntys       # Food
+          # Period: Always
+          # Amount: 10
+          # # DelayMinMax: [20, 24]
+          # DelayMinMax: [99, 99]
+          # Color: "0.8, 0.8, 1"
+
+

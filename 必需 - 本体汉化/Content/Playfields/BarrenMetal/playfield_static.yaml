@@ -1,702 +1,591 @@
-PlayfieldType: "Planet"
-PlanetType: "BarrenMetal"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: |
+  [c][e0e020]\u6CE8\u610F:[-][/c]   [c]\u63A2\u6D4B\u5230\u591A\u4E2A\u9632\u7A7A\u70AE\u5854\u3002[-][/c]
+  [c][808080][i]\u8BF7\u683C\u5916\u5C0F\u5FC3\u3002[-][/i][-][/c]
+
+  \u5728\u884C\u661F\u5F62\u6210\u8FC7\u7A0B\u4E2D\uFF0C\u5927\u90E8\u5206\u91CD\u5143\u7D20\u4F1A\u6C89\u5165\u6838\u5FC3\u3002
+  \u4F46\u5982\u679C\u4E00\u6B21\u5B87\u5B99\u4E8B\u6545\u5265\u79BB\u4E86\u884C\u661F\u7684\u5916\u5C42\uFF0C\u6216\u8005\u6709\u5145\u8DB3\u7684\u7269\u8D28\uFF0C\u90A3\u4E48\u5C31\u53EF\u80FD\u5F62\u6210\u6240\u8C13\u7684\u201C\u91D1\u5C5E\u884C\u661F\u201D\u3002
+
+  \u65E0\u8BBA\u5982\u4F55\uFF0C\u90FD\u4F1A\u7559\u4E0B\u4E00\u4E2A\u201C\u8584\u201D\u7684\u7845\u9178\u76D0\u5730\u5E54\uFF0C\u4EC5\u6709\u201C\u51E0\u767E\u201D\u516C\u91CC\u539A\u3002
+  \u5373\u4FBF\u5982\u6B64\uFF0C\u4ECD\u6709\u5927\u91CF\u8D44\u6E90\u53EF\u4F9B\u5F00\u91C7\uFF0C\u91CD\u5143\u7D20\u548C\u5947\u5F02\u5143\u7D20\u77FF\u85CF\u4E5F\u5BB9\u6613\u83B7\u53D6\u3002
+
+  \u7531\u4E8E\u8FD9\u662F\u4E00\u4E2A\u7F55\u89C1\u4E4B\u5730\uFF0C\u5B83\u5438\u5F15\u4E86\u8BB8\u591A\u201C\u5B88\u62A4\u8005\u201D\u3002\u53EA\u6709\u6781\u5176\u8C28\u614E\u7684\u4EBA\u6216\u6700\u5F3A\u8005\u624D\u80FD\u627E\u5230\u5B89\u5168\u822A\u884C\u7684\u65B9\u5F0F\u2026\u2026\u2014\u2014\u5165\u4FB5\u8005\uFF0C\u6CE8\u610F\u3002
+
+
+
+PlanetType: BarrenMetal
+PlayfieldType: Planet
 Difficulty: 4
-SunFlare: "EnvironmentalEffects/SunFlareBlue"
-SpecialEffectsLocal:
-- Name: "Grime"
-  MaxHeight: 20
-SpecialEffectsGlobal:
-- Name: "Clear"
-  InitialDelay: 2
-  Delay: 2
-  Lifetime: 600
-  Type: "Weather"
-- Name: "CloudsLight"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "CloudsMedium"
-  InitialDelay: 6
-  Delay: 2
-  Lifetime: 1000
-  Type: "Weather"
-- Name: "CloudsDark"
-  InitialDelay: 48
-  Delay: 24
-  Lifetime: 600
-  Type: "Weather"
-- Name: "FireRain"
-  InitialDelay: 48
-  Delay: 24
-  Lifetime: 600
-  Type: "Weather"
-- Name: "MeteorShower"
-  SpawnY: 100
-  Time: "Day"
-  InitialDelay: 0
-  Delay: 2
-  PlyDist: 200
-  Struct: "Avoid"
-  Lifetime: 60
+
+LandClaimZone: Device
+
+
+# == Atmosphere and Sky
+AtmosphereEnabled: True
 AtmosphereColor: "0.6, 0.3, 0.0"
-SkyColor: "0.9, 0.25, 0.0"
-SkyHorizonColor: "0.5, 0.1, 0.005"
-LightZenithColor: "0.95, 0.95, 0.90"
-LightHorizonColor: "0.8, 0.3, 0.1"
-NightLightColor: "0.3, 0.4, 0.45"
-CloudsZenithColor: "0.4, 0.108, 0.0"
-CloudsHorizonColor: "0.4, 0.07, 0.05"
-CloudsNightZenithColor: "0.03, 0.010, 0.01"
-CloudsNightHorizonColor: "0.03, 0.010, 0.01"
-CloudsOpacity: 0.5
-FogCloudIntensity: 0.8
+
+# LightStrength & Shadows
 DayLightIntensity: 1.4
 NightLightIntensity: 1.5
 DayShadowStrength: 0.95
 NightShadowStrength: 0.5
+
+# Fog basics
+FogCloudIntensity: 0.8
+AtmosphereFog: 0
+GroundFogIntensity: 0.02
+GroundFogHeight: 180
+
+# Atmosphere colours; will effect even weather
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+SkyColor: "0.9, 0.25, 0.0"
+SkyHorizonColor: "0.5, 0.1, 0.005"
+FogColor: "0.8, 0.40, 0.40"
+
+LightZenithColor: "0.95, 0.95, 0.90"
+LightHorizonColor: "0.8, 0.3, 0.1"
+NightLightColor: "0.3, 0.4, 0.45"
+
+CloudsZenithColor: "0.4, 0.108, 0.0"
+CloudsHorizonColor: "0.4, 0.07, 0.05"
+CloudsNightZenithColor: "0.03, 0.010, 0.01"
+CloudsNightHorizonColor: "0.03, 0.010, 0.01"
+
+# Wind
+WindSpeed: 3
+
+# Clouds. These parameters will only matter if NO weather effect is defined (='default' weather)
 CloudsDensity: 0.95
 CloudsSharpness: 1
 CloudsBrightness: 0.3
-WindSpeed: 3
-FogColor: "0.8, 0.40, 0.40"
-GroundFogIntensity: 0.02
-GroundFogHeight: 180
-Description: "[c][e0e020]\u6CE8\u610F:[-][/c]   [c]\u68C0\u6D4B\u5230\u591A\u4E2A\u9632\u7A7A\u70AE\u5854\u3002[-][/c]\n[c][808080][i]\u8BF7\u683C\u5916\u5C0F\u5FC3\u3002[-][/i][-][/c]\n\n\u5728\u4E00\u9897\u884C\u661F\u5F62\u6210\u8FC7\u7A0B\u4E2D\uFF0C\u5927\u90E8\u5206\u91CD\u5143\u7D20\u4F1A\u6C89\u5165\u6838\u5FC3\u3002\n\u4F46\u5982\u679C\u53D1\u751F\u5B87\u5B99\u610F\u5916\u5265\u79BB\u4E86\u4E16\u754C\u7684\u5916\u5C42\uFF0C\u6216\u8005\u6709\u4E30\u5BCC\u7684\u7269\u8D28\u2014\u2014\u90A3\u4E48\u5C31\u53EF\u80FD\u5B58\u5728\u201C\u91D1\u5C5E\u884C\u661F\u201D\u3002\n\n\u65E0\u8BBA\u5982\u4F55\uFF0C\u90FD\u4F1A\u5269\u4E0B\u4E00\u5C42\u201C\u8584\u8584\u7684\u201D\u7845\u9178\u76D0\u5730\u5E54\uFF0C\u539A\u5EA6\u201C\u53EA\u6709\u51E0\u767E\u516C\u91CC\u201D\u3002\n\u4E0D\u8FC7\uFF0C\u4ECD\u6709\u5927\u91CF\u53EF\u4F9B\u5F00\u91C7\u7684\u8D44\u6E90\uFF0C\u540C\u65F6\u91CD\u5143\u7D20\u548C\u7A00\u6709\u5143\u7D20\u7684\u77FF\u5E8A\u4E5F\u975E\u5E38\u5BB9\u6613\u83B7\u53D6\u3002\n\n\u7531\u4E8E\u8FD9\u662F\u4E00\u4E2A\u7F55\u89C1\u7684\u5730\u65B9\uFF0C\u5B83\u5438\u5F15\u4E86\u8BB8\u591A\u201C\u5B88\u62A4\u8005\u201D\u3002\u53EA\u6709\u771F\u6B63\u5C0F\u5FC3\u6216\u6700\u5F3A\u5927\u7684\u624D\u80FD\u627E\u5230\u5BFC\u822A\u4E4B\u9053\u2026\u2026\u2014\u2014\u64C5\u81EA\u95EF\u5165\u8005\u8BF7\u6CE8\u610F\u3002"
-PlanetClass: "BarrenMetal"
-UseRandom: true
-LandClaimZone: "Device"
+CloudsOpacity: 0.5
+
+
+# Special effects around the player
+SpecialEffectsLocal:
+  - Name: Grime
+    MaxHeight: 20
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 2
+    Delay: 2  
+    Lifetime: 600
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 6
+    Delay: 2
+    Lifetime: 1000
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+  - Name: FireRain
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+
+
+# Global Effect
+  - Name: MeteorShower
+    Time: Day
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 60
+    PlyDist: 200
+    SpawnY: 100
+    Struct: Avoid
+
+
+# ==============================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "CopperResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 6
-  - 16
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.6
-  Biome:
-  - "DustBowl"
-  - "Rifts"
-  - "Rifts_1"
-  - "LargeCrater"
-  - "SmallCrater"
-  - "Dunes"
-- Name: "SiliconResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 6
-  - 9
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.2
-  Biome:
-  - "Plains"
-  - "Sand"
-  - "Dunes"
-- Name: "CobaltResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 6
-  - 9
-  DepthMinMax:
-  - 5
-  - 10
-  DroneProb: 0.3
-  Biome:
-  - "DustBowl"
-  - "Rocks"
-  - "Rocks_1"
-  - "LowMountains"
-  - "LowMountains_1"
-  - "Mountains"
-  - "HighMountains"
-  - "LargeCrater"
-  - "SmallCrater"
-- Name: "PlatinResource"
-  IsImportant: true
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 2
-  SizeMinMax:
-  - 5
-  - 6
-  DepthMinMax:
-  - 5
-  - 20
-  DroneProb: 0.9
-  MaxDroneCount: 3
-  Biome:
-  - "ShallowCanyon"
-  - "Canyon"
-  - "DeepCanyon"
-- Name: "ErestrumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 4
-  - 4
-  SizeMinMax:
-  - 5
-  - 8
-  DepthMinMax:
-  - 5
-  - 20
-  DroneProb: 0.2
-  Biome:
-  - "Canyon"
-  - "DeepCanyon"
-- Name: "ErestrumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 5
-  - 5
-  SizeMinMax:
-  - 3
-  - 6
-  DepthMinMax:
-  - 5
-  - 20
-  DroneProb: 1
-  MaxDroneCount: 4
-  Biome:
-  - "ShallowCanyon"
-  - "Canyon"
-  - "DeepCanyon"
-- Name: "ZascosiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 8
-  - 8
-  SizeMinMax:
-  - 5
-  - 6
-  DepthMinMax:
-  - 5
-  - 20
-  DroneProb: 0.5
-  Biome:
-  - "ShallowCanyon"
-  - "Canyon"
-  - "DeepCanyon"
-- Name: "PromethiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 3
-  SizeMinMax:
-  - 7
-  - 11
-  DepthMinMax:
-  - 0
-  - 1
-  DistTypeCylinder:
-    MaxRadius: 13
-    YVariance: 10
-  DroneProb: 0.7
-  Biome:
-  - "Rocks"
-  - "Rocks_1"
-  - "LavaFolds"
-  - "LavaEdge"
-  - "ShallowCanyon"
-  - "Canyon"
-  - "DeepCanyon"
-- Name: "GoldResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 3
-  SizeMinMax:
-  - 5
-  - 6
-  DepthMinMax:
-  - 5
-  - 10
-  DistTypeCylinder:
-    MaxRadius: 13
-    YVariance: 10
-  DroneProb: 1
-  MaxDroneCount: 3
-  Biome:
-  - "CanyonEdge"
-  - "ShallowCanyon"
-  - "Canyon"
-  - "DeepCanyon"
-  - "LargeCrater"
-  - "SmallCrater"
+
+#T0: 
+
+#T1:
+    - Name: CopperResource
+      Biome: [DustBowl, Rifts, Rifts_1, LargeCrater, SmallCrater, Dunes]
+      IsScalingCount: True 
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 6, 16 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.6
+        
+    - Name: SiliconResource
+      Biome: [ Plains, Sand, Dunes ]
+      IsScalingCount: True 
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 6, 9 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.2
+
+#T2:
+
+    - Name: CobaltResource
+      Biome: [ DustBowl, Rocks, Rocks_1, LowMountains, LowMountains_1, Mountains, HighMountains, LargeCrater, SmallCrater ]
+      IsScalingCount: True 
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 6, 9 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.3
+
+#T3:
+
+    - Name: PlatinResource 
+      Biome: [ ShallowCanyon, Canyon, DeepCanyon]
+      IsImportant: true          # snall target biome & not tied to a POI
+      IsScalingCount: True 
+      CountMinMax: [ 2, 2 ]
+      SizeMinMax: [ 5, 6 ]
+      DepthMinMax: [ 5, 20 ]
+      DroneProb: 0.9
+      MaxDroneCount: 3 
+
+    - Name: ErestrumResource         # Rich. Will get grabbed by RocketTurret-POI
+      Biome: [ Canyon, DeepCanyon ]
+      IsScalingCount: True
+      CountMinMax: [ 4, 4 ]
+      SizeMinMax: [ 5, 8 ]
+      DepthMinMax: [ 5, 20 ]
+      DroneProb: 0.2  
+      MaxDroneCount: 1 
+
+    - Name: ErestrumResource
+      Biome: [ ShallowCanyon, Canyon, DeepCanyon ]
+      IsScalingCount: True
+      CountMinMax: [ 5, 5 ]
+      SizeMinMax: [ 3, 6 ]
+      DepthMinMax: [ 5, 20 ]
+      DroneProb: 1  
+      MaxDroneCount: 4 
+
+    - Name: ZascosiumResource         #  Will get grabbed by RocketTurret-POI
+      Biome: [ ShallowCanyon, Canyon, DeepCanyon ]
+      IsScalingCount: True 
+      CountMinMax: [ 8, 8 ]
+      SizeMinMax: [ 5, 6 ]
+      DepthMinMax: [ 5, 20 ]
+      DroneProb: 0.5
+      MaxDroneCount: 1
+      
+#Special
+    - Name: PromethiumResource
+      Biome: [Rocks, Rocks_1, LavaFolds, LavaEdge, ShallowCanyon, Canyon, DeepCanyon]
+      IsScalingCount: True 
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 7, 11 ]
+      DroneProb: 0.7
+      DepthMinMax: [ 0, 1 ]
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+        
+    - Name: GoldResource
+      Biome: [ CanyonEdge, ShallowCanyon, Canyon, DeepCanyon, LargeCrater, SmallCrater ]
+      IsScalingCount: True
+      CountMinMax: [ 1, 3 ]
+      SizeMinMax: [ 5, 6 ]
+      DroneProb: 1
+      MaxDroneCount: 3
+      DepthMinMax: [ 5, 10 ]
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+
+
+### Resource Asteroids
 AsteroidResources:
-- Name: "ErestrumResource"
-  Threshold: 0.2
-  Amount: 0.3
-  InitialDelay: -1
-  Delay: -1
-- Name: "PromethiumResource"
-  Threshold: 0.2
-  Amount: 0.3
-  InitialDelay: -1
-  Delay: -1
-- Name: "ZascosiumResource"
-  Threshold: 0.2
-  Amount: 0.3
-  InitialDelay: -1
-  Delay: -1
-- Name: "GoldResource"
-  Threshold: 0.1
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
+     - Name: ErestrumResource
+       Threshold: 0.2
+       Amount: 0.3
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.3
+     - Name: ZascosiumResource
+       Threshold: 0.2
+       Amount: 0.3
+     - Name: GoldResource
+       Threshold: 0.1
+       Amount: 0.2
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "ZiraxDroneBase"
-    DroneBaseSetup: "DroneBaseSetup"
-    Faction: "Zirax"
-    NoShieldReload: true
-    IsCommandCenter: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 4
-      Max: 4
-    DronesMinMax:
-    - 4
-    - 4
-    ReserveCount: 20
-    Properties:
-    - Key: "Music"
-      Value: "Encryptor"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "START"
-    SpawnPOIAvoidDistance: 2000
-    BiomesExcluded:
-    - "PoleEdge"
-  - GroupName: "TS_Metal_Waypoint"
-    Faction: "Polaris"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "START"
-    SpawnResource:
-    - "ErestrumResource:1-1"
-    SpawnPOIAvoidDistance: 1000
-    SpawnResourceRange:
-    - 100
-    - 250
-    BiomesExcluded:
-    - "PoleEdge"
-  - GroupName: "KrielMain"
-    Faction: "Kriel"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "Music"
-      Value: "AlteredPhase"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "KrielDefenseT1"
-    Faction: "Kriel"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 4
-    CountMinMax:
-    - 1
-    - 4
-    Properties:
-    - Key: "Music"
-      Value: "AlteredPhase"
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "CivilMain"
-    Faction: "Colonists"
-    Territory: false
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "CivilSettlement"
-    Faction: "Colonists"
-    Territory: false
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "PiratesMain"
-    Faction: "Pirates"
-    NoShieldReload: true
-    Count:
-      Max: 1
-    CountMinMax:
-    - 0
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "PiratesAuxDesert"
-    Faction: "Pirates"
-    NoShieldReload: true
-    Count:
-      Max: 3
-    CountMinMax:
-    - 0
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "PiratesDefenseT1Desert"
-    Faction: "Pirates"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 3
-    CountMinMax:
-    - 1
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PiratesMain"
-    SpawnPOINearRange:
-    - 100
-    - 250
-  - GroupName: "XenuDefenceT3Rocket"
-    Faction: "Xenu"
-    Territory: false
-    NoShieldReload: true
-    IsImportant: true
-    IsScalingCount: true
-    Count:
-      Min: 10
-      Max: 10
-    CountMinMax:
-    - 10
-    - 10
-    DroneProb: 1
-    Drones:
-      Max: 3
-    DronesMinMax:
-    - 0
-    - 3
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "TS_Metal_Waypoint"
-    - "XenuDefenceT3Rocket"
-    SpawnResource:
-    - "ZascosiumResource:1-1"
-    - "ErestrumResource:1-2"
-    SpawnPOIAvoidDistance: 600
-    SpawnResourceRange:
-    - 100
-    - 250
-    Biome:
-    - "CanyonEdge"
-    - "ShallowCanyon"
-    - "Rifts"
-    - "Rifts_1"
-  - GroupName: "DSRCMain"
-    Faction: "Zirax"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "Music"
-      Value: "moonstone"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "START"
-    SpawnPOIAvoid:
-    - "TS_Metal_Waypoint"
-    - "ZiraxDroneBase"
-    SpawnPOINearRange:
-    - 0
-    - 3000
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "SmallCrater"
-    - "Dunes"
-    - "DustBowl"
-    - "LavaFolds"
-    - "Mountains"
-  - GroupName: "DSRCTurret"
-    Faction: "Zirax"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 5
-    CountMinMax:
-    - 3
-    - 5
-    DroneProb: 0.8
-    TroopTransport: true
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "DSRCMain"
-    SpawnPOINearRange:
-    - 75
-    - 150
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    Territory: false
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Drones: {}
-    DronesMinMax:
-    - 0
-    - 0
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    SpawnPOINear:
-    - "TS_Metal_Waypoint"
-    SpawnPOINearRange:
-    - 300
-    - 400
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    Count:
-      Min: 2
-      Max: 2
-    CountMinMax:
-    - 2
-    - 2
-    DroneProb: 0.7
-    TroopTransport: true
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 6
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    SpawnPOIAvoid:
-    - "TS_Metal_Waypoint"
-    - "ZiraxDroneBase"
-    - "XenuArtilleryBase"
-    SpawnPOIAvoidDistance: 650
-    BiomesExcluded:
-    - "PoleEdge"
-    - "LavaFolds"
-    - "LavaEdge"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 120
-    - 0
-  - Mode: "Survival"
-    Spawn: "EscapePod"
-    Armor: "ArmorMedium"
+    Random:
+    
+    
+# =========== Placing the basic POI for the playfield to work ===========
+
+          # DroneBase Xenu - High difficulty POI (outdated, but fond memories of that 'plasma phalanx')
+        - GroupName: ZiraxDroneBase                        #CommandCenter
+          IsImportant: True
+          Faction: Zirax
+          NoShieldReload: True
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetup
+          BiomesExcluded: [ PoleEdge ] 
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 4 ]
+          ReserveCount: 20
+          TroopTransport: True
+          SpawnPOIAvoid: [ START ]
+          SpawnPOIAvoidDistance: 2000
+          Properties: 
+            - Key: Music
+              Value: Encryptor
+            - Key: RegenAfter
+              Value: 720
+
+          # Safe place to respawn after being shot down by turrets
+        - GroupName: TS_Metal_Waypoint
+          IsImportant: True
+          Faction: Polaris
+          NoShieldReload: True
+          BiomesExcluded: [ PoleEdge ] 
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          SpawnResource: ["ErestrumResource:1-1"]
+          SpawnResourceRange: [100, 250]
+          SpawnPOIAvoid: [ZiraxDroneBase, START]
+          SpawnPOIAvoidDistance: 1000
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+# Kriel
+
+        - GroupName: KrielMain 
+          Faction: Kriel    
+          NoShieldReload: True
+          CountMinMax: [ 1, 2 ]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: KrielDefenseT1 
+          Faction: Kriel    
+          NoShieldReload: True
+          CountMinMax: [ 1, 4 ]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+# Civilians
+
+        - GroupName: CivilMain
+          Territory: False
+          Faction: Colonists                    #primarily for outside the territories
+          NoShieldReload: True
+          CountMinMax: [ 1, 1 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: CivilSettlement 
+          Territory: False
+          Faction: Colonists                    #primarily for outside the territories
+          NoShieldReload: True
+          CountMinMax: [ 3, 4 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        # - GroupName: CivilSettlement 
+       # #   Territory: False
+          # Faction: Main                    #fill up territories when CIV faction is not placed
+          # NoShieldReload: True
+          # CountMinMax: [ 3, 4 ]
+          # Properties:  
+            # - Key: RegenAfter
+              # Value: 720 
+
+# Pirates
+
+        - GroupName: PiratesMain 
+          Faction: Pirates    
+          NoShieldReload: True
+          CountMinMax: [ 0, 1 ]
+     #     IsImportant: True
+          Properties:  
+            - Key: RegenAfter
+              Value: 720         
+
+        - GroupName: PiratesAuxDesert 
+          Faction: Pirates    
+          NoShieldReload: True
+          CountMinMax: [ 0, 3 ]
+     #     IsImportant: True
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PiratesDefenseT1Desert 
+          Faction: Pirates    
+          NoShieldReload: True 
+          CountMinMax: [ 1, 3 ]
+          SpawnPOINear: [PiratesMain]
+          SpawnPOINearRange: [100,250]
+     #     IsImportant: True
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+          # == RESOURCE ANCHORS ===========================
+          # Very dangerous turrets, 2xRocket, 2x Artillery, close to canyon edges.
+          # Nearly all high-tier resources are claimed by these POI, and need the players to sneak in the canyons' dead angles to get close. Drones and Overseers nearby add extra diffficulty.
+          # ('MapDistance' seems to be capped to 500m... Bug? With that, as soon the player gets the notification, he/she is already attacked. But those turrets need that 500m range, to protect the resources...)
+        - GroupName: XenuDefenceT3Rocket
+          IsImportant: True
+          IsScalingCount: True 
+          Faction: Xenu
+          NoShieldReload: True
+          Territory: False
+          Biome: [ CanyonEdge, ShallowCanyon, Rifts, Rifts_1 ]
+          CountMinMax: [ 10, 10 ]
+          DroneProb: 1.0 
+          DronesMinMax: [ 0, 3 ]
+          ReserveCount: 5
+          TroopTransport: False
+          SpawnResource: ["ZascosiumResource:1-1","ErestrumResource:1-2"]
+          SpawnResourceRange: [100, 250]
+          SpawnPOIAvoid: [ TS_Metal_Waypoint, XenuDefenceT3Rocket]
+          SpawnPOIAvoidDistance: 600
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+# =========== Placing other POI ===========
+
+          # ============
+          # (This place would fit to Xenu, with oversized installations. - E.g. Player Vermillions' Artillery Base)
+          # (Also a faction with good colours and difficulty: Player LiftPizzas' Zeta (Zirax Faction) )
+          # ============
+
+          # Deep space radar installation  ====
+        - GroupName: DSRCMain
+          IsImportant: True 
+          Faction: Zirax
+          NoShieldReload: True
+          Biome: [ SmallCrater, Dunes, DustBowl, LavaFolds, Mountains ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0 
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          TroopTransport: True
+          SpawnPOINear: [START]
+          SpawnPOINearRange: [0, 3000] 
+          SpawnPOIAvoid: [ TS_Metal_Waypoint, ZiraxDroneBase]
+          SpawnPOIAvoidDistance: 2000
+          Properties:
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: DSRCTurret
+          Faction: Zirax
+          NoShieldReload: True
+          CountMinMax: [ 3, 5 ]
+          DroneProb: 0.8 
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOINear: [DSRCMain]
+          SpawnPOINearRange: [75, 150] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+              
+          # Ships ====
+
+          # Maybe a ticket home, if CV got destroyed. Spawns Overseers close by.
+        - GroupName: CrashedShip
+          IsImportant: True
+          Faction: None
+          Territory: False
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.0
+          DronesMinMax: [ 0, 0 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [TS_Metal_Waypoint]
+          SpawnPOINearRange: [300, 400]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+
+          # Another chance somewhere
+        - GroupName: CrashedShip
+          Faction: None
+          CountMinMax: [ 2, 2 ]
+          BiomesExcluded: [ PoleEdge, LavaFolds, LavaEdge ] 
+          DroneProb: 0.7
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 6
+          TroopTransport: True
+          SpawnPOIAvoid: [ TS_Metal_Waypoint, ZiraxDroneBase, XenuArtilleryBase ]
+          SpawnPOIAvoidDistance: 650
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ 0, 120, 0 ]
+          RotY: 0
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+          
+
+### Drones
 DroneBaseSetup:
-  Random:
-  - GroupName: "DroneBaseSetup"
-    Difficulty: 7
-    PresetStyle: 3
-    Stock:
-    - Name: "DroneSmallFast01Plasma"
-      Amount: "200"
-      Extra: 0
-    - Name: "EnemyDroneV2Plasma"
-      Amount: "200"
-      Extra: 0
-    - Name: "EnemyDroneV2Minigun"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneLargeSlow02Cannon"
-      Amount: "200"
-      Extra: 0
-    - Name: "DroneBomberAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallFast01Plasma"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "EnemyDroneV2Plasma"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMinigun"
-      Amount: "500"
-      Extra: 3
-    - Name: "Mechanoid"
-      Amount: "250"
-      Extra: 3
-    PlanetVesselBase:
-      Name: "PlanetVesselBaseSetup"
-      Position3D:
-      - 0
-      - 102
-      - 0
-      BaseType: "PlanetVesselBase"
-      PlanetVessel:
-      - Name: "PVZiraxT2"
-        Mission: "PlanetPatrol"
-        FixedMaxSpeed: 10
-        RespawnDelay: 12
-        RangePatrolTask:
-          Position3D:
-          - 1500
-          - 80
-          - 0
-          Radius: 800
-          DistToGround: 80
-        AttackCVCircleAround:
-          DistToTarget: 220
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 7
+          PresetStyle: 3
+          Stock:
+              - Name: DroneSmallFast01Plasma
+                Amount: 200
+                Extra: 0  
+
+              - Name: EnemyDroneV2Plasma
+                Amount: 200
+                Extra: 0
+
+              - Name: EnemyDroneV2Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneLargeSlow02Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallFast01Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: Mechanoid
+                Amount: 250
+                Extra: 3
+
+          PlanetVesselBase:
+              Name: PlanetVesselBaseSetup
+              Position3D: [ 0, 102, 0]
+              BaseType: PlanetVesselBase
+              KeyId: 0
+              PlanetVessel:
+                - Name: PVZiraxT2
+                  Mission: PlanetPatrol
+                  FixedMaxSpeed: 10
+                  RespawnDelay: 12
+
+                  RangePatrolTask:
+                    Position3D: [ 1500, 80, 0 ]
+                    Radius: 800
+                    DistToGround: 80
+
+                  AttackCVCircleAround:
+                    DistToTarget: 220
+
 DroneSpawning:
-  Random:
-  - DronesMinMax:
-    - 10
-    - 15
-    CenterX: -2500
-    Radius: 1500
-  - DronesMinMax:
-    - 10
-    - 15
-    CenterX: 2500
-    Radius: 1500
-CreatureSpawning:
-- Biomes:
-  - "Plains"
-  Entities:
-  - Name: "ZiraxMechanoidPatrol"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
+    Random:
+        - DronesMinMax: [ 10, 15 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 10, 15 ]
+          CenterX: 2500
+          Radius: 1500
+# ==============================================================
+# ==============================================================
+
 SpawnZones:
-- SpawnAt:
-  - "ZascosiumResource"
-  - "ErestrumResource"
-  - "GoldResource"
-  - "CrashedShip"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 200
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "1.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "Overseers"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "ZiraxDroneBase"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 500
-  RadiusRandom: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.4
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "ZiraxRocketPatrol"
-    - "ZiraxMechanoidPatrol"
-    Biomes:
-    - "Any"
-    Amount: 250
-    DelayMinMax:
-    - 20
-    - 36
-    Period: "Always"
+
+   - SpawnAt: [ZascosiumResource, ErestrumResource, GoldResource, CrashedShip]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     Entities:
+       - Names: [Overseers]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+     # # Zirax spawing
+   - SpawnAt: [ZiraxDroneBase]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 500
+     RadiusRandom: 100
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.4
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxRocketPatrol, ZiraxMechanoidPatrol]
+         Biomes: [Any]
+         Amount: 250
+         Period: Always
+         DelayMinMax: [20, 36]
+
+
+
+### Creatures
+CreatureSpawning:   # This is a highly radiated, extreme temperature, dead planet. No indigenous creatures, but maybe robots.
+    - Biomes: [Plains]  # Can't remove this entry without SSG error. Seems to be a bug. These shouldn't ever spawn.
+      Entities:
+        - Name: ZiraxMechanoidPatrol
+          Period: Always
+          Amount: 0
+          DelayMinMax: [20, 24]
+
+

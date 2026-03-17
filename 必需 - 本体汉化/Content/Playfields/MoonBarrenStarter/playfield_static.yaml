@@ -1,671 +1,708 @@
-PlayfieldType: "Moon"
-PlanetType: "DesertBarrenStarter"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: |
+  \u6CA1\u6709\u6C27\u6C14\u3002\u77FF\u77F3\u7A00\u5C11\u3002\u2014\u2014\u53EA\u6709\u5E9F\u589F\uFF0C\u5728\u523A\u773C\u7684\u9633\u5149\u4E0B\u5D29\u584C\u3002  
+  \u8FD8\u6709\u7B49\u5F85\u7740\u4F60\u7684\u751F\u7269\uFF0C\u628A\u4F60\u5F53\u6210\u5B83\u4EEC\u8FD9\u4E2A\u6708\u7684\u76DB\u5BB4\u3002  
+  \u6CA1\u6709\u6559\u7A0B\u652F\u6301\uFF01  
+  \u9002\u5408\u9AD8\u7EA7\u73A9\u5BB6\u3002
+
+# Description: "Hundreds of years of exploitation of the natural resources of this moon have left their mark. While the natural ore deposits have been completely exhausted, ruins have remained. Slowly decaying in the sweltering heat of an unbreathable atmosphere, dangerous creatures use them to trap their prey!\n\nSuitable for advanced/Experts"
+
+PlanetClass: Desert Barren
+PlanetType: DesertBarrenStarter
+PlayfieldType: Moon
 Difficulty: 3
-SunFlare: "EnvironmentalEffects/SunFlareBlue"
+
+LandClaimZone: Device
+
+# ==============================================================
+# Special parameters:
+# ==============================================================
+
+#AllowBlueprintSV: False         # Dis-allow to spawn SV Blueprint in this playfield, default is True
+#AllowBlueprintCV: False         # Dis-allow to spawn CV Blueprint in this playfield, default is True
+#AllowBlueprintBA: False         # Dis-allow to spawn BA Blueprint in this playfield, default is True
+#AllowBlueprintHV: False         # Dis-allow to spawn HV Blueprint in this playfield, default is True
+
+Seed: 575561                    # Integer [1, 999999] If set overwrites main Seed 
+#UseFixed: True  			   	   # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
+#UseRandom: True				   # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
+#IndestructibleTerrain: True     # If set to True terrain on this playfield will be indestructible
+
+# ==============================================================
+# Special Effects 
 SpecialEffectsLocal:
-- Name: "FireFliesRed"
-  MaxHeight: 40
-  Time: "Night"
-  Biome:
-  - "Water"
-  - "ShallowWater"
-  - "Shore"
-- Name: "FireFliesGreenFew"
-  MaxHeight: 150
-  Time: "Night"
-  Biome:
-  - "Plains"
-  - "Sand"
-  - "Flowers"
-  - "FlowersEdge"
-  - "Wadi"
-  - "DustBowl"
-- Name: "Pollen"
-  MaxHeight: 150
-  Time: "Day"
-  Biome:
-  - "Plains"
-  - "DustBowl"
-  - "Plantation"
-  - "Flowers"
-  - "FlowersEdge"
-  - "Oasis"
-- Name: "FireFliesGreen"
-  MaxHeight: 150
-  Time: "Night"
-  Biome:
-  - "Oasis"
-  - "Plantation"
+  - Name: FireFliesRed
+    Biome: [ Water, ShallowWater, Shore ]
+    Time: Night
+    MaxHeight: 40
+  - Name: FireFliesGreenFew
+    Biome: [ Plains, Sand, Flowers, FlowersEdge, Wadi, DustBowl ]
+    Time: Night
+    MaxHeight: 150
+  - Name: Pollen
+    Biome: [ Plains, DustBowl, Plantation, Flowers, FlowersEdge, Oasis ]
+    Time: Day
+    MaxHeight: 150
+  - Name: FireFliesGreen
+    Biome: [ Oasis, Plantation ]
+    Time: Night
+    MaxHeight: 150
+
 SpecialEffectsGlobal:
-- Name: "Clear"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "HeatWave"
-  InitialDelay: 36
-  Delay: 12
-  Lifetime: 600
-  Type: "Weather"
-- Name: "FireRain"
-  InitialDelay: 72
-  Delay: 24
-  Lifetime: 300
-  Type: "Weather"
-- Name: "BirdFlocksVultures"
-  SpawnY: 40
-  Time: "Day"
-  Biome:
-  - "Dunes"
-  - "Plains"
-  - "Mountains"
-  - "Water"
-  - "Flowers"
-  - "Plantation"
-  InitialDelay: 2
-  Delay: 4
-  PlyDist: 50
-  Lifetime: 600
-AtmosphereColor: "0.77, 0.57, 0.44"
-AtmosphereParams:
-- 5
-- 1.5
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 36
+    Delay: 12
+    Lifetime: 600
+  - Name: FireRain
+    Type: Weather
+    InitialDelay: 72
+    Delay: 24
+    Lifetime: 300
+  # - Name: Wind
+    # Type: Weather
+    # InitialDelay: 20
+    # Delay: 8
+    # Lifetime: 500
+# Global Effects
+  - Name: BirdFlocksVultures
+    Biome: [ Dunes, Plains, Mountains, Water, Flowers, Plantation ]
+    Time: Day
+    InitialDelay: 2
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 50
+    SpawnY: 40
+    Struct: True
+# ==================
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.77, 0.57, 0.44"  
 SkyColor: "0.90, 0.3, 0.3"
 SkyHorizonColor: "1, 0.2, 0"
+AtmosphereParams: [5, 1.5]       
+
+# Light
+DayLightIntensity: 1.4
+NightLightIntensity: 0.3
 LightZenithColor: "1, 0.7, 0.7"
 LightHorizonColor: "1, 0.5, 0"
 NightLightColor: "0.78, 0.78, 1"
-CloudsZenithColor: "0.85, 0.36, 0.20"
-CloudsHorizonColor: "0.2, 0.04, 0.03"
-CloudsNightZenithColor: "0.03, 0.012, 0.012"
-CloudsNightHorizonColor: "0.03, 0.012, 0.012"
-CloudsOpacity: 0.3
-FogCloudIntensity: 0.8
-DayLightIntensity: 1.4
-NightLightIntensity: 0.3
 DayShadowStrength: 1
 NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Fog
 AtmosphereFog: 0.35
-CloudsDensity: 0.1
-CloudsSharpness: 0.05
-CloudsBrightness: 0.7
-WindSpeed: 3
 FogColor: "0.8, 0.4, 0.2"
+FogCloudIntensity: 0.8
 GroundFogIntensity: 0.05
 GroundFogHeight: 60
-Description: "\u6CA1\u6709\u6C27\u6C14\u3002\u77FF\u77F3\u7A00\u5C11\u3002\u2014\u2014\u53EA\u6709\u5E9F\u589F\uFF0C\u5728\u523A\u773C\u7684\u9633\u5149\u4E0B\u9010\u6E10\u5D29\u584C\u3002  \n\u8FD8\u6709\u751F\u7269\u5728\u7B49\u5F85\u4F60\uFF0C\u51C6\u5907\u5EA6\u8FC7\u5B83\u4EEC\u7684\u6708\u4EFD\u3002  \n\u4E0D\u63D0\u4F9B\u6559\u7A0B\u652F\u6301\uFF01  \n\u9002\u5408\u9AD8\u7EA7\u73A9\u5BB6\u3002  "
-Seed: 575561
-PlanetClass: "Desert Barren"
-UseRandom: true
-LandClaimZone: "Device"
+
+# Clouds & Wind
+CloudsDensity: 0.1
+CloudsSharpness: 0.05
+CloudsOpacity: 0.3
+
+CloudsBrightness: 0.7
+CloudsZenithColor: "0.85, 0.36, 0.20" 
+CloudsHorizonColor: "0.2, 0.04, 0.03" 
+CloudsNightZenithColor: "0.03, 0.012, 0.012"
+CloudsNightHorizonColor: "0.03, 0.012, 0.012"
+
+WindSpeed: 3
+
+
+# ==============================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "CarbonResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 1
-  - 2
-  SizeMinMax:
-  - 3
-  - 4
-  DepthMinMax:
-  - 0
-  - 3
-  DroneProb: 0.2
-- Name: "PromethiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 3
-  SizeMinMax:
-  - 3
-  - 5
-  DepthMinMax:
-  - 0
-  - 1
-  DistTypeCylinder:
-    MaxRadius: 13
-    YVariance: 10
-  DroneProb: 0.8
-- Name: "NeodymiumResource"
-  IsScalingCount: true
-  CountMinMax:
-  - 2
-  - 3
-  SizeMinMax:
-  - 3
-  - 5
-  DepthMinMax:
-  - 0
-  - 1
-  DroneProb: 0.8
+
+    - Name: CarbonResource
+     # Biome: [ Heath, Savanna, Hills, Plains, SavannaEdge, Grassland_1, Grassland ]
+      IsScalingCount: True   # Medium Planet: 6-8 Deposits, Large planet 9-12
+      CountMinMax: [ 1, 2 ]  # (was [ 5, 8 ] unscaled)
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 0, 3 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+    # - Name: IronResource
+      # Biome: [ Sand, Dunes ]
+      # CountMinMax: [ 2, 3 ] 
+      # IsScalingCount: True
+      # SizeMinMax: [ 5, 7 ] 
+      # DepthMinMax: [ 5, 15 ] 
+      # DroneProb: 0.2 
+
+    # - Name: CopperResource
+      # Biome: [ Plateau ]
+      # CountMinMax: [ 1, 3 ]
+      # IsScalingCount: True
+      # SizeMinMax: [ 4, 6 ]
+      # DepthMinMax: [ 10, 15 ] 
+      # DroneProb: 0.3
+
+    # - Name: SiliconResource           # =========== ADJUST TEX in TERRAIN.ECF! ===========
+      # Biome: [ Sand, Dunes ]
+      # CountMinMax: [ 3, 4 ]
+      # IsScalingCount: True
+      # SizeMinMax: [ 3, 6 ]
+      # DepthMinMax: [ 15, 20 ] 
+      # DroneProb: 0.8
+      # MaxDroneCount: 4 
+
+    - Name: PromethiumResource
+    #  Biome: [ Mountains, LowMountains, LowMountains_1 ]
+      CountMinMax: [ 2, 3 ]
+      IsScalingCount: True
+      SizeMinMax: [ 3, 5 ]
+      DroneProb: 0.8
+      DepthMinMax: [ 0, 1 ]
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: NeodymiumResource
+    #  Biome: [ Mountains, LowMountains, LowMountains_1 ]
+      CountMinMax: [ 2, 3 ]
+      IsScalingCount: True
+      SizeMinMax: [ 3, 5 ]
+      DroneProb: 0.8
+      DepthMinMax: [ 0, 1 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+
+
+### Resource Asteroids
 AsteroidResources:
-- Name: "PromethiumResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
+     # - Name: IronResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: SiliconResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: CopperResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "NullPOI"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    SpawnPOINear:
-    - "START"
-    SpawnResource:
-    - "IronResource:1-1"
-    - "CopperResource:1-1"
-    - "SiliconResource:1-1"
-    SpawnPOINearRange:
-    - 80
-    - 10
-    SpawnResourceRange:
-    - 300
-    - 400
-  - GroupName: "QuestPiratesSkillon"
-    Faction: "Pirates"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOIAvoid:
-    - "START"
-    SpawnPOIAvoidDistance: 800
-  - GroupName: "TOTObeliskBarren"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "PersonalContainer"
-      Value: "Token::9981"
-    SpawnPOINear:
-    - "START"
-    SpawnPOINearRange:
-    - 300
-    - 600
-  - GroupName: "TOTCampObeliskBarren"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "PersonalContainer"
-      Value: "Token::9981"
-    SpawnPOINear:
-    - "TOTObeliskBarren"
-    SpawnPOINearRange:
-    - 15
-    - 100
-  - GroupName: "TOTWorkshop"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "PersonalContainer"
-      Value: "Token::9981"
-  - GroupName: "TOTFontC"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOIAvoid:
-    - "START"
-    SpawnPOIAvoidDistance: 1200
-  - GroupName: "TOTCampFontBarren"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "PersonalContainer"
-      Value: "Token::9981"
-    SpawnPOINear:
-    - "TOTFontC"
-    SpawnPOINearRange:
-    - 30
-    - 70
-  - GroupName: "TOTVesselYard"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "SI"
-      Value: "Off"
-  - GroupName: "TOTActivator"
-    Faction: "None"
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-  - GroupName: "ScraperPileMain"
-    Faction: "Alien"
-    Count:
-      Min: 3
-      Max: 6
-    CountMinMax:
-    - 3
-    - 6
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-  - GroupName: "ScraperPile"
-    Faction: "Alien"
-    Count:
-      Min: 6
-      Max: 20
-    CountMinMax:
-    - 6
-    - 20
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-  - GroupName: "Wreckage"
-    Faction: "Alien"
-    Count:
-      Min: 6
-      Max: 20
-    CountMinMax:
-    - 6
-    - 20
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    Count:
-      Min: 4
-      Max: 6
-    CountMinMax:
-    - 4
-    - 6
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-  - GroupName: "Junksite"
-    Faction: "None"
-    Count:
-      Min: 6
-      Max: 25
-    CountMinMax:
-    - 6
-    - 25
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-  - GroupName: "JunkT2"
-    Faction: "None"
-    Count:
-      Min: 6
-      Max: 25
-    CountMinMax:
-    - 6
-    - 25
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    - Key: "PersonalContainer"
-      Value: "AntiRadiationOintment:1"
-  - GroupName: "JunkT1"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 20
-    CountMinMax:
-    - 1
-    - 20
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-    SpawnPOINear:
-    - "TOTObeliskTemperate"
-    SpawnPOINearRange:
-    - 50
-    - 200
-  - GroupName: "Ruins"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 20
-    CountMinMax:
-    - 1
-    - 20
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "360"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - 0
-    - 147
-    - 0
-    RotY: 160
-    Armor: "ArmorLight"
-  - Mode: "Survival"
-    Spawn: "EscapePodLandAtPos"
-    Pos:
-    - 0
-    - 70
-    - 0
-    RotY: 160
-    Items:
-    - "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:3#Drop, PowerBar:3#Drop"
-    - "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:2#Drop, PowerBar:2#Drop"
-    - "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:1#Drop, PowerBar:1#Drop"
-    - "#FreshStart: SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:1#Drop, PowerBar:1#Drop"
-    Armor: "ArmorLight"
-    Status:
-    - "Food: 400, Health: 400"
-    - "Food: 250, Health: 250"
-    - "Food: 150, Health: 150"
-    - "#FreshStart:Food: 250, Health: 250"
-DroneBaseSetup:
-  DroneBases:
-  - DroneSetupID: "DroneBaseSetup"
-    Stock:
-    - Name: "DroneSmallFast01Stun"
-      Amount: "Infinite"
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-    - Name: "ZiraxMinigun"
-      Amount: "Infinite"
-    - Name: "ZiraxRocket"
-      Amount: "Infinite"
-    - Name: "RipperDog"
-      Amount: "Infinite"
+    Random:
+#============================================================
+# Basic layout is as follows
+# Playfield has several required POI, which can be different per planet type
+# Always placed: Obelisk & Font of Knowledge + Activators
+# 1 camp/wreckage nearby the Obelisk
+# 1 main PoI relevant for story log
+# 1 POI that CAN have a story log but merely is something to discover for the player
+# random, thematicall fitting POI scattered around the planet.
+# ======================= CRASHSITE  ======================= 
+
+          # 'Distance holder POI'
+        - GroupName: NullPOI                # PLZ KEEP THIS POI! - - Used for 'security' spacing of POI
+          CountMinMax: [ 1, 1 ]             # (The parameter 'SpawnPOIAvoid' does not work well if it is defined as a combination of START and a POI.)
+          SpawnPOINear: [START]             # (NullPOI acts still as 'POI', is used instead of START.)
+          SpawnPOINearDistance: 10          # (Due to the fixed shape of the Crashsite and the nonexistent size of NullPOI, this POI should never fail to spawn)
+          IsImportant: True     # (Will not have any spawn problems, just to be sure. Should spawn immediately, so no loss in performance.)
+
+          # STARTER RESOURCE NODES
+          SpawnResource: ["IronResource:1-1", "CopperResource:1-1", "SiliconResource:1-1" ]
+          SpawnResourceRange: [300, 400]
+
+# Quest PoI
+
+
+        - GroupName: QuestPiratesSkillon           # REQUIRED!
+          IsImportant: True
+          Faction: Pirates          
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+          SpawnPOIAvoid: [ START ]
+          SpawnPOIAvoidDistance: 800
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+ # REQUIRED POI
+ 
+        - GroupName: TOTObeliskBarren           # REQUIRED!
+          IsImportant: True
+          Faction: Alien          
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+          SpawnPOINear: [ START ]
+          SpawnPOINearRange: [300,600]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer         # Personal Container
+              Value: "Token::9981"    # Content of Personal Container; Each player can pick THIS stuff once. Works in SP and MP! Syntax: <item/block/device>:<amount>
+
+
+        - GroupName: TOTCampObeliskBarren           # REQUIRED!
+          IsImportant: True
+          Faction: None          
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+          SpawnPOINear: [ TOTObeliskBarren ]
+          SpawnPOINearRange: [15,100]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer         # Personal Container
+              Value: "Token::9981"    # Content of Personal Container; Each player can pick THIS stuff once. Works in SP and MP! Syntax: <item/block/device>:<amount>
+
+        - GroupName: TOTWorkshop 
+          IsImportant: True
+          Faction: Alien          
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+      #    SpawnPOIAvoid: [ NullPOI ]
+      #    SpawnPOIAvoidDistance: 4000
+    #      SpawnPOIAvoid: [ START ]
+     #     SpawnPOIAvoidDistance: 700
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer 
+              Value: "Token::9981" 
+
+        - GroupName: TOTFontC         # Optional 
+          IsImportant: True
+          Faction: None          
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+       #   SpawnPOINear: [ START ]
+       #   SpawnPOINearRange: [500,1000]
+          SpawnPOIAvoid: [ START ]
+          SpawnPOIAvoidDistance: 1200
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+        - GroupName: TOTCampFontBarren           # REQUIRED!
+          IsImportant: True
+          Faction: None          
+          CountMinMax: [ 1, 1 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+          SpawnPOINear: [ TOTFontC ]
+          SpawnPOINearRange: [30,70]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer 
+              Value: "Token::9981" 
+
+        - GroupName: TOTVesselYard      
+          IsImportant: True
+          Faction: Alien          
+          CountMinMax: [ 1, 1 ]
+       #   SpawnPOIAvoid: [ START ]
+      #    SpawnPOIAvoidDistance: 1800
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: SI
+              Value: Off
+              
+# Secondary POI
+
+        - GroupName: TOTActivator         # Optional 
+        #  IsImportant: True
+          Faction: None          
+          CountMinMax: [ 2, 3 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+      #    SpawnPOIAvoid: [ NullPOI ]
+      #    SpawnPOIAvoidDistance: 4000
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+# Flavor & Fillers with Core/Faction
+
+        - GroupName: ScraperPileMain           # At least ONE needs to spawn
+         # IsImportant: True
+          Faction: Alien          
+          CountMinMax: [ 3, 6 ] 
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+              
+        - GroupName: ScraperPile          
+         # IsImportant: True
+          Faction: Alien          
+          CountMinMax: [ 6, 20 ] 
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+        - GroupName: Wreckage         
+         # IsImportant: True
+          Faction: Alien          
+          CountMinMax: [ 6, 20 ] 
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+# Flavor & Fillers withOUT Core/Faction
+
+        - GroupName: CrashedShip          
+         # IsImportant: True
+          Faction: None          
+          CountMinMax: [ 4, 6 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+       #   SpawnPOINear: [ RuinsTribalTower ]
+       #   SpawnPOINearRange: [100,1000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+              
+        - GroupName: Junksite         
+          #IsImportant: True
+          Faction: None          
+          CountMinMax: [ 6, 25 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+       #   SpawnPOINear: [ TemperateStarterTribalTower ]
+       #   SpawnPOINearRange: [50,300]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+        - GroupName: JunkT2         
+         # IsImportant: True
+          Faction: None          
+          CountMinMax: [ 6, 25 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+       #   SpawnPOINear: [ RuinsTribalTower ]
+       #   SpawnPOINearRange: [100,1000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer         # Personal Container
+              Value: "AntiRadiationOintment:1"    # Content of Personal Container; Each player can pick THIS stuff once. Works in SP and MP! Syntax: <item/block/device>:<amount>
+
+              
+        - GroupName: JunkT1          
+       #   IsImportant: True
+          Faction: None          
+          CountMinMax: [ 1, 20 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+          SpawnPOINear: [ TOTObeliskTemperate ]
+          SpawnPOINearRange: [50,200]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+              
+        - GroupName: Ruins          
+         # IsImportant: True
+          Faction: None          
+          CountMinMax: [ 1, 20 ]
+       #   Biome: [ColdPlains_Danger, Tundra]   
+       #   SpawnPOINear: [ RuinsTribalTower ]
+       #   SpawnPOINearRange: [100,1000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Armor: ArmorLight
+          Pos: [ 0, 147, 0 ]
+          RotY: 160 
+
+        - Mode: Survival
+          Armor: ArmorLight
+          Spawn: EscapePodLandAtPos      #Escape Pod cannot be controlled in that mode
+          Pos: [0, 70, 0]                  # Equator at mid-day.
+          RotY: 160
+          Status: [ "Food: 400, Health: 400", "Food: 250, Health: 250", "Food: 150, Health: 150", "#FreshStart:Food: 250, Health: 250" ]      # NEW
+          Items: [ "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:3#Drop, PowerBar:3#Drop", "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:2#Drop, PowerBar:2#Drop", "SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:1#Drop, PowerBar:1#Drop", "#FreshStart: SurvivalTool:1#Drop, Flashlight:1#Drop, SurvivalTent:1#Drop, RadarSuitT1:1#Drop,  Bandages:1#Drop, PowerBar:1#Drop" ]
+
+# ==============================================================
+# ==============================================================
+### Drones
+
+DroneBaseSetup: 
+    DroneBases:
+        - DroneSetupID: DroneBaseSetup
+#          Difficulty: 2
+#          PresetStyle: 4
+          Stock:
+
+              - Name: DroneSmallFast01Stun
+                Amount: Infinite
+ 
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+ 
+              - Name: ZiraxMinigun
+                Amount: Infinite
+ 
+              - Name: ZiraxRocket
+                Amount: Infinite
+ 
+              - Name: RipperDog
+                Amount: Infinite
+
 DroneSpawning:
-  Random:
-  - Name: "GlidingOverseer"
-    DronesMinMax:
-    - 1
-    - 3
-    Faction: "Alien"
-CreatureSpawning:
-- Biomes:
-  - "Crashsite"
-  Entities:
-  - Name: "ScraperDronesMixed"
-    Amount: 10
-    Color: "0, 0, 1.0"
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-  - Name: "CaveWormsGrey"
-    Amount: 15
-    Color: "0, 0, 1.0"
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-- Biomes:
-  - "Nest"
-  Entities:
-  - Name: "Spiders03"
-    Amount: 10
-    Color: "1.0, 1.0, 0.3"
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-  - Name: "Spiders02"
-    Amount: 10
-    Color: "1.0, 1.0, 0.7"
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-- Biomes:
-  - "LargeCrater"
-  Entities:
-  - Name: "Otyughs"
-    Amount: 12
-    DelayMinMax:
-    - 0
-    - 1
-  - Name: "CaveWormsGrey"
-    Amount: 10
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-- Biomes:
-  - "Wadi"
-  Entities:
-  - Name: "CaveWormsGrey"
-    Amount: 8
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
-  - Name: "GolemsDesert"
-    Amount: 8
-    DelayMinMax:
-    - 0
-    - 1
-- Biomes:
-  - "Oasis"
-  - "Shore"
-  Entities:
-  - Name: "Slimes"
-    Amount: 20
-    Color: "1.0, 1.0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-  - Name: "Spiders02"
-    Amount: 8
-    DelayMinMax:
-    - 0
-    - 1
-  - Name: "RipperDogsWildGroup"
-    Amount: 15
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Day"
-- Biomes:
-  - "Flowers"
-  - "FlowersEdge"
-  - "Plantation"
-  Entities:
-  - Name: "Spiders02"
-    Amount: 20
-    DelayMinMax:
-    - 0
-    - 2
-  - Name: "RipperDogsWildGroup"
-    Amount: 60
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Day"
-- Biomes:
-  - "Dunes"
-  - "Sand"
-  - "Plains"
-  - "Plateau"
-  - "DustBowl"
-  Entities:
-  - Name: "WormDesertHerd"
-    Amount: 6
-    DelayMinMax:
-    - 0
-    - 4
-    Period: "Always"
-  - Name: "WormDesertLargeHerd"
-    Amount: 6
-    DelayMinMax:
-    - 0
-    - 4
-    Period: "Always"
-  - Name: "GolemsDesert"
-    Amount: 8
-    DelayMinMax:
-    - 0
-    - 4
-  - Name: "Otyughs"
-    Amount: 10
-    DelayMinMax:
-    - 0
-    - 4
-    Period: "Day"
-- Biomes:
-  - "LowMountains"
-  - "LowMountains_1"
-  - "SandDrift"
-  Entities:
-  - Name: "CaveWormsGrey"
-    Amount: 15
-    DelayMinMax:
-    - 0
-    - 4
-    Period: "Always"
-  - Name: "GolemsDesert"
-    Amount: 6
-    DelayMinMax:
-    - 0
-    - 4
-- Biomes:
-  - "Water"
-  - "ShallowWater"
-  Entities:
-  - Name: "ShoalofFishesSmall"
-    Amount: 10
-    Color: "1, 1.0, 0.0"
-    AllowInWater: true
-    DelayMinMax:
-    - 0
-    - 1
-    Period: "Always"
+    Random:
+      - Name: GlidingOverseer                    # Gliding Overseer using Drone AI and cannot be set up per biome
+        DronesMinMax: [ 1, 3 ]  
+        Faction: Alien
+        CenterX: 0                                     # Does not need a RADIUS set up. Will roam the whole planet. (Hardcoded)
+
+
+# ==============================================================
+# Pole
+
+# Water
+# ShallowWater
+# Shore
+
+# Oasis
+# Flowers
+# FlowersEdge
+# Plantation
+
+# DustBowl
+# SandDrift
+# Dunes
+# Sand
+
+# Technical_Height
+
+# Plateau
+# LowMountains
+# LowMountains_1
+# Mountains
+
+# Nest
+# LargeCrater
+
+# Wadi
+# Plains
+# =============================================================
+
+SpawnRateZones:
+   # - SpawnAt: [TS_Planet]    #'Peaceful' zone
+     # Radius: 400
+     # RadiusRandom: 100
+     # RateMultiplyerCenter: 0.0
+     # RateMultiplyerEdge: 1.0
+     # AffectEnemies: true
+     # Color: "0.0, 1.0, 0.0, 0.7"
+
 SpawnZones:
-- SpawnAt:
-  - "Wreckage"
-  - "CrashedShip"
-  - "Junksite"
-  - "JunkT2"
-  - "JunkT1"
-  - "Ruins"
-  Radius: 175
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  Color: "1.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "ScraperDronesBlue"
-    - "ScraperDronesArmy"
-    Biomes:
-    - "Any"
-    Amount: 25
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-  - Names:
-    - "ScraperDronesBlue"
-    - "ScraperDronesArmy"
-    Biomes:
-    - "Any"
-    Amount: 25
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-  - Names:
-    - "ScraperDronesBlue"
-    - "ScraperDronesArmy"
-    Biomes:
-    - "Any"
-    Amount: 25
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
+   - SpawnAt: [Wreckage, CrashedShip, Junksite, JunkT2, JunkT1, Ruins]
+   #  BiomesExcluded: [ LowMountains, LowMountains_1, Mountains ]
+     Radius: 175
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "1.0, 1.0, 1.0, 1.0"
+  #   SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [-1, -1]
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [-1, -1]
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+### Creatures
+CreatureSpawning:
+
+    - Biomes: [Crashsite] 
+      Entities: 
+       - Name: ScraperDronesMixed
+         Period: Always
+         Amount: 10
+         DelayMinMax: [0, 1]
+         Color: "0, 0, 1.0"
+       - Name: CaveWormsGrey
+         Period: Always
+         Amount: 15
+         DelayMinMax: [0, 1]
+         Color: "0, 0, 1.0"
+      
+    - Biomes: [Nest] 
+      Entities:
+        - Name: Spiders03     
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+          Color: "1.0, 1.0, 0.3"
+        - Name: Spiders02   
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+          Color: "1.0, 1.0, 0.7"
+
+    - Biomes: [LargeCrater]
+      Entities:
+        # - Name: AlienBugs01
+          # Period: Day
+          # Amount: 12
+          # DelayMinMax: [20, 24]
+        - Name: Otyughs
+          Period: Night
+          Amount: 12
+          DelayMinMax: [0, 1]
+        - Name: CaveWormsGrey
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+
+    - Biomes: [Wadi]
+      Entities:
+        - Name: CaveWormsGrey
+          Period: Always
+          Amount: 8
+          DelayMinMax: [0, 1]
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 8
+          DelayMinMax: [0, 1] 
+          
+    - Biomes: [Oasis, Shore]
+      Entities:
+        - Name: Slimes
+          Period: Always
+          Amount: 20
+          Color: "1.0, 1.0, 0"
+          DelayMinMax: [20, 24]
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+        - Name: Spiders02
+          Period: Night
+          Amount: 8
+          DelayMinMax: [0, 1]
+        - Name: RipperDogsWildGroup
+          Period: Day
+          Amount: 15
+          DelayMinMax: [0, 1]
+
+    - Biomes: [Flowers, FlowersEdge, Plantation]
+      Entities:
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+        - Name: Spiders02
+          Period: Night
+          Amount: 20
+          DelayMinMax: [0, 2]
+        - Name: RipperDogsWildGroup
+          Period: Day
+          Amount: 60
+          DelayMinMax: [0, 1]
+
+    - Biomes: [Dunes, Sand, Plains, Plateau, DustBowl]
+      Entities:
+        - Name: WormDesertHerd  
+          Period: Always
+          Amount: 6
+          DelayMinMax: [0, 4]
+        - Name: WormDesertLargeHerd 
+          Period: Always
+          Amount: 6
+          DelayMinMax: [0, 4]
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 8
+          DelayMinMax: [0, 4]
+        - Name: Otyughs 
+          Period: Day
+          Amount: 10
+          DelayMinMax: [0, 4]
+          
+    - Biomes: [LowMountains, LowMountains_1, SandDrift]
+      Entities:
+        - Name: CaveWormsGrey
+          Period: Always
+          Amount: 15
+          DelayMinMax: [0, 4]
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 6
+          DelayMinMax: [0, 4]
+          
+    # - Biomes: [Dunes, Sand, Plains, Plateau, DustBowl, SandDrift]
+      # Entities:
+        # - Name: GlidingOverseers
+          # Period: Always
+          # Amount: 10
+          # DelayMinMax: [0, 4]
+
+    - Biomes: [Water, ShallowWater]
+      Entities: 
+        - Name: ShoalofFishesSmall
+          Period: Always
+          Amount: 10
+          AllowInWater: true
+          DelayMinMax: [0, 1]
+          Color: "1, 1.0, 0.0" 

@@ -1,1454 +1,1499 @@
-PlayfieldType: "Planet"
-PlanetType: "TemperatePrairie"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+Description: |
+  [c][fbff00]\u6CE8\u610F\uFF1A\u8FD9\u662F\u4E00\u6B21\u5168\u5C40\u5E7F\u64AD\uFF01[-][/c]
+  \u6240\u6709\u5F80\u8FD4 Omicron \u884C\u661F\u7684\u4EA4\u901A\uFF0C\u5982\u65E0\u7279\u522B\u8BB8\u53EF\uFF0C\u5747\u6682\u505C\uFF0C\u76F4\u81F3\u53E6\u884C\u901A\u77E5\u3002
+
+  \u6240\u6709\u4EBA\u5458\u5FC5\u987B\u5728 Omicron \u63A7\u5236\u7AD9\u5411\u7BA1\u7406\u90E8\u95E8\u767B\u8BB0\uFF01
+
+# PlanetClass: Temperate
+PlanetType: TemperatePrairie
+PlayfieldType: Planet
+# PlayfieldType: Moon   # For starter
+
+# ==============================================================
+# Special parameters:
+# ==============================================================
+
+AllowHV: False                  # Dis-allow HVs to enter/spawn in this playfield, default is True
+AllowSV: False                  # Dis-allow SVs to enter/spawn in this playfield, default is True
+AllowCV: False                  # Dis-allow CVs to enter/spawn in this playfield, default is True
+#AllowBA: False                  # Dis-allow BAs to enter/spawn in this playfield, default is True
+
+#AllowMaxCPUTierBA: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
+#AllowMaxCPUTierSV: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
+#AllowMaxCPUTierHV: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
+#AllowMaxCPUTierCV: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
+
+# RestrictToOrigin: Human         # Only players of the defined origin are allowed to enter the playfield
+
+#DenyLeaveSV: True               #Denies player to leave the planet in an SV
+#DenyLeaveCV: True               #Denies player to leave the planet in an CV
+#DenyLeaveHV: True               #Denies player to leave the planet in an HV
+
+#AllowBlueprintSV: True         # Dis-allow to spawn SV Blueprint in this playfield, default is True
+#AllowBlueprintCV: False         # Dis-allow to spawn CV Blueprint in this playfield, default is True
+#AllowBlueprintBA: False         # Dis-allow to spawn BA Blueprint in this playfield, default is True
+#AllowBlueprintHV: True         # Dis-allow to spawn HV Blueprint in this playfield, default is True
+
+#AllowBPFactory: False           #Will deny adding a BP to the factory or opening the factory; does not prevent opening the BP Libary
+
+# ==============================================================
+
+Seed: 135711                    # Integer [1, 999999] If set overwrites main Seed 
+UseFixed: True  			   	   # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
+UseRandom: True				   # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
+#IndestructibleTerrain: True     # If set to True terrain on this playfield will be indestructible
+
+# ==============================================================
 Difficulty: 2
-SunFlare: "EnvironmentalEffects/SunFlareBlue"
-SpecialEffectsLocal:
-- Name: "DandelionsFew"
-  MaxHeight: 10
-  Time: "Day"
-  Biome:
-  - "Grassland"
-  - "ColdPlains"
-- Name: "ButterfliesFew"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Grassland"
-- Name: "Pollen"
-  MaxHeight: 10
-  Time: "Day"
-  Biome:
-  - "Savanna"
-  - "SavannaEdge"
-  - "DustBowl"
-- Name: "Mosquitos"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Savanna"
-  - "SavannaEdge"
-  - "DustBowl"
-  - "Marsh"
-  - "Swamp"
-  - "WaterSwamp"
-  - "Water"
-- Name: "ButterfliesBlue"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Forest"
-  - "Marsh"
-- Name: "Dragonflies"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Marsh"
-  - "Swamp"
-  - "WaterSwamp"
-  - "WaterSwamp_1"
-  - "Water"
-  - "ShallowWater"
-- Name: "FireFliesOrange"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Marsh"
-  - "Forest"
-  - "DeepForest"
-- Name: "FireFliesRed"
-  MaxHeight: 15
-  Time: "Night"
-  Biome:
-  - "Marsh"
-  - "Swamp"
-  - "WaterSwamp"
-- Name: "Moths"
-  MaxHeight: 15
-  Time: "Night"
-  Biome:
-  - "DeepForest"
-  - "Savanna"
-  - "SavannaEdge"
-  - "Grassland"
-SpecialEffectsGlobal:
-- Name: "Clear"
-  InitialDelay: 0
-  Delay: 5
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "CloudsLight"
-  InitialDelay: 6
-  Delay: 6
-  Lifetime: 500
-  Type: "Weather"
-- Name: "CloudsMedium"
-  InitialDelay: 12
-  Delay: 6
-  Lifetime: 500
-  Type: "Weather"
-- Name: "Wind"
-  InitialDelay: 48
-  Delay: 12
-  Lifetime: 600
-  Type: "Weather"
-- Name: "Storm"
-  InitialDelay: 72
-  Delay: 24
-  Lifetime: 600
-  Type: "Weather"
-- Name: "BirdFlocksCrows"
-  SpawnY: 30
-  Time: "Day"
-  Biome:
-  - "Any"
-  InitialDelay: 1
-  Delay: 4
-  Lifetime: 600
-AtmosphereColor: "0.57, 0.71, 0.85"
-OrbitUsesLightColor: true
+
+LandClaimZone: Device
+
+
+OrbitUsesLightColor: True  # ========== Needed for planet looks, otherwise too blue. (Planet was built for K-class star)
+
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.57, 0.71, 0.85"   # could be brighter
+
 SkyColor: "1, 1.2, 0.76"
+
 SkyHorizonColor: "1, 0.43, 0.1"
+
+# Light
+DayLightIntensity: 1.375
+NightLightIntensity: 0.55
+
 LightZenithColor: "1.4,0.90,0.6"
 LightHorizonColor: "0.91, 0.53, 0"
 NightLightColor: "0.78, 0.78, 1"
+
+DayShadowStrength: 1
+NightShadowStrength: 1
+
+# Fog
+# AtmosphereFog: 0.35
+FogCloudIntensity: 0.8
+# GroundFogIntensity: 0
+# GroundFogHeight: 0
+
+FogColor: "1.0, 1.0, 1.0"
+
+# Clouds and Wind
+CloudsDensity: 0.3
+CloudsSharpness: 0.35
+CloudsBrightness: 0.7
+CloudsOpacity: 0.7
+
 CloudsZenithColor: "0.93, 0.98, 1.1"
 CloudsHorizonColor: "1, 0.3, 0.1"
 CloudsNightZenithColor: "0.04, 0.041, 0.065"
 CloudsNightHorizonColor: "0.04, 0.041, 0.065"
-CloudsOpacity: 0.7
-FogCloudIntensity: 0.8
-DayLightIntensity: 1.375
-NightLightIntensity: 0.55
-DayShadowStrength: 1
-NightShadowStrength: 1
-CloudsDensity: 0.3
-CloudsSharpness: 0.35
-CloudsBrightness: 0.7
+
 WindSpeed: 3
-FogColor: "1.0, 1.0, 1.0"
-Description: "[c][fbff00]\u6CE8\u610F\u3002\u8FD9\u662F\u4E00\u6B21\u5168\u4F53\u5E7F\u64AD\u547C\u53EB\uFF01[-][/c]\n\u6240\u6709\u672A\u7ECF\u7279\u522B\u8BB8\u53EF\u7684\u5F80\u8FD4\u4E8E\u884C\u661FOmicron\u7684\u8FD0\u8F93\u5C06\u88AB\u6682\u505C\uFF0C\u76F4\u81F3\u53E6\u884C\u901A\u77E5\u3002\n\n\u6240\u6709\u4EBA\u5458\u5FC5\u987B\u5728Omicron\u63A7\u5236\u7AD9\u5411\u7BA1\u7406\u90E8\u95E8\u767B\u8BB0\uFF01"
-Seed: 135711
-PlanetClass: "TemperatePrairie"
-UseFixed: true
-UseRandom: true
-LandClaimZone: "Device"
+
+# Special Effects 
+SpecialEffectsLocal:
+
+  - Name: DandelionsFew
+    Biome: [ Grassland, ColdPlains ]
+    Time: Day
+    MaxHeight: 10
+  - Name: ButterfliesFew
+    Biome: [ Grassland ]
+    Time: Day
+    MaxHeight: 15
+  - Name: Pollen
+    Biome: [ Savanna, SavannaEdge, DustBowl ]  
+    Time: Day
+    MaxHeight: 10
+  - Name: Mosquitos
+    Biome: [ Savanna, SavannaEdge, DustBowl, Marsh, Swamp, WaterSwamp, Water ]  
+    Time: Day
+    MaxHeight: 15
+  - Name: ButterfliesBlue
+    Biome: [ Forest, Marsh ]
+    Time: Day
+    MaxHeight: 15
+  - Name: Dragonflies
+    Biome: [ Marsh, Swamp, WaterSwamp, WaterSwamp_1, Water, ShallowWater ]
+    Time: Day
+    MaxHeight: 15
+
+  - Name: FireFliesOrange
+    Biome: [ Marsh, Forest, DeepForest]
+    Time: Day
+    MaxHeight: 15
+
+  - Name: FireFliesRed
+    Biome: [ Marsh, Swamp, WaterSwamp]
+    Time: Night
+    MaxHeight: 15
+  - Name: Moths
+    Biome: [ DeepForest, Savanna, SavannaEdge, Grassland]
+    Time: Night
+    MaxHeight: 15
+
+
+SpecialEffectsGlobal:
+# Weather
+
+
+    # Main weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 5
+    Lifetime: 1200 # Duration: 20 minutes
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 6
+    Delay: 6
+    Lifetime: 500
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 12
+    Delay: 6
+    Lifetime: 500
+
+
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 48
+    Delay: 12
+    Lifetime: 600
+
+  # - Name: RainMedium
+    # Type: Weather
+    # InitialDelay: 48
+    # Delay: 12
+    # Lifetime: 600
+  # - Name: RainHeavy
+    # Type: Weather
+    # InitialDelay: 72
+    # Delay: 24
+    # Lifetime: 600
+
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 72
+    Delay: 24
+    Lifetime: 600
+
+# Global Effect
+  - Name: BirdFlocksCrows
+    Biome: [ Any ]
+    Time: Day
+    InitialDelay: 1
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 100
+    SpawnY: 30
+    Struct: True
+
+# ==============================================================
+
+### Resource Deposits
 RandomResources:
-- Name: "CarbonResource"
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 6
-  - 10
-  DepthMinMax:
-  - 6
-  - 10
-  DroneProb: 0.2
-  Biome:
-  - "LowMountains"
-  - "Mountains"
-  - "HighMountains"
-  - "Swamp"
-  - "Grassland"
-- Name: "IronResource"
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 5
-  - 7
-  DepthMinMax:
-  - 0
-  - 3
-  DroneProb: 0.2
-  Biome:
-  - "Grassland"
-  - "ColdPlains"
-  - "DustBowl"
-  - "Marsh"
-  - "Swamp"
-- Name: "CopperResource"
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 4
-  - 6
-  DepthMinMax:
-  - 0
-  - 3
-  DroneProb: 0.3
-  Biome:
-  - "Forest"
-  - "DeepForest"
-  - "Marsh"
-  - "Swamp"
-- Name: "SiliconResource"
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 4
-  - 6
-  DepthMinMax:
-  - 0
-  - 3
-  DroneProb: 0.3
-  Biome:
-  - "Savanna"
-  - "SavannaEdge"
-  - "Tundra"
-  - "Sand"
-  - "DustBowl"
-- Name: "PromethiumResource"
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 3
-  - 5
-  DepthMinMax:
-  - 0
-  - 1
-  DistTypeCylinder:
-    MaxRadius: 8
-    YVariance: 15
-  DroneProb: 0.8
-  Biome:
-  - "LowMountains"
-  - "Mountains"
-  - "HighMountains"
-  - "Glacier"
-  - "GlacierSnow"
-- Name: "GoldResource"
-  CountMinMax:
-  - 1
-  - 1
-  SizeMinMax:
-  - 2
-  - 2
-  DepthMinMax:
-  - 0
-  - 1
-  DistTypeCylinder:
-    MaxRadius: 8
-    YVariance: 15
-  Biome:
-  - "LowMountains"
-  - "Mountains"
-  - "HighMountains"
-  - "Glacier"
-  - "GlacierSnow"
+# T0
+# Carbon: normal, medium
+    - Name: CarbonResource
+      Biome: [ LowMountains, Mountains, HighMountains, Swamp, Grassland ]
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 6, 10 ]
+      DepthMinMax: [ 6, 10 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+#T1
+    - Name: IronResource
+      Biome: [ Grassland, ColdPlains, DustBowl, Marsh, Swamp ]
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 5, 7 ]
+      DepthMinMax: [ 0, 3 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+
+    - Name: CopperResource
+      Biome: [ Forest, DeepForest, Marsh, Swamp ]
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 0, 3 ]
+      DroneProb: 0.3
+
+    - Name: SiliconResource
+      Biome: [ Savanna, SavannaEdge, Tundra, Sand, DustBowl ]
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 0, 3 ]
+      DroneProb: 0.3
+#Special
+    - Name: PromethiumResource
+      Biome: [ LowMountains, Mountains, HighMountains, Glacier, GlacierSnow ]
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 3, 5 ]
+      DepthMinMax: [ 0, 1 ]
+      DroneProb: 0.8
+      DistTypeCylinder:
+        MaxRadius: 8
+        YVariance: 15 
+        
+    - Name: GoldResource  # Useful, if you miss the Oasis biome.
+      Biome: [ LowMountains, Mountains, HighMountains, Glacier, GlacierSnow ]
+      CountMinMax: [ 1, 1 ]
+      SizeMinMax: [ 2, 2 ]      # 2 => 20 ore
+      DepthMinMax: [ 0, 1 ]
+      DroneProb: 0.0
+      DistTypeCylinder:
+        MaxRadius: 8
+        YVariance: 15 
+        
+### Resource Asteroids
 AsteroidResources:
-- Name: "IronResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "CopperResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "SiliconResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
-- Name: "PromethiumResource"
-  Threshold: 0.2
-  Amount: 0.2
-  InitialDelay: -1
-  Delay: -1
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+
+### POIs
 POIs:
-  Random:
-  - GroupName: "NullPOI"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    SpawnPOINear:
-    - "START"
-    SpawnPOINearRange:
-    - 80
-    - 10
-  - GroupName: "StoryTalonSettlementOmicron"
-    Faction: "Talon"
-    IsImportant: true
-    AuxiliaryPOIs:
-    - "TalonStoneHouse"
-    - "TalonStoneDefense"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "StorySanctuaryOmicron"
-    Faction: "DESC"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    BiomesExcluded:
-    - "PolarSnow"
-    - "TundraEdge"
-    - "RadiatedFog"
-  - GroupName: "StoryUCHHeidelbergOmicron"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 2
-      Max: 2
-    DronesMinMax:
-    - 2
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "StorySanctuaryOmicron"
-    SpawnPOIAvoid:
-    - "StoryTalonSettlementOmicron"
-    - "BAStoryCryoStation"
-    - "StoryDmgComStation"
-    SpawnPOINearRange:
-    - 2500
-    - 3500
-    SpawnPOIAvoidDistance: 1300
-  - GroupName: "StoryBurialChamberOmicron"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "Music"
-      Value: "lava"
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+3"
-    SpawnPOINear:
-    - "StorySanctuaryOmicron"
-    SpawnPOIAvoid:
-    - "UCHHeidelberg"
-    - "StoryTalonSettlementOmicron"
-    - "BAStoryCryoStation"
-    SpawnPOINearRange:
-    - 2500
-    - 3500
-    SpawnPOIAvoidDistance: 1000
-    BiomesExcluded:
-    - "PolarSnow"
-    - "TundraEdge"
-  - GroupName: "BAStoryCryoStation"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    - Key: "SI"
-      Value: "Off"
-    LevelMod: "+4"
-    SpawnPOINear:
-    - "StorySanctuaryOmicron"
-    SpawnPOINearRange:
-    - 2500
-    - 3500
-  - GroupName: "StoryMauraudersOmicron"
-    Faction: "Alien"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    - Key: "SI"
-      Value: "Off"
-    LevelMod: "+4"
-    SpawnPOIAvoid:
-    - "StoryDmgComStation"
-    - "StorySanctuaryOmicron"
-    - "BAStoryCryoStation"
-    - "BurialChamberStory"
-    - "UCHHeidelberg"
-    - "StoryTalonSettlementOmicron"
-    SpawnPOIAvoidDistance: 2000
-  - GroupName: "StoryOmicronHV1"
-    Faction: "None"
-    Type: "HV_Player"
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    SpawnPOINear:
-    - "StorySanctuaryOmicron"
-    SpawnPOINearRange:
-    - 50
-    - 150
-  - GroupName: "StoryOmicronSV1"
-    Faction: "None"
-    Type: "SV_Player"
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    SpawnPOINear:
-    - "StorySanctuaryOmicron"
-    SpawnPOINearRange:
-    - 50
-    - 150
-  - GroupName: "TalonStoneMain"
-    Faction: "Talon"
-    IsCommandCenter: true
-    IsImportant: true
-    AuxiliaryPOIs:
-    - "TalonStoneDefense"
-    Count:
-      Min: 1
-      Max: 4
-    CountMinMax:
-    - 1
-    - 4
-    Properties:
-    - Key: "Music"
-      Value: "Ghost"
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+3"
-    SpawnPOIAvoid:
-    - "StoryTalonSettlementOmicron"
-    - "StorySanctuaryOmicron"
-    - "UCHHeidelberg"
-    SpawnPOIAvoidDistance: 1200
-  - GroupName: "TalonStonePortal"
-    Faction: "Talon"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-  - GroupName: "TalonStoneMiningOmicron"
-    Faction: "Talon"
-    IsCommandCenter: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "Music"
-      Value: "Ghost"
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+3"
-    SpawnPOIAvoid:
-    - "StoryTalonSettlementOmicron"
-    - "StorySanctuaryOmicron"
-    - "UCHHeidelberg"
-    - "TalonStoneMain"
-    SpawnPOIAvoidDistance: 800
-  - GroupName: "TalonStone"
-    Faction: "Talon"
-    IsCommandCenter: true
-    IsImportant: true
-    AuxiliaryPOIs:
-    - "TalonStoneHouse"
-    Count:
-      Min: 5
-      Max: 10
-    CountMinMax:
-    - 5
-    - 10
-    Properties:
-    - Key: "Music"
-      Value: "Ghost"
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+3"
-    SpawnPOIAvoid:
-    - "StoryTalonSettlementOmicron"
-    - "StorySanctuaryOmicron"
-    - "UCHHeidelberg"
-    - "TalonStoneMain"
-    SpawnPOIAvoidDistance: 800
-  - GroupName: "TalonStoneFarm"
-    Faction: "Talon"
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 8
-    CountMinMax:
-    - 2
-    - 8
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+4"
-  - GroupName: "TalonStoneHouse"
-    Faction: "Talon"
-    IsAuxPOI: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+4"
-    SpawnPOINearRange:
-    - 120
-    - 300
-  - GroupName: "TalonStoneDefense"
-    Faction: "Talon"
-    IsAuxPOI: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+5"
-    SpawnPOINearRange:
-    - 300
-    - 450
-  - GroupName: "TalonStoneDefenseDestroyed"
-    Faction: "Talon"
-    Count:
-      Min: 1
-      Max: 3
-    CountMinMax:
-    - 1
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+5"
-    SpawnPOINear:
-    - "StoryTalonSettlementOmicron"
-    SpawnPOINearRange:
-    - 200
-    - 1000
-  - GroupName: "TalonWaterTemple"
-    Faction: "Talon"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    - Key: "SI"
-      Value: "Off"
-    LevelMod: "+4"
-    PlaceAt: "OnWater"
-    Biome:
-    - "Water"
-    - "DeepWater"
-    - "ShallowWater"
-  - GroupName: "TalonWaterVillage"
-    Faction: "Talon"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 3
-    CountMinMax:
-    - 1
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    - Key: "SI"
-      Value: "Off"
-    LevelMod: "+4"
-    PlaceAt: "OnWater"
-    Biome:
-    - "Water"
-    - "DeepWater"
-    - "ShallowWater"
-  - GroupName: "TribalBurialChamber"
-    Faction: "Alien"
-    Count:
-      Min: 1
-      Max: 4
-    CountMinMax:
-    - 1
-    - 4
-    Properties:
-    - Key: "Music"
-      Value: "lava"
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    LevelMod: "+4"
-DroneBaseSetup:
+    Random:
+
+       # ======================= CRASHSITE AND START AREA ======================= 
+        - GroupName: NullPOI
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [START]
+          SpawnPOINearDistance: 10
+              
+
+## Story POIs  (Admin Cores!)
+
+        - GroupName: StoryTalonSettlementOmicron   # Old: TribalVillageWoodStory; Story POI
+          IsImportant: True
+          Faction: Talon  
+          CountMinMax: [ 1, 1 ] 
+          AuxiliaryPOIs: [TalonStoneHouse,TalonStoneDefense]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+              
+        - GroupName: StorySanctuaryOmicron # Old: PolarisSanctuaryStory; Story POI
+          IsImportant: True
+          Faction: DESC 
+          BiomesExcluded: [ PolarSnow, TundraEdge, RadiatedFog ] 
+          CountMinMax: [ 1, 1 ] 
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        # - GroupName: StoryDmgComStation    #StoryPOI
+          # IsImportant: True
+          # Faction: None
+          # Territory: False
+       # #   Biome: [ Forest, Swamp, Marsh, Grassland ] 
+          # CountMinMax: [ 1, 1 ]
+          # SpawnPOINear: [StoryTalonSettlementOmicron] 
+          # SpawnPOINearRange: [1000, 2500]
+      # #    SpawnResource: ["IronResource:1-1","SiliconResource:1-1","CopperResource:1-1"] 
+       # #   SpawnResourceRange: [150, 400]
+          # InitPower: false
+          # Properties: 
+            # - Key: MapMarker 
+              # Value: Neutral  
+            # - Key: RegenAfter
+              # Value: 720
+
+        - GroupName: StoryUCHHeidelbergOmicron  # Old: UCHHeidelberg  
+          IsImportant: True
+          Faction: None 
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1
+          DronesMinMax: [ 2, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [StoryTalonSettlementOmicron, BAStoryCryoStation, StoryDmgComStation ]
+          SpawnPOIAvoidDistance: 1300
+          SpawnPOINear: [StorySanctuaryOmicron] 
+          SpawnPOINearRange: [2500, 3500] 
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: StoryBurialChamberOmicron # Old: BurialChamberStory 
+          Faction: Alien  
+          BiomesExcluded: [ PolarSnow, TundraEdge] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +3
+          SpawnPOIAvoid: [UCHHeidelberg, StoryTalonSettlementOmicron, BAStoryCryoStation]
+          SpawnPOIAvoidDistance: 1000
+          SpawnPOINear: [StorySanctuaryOmicron] 
+          SpawnPOINearRange: [2500, 3500] 
+          Properties: 
+            - Key: Music
+              Value: lava
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: BAStoryCryoStation   #New: StoryCryoLabOmicron
+          Faction: Alien
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +4
+          # SpawnPOIAvoid: [StoryDmgComStation]
+          # SpawnPOIAvoidDistance: 1200
+          SpawnPOINear: [StorySanctuaryOmicron] 
+          SpawnPOINearRange: [2500, 3500] 
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720 
+            - Key: SI
+              Value: Off  
+
+        - GroupName: StoryMauraudersOmicron 
+          Faction: Alien
+          IsImportant: True
+          CountMinMax: [ 1, 1 ] 
+          LevelMod: +4
+          SpawnPOIAvoid: [StoryDmgComStation, StorySanctuaryOmicron, BAStoryCryoStation, BurialChamberStory, UCHHeidelberg, StoryTalonSettlementOmicron]
+          SpawnPOIAvoidDistance: 2000 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+            - Key: SI
+              Value: Off  
+
+# Story Supplemental Vessels
+
+        - GroupName: StoryOmicronHV1             
+          Faction: None   
+          Type: HV_Player  
+          CountMinMax: [ 1, 2 ]
+          InitPower: False
+          SpawnPOINear: [StorySanctuaryOmicron]
+          SpawnPOINearRange: [50, 150]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+              
+        # - GroupName: StoryOmicronHV2             
+          # Faction: None   
+          # Type: HV_Player  
+          # CountMinMax: [ 1, 2 ]
+          # InitPower: False
+          # SpawnPOINear: [StorySanctuaryOmicron]
+          # SpawnPOINearRange: [50, 150]
+          # Properties: 
+            # - Key: MapMarker 
+              # Value: Neutral  
+              
+        # - GroupName: StoryOmicronHV3             
+          # Faction: None   
+          # Type: HV_Player  
+          # CountMinMax: [ 1, 2 ]
+          # InitPower: False 
+          # SpawnPOINear: [StorySanctuaryOmicron]
+          # SpawnPOINearRange: [50, 150]
+          # Properties: 
+            # - Key: MapMarker 
+              # Value: Neutral  
+              
+        - GroupName: StoryOmicronSV1             
+          Faction: None   
+          Type: SV_Player  
+          CountMinMax: [ 1, 2 ]
+          InitPower: False
+          SpawnPOINear: [StorySanctuaryOmicron]
+          SpawnPOINearRange: [50, 150]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+
+# ================   Talon Settlement   ============
+
+        - GroupName: TalonStoneMain 
+          Faction: Talon  
+         # Biome: [ Forest, DeepForest, Swamp, Grassland]
+          IsImportant: True
+          IsCommandCenter: True
+          CountMinMax: [ 1, 4 ]
+          LevelMod: +3
+          SpawnPOIAvoid: [ StoryTalonSettlementOmicron, StorySanctuaryOmicron, UCHHeidelberg ]
+          SpawnPOIAvoidDistance: 1200  
+          AuxiliaryPOIs: [TalonStoneDefense]
+          Properties:
+            - Key: Music
+              Value: Ghost
+            - Key: RegenAfter
+              Value: 720
+
+# ================  Single  POI ============
+
+        - GroupName: TalonStonePortal     #Important for later access to Talon'ar planet!
+          IsImportant: True
+          Faction: Talon  
+          CountMinMax: [ 1, 1 ]  
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+              
+        - GroupName: TalonStoneMiningOmicron        #   SPAWN ANCHOR
+          Faction: Talon  
+       #   Biome: [ Forest, DeepForest, Swamp, Grassland]
+          IsImportant: True
+          IsCommandCenter: True
+          CountMinMax: [ 1, 2 ]
+          LevelMod: +3
+          SpawnPOIAvoid: [ StoryTalonSettlementOmicron, StorySanctuaryOmicron, UCHHeidelberg, TalonStoneMain ]          
+        #  AuxiliaryPOIs: [TalonStoneHouse,TalonStoneDefense]
+          SpawnPOIAvoidDistance: 800  #1500
+          Properties:
+            - Key: Music
+              Value: Ghost
+            - Key: RegenAfter
+              Value: 720
+
+# ================   Farms & Working ============
+
+        - GroupName: TalonStone        
+          Faction: Talon  
+        #  Biome: [ Forest, DeepForest, Swamp, Grassland]
+          IsImportant: True
+          IsCommandCenter: True
+          CountMinMax: [ 5, 10 ]
+          LevelMod: +3
+          SpawnPOIAvoid: [ StoryTalonSettlementOmicron, StorySanctuaryOmicron, UCHHeidelberg, TalonStoneMain ]          
+          AuxiliaryPOIs: [TalonStoneHouse]
+          SpawnPOIAvoidDistance: 800  #1500
+          Properties:
+            - Key: Music
+              Value: Ghost
+            - Key: RegenAfter
+              Value: 720              
+              
+        - GroupName: TalonStoneFarm
+          IsScalingCount: True
+          Faction: Talon
+          CountMinMax: [ 2, 8 ]
+          LevelMod: +4
+      #    AuxiliaryPOIs: [TalonStoneHouse]
+          Properties:
+            - Key: RegenAfter
+              Value: 720   
+
+# === Housing AUX
+
+        - GroupName: TalonStoneHouse 
+          Faction: Talon
+          CountMinMax: [ 1, 2 ] 
+          LevelMod: +4
+          SpawnPOINearRange: [120, 300]  #100,110
+          IsAuxPOI: True 
+          Properties:
+            - Key: RegenAfter
+              Value: 720   
+
+        - GroupName: TalonStoneDefense 
+          Faction: Talon  
+          CountMinMax: [ 1, 2 ]
+          LevelMod: +5 
+          SpawnPOINearRange: [300, 450]
+          IsAuxPOI: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+              
+
+# =============== Defenses 
+    
+              
+        - GroupName: TalonStoneDefenseDestroyed
+     #     IsScalingCount: True
+          Faction: Talon  
+          CountMinMax: [ 1, 3 ]
+          LevelMod: +5
+          SpawnPOINear: [StoryTalonSettlementOmicron] 
+          SpawnPOINearRange: [200, 1000]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+              
+# Water-based POIs
+# VERY large POI (single)
+              
+        - GroupName: TalonWaterTemple
+          Faction: Talon  
+          Biome: [Water, DeepWater, ShallowWater]
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +4
+          PlaceAt: OnWater 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+            - Key: SI
+              Value: Off
+
+ # Water villages 
+
+        - GroupName: TalonWaterVillage
+          Faction: Talon  
+          Biome: [Water, DeepWater, ShallowWater]
+          CountMinMax: [ 1, 3 ]
+          IsScalingCount: True
+          LevelMod: +4
+          PlaceAt: OnWater 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+            - Key: SI
+              Value: Off
+              
+        # - GroupName: VillageStilt
+          # Faction: Talon
+          # CountMinMax: [ 1, 3 ]
+          # IsScalingCount: True
+       # #   Biome: [ Surf, Surf_1, Shore, GravelBeach, SwampShore, ShallowWater, ShallowWater_1, ShallowWaterLilies ]
+          # PlaceAt: OnWater 
+          # LevelMod: +4
+          # Properties: 
+            # - Key: SI
+              # Value: Off
+            # - Key: Music
+              # Value: JungleDepths
+            # - Key: RegenAfter
+              # Value: 720  
+    
+              
+        
+
+# ======================= Abandoned POI for Adventurers ======================
+# ============================================================================ 
+
+                                
+
+        - GroupName: TribalBurialChamber   
+          Faction: Alien   
+          CountMinMax: [ 1, 4 ] 
+          LevelMod: +4
+          Properties:
+            - Key: Music
+              Value: lava
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720 
+
+ 
+
+
+
+    Fixed:
+        # - Type: BA_Alien               
+          # Prefab: BAsm_TalonZiggurat2     
+          # Faction: Talon
+          # Mode: Survival                
+        # #  SubMode: Normal               
+          # Name: Settlement 1            
+          # Pos: [ -5834, 47, 2721 ]   
+          # Rot: [ 0, 0, 0 ]            
+          # InitPower: True               
+          
+        # - Type: BA_Alien               
+          # Faction: Talon
+          # Prefab: BAsm_TalonZiggurat2
+          # Mode: Survival                
+        # #  SubMode: Normal               
+          # Name: Settlement 2  
+          # Pos: [ -4026, 44, 2902 ]   
+          # Rot: [ 0, 0, 0 ]            
+          # InitPower: True               
+
+        # - Type: BA_Alien               
+          # Faction: Talon
+          # Prefab: BAsm_TalonZiggurat
+          # Mode: Survival                
+        # #  SubMode: Normal               
+          # Name: Settlement 2  
+          # Pos: [ -4011, 44, 2902 ]   
+          # Rot: [ 0, 0, 0 ]            
+          # InitPower: True               
+
+        # - Type: BA_Alien               
+          # Faction: Talon
+          # Prefab: BA_TalonMarket02
+          # Mode: Survival                
+        # #  SubMode: Normal               
+          # Name: Market
+          # Pos: [ -4013, 45, 2835 ]   
+          # Rot: [ 0, 180, 0 ]            
+          # InitPower: True               
+
+        # - Type: BA_Alien               
+          # Faction: Talon
+          # Prefab: BA_TalonStoragePit02
+          # Mode: Survival                
+        # #  SubMode: Normal               
+          # Name: Storehouse
+          # Pos: [ -4061, 44, 2843 ]   
+          # Rot: [ 0, 0, 0 ]            
+          # InitPower: True               
+
+
+
+    FixedPlayerStart:
+        # - Mode: Creative
+          # SubMode: Empty
+          # Armor: ArmorLight
+          # Pos: [ -1177, 37.6, 1452.6 ]
+          # RotY: 105   
+
+        # - Mode: Creative
+          # SubMode: Normal
+          # Armor: ArmorLight
+          # Pos: [-1114.4, 44.9, 1476 ]  
+          # RotY: 150   
+
+        # - Mode: Debug
+          # Armor: ArmorLight
+          # Pos: [ 0, 147, 0 ]
+          # RotY: 160 
+
+        # - Mode: Survival
+          # Spawn: EscapePod
+          # Pos: [ -350, 0 ]      # fixed x,z position of escape pod start      
+          # # Spawn: Structure
+          # Armor: ArmorMedium
+          # # PlayerArmor: ["ArmorMedium, ArmorLight, None, #FreshStart:ArmorHeavy"]     
+          # Status: [ "Food: 400, Health: 400", "Food: 250, Health: 250", "Food: 150, Health: 150", "#FreshStart:Food: 250, Health: 250" ]      # NEW
+          # Items: [ "SurvivalTool, PowerBar:2, Medikit04:3, Bandages:2, Flashlight, AntibioticOintment:2, SurvivalTent, MobileAirCon", "SurvivalTool, PowerBar:1, Medikit04:2, Bandages:1, Flashlight, AntibioticOintment:1, SurvivalTent, MobileAirCon", "SurvivalTool, PowerBar:1, Medikit04:1, Flashlight, SurvivalTent", "#FreshStart: SurvivalTool, Medikit04:1, Flashlight, SurvivalTent" ]
+
+
+
+# ==============================================================
+# ==============================================================
+### Drones
+
+DroneBaseSetup: 
+  # DroneBases:
+    # - DroneSetupID: DroneBaseZiraxStarter
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+        # - Name: DroneSmallFast01Rocket  
+          # Amount: Infinite
+          # Type: FighterDrone
+
+        # - Name: DroneTroopsTransport
+          # Amount: Infinite
+          # Type: TroopTransport
+
+        # - Name: ZiraxMinigun
+          # Amount: Infinite
+          # Type: GroundTroop
+
+        # - Name: ZiraxRocket
+          # Amount: Infinite
+          # Type: GroundTroop
+
+        # - Name: RipperDog
+          # Amount: Infinite
+          # Type: GroundTroop
+
+
   PlanetVessels:
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - -960
-      - 0
-      - 1049
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - 7832
-      - 0
-      - 136
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - 1208
-      - 0
-      - -3320
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - 6648
-      - 0
-      - 1496
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - 4024
-      - 0
-      - -2328
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - 7752
-      - 0
-      - -3352
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - -3576
-      - 0
-      - 1736
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - -8
-      - 0
-      - -1288
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - 3960
-      - 0
-      - -1250
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-  - Name: "TalonAirship"
-    Faction: "Talon"
-    LevelMod: "3"
-    FixedMaxSpeed: 10
-    DelayBeforeSelfDestruction: 300
-    IsRespawnAfterDestruction: true
-    RangePatrolTask:
-      Position3D:
-      - 2520
-      - 0
-      - 600
-      Radius: 500
-      DistToGround: 100
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "30"
-      Type: "FighterDrone"
-CreatureSpawning:
-- Biomes:
-  - "Forest"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 15
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-  - Name: "Spiders01"
-    Amount: 15
-    Color: "1.0, 1, 1"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Day"
-  - Name: "AlienBugs03"
-    Amount: 10
-    Color: "0.7, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "RaptorsNight"
-    Amount: 10
-    Color: "0.5, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "Triceratopses"
-    Amount: 15
-    Color: "0, 0.5, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-- Biomes:
-  - "DeepForest"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 15
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-  - Name: "Spiders01"
-    Amount: 15
-    Color: "1.0, 1, 1"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Day"
-  - Name: "AlienBugs03"
-    Amount: 10
-    Color: "0.7, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "Triceratopses"
-    Amount: 30
-    Color: "0, 0.5, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-- Biomes:
-  - "Marsh"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 40
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-  - Name: "Spiders01"
-    Amount: 15
-    Color: "1.0, 1, 1"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Day"
-  - Name: "AlienBugs03"
-    Amount: 10
-    Color: "0.7, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "RaptorsNight"
-    Amount: 10
-    Color: "0.5, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "Triceratopses"
-    Amount: 5
-    Color: "0, 0.5, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-- Biomes:
-  - "Swamp"
-  - "WaterSwamp"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 12
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "ShallowWater"
-  - "WaterSwamp_1"
-  Entities:
-  - Name: "Telluropods"
-    Amount: 75
-    Color: "1.0, 0.6, 0.0"
-    AllowInWater: true
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "Slimes"
-    Amount: 12
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-- Biomes:
-  - "Beach_1"
-  Entities:
-  - Name: "Telluropods"
-    Amount: 20
-    Color: "1.0, 0.6, 0.0"
-    AllowInWater: true
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "Savanna"
-  - "SavannaEdge"
-  Entities:
-  - Name: "RaptorHerd"
-    Amount: 35
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-  - Name: "RaptorsNight"
-    Amount: 20
-    Color: "0.5, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "AlienBugs04"
-    Amount: 10
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "Pangolins"
-    Amount: 15
-    Color: "0.2, 0.5, 0.9"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-- Biomes:
-  - "Sand"
-  Entities:
-  - Name: "RaptorHerd"
-    Amount: 10
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-  - Name: "RaptorsNight"
-    Amount: 10
-    Color: "0.5, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "AlienBugs04"
-    Amount: 25
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "Pangolins"
-    Amount: 5
-    Color: "0.2, 0.5, 0.9"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-- Biomes:
-  - "DustBowl"
-  Entities:
-  - Name: "Spiders01"
-    Amount: 15
-    Color: "1.0, 1, 1"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-  - Name: "AlienBugs01"
-    Amount: 10
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "LowMountains"
-  Entities:
-  - Name: "Spiders01"
-    Amount: 8
-    Color: "1.0, 1, 1"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Always"
-  - Name: "AlienBugs01"
-    Amount: 10
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "RaptorHerd"
-    Amount: 12
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-- Biomes:
-  - "Glacier"
-  - "GlacierSnow"
-  Entities:
-  - Name: "GolemsIce"
-    Amount: 8
-    Color: "1.0, 0.4, 0.4"
-    DelayMinMax:
-    - 20
-    - 24
-- Biomes:
-  - "Grassland"
-  Entities:
-  - Name: "ParasaursFew"
-    Amount: 25
-    Color: "0, 0, 1.0"
-    DelayMinMax:
-    - 6
-    - 8
-    Period: "Always"
-  - Name: "Pangolins"
-    Amount: 10
-    Color: "0.2, 0.5, 0.9"
-    DelayMinMax:
-    - 8
-    - 12
-    Period: "Day"
-  - Name: "AlienBugs01"
-    Amount: 20
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 6
-    - 8
-    Period: "Always"
-  - Name: "Spiders01few"
-    Amount: 5
-    Color: "1.0, 1, 1"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Day"
-  - Name: "Spiders01few"
-    Amount: 10
-    Color: "1.0, 1, 1"
-  - Name: "RaptorsNight"
-    Amount: 10
-    Color: "0.5, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-- Biomes:
-  - "ColdPlains"
-  Entities:
-  - Name: "LizardMuleHerd"
-    Amount: 10
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-  - Name: "Oviraptors"
-    Amount: 15
-    Color: "0.4, 0.2, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "RaptorsNight"
-    Amount: 20
-    Color: "0.5, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-- Biomes:
-  - "Tundra"
-  - "TundraEdge"
-  Entities:
-  - Name: "Oviraptors"
-    Amount: 15
-    Color: "0.4, 0.2, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "LizardMuleHerd"
-    Amount: 5
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-  - Name: "RaptorsNight"
-    Amount: 30
-    Color: "0.5, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-- Biomes:
-  - "PolarSnow"
-  Entities:
-  - Name: "SlimesWhite"
-    Amount: 10
-    Color: "1.0, 1.0, 0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "Oviraptors"
-    Amount: 10
-    Color: "0.4, 0.2, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "CaveWormWhiteHerd"
-    Amount: 6
-    Color: "1.0, 0, 0"
-    DelayMinMax:
-    - 20
-    - 24
-  - Name: "GolemsIce"
-    Amount: 3
-    Color: "1.0, 0.4, 0.4"
-    DelayMinMax:
-    - 20
-    - 24
-    Period: "Day"
+    - Name: TalonAirship #MainSettlement
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [-960, 0, 1049]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+    - Name: TalonAirship #Temple
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [7832, 0, 136]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+    - Name: TalonAirship    #Village 
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [1208, 0, -3320]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+    - Name: TalonAirship     #Village
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [6648, 0, 1496]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+    - Name: TalonAirship   #Village
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [4024, 0, -2328]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+    - Name: TalonAirship  #Portal
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [7752, 0, -3352]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+    - Name: TalonAirship   #Market
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [-3576, 0, 1736]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+          Type: FighterDrone 
+    - Name: TalonAirship #archery range
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [-8, 0, -1288]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+          Type: FighterDrone 
+    - Name: TalonAirship  #Market
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [3960, 0, -1250]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+          Type: FighterDrone 
+    - Name: TalonAirship #Stilt Village
+      Faction: Talon
+      LevelMod: 3
+      FixedMaxSpeed: 10 
+      PauseTimeOnStart: 0 
+      DelayBetweenRespawn: 0 
+      DelayBeforeSelfDestruction: 300 
+      IsRespawnAfterDestruction: True 
+      RangePatrolTask:
+        Position3D: [2520, 0, 600]  
+        Radius: 500 
+        DistToGround: 100  
+      Stock:
+        - Name: DroneSmallFast01Minigun 
+          Amount: 30 
+          Type: FighterDrone 
+          Type: FighterDrone 
+          
+# DroneSpawning:
+    # Random:
+      # - Name: DroneSmallFast01Minigun
+        # DronesMinMax: [ 9, 10 ]
+        # Faction: Talon
+       # # CenterX: 5
+        # POINameAsPositionRef: StorySanctuaryOmicron
+        # Radius: 6000                                    # [int] - Radius of the patrol area. ### Default: 1500m
+
+
+# ==============================================================
+# ==============================================================
+
 SpawnRateZones:
-- SpawnAt:
-  - "START"
-  Radius: 400
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
-- SpawnAt:
-  - "START"
-  Radius: 6000
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 1.0"
-- SpawnAt:
-  - "StoryTalonSettlementOmicron"
-  - "StorySanctuaryOmicron"
-  Radius: 200
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
-- SpawnAt:
-  - "StoryTalonSettlementOmicron"
-  Radius: 350
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
-- SpawnAt:
-  - "TalonStoneMain"
-  Radius: 600
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
-- SpawnAt:
-  - "TribalField"
-  - "XenuStarter"
-  - "TribalDefence"
-  Radius: 70
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
+
+     # =========== "marker zones" ==========
+   - SpawnAt: [START]                     # Just to mark the 'world zero point'. No effect.
+     Radius: 400
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1
+     RateMultiplyerEdge: 1
+     AffectEnemies: true
+     # AffectFriendly: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
+
+   - SpawnAt: [START]                   # To mark the range the main POI anchor (StoryDmgComStation) might spawn. No effect.
+     Radius: 6000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1
+     RateMultiplyerEdge: 1
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 1.0" 
+
+
+
+    # SpawnRateZones
+
+   # Keeping 'Civilisation' free from aggressive creatures  (All got shot)
+   - SpawnAt: [StoryTalonSettlementOmicron, StorySanctuaryOmicron]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     AffectEnemies: true
+     # AffectFriendly: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
+   - SpawnAt: [StoryTalonSettlementOmicron]
+     Radius: 350
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
+   - SpawnAt: [TalonStoneMain]
+     Radius: 600
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
+   - SpawnAt: [TribalField, XenuStarter, TribalDefence]
+     Radius: 70
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
+
 SpawnZones:
-- SpawnAt:
-  - "StorySanctuaryOmicron"
-  Radius: 280
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  Color: "1.0, 0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "Spiders01"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- SpawnAt:
-  - "StoryTalonSettlementOmicron"
-  - "BAStoryCryoStation"
-  - "StorySanctuaryOmicron"
-  - "UCHHeidelberg"
-  - "BurialChamberStory"
-  - "TalonStoneMain"
-  Radius: 280
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  Color: "1.0, 1, 0.3, 1.0"
-  Entities:
-  - Names:
-    - "Spiders02"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- SpawnAt:
-  - "StoryTalonSettlementOmicron"
-  - "BAStoryCryoStation"
-  - "StorySanctuaryOmicron"
-  - "UCHHeidelberg"
-  - "TalonStoneMain"
-  Radius: 380
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  Color: "1.0, 1, 0.3, 1.0"
-  Entities:
-  - Names:
-    - "Spiders03"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- SpawnAt:
-  - "StorySanctuaryOmicronSecretEntry"
-  - "WreckTeleporterStoryStart"
-  - "StoryTalonSettlementOmicron"
-  - "StorySanctuaryOmicron"
-  - "TalonStoneMain"
-  Radius: 400
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  Color: "1.0, 1, 0.3, 1.0"
-  Entities:
-  - Names:
-    - "Spiders01few"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- SpawnAt:
-  - "StorySanctuaryOmicron"
-  Radius: 1250
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  Color: "0.0, 0, 1.0, 1"
-  Entities:
-  - Names:
-    - "Spiders01few"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- SpawnAt:
-  - "TribalField"
-  - "TribalDefence"
-  Radius: 1250
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  Color: "0.0, 1, 0.0, 0.15"
-  Entities:
-  - Names:
-    - "Spiders01few"
-    DelayMinMax:
-    - 99
-    - 99
-    Period: "Always"
-- SpawnAt:
-  - "StoryTalonSettlementOmicron"
-  BiomesExcluded:
-  - "HighMountains"
-  - "Glacier"
-  - "GlacierSnow"
-  Radius: 8000
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.7
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0, 1.0, 0, 1.0"
-  Entities:
-  - Names:
-    - "TalonGuardianHerd"
-    Biomes:
-    - "Grassland"
-    - "Forest"
-    - "DeepForest"
-    - "Marsh"
-    - "Swamp"
-    - "WaterSwamp"
-    - "DustBowl"
-    Amount: 15
-    DelayMinMax:
-    - 200
-    - 240
-    Period: "Always"
-- SpawnAt:
-  - "RuinsTribalTower"
-  - "StoryTalonSettlementOmicron"
-  - "StoryTalonSettlementOmicron"
-  BiomesExcluded:
-  - "HighMountains"
-  - "Glacier"
-  - "GlacierSnow"
-  Radius: 1200
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.2
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0, 1.0, 0, 1.0"
-  Entities:
-  - Names:
-    - "TalonGuardianHerd"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - 200
-    - 240
-    Period: "Always"
-  - Names:
-    - "LizardMuleHerd"
-    Biomes:
-    - "Grassland"
-    - "Forest"
-    - "Marsh"
-    Amount: 80
-    DelayMinMax:
-    - 200
-    - 240
-    Period: "Always"
-- SpawnAt:
-  - "TribalField"
-  BiomesExcluded:
-  - "HighMountains"
-  - "Glacier"
-  - "GlacierSnow"
-  Radius: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0, 1.0, 0, 1.0"
-  Entities:
-  - Names:
-    - "TalonGuardianHerd"
-    Biomes:
-    - "Any"
-    Amount: 600
-    DelayMinMax:
-    - 200
-    - 240
-    Period: "Always"
-- SpawnAt:
-  - "JunkT1"
-  - "Wreckage"
-  Radius: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.3
-  Color: "0.0, 1.0, 1.0, 0.5"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    Amount: 300
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "AbandonedStarter"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 200
-  RadiusRandom: 50
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.3
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs03"
-    - "Spiders01"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "Ruins"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  - "RadiatedFog"
-  Radius: 500
-  RadiusRandom: 25
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.3
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "Spiders01"
-    Biomes:
-    - "Any"
-    Amount: 180
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
+
+
+
+     # ====================
+     # Comment in for testing- MARKER ZONES
+     # (To easily find story POI in the SSG  - - has no other function)
+     # ====================
+   - SpawnAt: [StorySanctuaryOmicron] 
+     Radius: 280
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 0, 0.0, 1.0"
+     Entities:
+       - Names: [Spiders01]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+
+   - SpawnAt: [ StoryTalonSettlementOmicron, BAStoryCryoStation, StorySanctuaryOmicron, UCHHeidelberg, BurialChamberStory, TalonStoneMain] 
+     Radius: 280
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [Spiders02]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+   - SpawnAt: [ StoryTalonSettlementOmicron, BAStoryCryoStation, StorySanctuaryOmicron, UCHHeidelberg, TalonStoneMain] 
+     Radius: 380
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [Spiders03]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+   - SpawnAt: [StorySanctuaryOmicronSecretEntry, WreckTeleporterStoryStart, StoryTalonSettlementOmicron, StorySanctuaryOmicron, TalonStoneMain] 
+     Radius: 400
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [Spiders01few]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+
+     # (To check for ranges of faction exclusion zones. Current SSG bug)
+   - SpawnAt: [StorySanctuaryOmicron] 
+     Radius: 1250
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "0.0, 0, 1.0, 1"
+     Entities:
+       - Names: [Spiders01few]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+   - SpawnAt: [TribalField, TribalDefence ] 
+     Radius: 1250
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "0.0, 1, 0.0, 0.15"
+     Entities:
+       - Names: [Spiders01few]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+
+
+ #==========================================
+
+
+    # TALON
+
+     # Main talon density on whole planet (= no terrain spawns!)
+   - SpawnAt: [StoryTalonSettlementOmicron ]
+     BiomesExcluded: [ HighMountains, Glacier, GlacierSnow ]
+     Radius: 8000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.7
+     Color: "0, 1.0, 0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [TalonGuardianHerd]
+         Biomes: [Grassland, Forest, DeepForest, Marsh, Swamp, WaterSwamp, DustBowl]
+         Amount: 15
+         Period: Always
+         DelayMinMax: [200, 240]
+
+
+   - SpawnAt: [RuinsTribalTower, StoryTalonSettlementOmicron, StoryTalonSettlementOmicron ]
+     BiomesExcluded: [ HighMountains, Glacier, GlacierSnow ]
+     Radius: 1200
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "0, 1.0, 0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [TalonGuardianHerd]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [200, 240]
+       - Names: [LizardMuleHerd]
+         Biomes: [Grassland, Forest, Marsh]
+         Amount: 80
+         Period: Always
+         DelayMinMax: [200, 240]
+
+
+   - SpawnAt: [TribalField ]
+     BiomesExcluded: [ HighMountains, Glacier, GlacierSnow ]
+     Radius: 50
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "0, 1.0, 0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [TalonGuardianHerd]
+         Biomes: [Any]
+         Amount: 600
+         Period: Always
+         DelayMinMax: [200, 240]
+
+
+
+
+    # AlienBugs01 at junk, Wreckage
+   - SpawnAt: [JunkT1, Wreckage]
+     Radius: 50
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "0.0, 1.0, 1.0, 0.5" 
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 300
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [AbandonedStarter]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 200
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienBugs03, Spiders01]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+         
+   - SpawnAt: [ Ruins] 
+     BiomesExcluded: [ LowMountains, Mountains, RadiatedFog ]   # if Promethium spawns in RadiatedFog no need for extra defence         
+     Radius: 500
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Spiders01]
+         Biomes: [Any]
+         Amount: 180
+         Period: Always
+         DelayMinMax: [-1, -1]
+         
+
+
+   # - SpawnAt: [TalonStoneMain]    # Main Xenu Buildings
+     # BiomesExcluded: [ LowMountains, Mountains ]
+     # Radius: 1200
+     # RadiusRandom: 25
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.2
+     # Color: "1.0, 0, 0, 1.0" 
+     # SpawnOnlyIfPoiIsAlien: true
+     # Entities:
+       # - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxRipperDogPatrol]
+         # Biomes: [Any]
+         # Amount: 300
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+   # - SpawnAt: [XenuStarter]    # Outposts
+     # BiomesExcluded: [ LowMountains, Mountains ]
+     # Radius: 1000
+     # RadiusRandom: 25
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.2
+     # Color: "1.0, 0, 0, 1.0" 
+     # SpawnOnlyIfPoiIsAlien: true
+     # Entities:
+       # - Names: [ZiraxMinigunPatrol, ZiraxShotgunPatrol, ZiraxRipperDogPatrol]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+
+
+### Creatures ===========================
+CreatureSpawning:
+
+
+
+
+    - Biomes: [Forest]
+      Entities:
+        - Name: AlienBugs01
+          Period: Day
+          Amount: 15
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+        - Name: Spiders01
+          Period: Day
+          Amount: 15
+          Color: "1.0, 1, 1"
+          DelayMinMax: [20, 24]
+        - Name: AlienBugs03
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.7, 0, 0"
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+        - Name: Triceratopses
+          Period: Day
+          Amount: 15
+          DelayMinMax: [10, 12]
+          Color: "0, 0.5, 1.0"
+
+    - Biomes: [DeepForest]
+      Entities:
+        - Name: AlienBugs01
+          Period: Day
+          Amount: 15
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+        - Name: Spiders01
+          Period: Day
+          Amount: 15
+          Color: "1.0, 1, 1"
+          DelayMinMax: [20, 24]
+        - Name: AlienBugs03
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.7, 0, 0"
+        - Name: Triceratopses
+          Period: Day
+          Amount: 30
+          DelayMinMax: [10, 12]
+          Color: "0, 0.5, 1.0"
+
+
+
+    - Biomes: [Marsh]
+      Entities:
+        - Name: AlienBugs01
+          Period: Day
+          Amount: 40
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+
+        - Name: Spiders01
+          Period: Day
+          Amount: 15
+          Color: "1.0, 1, 1"
+          DelayMinMax: [20, 24]
+
+        - Name: AlienBugs03
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.7, 0, 0"
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+
+        - Name: Triceratopses
+          Period: Day
+          Amount: 5
+          DelayMinMax: [10, 12]
+          Color: "0, 0.5, 1.0"
+
+
+
+    - Biomes: [Swamp, WaterSwamp]
+      Entities:
+
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 12
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+
+
+     # Telluropods
+
+    - Biomes: [ShallowWater, WaterSwamp_1]
+      Entities:
+        - Name: Telluropods
+          Period: Always
+          Amount: 75
+          DelayMinMax: [10, 12]
+          AllowInWater: true
+          Color: "1.0, 0.6, 0.0"
+        - Name: Slimes
+          Period: Day
+          Amount: 12
+          DelayMinMax: [10, 12]
+    - Biomes: [Beach_1]
+      Entities:
+        - Name: Telluropods
+          Period: Always
+          Amount: 20
+          DelayMinMax: [10, 12]
+          AllowInWater: true
+          Color: "1.0, 0.6, 0.0"
+
+
+
+   # Hot biomes
+    - Biomes: [Savanna, SavannaEdge]
+      Entities:
+        - Name: RaptorHerd
+          Period: Day
+          Amount: 35
+          DelayMinMax: [10, 12]
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 20
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+        - Name: AlienBugs04
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+        - Name: Pangolins
+          Period: Day
+          Amount: 15
+          DelayMinMax: [10, 12]
+          Color: "0.2, 0.5, 0.9"
+
+    - Biomes: [Sand]
+      Entities:
+        - Name: RaptorHerd
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 12]
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+        - Name: AlienBugs04
+          Period: Always
+          Amount: 25
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+        - Name: Pangolins
+          Period: Day
+          Amount: 5
+          DelayMinMax: [10, 12]
+          Color: "0.2, 0.5, 0.9"
+
+
+    - Biomes: [DustBowl]
+      Entities:
+        - Name: Spiders01
+          Period: Always
+          Amount: 15
+          DelayMinMax: [20, 24]
+          Color: "1.0, 1, 1"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+
+
+      # High biomes
+    - Biomes: [LowMountains]
+      Entities:
+        - Name: Spiders01
+          Period: Always
+          Amount: 8
+          DelayMinMax: [20, 24]
+          Color: "1.0, 1, 1"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+        - Name: RaptorHerd
+          Period: Day
+          Amount: 12
+          DelayMinMax: [10, 12]
+
+    - Biomes: [Glacier, GlacierSnow]
+      Entities:
+        - Name: GolemsIce
+          Period: Night
+          Amount: 8
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0.4, 0.4"
+
+
+    - Biomes: [Grassland]
+      Entities:
+
+
+        - Name: ParasaursFew
+          Period: Always
+          Amount: 25
+          DelayMinMax: [6, 8]
+          Color: "0, 0, 1.0"
+        - Name: Pangolins
+          Period: Day
+          Amount: 10
+          DelayMinMax: [8, 12]
+          Color: "0.2, 0.5, 0.9"
+
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 20
+          DelayMinMax: [6, 8]
+          Color: "0, 1.0, 1.0"
+
+        - Name: Spiders01few
+          Period: Day
+          Amount: 5
+          Color: "1.0, 1, 1"
+          DelayMinMax: [20, 24]
+
+        - Name: Spiders01few
+          Period: Night
+          Amount: 10
+          Color: "1.0, 1, 1"
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+
+
+     # Cold biomes
+    - Biomes: [ColdPlains]
+      Entities:
+        - Name: LizardMuleHerd
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 12]
+        - Name: Oviraptors
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 12]
+          Color: "0.4, 0.2, 1.0"
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 20
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+
+
+    - Biomes: [Tundra, TundraEdge]
+      Entities:
+        - Name: Oviraptors
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 12]
+          Color: "0.4, 0.2, 1.0"
+
+        - Name: LizardMuleHerd
+          Period: Day
+          Amount: 5
+          DelayMinMax: [10, 12]
+
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 30
+          DelayMinMax: [20, 24]
+          Color: "0.5, 0, 0"
+
+
+
+
+    - Biomes: [PolarSnow]
+      Entities:
+        - Name: SlimesWhite
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+          Color: "1.0, 1.0, 0"
+        - Name: Oviraptors
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+          Color: "0.4, 0.2, 1.0"
+        - Name: CaveWormWhiteHerd
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+        - Name: GolemsIce
+          Period: Day
+          Amount: 3
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0.4, 0.4"
+
+    # - Biomes: [Radiated, RadiatedFog]
+      # Entities:
+        # - Name: AlienAssassinGreys
+          # Period: Night
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+        # - Name: AlienBugs03
+          # Period: Day
+          # Amount: 12
+          # DelayMinMax: [20, 24]
+          # Color: "0, 0, 0"
+

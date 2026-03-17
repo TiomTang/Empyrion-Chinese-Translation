@@ -1,3438 +1,3026 @@
-PlayfieldType: "Planet"
-PlanetType: "BarrenTemperate"
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+
+
+Description: |
+  [c][e0e020]\u6CE8\u610F:[-][/c][c] \u5B58\u5728[c][e0e020][b]\u654C\u5BF9\u5DE1\u903B\u961F[/b][-][/c]\u7684\u98CE\u9669![-][/c]
+
+  [c]\u8D44\u6E90\u626B\u63CF\u4EEA\u62A5\u544A\u9519\u8BEF\uFF1A
+  [b]\u201C\u65E0\u6CD5\u7CBE\u786E\u5B9A\u4F4D\u77FF\u85CF\u4F4D\u7F6E\uFF01\u201D[/b]
+  [i]\u5BC6\u5EA6\u8D85\u51FA\u6821\u51C6\u8303\u56F4\u3002
+  \u53D1\u73B0: [b]\u949B[/b], [b]\u94DD[/b], \u94DC, \u91D1, (\u94C2) ... ...   [c][808080]-\u8BF7\u5229\u7528\u89C6\u89C9\u7EBF\u7D22[-][/c][/i]
+
+
+  \u5982\u679C\u6CA1\u6709\u7ECF\u5386\u81EA\u6211\u590D\u5236\u5316\u5B66\u7684\u5947\u8FF9\uFF0C\u8FD9\u91CC\u672C\u53EF\u4EE5\u662F\u5730\u7403\u3002
+  \u4E00\u9897\u884C\u661F\u5927\u5C0F\u7684\u5B64\u72EC\u6C99\u76D2\uFF0C\u77F3\u5934\u7684\u5355\u8EAB\u6C49\u3002
+
+  \u5373\u4FBF\u5728\u8FD9\u91CC\u64AD\u6492\u4E00\u4E9B\u79CD\u5B50\u2026\u2026\u5B83\u4EEC\u4E5F\u5F88\u96BE\u624E\u4E0B\u6839\u3002
+  \u590D\u6742\u751F\u547D\u7684\u7E41\u8363\u9700\u8981\u66F4\u7B80\u5355\u7684\u9636\u6BB5\u5148\u884C\u51C6\u5907\u73AF\u5883\u3002\u7EC6\u83CC\u5B55\u80B2\u690D\u7269\uFF0C\u690D\u7269\u5B55\u80B2\u52A8\u7269\u2026\u2026
+
+  \u6240\u4EE5\u73B0\u5728\uFF0C\u8FD9\u91CC\u662F\u5730\u8D28\u7684\u5929\u4E0B\uFF0C\u7B3C\u7F69\u5728\u6709\u6BD2\u7684\u5929\u7A7A\u4E4B\u4E0B\u3002
+
+  \u4F46\u4F60\u7684\u5230\u8BBF\u6216\u8BB8\u80FD\u6539\u53D8\u8FD9\u4E00\u5207\u3002
+  \u2014\u2014 \u4F60\u7684\u6574\u4E2A\u8EAB\u4F53\uFF0C\u4F60\u7684\u5B87\u822A\u670D\uFF0C\u4F60\u7684\u88C5\u5907\u2026\u2026\u5185\u5916\u7684\u6BCF\u4E00\u5BF8\u8868\u9762\u2026\u2026\u90FD\u662F\u4E00\u8258\u65B9\u821F\u3002
+
+  \u4F60\u643A\u5E26\u7684\u65E9\u671F\u5FAE\u751F\u7269\uFF0C\u6216\u8BB8\u80FD\u591F\u4E3A\u571F\u58E4\u548C\u7A7A\u6C14\u505A\u597D\u51C6\u5907 \u2014\u2014 \u4E3A\u65B0\u7684\u201C\u82B1\u56ED\u201D\u7E41\u76DB\u63D0\u4F9B\u6761\u4EF6\u3002
+
+  \u53EA\u8981\u5728\u4E94\u4EBF\u5E74\u540E\u56DE\u6765\u770B\u770B\u5C31\u597D\uFF01
+
+
+
+
+PlanetType: BarrenTemperate
+PlayfieldType: Planet
 Difficulty: 3
-SunFlare: "EnvironmentalEffects/SunFlareWhite"
-SpecialEffectsLocal:
-- Name: "FireFliesOrange"
-  MaxHeight: 15
-  Time: "Night"
-  Biome:
-  - "Shore"
-  - "ColdPlains"
-  - "Oasis"
-- Name: "FireFliesRed"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Oasis"
-- Name: "Grime"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Rocks_1"
-SpecialEffectsGlobal:
-- Name: "Clear"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 100
-  Type: "Weather"
-- Name: "CloudsLight"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 100
-  Type: "Weather"
-- Name: "Clear"
-  InitialDelay: 2
-  Delay: 2
-  Lifetime: 100
-  Type: "Weather"
-- Name: "CloudsLight"
-  InitialDelay: 2
-  Delay: 2
-  Lifetime: 100
-  Type: "Weather"
-- Name: "Storm"
-  InitialDelay: 24
-  Delay: 20
-  Lifetime: 350
-  Type: "Weather"
-- Name: "SnowHeavy"
-  InitialDelay: 24
-  Delay: 20
-  Lifetime: 350
-  Type: "Weather"
-- Name: "Hail"
-  InitialDelay: 10
-  Delay: 30
-  Lifetime: 280
-  Type: "Weather"
-- Name: "HeatWave"
-  InitialDelay: 10
-  Delay: 20
-  Lifetime: 200
-  Type: "Weather"
-- Name: "MeteorFireRain"
-  InitialDelay: 10
-  Delay: 40
-  Lifetime: 350
-  Type: "Weather"
-AtmosphereColor: "0.70, 0.75, 0.7"
-AtmosphereParams:
-- 0.8
-- 2
-OrbitUsesLightColor: true
+
+LandClaimZone: Device
+
+
+
+OrbitUsesLightColor: true   # Orbit is blue-ish. (Use with appropiate stars.)
+# Atmosphere and Sky
+AtmosphereEnabled: True 
+AtmosphereColor: "0.70, 0.75, 0.7" # dimly green-ish
+AtmosphereParams: [0.8, 2.0]
+
 SkyColor: "1.4, 0.85, 0.35"
-SkyHorizonColor: "0.1, 0.8, 0.3"
-LightZenithColor: "0.9, 0.95, 1.10"
-LightHorizonColor: "0.8, 0.45, 0.10"
-NightLightColor: "0.3, 0.3, 0.7"
-CloudsZenithColor: "0.45, 0.59, 0.75"
-CloudsHorizonColor: "0.72, 0.24, 0.08"
-CloudsNightZenithColor: "0.015, 0.023, 0.029"
-CloudsNightHorizonColor: "0.015, 0.023, 0.029"
-FogCloudIntensity: 0.8
+SkyHorizonColor: "0.1, 0.8, 0.3"  # bright Green
+
+
+# Light
 DayLightIntensity: 0.8
 NightLightIntensity: 0.25
 DayShadowStrength: 0.95
 NightShadowStrength: 0.5
+
+LightZenithColor: "0.9, 0.95, 1.10"
+LightHorizonColor: "0.8, 0.45, 0.10"
+NightLightColor: "0.3, 0.3, 0.7"
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite
+
+
+
+
+# Fog
+# AtmosphereFog: 0.5
+FogCloudIntensity: 0.8
+# GroundFogIntensity: 0.07
+# GroundFogHeight: 40
+
+FogColor: "0.85, 0.85, 1.03"
+
+CloudsZenithColor: "0.45, 0.59, 0.75"
+CloudsHorizonColor: "0.72, 0.24, 0.08"
+CloudsNightZenithColor: "0.015, 0.023, 0.029"
+CloudsNightHorizonColor: "0.015, 0.023, 0.029"
+
+
+# Clouds and Wind
 CloudsDensity: 0.3
 CloudsSharpness: 0.2
+CloudsBrightness: 0.6
+
+
+
 WindSpeed: 10
-FogColor: "0.85, 0.85, 1.03"
-Description: "[c][e0e020]\u6CE8\u610F\uFF1A[-][/c][c] \u5B58\u5728[c][e0e020][b]\u654C\u5BF9\u5DE1\u903B\u961F[/b][-][/c]\u98CE\u9669\uFF01[-][/c]\n\n[c]\u8D44\u6E90\u626B\u63CF\u4EEA\u62A5\u544A\u9519\u8BEF\uFF1A\n[b]\u201C\u65E0\u6CD5\u5B9A\u4F4D\u77FF\u85CF\u4F4D\u7F6E\uFF01\u201D[/b]\n[i]\u5BC6\u5EA6\u8D85\u51FA\u6821\u51C6\u8303\u56F4\u3002\n\u53D1\u73B0\uFF1A [b]\u949B (Ti)[/b]\uFF0C[b]\u94DD (Al)[/b]\uFF0C\u94DC (Cu)\uFF0C\u91D1 (Au)\uFF0C\u94C2 (Pt) \u2026\u2026   [c][808080]-\u8BF7\u4F7F\u7528\u89C6\u89C9\u7EBF\u7D22[-][/c][/i]\n\n\u5982\u679C\u8FD9\u5C31\u662F\u5730\u7403\uFF0C\u5B83\u4ECE\u672A\u7ECF\u5386\u8FC7\u81EA\u6211\u590D\u5236\u5316\u5B66\u7684\u5947\u8FF9\u3002\n\u4E00\u9897\u661F\u7403\u5927\u5C0F\u7684\u5B64\u72EC\u6C99\u76D2\uFF0C\u4E00\u5757\u5B64\u72EC\u7684\u77F3\u5934\u3002\n\n\u5373\u4F7F\u5728\u8FD9\u91CC\u79CD\u4E0B\u4E9B\u79CD\u5B50\u2026\u2026\u5B83\u4EEC\u4E5F\u5F88\u96BE\u7AD9\u7A33\u811A\u8DDF\u3002\n\u590D\u6742\u751F\u547D\u7684\u7E41\u8363\u9700\u8981\u6240\u6709\u66F4\u7B80\u5355\u9636\u6BB5\u7684\u5148\u884C\u51C6\u5907\u3002\u7EC6\u83CC\u4E3A\u690D\u7269\u670D\u52A1\uFF0C\u690D\u7269\u4E3A\u52A8\u7269\u670D\u52A1\u2026\u2026\n\n\u6240\u4EE5\u76EE\u524D\u662F\u5730\u8D28\u5B66\u4E3B\u5BFC\uFF0C\u5728\u6709\u6BD2\u7684\u5929\u7A7A\u4E0B\u3002\n\n\u4F46\u4F60\u7684\u5230\u8BBF\u4E5F\u8BB8\u80FD\u6539\u53D8\u8FD9\u4E00\u5207\u3002\n- \u4F60\u7684\u6574\u4E2A\u8EAB\u4F53\uFF0C\u4F60\u7684\u88C5\u5907\uFF0C\u4F60\u7684\u670D\u88C5\u2026\u2026\u91CC\u5916\u6BCF\u4E00\u4E2A\u8868\u9762\u2026\u2026\u90FD\u662F\u4E00\u8258\u65B9\u821F\u3002\n\n\u4F60\u643A\u5E26\u7684\u90A3\u4E9B\u65E9\u671F\u5FAE\u751F\u7269\u53EF\u80FD\u4F1A\u51C6\u5907\u597D\u571F\u58E4\u548C\u7A7A\u6C14\u2014\u2014\u4E3A\u65B0\u82B1\u56ED\u7684\u7E41\u8363\u505A\u51C6\u5907\u3002\n\n\u53EA\u9700\u8FC7\u4E94\u4EBF\u5E74\u540E\u518D\u56DE\u6765\u770B\u770B\u5427\uFF01"
-PlanetClass: "BarrenTemperate"
-UseRandom: true
-LandClaimZone: "Device"
+
+# Special Effects
+SpecialEffectsLocal:
+  # - Name: FireFliesRed
+    # # Biome: [ Plains, PlainsEdge, ColdPlains, Oasis]
+    # Biome: [ Plains, PlainsEdge, ColdPlains, Oasis]
+    # Time: Night
+    # MaxHeight: 15
+
+  - Name: FireFliesOrange
+    Biome: [ Shore, ColdPlains, Oasis]
+    Time: Night
+    MaxHeight: 15
+
+  - Name: FireFliesRed
+    Biome: [ Oasis]
+    Time: Day
+    MaxHeight: 15
+
+  # - Name: FireFliesOrange
+    # Biome: [ Shore, Plains, Oasis]
+    # Time: Day
+    # MaxHeight: 15
+
+  - Name: Grime
+    Biome: [ Rocks_1 ]
+    Time: Day
+    MaxHeight: 15
+
+
+
+SpecialEffectsGlobal: # This planet has very erratic & extreme weather, due to no biosphere to soften it.
+
+
+
+# Quick-cycling standard weather
+
+  - Name: Clear   
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2 # 
+    Lifetime: 100
+
+  - Name: CloudsLight 
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2  # 
+    Lifetime: 100
+
+
+  - Name: Clear   
+    Type: Weather
+    InitialDelay: 2
+    Delay: 2  # 
+    Lifetime: 100 
+
+  - Name: CloudsLight 
+    Type: Weather
+    InitialDelay: 2
+    Delay: 2  # 
+    Lifetime: 100
+
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 24
+    Delay: 20
+    Lifetime: 350 
+
+  - Name: SnowHeavy
+    Type: Weather
+    InitialDelay: 24
+    Delay: 20
+    Lifetime: 350
+
+
+
+# Dangerous weather
+
+  - Name: Hail
+    Type: Weather
+    InitialDelay: 10
+    Delay: 30 # 30
+    Lifetime: 280
+
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 10
+    Delay: 20 # 90
+    Lifetime: 200 # 550
+
+  - Name: MeteorFireRain
+    Type: Weather
+    InitialDelay: 10
+    Delay: 40
+    Lifetime: 350 # 400 # 
+
+
+  # - Name: FogRadiationPurple
+    # Type: Weather
+    # InitialDelay: 1
+    # Delay: 10 # 30
+    # Lifetime: 200 # 400 Seems too long... 200 did not appear?
+
+
+
+
+
+# ==============================================================
+
+### Resource Deposits
+
 RandomResources:
-- Name: "GoldResource"
-  CountMinMax:
-  - 2
-  - 2
-  SizeMinMax:
-  - 6
-  - 6
-  DepthMinMax:
-  - 5
-  - 10
-  Biome:
-  - "ShouldOnlySpawnBySomePOI"
-- Name: "PromethiumResource"
-  CountMinMax:
-  - 2
-  - 2
-  SizeMinMax:
-  - 4
-  - 4
-  DepthMinMax:
-  - 0
-  - 1
-  DroneProb: 1
-  Biome:
-  - "ShouldOnlySpawnBySomePOI"
+
+    # Special planet: Has several 'deposits' as surface and undergroundlayers! 
+
+          # # 'STEALING OFFER' resource anchor
+          # #  Only by some POI the lone gold resource might spawn. 
+          # #    POIs that are anchored to this are usually mining faction POI. Player can choose to lose rep and dig anyway... Or go in for a fight?
+          # #    The deposit is rather large for a playfield of this type.
+          # #    But there are more resources in the 'hidden deposits'. 
+          ##     In total, this is still less whan can be gained e.g. on a Lava playfield.
+
+
+    # =======  Exceptions:
+    - Name: GoldResource
+      Biome: [ ShouldOnlySpawnBySomePOI ]  # Will use a mining faction POI to spawn. 'Stealing choice' (loss or reputation), or risking a fight
+      CountMinMax: [ 2, 2 ]
+      SizeMinMax: [ 6, 6 ]    #  Ca 350 ore
+      DroneProb: 0.0
+      DepthMinMax: [ 5, 10 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+
+    - Name: PromethiumResource
+      Biome: [ ShouldOnlySpawnBySomePOI ]  # (As above) Will use a mining faction POI to spawn.
+      CountMinMax: [ 2, 2 ]
+      SizeMinMax: [ 4, 4 ]
+      DroneProb: 1.0
+      DepthMinMax: [ 0, 1 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+
+
+### Resource Asteroids
+AsteroidResources:
+     # - Name: IronResource
+       # Threshold: 0.2
+       # Amount: 0.2
+
+
+
+## ========================================================================
+## =========================== POI ========================================
+## ========================================================================
+
+
+
+
+# Main POI placement.
+
+# Please consider: EXCLUDED BIOMES  ============
+#       PoleEdge, PoleEdge_1, SandDrift, Dunes - (Prevent spawning too close to Poles. POI otherwise tend to be placed there because the terrain is so flat.)
+#       Rocks                                  - (Prevent spawning too close to large decoration)
+
+
+
+
+
+# PLACEMENT ORDER:
+
+# 1) Helper POI - Needed for this playfield to function
+# 2) Faction POI
+#   2a) All faction command centers (Dronebases)
+#       2b) (If there) - Faction POI that Trigger a resource spawn (No resources if they do not spawn)
+#   2c) All other faction POI: Main spawns > Cluster spawns & Defenses)
+#   3) AuxPOI definitions, usually defenses.
+# 3) Shelters & crashed vessels
+# 4) Deco, nice finds, clutter and junk
+# 5) TheLegacy and Alien
+
+
+## FACTION ORDER
+#   ===== Large factions or widespread ====== 
+#   Xenu (aggressive - Most of the PV & drones), then Rados (Mining faction, carries GoldResource)
+
+#   Polaris / Arkenian # (Since they are miners, carries GoldResource)
+
+#   Warlords & Pirates # Overriding galactic faction territory, but have SpawnPOIAvoid any other factions to keep distance. May result in some NPC fights on this playfield. :)
+
+#   ===== Small factions ===
+#   Brotherhood of Farr # (This world has gold, so they are very interested)
+
+#   TheLegacy # Override galactic faction territory, but SpawnPOIAvoid any other factions. Aggressive Creature anchor
+
+
+
+
 POIs:
-  Random:
-  - GroupName: "SignalMarker01"
-    Faction: "None"
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "Discovery"
-      Value: "False"
-    SpawnPOINear:
-    - "START"
-    PlaceAt: "ResourceAll"
-    SpawnPOINearRange:
-    - 10
-    - 20
-  - GroupName: "SignalMarker02"
-    Faction: "None"
-    IsImportant: true
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "0"
-    SpawnPOIAvoid:
-    - "SignalMarker02"
-    SpawnPOIAvoidDistance: 5000
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-  - GroupName: "SignalMarker03"
-    Faction: "None"
-    IsImportant: true
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "0"
-    SpawnPOIAvoid:
-    - "SignalMarker03"
-    SpawnPOIAvoidDistance: 4000
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-  - GroupName: "SignalMarker04"
-    Faction: "None"
-    IsScalingCount: true
-    Count:
-      Min: 20
-      Max: 20
-    CountMinMax:
-    - 20
-    - 20
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "0"
-    SpawnPOIAvoid:
-    - "NullPOI"
-    - "SignalMarker04"
-    SpawnPOIAvoidDistance: 800
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-  - GroupName: "DroneBaseT1"
-    DroneBaseSetup: "DroneBaseSetupXen"
-    Faction: "Xenu"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-  - GroupName: "PlanetVesselBase"
-    Faction: "Xenu"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "DroneBaseT1"
-    SpawnPOINearRange:
-    - 300
-    - 600
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Rocks"
-  - GroupName: "ZiraxDroneBase"
-    DroneBaseSetup: "DroneBaseSetup"
-    Faction: "Zirax"
-    NoShieldReload: true
-    IsCommandCenter: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-    - "Hills"
-  - GroupName: "PolarisDroneBase"
-    DroneBaseSetup: "DroneBaseSetupPol"
-    Faction: "Polaris"
-    NoShieldReload: true
-    IsCommandCenter: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-  - GroupName: "KrielDroneBase"
-    DroneBaseSetup: "DroneBaseSetupKrl"
-    Faction: "Kriel"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "Music"
-      Value: "AlteredPhase"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "ARCDronebase"
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "Permafrost"
-    - "ColdPlains"
-    - "Hotspot"
-    - "BarrenRocks"
-    - "LavaFolds"
-    - "LavaField"
-    - "LavaFieldEdge"
-    - "DriedLake"
-    - "Mountains"
-  - GroupName: "TeschDroneBase"
-    DroneBaseSetup: "DroneBaseSetupTsc"
-    Faction: "Tesch"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-  - GroupName: "FarrDroneBase"
-    DroneBaseSetup: "DroneBaseSetupFarr"
-    Faction: "Farr"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    SpawnPOIAvoidDistance: 2000
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-    - "Hills"
-  - GroupName: "ARCDronebase"
-    DroneBaseSetup: "DroneBaseSetup"
-    Faction: "ARC"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-    - "Dunes"
-  - GroupName: "WarlordNestineDroneBase"
-    DroneBaseSetup: "DroneBaseSetupWar"
-    Faction: "Warlord"
-    FactionTerritory:
-    - "All"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    - "FarrDroneBase"
-    SpawnPOIAvoidDistance: 2000
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-    - "Hills"
-  - GroupName: "PiratesDroneBase"
-    DroneBaseSetup: "DroneBaseSetupPir"
-    Faction: "Pirates"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    - "FarrDroneBase"
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-    - "Dunes"
-  - GroupName: "PlanetVesselBase"
-    Faction: "Pirates"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PiratesDroneBase"
-    SpawnPOINearRange:
-    - 200
-    - 400
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-  - GroupName: "RadosMain"
-    Faction: "Rados"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    ReserveCount: 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnResource:
-    - "GoldResource:1-1"
-    - "PromethiumResource:0-1"
-    SpawnResourceRange:
-    - 80
-    - 140
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-  - GroupName: "PlanetVesselBase"
-    Faction: "Rados"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 4
-      Max: 6
-    DronesMinMax:
-    - 4
-    - 6
-    ReserveCount: 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "RadosMain"
-    SpawnPOINearRange:
-    - 150
-    - 250
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "RadosBunker"
-    Faction: "Rados"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 2
-      Max: 4
-    DronesMinMax:
-    - 2
-    - 4
-    ReserveCount: 5
-    Properties:
-    - Key: "Music"
-      Value: "Encryptor"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "RadosMain"
-    SpawnPOINearRange:
-    - 200
-    - 600
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Rocks"
-  - GroupName: "RadosAuxT1"
-    Faction: "Rados"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 3
-    CountMinMax:
-    - 3
-    - 3
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 2
-      Max: 4
-    DronesMinMax:
-    - 2
-    - 4
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "RadosMain"
-    SpawnPOINearRange:
-    - 200
-    - 300
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Rocks"
-  - GroupName: "JunkT1"
-    Faction: "None"
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "RadosMain"
-    SpawnPOINearRange:
-    - 400
-    - 400
-  - GroupName: "Ruins"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "RadosMain"
-    SpawnPOINearRange:
-    - 400
-    - 400
-  - GroupName: "RadosSurvey"
-    Faction: "Rados"
-    Count:
-      Min: 8
-      Max: 10
-    CountMinMax:
-    - 8
-    - 10
-    TroopTransport: true
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "RadosMain"
-    SpawnPOIAvoid:
-    - "RadosSurvey"
-    SpawnPOINearRange:
-    - 1000
-    - 2000
-    SpawnPOIAvoidDistance: 500
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Rocks"
-  - GroupName: "XenuComArray"
-    Faction: "Zirax"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    TroopTransport: true
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "ZiraxDroneBase"
-    SpawnPOINearRange:
-    - 100
-    - 150
-  - GroupName: "XenuDefenceT1"
-    Faction: "Zirax"
-    Count:
-      Min: 4
-      Max: 5
-    CountMinMax:
-    - 4
-    - 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "ZiraxDroneBase"
-    SpawnPOINearRange:
-    - 100
-    - 150
-  - GroupName: "Ruins"
-    Faction: "None"
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "ZiraxDroneBase"
-    SpawnPOINearRange:
-    - 400
-    - 400
-  - GroupName: "XenuDefenceT1"
-    Faction: "Xenu"
-    Count:
-      Min: 4
-      Max: 5
-    CountMinMax:
-    - 4
-    - 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "DroneBaseT1"
-    SpawnPOINearRange:
-    - 120
-    - 250
-  - GroupName: "JunkT1"
-    Faction: "None"
-    Count:
-      Min: 2
-      Max: 4
-    CountMinMax:
-    - 2
-    - 4
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "DroneBaseT1"
-    SpawnPOINearRange:
-    - 100
-    - 300
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "DroneBaseT1"
-    SpawnPOINearRange:
-    - 100
-    - 300
-  - GroupName: "TS_Metal_Waypoint"
-    Faction: "Polaris"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "Music"
-      Value: "SunnySkies"
-    - Key: "RegenAfter"
-      Value: "720"
-    - Key: "StationInterface"
-      Value: "Fuel:1.5,O2:1.2,Warp:1,Ammo:0.7,Repair:8,Shield:1,IfNeutral:0.2,IfHonored:-0.20"
-    SpawnPOINear:
-    - "PolarisDroneBase"
-    SpawnResource:
-    - "GoldResource:1-1"
-    - "PromethiumResource:0-1"
-    SpawnPOINearRange:
-    - 200
-    - 600
-    SpawnResourceRange:
-    - 80
-    - 140
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-  - GroupName: "PolarisLogisticsMain"
-    Faction: "Polaris"
-    NoShieldReload: true
-    IsImportant: true
-    AuxiliaryPOIs:
-    - "DepositMarker"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 2
-      Max: 2
-    DronesMinMax:
-    - 2
-    - 2
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "DroneBaseT1"
-    SpawnPOINearRange:
-    - 80
-    - 3000
-    SpawnPOIAvoidDistance: 3000
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-  - GroupName: "PolarisLogisticsAux"
-    Faction: "Polaris"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 0.8
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PolarisLogisticsMain"
-    SpawnPOINearRange:
-    - 100
-    - 250
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Rocks"
-  - GroupName: "MiningStationAux"
-    Faction: "Polaris"
-    NoShieldReload: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PolarisLogisticsMain"
-    SpawnPOINearRange:
-    - 100
-    - 250
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Rocks"
-  - GroupName: "PolarisIndustrialAux"
-    Faction: "Polaris"
-    NoShieldReload: true
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PolarisLogisticsMain"
-    SpawnPOINearRange:
-    - 100
-    - 250
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Rocks"
-  - GroupName: "PolarisDefence"
-    Faction: "Polaris"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 3
-    CountMinMax:
-    - 3
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PolarisLogisticsMain"
-    SpawnPOINearRange:
-    - 200
-    - 300
-  - GroupName: "Wreckage"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PolarisLogisticsMain"
-    SpawnPOINearRange:
-    - 200
-    - 500
-  - GroupName: "JunkT1"
-    Faction: "None"
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PolarisLogisticsMain"
-    SpawnPOINearRange:
-    - 200
-    - 500
-  - GroupName: "PolarisDefence"
-    Faction: "Polaris"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 3
-    CountMinMax:
-    - 3
-    - 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PolarisDroneBase"
-    SpawnPOINearRange:
-    - 180
-    - 200
-  - GroupName: "PolarisMiningLava"
-    Faction: "Polaris"
-    NoShieldReload: true
-    AuxiliaryPOIs:
-    - "DepositMarker"
-    - "OreMinerT2"
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    DroneProb: 0.2
-    TroopTransport: true
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 3
-    Properties:
-    - Key: "Music"
-      Value: "lava"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "TS_Metal_Waypoint"
-    SpawnPOINearRange:
-    - 500
-    - 4000
-    Biome:
-    - "Hills"
-    - "Rocks_1"
-    - "Hotspot"
-    - "LavaFolds"
-    - "LavaField"
-    - "BarrenRocks"
-  - GroupName: "PolarisMiningLavaAux"
-    Faction: "Polaris"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    DroneProb: 0.2
-    TroopTransport: true
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 3
-    Properties:
-    - Key: "Music"
-      Value: "lava"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PolarisMiningLava"
-    SpawnPOINearRange:
-    - 300
-    - 500
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Rocks"
-  - GroupName: "DepositMarker"
-    Faction: "None"
-    Territory: false
-    IsAuxPOI: true
-    Count:
-      Max: 2
-    CountMinMax:
-    - 0
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINearRange:
-    - 300
-    - 400
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "KrielDefenseT1"
-    Faction: "Kriel"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    DroneProb: 1
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "KrielDroneBase"
-    SpawnPOINearRange:
-    - 200
-    - 400
-  - GroupName: "KrielMain"
-    Faction: "Kriel"
-    NoShieldReload: true
-    Count:
-      Min: 2
-      Max: 2
-    CountMinMax:
-    - 2
-    - 2
-    DroneProb: 1
-    Drones:
-      Min: 4
-      Max: 4
-    DronesMinMax:
-    - 4
-    - 4
-    ReserveCount: 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "KrielDroneBase"
-    SpawnPOINearRange:
-    - 300
-    - 500
-  - GroupName: "WarlordFortNestDef"
-    Faction: "Warlord"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "WarlordNestineDroneBase"
-    SpawnPOINearRange:
-    - 200
-    - 400
-  - GroupName: "Mining"
-    Faction: "Warlord"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    ReserveCount: 3
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "WarlordNestineDroneBase"
-    SpawnPOINearRange:
-    - 400
-    - 500
-  - GroupName: "Ruins"
-    Faction: "None"
-    Count:
-      Min: 2
-      Max: 3
-    CountMinMax:
-    - 2
-    - 3
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "WarlordNestineDroneBase"
-    SpawnPOIAvoid:
-    - "JunkT1"
-    PlaceAt: "ResourceAll"
-    SpawnPOINearRange:
-    - 200
-    - 700
-    SpawnPOIAvoidDistance: 150
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "ScraperPile"
-    Faction: "None"
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "Mining"
-    SpawnPOINearRange:
-    - 150
-    - 350
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "WarlordNestineDroneBase"
-    PlaceAt: "ResourceAll"
-    SpawnPOINearRange:
-    - 200
-    - 700
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "JunkT1"
-    Faction: "None"
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "Mining"
-    SpawnPOINearRange:
-    - 150
-    - 350
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "FarrTradingT2"
-    Faction: "Farr"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Max: 2
-    DronesMinMax:
-    - 0
-    - 2
-    ReserveCount: 5
-    Properties:
-    - Key: "Music"
-      Value: "moonstone"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrDroneBase"
-    SpawnPOINearRange:
-    - 700
-    - 1200
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-    - "Rocks_1"
-    - "Hills"
-  - GroupName: "FarrTradingT3"
-    Faction: "Farr"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrTradingT2"
-    SpawnPOINearRange:
-    - 200
-    - 800
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-  - GroupName: "FarrAuxT2"
-    Faction: "Farr"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Max: 2
-    DronesMinMax:
-    - 0
-    - 2
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrTradingT2"
-    SpawnPOINearRange:
-    - 300
-    - 800
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-    - "Rocks_1"
-    - "Hills"
-  - GroupName: "FarrAuxT1"
-    Faction: "Farr"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 5
-    CountMinMax:
-    - 3
-    - 5
-    DroneProb: 1
-    TroopTransport: true
-    Drones:
-      Min: 3
-      Max: 5
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrTradingT2"
-    SpawnPOINearRange:
-    - 200
-    - 800
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-    - "Rocks_1"
-    - "Hills"
-  - GroupName: "FarrDefenseT1"
-    Faction: "Farr"
-    NoShieldReload: true
-    Count:
-      Min: 5
-      Max: 6
-    CountMinMax:
-    - 5
-    - 6
-    DroneProb: 1
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrTradingT2"
-    SpawnPOIAvoid:
-    - "FarrDefenseT1"
-    SpawnPOINearRange:
-    - 150
-    - 800
-    SpawnPOIAvoidDistance: 100
-  - GroupName: "FarrDefenseT1"
-    Faction: "None\u00B4"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 3
-    CountMinMax:
-    - 3
-    - 3
-    DroneProb: 1
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrTradingT3"
-    SpawnPOINearRange:
-    - 700
-    - 900
-  - GroupName: "FarrDefenseT1"
-    Faction: "Farr"
-    NoShieldReload: true
-    Count:
-      Min: 5
-      Max: 6
-    CountMinMax:
-    - 5
-    - 6
-    DroneProb: 1
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrDroneBase"
-    SpawnPOIAvoid:
-    - "FarrDefenseT1"
-    SpawnPOINearRange:
-    - 200
-    - 300
-    SpawnPOIAvoidDistance: 100
-  - GroupName: "FarrRuinT1"
-    Faction: "None"
-    NoShieldReload: true
-    Count:
-      Min: 4
-      Max: 6
-    CountMinMax:
-    - 4
-    - 6
-    DroneProb: 1
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 5
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrTradingT2"
-    SpawnPOINearRange:
-    - 700
-    - 900
-  - GroupName: "FarrAbandoned"
-    Faction: "TheLegacy"
-    Territory: false
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Drones:
-      Max: 1
-    DronesMinMax:
-    - 0
-    - 1
-    ReserveCount: 5
-    Properties:
-    - Key: "Music"
-      Value: "moonstone"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "FarrTradingT2"
-    SpawnPOIAvoid:
-    - "FarrTradingT2"
-    SpawnPOINearRange:
-    - 1000
-    - 1500
-    SpawnPOIAvoidDistance: 1500
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-    - "Rocks_1"
-    - "Hills"
-  - GroupName: "TraderSettlement"
-    Faction: "PrennFederation"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-  - GroupName: "TraderSettlement"
-    Faction: "PrennFederation"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    DroneProb: 1
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "TraderSettlement"
-    SpawnPOINearRange:
-    - 100
-    - 200
-  - GroupName: "TraderDefenseA"
-    Faction: "PrennFederation"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 2
-      Max: 3
-    DronesMinMax:
-    - 2
-    - 3
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "TraderSettlement"
-    SpawnPOINearRange:
-    - 100
-    - 200
-  - GroupName: "CivilMain"
-    Faction: "Colonists"
-    NoShieldReload: true
-    IsImportant: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    - "FarrDroneBase"
-    - "PiratesDroneBase"
-    - "WarlordDroneBase"
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-    - "Mountains"
-  - GroupName: "TS_Metal_Waypoint"
-    Faction: "Colonists"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "Music"
-      Value: "SunnySkies"
-    - Key: "RegenAfter"
-      Value: "720"
-    - Key: "StationInterface"
-      Value: "Fuel:1.5,O2:1.2,Warp:1,Ammo:0.7,Repair:8,Shield:1,IfNeutral:0.2,IfHonored:-0.20"
-    SpawnPOINear:
-    - "CivilMain"
-    SpawnPOINearRange:
-    - 200
-    - 300
-    Biome:
-    - "DriedLake"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-  - GroupName: "PlanetVesselBase"
-    Faction: "Colonists"
-    NoShieldReload: true
-    AuxiliaryPOIs:
-    - "OreMinerT1"
-    - "BAW_BaseT2"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 2
-    DronesMinMax:
-    - 1
-    - 2
-    ReserveCount: 5
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "CivilMain"
-    SpawnPOINearRange:
-    - 150
-    - 250
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-  - GroupName: "CivilSettlement"
-    Faction: "Colonists"
-    NoShieldReload: true
-    Count:
-      Min: 3
-      Max: 3
-    CountMinMax:
-    - 3
-    - 3
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    ReserveCount: 3
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "CivilMain"
-    SpawnPOINearRange:
-    - 200
-    - 300
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Sand"
-    - "Rocks"
-    - "Hills"
-  - GroupName: "TraderDefenseA"
-    Faction: "Colonists"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PlanetVesselBase"
-    SpawnPOINearRange:
-    - 100
-    - 200
-  - GroupName: "TraderDefenseA"
-    Faction: "Colonists"
-    NoShieldReload: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "CivilMain"
-    SpawnPOINearRange:
-    - 100
-    - 200
-  - GroupName: "LavaNascentRandom"
-    Faction: "Colonists"
-    Territory: false
-    Count:
-      Min: 7
-      Max: 8
-    CountMinMax:
-    - 7
-    - 8
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "PlanetVesselBase"
-    SpawnPOINearRange:
-    - 300
-    - 400
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "JunkT1"
-    Faction: "None"
-    Count:
-      Min: 3
-      Max: 4
-    CountMinMax:
-    - 3
-    - 4
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "CivilMain"
-    SpawnPOIAvoid:
-    - "JunkT1"
-    SpawnPOINearRange:
-    - 100
-    - 500
-    SpawnPOIAvoidDistance: 150
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "CivilSettlement"
-    Faction: "Colonists"
-    AuxiliaryPOIs:
-    - "OreMinerT1"
-    - "OreMinerT2"
-    - "BAW_BaseT2"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "CivilMain"
-    SpawnPOIAvoid:
-    - "CivilSettlement"
-    SpawnPOINearRange:
-    - 1000
-    - 6000
-    SpawnPOIAvoidDistance: 1000
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Sand"
-    - "Rocks"
-    - "Hills"
-    - "Dunes"
-  - GroupName: "OreMinerT1"
-    Faction: "Colonists"
-    Territory: false
-    IsAuxPOI: true
-    Count:
-      Max: 1
-    CountMinMax:
-    - 0
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINearRange:
-    - 100
-    - 300
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "OreMinerT2"
-    Faction: "Colonists"
-    Territory: false
-    IsAuxPOI: true
-    Count:
-      Min: 1
-      Max: 2
-    CountMinMax:
-    - 1
-    - 2
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINearRange:
-    - 80
-    - 200
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "BAW_BaseT2"
-    Faction: "None"
-    IsAuxPOI: true
-    Count:
-      Max: 1
-    CountMinMax:
-    - 0
-    - 1
-    Properties:
-    - Key: "PersonalContainer"
-      Value: "Core:1, ConstructorSurvival:1, NutrientSolution:2, Coolant:1, PowerBar:2, Beer:1, Fiber:50, 8.3mmBullet: 100"
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINearRange:
-    - 600
-    - 1000
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-  - GroupName: "AbandonedMine"
-    Faction: "Alien"
-    FactionTerritory:
-    - "Zirax"
-    - "ArkenianRepublic"
-    - "PrennFederation"
-    - "Farr"
-    - "Colonists"
-    - "Pirates"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "CivilSettlement"
-    SpawnPOINearRange:
-    - 500
-    - 800
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Sand"
-    - "Rocks"
-    - "Hills"
-  - GroupName: "JunkT2"
-    Faction: "None"
-    AvoidFactionTerritory: true
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 2
-    CountMinMax:
-    - 2
-    - 2
-    Properties:
-    - Key: "PersonalContainer"
-      Value: "Core:1, Fiber:25, PowerBar:1, PumpkinStage1:2, OxygenBottleSmall:5, NutrientSolution:3, MetalPieces:1, Coolant:1, Beer:1, 12.7mmBullet: 70"
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "TJunkT2"
-    SpawnPOIAvoidDistance: 3000
-    Biome:
-    - "DriedLake"
-    - "LowMountains"
-    - "LowMountains_1"
-    - "Mountains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Rocks_1"
-    - "Shore"
-    - "Oasis"
-  - GroupName: "BAW_Base"
-    Faction: "None"
-    AvoidFactionTerritory: true
-    IsScalingCount: true
-    Count:
-      Min: 2
-      Max: 2
-    CountMinMax:
-    - 2
-    - 2
-    Properties:
-    - Key: "PersonalContainer"
-      Value: "Core:1, MetalPieces:1, OxygenBottleSmall:7, NutrientSolution:2, Coolant:1, PowerBar:2, Beer:1, TomatoStage1:3, Fiber:50, 12.7mmBullet: 80"
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "BAW_Base"
-    SpawnPOIAvoidDistance: 3000
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Sand"
-    - "Desert"
-    - "Rocks"
-    - "Hills"
-  - GroupName: "DamagedHV"
-    Faction: "None"
-    NoShieldReload: true
-    Type: "HV_Player"
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "MapDistance"
-      Value: "500"
-    SpawnPOINear:
-    - "BAW_Base"
-    SpawnPOINearRange:
-    - 50
-    - 100
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "START"
-    SpawnPOIAvoid:
-    - "START"
-    PlaceAt: "UnderWater"
-    SpawnPOINearRange:
-    - 1500
-    - 16000
-    SpawnPOIAvoidDistance: 1500
-    Biome:
-    - "ShallowWater"
-    - "Water"
-    - "HotSprings"
-    - "Shore"
-  - GroupName: "CrashedShip"
-    Faction: "None"
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    DroneProb: 1
-    Drones:
-      Min: 1
-      Max: 1
-    DronesMinMax:
-    - 1
-    - 1
-    ReserveCount: 4
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "START"
-    SpawnPOIAvoid:
-    - "CrashedShip"
-    - "START"
-    PlaceAt: "ResourceAll"
-    SpawnPOINearRange:
-    - 2000
-    - 16000
-    SpawnPOIAvoidDistance: 1500
-    Biome:
-    - "Shore"
-    - "Permafrost"
-    - "PermafrostEdge"
-    - "ColdPlains"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-    - "LavaFolds"
-    - "Rocks"
-    - "Hills"
-    - "Rocks_1"
-    - "LowMountains"
-    - "Mountains"
-    - "Mountains_1"
-    - "HighMountains"
-    - "HighMountains_1"
-  - GroupName: "Artifacts"
-    Faction: "Alien"
-    AvoidFactionTerritory: true
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "LegacyInfector"
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    - "FarrDroneBase"
-    - "PiratesDroneBase"
-    - "WarlordDroneBase"
-    - "CivilMain"
-    - "TS_Metal_Waypoint"
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "Permafrost"
-    - "Hotspot"
-    - "LavaField"
-    - "LavaFolds"
-    - "Hills"
-    - "BarrenRocks"
-    - "Rocks_1"
-    - "Oasis"
-  - GroupName: "AbandonedPOI"
-    Faction: "Alien"
-    FactionTerritory:
-    - "All"
-    AvoidFactionTerritory: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    - "FarrDroneBase"
-    - "PiratesDroneBase"
-    - "WarlordDroneBase"
-    - "CivilMain"
-    - "TS_Metal_Waypoint"
-    SpawnPOINearRange:
-    - 1200
-    - 2000
-    Biome:
-    - "Shore"
-    - "Permafrost"
-    - "PermafrostEdge"
-    - "ColdPlains"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-    - "LavaFolds"
-    - "Rocks"
-    - "Hills"
-    - "Rocks_1"
-    - "LowMountains"
-    - "Mountains"
-    - "Mountains_1"
-    - "HighMountains"
-    - "HighMountains_1"
-  - GroupName: "AbandonedPOI"
-    Faction: "Alien"
-    FactionTerritory:
-    - "All"
-    AvoidFactionTerritory: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOINear:
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    - "FarrDroneBase"
-    - "PiratesDroneBase"
-    - "WarlordDroneBase"
-    - "CivilMain"
-    - "TS_Metal_Waypoint"
-    SpawnPOIAvoid:
-    - "AbandonedPOI"
-    SpawnPOINearRange:
-    - 1200
-    - 2000
-    SpawnPOIAvoidDistance: 2000
-    Biome:
-    - "Shore"
-    - "Permafrost"
-    - "PermafrostEdge"
-    - "ColdPlains"
-    - "Plains"
-    - "PlainsEdge"
-    - "DesertEdge"
-    - "Desert"
-    - "LavaFolds"
-    - "Rocks"
-    - "Hills"
-    - "Rocks_1"
-    - "LowMountains"
-    - "Mountains"
-    - "Mountains_1"
-    - "HighMountains"
-    - "HighMountains_1"
-  - GroupName: "LegacyInfector"
-    Faction: "TheLegacy"
-    AvoidFactionTerritory: true
-    IsScalingCount: true
-    Count:
-      Min: 1
-      Max: 1
-    CountMinMax:
-    - 1
-    - 1
-    Properties:
-    - Key: "RegenAfter"
-      Value: "720"
-    SpawnPOIAvoid:
-    - "LegacyInfector"
-    - "ZiraxDroneBase"
-    - "DroneBaseT1"
-    - "PolarisDroneBase"
-    - "KrielDroneBase"
-    - "ARCDronebase"
-    - "FarrDroneBase"
-    - "PiratesDroneBase"
-    - "WarlordDroneBase"
-    - "CivilMain"
-    - "TS_Metal_Waypoint"
-    SpawnPOIAvoidDistance: 3000
-    BiomesExcluded:
-    - "PoleEdge"
-    - "PoleEdge_1"
-    - "SandDrift"
-    - "Dunes"
-    - "Rocks"
-    - "Hills"
-  FixedPlayerStart:
-  - Mode: "Debug"
-    Pos:
-    - 200
-    - 80
-    - 0
-    RotY: 125
-    Armor: "ArmorMedium"
-  - Mode: "Survival"
-    Pos:
-    - 200
-    - 80
-    - 0
-    RotY: 125
-    Items:
-    - "Pistol:1, 50Caliber: 70, MobileAirCon:1, ConstructorSurvival:1, PlayerBike:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, SurvivalTool:1, Medikit04:3, IronIngot:50, SiliconIngot:40, TomatoStage1:1, Core:1, Flashlight:1"
-    - "Pistol:1, 50Caliber: 50, MobileAirCon:1, ConstructorSurvival:1, PlayerBikeKit:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, SurvivalTool:1, Medikit04:2, Core:1, Flashlight:1"
-    - "Pistol:1, 50Caliber: 40, MobileAirCon:1, Bandages:2, AntibioticOintment:2, SurvivalTool:1, Medikit04:1, Flashlight:1"
-    - "#FreshStart: Pistol:1, 50Caliber: 50, MobileAirCon:1, ConstructorSurvival, PlayerBike:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, SurvivalTool:1, Medikit04:2, Core:1, Flashlight:1"
-    Armor: "ArmorMedium"
-    Status:
-    - "Food: 400, Health: 400"
-    - "Food: 250, Health: 250"
-    - "Food: 150, Health: 150"
-    - "#FreshStart:Food: 250, Health: 250"
-    PlayerArmor:
-    - "ArmorLight, ArmorLight, None, #FreshStart:ArmorLight"
+    Random:
+
+# ======================= Helper POI =======================
+
+          # HINT MARKERS, DRONE / PV ANCHORS ==========
+          # Please do not remove. Needed for this playfield's specialities to function.
+          # Most of them will not show in the map. (Exception: Hint POI)
+
+
+          # Titanium - Hint marker
+        - GroupName: SignalMarker01  # This 'POI' will not create a visible block. 
+                                     # It should only guide players the idea that resources on this world can be undergroundlayers.
+          IsImportant: True
+          Faction: None
+          PlaceAt: Terrain, UnderWater
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          SpawnPOINear: [START] # START is a fixed placed stamp, at about 0,y,0 position, spawning an undergroundlayer resource.
+          SpawnPOINearRange: [10, 20] 
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: Discovery   # Can be seen everywhere on the map. 
+              Value: False
+
+
+
+          # PV SPAWN ANCHORS - A  (Invisible)
+        - GroupName: SignalMarker02
+          IsImportant: True
+          Faction: None
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes ]
+          IsScalingCount: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOIAvoid: [SignalMarker02] 
+          SpawnPOIAvoidDistance: 5000
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+
+
+          # PV SPAWN ANCHORS - B  (Invisible)
+        - GroupName: SignalMarker03
+          IsImportant: True
+          Faction: None
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes ]
+          IsScalingCount: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOIAvoid: [SignalMarker03]  
+          SpawnPOIAvoidDistance: 4000
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+
+
+
+          # DRONE & PV SPAWN ANCHORS  (Invisible)
+        # - GroupName: NullPOI
+        - GroupName: SignalMarker04
+
+          IsScalingCount: True
+          CountMinMax: [ 20, 20 ]
+          Faction: None
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes ]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+
+          SpawnPOIAvoid: [NullPOI, SignalMarker04]  # to spread them out
+          SpawnPOIAvoidDistance: 800
+
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+
+
+
+
+
+
+
+## ========================================================================
+##                     POI: DRONE BASES and COMMAND CENTERS
+## ========================================================================
+
+
+
+    # DB Large Factions === 
+
+
+
+         # DB Zirax (Xenu) ========
+        - GroupName: DroneBaseT1   # CommandCenter & POI anchor for defense structures & creature spawnzone anchor!)
+          Faction: Xenu   # For drones, using hostile zirax faction. (Zirax is currently set to neutral)
+
+          DroneBaseSetup: DroneBaseSetupXen
+
+          IsImportant: True
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks  ]  # (To prevent it from spawning at the poles or to prevent decoration overlaps)
+          CountMinMax: [ 1, 1 ]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+        - GroupName: PlanetVesselBase
+          Faction: Xenu
+
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Rocks]
+          IsImportant: True
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [300,600] 
+
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+         # DB Zirax  ======== (For BA attacks)
+        - GroupName: ZiraxDroneBase
+          Faction: Zirax
+
+          DroneBaseSetup: DroneBaseSetup
+
+          IsCommandCenter: True      # BA attacks
+
+          IsImportant: True
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks, Hills  ]  # (To prevent it from spawning at the poles or to prevent decoration overlaps)
+
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+         # DB POLARIS (Arkenian) ========
+
+        - GroupName: PolarisDroneBase 
+          Faction: Polaris
+
+          DroneBaseSetup: DroneBaseSetupPol
+
+          IsCommandCenter: True      # BA attacks
+
+          IsImportant: True
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert] # 'brighter' biomes
+
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, KrielDroneBase, ARCDronebase]
+          SpawnPOIAvoidDistance: 2000
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+#          AuxiliaryPOIs: [ZiraxDefense]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+         # DB KRIEL ========
+        - GroupName: KrielDroneBase 
+
+          DroneBaseSetup: DroneBaseSetupKrl
+
+          Faction: Kriel
+          IsImportant: True
+          Biome: [ Permafrost, ColdPlains, Hotspot, BarrenRocks, LavaFolds, LavaField, LavaFieldEdge, DriedLake, Mountains]  # 'darker' Biomes
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, ARCDronebase]
+          SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+
+        # DB TRADER (Prenn) ========
+
+
+
+        # DB TESCH  ========
+
+
+        - GroupName: TeschDroneBase 
+          Faction: Tesch
+
+          DroneBaseSetup: DroneBaseSetupTsc
+
+          IsImportant: True
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert] # 'brighter' biomes
+
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, KrielDroneBase, ARCDronebase]
+          SpawnPOIAvoidDistance: 2000
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+    # Small Factions === 
+
+        # DB FARR ========
+
+        - GroupName: FarrDroneBase
+
+          DroneBaseSetup: DroneBaseSetupFarr
+          Faction: Farr 
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks, Hills  ]
+
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase]
+          SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True 
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+        # DB ARC ========
+        - GroupName: ARCDronebase
+
+
+          DroneBaseSetup: DroneBaseSetup
+          Faction: ARC 
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert, Dunes ] # 'brighter' biomes
+
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase]
+          SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True 
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+
+    # Special Faction Dronebases  === 
+    # (Need to be placed after all others)
+
+
+
+
+        # DB WARLORD ========   
+        - GroupName: WarlordNestineDroneBase
+          Faction: Warlord
+          FactionTerritory: [All]   # Fallback drone spawn
+
+          DroneBaseSetup: DroneBaseSetupWar
+
+          IsImportant: True
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks, Hills ]
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase]
+          SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+        # DB PIRATES ========
+        - GroupName: PiratesDroneBase
+
+          DroneBaseSetup: DroneBaseSetupPir
+          Faction: Pirates
+
+          IsImportant: True
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert, Dunes ] # 'brighter' biomes
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase]
+          SpawnPOIAvoidDistance: 2000
+
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: PlanetVesselBase
+          Faction: Pirates
+
+          IsImportant: True
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks ] 
+
+          SpawnPOINear: [PiratesDroneBase]
+          SpawnPOINearRange: [200, 400]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          TroopTransport: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+
+## ========================================================================
+##                     POI SPAWNS: Factions
+## ========================================================================
+
+
+
+          # ================ ZIRAX cluster ================
+          # ================ 
+
+
+
+
+          # Rados power station / refinery cluster
+        - GroupName: RadosMain
+          Faction: Rados
+          NoShieldReload: True
+          IsImportant: True
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert ] # 'brighter' biomes
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnResource: ["GoldResource:1-1", "PromethiumResource:0-1"]  # Forces a resorce spawn here. 'Tempting the Miners to steal'
+          SpawnResourceRange: [80, 140]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+
+          # # Rados Spaceport 
+        - GroupName: PlanetVesselBase 
+          Faction: Rados
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOINear: [RadosMain]
+          SpawnPOINearRange: [150, 250]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 6 ]
+          ReserveCount: 3
+          TroopTransport: True
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+          # Rados bunker
+        - GroupName: RadosBunker 
+          Faction: Rados  
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Rocks ]
+          CountMinMax: [ 1, 1 ]
+          # IsImportant: True
+
+          SpawnPOINear: [RadosMain]
+          SpawnPOINearRange: [200, 600] 
+
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 5
+          TroopTransport: True
+          NoShieldReload: True
+          Properties: 
+            - Key: Music
+              Value: Encryptor
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: RadosAuxT1 
+          Faction: Rados  
+
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Rocks ]
+          CountMinMax: [ 3, 3 ]
+          SpawnPOINear: [RadosMain]
+          SpawnPOINearRange: [200, 300] 
+
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 5
+          TroopTransport: True
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+          # At Rados cluster 
+        - GroupName: JunkT1
+          Faction: None  
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [RadosMain]
+          SpawnPOINearRange: [400, 400]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral   
+            - Key: RegenAfter
+              Value: 720
+
+
+          # At Rados cluster 
+        - GroupName: Ruins
+          Faction: None  
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [RadosMain]
+          SpawnPOINearRange: [400, 400]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral   
+            - Key: RegenAfter
+              Value: 720
+
+          # At Rados cluster, far away
+        - GroupName: RadosSurvey
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Rocks ]
+          Faction: Rados
+
+          CountMinMax: [ 8, 10 ]
+          SpawnPOIAvoid: [RadosSurvey]
+          SpawnPOIAvoidDistance: 500
+          SpawnPOINear: [RadosMain]
+          SpawnPOINearRange: [1000, 2000]
+
+          TroopTransport: True
+
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+
+          # At Zirax Dronebase
+        - GroupName: XenuComArray
+          Faction: Zirax  
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [ZiraxDroneBase]
+          SpawnPOINearRange: [100, 150]
+          TroopTransport: True
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: XenuDefenceT1
+          Faction: Zirax  
+          CountMinMax: [ 4, 5 ]
+          SpawnPOINear: [ZiraxDroneBase]
+          SpawnPOINearRange: [100, 150]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Ruins
+          Faction: None  
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [ZiraxDroneBase]
+          SpawnPOINearRange: [400, 400]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral   
+            - Key: RegenAfter
+              Value: 720
+
+ 
+          # Around Xenu Dronebase
+        - GroupName: XenuDefenceT1
+          Faction: Xenu  
+          CountMinMax: [ 4, 5 ]
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [120, 250]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: JunkT1
+          Faction: None  
+          CountMinMax: [ 2, 4 ]
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [100, 300]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral   
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CrashedShip
+          Faction: None  
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [100, 300]
+          InitPower: False
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+
+          # ================ POLARIS cluster ================
+          # ================ 
+
+        - GroupName: TS_Metal_Waypoint    # POI anchor
+          Faction: Polaris 
+          # IsImportant: True
+
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert] # 'brighter' biomes
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [PolarisDroneBase]
+          SpawnPOINearRange: [200, 600] 
+
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          NoShieldReload: True 
+
+          SpawnResource: ["GoldResource:1-1", "PromethiumResource:0-1"]  # Forces a resorce spawn here. 'Tempting the Miners to steal'
+          SpawnResourceRange: [80, 140]
+          Properties: 
+            - Key: Music
+              Value: SunnySkies
+            - Key: RegenAfter
+              Value: 720
+            - Key: StationInterface
+              Value: "Fuel:1.5,O2:1.2,Warp:1,Ammo:0.7,Repair:8,Shield:1,IfNeutral:0.2,IfHonored:-0.20"
+
+
+        - GroupName: PolarisLogisticsMain
+          Faction: Polaris  
+          NoShieldReload: True
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert] # 'brighter' biomes
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOIAvoid: [DroneBaseT1]  
+          POIDistance: 3000
+          DroneProb: 1
+          DronesMinMax: [ 2, 2 ]
+
+          AuxiliaryPOIs: [DepositMarker]
+
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisLogisticsAux
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Rocks ]
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [100, 250] 
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 1 ]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+         
+        - GroupName: MiningStationAux
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Rocks ]
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [100, 250] 
+          DroneProb: 1
+          DronesMinMax: [ 1, 1 ]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisIndustrialAux
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Rocks ]
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [100, 250] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisDefence
+          Faction: Polaris         
+          NoShieldReload: True
+          CountMinMax: [ 3, 3 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [200, 300] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+              
+        - GroupName: Wreckage
+          Faction: None  
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [200, 500]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+#
+        - GroupName: JunkT1
+          Faction: None  
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [200, 500]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+         # At Dronebase
+        - GroupName: PolarisDefence
+          Faction: Polaris         
+          NoShieldReload: True
+          CountMinMax: [ 3, 3 ]
+          SpawnPOINear: [PolarisDroneBase]
+          SpawnPOINearRange: [180, 200] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+          # Polaris lava mining
+        - GroupName: PolarisMiningLava
+          Faction: Polaris  
+
+          Biome: [Hills, Rocks_1, Hotspot, LavaFolds, LavaField, BarrenRocks]  # 'lava' Biomes
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [TS_Metal_Waypoint]
+          SpawnPOINearRange: [500, 4000]
+
+          DroneProb: 0.2
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 3
+          TroopTransport: True
+          NoShieldReload: True
+
+          AuxiliaryPOIs: [DepositMarker, OreMinerT2]
+
+          Properties: 
+            - Key: Music
+              Value: lava 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisMiningLavaAux
+          Faction: Polaris  
+          CountMinMax: [ 1, 2 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Rocks ]
+          SpawnPOINear: [PolarisMiningLava]
+          SpawnPOINearRange: [300, 500]
+          DroneProb: 0.2
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 3
+          TroopTransport: True
+          NoShieldReload: True
+          Properties: 
+            - Key: Music
+              Value: lava 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+         # == Polaris (& Warlord) AUX POI =============
+         # ! Do not use for NearPOI in the same playfield !
+
+         # (Aux)  # Broken down & destroyed mining sites
+        - GroupName: DepositMarker
+
+          IsAuxPOI: True #######
+
+          Faction: None
+          CountMinMax: [ 0, 2 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          Territory: False
+
+          # SpawnPOINear: [CivilSettlement]  # ( AuxPOI don't need this, since they are not anchored to a specific POI)
+          SpawnPOINearRange: [300, 400]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+          # ================ KRIEL ================
+          # ================ 
+
+
+          # Defenses (Dronebase)
+        - GroupName: KrielDefenseT1
+          Faction: Kriel
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [KrielDroneBase]
+          SpawnPOINearRange: [200, 400]
+
+          NoShieldReload: True
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+
+          # Kriel mini cluster
+        - GroupName: KrielMain
+          Faction: Kriel
+          CountMinMax: [ 2, 2 ]
+          SpawnPOINear: [KrielDroneBase]
+          SpawnPOINearRange: [300, 500]
+
+          NoShieldReload: True
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 4 ]
+          ReserveCount: 3
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+
+          # ================ WARLORD ================
+          # ================ 
+
+
+          # Defenses (Dronebase)
+        - GroupName: WarlordFortNestDef
+          Faction: Warlord
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [WarlordNestineDroneBase]
+          SpawnPOINearRange: [200, 400]
+
+          NoShieldReload: True
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+
+          # Warlord mining operation
+        - GroupName: Mining
+          Faction: Warlord
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [WarlordNestineDroneBase]
+          SpawnPOINearRange: [400, 500]
+
+          NoShieldReload: True
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 3
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+         # Warlord junk and stuff ====== 
+         
+          # (Possibly partially submerged) ruins
+        - GroupName: Ruins
+          Faction: None
+          CountMinMax: [ 2, 3 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          PlaceAt: UnderWater, Terrain
+          SpawnPOIAvoid: [JunkT1]
+          SpawnPOIAvoidDistance: 150
+          SpawnPOINear: [WarlordNestineDroneBase]
+          SpawnPOINearRange: [200, 700]
+          InitPower: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: ScraperPile
+          Faction: None
+          CountMinMax: [ 3, 4 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          SpawnPOINear: [Mining]
+          SpawnPOINearRange: [150, 350]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+          # Extra crashed
+        - GroupName: CrashedShip
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          PlaceAt: UnderWater, Terrain
+          SpawnPOINear: [WarlordNestineDroneBase]
+          SpawnPOINearRange: [200, 700]
+          InitPower: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: JunkT1
+          Faction: None
+          CountMinMax: [ 3, 4 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          SpawnPOINear: [Mining]
+          SpawnPOINearRange: [150, 350]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+          # ================ FARR ================
+          # ================ 
+
+
+
+          # Trading Hub
+
+        - GroupName: FarrTradingT2  # Main cluster anchor POI
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks, Rocks_1, Hills ]
+          Faction: Farr
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOINear: [FarrDroneBase]
+          SpawnPOINearRange: [700, 1200]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          TroopTransport: True
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+
+         # Newly constructed trading (further outside)
+        - GroupName: FarrTradingT3
+          Faction: Farr 
+
+          # IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert] # 'brighter' biomes
+
+          SpawnPOINear: [FarrTradingT2]
+          SpawnPOINearRange: [200, 800]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True 
+          TroopTransport: True
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+
+         # Aux
+        - GroupName: FarrAuxT2
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks, Rocks_1, Hills ]
+          Faction: Farr
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [FarrTradingT2]
+          SpawnPOINearRange: [300, 800]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          TroopTransport: True
+          Properties:
+            - Key: RegenAfter
+              Value: 720 
+
+
+         # Aux
+        - GroupName: FarrAuxT1
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks, Rocks_1, Hills ]
+          Faction: Farr
+          CountMinMax: [ 3, 5 ]
+          SpawnPOINear: [FarrTradingT2]
+          SpawnPOINearRange: [200, 800]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          TroopTransport: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+
+          # Defenses (Older Trading Hub)
+        - GroupName: FarrDefenseT1
+          Faction: Farr
+          CountMinMax: [ 5, 6 ]
+          SpawnPOIAvoid: [FarrDefenseT1]
+          SpawnPOIAvoidDistance: 100
+          SpawnPOINear: [FarrTradingT2]
+          SpawnPOINearRange: [150, 800]
+
+
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+          # Defenses (Newer trading cluster)
+        - GroupName: FarrDefenseT1
+          Faction: None\u00B4
+          CountMinMax: [ 3, 3 ]
+          SpawnPOINear: [FarrTradingT3]
+          SpawnPOINearRange: [700, 900]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+          # Defenses (Dronebase)
+        - GroupName: FarrDefenseT1
+          Faction: Farr
+          CountMinMax: [ 5, 6 ]
+          SpawnPOIAvoid: [FarrDefenseT1]
+          SpawnPOIAvoidDistance: 100
+          SpawnPOINear: [FarrDroneBase]
+          SpawnPOINearRange: [200, 300]
+
+          NoShieldReload: True
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+
+           # Other
+        - GroupName: FarrRuinT1
+          Faction: None
+          CountMinMax: [ 4, 6 ]
+          SpawnPOINear: [FarrTradingT2]
+          SpawnPOINearRange: [700, 900]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+         # Abandoned sites. (Place last in Farr stack, else it hinders POI spawning.)
+
+        - GroupName: FarrAbandoned
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks, Rocks_1, Hills ]
+          Faction: TheLegacy
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOIAvoid: [FarrTradingT2]
+          SpawnPOIAvoidDistance: 1500
+          SpawnPOINear: [FarrTradingT2]
+          SpawnPOINearRange: [1000, 1500]
+
+          Territory: False
+          DroneProb: 0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+          # ================ PRENN / Trader ================
+          # ================ 
+          # (Don't need much extra setup, since Colonists are allowed to spawn there in Full.)
+
+
+
+        - GroupName: TraderSettlement   # Single settlement as PV spawn anchor, see further below.
+          Faction: PrennFederation
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert] # 'brighter' biomes
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+
+          NoShieldReload: True
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: TraderSettlement
+          Faction: PrennFederation
+          CountMinMax: [ 1, 2 ]
+
+          SpawnPOINear: [TraderSettlement]
+          SpawnPOINearRange: [100, 200]
+          NoShieldReload: True
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+ 
+          # Defenses
+        - GroupName: TraderDefenseA
+          Faction: PrennFederation
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOINear: [TraderSettlement]
+          SpawnPOINearRange: [100, 200]
+          NoShieldReload: True
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+          # ================ Colonists ================
+          # ================ 
+          # Spawns further away from other factions, espeically the more hostile ones
+
+
+         # Col -  Cluster center Anochor - Main settlement
+        - GroupName: CivilMain
+          Faction: Colonists
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert, Mountains] # 'brighter' biomes
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase, PiratesDroneBase, WarlordDroneBase]
+          SpawnPOIAvoidDistance: 2000
+
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          NoShieldReload: True
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: TS_Metal_Waypoint
+          Faction: Colonists 
+          # IsImportant: True
+          CountMinMax: [ 1, 1 ]
+
+          Biome: [ DriedLake, Plains, PlainsEdge, DesertEdge, Desert] 
+
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [200, 300]
+
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          NoShieldReload: True 
+          Properties: 
+            - Key: Music
+              Value: SunnySkies
+            - Key: RegenAfter
+              Value: 720
+            - Key: StationInterface
+              Value: "Fuel:1.5,O2:1.2,Warp:1,Ammo:0.7,Repair:8,Shield:1,IfNeutral:0.2,IfHonored:-0.20"
+
+          # Transport hub
+        - GroupName: PlanetVesselBase
+          Faction: Colonists
+          CountMinMax: [ 1, 1 ]
+
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks ] 
+
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [150, 250]
+
+          AuxiliaryPOIs: [OreMinerT1, BAW_BaseT2]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+          # Main settlement
+        - GroupName: CivilSettlement
+          Faction: Colonists
+          
+          CountMinMax: [ 3, 3 ]
+
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Sand, Rocks, Hills ]
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [200, 300]
+          DroneProb: 1
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 3
+          NoShieldReload: True
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+          # Defenses
+        - GroupName: TraderDefenseA
+          Faction: Colonists
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOINear: [PlanetVesselBase]
+          SpawnPOINearRange: [100, 200]
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: TraderDefenseA
+          Faction: Colonists
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [100, 200]
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+         # Deco
+        - GroupName: LavaNascentRandom
+          Faction: Colonists
+          Territory: False
+
+          CountMinMax: [ 7, 8 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+
+          # SpawnPOIAvoid: [LavaNascentRandom]
+          # SpawnPOIAvoidDistance: 150
+          SpawnPOINear: [PlanetVesselBase]
+          SpawnPOINearRange: [300, 400]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+         # Clutter
+        - GroupName: JunkT1
+          Faction: None
+          CountMinMax: [ 3, 4 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          SpawnPOIAvoid: [JunkT1]
+          SpawnPOIAvoidDistance: 150
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [100, 500]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+          # =====  Col Clusters  =======
+
+          # Col - Small settlements scattered over the planet.
+          # These carry AUX POI.
+        - GroupName: CivilSettlement
+          Faction: Colonists
+          
+          IsScalingCount: True
+          CountMinMax: [ 1, 2 ]
+
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Sand, Rocks, Hills, Dunes ]
+          SpawnPOIAvoid: [CivilSettlement]
+          SpawnPOIAvoidDistance: 1000
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [1000, 6000]
+
+          AuxiliaryPOIs: [OreMinerT1, OreMinerT2, BAW_BaseT2]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+         # == Col AUX POI =============
+         # ! Do not use for NearPOI in the same playfield !
+
+         # (Aux) Mining structures around the settlements 
+        - GroupName: OreMinerT1
+
+          IsAuxPOI: True #######
+
+          # UseEachGroupPoiOnlyOnce: True  # Will try to avoid double-spawning the same POI in this bunch
+
+          Faction: Colonists
+          CountMinMax: [ 0, 1 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          Territory: False
+
+          # SpawnPOINear: [CivilSettlement]  # ( AuxPOI don't need this)
+          SpawnPOINearRange: [100, 300]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+         # (Aux) Mining structures closer to the settlements 
+        - GroupName: OreMinerT2
+
+          IsAuxPOI: True #######
+
+          Faction: Colonists
+          CountMinMax: [ 1, 2 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          Territory: False
+          # SpawnPOINear: [CivilSettlement]  # ( AuxPOI don't need this, since they are not anchored to a specific POI=
+          SpawnPOINearRange: [80, 200]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+         # (Aux) Some shelters
+        - GroupName: BAW_BaseT2
+          Faction: None
+
+          IsAuxPOI: True #######
+
+          CountMinMax: [ 0, 1 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          # SpawnPOINear: [CivilSettlement]
+          SpawnPOINearRange: [600, 1000]
+          Properties: 
+            - Key: PersonalContainer
+              Value: "Core:1, ConstructorSurvival:1, NutrientSolution:2, Coolant:1, PowerBar:2, Beer:1, Fiber:50, 8.3mmBullet: 100"
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+         # Col - One Alien POI
+        - GroupName: AbandonedMine
+          Faction: Alien
+          FactionTerritory: [Zirax, ArkenianRepublic, PrennFederation, Farr, Colonists, Pirates]
+          CountMinMax: [ 1, 1 ]
+
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Sand, Rocks, Hills ]
+          SpawnPOINear: [CivilSettlement]
+          SpawnPOINearRange: [500, 800]
+
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+## ========================================================================
+##                     POI SPAWNS: Other & clutter
+## ========================================================================
+
+
+          # ================ Shelters & Vessels ================
+          # ================ 
+  
+        - GroupName: JunkT2
+          Faction: None
+          Biome: [ DriedLake, LowMountains, LowMountains_1, Mountains, PlainsEdge, DesertEdge, Rocks_1, Shore, Oasis ]
+
+          AvoidFactionTerritory: True  
+
+          SpawnPOIAvoid: [TJunkT2]
+          SpawnPOIAvoidDistance: 3000
+
+          IsScalingCount: True
+          CountMinMax: [ 2, 2 ]
+
+          Properties: 
+            - Key: PersonalContainer
+              Value: "Core:1, Fiber:25, PowerBar:1, PumpkinStage1:2, OxygenBottleSmall:5, NutrientSolution:3, MetalPieces:1, Coolant:1, Beer:1, 12.7mmBullet: 70"
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: BAW_Base
+          Faction: None
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Sand, Desert, Rocks, Hills ]
+
+          IsScalingCount: True
+          CountMinMax: [ 2, 2 ]
+
+          AvoidFactionTerritory: True   
+
+          SpawnPOIAvoid: [BAW_Base]
+          SpawnPOIAvoidDistance: 3000
+          Properties: 
+            - Key: PersonalContainer
+              Value: "Core:1, MetalPieces:1, OxygenBottleSmall:7, NutrientSolution:2, Coolant:1, PowerBar:2, Beer:1, TomatoStage1:3, Fiber:50, 12.7mmBullet: 80"
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: DamagedHV
+          Faction: None  
+          NoShieldReload: True
+          Type: HV_Player  
+          CountMinMax: [ 1, 1 ]
+          # IsImportant: True  
+          InitPower: False
+          SpawnPOINear: [BAW_Base]
+          SpawnPOINearRange: [50, 100]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: MapDistance
+              Value: 500
+
+
+          # ================ Crashed Vessels
+
+
+
+        - GroupName: CrashedShip
+          Faction: None
+          
+          IsScalingCount: True
+          CountMinMax: [ 1, 1 ]
+          Biome: [ ShallowWater, Water, HotSprings, Shore]
+          PlaceAt: UnderWater               # (Very small biome on this planet)
+
+          SpawnPOIAvoid: [START]
+          SpawnPOIAvoidDistance: 1500
+          SpawnPOINear: [START]
+          SpawnPOINearRange: [1500, 16000]   # (To improve spawning chances)
+          InitPower: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+         # Another crashed ship, since this planet has not much water
+        - GroupName: CrashedShip
+          Faction: None
+
+          Biome: [ Shore, Permafrost, PermafrostEdge, ColdPlains, Plains, PlainsEdge, DesertEdge, Desert, LavaFolds, Rocks, Hills, Rocks_1, LowMountains, Mountains, Mountains_1, HighMountains, HighMountains_1 ]
+          IsScalingCount: True
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: UnderWater, Terrain
+
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 4
+          SpawnPOIAvoid: [CrashedShip, START]
+          SpawnPOIAvoidDistance: 1500
+          SpawnPOINear: [START]
+          SpawnPOINearRange: [2000, 16000]   # (To improve spawning chances)
+          InitPower: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+          # ================ Alien / Abandoned  ================
+          # ================ 
+
+        - GroupName: Artifacts
+          Faction: Alien
+          Biome: [ Permafrost, Hotspot, LavaField, LavaFolds, Hills, BarrenRocks, Rocks_1, Oasis]
+          AvoidFactionTerritory: True
+
+          IsScalingCount: True
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOIAvoid: [LegacyInfector, ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase, PiratesDroneBase, WarlordDroneBase, CivilMain, TS_Metal_Waypoint ]
+          SpawnPOIAvoidDistance: 2000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+         # Abandoned POI. Will try to spawn near a civilisation cluster. Will fail if no cluster is available.
+        - GroupName: AbandonedPOI
+          Faction: Alien
+
+          Biome: [ Shore, Permafrost, PermafrostEdge, ColdPlains, Plains, PlainsEdge, DesertEdge, Desert, LavaFolds, Rocks, Hills, Rocks_1, LowMountains, Mountains, Mountains_1, HighMountains, HighMountains_1 ]
+          AvoidFactionTerritory: True
+          FactionTerritory: [All]
+
+          # IsScalingCount: True
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOINear: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase, PiratesDroneBase, WarlordDroneBase, CivilMain, TS_Metal_Waypoint ]
+          SpawnPOINearRange: [1200, 2000]
+          InitPower: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: AbandonedPOI  # As above. ( Another definition to have a try at a different anchor POI)
+          Faction: Alien
+
+          Biome: [ Shore, Permafrost, PermafrostEdge, ColdPlains, Plains, PlainsEdge, DesertEdge, Desert, LavaFolds, Rocks, Hills, Rocks_1, LowMountains, Mountains, Mountains_1, HighMountains, HighMountains_1 ]
+          AvoidFactionTerritory: True
+          FactionTerritory: [All]
+
+          # IsScalingCount: True
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOIAvoid: [AbandonedPOI]
+          SpawnPOIAvoidDistance: 2000
+          SpawnPOINear: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase, PiratesDroneBase, WarlordDroneBase, CivilMain, TS_Metal_Waypoint ]
+          SpawnPOINearRange: [1200, 2000]
+          InitPower: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+          # ================ TheLegacy ================
+          # ================ 
+          # Will try to avoid all other factions (Since they otherwise would have raided this POI already)
+          # Since this is a very barren playfield, there is not much for the Legacy to feed on.
+
+        - GroupName: LegacyInfector
+          Faction: TheLegacy
+
+          IsScalingCount: True
+          AvoidFactionTerritory: True
+
+          CountMinMax: [ 1, 1 ]
+          BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift, Dunes, Rocks, Hills ]
+          SpawnPOIAvoid: [LegacyInfector, ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase, PiratesDroneBase, WarlordDroneBase, CivilMain, TS_Metal_Waypoint ]
+          SpawnPOIAvoidDistance: 3000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+
+
+
+# =================================================
+# =================================================
+
+
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ 200, 80, 0 ]
+          RotY: 125
+          Armor: ArmorMedium
+
+
+        - Mode: Survival
+          Pos: [ 200, 80, 0 ]
+          RotY: 125
+          Armor: ArmorMedium
+
+
+          PlayerArmor: ["ArmorLight, ArmorLight, None, #FreshStart:ArmorLight"]     
+          Status: [ 
+          "Food: 400, Health: 400", 
+          "Food: 250, Health: 250", 
+          "Food: 150, Health: 150", 
+          "#FreshStart:Food: 250, Health: 250" ]
+
+          Items: [ 
+          "Pistol:1, 50Caliber: 70, MobileAirCon:1, ConstructorSurvival:1, PlayerBike:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, SurvivalTool:1, Medikit04:3, IronIngot:50, SiliconIngot:40, TomatoStage1:1, Core:1, Flashlight:1", 
+          "Pistol:1, 50Caliber: 50, MobileAirCon:1, ConstructorSurvival:1, PlayerBikeKit:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, SurvivalTool:1, Medikit04:2, Core:1, Flashlight:1", 
+          "Pistol:1, 50Caliber: 40, MobileAirCon:1, Bandages:2, AntibioticOintment:2, SurvivalTool:1, Medikit04:1, Flashlight:1", 
+          "#FreshStart: Pistol:1, 50Caliber: 50, MobileAirCon:1, ConstructorSurvival, PlayerBike:1, Bandages:3, AntibioticOintment:2, AntiToxicOintment:1, AntiRadiationOintment:1, SurvivalTool:1, Medikit04:2, Core:1, Flashlight:1" ]
+
+
+
+
+## ========================================================================
+## ====================== DRONEBASE SETUPS ================================ (Will respawn faction drones & may start BA raids in some cases)
+## ========================================================================
+
+## This planet has no breatable atmosphere. Troopers are mostly robots (with the Zirax wearing masks)
+
+
 DroneBaseSetup:
   Random:
-  - GroupName: "DroneBaseSetup"
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    DroneProb: 1
-    Difficulty: 5
-    PresetStyle: 2
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMale"
-      Amount: "500"
-      Extra: 3
-    - Name: "ZiraxRocket"
-      Amount: "500"
-      Extra: 3
-    - Name: "RipperDog"
-      Amount: "150"
-      Extra: 3
-    - Name: "Mechanoid"
-      Amount: "300"
-      Extra: 3
-  - GroupName: "DroneBaseSetupXen"
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    DroneProb: 1
-    Difficulty: 5
-    PresetStyle: 2
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "ZiraxMale"
-      Amount: "500"
-      Extra: 3
-    - Name: "ZiraxRocket"
-      Amount: "500"
-      Extra: 3
-    - Name: "Mechanoid"
-      Amount: "300"
-      Extra: 3
-  - GroupName: "DroneBaseSetupPir"
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    DroneProb: 1
-    Difficulty: 5
-    PresetStyle: 2
-    Stock:
-    - Name: "DroneSmallPiratesCannon"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneLargePiratesMortar"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "AssaultCyborg"
-      Amount: "500"
-      Extra: 3
-  - GroupName: "DroneBaseSetupTsc"
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    DroneProb: 1
-    Difficulty: 5
-    PresetStyle: 2
-    Stock:
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneLargeAttackBase"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "AssaultCyborg"
-      Amount: "500"
-      Extra: 3
-  - GroupName: "DroneBaseSetupFarr"
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    DroneProb: 1
-    Difficulty: 5
-    PresetStyle: 2
-    Stock:
-    - Name: "DroneSmallPiratesCannon"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneLargePiratesMortar"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "AssaultCyborg"
-      Amount: "500"
-      Extra: 3
-  - GroupName: "DroneBaseSetupPol"
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    DroneProb: 1
-    Difficulty: 5
-    PresetStyle: 2
-    Stock:
-    - Name: "DroneSmallPolarisLaser"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallPolarisLaser"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "AssaultCyborg"
-      Amount: "500"
-      Extra: 3
-    - Name: "AssaultCyborgCommando"
-      Amount: "100"
-      Extra: 3
-  - GroupName: "DroneBaseSetupKrl"
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    DroneProb: 1
-    Difficulty: 5
-    PresetStyle: 2
-    Stock:
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "AlienAssassinRed"
-      Amount: "500"
-      Extra: 3
-    - Name: "Hexapod"
-      Amount: "100"
-      Extra: 3
-  - GroupName: "DroneBaseSetupWar"
-    DronesMinMax:
-    - 3
-    - 5
-    ReserveCount: 5
-    DroneProb: 1
-    Difficulty: 5
-    PresetStyle: 2
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "300"
-      Extra: 0
-    - Name: "DroneSmallPiratesCannon"
-      Amount: "100"
-      Extra: 0
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneSmallAttackBase"
-      Amount: "Infinite"
-      Extra: 1
-    - Name: "DroneTroopsTransport"
-      Amount: "Infinite"
-      Extra: 2
-    - Name: "AssaultCyborg"
-      Amount: "500"
-      Extra: 3
+        - GroupName: DroneBaseSetup
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket  
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMale
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 150
+                Extra: 3
+
+              - Name: Mechanoid
+                Amount: 300
+                Extra: 3
+
+
+
+        - GroupName: DroneBaseSetupXen
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket  
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMale
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              # - Name: RipperDog
+                # Amount: 150
+                # Extra: 3
+
+              - Name: Mechanoid
+                Amount: 300
+                Extra: 3
+
+
+
+        - GroupName: DroneBaseSetupPir
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPiratesCannon
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneLargePiratesMortar  
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+
+
+        - GroupName: DroneBaseSetupTsc
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneLargeAttackBase  
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+
+        - GroupName: DroneBaseSetupFarr
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPiratesCannon
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneLargePiratesMortar  
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+
+        - GroupName: DroneBaseSetupPol
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPolarisLaser
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallPolarisLaser    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+              - Name: AssaultCyborgCommando
+                Amount: 100
+                Extra: 3
+
+
+        - GroupName: DroneBaseSetupKrl
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AlienAssassinRed
+                Amount: 500
+                Extra: 3
+
+              - Name: Hexapod
+                Amount: 100
+                Extra: 3
+
+
+
+
+
+
+        - GroupName: DroneBaseSetupWar
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallPiratesCannon
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+
+
+  DroneBases:
+
+
+
+
+## ====================== PATROL VESSEL BASES =========================== ( Here a PV can get repairs and will respawn)
+
+
+
+  PlanetVesselBases:
+
+
+
+
+## ====================== FREE ROAMING PATROL VESSELS ===========================
+
+
   PlanetVessels:
-  - Name: "OPVZiraxT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Xenu"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "ZiraxDroneBase"
-      DistToGround: 200
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "OPVZiraxT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Xenu"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "DronebaseT1"
-      DistToGround: 200
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "OPVZiraxT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Xenu"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "PV_RadosTeleportLens"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Rados"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "RadosMain"
-      Radius: 2000
-      DistToGround: 200
-  - Name: "OPVArkenianT2"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Polaris"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "PolarisDroneBase"
-      Radius: 1000
-      DistToGround: 300
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "OPVArkenianT0"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Polaris"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "OPVArkenianT0"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Polaris"
-    FixedMaxSpeed: 16
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "OPVWarlordT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Warlord"
-    FixedMaxSpeed: 16
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "WarlordNestineDroneBase"
-      DistToGround: 200
-  - Name: "OPVWarlordT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Warlord"
-    FixedMaxSpeed: 16
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-  - Name: "OPVWarlordT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Warlord"
-    FixedMaxSpeed: 16
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-  - Name: "OPVKrielT2"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Kriel"
-    FixedMaxSpeed: 8
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "KrielDroneBase"
-      Radius: 1000
-      DistToGround: 320
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "OPVKrielT2"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Kriel"
-    FixedMaxSpeed: 8
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "OPVKrielT0"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Kriel"
-    FixedMaxSpeed: 18
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-  - Name: "OPVKrielT0"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Kriel"
-    FixedMaxSpeed: 18
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-  - Name: "OPVKrielT0"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Kriel"
-    FixedMaxSpeed: 18
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-  - Name: "OPVPrennT2"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "PrennFederation"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "TraderSettlement"
-      DistToGround: 250
-  - Name: "OPVTesch"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Tesch"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "TeschDroneBase"
-      DistToGround: 300
-  - Name: "OPVFarrT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Farr"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "FarrDroneBase"
-      DistToGround: 200
-  - Name: "OPVFarrT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Farr"
-    FixedMaxSpeed: 12
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-  - Name: "FreighterFarr"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Farr"
-    FixedMaxSpeed: 6
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 400
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
-  - Name: "OPVPiratesT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Pirates"
-    FixedMaxSpeed: 14
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "PiratesDroneBase"
-      DistToGround: 200
-  - Name: "OPVPiratesT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Pirates"
-    FixedMaxSpeed: 14
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-  - Name: "OPVPiratesT1"
-    CountMinMax:
-    - 1
-    - 1
-    Faction: "Pirates"
-    FixedMaxSpeed: 14
-    DelayBetweenRespawn: 1200
-    DelayBeforeSelfDestruction: 1200
-    RangePatrolTask:
-      POINameAsPositionRef:
-      - "SignalMarker04"
-      DistToGround: 200
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "Infinite"
-      Type: "FighterDrone"
+
+
+    # ============= Zirax =============
+
+
+    # === XENU === 
+    - Name: OPVZiraxT1
+      Faction: Xenu   # Aggressive 
+      CountMinMax: [1, 1]
+#      LevelMod: 2
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [ZiraxDroneBase] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: OPVZiraxT1
+      Faction: Xenu
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [DronebaseT1] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: OPVZiraxT1
+      Faction: Xenu
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+    # ==== RADOS ====
+    # Flavour PV. Planning to teleport a new Base on this playfield.
+
+    - Name: PV_RadosTeleportLens
+      Faction: Rados   # Likely non-aggressive 
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [RadosMain]
+        Radius: 2000           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 200
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+      # === ARKENIAN / POLARIS === 
+  
+    - Name: OPVArkenianT2
+      Faction: Polaris
+      CountMinMax: [1, 1]
+#      LevelMod: 2
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [PolarisDroneBase]
+        Radius: 1000           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 300
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: OPVArkenianT0
+      Faction: Polaris
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: OPVArkenianT0
+      Faction: Polaris
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 16
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+
+
+       # === WARLORD === 
+       # Smaller but faster PVs
+    - Name: OPVWarlordT1
+      Faction: Warlord
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 16
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [WarlordNestineDroneBase] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+    - Name: OPVWarlordT1
+      Faction: Warlord
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 16
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    - Name: OPVWarlordT1
+      Faction: Warlord
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 16
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+
+       # === KRIEL === 
+       # More PVs, but some of them are rater harmless (but much faster)
+
+
+    - Name: OPVKrielT2
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 8
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [KrielDroneBase]
+        Radius: 1000           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 320
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+    - Name: OPVKrielT2
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 8
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # The OPV0  are mostly harmless
+    - Name: OPVKrielT0
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+
+    - Name: OPVKrielT0
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+
+    - Name: OPVKrielT0
+      Faction: Kriel   # Aggressive
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+
+
+
+       # === PRENN / Trader ===
+
+    - Name: OPVPrennT2     # (Just a single vessel to remind the colonists who owns this planet)
+      Faction: PrennFederation
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [TraderSettlement] 
+        DistToGround: 250
+        ## (Default patrol area is planet-size)
+
+
+       # === TESCH ===
+
+    - Name: OPVTesch     #
+      Faction: Tesch
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [TeschDroneBase] 
+        DistToGround: 300
+        ## (Default patrol area is planet-size)
+
+
+
+
+       # === FARR ===
+
+    - Name: OPVFarrT1
+      Faction: Farr
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [FarrDroneBase] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    - Name: OPVFarrT1
+      Faction: Farr 
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    - Name: FreighterFarr  # These one might be bigger.
+      Faction: Farr 
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 6
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 400
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+
+       # === ARC === 
+
+
+
+
+       # === Pirates === 
+
+
+    - Name: OPVPiratesT1
+      Faction: Pirates
+
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 14
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [PiratesDroneBase] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    - Name: OPVPiratesT1
+      Faction: Pirates 
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 14
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    - Name: OPVPiratesT1
+      Faction: Pirates
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 14
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [SignalMarker04] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+
+## ====================== FREE ROAMING DRONES =========================== # (May get replenished by a DroneBase)
+
+
+
 DroneSpawning:
-  Random:
-  - Name: "DroneSmallFast01Rocket"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Xenu"
-    POINameAsPositionRef: "ZiraxDroneBase"
-    Radius: 6000
-  - Name: "DroneSmallPolarisLaser"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Polaris"
-    POINameAsPositionRef: "PolarisDroneBase"
-    Radius: 6000
-  - Name: "DroneSmallPolarisLaser"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Polaris"
-    Radius: 3000
-  - Name: "DroneSmallFast01Minigun"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Warlord"
-    POINameAsPositionRef: "WarlordDroneBase"
-    Radius: 6000
-  - Name: "DroneSmallFast01Minigun"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Warlord"
-    Radius: 3000
-  - Name: "DroneSmallFast01Rocket"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Kriel"
-    POINameAsPositionRef: "KrielDroneBase"
-    Radius: 6000
-  - Name: "DroneSmallFast01Minigun"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Kriel"
-    Radius: 3000
-  - Name: "DroneSmallPiratesCannon"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Pirates"
-    POINameAsPositionRef: "PiratesDroneBase"
-    Radius: 6000
-  - Name: "DroneSmallFast01Minigun"
-    DronesMinMax:
-    - 5
-    - 7
-    Faction: "Pirates"
-    Radius: 3000
-CreatureSpawning:
-- Biomes:
-  - "Shore"
-  Entities:
-  - Name: "SlimesWhite"
-    Color: "1, 1, 1"
-    DelayMinMax:
-    - 70
-    - 90
-    Period: "Always"
+
+    Random:
+
+
+
+
+       # === XENU === 
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 5, 7 ]
+        Faction: Xenu
+       # CenterX: 5
+        POINameAsPositionRef: ZiraxDroneBase
+        Radius: 6000
+
+
+       # === ARKENIAN / POLARIS === 
+
+
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 5, 7 ]
+        Faction: Polaris
+       # CenterX: 5
+        POINameAsPositionRef: PolarisDroneBase
+        Radius: 6000
+
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 5, 7 ]
+        Faction: Polaris
+        CenterX: 0
+        Radius: 3000
+
+
+
+
+       # === WARLORD === 
+
+      - Name: DroneSmallFast01Minigun
+        DronesMinMax: [ 5, 7 ]
+        Faction: Warlord
+       # CenterX: 5
+        POINameAsPositionRef: WarlordDroneBase
+        Radius: 6000
+
+      - Name: DroneSmallFast01Minigun
+        DronesMinMax: [ 5, 7 ]
+        Faction: Warlord
+        CenterX: 0
+        Radius: 3000
+
+
+
+       # === KRIEL === 
+
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 5, 7 ]
+        Faction: Kriel
+       # CenterX: 5
+        POINameAsPositionRef: KrielDroneBase
+        Radius: 6000
+
+      - Name: DroneSmallFast01Minigun
+        DronesMinMax: [ 5, 7 ]
+        Faction: Kriel
+        CenterX: 0
+        Radius: 3000
+
+
+          # Farr
+
+          # ARC
+
+
+       # === Pirates === 
+
+
+      - Name: DroneSmallPiratesCannon
+        DronesMinMax: [ 5, 7 ]
+        Faction: Pirates
+       # CenterX: 5
+        POINameAsPositionRef: PiratesDroneBase
+        Radius: 6000
+
+      - Name: DroneSmallFast01Minigun
+        DronesMinMax: [ 5, 7 ]
+        Faction: Pirates
+        CenterX: 0
+        Radius: 3000
+
+
+
+## ========================================================================
+## ====================== CREATURES =======================================
+## ========================================================================
+
+
+
+
+
 SpawnRateZones:
-- SpawnAt:
-  - "START"
-  Radius: 1000
-  RateMultiplyerEdge: 1
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
+
+
+   - SpawnAt: [START]  # (Just a marker here )
+     Radius: 1000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 1.0
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
 SpawnZones:
-- SpawnAt:
-  - "SignalMarker01"
-  Radius: 530
-  Color: "1.0, 0.0, 0.0, 0.3"
-  Entities:
-  - Names:
-    - "CyborgsDamagedHerd"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker01"
-  Radius: 50
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "CyborgsDamagedHerd"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker01"
-  - "SignalMarker02"
-  - "SignalMarker03"
-  - "SignalMarker04"
-  Radius: 110
-  Color: "1.0, 1.0, 1.0, 0.8"
-  Entities:
-  - Names:
-    - "CyborgsDamagedHerd"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "TS_Metal_Waypoint"
-  Radius: 900
-  Color: "1.0, 0.0, 0.0, 0.3"
-  Entities:
-  - Names:
-    - "CyborgsDamagedHerd"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "DroneBaseT3"
-  - "TS_Metal_Waypoint"
-  Radius: 500
-  Color: "1.0, 1.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "CyborgsDamagedHerd"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "DroneBaseT3"
-  - "TS_Metal_Waypoint"
-  Radius: 900
-  Color: "1.0, 1.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "CyborgsDamagedHerd"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "Artifacts"
-  Radius: 150
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  Color: "1.0, 0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs02"
-    Biomes:
-    - "Any"
-    Amount: 400
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-  - Names:
-    - "AlienAssassinGreysInfected"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-- SpawnAt:
-  - "DamagedHV"
-  Radius: 120
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0.7, 0.0, 0.0, 0.7"
-  Entities:
-  - Names:
-    - "AlienAssassinGreysInfected"
-    Biomes:
-    - "Any"
-    Amount: 2000
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "AbandonedPOI"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 200
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0.7, 0.0, 0.0, 0.7"
-  Entities:
-  - Names:
-    - "AlienBugs02"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-  - Names:
-    - "AlienAssassinGreysInfected"
-    Biomes:
-    - "Any"
-    Amount: 200
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "CrashedShip"
-  - "Ruins"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  Radius: 200
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0.7, 0.0, 0.0, 0.7"
-  Entities:
-  - Names:
-    - "AlienBugs02"
-    Biomes:
-    - "Any"
-    Amount: 50
-    DelayMinMax:
-    - 15
-    - 25
-    Period: "Always"
-  - Names:
-    - "AlienAssassinGreysInfected"
-    Biomes:
-    - "Any"
-    Amount: 50
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "PolarisIndustrialMain"
-  - "CivilSettlementSnow"
-  - "PolarisSettlementSnow"
-  - "PolarisLogisticsMain"
-  - "PolarisMiningMain"
-  - "PolarisIndustrialAux"
-  - "TS_Planet"
-  - "CivilMain"
-  - "FarrTradingT2"
-  BiomesExcluded:
-  - "Pole"
-  - "PoleEdge"
-  - "PoleEdge_1"
-  - "Mountains"
-  - "Mountains_1"
-  - "HighMountains"
-  - "HighMountains_1"
-  - "GlacierSnow"
-  - "SnowCap"
-  Radius: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.4
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0.0, 0.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "AssaultCyborgs"
-    Biomes:
-    - "Any"
-    Amount: 400
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "PolarisIndustrialMain"
-  - "CivilMain"
-  - "FarrTradingT2"
-  BiomesExcluded:
-  - "Pole"
-  - "PoleEdge"
-  - "PoleEdge_1"
-  - "Mountains"
-  - "Mountains_1"
-  - "HighMountains"
-  - "HighMountains_1"
-  - "GlacierSnow"
-  - "SnowCap"
-  Radius: 500
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.4
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0.0, 0.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "AssaultCyborgs"
-    Biomes:
-    - "Any"
-    Amount: 100
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "DroneBaseT1"
-  - "ZiraxDroneBase"
-  - "RadosMain"
-  - "RadosAuxT1"
-  - "RadosBunker"
-  BiomesExcluded:
-  - "Pole"
-  - "PoleEdge"
-  - "PoleEdge_1"
-  - "Mountains"
-  - "Mountains_1"
-  - "HighMountains"
-  - "HighMountains_1"
-  - "GlacierSnow"
-  - "SnowCap"
-  Radius: 300
-  RadiusRandom: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.6
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "ZiraxRocketPatrol"
-    - "ZiraxMechanoidPatrol"
-    - "ZiraxMechanoidPatrol"
-    - "ZiraxMechanoidPatrol"
-    - "ZiraxMechanoidPatrol"
-    Biomes:
-    - "Any"
-    Amount: 80
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "DroneBaseT1"
-  - "ZiraxDroneBase"
-  - "RadosMain"
-  BiomesExcluded:
-  - "Pole"
-  - "PoleEdge"
-  - "PoleEdge_1"
-  - "Mountains"
-  - "Mountains_1"
-  - "HighMountains"
-  - "HighMountains_1"
-  - "GlacierSnow"
-  - "SnowCap"
-  Radius: 1500
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.8
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "ZiraxMinigunPatrol"
-    - "ZiraxMechanoidPatrol"
-    - "ZiraxMechanoidPatrol"
-    - "ZiraxMechanoidPatrol"
-    - "ZiraxMechanoidPatrol"
-    Biomes:
-    - "Any"
-    Amount: 40
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
+
+     # ====================
+     # MARKER ZONES
+     # (To easily find important POI in the SSG  - - has no other function. 
+     # Please keep these active.)
+     # ====================
+
+   - SpawnAt: [SignalMarker01]  # Marker - Red
+     Radius: 530   # ((Set this to the range of the rocket turrets))
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 0.3"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+
+   - SpawnAt: [SignalMarker01]  # Marker - Red
+     Radius: 50   # (Smaller area to see POI better in SSG)
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 1.0"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+
+
+   - SpawnAt: [SignalMarker01, SignalMarker02, SignalMarker03, SignalMarker04]  # Marker - White (small)
+     Radius: 110
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 1.0, 1.0, 0.8"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+
+
+   - SpawnAt: [TS_Metal_Waypoint]  # Marker
+     Radius: 900   # (Set this range to the extent of the 'safe zone')
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 0.3"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+   - SpawnAt: [DroneBaseT3, TS_Metal_Waypoint]  # Marker - Yellow
+     Radius: 500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 1.0, 0.0, 1.0"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+   - SpawnAt: [DroneBaseT3,TS_Metal_Waypoint]  # Marker
+     Radius: 900
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 1.0, 0.0, 1.0"
+     Entities:
+       - Names: [CyborgsDamagedHerd]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+
+
+   # ========== End of markers ==========
+
+
+
+
+     # 'Guardians' =========
+   - SpawnAt: [Artifacts]
+     Radius: 150
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 0, 1.0, 1.0"
+     Entities:
+       - Names: [AlienBugs02]
+         Biomes: [Any]
+         Amount: 400
+         Period: Always
+         DelayMinMax: [15, 25]
+       - Names: [AlienAssassinGreysInfected]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [15, 25]
+
+
+   - SpawnAt: [ DamagedHV]
+     # BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 120
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "0.7, 0.0, 0.0, 0.7"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienAssassinGreysInfected]
+         Biomes: [Any]
+         Amount: 2000
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [ AbandonedPOI]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.7, 0.0, 0.0, 0.7"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienBugs02]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [15, 25]
+       - Names: [AlienAssassinGreysInfected]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [ CrashedShip, Ruins]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.7, 0.0, 0.0, 0.7"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienBugs02]
+         Biomes: [Any]
+         Amount: 50
+         Period: Always
+         DelayMinMax: [15, 25]
+       - Names: [AlienAssassinGreysInfected]
+         Biomes: [Any]
+         Amount: 50
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+    # Polaris ===========
+   - SpawnAt: [PolarisIndustrialMain, CivilSettlementSnow, PolarisSettlementSnow, PolarisLogisticsMain, PolarisMiningMain, PolarisIndustrialAux, TS_Planet, CivilMain, FarrTradingT2]
+     BiomesExcluded: [ Pole, PoleEdge, PoleEdge_1, Mountains, Mountains_1, HighMountains, HighMountains_1, GlacierSnow, SnowCap]
+     Radius: 100 
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.4
+     Color: "0.0, 0.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AssaultCyborgs]
+         Biomes: [Any]
+         Amount: 400
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+       # - Names: [AlienCivilians1]
+         # Biomes: [Any]
+         # Amount: 50
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [PolarisIndustrialMain, CivilMain, FarrTradingT2]
+     BiomesExcluded: [ Pole, PoleEdge, PoleEdge_1, Mountains, Mountains_1, HighMountains, HighMountains_1, GlacierSnow, SnowCap]
+     Radius: 500  # Scouts
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.4
+     Color: "0.0, 0.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AssaultCyborgs]
+         Biomes: [Any]
+         Amount: 100
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+    # Zirax ===========
+
+     # ... Checking the perimeter
+   - SpawnAt: [DroneBaseT1, ZiraxDroneBase, RadosMain, RadosAuxT1, RadosBunker]
+     BiomesExcluded: [ Pole, PoleEdge, PoleEdge_1, Mountains, Mountains_1, HighMountains, HighMountains_1, GlacierSnow, SnowCap]
+     Radius: 300
+     RadiusRandom: 100
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 0.0, 0.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxRocketPatrol, ZiraxMechanoidPatrol, ZiraxMechanoidPatrol, ZiraxMechanoidPatrol, ZiraxMechanoidPatrol]
+         Biomes: [Any]
+         Amount: 80
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+     # .... Scouting the territory
+   - SpawnAt: [DroneBaseT1, ZiraxDroneBase, RadosMain]
+     BiomesExcluded: [ Pole, PoleEdge, PoleEdge_1, Mountains, Mountains_1, HighMountains, HighMountains_1, GlacierSnow, SnowCap]
+     Radius: 1500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.8
+     Color: "1.0, 0.0, 0.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+         # Everywhere
+       - Names: [ZiraxMinigunPatrol, ZiraxMechanoidPatrol, ZiraxMechanoidPatrol, ZiraxMechanoidPatrol, ZiraxMechanoidPatrol]
+         Biomes: [Any]
+         Amount: 40
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+
+
+
+
+### Creatures
+CreatureSpawning:
+
+    # 'Food poor' world: No real terrain spawns (Except for some infected maybe)
+
+
+    # (Keeping one empty entry for legacy compatibility reasons)
+    - Biomes: [Shore]
+      Entities:
+        - Name: SlimesWhite
+          Period: Always
+          Amount: 0
+          Color: "1, 1, 1"
+          DelayMinMax: [70, 90]
+

@@ -1,622 +1,4330 @@
-PlayfieldType: "Planet"
-PlanetType: "Ocean"
-SunFlare: "EnvironmentalEffects/SunFlareBlue"
-SpecialEffectsLocal:
-- Name: "DandelionsFew"
-  MaxHeight: 10
-  Time: "Day"
-  Biome:
-  - "Grassland"
-  - "ColdPlains"
-- Name: "ButterfliesFew"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Grassland"
-  - "Oasis"
-- Name: "Pollen"
-  MaxHeight: 10
-  Time: "Day"
-  Biome:
-  - "Savanna"
-  - "SavannaEdge"
-  - "DustBowl"
-- Name: "Mosquitos"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Savanna"
-  - "SavannaEdge"
-  - "DustBowl"
-  - "Marsh"
-  - "Swamp"
-  - "WaterSwamp"
-  - "Water"
-- Name: "ButterfliesBlue"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Forest"
-  - "Marsh"
-- Name: "Dragonflies"
-  MaxHeight: 15
-  Time: "Day"
-  Biome:
-  - "Marsh"
-  - "Swamp"
-  - "WaterSwamp"
-  - "Water"
-  - "ShallowWater"
-- Name: "FireFliesOrange"
-  MaxHeight: 15
-  Time: "Night"
-  Biome:
-  - "Forest"
-  - "DeepForest"
-  - "Peaks"
-  - "Marsh"
-  - "Swamp"
-  - "WaterSwamp"
-  - "Oasis"
-- Name: "Moths"
-  MaxHeight: 15
-  Time: "Night"
-  Biome:
-  - "DeepForest"
-  - "Savanna"
-  - "SavannaEdge"
-  - "Grassland"
-SpecialEffectsGlobal:
-- Name: "Clear"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "CloudsLight"
-  InitialDelay: 0
-  Delay: 2
-  Lifetime: 1200
-  Type: "Weather"
-- Name: "Wind"
-  InitialDelay: 24
-  Delay: 12
-  Lifetime: 600
-  Type: "Weather"
-- Name: "Storm"
-  InitialDelay: 48
-  Delay: 24
-  Lifetime: 600
-  Type: "Weather"
-- Name: "BirdFlocksCrows"
-  SpawnY: 30
-  Time: "Day"
-  Biome:
-  - "Any"
-  InitialDelay: 1
-  Delay: 4
-  Lifetime: 600
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "\u4E00\u9897\u62E5\u6709\u5C11\u91CF\u9646\u5730\u7684\u5927\u6D0B\u884C\u661F"
+
+PlanetType: Ocean
+PlayfieldType: Planet
+Difficulty: 1
+
+LandClaimZone: Device
+
+# ==============================================================
+# Special parameters:
+# ==============================================================
+
+AllowBlueprintSV: False         # Dis-allow to spawn SV Blueprint in this playfield, default is True
+AllowBlueprintCV: False         # Dis-allow to spawn CV Blueprint in this playfield, default is True
+AllowBlueprintBA: False         # Dis-allow to spawn BA Blueprint in this playfield, default is True
+AllowBlueprintHV: False         # Dis-allow to spawn HV Blueprint in this playfield, default is True
+
+Seed: 575561                    # Integer [1, 999999] If set overwrites main Seed 
+UseFixed: True  			   	   # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
+UseRandom: True				   # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
+#IndestructibleTerrain: True     # If set to True terrain on this playfield will be indestructible
+
+#===============================================================
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Atmosphere and Sky:
+AtmosphereEnabled: True
 AtmosphereColor: "0.674, 0.824, 1.000"
-AtmosphereParams:
-- 1
-- 1.6
+
+# Basic atmosphere colour
+AtmosphereParams: [1, 1.6] 
 SkyColor: "0.55, 0.55, 0.3"
 SkyHorizonColor: "1, 0.25, 0"
+FogColor: "0.85, 0.70, 0.85" 
+
+# Fog
+FogCloudIntensity: 0.2
+AtmosphereFog: 0.1
+GroundFogIntensity: 0.025
+GroundFogHeight: 0   # Fitted to terrain height
+
+# Light
+DayLightIntensity: 1.34
+NightLightIntensity: 0.8
+
+DayShadowStrength: 1.0
+NightShadowStrength: 1.0
+
 LightZenithColor: "0.92, 0.70, 0.52"
 LightHorizonColor: "0.6, 0.4, 0.03"
-NightLightColor: "0.65, 0.9, 0.83"
+NightLightColor: "0.65, 0.9, 0.83" 
+
+
+
+# Cloud colours
 CloudsZenithColor: "0.75, 0.85, 1.1"
 CloudsHorizonColor: "0.9, 0.2, 0.05"
 CloudsNightZenithColor: "0.05, 0.056, 0.072"
-CloudsNightHorizonColor: "0.05, 0.0668, 0.056"
-CloudsOpacity: 0.2
-FogCloudIntensity: 0.2
-DayLightIntensity: 1.34
-NightLightIntensity: 0.8
-DayShadowStrength: 1
-NightShadowStrength: 1
-AtmosphereFog: 0.1
+
+# CloudsNightHorizonColor: "0.10, 0.132, 0.106"  # original
+
+# CloudsNightHorizonColor: "0.075, 0.085, 0.078"  # sand red
+# CloudsNightHorizonColor: "0.065, 0.095, 0.078"
+CloudsNightHorizonColor: "0.05, 0.0668, 0.056"  # better green
+
+
+
+# Other parameters(Only active if NO weather is defined)
 CloudsDensity: 0.2
 CloudsSharpness: 0.3
-CloudsBrightness: 1
+CloudsBrightness: 1.0
+CloudsOpacity: 0.2
+
+# Wind
 WindSpeed: 3
-FogColor: "0.85, 0.70, 0.85"
-GroundFogIntensity: 0.025
-Description: "\u4E00\u4E2A\u53EA\u6709\u5C11\u6570\u9646\u5730\u7684\u6D77\u6D0B\u4E16\u754C"
-Seed: 575561
-PlanetClass: "Ocean"
-UseFixed: true
-UseRandom: true
-Build: 3938
-AllowBlueprintSV: false
-AllowBlueprintCV: false
-AllowBlueprintHV: false
-AllowBlueprintBA: false
-LandClaimZone: "Device"
+
+
+
+# Special Effects 
+SpecialEffectsLocal:
+  - Name: DandelionsFew
+    Biome: [ Grassland, ColdPlains ]
+    Time: Day
+    MaxHeight: 10
+  - Name: ButterfliesFew
+    Biome: [ Grassland, Oasis ]
+    Time: Day
+    MaxHeight: 15
+  - Name: Pollen
+    Biome: [ Savanna, SavannaEdge, DustBowl ]  
+    Time: Day
+    MaxHeight: 10
+  - Name: Mosquitos
+    Biome: [ Savanna, SavannaEdge, DustBowl, Marsh, Swamp, WaterSwamp, Water ]  
+    Time: Day
+    MaxHeight: 15
+  - Name: ButterfliesBlue
+    Biome: [ Forest, Marsh ]
+    Time: Day
+    MaxHeight: 15
+  - Name: Dragonflies
+    Biome: [ Marsh, Swamp, WaterSwamp, Water, ShallowWater ]
+    Time: Day
+    MaxHeight: 15
+  - Name: FireFliesOrange
+    Biome: [ Forest, DeepForest, Peaks, Marsh, Swamp, WaterSwamp, Oasis ]
+    Time: Night
+    MaxHeight: 15
+  - Name: Moths
+    Biome: [ DeepForest, Savanna, SavannaEdge, Grassland ]
+    Time: Night
+    MaxHeight: 15
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+
+
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 24
+    Delay: 12
+    Lifetime: 600
+
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+
+
+# Global Effect
+  - Name: BirdFlocksCrows
+    Biome: [ Any ]
+    Time: Day
+    InitialDelay: 1
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 100
+    SpawnY: 30
+    Struct: True
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+
+    # - Name: IronResource
+      # # Biome: [ Cliffs, Savanna, ColdPlains, Tundra, LowMountains ]   # Keep freely placed, or the CopperResource will have trouble to spawn in the Savanna.
+      # IsScalingCount: True
+      # CountMinMax: [ 3, 4 ]
+      # SizeMinMax: [ 5, 9 ]
+      # DepthMinMax: [ 6, 15 ]
+      # DroneProb: 0.0
+      # MaxDroneCount: 1
+
+    # - Name: CopperResource
+      # IsScalingCount: True
+      # CountMinMax: [ 1, 3 ]
+      # SizeMinMax: [ 7, 8 ]
+      # DepthMinMax: [ 2, 2 ]
+      # DroneProb: 0.0
+
+    # - Name: PromethiumResource
+      # Biome: [Mountains]
+      # # IsScalingCount: True
+      # # CountMinMax: [ 2, 2 ]
+      # CountMinMax: [ 1, 1 ]
+      # SizeMinMax: [ 4, 4 ]
+      # DepthMinMax: [ 5, 5 ]
+      # DroneProb: 0.0
+      # DistTypeCylinder:
+        # # MaxRadius: 8
+        # # YVariance: 15
+        # MaxRadius: 30
+        # YVariance: 4
+
+    # - Name: CarbonResource
+    # # - Name: PentaxidResource
+      # IsScalingCount: True
+      # CountMinMax: [ 1, 1 ]
+      # SizeMinMax: [ 5, 5 ]
+      # DepthMinMax: [ 6, 15 ]
+      # DroneProb: 1
+
+
+AsteroidResources:
+    # - Name: IronResource
+      # Threshold: 0.01
+      # Amount: 0.2
+    # - Name: CopperResource
+      # Threshold: 0.01
+      # Amount: 0.2
+    # - Name: PromethiumResource
+      # Threshold: 0.01
+      # Amount: 0.2
+    # - Name: MagnesiumResource
+      # Threshold: 0.01
+      # Amount: 0.2
+
+
+FixedResources:
+    # - Name: PromethiumResource
+      # # Pos: [ 12141, 21, 2809 ]    # Position coordinates
+      # # Pos: [ 12142, 25, 2783 ]    # Position coordinates
+      # Pos: [ 12353, 52, 2796 ]
+      # Radius: 4                 # Size of deposit 
+      # # DroneProb: 0.0
+      # DistTypeCylinder:
+        # MaxRadius: 30
+        # YVariance: 4
+
+
+      # # Near Foothold
+    # - Name: IronResource
+      # Pos: [ 11005, 19, 5347 ]
+      # Radius: 3
+
+
+
+    # - Name: CopperResource
+      # Pos: [ 10958, 25, 5327 ]
+      # Radius: 3
+      # # DistTypeCylinder:
+        # # MaxRadius: 10
+        # # YVariance: 4
+
+
+    # - Name: SiliconResource
+      # Pos: [ 10913, 23, 5300 ]
+      # Radius: 3
+
+
+    # - Name: PromethiumResource
+      # Pos: [ 10689, 73, 5495 ]
+      # Radius: 3
+      # DistTypeCylinder:
+        # MaxRadius: 20
+        # YVariance: 4
+
+
+
+
+### Resource Asteroids
+AsteroidResources:
+
+
+
+### POIs
 POIs:
-  Fixed:
-  - Type: "BA_Player"
-    Prefab: "BAgs_TykkionPlayerSpawn"
-    Mode: "Survival"
-    Name: "TykkionPlayerSpawn"
-    InitPower: true
-    Properties:
-    - Key: "MapDistance"
-      Value: "0"
-    - Key: "HudDistance"
-      Value: "0"
-    - Key: "MapMarker"
-      Value: "Neutral"
-    - Key: "Discovery"
-      Value: "False"
-    Pos:
-    - 10757
-    - 18.9
-    - 415
-    Rot:
-    - 0
-    - 180
-    - 0
-  FixedPlayerStart:
-  - Mode: "Survival"
-    Spawn: "Structure"
-    Structure: "TykkionPlayerSpawn"
-    Items:
-    - " "
-    - " "
-    - " "
-    - "#FreshStart: "
-    Armor: "None"
-    Status:
-    - "Food: 350, Health: 350"
-    - "Food: 250, Health: 250"
-    - "Food: 150, Health: 150"
-    - "#FreshStart:Food: 400, Health: 450"
-  - Mode: "Debug"
-    Pos:
-    - 10771
-    - 19.1
-    - 417.2
-    RotY: 40
-    Armor: "ArmorLight"
+    Random:
+        # - GroupName: SignalMarker01                  #  Anchor for: DroneBase
+          # Biome: [ ColdPlains]
+          # Faction: None
+          # IsImportant: True
+          # CountMinMax: [ 1, 1 ]
+          # SpawnPOINear: [START]
+          # SpawnPOINearRange: [2000, 3000] 
+          # Properties:
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+        # - GroupName: _BA_Tut4_DroneFactory01         # CommandCenter and challenge dungeon  
+                                                     # # Needs to be spawned with dynamic, to have creatureSpawnZones
+          # Faction: Zirax
+          # IsImportant: true
+          # Biome: [ LowMountains_1, ColdPlains ]
+          # NoShieldReload: True
+          # IsCommandCenter: True
+          # DroneSetupID: DroneBaseZiraxStarter
+          # CountMinMax: [ 1, 1 ]
+          # DroneProb: 1.0
+          # DronesMinMax: [ 2, 2 ]
+          # ReserveCount: 1
+          # TroopTransport: True
+          # SpawnPOINear: [SignalMarker01]
+          # SpawnPOINearRange: [1000, 1100] 
+          # Properties:
+            # - Key: Music
+              # Value: Vanguard 
+            # - Key: RegenAfter
+              # Value: 720
+              
+        # - GroupName: SignalMarker02                  #  Anchor for: Workshop cluster
+          # Biome: [ HighPalms, ContinentWarm, LowMountains ]
+          # Faction: None
+          # PlaceAt: Terrain, OnWater
+          # IsImportant: True
+          # CountMinMax: [ 1, 1 ]
+          # SpawnPOINear: [START]
+          # SpawnPOINearRange: [1500, 2000] 
+          # Properties:
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+        # # - GroupName: _BA_Tut4_FarpointOutpost
+          # # Faction: None  
+          # # Biome: [ ContinentWarm_1_P ]
+          # # IsImportant: True
+          # # CountMinMax: [ 1, 1 ]
+          # # SpawnPOINear: [SignalMarker02]
+          # # SpawnPOINearRange: [300, 700] 
+          # # Properties:
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: RegenAfter
+              # # Value: 720
+
+        # - GroupName: NullPOI                  #  Anchor for: SolarMonitor, but that might fail. Keep it still to not disturb the placement order.
+          # Biome: [ PalmBeach, Savanna ]
+          # Faction: Zirax
+          # IsImportant: True
+          # CountMinMax: [ 1, 1 ]
+          # PlaceAt: Terrain, OnWater
+          # SpawnPOINear: [START]
+          # SpawnPOINearRange: [2000, 2500] 
+
+        # - GroupName: _BA_Tut3_LS_Heat&Rad
+          # Faction: Alien  
+          # Biome: [  Forest ]
+          # IsImportant: true
+          # CountMinMax: [ 1, 1 ]
+          # SpawnPOIAvoid: [ _BA_Tut4_DroneFactory01 ]
+          # SpawnPOIAvoidDistance: 1500
+          # SpawnPOINear: [START]
+          # SpawnPOINearRange: [2450, 2780] 
+          # Properties:
+            # - Key: HudDistance
+              # Value: 300
+            # - Key: MapDistance
+              # Value: 300
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+
+        # - GroupName: SignalMarker03                  #  Creature anchor below HeatRad POI
+          # Biome: [ SandBeach, PalmBeach ]
+          # Faction: None
+          # PlaceAt: Terrain
+          # IsImportant: True
+          # CountMinMax: [ 1, 1 ]
+          # SpawnPOIAvoid: [ START ]
+          # SpawnPOIAvoidDistance: 2600
+          # SpawnPOINear: [_BA_Tut3_LS_Heat&Rad]
+          # SpawnPOINearRange: [150, 200] 
+          # DroneSetupID: PV_Base_Start
+          # Properties:
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+            # # For placement of more dangerous creatures
+        # # - GroupName: _SV_Tut4_MarkerTerrainV3
+        # - GroupName: SignalMarker04
+          # Biome: [ ForestClearing, PalmForest ]
+          # IsImportant: true
+          # Faction: Zirax  
+          # Territory: false
+          # CountMinMax: [ 1, 1 ]
+          # # DroneProb: 0.0
+          # # DronesMinMax: [ 1, 1 ]
+          # # ReserveCount: 0
+          # SpawnPOINear: [SignalMarker02 ]
+          # SpawnPOINearRange: [1500, 2000] 
+          # Properties:  
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+        # # - GroupName: _BA_Tut4_SolarMonitor2_S                       # This one has to fail. Keep it at this spot and order, else all other POI will get jumbled
+          # # Faction: None  
+          # # # Biome: [ Hills, ContinentWarmTop, Forest, Swamp ]
+          # # Biome: [ Swamp ]
+          # # IsImportant: True
+          # # CountMinMax: [ 1, 1 ]
+          # # SpawnPOINear: [NullPOI]
+          # # SpawnPOINearRange: [10, 500] 
+          # # Properties:
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # - Key: RegenAfter
+              # # Value: 720
+
+        # - GroupName: _BA_Tut4_HF_POI RS_Cut
+          # Faction: None  
+          # Biome: [ Forest ]
+          # IsImportant: true
+          # CountMinMax: [ 1, 1 ]
+          # # SpawnPOINear: [_BA_Tut4_FarpointOutpost]
+          # # SpawnPOINearRange: [200, 400] 
+          # SpawnPOINear: [SignalMarker02]
+          # SpawnPOINearRange: [200, 400]
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 100
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+              
+                      # # # Triggers:   NearUnit to door.
+                      # # #             NearPOI: "Get close" chapter start
+                      # # #             NearPOI: Main marker
+        # # - GroupName: _BA_Tut4_HF-OreProcess
+          # # # Faction: None  
+          # # Faction: RogueAI
+          # # Biome: [ ForestClearing, PalmForest ]
+          # # IsImportant: True
+          # # CountMinMax: [ 1, 1 ]
+          # # SpawnPOINear: [ _BA_Tut4_FarpointOutpost]
+          # # SpawnPOINearRange: [250, 300] 
+          # # SpawnResource: ["PromethiumResource:1-1"]
+          # # SpawnResourceRange: [30,100]
+          # # Properties:
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # # - Key: HudDistance
+              # # # Value: 0
+            # # - Key: MapDistance
+              # # Value: 60
+            # # # - Key: Discovery
+              # # # Value: True
+            # # - Key: RegenAfter
+              # # Value: 720
+              
+        # # - GroupName: _BA_Tut4_Dropbase14           # This one will fail to spawn. Keep it at this place and order in the list, or all other markers will get jumbled.
+          # # Faction: None  
+          # # Biome: [ PalmBeach, Dunes,  ]
+          # # IsImportant: True
+          # # CountMinMax: [ 1, 1 ]
+          # # SpawnPOINear: [_BA_Tut4_FarpointOutpost]
+          # # SpawnPOINearRange: [80, 300] 
+          # # Properties:
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # - Key: RegenAfter
+              # # Value: 720
+
+        # - GroupName: CrashedShip               # Fails to spawn (with old setup). Keep it still, to have the other POI below at the right spot.
+          # Faction: None  
+          # Biome: [ ShallowWater, OpenSea ]
+          # PlaceAt: UnderWater, Terrain
+          # IsImportant: true
+          # CountMinMax: [ 1, 1 ]
+          # DroneProb: 1.0
+          # DronesMinMax: [ 1, 1 ]
+          # SpawnPOINear: [START]
+          # SpawnPOINearRange: [0, 50] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+
+        # # # Challenge island, other
+
+        # # - GroupName: _BA_Tut4 MCRN Nest2
+          # # Faction: None
+          # # IsImportant: true
+          # # Biome: [ ColdPlains, Hills ]
+          # # CountMinMax: [ 1, 1 ]
+          # # # SpawnPOIAvoid: [ EpsilonDefenceT1 ]
+          # # # SpawnPOIAvoidDistance: 500
+          # # SpawnPOINear: [_BA_Tut4_DroneFactory01]
+          # # SpawnPOINearRange: [800, 900] 
+          # # Properties:
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # - Key: RegenAfter
+              # # Value: 720
+
+        # - GroupName: PlanetVesselBase
+          # IsImportant: true
+          # Faction: Zirax
+          # CountMinMax: [ 1, 1 ]
+          # PlaceAt: UnderWater
+          # TroopTransport: True
+          # SpawnPOINear: [_BA_Tut4_DroneFactory01]
+          # SpawnPOINearRange: [200, 800]
+          # SpawnPOIAvoid: [_BA_Tut4 MCRN Nest2, _BA_Tut4_FarpointOutpost ]
+          # SpawnPOIAvoidDistance: 1000
+          # Properties:  
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+              
+          # # Filler
+
+        # - GroupName: JunkT1
+          # Faction: None  
+          # CountMinMax: [ 7, 7 ]
+          # # PlaceAt: UnderWater
+          # # IsScalingCount: True 
+          # DroneProb: 0.0
+          # DronesMinMax: [ 1, 1 ]
+          # ReserveCount: 0
+          # SpawnPOINear: [START]
+          # SpawnPOINearRange: [300, 3000] 
+          # Properties:  
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+
+        # # - GroupName: EpsilonDefenceT1
+          # # IsImportant: true
+          # # Faction: Zirax
+          # # Biome: [ ColdPlains, ]
+          # # CountMinMax: [ 1, 1 ]
+          # # SpawnPOIAvoid: [_BA_Tut4 MCRN Nest2 ]
+          # # SpawnPOIAvoidDistance: 1500
+          # # SpawnPOINear: [PlanetVesselBase]
+          # # SpawnPOINearRange: [500, 800]
+          # # Properties:  
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # - Key: RegenAfter
+              # # Value: 720
+
+        # - GroupName: _BA_Tut4_ARC BOP
+          # Faction: None  
+          # NoShieldReload: True
+          # IsImportant: True
+          # Biome: [  ShallowWater ]
+          # # BiomesExcluded: [ Radiated ]
+          # PlaceAt: OnWater
+          # CountMinMax: [ 1, 1 ]
+          # SpawnPOIAvoid: [_BA_Tut4_SolarMonitor2_S ]
+          # SpawnPOIAvoidDistance: 8000
+          # SpawnPOINear: [START]
+          # SpawnPOINearRange: [10000, 14000] 
+          # Properties: 
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: Music
+              # Value: Desert
+
+        # # - GroupName: Wreckage
+          # # Faction: None  
+          # # CountMinMax: [ 1, 3 ]
+          # # PlaceAt: UnderWater
+          # # IsScalingCount: True 
+          # # DroneProb: 0.0
+          # # DronesMinMax: [ 1, 1 ]
+          # # ReserveCount: 0
+          # # TroopTransport: True
+          # # Properties:  
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # - Key: RegenAfter
+              # # Value: 720
+
+        # # # - GroupName: Offworld_Pit18
+          # # # Faction: None
+          # # # IsImportant: True
+          # # # # BiomesExcluded: [Radiated,RadiatedFog]
+          # # # NoShieldReload: True
+          # # # CountMinMax: [ 1, 1 ]
+       # # # #   SpawnPOINear: [PolarisTradingPlanet]
+          # # # # SpawnPOINearRange: [0, 1000] 
+          # # # # SpawnPOINear: [START]
+       # # # #   SpawnPOINearRange: [100, 250]
+          # # # Properties:
+            # # # - Key: RegenAfter
+              # # # Value: 720
+
+
+        # # - GroupName: SignalMarker02                  #  Anchor: Workshop cluster
+          # # Biome: [ HighPalms, ContinentWarm, LowMountains ]
+          # # Faction: None
+          # # PlaceAt: Terrain, OnWater
+          # # IsImportant: True
+          # # CountMinMax: [ 1, 1 ]
+          # # SpawnPOINear: [START]
+          # # SpawnPOINearRange: [1500, 2000] 
+          # # Properties:
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # - Key: RegenAfter
+              # # Value: 720
+              
+
+# ============= FIXED =============================
+
+    Fixed:     
+        - Type: BA_Player
+          Prefab: BAgs_TykkionPlayerSpawn
+          Mode: Survival 
+          Name: TykkionPlayerSpawn 
+          Pos: [  10757, 18.9, 415 ]
+          Rot: [ 0, 180, 0 ]
+          InitPower: True
+          Properties: 
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: MapMarker
+              Value: Neutral
+            - Key: Discovery
+              Value: False
+    
+    ###               ================ ACTIONS -& goto's have a question mark, E.g. "Harvest ?"
+                                   ## Optional info & reminders is in brackets , e.g. ( Noises )
+###               ================ NAMES do not have any brackets
+###               ================ = Loot =        is a title? Or < Loot > ?
+
+
+         # BEACH ARRIVAL ================================
+
+
+                               # # WRONG POSITION
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_FishSpawner
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: Fish School
+          # Pos: [ 10761, 14.6, 420 ] 
+          # Rot: [ 0, 0, 0 ]
+          # InitPower: False
+          # Properties:  
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+        # - Type: BA_Player   # Teleporter only works in Survival. - USED AS PDA INSTANT TRIGGER
+          # Faction: None
+          # Prefab: _BA_Tut4_LostCargoTeleP
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: Unknown
+          # Pos: [  10757, 18.9, 415 ]
+          # Rot: [ -5, -10, 0 ]
+          # InitPower: False
+          # Properties:  
+            # # - Key: HudDistance
+              # # Value: 200
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+                             # Used as an alternative nearPOI trigger for autostarts.
+                             # Triggers 'how to swim' Note & 'Sprint' Note
+                             # Signal of this will explode Mining tower's core
+        # - Type: BA_Player         
+          # Faction: None
+          # Prefab: _BA_Tut4_ChckArea_5&10       # Careful, name is nearPOI: For Triggering Powerbar craft
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: HowToSwim
+          # # Pos: [ 10933.1, 11, 2675 ] 
+          # # Rot: [ 0, -80, 0 ]  
+          # # Pos: [ 10771, 18.9, 416 ]
+          # # Pos: [ 10771, 6, 416 ] 
+          # # Pos: [ 10760, 6, 416 ]  # old 7x7
+          # # Pos: [ 10771, 6, 416 ] 
+          # Pos: [ 10764.5, 6, 417 ] 
+          # Rot: [ 0, -100, 0 ]
+          # InitPower: False
+          # Properties:  
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 
+              
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_LostCargo_Fridg
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: Lost Cargo
+          # Pos: [10831, 18.5, 460]
+          
+          # Rot: [ 15, 120, -10 ]
+          
+          # InitPower: False
+          # Properties:  
+            # - Key: HudDistance
+              # Value: 30
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+          # # FLOTSAM BASE =========================
+                                               # # nPOI target for task list 'survival resources'
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_BrkPolSpawn-A
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: Flotsam Base
+          # Pos: [ 10897, 19.5, 508 ] 
+          # Rot: [ -5, 170, 0 ]
+          # InitPower: False
+          # Properties:  
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: HudDistance
+              # Value: 500
+            # - Key: MapDistance
+              # Value: 80
+            # - Key: RegenAfter
+              # Value: 720
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_BrkPolSpawn-B
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: Flotsam Part
+          # Pos: [ 10895, 16.2, 507 ] 
+          # Rot: [ 1, 183, 20 ]
+          
+          # InitPower: False
+          # Properties:  
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+                                       # # nPOI activate light message
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: FlotsamLight_NFO
+          # Pos: [ 10896, 17, 507 ]    #-1,0,-1 from player position   # Below Flotsam
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+                                            # # nPOI makes another marker to emphasize wreck
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # # Name: ( Movement here? )          # USED
+          # # Name: ( Movement detected )          # USED
+          # Name: "Investigate ?"          # USED
+          # Pos: [ 10896, 21, 507 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_LostCargoWeaps
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: Lost Cargo
+          # Pos: [10912, 18, 540]
+          # Rot: [ 30, 45, -20 ]
+          
+          # InitPower: False
+          # Properties:  
+            # - Key: HudDistance
+              # Value: 30
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Mine ?"
+          # # Pos: [ 10932.8, 25.8, 522.2 ]    #+3,+2,+1 from player position
+          # Pos: [ 10923.3, 21.0, 489.9 ]    #+3,+2,+1 from player position
+          # Rot: [0, 0, 0] 
+          # InitPower: False
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+         # # Harvest markers ===========
+
+
+          # # "Tripmines" for solving salvage chapter
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_BrkPol_SecTrig
+          # Mode: Survival
+          # Name: "Chptr_Tripmine_plz_ignore"          #
+          # Pos: [ 10889.8,12,523.2 ]       # Flotsam, Close to water
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+          # # "Tripmines" for solving salvage chapter
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_BrkPol_SecTrig
+          # Mode: Survival
+          # Name: "Chptr_Tripmine_plz_ignore"          #
+          # Pos: [ 10906.5,12,499 ]       # Flotsam, Close to rocks
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+          # # "Tripmines" for solving salvage chapter
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_BrkPol_SecTrig
+          # Mode: Survival
+          # Name: "Chptr_Tripmine_plz_ignore"          #
+          # Pos: [ 10914,10,541 ]       # Under sniper box
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+          # # "Tripmines" for solving salvage chapter
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_BrkPol_SecTrig
+          # Mode: Survival
+          # Name: "Chptr_Tripmine_plz_ignore"          #
+          # Pos: [ 10974,7,551 ]       # under salvage wreck
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True 
+              
+         # # Harvest markers ===========
+
+
+                             # # # Old marker in the back where lots of plants are
+        # # - Type: SV_Player
+          # # Faction: None
+          # # Prefab: _SV_Tut4_MarkerTerrainV3
+          # # Mode: Survival
+          # # SubMode: Normal
+          # # Name: "Harvest ?"
+          # # # Pos: [ 10952, 40, 424 ] 
+          # # Pos: [ 10952, 28, 424 ] 
+          # # Rot: [0, 0, 0] 
+          # # InitPower: False
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+            # # - Key: RegenAfter
+              # # Value: 720 
+
+                             # # Harvest marker directly at start of palms
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Harvest ?"
+          # Pos: [ 10884, 25.3, 430.1 ] 
+          # Rot: [0, 0, 0] 
+          # InitPower: False
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+                             # # Harvest marker at the beginning for the high-density patch
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Harvest ?"
+          # Pos: [ 10951, 28.3, 437.8 ] 
+          # Rot: [0, 0, 0] 
+          # InitPower: False
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+                             # # Harvest marker at isolated plant patch at end of section
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Harvest ?"
+          # Pos: [ 11014.1, 24.9, 479.2 ] 
+          # Rot: [0, 0, 0] 
+          # InitPower: False
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720 
+
+         # # Chop markers ===========
+
+                              # # Tree marker01  - good marker (is set at players feet)
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Chop ?"
+          # Pos: [ 10951.2, 23.5, 492.0 ]
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+                              # # Tree marker02
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Chop ?"
+          # Pos: [ 10999, 23.5, 500.8 ]
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True 
+                              # # Tree marker03 - good
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Chop ?"
+          # Pos: [ 10899.3, 24, 446.8 ]
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+                              # # Tree marker04 - good
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Chop ?"
+          # Pos: [ 10925.1, 26.5, 457.1 ]
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True 
+
+          # # SALVAGE =====
+
+         # # Junk to salvage
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_JunkSalvage
+          # Mode: Survival
+          # Name: "(Salvage)"   # Used
+          # # Pos: [ 11005, 20.5, 628.5 ]
+          # # Rot: [0, 90, 0] 
+          
+          # # Pos: [ 10995,19.5,582 ]   # in water, good
+          # Pos: [ 10969,18.8,553 ]   # in water, good
+          # Rot: [0, 90, 0] 
+          
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+        # - Type: BA_Player           # UNUSED, WRONG POSITION
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: SalvageNote_TRG
+          # Pos: [ 11003, 22.5, 621.5 ]    #+3,+2,+1 from player position
+          # Rot: [0, 90, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_PL_CargoB_MS4
+          # Mode: Survival
+          # Name: Lost Cargo
+          # Pos: [ 11008,18.5,565 ]
+          # Rot: [-30,10,-15] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 30
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: PersonalContainer
+              # Value: "RadarSuitT1:1, RadarSuitT1:1, RadarSuitT1:1, RadarSuitT1:1, RadarSuitT1:1, RadarSuitT1:1, MechanicalComponents:1, MetalPieces:1, RadarSuitT1:1, MechanicalComponents:1, RadarSuitT1:1, RadarSuitT1:1, RadarSuitT1:1, RadarSuitT1:1, MechanicalComponents:1, MechanicalComponents:1"
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_PL_CargoBox
+          # Mode: Survival
+          # Name: Lost Cargo
+          # Pos: [ 11020, 18, 555 ]    #+3,+2,+1 from player position
+          # Rot: [15, 80, 30] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 30
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: PersonalContainer
+              # Value: "RadarSuitT1:1, CopperOre:2, CopperIngot:3, CopperIngot:1, CopperIngot:2, MechanicalComponents:5"
+              # # Value: "RadarSuitT1:1, IronOre:8, SiliconOre:5, CopperOre:5, CopperIngots:5, MechanicalComponents, PromethiumPellets:10, WaterBottle:20, OxygenGeneratorSmall, OxygenBottleSmall:20, Fiber:10, CornStage1, SnakeweedStage1, DurianRoot, AntibioticOintment:8, SciFiCannonPlasmaCharge:50, SciFiCannonPlasmaCharge:50,  MobilityBoost"
+
+
+
+
+          # # Marker do direct players to detector
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "( More Loot? )"          #
+          # Pos: [ 11012,18.5,560 ]       # between cargo boxes
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+        # # Markers / other
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_PlayerSpawnerWater
+          # Mode: Survival
+          # Name: BetterPrepare_NFO
+          # Pos: [ 12200, 7, 2125 ]    #+3,+2,+1 from player position   # At western beach maze in the water
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "TipWhereToFindFood_NFO"
+          # Pos: [ 11015, 22.7, 555.5 ]
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+       # # ============ Weather Station =============
+
+
+
+        # ## Use dynamic placement, to have a Creature spawn zone around it.
+        # # - Type: BA_Player
+          # # Faction: Alien
+          # # Prefab: _BA_Tut3_LS_Heat&Rad
+          # # Mode: Survival
+          # # Name: "Old Antenna Station"
+          # # Pos: [ 11160, 20.5, 872 ]
+          # # Rot: [0, 0, 0]
+          # # Properties: 
+            # # - Key: HudDistance
+              # # Value: 300
+            # # - Key: MapDistance
+              # # Value: 300
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: MapMarker 
+              # # Value: Neutral 
+            # # - Key: RegenAfter
+              # # Value: 720
+
+
+         # # Weather Station
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_PlayerSpawnerWater
+          # Mode: Survival
+          # Name: "(Heat Source)"    # nPOI Used
+          # Pos: [ 11166, 34.1, 876 ]    #+3,+2,+1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+         # # Clear exterior from critters - - Weather Station
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_PlayerSpawnerWater
+          # Mode: Survival
+          # Name: CritterWarn_NFO   # nPOI Used
+          # Pos: [ 11166, 34, 876 ]    #+3,+2,+1 from player position  # In the cellar of HeatRad
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+          # # Security trigger if player ignores HeatRad.     900m range, just before HeatRad, but out of range of the signals.
+          # # Using the same pos as "Trg_DetectDepositMsg"
+          # # (Position as
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "Trg_PlayerIgnoresHeatRad"    # USED
+          # # # Pos: [ 10945.0, 54.5, 1280.8 ]       # Position of the copper tower
+          # Pos: [ 10881.6, 17, 1650.7 ]    # about 300m behind the Mining tower, at back beach, under the sand
+          # Rot: [0, 0, 0] 
+          # InitPower: False
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+                                       # # nPOI Marker - "Rough direction of weather signal"
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "( Direction of antenna signal? )"
+          # Pos: [ 11010.3, 34, 5274.9 ]    #-1,0,-1 from player position   # above foothold BA, 4km away
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+       # # ============= Savanna Hill ===============
+
+
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_Dest_MiningCut
+          # Mode: Survival
+          # Name: Destroyed Mining Tower 
+          # Pos: [ 10946, 34, 1270 ]   
+          # # Pos: [ 10968, 64, 1270 ]   
+          # Rot: [0, 0, 0]     ## ! Do not rotate fixed POI that have a terrain cutout. It won't rotate with it. 
+                             # ##   CopyPaste the whole POI (if possible), in a different rotation.
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 300
+            # - Key: HudDistance
+              # Value: 300
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # # - Key: PersonalContainer
+              # # Value: "RadarSuitT1:1, CopperOre:2, CopperIngots:3, CopperIngots:1, CopperIngots:2, MechanicalComponents:5"
+              # # # Value: "RadarSuitT1:1, IronOre:8, SiliconOre:5, CopperOre:5, CopperIngots:5, MechanicalComponents, PromethiumPellets:10, WaterBottle:20, OxygenGeneratorSmall, OxygenBottleSmall:20, Fiber:10, CornStage1, SnakeweedStage1, DurianRoot, AntibioticOintment:8, SciFiCannonPlasmaCharge:50, SciFiCannonPlasmaCharge:50, 12.7mmBullet:500, 15mmBullet:400, ArmorBoost, JetpackBoost, MultiBoost, OxygenBoost, InsulationBoost, MobilityBoost, RadiationBoost, EmergencyRations:1"
+
+
+
+
+
+
+
+          # # General message to check out deposit, about 700m (old 400m) range. 
+          # # Will trigger about 150m before detection range to tower?
+        # # - Type: SV_Player
+          # # Faction: None
+          # # Prefab: _SV_Tut4_MarkerTerrainV3
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Trg_DetectDepositMsg"    # USED  
+          # # Pos: [ 10945.0, 54, 1280.8 ]    # same as copper deposit marker, just higher
+          # Pos: [ 10881.6, 17, 1650.7 ]    # about 300m behind the Mining tower, at back beach, under the sand
+          
+          
+          # Rot: [0, 0, 0] 
+          # InitPower: False
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+
+
+
+          # # A rough marker, further away from deposit
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # Name: "( Rough direction of a Deposit )"     # USED
+          # Pos: [ 10836, 39, 1297 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+          
+          # # Old marker
+        # - Type: SV_Player             # Used for main trigger: "Copper Resource and Drone"
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "(Deposit?)"
+          # Pos: [ 10943.5, 49.50, 1294 ]    #+3,+2,+1 from player position
+          # Rot: [0, 0, 0] 
+          # InitPower: False
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+         # # Removes the task to find the deposit
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: Trg_ClearDepositTask        # USED
+          # Pos: [ 10945.0, 53.2, 1280.8 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+         # # Marker for the Copper deposit, higher up so that player does not instantly dig
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "( Coppper Ground Deposit )"   # USED
+          # Pos: [ 10945.0, 55, 1280.8 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+         # ### Old, using now signals. Old trigger distance was 15m
+         # # # Deposit, don't jump just in
+         # # #  Centered on new deposit hole
+        # # - Type: BA_Player
+          # # Faction: None
+          # # Prefab: _BA_Tut4_MarkerInvisible
+          # # Mode: Survival
+          # # Name: Trg_DepositDroneUseMsg    # USED
+          # # Pos: [ 10945.0, 53, 1280.8 ]    #-1,0,-1 from player position
+          # # Rot: [0, 0, 0] 
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+# ## Signals used instead:
+# # # *Mtow_Front
+# # # *Mtow_Right
+# # # *Mtow_Back
+# # # *Mtow_Left
+
+
+
+
+
+
+
+
+       # # ============= Salt marshes ===============
+
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_Junk04
+          # Mode: Survival
+          # Name: Junk
+          # Pos: [ 11984, 17, 1802 ]
+          # Rot: [20,-100,-10] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_Junk03
+          # Mode: Survival
+          # Name: Junk
+          # Pos: [ 11510,18.5,2342 ]
+          # Rot: [0, -20, 10] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_AncientTemple_A
+          # Mode: Survival
+          # Name: Ancient Temple
+          # Pos: [ 11737,16.5,1962 ]
+          # Rot: [0,90,0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+       # # Markers
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_PlayerSpawnerWater
+          # Mode: Survival
+          # Name: MarshNavigationStart_CHK
+          # Pos: [ 12374, 102.5, 2626 ]   # Same as antenna marker
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_PlayerSpawnerWater
+          # Mode: Survival
+          # Name: MarshNavigationMap_CHK
+          # Pos: [ 11954, 11, 2100 ]   # On saltmarsh edge
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_PlayerSpawnerWater
+          # Mode: Survival
+          # Name: MarshNavigationDone_CHK
+          # Pos: [ 12374, 103.5, 2626 ]   # Same as antenna marker
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+         # # ============= Second island, handplaced stuff ===============
+
+
+        # - Type: BA_Player
+          # Faction: HackedCore
+          # Prefab: _BA_Tut4_Dropbase14
+          # Mode: Survival
+          # Name: "Ore Drop 14"
+          # Pos: [ 12120,30,2455  ] 
+          # Rot: [0, 0, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+
+       # # Settlement 
+       
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # Name: "Settlement detected"          # NearPOI PDA used
+          # Pos: [ 12234, 70, 2570 ]    #+3,+2,+1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # Name: "Trg_SettlementReached_Msg"      # NearPOI PDA used (Trigger & task)
+          # Pos: [ 12233, 71, 2570 ]    #+3,+2,+1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # # Subspace Antenna  =================
+
+
+
+
+        # - Type: BA_Player
+          # Faction: Alien  
+          # # Prefab: _BA_Tut4_SolarMonitor2
+          # Prefab: _BA_Tut4_SolarMonitor2_S
+          # Mode: Survival
+          # Name: "Subspace Antenna"
+          # Pos: [ 12372, 95.5, 2625 ] 
+          # Rot: [0, 0, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+
+         # # # Antenna console position   # UNUSED
+        # # - Type: BA_Player
+          # # Faction: None
+          # # Prefab: _BA_PlayerSpawnerWater
+          # # Mode: Survival
+          # # Name: "Reach Antenna"
+          # # Pos: [ 12374, 102, 2626 ]    #+3,+2,+1 from player position
+          # # Rot: [0, 0, 0] 
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+
+
+
+
+
+        # # FARM  =================
+
+                                  # # NearPOI marker used: 'Check out farm'   
+        # - Type: BA_Player   
+          # # Faction: None
+          # # Faction: Zirax
+          # # Faction: RogueAI
+          # # Faction: Alien
+          # Faction: HackedCore
+          # Prefab: _BA_Tut4_Dropbase10
+          # Mode: Survival
+          # Name: "Offworld Farm"
+          # Pos: [ 12230, 61.5,2600 ] 
+          # # Rot: [0, 0, 0] 
+          # Rot: [0, 180, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+
+          # # Farm position markers
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "Access Container Controller"
+          # # Pos: [ 12232.0, 64.9, 2598.3 ]    #  +0 +1 +0    (Breast) Marker seems mostly precise...   # -1,+1,-1 from player position (Breast)
+          # Pos: [ 12233.0, 66.5, 2598.3 ]    #  +0 +1 +0     (Breast) # next try
+          
+          # # Pos: [ 12232.0, 64.9, 2598.3 ] #  This was set postion
+          # # Pos: [ 12232.0, 63.7, 2598.2 ] #  this was marker position  (Breast)
+          # # Pos: [ 12233.0, 65.5, 2598.4 ] #  this was better player position  (Breast)
+
+          
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+          # # From antenna to farm
+                                          # # Used, visible marker to go to farm (main entrance away from explosives)
+        # - Type: SV_Player 
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # Name: "(Farm front entrance)"
+          # Pos: [ 12227, 63.5, 2581.3 ]    #-1,0,-1 from player position 
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player            # Used - PDA overview mission, get to farm & clear the task. Triggers in 50m distance
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "ClearTaskGoToFarm_Chk"
+          # # Pos: [ 12230, 75, 2600 ]    #-1,0,-1 from player position
+          # Pos: [ 12227, 59, 2595 ]    # below farm front entrance
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+                                       # # nPOI check back to farm
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Fill in Fuel)"
+          # Pos: [ 12233.0, 66.5, 2598.3 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+        # - Type: BA_Player        # used nPOI
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible    # Marker for starting chapter
+          # Mode: Survival
+          # Name: "(Check Farming Area?)"
+          # Pos: [ 12216.5,65.5,2599.0 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+        # - Type: BA_Player        # used nPOI   # EXACT SAME POSITION AS ABOVE - needed for task list 'Check out farm pots'
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible    # Marker for 'Check out farm pots'
+          # Mode: Survival
+          # Name: "FarmAreaEnter_CHK"
+          # Pos: [ 12216.5,64.5,2599.0 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player        # used nPOI   # EXACT SAME POSITION AS ABOVE - needed for task list 'Check out farm pots'
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible    # Marker for 'Check out farm pots'
+          # Mode: Survival
+          # Name: "(Sprout Repository)"
+          # Pos: [ 12221.5,66.3,2604.5 ]    #0,+1,0 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+                                  # # NearPOIs instant triggers for Farm
+                                  # # Also used as near trigger for 'get to farm' task
+        # - Type: BA_Player        # used nPOI
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible   
+          # Mode: Survival
+          # Name: "FarmInstantTrigger_Chk"
+          # Pos: [ 12216.5,30.5,2599.0 ]    #-1,0,-1 from player position  # Much below the farm, below 'Check farming area'
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+        # # - Type: BA_Player                    # UNUSED
+          # # Faction: None
+          # # Prefab: _BA_Tut4_Mrk-Inv_Farm    # Marker for 'Check out farm pots'
+          # # Mode: Survival
+          # # Name: "FarmMarker"
+          # # Pos: [ 12216.5,66.5,2599.0 ]    #-1,0,-1 from player position
+          # # Rot: [0, 0, 0] 
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+
+
+        # - Type: BA_Player   # Used nPOI
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible    # Marker for 'Check out fridge'
+          # Mode: Survival
+          # Name: "(Check Fridge?)"
+          # # Pos: [ 12223.5,64.5,2601 ]    #-1,-1,-1 from player position (Breast)
+          # Pos: [ 12223.5,66.0,2601 ]    #-1,,-1 from player position (Breast)
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # # - Type: BA_Player    # UNUSED  - nUnit "(Check Fridge?)"
+          # # Faction: None
+          # # Prefab: _BA_Tut4_Mrk-Inv_Fridge    # Marker for 'Check out fridge'
+          # # Mode: Survival
+          # # Name: "FridgeMarker"
+          # # Pos: [ 12223.5,66.5,2601 ]    #-1,,-1 from player position (Breast)
+          # # Rot: [0, 0, 0] 
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Food Processor)"
+          # Pos: [ 12225.5, 66.5, 2606.3 ]    #-1,0,-1 from player position?
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+        # - Type: BA_Player           # USED
+          # Faction: None 
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Check Wardrobe)"
+          # Pos: [ 12231.0, 66.5, 2604.0 ]    #0,+1,0 from player position - Checked
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+                                       # # nPOI check back to farm
+                                       # # after: Logistics cache
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Back to Farm)"
+          # Pos: [ 12233.0, 60, 2598.3 ]    # Slightly below farm
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+                                       # # nPOI check back to farm
+                                       # # after: Logistics cache
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Enter Farm to place blocks)"
+          # Pos: [ 12233.0, 60, 2598.3 ]    # Slightly below farm
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+
+
+                                       # # nPOI check solar panels
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: SolarPanels_NFO
+          # Pos: [ 12219.3,71.6, 2595.0 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player          # used for nPOI marker to clear Task
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Efficiency Display)"
+          # Pos: [ 12213.3,69.3, 2596.9 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+          # # # # # # POSSIBLY UNNEEDED
+
+        # # - Type: BA_Player          # Same position, another marker, to prevent double-use
+          # # Faction: None
+          # # Prefab: _BA_Tut4_MarkerInvisible
+          # # Mode: Survival
+          # # Name: "Power Display"
+          # # Pos: [ 12213.3,69.3, 2596.9 ]    #-1,0,-1 from player position
+          # # Rot: [0, 0, 0] 
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+
+
+
+
+            # # ========= Biofuel stack
+
+
+          # # Cargo palette / Survivors camp
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_SurvivorCamp01
+          # Mode: Survival
+          # Name: "Hasty Camp"
+          # InitPower: False
+          # Pos: [ 12428,42.6,2465 ]
+          # Rot: [0, 90, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 30
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # - Key: PersonalContainer
+              # Value: "SurvivalTool:1, Chainsaw:1, RocketLauncher:1, SlowRocket:6, BioFuel:2, ConstructorSurvival:1, ConstructorSurvival:1, ConstructorSurvival:1, OxygenGeneratorSmall:1, OxygenBottleSmall:1, RottenFood:3, EmergencyRations:1, 12.7mmBullet:17, MechanicalComponents:2"
+
+
+        # - Type: BA_Player   # Used for nPOI (task)
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Biofuel & Weak Signal)"
+          # Pos: [ 12431.0, 49, 2465 ]    #  +0 +1 +0  
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: BA_Player           # Used
+          # Faction: None 
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "Check Cargo Palette"
+          # Pos: [ 12427.1, 42.7, 2461.9 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # # Sadly, these will fall through the ground. test with copied-on broken blocks.
+        # # - Type: SV_Player
+        # # - Type: BA_Player
+        
+        # - Type: BA_Player_M
+          # Faction: None
+          # Prefab: _BA_M_Tut4_Worklight
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Worklight"
+          # Pos: [ 12429.1, 43.2, 2458.2 ]
+          # Rot: [0, 90, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player_M
+          # Faction: None
+          # Prefab: _BA_M_Tut4_Worklight
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Worklight"
+          # Pos: [ 12434.1, 42.6, 2460.9 ]
+          # Rot: [0,-85,0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+        # # - Type: BA_Player_M              # Sleeping in this pre-placed tent, will result in Black Screen and CoQ...?
+          # # Faction: None
+          # # Prefab: _BA_M_Tut4_TentDsrt_Core
+          # # Mode: Survival
+          # # SubMode: Normal
+          # # Name: "Survival Tent (Desert Camo)"
+          # # Pos: [ 12445.1, 42.5, 2461.9 ]
+          # # Rot: [0,-90,0] 
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+
+
+        # - Type: BA_Player_M
+          # Faction: None
+          # # Prefab: _BA_M_Tut4_PortConstr_x3
+          # Prefab: _BA_M_Tut4_PrtCstr_x4_In
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "Row of Constructors"
+          # Pos: [ 12435.1,42.5,2462.9 ]
+          # Rot: [0,0,0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player_M
+          # Faction: None
+          # Prefab: _BA_M_Tut4_O2Genny_x1
+          # Mode: Survival
+          # SubMode: Normal
+          # Name: "O2/Water Generator"
+          # Pos: [ 12436.1 ,42.5, 2464.9 ]
+          # Rot: [0,0,0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+          # # LOST GARDEN LOGISTICS  =================
+
+
+
+        # - Type: BA_Player                   # nPOI & trg Marker lost garden
+          # Faction: None  
+          # Prefab: _BA_Tut4_LostGarden
+          # Mode: Survival
+          # Name: "Lost Garden"
+          # Pos: [ 12139.7,41.9,2613.5 ] 
+          # Rot: [0, 90, 0] 
+          # Properties:
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_LostG_CoreStash     # Self-purging core
+          # Mode: Survival
+          # Name: "(Core Stash)"
+          # # Pos: [ 12143.7,42.3,2621.5 ]    # side position
+          # # Rot: [0,180,0] 
+          
+          # Pos: [ 12147.7,44.3,2617.5 ]    # back position
+          # Rot: [0,-90,0] 
+          
+          
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+        # - Type: BA_Player                  # nPOI Used for lost garden mission
+          # Faction: None 
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Find Lost Garden)"
+          # Pos: [ 12139.7, 43.9,2613.5 ]     #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+         # # CPU Cache
+        # - Type: BA_Player
+          # Faction: None
+          # # Prefab: _BA_Tut4_PL_MSBox
+          # Prefab: _BA_Tut4_TechCache     # Self-purging core
+          # Mode: Survival
+          # Name: "Buried"
+          # # Pos: [ 12164.9,52.5,2649.5 ] 
+          # # Pos: [ 12164.9,52.8,2649.5 ] 
+          # Pos: [ 12164.9,53.0,2649.5 ] 
+          # Rot: [0,-90,-20] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: MapDistance
+              # Value: 1
+            # - Key: HudDistance
+              # Value: 2
+            # # - Key: Discovery
+              # # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+            # # - Key: PersonalContainer
+              # # Value: "MechanicalComponents:2"
+            # # - Key: PersonalContainer
+              # # # Value: "SolarGenerator:1, SolarGenerator:1, SolarGenerator:1, SolarGenerator:1, SolarPanelBlocks:3, CPUExtenderBAT2:1, CPUExtenderBAT2:1, CPUExtenderBAT2:1, CPUExtenderBAT2:1, CPUExtenderBAT2:1, CPUExtenderBAT2:1, SlowRocket:6, BioFuel:5, ConstructorSurvival:1, RottenFood:1, EmergencyRations:1, 12.7mmBullet:30, Pistol:1, MechanicalComponents:2 "
+              # # Value: "SolarGenerator:1, SolarGenerator:1, SolarGenerator:1, SolarGenerator:1, CPUExtenderBAT2:1, CPUExtenderBAT2:1, CPUExtenderBAT2:1, CPUExtenderBAT2:1, SolarPanelBlocks:3 "
+
+
+
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3    # Marker for 'rough direction'
+          # Mode: Survival
+          # Name: "(Somewhere here ...?)"    #-1,0,-1 from player position
+          # Pos: [ 12167, 63, 2655.8 ]   
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+          # # Help marker for digging
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # Name: "(Problably here...?)"          # NearPOI PDA used
+          # Pos: [ 12163.8, 61, 2650.5 ]    # very much on top of the box
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+          # # ORE PROCESSOR & PROMETHIUM =================
+
+
+
+          # # Ore processor
+                      # # Triggers:   NearUnit to door.
+                      # #             NearPOI: "Get close" chapter start
+                      # #             NearPOI: Main marker
+        # - Type: BA_Alien  
+          # Faction: RogueAI
+          # Prefab: _BA_Tut4_HF-OreProcess
+          # Mode: Survival
+          # Name: "Ore Processor"     # ((Had formerly also as spawn name the file name))
+          # # Pos: [ 12224,33.2,2851.4 ] 
+          # Pos: [ 12224,33.2,2851.4 ] 
+          
+          # Rot: [0, 0, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+
+
+
+
+       # # PromethiumDeposit
+
+
+
+
+                           # # PDA: Get close to deposit
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # Name: "(Promethium, somewhere here...?)"
+          # Pos: [ 12353, 53, 2796 ]    #-1,0,-1 from player position 
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+                          # # PDA: PromRes&Ore >Task 'Find Prom deposit' (NearPOI)
+        # # - Type: BA_Player
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # Name: "Promethium Deposit"
+          # Pos: [ 12353, 52, 2796 ]    #-1,0,-1 from player position 
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: SV_Player
+          # Faction: None
+          # Prefab: _SV_Tut4_MarkerTerrainV3
+          # Mode: Survival
+          # Name: "Mine Promethium Nodes"
+          # Pos: [ 12353, 52.2, 2796 ]    #-1,0,-1 from player position 
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+        # # - Type: SV_Player
+          # # Faction: None
+          # # Prefab: _SV_Tut4_MarkerTerrainV3
+          # # Mode: Survival
+          # # Name: "TestTest"
+          # # Pos: [ 12353, 52.2, 2796.3 ]    #-1,0,-1 from player position 
+          # # Rot: [0, 0, 0] 
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+
+
+
+
+
+
+
+
+          # # WORKSHOP  =================
+
+
+
+        # - Type: BA_Player   
+          # Faction: RogueAI
+          # Prefab: _BA_Tut4_FarpointOutpost
+          # Mode: Survival
+          # Name: "Farpoint Workshop"
+          # Pos: [ 12280, 58.5, 2520 ] 
+          # Rot: [0, 0, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+                                       # # nPOI check back to farm
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "((Placeholder trigger - Go to farm to continue))"
+          # Pos: [ 12233.0, 60, 2598.3 ]    # Slightly below farm
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+
+         # # Tech Cache (Shop)
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_TechCacheShop     # Self-purging core
+          # Mode: Survival
+          # Name: "Another Buried"
+          # Pos: [ 12307,56.9,2510 ] 
+          # Rot: [0,-90, 20] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: MapDistance
+              # Value: 1
+            # - Key: HudDistance
+              # Value: 2
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+
+
+         # # Workshop, cannot open            # Used
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: CannotOpenWorkshop_NFO
+          # Pos: [ 12279.0, 65, 2519 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+         # # Workshop position    # UNUSED
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "Workshop"
+          # Pos: [ 12284, 64, 2521 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+                                 # # nPOI used
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo-BuiltNarrow
+          # Mode: Survival
+          # Name: "(Built Narrow)"
+          # # Pos: [ 12291.68,61.5,2534.2 ]
+          # # Rot: [0,0,20] 
+          
+          # Pos: [12292.65,61.5,2534.2]
+          # Rot: [0,0,30] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+                                 # # nPOI used
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo-BuiltWide
+          # Mode: Survival
+          # Name: "(Built Wide)"
+
+          # Pos: [12292.1,61,2530.6]
+          # Rot: [0,0,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+                                 # # nPOI used
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo-HvRepulsor
+          # Mode: Survival
+          # Name: "(Engine can Hover & Rotate &  Move)"
+
+          # # Pos: [12287.7,61,2532.0]
+          # Pos: [12287.7,60.5,2532.0]
+          # Rot: [0,0,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+                                 # # nPOI used
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo-HvHover2
+          # Mode: Survival
+          # Name: "(Engine can just Hover)"
+
+          # # Pos: [12288.8,60.6,2535.0]
+          # Pos: [12288.8,60.5,2535.0]
+          # Rot: [0,90,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+                                 # # nPOI used
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo-TurnThrust2
+          # Mode: Survival
+          # Name: "(Turning with Thrusters)"
+
+          # # Pos: [12275.1,60.6,2534.8]
+          # Pos: [12275.1,60.5,2534.8]
+          # Rot: [0,0,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+                                 # # nPOI used
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo-TurnRCS2
+          # Mode: Survival
+          # Name: "(Turning with RCS)"
+
+          # # Pos: [12270.3,60.6,2534.2]
+          # Pos: [12270.3,60.5,2534.2]
+          # Rot: [0,0,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+                                 # # nPOI used
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo_MinimalHV
+          # Mode: Survival
+          # Name: "(Minimal Hover Vessel)"
+
+          # # Pos: [12272.7,60.6,2526.4] # Falling, gives console spam
+          # Pos: [12272.7,60.5,2526.4]
+          # Rot: [0,0,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo-Ammo&Ore
+          # Mode: Survival
+          # Name: "(Feeding into)"
+
+          # # Pos: [12282.5,60.6,2531.0]
+          # Pos: [12282.5,60.5,2531.0]
+          # Rot: [0,0,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: _HV_Tut4_Dmo_Containers
+          # Mode: Survival
+          # Name: "(May not touch)"
+
+          # # Pos: [12283.2,60.6,2534.1]
+          # Pos: [12283.2,60.5,2534.1]
+          # Rot: [0,0,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+
+# # ====================== Way to Challenge Island
+
+
+
+
+          # # HV controls
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Zirax Base?) (Needs a vessel)"
+          # Pos: [ 10294, 09.02, 5810 ]     # Below inheritor    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+                                   # # Using biome Changed !!
+          # # Thrust note
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: AutoThrustNote_CHK
+          # Pos: [ 10294, 10.08, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+          # # Entered Faction territory
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: EnteredTerritory_CHK
+          # Pos: [ 10294, 10.05, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+          # # HV controls
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: HVToIsland_CHK
+          # Pos: [ 10294, 10.02, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: DistanceCheckOff_CHK
+          # Pos: [ 10294, 10.06, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+
+
+
+
+         # # Flavour and story
+
+                            # #nPOi to autostart-trigger missions
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "ComChatter_TRG"
+          # Pos: [ 10294, 10.05, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+                            # #nPOi to autostart-trigger missions
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "EvilHack1_TRG"
+          # Pos: [ 10294, 10.05, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+# # ====================== Challenge Island
+
+
+                                         # # Used, Rough direction for Comm console marker
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: (Vessel Yard Location...?)
+          # Pos: [ 10294, 35.02, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+         # # Base Box
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_PL_CargoB_MS4
+          # Mode: Survival
+          # Name: (Lost Cargo)
+          # Pos: [ 11002,17.5,5272]
+          # Rot: [-15,-45,20] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+            # # - Key: Discovery
+              # # Value: True
+            # - Key: PersonalContainer
+              # # Value: "SurvivalTool:1, Chainsaw:1, RocketLauncher:1, SlowRocket:6, BioFuel:2, ConstructorSurvival:1, ConstructorSurvival:1, ConstructorSurvival:1, OxygenGeneratorSmall:1, OxygenBottleSmall:1, RottenFood:3, EmergencyRations:1, 12.7mmBullet:17, MechanicalComponents:2"
+
+              # Value: "ConstructorSurvival:4, RocketLauncher:1, SlowRocket:10 RottenFood:3, EmergencyRations:1, Sniper:1, 12.7mmBullet:80, MechanicalComponents:2, OxygenGeneratorSmall:1, BioFuel:5"
+
+
+
+                        # # Marker for foothold
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_Foothold_Clone
+          # Mode: Survival
+          # Name: (Foothold)
+          # Pos: [11017.0,18.5,5284]
+          # Rot: [20,0,0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+                            # #nPOi to trigger mission
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "CloseToBoxes_CHK"
+          # Pos: [11017.0,10.5,5284]
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+                           # # NPOI trigger for Artillery challenge chapter
+        # - Type: BA_Alien
+          # Faction: Zirax  
+          # Prefab: _BA_Tut4_Artillery02
+          # Mode: Survival
+          # Name: "Artillery Defense"
+          # Pos: [ 10607.5, 130, 5791 ] 
+          # Rot: [0, 0, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+            # - Key: SI
+              # Value: Off
+
+
+
+
+
+                                             # # Will 'solve' the tasklist when discovered Dronebase
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: CloseToArtillery_CHK
+          # Pos: [ 10607.5, 140, 5791 ] # Above artillery
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Old Artillery Defense)"
+          # Pos: [ 10607.5, 140, 5791 ] # Above artillery
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+
+        # # NEST  ==============================
+
+
+        # - Type: BA_Player
+          # Faction: RogueAI
+          # Prefab: _BA_Tut4_MCRN_Nest2
+          # Mode: Survival
+          # Name: Nest
+          # Pos: [ 11255, 26, 5709 ]
+          # Rot: [0, 90, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+        # - Type: BA_Player                  # nPOI marker high above nest, used
+          # Faction: None 
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Mysterious Base?)"
+          # Pos: [ 11255, 80, 5709 ]     #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player                  # UNUSED nPOI Used for getting close to nest, first message
+          # Faction: None 
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Get close to Hangar door)"
+          # Pos: [ 11223.4, 40, 5708 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # # Marker for spawner
+
+
+                                       # # nPOI spawner
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: "(Destroy Teleporter Pad)"
+          # Pos: [ 11244, 29.7, 5708 ]    #-1,0,-1 from player position
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # # Nest vessels
+
+
+        # - Type: SV_Player
+          # Faction: Human
+          # Prefab: _SV_Tut4_CanisDirusMK2
+          # Mode: Survival
+          # Name: "FV-135 Canis Dirus"
+          # Pos: [ 11236,27,5723.7 ] 
+          # Rot: [0, 180, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+        # - Type: SV_Player
+          # Faction: Human
+          # Prefab: _SV_Tut4_CanisDirusMK2
+          # Mode: Survival
+          # Name: "FV-135 Canis Dirus"
+          # Pos: [ 11247,27,5724 ] 
+          # Rot: [0, 180, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: HV_Player
+          # Faction: Human
+          # Prefab: _HV_Tut4-Kataphract
+          # Mode: Survival
+          # Name: "Kataphract"
+          # Pos: [ 11260,30,5708 ] 
+          # Rot: [0, -90, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+            # - Key: Discovery
+              # Value: True
+
+        # - Type: HV_Player
+          # Faction: Human
+          # Prefab: _HV_Tut4_MCRN_Mole
+          # Mode: Survival
+          # Name: "Mole"
+          # Pos: [ 11247,26.4,5690 ] 
+          # Rot: [0, 0, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: Discovery
+              # Value: True
+            # - Key: RegenAfter
+              # Value: 720
+            # - Key: Discovery
+              # Value: True
+
+
+
+        # - Type: HV_Player
+          # Faction: None
+          # Prefab: HV_ZeroGPhantom_Tut
+          # Mode: Survival
+          # Name: "(Abandoned HV)"
+          # Pos: [11236,26.8,5754.8]
+          # Rot: [0,-40,0] 
+
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 15
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+
+        # # ZIRAX POI  ==============================
+
+
+
+        # - Type: BA_Alien
+          # Faction: Zirax
+          # Prefab: _BA_Tut4_EpsilonDef_I
+          # Mode: Survival
+          # Name: Zirax Epsilon Resister
+          # Pos: [ 10161, 60, 5335 ]
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+
+        # # DRONEBASE  ==============================
+
+
+
+
+
+       # # The SV  ====================================== 
+
+
+
+
+
+        # - Type: SV_Player
+          # # Faction: Human
+          # Faction: Public
+          # Prefab: _SV_Tut4_Inheritor Warp1
+          # Mode: Survival
+          # Name: "Starlight Inheritor"
+          # Pos: [ 10294, 37.02, 5810 ] 
+          # Rot: [0, 0, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: RegenAfter
+              # Value: 720
+
+
+
+
+                                  # # # UNUSED
+        # # - Type: BA_Player
+          # # Faction: None
+          # # Prefab: _BA_PlayerSpawnerWater
+          # # Mode: Survival
+          # # Name: CloseToShip_CHK
+          # # Pos: [ 10294, 35.02, 5810 ]     # Above and side of inheritor
+          # # Rot: [0, 0, 0] 
+          # # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+
+
+           # # Drill target marker
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: (Drill here)
+          # Pos: [ 10295, 44.0, 5794 ]     # side wall of dronebase
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+                                         # # Used, nPOI to clear the task list. 
+                                         # # Same position as hangar entering, but triggers earlier
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: CloseToSV_Tsk_CHK
+          # Pos: [ 10294, 35.02, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+                                         # # Used, nPOI for hangar entering
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: CloseToSV_CHK
+          # Pos: [ 10294, 35.02, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+        # - Type: BA_Player              # For liftoff check
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: SVLeftHangar_CHK
+          # Pos: [ 10294, 100, 5810 ]     # High above inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+                                            # # Trigger for Story comment
+        # - Type: BA_Player
+          # Faction: None
+          # Prefab: _BA_Tut4_MarkerInvisible
+          # Mode: Survival
+          # Name: EvilHack_CloseToDB_CHK
+          # Pos: [ 10294, 34.98, 5810 ]     # Below inheritor
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+
+
+
+
+# # ==============  Explorer finds
+
+
+
+        # - Type: BA_Player
+          # Faction: None  
+          # Prefab: _BA_Tut4_BeachBoat
+          # Mode: Survival
+          # Name: "Thanks To"
+          # Pos: [ 11896.5, 20.5, 2605.5 ] 
+          # Rot: [0, 90, 0] 
+          # Properties:
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+        # - Type: BA_Alien
+          # Faction: None  
+          # Prefab: _BA_Tut4_TowerOfAkrura
+          # Mode: Survival
+          # Name: "Monument"
+          # Pos: [ 13037.0, 58.5, 3416.0 ] 
+          # Rot: [0, 90, 0] 
+          # Properties:
+            # - Key: MapDistance
+              # Value: 0
+            # - Key: HudDistance
+              # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # - Key: Discovery
+              # Value: True
+
+        # - Type: BA_Alien
+          # Faction: HackedCore
+          # Prefab: _BA_Tut4_ArcticPoint
+          # Mode: Survival
+          # Name: "Evacuated Outpost"
+          # Pos: [ 9593,23,7562 ]  
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # # - Key: MapDistance
+              # # Value: 0
+            # # - Key: HudDistance
+              # # Value: 0
+            # - Key: MapMarker
+              # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+              
+        # - Type: BA_Alien
+          # Faction: Ghyst
+          # Prefab: _BA_Tut4_GhystStealth
+          # Mode: Survival
+          # Name: "Stealth Outpost"
+          # # Territory: false   # Fixed POI do not have territory!! CoQ
+          # Pos: [ 9118,30.5,7680 ]  
+          # Rot: [0, 0, 0] 
+          # Properties: 
+            # - Key: MapDistance
+              # Value: 300
+            # - Key: HudDistance
+              # Value: 300
+            # - Key: MapMarker
+              # Value: Neutral
+            # # - Key: Discovery
+              # # Value: True
+
+        # - Type: BA_Player
+          # Faction: None  
+          # Prefab: _BA_Tut4_AkuaResort
+          # Mode: Survival
+          # Name: "Forgotten Resort Project"
+          # Pos: [ -9287,13.195,-4169 ] 
+          # Rot: [0, 0, 0] 
+          # Properties:
+            # - Key: MapMarker 
+              # Value: Neutral 
+            # - Key: Music
+              # Value: Adrift
+
+
+# ============= Player spawn ===============
+
+    FixedPlayerStart:
+        
+        - Mode: Survival
+          Armor: None
+          Spawn: Structure
+          Structure: TykkionPlayerSpawn
+          Armor: None
+          Status: [ "Food: 350, Health: 350", "Food: 250, Health: 250", "Food: 150, Health: 150", "#FreshStart:Food: 400, Health: 450" ]
+          Items: [ " "," "," ","#FreshStart: "]
+          
+        - Mode: Debug
+          Armor: ArmorLight
+          Pos: [ 10771.0, 19.1, 417.2 ]
+          RotY: 40
+
+
+
+
+### Drones
 DroneBaseSetup:
   DroneBases:
-  - DroneSetupID: "DroneBaseZiraxStarter"
-    Stock:
-    - Name: "DroneSmallFast01Minigun"
-      Amount: "5"
-      Type: "FighterDrone"
-    - Name: "DroneSmallFast01Rocket"
-      Amount: "2"
-      Type: "FighterDrone"
-    - Name: "DroneTroopsTransport"
-      Amount: "1"
-      Type: "TroopTransport"
-    - Name: "ZiraxMinigun"
-      Amount: "Infinite"
-      Type: "GroundTroop"
-    - Name: "ZiraxRocket"
-      Amount: "Infinite"
-      Type: "GroundTroop"
-    - Name: "RipperDog"
-      Amount: "Infinite"
-      Type: "GroundTroop"
+    - DroneSetupID: DroneBaseZiraxStarter
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: 5
+          Type: FighterDrone
+
+        - Name: DroneSmallFast01Rocket
+          Amount: 2
+          Type: FighterDrone
+
+        - Name: DroneTroopsTransport
+          Amount: 1
+          Type: TroopTransport
+
+        - Name: ZiraxMinigun
+          Amount: Infinite
+          Type: GroundTroop
+
+        - Name: ZiraxRocket
+          Amount: Infinite
+          Type: GroundTroop
+
+        - Name: RipperDog
+          Amount: Infinite
+          Type: GroundTroop
+
+
+
+
+
+  # PlanetVessels:
+    # - Name: OPVPolaris
+      # Position3D: [11768, 68, 29]
+      # Faction: Polaris
+      # LevelMod: 1
+      # FixedMaxSpeed: 30
+     # # PauseTimeOnStart: 60
+      # DelayBetweenRespawn: 600
+      # DelayBeforeSelfDestruction: 300
+      # IsRespawnAfterDestruction: False
+      # RangePatrolTask:
+        # Position3D: [200, 0, 200]
+        # POINameAsPositionRef: [_BA_Tut4_DroneFactory01]
+        # Radius: 100
+        # DistToGround: 40
+       # # RangePatrolAvoidArea:
+         # # - POIName: _BA_Tut4_Inv_PV-target
+           # # Radius: 100
+           # # Duration: 10000
+      # # Stock:
+        # # - Name: DroneSmallFast01Minigun
+          # # Amount: Infinite
+          # # Type: FighterDrone
+
+
+  # PlanetVesselBases:
+    # - DroneBase:
+        # DroneSetupID: PV_Base_Start
+        # Stock:
+          # - Name: DroneSmallFast01Minigun
+            # Amount: 1
+            # Type: FighterDrone
+
+      # PlanetVessel:  
+        # Name: PVZirax                                   # [string] - Name of the planet vessel unit or group name of a pool of planet vessels to be use. If a group name is used then a random unit from the pool will be drawn
+        # Faction: Polaris                                  # [string] - Faction of the vessel that can be chosen among : [Main, Zirax, Polaris, Pirates, Kriel, TheLegacy]. Main will be the dominant faction of the planet.
+        # LevelMod: 1                                     # [string] - Strength level of the ship that can chosen form [1,..., 10]
+        # FixedMaxSpeed: 10                               # [float] - Defines the maximum speed of the vessel
+        # # PauseTimeOnStart: 60                            # [float] - Time in second before the ship is spawned or active. ### Default : 0 sec that is instant spawn
+        # DelayBetweenRespawn: 600                        # [float] - Time in second before the destroyed vessel will spawn again as a new vessel. ### Default: 0 sec (that implies an instant respawn)
+        # DelayBeforeSelfDestruction: 300                 # [float] - Time in second before the vessel will disappear. ### Default : 10 sec (the vessel will be destroyed after 10 sec)
+        # IsRespawnAfterDestruction: False                 # [bool] [True, False] - Defines if the vessel will spawn again after being destroyed. ### Default: False
+        # RangePatrolTask:
+          # POINameAsPositionRef: [ThatAwesomePOIofMine]    # [string, string, ...] - A list of POI names can be defined here as a reference positions for the patrol area center. From all the POIs defined in this list that effectively exist on the playfield, one of them will be drawn randomly and be used as a reference position for the patrolling area center. ### Default: Random position on the planet
+          # Radius: 100                                  # [float] - Radius of the patrolling area. ### Default: Planet size
+          # DistToGround: 40                              # [float] - Defines the requested distance to the ground at which the AI vessel will patrol
+          # # RangePatrolAvoidArea:
+            # # - POIName: ThatAwesomePOIofMine             # [string] - Name of the POI to avoid
+              # # Radius: 2000                              # [float] - Radius in meter of the avoidance area. ### Default: 1000m
+              # # # Duration: 100                             # [float] - Time in second from the begining of the game during which the area will be forbidden to the AI vessel. ### Default : infinity (the area will be avoided forever)    
+        # Stock:
+          # # - Name: DroneSmallFast01Minigun               # [string] - Type name of the unit
+            # # Amount: 30                                  # [int] - Number of unit. The keyword \u201CInfinite\u201D can be use to have an unlimited number of units
+            # # Type: FighterDrone                          # [string] - The type define the role of the unit. This can only be: [FighterDrone \u2192 flying drone unit]     
+
+
+
+  # # PlanetVessels:
+    # # - Name: OPVPolaris
+      # # Position3D: [5000, 0, -400]
+      # # Faction: Polaris
+      # # LevelMod: 2
+      # # FixedMaxSpeed: 10
+     # # # PauseTimeOnStart: 60
+      # # DelayBetweenRespawn: 600
+      # # DelayBeforeSelfDestruction: 300
+      # # IsRespawnAfterDestruction: True
+      # # RangePatrolTask:
+        # # Position3D: [500, 0, -400]
+      # # #  POINameAsPositionRef: DroneBaseT1
+     # # #   Radius: 1000
+        # # DistToGround: 120
+       # # RangePatrolAvoidArea:
+         # # - POIName: PolarisHQUnique
+           # # Radius: 2000
+           # # Duration: 1000
+      # # Stock:
+        # # - Name: DroneSmallFast01Minigun
+          # # Amount: Infinite
+          # # Type: FighterDrone
+
+
+
+# Drones that patrol on whole planet 
 DroneSpawning:
-  Random:
-  - Name: "DroneSmallFast01Minigun"
-    DronesMinMax:
-    - 7
-    - 7
-    Faction: "Zirax"
-    POINameAsPositionRef: "_BA_Tut4_DroneFactory01"
-    Radius: 500
-CreatureSpawning:
-- Biomes:
-  - "ContinentWarm_1_P"
-  Entities:
-  - Name: "RaptorsNight"
-    Amount: 82
-    Color: "0, 0, 0.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-  - Name: "AlienBugs01"
-    Amount: 50
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "PalmDunes"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 20
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Day"
-- Biomes:
-  - "Savanna"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 40
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "PalmBeach"
-  Entities:
-  - Name: "AlienBugs01"
-    Amount: 30
-    Color: "0, 1.0, 1.0"
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "ShallowWater"
-  - "ShallowWater_1"
-  - "Surf"
-  Entities:
-  - Name: "ShoalofFishesSmall"
-    Amount: 25
-    Color: "0, 1.0, 0.0"
-    AllowInWater: true
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
-- Biomes:
-  - "ShallowWaterLilies"
-  Entities:
-  - Name: "ShoalofFishesSmall"
-    Amount: 100
-    Color: "0, 1.0, 0.0"
-    AllowInWater: true
-    DelayMinMax:
-    - 10
-    - 12
-    Period: "Always"
+    # Random:
+        # - DronesMinMax: [ 5, 10 ]
+          # CenterX: -5000
+          # Radius: 3000
+
+        # # - DronesMinMax: [ 5, 10 ]
+          # # CenterX: -5000
+          # # Radius: 3000
+
+
+    Random:
+      - Name: DroneSmallFast01Minigun
+        DronesMinMax: [ 7, 7 ]
+        Faction: Zirax
+       # CenterX: 5
+        POINameAsPositionRef: _BA_Tut4_DroneFactory01
+        Radius: 500                                    # [int] - Radius of the patrol area. ### Default: 1500m
+               # was 14 drones, 1500m
+
+      # - Name: DroneSmallFast01Rocket
+        # DronesMinMax: [ 5, 5 ]
+        # Faction: Polaris
+       # # CenterX: 5
+        # POINameAsPositionRef: PolarisHQUnique
+        # Radius: 1000                                    # [int] - Radius of the patrol area. ### Default: 1500m
+
+
+
+# ==============================================================
+# ==============================================================
+
 SpawnRateZones:
-- SpawnAt:
-  - "TS_Planet"
-  Radius: 1000
-  RadiusRandom: 50
-  RateMultiplyerEdge: 0.7
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
-- SpawnAt:
-  - "_BA_Tut3_LS_Heat&Rad"
-  Radius: 310
-  AffectEnemies: true
-  Color: "0.0, 1.0, 0.0, 0.7"
+   - SpawnAt: [TS_Planet]
+     Radius: 1000
+     RadiusRandom: 50
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0.7
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7"  
+
+   - SpawnAt: [_BA_Tut3_LS_Heat&Rad]
+     Radius: 310
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0.0
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7"  
+
+
+
 SpawnZones:
-- SpawnAt:
-  - "_BA_Tut4_DroneFactory01"
-  Radius: 1200
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "_BA_Tut4_DroneFactory01"
-  Radius: 1500
-  Color: "1.0, 0.0, 0.0, 0.5"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "_BA_Tut4_DroneFactory01"
-  Radius: 1000
-  Color: "1.0, 0.0, 0.0, 0.3"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "_BA_Tut4_DroneFactory01"
-  Radius: 2000
-  Color: "1.0, 0.0, 0.0, 0.3"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "_BA_Tut3_LS_Heat&Rad"
-  - "_BA_Tut4 MCRN Nest2"
-  - "_BA_Tut4_FarpointOutpost"
-  - "_SV_Tut4_MarkerTerrainV3"
-  - "SignalMarker04"
-  Radius: 200
-  Color: "1.0, 1.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "_BA_Tut3_LS_Heat&Rad"
-  Radius: 300
-  Color: "1.0, 1.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "_BA_Tut4_DroneFactory01"
-  - "_BA_Tut3_LS_Heat&Rad"
-  - "_BA_Tut4 MCRN Nest2"
-  - "_BA_Tut4_FarpointOutpost"
-  - "_SV_Tut4_MarkerTerrainV3"
-  - "SignalMarker04"
-  Radius: 500
-  Color: "1.0, 1.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker01"
-  - "SignalMarker03"
-  Radius: 200
-  Color: "0.6, 0.6, 1.0, 1"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker01"
-  - "SignalMarker02"
-  - "SignalMarker04"
-  Radius: 1000
-  Color: "0.6, 0.6, 1.0, 1"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "_BA_Tut3_LS_Heat&Rad"
-  Radius: 100
-  RateMultiplyerCenter: 0.5
-  RateMultiplyerEdge: 1
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "0.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Forest"
-    Amount: 1500
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "_BA_Tut4_DroneFactory01"
-  BiomesExcluded:
-  - "Mountains"
-  - "Glacier"
-  - "GlacierSnow"
-  Radius: 500
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  SpawnOnlyIfPoiIsAlien: true
-  Color: "1.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "ZiraxRipperDogPatrolEasy"
-    Biomes:
-    - "Any"
-    Amount: 60
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "CopperResource"
-  - "IronResource"
-  - "CarbonResource"
-  Radius: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Savanna"
-    Amount: 1000
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "IronResource"
-  - "CarbonResource"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  - "Glacier"
-  - "IceSheet"
-  - "Rocks"
-  - "Tundra"
-  Radius: 100
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.0, 1.0, 1.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    Amount: 700
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker02"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  - "Glacier"
-  - "IceSheet"
-  - "Rocks"
-  - "Tundra"
-  Radius: 250
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  Color: "0.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "RaptorsNight"
-    Biomes:
-    - "HighPalms"
-    - "ContinentWarm"
-    - "Hills"
-    - "LowMountains"
-    - "Dunes"
-    Amount: 100
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker03"
-  Radius: 70
-  RadiusRandom: 1
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.5
-  Color: "0.5, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "AlienBugs01"
-    Biomes:
-    - "Any"
-    Amount: 2000
-    DelayMinMax:
-    - -1
-    - -1
-    AllowInWater: true
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker04"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  - "Glacier"
-  - "IceSheet"
-  - "Rocks"
-  - "Tundra"
-  Radius: 1000
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.8
-  Color: "1, 1, 1, 1.0"
-  Entities:
-  - Names:
-    - "Spiders01few"
-    Biomes:
-    - "PalmForest"
-    - "ForestClearing"
-    - "Forest"
-    Amount: 200
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker04"
-  BiomesExcluded:
-  - "LowMountains"
-  - "Mountains"
-  - "Glacier"
-  - "IceSheet"
-  - "Rocks"
-  - "Tundra"
-  Radius: 1500
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 0.8
-  Color: "0.0, 0.0, 0.0, 1.0"
-  Entities:
-  - Names:
-    - "RaptorsNight"
-    Biomes:
-    - "HighPalms"
-    - "ContinentWarm"
-    - "Hills"
-    - "LowMountains"
-    Amount: 75
-    DelayMinMax:
-    - -1
-    - -1
-    Period: "Always"
-- SpawnAt:
-  - "SignalMarker04"
-  Radius: 2000
-  RateMultiplyerCenter: 1
-  RateMultiplyerEdge: 1
-  Color: "1, 0.0, 1, 1.0"
-  Entities:
-  - Names:
-    - "Telluropods"
-    Biomes:
-    - "Surf_1"
-    - "Surf"
-    - "Shore"
-    - "Surf_Volcanic"
-    Amount: 400
-    DelayMinMax:
-    - -1
-    - -1
-    AllowInWater: true
-    Period: "Always"
+
+
+
+
+# ============== Creature spawn zones
+
+
+   # - SpawnAt: [ SignalMarker02 ]
+     # # BiomesExcluded: [ LowMountains, Mountains ]
+     # Radius: 210
+     # RadiusRandom: 0
+     # RateMultiplyerCenter: 0.0
+     # RateMultiplyerEdge: 1
+     # Color: "0.5, 0.0, 0.0, 1.0"
+     # # SpawnOnlyIfPoiIsAlien: true
+     # Entities:
+       # - Names: [ AlienBugs01 ]
+         # # Biomes: [SandBeach]
+         # Biomes: [Any]
+         # Amount: 2000  #600
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+
+
+# ================ Markers
+
+      # Range of Zirax faction zone
+   - SpawnAt: [ _BA_Tut4_DroneFactory01]
+     Radius: 1200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 1.0"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+      # Patrol area of Zirax drones
+   - SpawnAt: [ _BA_Tut4_DroneFactory01]
+     Radius: 1500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 0.5"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [ _BA_Tut4_DroneFactory01]
+     Radius: 1000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 0.3"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [ _BA_Tut4_DroneFactory01]
+     Radius: 2000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0
+     Color: "1.0, 0.0, 0.0, 0.3"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+     # Position markers
+   - SpawnAt: [ _BA_Tut3_LS_Heat&Rad, _BA_Tut4 MCRN Nest2, _BA_Tut4_FarpointOutpost, _SV_Tut4_MarkerTerrainV3, SignalMarker04  ]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0.0
+     Color: "1.0, 1.0, 0.0, 1.0"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [ _BA_Tut3_LS_Heat&Rad ]
+     Radius: 300
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0.0
+     Color: "1.0, 1.0, 0.0, 1.0"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [ _BA_Tut4_DroneFactory01, _BA_Tut3_LS_Heat&Rad, _BA_Tut4 MCRN Nest2, _BA_Tut4_FarpointOutpost, _SV_Tut4_MarkerTerrainV3, SignalMarker04 ]
+     Radius: 500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0.0
+     Color: "1.0, 1.0, 0.0, 1.0"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+   - SpawnAt: [ SignalMarker01, SignalMarker03  ]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0.0
+     Color: "0.6, 0.6, 1.0, 1"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [ SignalMarker01, SignalMarker02, SignalMarker04  ]
+     Radius: 1000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 0.0
+     Color: "0.6, 0.6, 1.0, 1"
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+
+# ============== More Creature spawn zones
+
+   # - SpawnAt: [CrashedShip, Ruins, Wreckage, AbandonedPOI]
+     # BiomesExcluded: [ LowMountains, Mountains ]
+     # Radius: 100
+     # RadiusRandom: 50
+     # RateMultiplyerCenter: 1.0
+     # RateMultiplyerEdge: 0.5
+     # Color: "1.0, 1.0, 1.0, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     # Entities:
+       # - Names: [AlienBugs01]
+         # Biomes: [Any]
+         # Amount: 200
+         # Period: Always
+         # DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [ _BA_Tut3_LS_Heat&Rad ]
+     # BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 100
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0.5
+     RateMultiplyerEdge: 1.0
+     Color: "0.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Forest]
+         Amount: 1500
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [ _BA_Tut4_DroneFactory01 ]
+     BiomesExcluded: [ Mountains, Glacier, GlacierSnow ]
+     Radius: 500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 0.0, 0.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxRipperDogPatrolEasy]
+         Biomes: [Any]
+         Amount: 60
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+   - SpawnAt: [ CopperResource, IronResource, CarbonResource]
+     # BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 100
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 1.0, 1.0, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Savanna]
+         Amount: 1000
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [ IronResource, CarbonResource]
+     BiomesExcluded: [ LowMountains, Mountains, Glacier, IceSheet, Rocks, Tundra ]
+     Radius: 100
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 1.0, 1.0, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienBugs01]
+         Biomes: [Any]
+         Amount: 700
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+   - SpawnAt: [ SignalMarker02]   # Close to promethium deposit & Ore processor
+     BiomesExcluded: [ LowMountains, Mountains, Glacier, IceSheet, Rocks, Tundra ]
+     Radius: 250
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "0.0, 0.0, 0.0, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [RaptorsNight]
+         Biomes: [HighPalms, ContinentWarm, Hills, LowMountains, Dunes ]
+         Amount: 100
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+
+
+   - SpawnAt: [ SignalMarker03 ]   # Salvage beach first AlienBugs01 encounter
+     # BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 70
+     RadiusRandom: 1
+     RateMultiplyerCenter: 1
+     RateMultiplyerEdge: 0.5
+     Color: "0.5, 0.0, 0.0, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ AlienBugs01 ]
+       # - Names: [ Pangolins ]
+         # Biomes: [SandBeach]
+         Biomes: [Any]
+         Amount: 2000  #600
+         Period: Always
+         DelayMinMax: [-1, -1]
+         AllowInWater: true 
+
+
+
+
+     # ==== Distributing creatures at the 'back end' of the second island  ===========
+
+   - SpawnAt: [ SignalMarker04] 
+     BiomesExcluded: [ LowMountains, Mountains, Glacier, IceSheet, Rocks, Tundra ]
+     Radius: 1000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.8
+     Color: "1, 1, 1, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Spiders01few]
+         Biomes: [PalmForest, ForestClearing, Forest ]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [ SignalMarker04]
+     BiomesExcluded: [ LowMountains, Mountains, Glacier, IceSheet, Rocks, Tundra ]
+     Radius: 1500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.8
+     Color: "0.0, 0.0, 0.0, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [RaptorsNight]
+         Biomes: [HighPalms, ContinentWarm, Hills, LowMountains ]
+         Amount: 75
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [ SignalMarker04]
+     # BiomesExcluded: [ LowMountains, Mountains, Glacier, IceSheet, Rocks, Tundra ]
+     Radius: 2000
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1
+     Color: "1, 0.0, 1, 1.0"
+     # SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Telluropods]
+         Biomes: [Surf_1, Surf, Shore, Surf_Volcanic ]
+         Amount: 400
+         AllowInWater: true 
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+
+
+### Creatures
+CreatureSpawning:
+    # - Biomes: [Continent] 
+      # Entities:
+        # - Name: Megalonopses
+          # Period: Day
+          # Amount: 15
+          # DelayMinMax: [10, 12]
+          # Color: "0, 0, 1.0"
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 12
+          # DelayMinMax: [10, 12]
+          # Color: "0, 1.0, 1.0"
+
+
+    # - Biomes: [Shore] 
+      # Entities:
+        # - Name: Telluropods
+          # Period: Always
+          # Amount: 25
+          # DelayMinMax: [10, 12]
+          # AllowInWater: true 
+          # Color: "0.2, 0.2, 1.0"
+
+
+    - Biomes: [ContinentWarm_1_P] 
+      Entities:
+        - Name: RaptorsNight
+          Period: Always
+          Amount: 82
+          DelayMinMax: [10, 12]
+          Color: "0, 0, 0.0"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 50
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+
+
+
+
+
+    - Biomes: [PalmDunes] 
+      Entities:
+        - Name: AlienBugs01
+          Period: Day
+          Amount: 20
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+
+
+    - Biomes: [Savanna] 
+      Entities:
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 40
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+
+
+
+
+    - Biomes: [PalmBeach] 
+      Entities:
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 30
+          DelayMinMax: [10, 12]
+          Color: "0, 1.0, 1.0"
+
+    # - Biomes: [ShallowWater, ShallowWater_1, Surf_1, Surf] 
+    - Biomes: [ShallowWater, ShallowWater_1, Surf] 
+      Entities:
+        - Name: ShoalofFishesSmall
+          Period: Always
+          Amount: 25
+          DelayMinMax: [10, 12]
+          AllowInWater: true 
+          Color: "0, 1.0, 0.0"
+
+      # # Standard Telluropods
+    # - Biomes: [KelpForest, CoralReefs, OpenSea, ShallowWater, ShallowWater_1, ShallowWaterLilies, Surf, Surf_1, Shore, GravelBeach, SwampShore, Swamp, Marsh]
+      # Entities:
+        # - Name: Telluropods
+          # Period: Always
+          # Amount: 50
+          # DelayMinMax: [3, 5] 
+          # AllowInWater: true 
+          # Color: "0, 0, 0.7"
+
+
+    - Biomes: [ShallowWaterLilies] 
+      Entities:
+        - Name: ShoalofFishesSmall
+          Period: Always
+          Amount: 100
+          DelayMinMax: [10, 12]
+          AllowInWater: true 
+          Color: "0, 1.0, 0.0"
+
+Build: 3938
