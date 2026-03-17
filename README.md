@@ -56,10 +56,6 @@ RE2的文档8/17加入施工，不定时更新。(已完成)
 1. 使用【本体汉化】里Content目录覆盖游戏根目录下的Content文件夹。
 2. 使用剧本启动游戏，如Reforged Eden 2，则到如下路径 Content\Scenarios\Reforged Eden 2，把汉化文件覆盖上去。
 
-### 四、关于玩RE2服务器，而服务器又不及时更新汉化文件解决方法
-
-此方法只适合服务器缺少汉化词条的补充，不能做到已有词条的更新，有条件的还是要服务器所有权人更新语言文件。  
-使用方法：将项目里面的"玩RE2服务器专用，汉化POI\Localization.csv"文件，替换本体语言文件，路径如："C:\Steam\steamapps\common\Empyrion - Galactic Survival\Content\Extras\Localization.csv"
 
 ## 【注意事项】
 
