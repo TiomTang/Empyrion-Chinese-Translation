@@ -2,6 +2,7 @@
 
 Github发布:  [TiomTang/Empyrion-Chinese-Translation](https://github.com/TiomTang/Empyrion-Chinese-Translation)（关注不迷路）
 
+Q群交流：455283526 （入群问题答案：CN9527）
 ---
 
 ## 【说明】
