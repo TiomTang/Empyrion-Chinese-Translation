@@ -1,0 +1,467 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+# ==============================================================
+# Playfield Characteristics
+
+Description: "\u8FD9\u662F\u4E00\u9897\u6E29\u5E26\u884C\u661F\uFF0C\u62E5\u6709\u5E7F\u9614\u7684\u6D77\u6D0B\u3001\u706B\u5C71\u5C9B\u5C7F\u4EE5\u53CA\u5E26\u6709\u5C71\u8109\u7684\u5927\u578B\u5927\u9646\u3002\u5B83\u62E5\u6709\u53EF\u547C\u5438\u7684\u5927\u6C14\u5C42\u3002\u5E73\u5747\u6C14\u6E29\u4E3A23\u00B0C\uFF0C\u91CD\u529B\u4E3A0.84g\u3002"
+
+PlanetType: Temperate             # Choose from pre-selection: Alien, Arid, Barren, Desert, Lava, Snow, Temperate    
+PlayfieldType: Planet             # Ignore (do not change for planet playfield). Planet, Moon, Space, Sun      
+Difficulty: 2                     # Integer [1, 5] Determines the ordering of planets in the New Game menu. Planets with low difficulty come first
+
+BaseAttackCount: 0                # Integer [0, 1] Determines whether there are base attacks on this playfield. 0 =  no base attacks, 1 = base attacks enabled (later the INT will determine the number of simultaneous base attacks on a playfield). Default is BaseAttackCount: 1 
+
+TraderZone: ExampleZone          # The TraderZone sets all traders that have #ZONE# selected from their TYPE dropdown setting to use the 'ExampleZone' Trading table set up under /Content/Configuration/TraderNPCConfig.ecf! Any entry from this file can be used as Traderzone!  Note: If you set a TraderZone to a POI via 'Properties' the Playfield-Trader Zone is not used for those POI. Furthermore if you set a specifc Trading Table to any Trader and do NOT use the #ZONE# setting from its dropdown, neither the Traderzone for a playfield, nor the traderzone for a POI group will be used for THAT particular trader (only!).
+
+# ==============================================================
+# Special parameters:
+# ==============================================================
+
+AllowHV: False                  # Dis-allow HVs to enter/spawn in this playfield, default is True
+AllowSV: False                  # Dis-allow SVs to enter/spawn in this playfield, default is True
+AllowCV: False                  # Dis-allow CVs to enter/spawn in this playfield, default is True
+AllowBA: False                  # Dis-allow BAs to enter/spawn in this playfield, default is True
+
+AllowMaxCPUTierBA: 2            # Set the max CPU Tier allowed; Only applies to spawning blueprints
+AllowMaxCPUTierSV: 1            # Set the max CPU Tier allowed; Only applies to spawning blueprints
+AllowMaxCPUTierHV: 3            # Set the max CPU Tier allowed; Only applies to spawning blueprints
+AllowMaxCPUTierCV: 3            # Set the max CPU Tier allowed; Only applies to spawning blueprints
+
+RestrictToOrigin: Human         # Only players of the defined origin are allowed to enter the playfield
+
+AllowBlueprintSV: False         # Dis-allow to spawn SV Blueprint in this playfield, default is True
+AllowBlueprintCV: False         # Dis-allow to spawn CV Blueprint in this playfield, default is True
+AllowBlueprintBA: False         # Dis-allow to spawn BA Blueprint in this playfield, default is True
+AllowBlueprintHV: False         # Dis-allow to spawn HV Blueprint in this playfield, default is True
+
+# ==============================================================
+
+Seed: 123456                    # Integer [1, 999999] If set overwrites main Seed 
+UseFixed: True  			   	   # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
+UseRandom: True				   # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
+IndestructibleTerrain: True     # If set to True terrain on this playfield will be indestructible
+
+# ==============================================================
+
+# Removing or not using any of the following LandClaimZone settings has the same effect than using the 'LandClaimZone: Default' mode!
+# Note: The LandClaimZone settings also apply to alien POIs. If you want to protect a POI with the LandClaimZone: Device mode active, the POI needs a Landclaim Device!
+# Note: Antigrief zones set up for deposits in the gameoptions.yaml will ALWAYS exist and are NOT affected by any LandClaimZone mode. If you do (not) want deposits to be protected, please use the setup in the gameoptions.yaml
+# Note: The gameoptions.yaml can be found at the top level in the games scenario folder and will be copied  over to the savegame folder when starting a new game. In this case, changes for a savegame need to be made there, and not in the scenario folder!
+
+LandClaimZone: Default          # Use gameoptions.yaml to setup detailed values for either using AntiGriefDistancePvE and/or AntiGriefDistancePvP
+LandClaimZone: Device           # IF either one or both AntiGriefDistancePvE and AntiGriefDistancePvP are activated in gameoptions.yaml, Antigrief zones will only exist for structures that have a Landclaim Device
+LandClaimZone: Off              # This negates the settings made for both AntiGriefDistancePvE and AntiGriefDistancePvP in the gameoptions.yaml by setting all AntiGriefZones to OFF for this playfield only. 
+
+# ==============================================================
+
+Instance:
+  Time: 120                        # Minutes until this instance has to be completed and players are kicked
+  MaxPlayers: 4                    # Portal closes after this amount of players entered
+  PortalOpen: 60                   # Seconds the portal is open
+  Cooldown: 7200                   # Seconds the portal is closed after it was open (cooldown time)
+  DropInventory: True              # When you do not solve the instance within the given "Time", you will be kicked and your inventory stays behind
+  AllowBlueprints: True            # Allow to spawn blueprints in an instance
+  RestrictToOrigin: 3              # Only Origin with ID <xyz> can enter portal, see sectors.yaml origin ID
+  LockOnFaction: True              # Only members of the same faction can enter portal
+  EnterWithEmptyInventory: True    # If you have items in your inventory those will be dropped
+  NoVolumeWeightForPlayer: True    # To Disable the Volume/Weight Check in an Instance. When outside it applies again!
+
+# # ==============================================================
+
+# Special Effects               # Special Particle Effects around player
+SpecialEffectsLocal: 
+  - Name: FireFliesRed          # Name of particle effect 
+    Biome: [ Water ]            # Biome in which particle effect appears
+    Time: Night                 # Time at which particle effect appears. Choose from pre-selection: Day, Night, Always
+    MaxHeight: 20               # Height above terrain at which particle effect disappears
+    FollowPlayerY: True         # Particle effect follows player in y direction 
+  - Name: DandelionsFew
+    Biome: [ Savanna, Grassland ]
+    Time: Day
+    MaxHeight: 15
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Fog                   # Name of weather effect. Use in-game console cmd "help weather" to get a list of possible weather effects.
+    Type: Weather               # Ignore (do not change)
+    InitialDelay: 0             # Initial delay, in game hours
+    Delay: 5                    # Delay between weather of the same type, in game hours
+    Lifetime: 1500              # Duration of weather effect, in realtime seconds
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0   
+    Delay: 2
+    Lifetime: 1500
+# Global Effect
+  - Name: BirdFlocksCrows          # Name of effect 
+    Biome: [ Savanna, Grassland ]  # Name of biome in which effect will spawn 
+    Time: Day                      # Time at which particle effect appears. Choose from pre-selection: Day, Night, Always
+    InitialDelay: 1                # Initial delay, in game hours
+    Delay: 4			         # Delay between effect of the same type, in game hours
+    Lifetime: 600	                 # Duration of effect, in realtime seconds
+    PlyDist: 100                   # Distance from player at which effect will spawn
+    SpawnY: 30                     # Height at which effect will spawn
+    Struct: True                   # If set to True, effect will not be spawned above player structures
+
+# ==============================================================
+
+# Atmosphere and Sky
+AtmosphereEnabled: True              # Bool var [true, false]. Atmosphere True or False
+AtmosphereColor: "0.19, 0.26, 0.35"  # Color picker - Color of atmosphere seen in space (has not much impact) default is white "1,1,1"
+SkyColor: "1, 1, 1"                  # Color picker - Color of skybox if sun is in zenith, default is white "1,1,1"
+SkyHorizonColor: "1, 0.5, 0"         # Color picker - Color of skybox if sun is on horizon, default is white "1,1,1"
+AtmosphereParams: [5, 1.2]          # [Rayleigh Multiplier, Atmosphere Contrast], default is AtmosphereParams: [1, 1.6]   
+                                     # RayleighMultiplier between 0 and 10 - higher values make SkyColor / SkyHorizonColor more pronounced
+                                     # Atmosphere Contrast between 0 and 3 - lower values wash out SkyColor / SkyHorizonColor 
+# Light
+DayLightIntensity: 1.4               # Float [0, 2] - Larger values = brighter, default is 0.6
+NightLightIntensity: 0.35            # Float [0, 2]) - Larger values = brighter, default is 0.6
+LightZenithColor: "1, 0.95, 0.92"    # Color picker - Color of light if sun is in zenith, default is almost white "1,0.95,0.92" 
+LightHorizonColor: "1, 0.6, 0"       # Color picker - Color of light if sun is on horizon, default is orange "1,0.6,0" 
+NightLightColor: "0.7, 0.2, 0.2"     # Color picker - Color of moon light, default is blueish "0.67,0.65,0.99"
+DayShadowStrength: 1                 # Ignore (do not change) - Hardcoded to 1
+NightShadowStrength: 1               # Ignore (do not change) - Hardcoded to 1 
+
+# Sun                              
+SunFlare: EnvironmentalEffects/SunFlareBlue       # Choose from pre-selection: SunFlareBlue, SunFlarePurple, SunFlareRed, SunFlareRedSpace, SunFlareWhite, SunFlareWhite2, SunFlareWhite3, SunFlareWhite3Space, SunFlareWhite4, SunFlareWhite4Space, SunFlareWhiteMoon, SunFlareWhiteSpace, SunFlareYellow, SunFlareYellow2, SunFlareYellow3
+OrbitUsesLightColor: false                        # The LightZenithColor of a planet will now force the light color of its orbit unless the new playfield yaml parameter OrbitUsesLightColor is set to false; If the OrbitUsesLightColor parameter is NOT set, it is always "true" by default
+
+# ==============================================================
+# ==============================================================
+
+# Fog
+AtmosphereFog: 0.4                     # Float [0, 1] - Distant fog: larger values = stronger
+FogCloudIntensity: 0.8                 # Float [0, 1] - Waft of mist in air: larger values = stronger
+FogColor: "0.6, 1, 0.3"                # Color picker - Color of fog, default is white "1,1,1" 
+GroundFogIntensity: 0                  # Float [0, 1] - Ground Layer Fog: larger values = stronger
+GroundFogHeight: 0                     # Float [0, 800] - Ground Layer Fog Height
+
+# DEPENDS ON WEATHER
+# Clouds
+CloudsDensity: 0.5                     # Float [0, 1] - Larger values = more clouds (coverage)
+CloudsSharpness: 0.35                  # Float [0, 1] - Larger values = less dense clouds
+CloudsBrightness: 0.7                  # Float [0, 1] - Larger values = brighter clouds
+CloudsOpacity: 0.9                     # Float [0, 1] - Larger values = more opaque, default is 0.9
+CloudsZenithColor: "0.87, 0.92, 1"     # Color picker - Color of clouds if sun is in zenith, default is light blue "0.87,0.92,1" 
+CloudsHorizonColor: "1, 0.76, 0.56"    # Color picker - Color of clouds if sun is on horizon, default is light orange "1,0.76,0.56" 
+CloudsNightZenithColor: "0.054, 0.094, 0.152"     # Color picker - Color of clouds during max night, default is greyish "0.054, 0.094, 0.152"
+CloudsNightHorizonColor: "0.054, 0.094, 0.152"    # Color picker - Color of clouds during dusk / dawn, default is greyish "0.054, 0.094, 0.152" 
+
+# DEPENDS ON WEATHER
+# Wind Speed
+WindSpeed: 3                           # Float [0, 20] -  Larger values = faster moving clouds, grass and trees
+
+
+# ==============================================================
+# ==============================================================
+
+### Resource Deposits
+### Available deposit types for VOXEL (Random/fixed): IronResource,SiliconResource,CopperResource,CobaltResource,MagnesiumResource,NeodymiumResource,TitanResource,AluminiumResource,
+### Available deposit types for SSOR (Random/fixed):
+RandomResources:                        # Randomly placed on a playfield
+    - Name: IronResource                # Name of resource
+      Biome: [ Grassland, Forest ]      # List of biomes in which resource should spawn 	  
+      BiomesExcluded: [ Radiated ]      # List of biomes in which resource should not spawn 
+      IsImportant: True                 # More trials to find suitable location for resource (use carefully and not for all resources/POIs)
+      IsScalingCount: True              # If IsScalingCount=True, CountMinMax is given for a Class 2 planet and is scaled for larger planets (deposit size is not affected): Class 2 = x1, Class 3 = x2, Class 4 = x4, Class 5 = x8
+      CountMinMax: [ 6, 7 ]             # Range of number of resources to distribute on planet
+      SizeMinMax: [ 8, 14 ]             # Range of sizes of resource depots
+      DepthMinMax: [ 5, 10 ]            # Range of how deep to bury depots below terrain surface (e.g. 0 = partly visible, 3 = top of depot starts 3m below surface)
+      DroneProb: 0.2                    # Probability that the resource is defended by drones
+      MaxDroneCount: 1                  # If at all, 1..n drones will defend the resource [default = 1]
+      DistTypeCylinder:                 # SSOR; Using DistTpeCylinder will make this deposit an Sub-surface Ore Rocks type (SSOR). Do not use the pareameter to keep it a VOXEL deposit)
+        MaxRadius: 10                   # Radius of cylinder
+        YVariance: 18                   # Height of cylinder
+
+FixedResources:                 # Always placed in a fixed location (randomization parameters of RandomResources do NOT work here!)
+    - Name: SiliconResource     
+      Pos: [ 646, 33, -607 ]    # Position coordinates
+      Radius: 7                 # Size of deposit 
+      DistTypeCylinder:
+        MaxRadius: 10
+        YVariance: 18
+                          
+
+### Resource Asteroids = Meteorids falling from the sky!
+AsteroidResources:            
+    - Name: IronResource        # VARIANT 1: Resource asteroids spawn, based on remaining amount & threshold
+      Threshold: 0.6            # Float [0, 1] - threshold (compared to the total amount of ore, NOT related to single deposits) below which asteroids will start to spawn
+      Amount: 0.8               # Float [0, 1] - amount to restock (compared to the total amount of ore at game start)
+
+    - Name: IronResource        # VARIANT 2: resource asteroids appear INDEPENDENT of the remaining amount and threshold of ore on a planet!
+      Amount: 5000              # Amount of ore that is spawned per event. Minimum is 3000 ore.
+      InitialDelay: 1           # Float [0, 10000] Initial delay in game hours before spawning of asteroids, if InitialDelay < 0 => no spawning
+      Delay: 24                 # Float [0, 10000] Subsequent delay in game hours, if Delay = 0 => no spawning
+      DespawnDelay: 5           # Float [0, 10000] Delay in game hours after which asteroid will be removed. If parameter is not set or set to 0, asteroid will not despawn  
+
+# ==============================================================
+# ==============================================================
+### POIs
+# The POI spawning algorithm goes from top to down, so place important POIs on top to make sure they are placed. Moreover, the timing is as follows: 1. Drone base spawning, 2. POI spawning, 3. Resource deposit spawning 
+# Add large objects on top of this list to avoid "too near" problems with other POIs
+POIs:             
+    Random:
+        - GroupName: ThatAwesomePOIofMine    # Group name of the POIs bundled to spawn with this entry; The Groupname is set in the ingame Blueprint Libary via double-click on the POI entry!
+          NoShieldReload: True               # Default: False/ not set; If set to TRUE the shield of a POI will not recharge if it was brought to 0 once		  
+          # Type: SV_Player                  # Optional for special type of POI to spawn: SV_Player, HV_Player, CV_Player. If not used, then POI is a Base (default setting)
+          FactionTerritory: [Zirax, Polaris]  #Use to allow a POI in multiple or all faction territories (use 'All' instead of faction list); 'Faction: ' parameter will be ignored]
+          Faction: Zirax                     # Faction of the POI. Choose between: Zirax, Polaris, Talon, Kriel, Trader, Pirates, Alien, None. 'None' is intended for wreckages, 'Alien' = The Legacy
+          DroneSetupID: FirstBase            # [string] String UID keyword to link exactly one base with exactly one POI that share the same string ID (see FirstBase); Note: This is NOT related to the Base Attack coming from or using its definitions!
+          AvoidFactionTerritory: True        # Default: False/not set; Faction 'None' and 'Alien' might be placed on other faction's territory. With 'AvoidFactionTerritory: true' this can be prevented.
+          Territory: False                   # POI will not show faction territory on the map
+          IsCommandCenter: True              # CommandCenter for this factions Base Attacks; If destroyed and NO other POI is set as a Commandcenter for this Faction on this playfield, their Base Attacks will end
+          CountMinMax: [ 1, 2 ]              # Range of number of POIs of this group to distribute on planet
+          DroneProb: 1                       # Probability that a POI is defended by drones; Can use float between 0 (never) to 1 (always)
+          DronesMinMax: [ 1, 2 ]             # Range of number of drones that defend POI
+          ReserveCount: 1                    # Number of drones that will be replaced when destroyed
+          TroopTransport: False              # Decides if troop transport will be sent when POI is attacked by a player  
+          PlayerStart: True                  # Requires the POI to offer a PLAYER SPAWN pad! Use as first POI if player should be spawned here; use a Count of 1 for such POIs (CountMinMax: [ 1, 1 ])
+          SpawnPOIAvoid: [ThatDangerousPOI]  # Groupdname of POIs to NOT spawn this one close to; Note: referred POIs must be already have been spawned, so place referring POI in the POI list AFTER the referred POI! 
+          SpawnPOIAvoidDistance: 1500        # Means: spawn AT LEAST this distance away from the defined POI
+          SpawnPOINear: [ThatCompanionPOI]   # Groupname of POIs to actively spawn CLOSE to;  Note: referred POIs must be already have been spawned, so place referring POI in the POI list AFTER the referred POI!  
+          SpawnPOINearRange: [100, 250]      # Range min/max of POI to spawn. Note: Do not go closer than 50-70m. If the defined POI is wider than the NearRange, this might result in spawning issues!
+          SpawnResource: ["CopperResource:0-1"]       # Tries to spawn the given amount of CopperResource deposits close to each POI in this group (list can contain several resources); Syntax: <resource>:<min>-<max>
+          ResourceDistance: 300                       # Distance to the POI (must be at least 80m); NOTE: If a resource is not set for this planet under fixed or random Resources, the referred resource of this setting will NOT be spawned, eg. you cannot have a resource that is not at least allowed once on the planet; Note: the SIZE of the deposit is also derived from the setting for this resource from the Resources list for the planet!
+          PlaceAt: OnWater,UnderWater        # OnWater (floating on water/exactly on the waterline); UnderWater, Terrain;; Default: not set = Terrain only; One, two or all values can be combinded/used for one POI group! Note: Place OnWater ALWAYS should have SI set to Off to avoid a collapse, eg when a plant is picked from a growing plot = SI is "updated"; This can be avoided if the POI has extensions down from the water-line into the terrain )
+          Properties: 
+            - Key: PersonalContainer         # Personal Container
+              Value: "Drill:2, BioFuel:4"    # Content of Personal Container; Each player can pick THIS stuff once. Works in SP and MP! Syntax: <item/block/device>:<amount>
+            - Key: MapDistance               # Sets visibility of map markers in meters. Optional property to override the default visibility setting; Attention: Changes will override DETECTOR device RANGE!!
+              Value: 500                     # Reveals map marker if player is 500m away from object. If set to 0, map marker will never be revealed; Attention: Changes will override DETECTOR device RANGE!! 
+            - Key: HudDistance               # Sets visibility of HUD marker in meters. Optional property to override the default visibility setting; Attention: Changes will override DETECTOR device RANGE!!.
+              Value: 100                     # Shows HUD marker if player is 100m away from object. If set to 0, HUD marker will never be shown; Attention: Changes will override DETECTOR device RANGE!!
+            - Key: MapMarker                 # Sets color of HUD marker
+              Value: Neutral                 # Neutral means the HUD marker is white        
+            - Key: Discovery                                    # Overrides visibility and DETECTOR mechanics!!
+              Value: False                                      # False = the POI is always visible, even if not detected or under fog of war; does NOT depend on core typ used!
+            - Key: RegenAfter                # Enable regeneration of POI if it has been "visited" and no player is in its vicinity; Note for Multiplayer only: REGENAFTER POIs cannot be taken over by the players, as they can not place a new core
+              Value: 250                     # Regenerate timer in realtime minutes (72 realtime minutes = 24h in-game)             
+            - Key: Music                     # Music that is played when a player enters the POI
+              Value: DarkSoundscape          # Name of the music track that is played 
+            - Key: TraderZone                                  # The TraderZone sets all traders of THIS POI GROUP that have #ZONE# selected from their TYPE dropdown setting to use the 'ExampleZone' Trading table set up under /Content/Configuration/TraderNPCConfig.ecf! Any entry from this file can be used as Traderzone!  Note: If you set a TraderZone to a POI via 'Properties' the Playfield-TraderZone is not used for those POI. Furthermore if you set a specifc Trading Table to any Trader and do NOT use the #ZONE# setting from its dropdown, neither the Traderzone for a playfield, nor the traderzone for a POI group will be used for THAT particular trader (only!).
+              Value: ExampleZone                                            
+            - Key: PvEArea                                      # Defines an area around a POI in an PvP playfield, where players cannot harm each other
+              Value: 500                                        # Distance from about the center of the structure
+            - Key: StationInterface                             # Allows the user do buy/refill his vessel remotely (use Control Panel (P) > StationServices tab)
+              Value: "Fuel:1.1,O2:1.1,Warp:1.1,Ammo:1,Repair:2,Shield:2,IfNeutral:0,IfFriendly:-0.1,IfHonored:-0.20"   #Available services: Fuel, O2, Warp, Ammo, Repair, Shield; Syntax: <service>:<multiplier>; multiplier is applied to setting MarketPrice in ItemsConfig and Blocksconfig! If the item has no Marketprice, the station service will not work!;; Discount settings: IfNeutral, IfFriendly, IfHonored; '-' = cost % less; without '-' = costs % more )
+            - Key: SI                                 # Disable SI  (f.ex. use for POI floating in mid air or OnWater)
+              Value: Off      
+
+  #      - GroupName: DroneBaseT1                    #Each playfield requires a DroneBase to be placed; The dronebase can have an "faction" property
+  #        DroneBaseSetup: DroneBaseSetup            #REQUIRED to make this a Dronebase (If destroyed, the roaming drones on the planet will vanish after a while/when destroyed); Definitions of Setup can be found further down in this playfield setup!
+  #        Faction: Zirax
+  #        >> all other parameters described in the ThatAwesomePOIofMine  be added here!
+ 
+          
+  #      - GroupName: PlanetVesselBase                              # Optional addition for PVs (Planetary Patrol Vessels)
+  #       PlanetVesselBaseSetup: PlanetVesselBaseSetupAkua         #REQUIRED to make this a starting point of the PLANET PATROL VESSEL (If destroyed, no PV will happen to start anymore); Definitions of Setup can be found further down in this playfield setup!
+  #        Faction: Zirax
+  #        >> all other parameters described in the ThatAwesomePOIofMine  be added here!
+ 
+
+    Fixed:
+        - Type: BA_Player               # Type of blueprint (BA, SV, HV, CV)
+          Prefab: BA_Outpost-AkuaV2     # Filename of blueprint
+          Mode: Creative                # Creative or Survival
+          SubMode: Normal               # Empty / Normal (only evaluated in Creative mode) [default: Normal]
+          Name: Outpost Akua            # Name of blueprint as displayed to player
+          Pos: [ -522.5, 27, -356.4 ]   # Position coordinates
+          Rot: [ 0, -42, 0 ]            # Rotation angles
+          InitPower: True               # Set if POI should be initially powered, default: False
+
+        - Type: BA_Player                         # Type of blueprint (BA, SV, HV, CV)
+          Prefab: BA_Outpost-AkuaV2               # Filename of blueprint
+          Mode: Survival                          # Creative or Survival
+          SubMode: Normal                         # Empty / Normal (only evaluated in Creative mode) [default: Normal]
+          Name: Outpost Akua                      # Name of blueprint as displayed to player
+          SpawnResource: ["PromethiumResource:1"] # Tries to spawn 0 or 1 CopperResource deposits close to POI (list can contain several resources)
+          ResourceDistance: 300                   # Distance to POI
+          Pos: [ -522.5, 27, -356.4 ]             # Position coordinates
+          Rot: [ 0, -42, 0 ]                      # Rotation angles
+          InitPower: True                         # Set if POI should be initially powered, default: False
+
+    FixedPlayerStart:
+        - Mode: Survival                # Creative or Survival
+          Spawn: EscapePod              # Choose from pre-selection: EscapePod, Structure (if latter you must give a structure to spawn in) 
+          Pos: [ -350, 0 ]              # Optional. If used give fixed x,z position of escape pod drop - useful for Coop games to start at the same spot. If not used, Escape Pod will always start at position on planet where it is morning
+          # Spawn: Structure            # 
+          # Structure: "Wreckage"	      # Group name of structure to spawn in; Structure needs at least ONE Player Spawn pad!
+          PlayerArmor: ["ArmorMedium, ArmorLight, ArmorLight, #FreshStart:ArmorLight"]  # Start armor - depends on setting for Start Equipment: [EASY, MEDIUM, HARD, FRESH START]
+          # Armor: ArmorLight           # Start armor - for all Start Equipment settings the same 
+          Status: ["Food: 400, Health: 400", "Food: 250, Health: 300", "Food: 150, Health: 150", "#FreshStart:Food: 250, Health: 300" ] # Start health and food - depends on setting for Start Equipment: [EASY, MEDIUM, HARD, FRESH START]
+          Items: [ "Pistol, 50Caliber:250, Medikit02:3, AntidotePills:3, EmergencyRations:4, WaterBottle:2, EnergyCell:5", "Pistol, 50Caliber:150, Medikit02:2, AntidotePills:2, EmergencyRations:2, WaterBottle:2, EnergyCell:4", "Pistol, 50Caliber:100, Medikit02:1, AntidotePills:1, EmergencyRations:1, WaterBottle:1, EnergyCell:3", "#FreshStart: Drill, Chainsaw, BioFuel:2, ConstructorSurvival" ]        # Start Equipment [EASY, MEDIUM, HARD, FRESH START]
+
+        - Mode: Creative                # Creative or Survival
+          SubMode: Empty                # Empty / Normal (only evaluated in Creative mode) [default: Normal]  
+          Armor: ArmorLight             # Start armor
+          Pos: [ -428, 25.7, -291 ]     # Position coordinates
+          RotY: -50                     # Rotation angle around Y axis
+
+        - Mode: Creative                # Creative or Survival
+          SubMode: Normal               # Empty / Normal (only evaluated in Creative mode) [default: Normal]  
+          Armor: ArmorLight             # Start armor
+          Pos: [ -520, 43,-323 ]        # Position coordinates
+          RotY: 50                      # Rotation angle around Y axis
+
+# ==============================================================
+# ==============================================================
+
+### Drones
+DroneBaseSetup:
+### Note : The faction of the drone base will be defined by the faction of the linked POI
+### Note : Several bases can be defined for various factions on a planet playfield
+### Note : Definitions (Troops, contents) given in the DroneSetupID are NOT used for BaseAttacks (see FactionWarfare.ecf) but only for drones guarding POI and troops responding to a player attacking a POI!)
+  DroneBases:                               
+    - DroneSetupID: FirstBase               # [string] - String UID keyword to link exactly one base with exactly one POI that share the same string ID (see ThatAwesomePOIofMine)
+      Stock:
+        - Name: DroneSmallFast01Minigun     # [string] - Type name of the unit
+          Amount: 300                       # [int] - Number of unit. The keyword \u201CInfinite\u201D can be use to have an unlimited number of unit
+          Type: FighterDrone                # [string] - The type define the role of the unit it can one the following: [FighterDrone \u2192 flying drone unit, TroopTransport \u2192 flying troop transport unit, GroundTroop \u2192 ground troop unit]
+
+        - Name: DroneSmallFast01Rocket
+          Amount: Infinite
+          Type: FighterDrone
+
+        - Name: DroneTroopsTransport
+          Amount: Infinite
+          Type: TroopTransport
+
+        - Name: RipperDog
+          Amount: 150
+          Type: GroundTroop
+
+### Note: Several AI planet vessels can be defined for various factions
+### Note: A free AI planet vessel is not linked to any POI platform base where it can be repaired
+  PlanetVessels:
+    - Name: PVZirax                                   # [string] - Name of the planet vessel unit or group name of a pool of planet vessels to be use. If a group name is used then a random unit from the pool will be drawn
+      Position3D: [500, 0, -400]                      # [float, float, float] - Position X, Y, Z of the vessel at the start. the second value (here 0) representing the Y coordinate (altitude) is not important as the AI will define itself the altitude of the vessel. If a range patrol task is defined then the Position3D will be ignored. ### Default: Random position on the planet (if no range patrol defined).
+      Faction: Zirax                                  # [string] - Faction of the vessel that can be chosen among : [Main, Zirax, Polaris, Pirates, Kriel, TheLegacy]. Main will be the dominant faction of the planet.
+      LevelMod: 2                                     # [string] - Strength level of the ship that can chosen form [1,..., 10]
+      FixedMaxSpeed: 10                               # [float] - Defines the maximum speed of the vessel
+      PauseTimeOnStart: 60                            # [float] - Time in second before the ship is spawned or active. ### Default : 0 sec that is instant spawn
+      DelayBetweenRespawn: 600                        # [float] - Time in second before the destroyed vessel will spawn again as a new vessel. ### Default: 0 sec (that implies an instant respawn)
+      DelayBeforeSelfDestruction: 300                 # [float] - Time in second before the vessel will disappear. ### Default : 10 sec (the vessel will be destroyed after 10 sec)
+      IsRespawnAfterDestruction: True                 # [bool] [True, False] - Defines if the vessel will spawn again after being destroyed. ### Default: False
+      RangePatrolTask:
+        Position3D: [500, 0, -400]                    # [float, float, float] - [X, Y, Z] represents the position of the patrol area center. If POINameAsPositionRef exist, it will override Position3D ### Default: Random position on a planet.
+        POINameAsPositionRef: ThatAwesomePOIofMine    # [string, string, ...] - A list of POI names can be defined here as a reference positions for the patrol area center. From all the POIs defined in this list that effectively exist on the playfield, one of them will be drawn randomly and be used as a reference position for the patrolling area center. ### Default: Random position on the planet
+        Radius: 1000                                  # [float] - Radius of the patrolling area. ### Default: Planet size
+        DistToGround: 80                              # [float] - Defines the requested distance to the ground at which the AI vessel will patrol
+        RangePatrolAvoidArea:
+          - POIName: ThatAwesomePOIofMine             # [string] - Name of the POI to avoid
+            Radius: 2000                              # [float] - Radius in meter of the avoidance area. ### Default: 1000m
+            Duration: 100                             # [float] - Time in second from the begining of the game during which the area will be forbidden to the AI vessel. ### Default : infinity (the area will be avoided forever)
+      Stock:
+        - Name: DroneSmallFast01Minigun               # [string] - Type name of the unit
+          Amount: 30                                  # [int] - Number of unit. The keyword \u201CInfinite\u201D can be use to have an unlimited number of units
+          Type: FighterDrone                          # [string] - The type define the role of the unit. This can only be: [FighterDrone \u2192 flying drone unit]
+
+### Note : The faction of the planet vessel base will be defined by the faction of the linked POI
+### Note: Several AI planet vessels with an associate POI platform base and for various factions can be defined. The POI platform allow the planet vessel to land on it to be repared and is also used as respawn position        
+### Note: For the PlanetVessel the parameters Faction and Position3D is not used as those parameters are taken from the associated POI platform data.  
+  PlanetVesselBases:
+    - DroneBase:
+        DroneSetupID: FirstBase               # [string] - String UID keyword to link exactly one base with exactly one POI that share the same string ID (see ThatAwesomePOIofMine)
+        Stock:
+          - Name: DroneSmallFast01Minigun     # [string] - Type name of the unit
+            Amount: 300                       # [int] - Number of unit. The keyword \u201CInfinite\u201D can be use to have an unlimited number of unit
+            Type: FighterDrone                # [string] - The type define the role of the unit. This can only be: [FighterDrone \u2192 flying drone unit]
+
+          - Name: DroneSmallFast01Rocket
+            Amount: Infinite
+            Type: FighterDrone
+
+    - PlanetVessel:  
+        Name: PVZirax                                   # [string] - Name of the planet vessel unit or group name of a pool of planet vessels to be use. If a group name is used then a random unit from the pool will be drawn
+        Faction: Zirax                                  # [string] - Faction of the vessel that can be chosen among : [Main, Zirax, Polaris, Pirates, Kriel, TheLegacy]. Main will be the dominant faction of the planet.
+        LevelMod: 2                                     # [string] - Strength level of the ship that can chosen form [1,..., 10]
+        FixedMaxSpeed: 10                               # [float] - Defines the maximum speed of the vessel
+        PauseTimeOnStart: 60                            # [float] - Time in second before the ship is spawned or active. ### Default : 0 sec that is instant spawn
+        DelayBetweenRespawn: 600                        # [float] - Time in second before the destroyed vessel will spawn again as a new vessel. ### Default: 0 sec (that implies an instant respawn)
+        DelayBeforeSelfDestruction: 300                 # [float] - Time in second before the vessel will disappear. ### Default : 10 sec (the vessel will be destroyed after 10 sec)
+        IsRespawnAfterDestruction: True                 # [bool] [True, False] - Defines if the vessel will spawn again after being destroyed. ### Default: False
+        RangePatrolTask:
+          POINameAsPositionRef: ThatAwesomePOIofMine    # [string, string, ...] - A list of POI names can be defined here as a reference positions for the patrol area center. From all the POIs defined in this list that effectively exist on the playfield, one of them will be drawn randomly and be used as a reference position for the patrolling area center. ### Default: Random position on the planet
+          Radius: 1000                                  # [float] - Radius of the patrolling area. ### Default: Planet size
+          DistToGround: 80                              # [float] - Defines the requested distance to the ground at which the AI vessel will patrol
+          RangePatrolAvoidArea:
+            - POIName: ThatAwesomePOIofMine             # [string] - Name of the POI to avoid
+              Radius: 2000                              # [float] - Radius in meter of the avoidance area. ### Default: 1000m
+              Duration: 100                             # [float] - Time in second from the begining of the game during which the area will be forbidden to the AI vessel. ### Default : infinity (the area will be avoided forever)    
+        Stock:
+          - Name: DroneSmallFast01Minigun               # [string] - Type name of the unit
+            Amount: 30                                  # [int] - Number of unit. The keyword \u201CInfinite\u201D can be use to have an unlimited number of units
+            Type: FighterDrone                          # [string] - The type define the role of the unit. This can only be: [FighterDrone \u2192 flying drone unit]     
+
+### Spawn a patrolling Drones for the various factions.
+DroneSpawning:
+    Random:
+      - Name: DroneSmallFast01Plasma                    # [string] - Name of the drone to spawn. If the name is missing then a drone will be drawn randomly from the drone base reserve (the drone will be removed from the drone base reserve)
+        DronesMinMax: [ 9, 10 ]                         # [int, int] - Defines the [Minimum number of drone, Maximum number of drone]. A random number of drone will be chosen within this range (including both limits)
+        Faction: Polaris                                # [string] - The facion of the vessel among : {Main, Zirax, Polaris, Pirates, Kriel, TheLegacy}. Main stand for the dominant faction on the playfield
+        CenterX: 5                                      # [int] - Define the X position of the center of the area. Z position on the planet (north, south position) will be = 0, i.e on the "equator"
+        POINameAsPositionRef: ThatAwesomePOIofMine      # [string] - Defines the position of the patrol area center to the same position than the referenced POI. If POINameAsPositionRef exist it will override the postion defined CenterX parameter
+        Radius: 1200                                    # [int] - Radius of the patrol area. ### Default: 1500m
+
+# ==============================================================
+# ==============================================================
+
+### Creatures
+SpawnRateZones:                  # used for creating "safe" zones with less creatures around certain POIs and resource deposits 
+   - SpawnAt: [START]            # location of the zone
+     Radius: 1200                # radius
+     RadiusRandom: 100           # radius = radius + random(0, radiusRandom) 
+     RateMultiplyerCenter: 0.0   # how much we want to change the Amount from creature spawning (0..1) at the center
+     RateMultiplyerEdge: 1.0     # the same as RateMultiplyerCenter but at the edge of the zone
+     AffectEnemies: true         # which type of creature is affected 
+#      AffectFriendly: true   
+     Color: "0.0, 1.0, 0.0, 0.7" # color of circle in SSG
+      
+SpawnZones:                       # used for creating hotspots with more creatures around certain POIs and resource deposits 
+   - SpawnAt: [Artifacts, AbandonedPOI]           # location of the zone
+     BiomesExcluded: [ LowMountains, Mountains ]               
+     Radius: 500                  # radius
+     RadiusRandom: 50             # radius = radius + random(0, radiusRandom) 
+     RateMultiplyerCenter: 1.0    # how much we want to change the Amount from entities (0..1) at the center
+     RateMultiplyerEdge: 0.5      # the same as RateMultiplyerCenter but at the edge of the zone      
+     Color: "1.0, 1.0, 1.0, 1.0"  # color of circle and spawned entities in SSG
+     SpawnOnlyIfPoiIsAlien: true  # creatures will not spawn anymore if POI has been conquered
+     Entities:
+       - Names: [AlienBugs03]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]    # Time in game hours during which no creatures will spawn after a kill: [-1,-1] means that creature will not respawn after a kill 
+
+CreatureSpawning:
+    - Biomes: [StarterBiome, Grassland]         # List of biomes in which creature will spawn
+      Entities:
+        - Name: Parasaurs                       # Name of creature 
+          Period: Day                           # Day, Night, Always          
+          Amount: 8                             # Amount of NPC per km^2
+          DelayMinMax: [10, 20]                 # Time in game hours during which no creatures will spawn after a kill 
+          Color: "1.0, 1.0, 1.0"                # Color of NPC spawn point in SSG
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 8
+          DelayMinMax: [10, 12]
+        - Name: Spiders01
+          Period: Night
+          Amount: 4
+          DelayMinMax: [20, 24]
+    - Biomes: [Grassland]
+      Entities:
+        - Name: Parasaurs
+          Period: Always
+          Amount: 8
+          DelayMinMax: [10, 12]
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 8
+          DelayMinMax: [10, 12]
+        - Name: Spiders01
+          Period: Night
+          Amount: 4
+          DelayMinMax: [20, 24]
