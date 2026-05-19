@@ -1,7 +1,8 @@
 ---
 # Playfield Configuration
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
-Description: "\u4E00\u9897\u53E4\u8001\u7684\u884C\u661F\u3002\u9633\u5149\u660E\u4EAE\uFF0C\u571F\u5730\u5E72\u71E5\u3002  \n\u4F34\u6709\u690D\u7269\u4E0E\u771F\u83CC\u3002  \n[i]\u5176\u4E2D\u4E4B\u4E00[/i]\u5165\u4FB5\u4E86\u8FD9\u4E2A\u4E16\u754C\u3002  \n\u4F46\u7ECF\u8FC7\u8FD9\u4E48\u957F\u65F6\u95F4\uFF0C\u8C01\u8FD8\u80FD\u5206\u8FA8\u5F97\u51FA\u2026\u2026\uFF1F\n\n\u6781\u7AEF\u7684\u79CD\u7C7B\u6D88\u4EA1\uFF0C\u7ADE\u4E89\u8BA9\u4F4D\u4E8E\u4F11\u6218\u2014\u2014\u7136\u540E\u8F6C\u53D8\u4E3A\u8425\u517B\u7684\u4E92\u76F8\u4EA4\u6362\u3002  \n\u76F4\u5230\u67D0\u4E00\u523B\uFF0C\u751F\u547D\u4E4B\u95F4\u7A81\u7136\u76F8\u4E92\u4F9D\u5B58\u3002\n"
+Description: "\u4E00\u9897\u53E4\u8001\u7684\u661F\u7403\u3002\u660E\u4EAE\u7684\u592A\u9633\u4E0E\u5E72\u71E5\u7684\u571F\u5730\u3002  \n\u8FD9\u91CC\u6709\u690D\u7269\u4E0E\u771F\u83CC\u3002  \n[i]\u5176\u4E2D\u4E00\u79CD[/i]\u5165\u4FB5\u4E86\u8FD9\u4E2A\u4E16\u754C\u3002  \n\u4F46\u5728\u7ECF\u5386\u4E86\u8FD9\u4E48\u4E45\u4E4B\u540E\uFF0C\u8FD8\u6709\u8C01\u80FD\u5206\u5F97\u6E05\u5462\u2026\u2026\uFF1F\n\n\u6781\u7AEF\u8005\u9010\u6E10\u6D88\u4EA1\uFF0C\u7ADE\u4E89\u8BA9\u4F4D\u4E8E\u4F11\u6218\u2014\u2014\u968F\u540E\u662F\u76F8\u4E92\u4EA4\u6362\u517B\u5206\u3002  \n\u76F4\u5230\u7A81\u7136\u4E4B\u95F4\uFF0C\u4E00\u79CD\u751F\u547D\u5F00\u59CB\u4F9D\u8D56\u53E6\u4E00\u79CD\u751F\u547D\u3002"
+
 
 # PlanetClass: Temperate
 PlanetType: TemperatePrairie
@@ -613,6 +614,31 @@ POIs:
          # DB Prenn ============================
 
               # (Avoid IsInfected)
+
+        - GroupName: PrennDroneBaseT1 # Is also a trading station, but normal core. Needs breathable atmo
+          BiomesExcluded: [ Tundra, TundraEdge, ColdPlains, PolarSnow, WaterSwamp, WaterSwamp_1, BeachEdge, Beach ]
+          Faction: PrennFederation
+
+          DroneBaseSetup: DroneBaseSetupPre  # (Dronebases cannot use Trading interface, though.)
+          # IsCommandCenter: True
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 6 ]
+          ReserveCount: 7
+          NoShieldReload: True 
+          SpawnPOIAvoid: [CNTRL_IsInfected]
+          SpawnPOIAvoidDistance: 45000
+          Properties:
+            - Key: Music
+              Value: SunnySkies
+            - Key: RegenAfter
+              Value: 720 
+            - Key: Discovery  # Traders broadcasting their position
+              Value: False
+
+
 
 
          # DB Farr =============================
@@ -2640,6 +2666,42 @@ DroneBaseSetup:
                 Extra: 3
 
 
+        - GroupName: DroneBaseSetupPre
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPolarisLaser
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallPolarisLaser    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+              - Name: AssaultCyborgCommando
+                Amount: 100
+                Extra: 3
+
 
         - GroupName: DroneBaseSetupFarr
           DronesMinMax: [ 3, 5 ]
@@ -2971,7 +3033,7 @@ DroneBaseSetup:
 
        # === PRENN / Trader ===
 
-    - Name: OPVPrennT2     # (Just a single vessel to remind the colonists who owns this planet)
+    - Name: OPVPrennT3     # (Just a single vessel to remind the colonists who owns this planet)
       Faction: PrennFederation
       CountMinMax: [1, 1]
       FixedMaxSpeed: 12
@@ -3187,6 +3249,21 @@ DroneSpawning:
       - Name: DroneSmallFast01Minigun
         DronesMinMax: [ 5, 7 ]
         Faction: Kriel
+        CenterX: 0
+        Radius: 3000
+
+       # === PRENN === 
+
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 5, 7 ]
+        Faction: PrennFederation
+       # CenterX: 5
+        POINameAsPositionRef: PrennDroneBaseT1
+        Radius: 6000
+
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 5, 7 ]
+        Faction: PrennFederation
         CenterX: 0
         Radius: 3000
 

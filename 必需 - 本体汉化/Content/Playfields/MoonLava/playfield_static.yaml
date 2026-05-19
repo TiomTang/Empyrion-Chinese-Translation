@@ -2,7 +2,8 @@
 # Playfield Configuration
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
 
-Description: "\u4E00\u9897\u5A74\u513F\u671F\u7684\u536B\u661F\uFF0C\u6838\u5FC3\u5C1A\u672A\u51DD\u56FA\uFF0C\u5E76\u4E14\u6709\u5FAE\u5F31\u7684\u5927\u6C14\u75D5\u8FF9\u3002  \n\u5B83\u53EF\u80FD\u8BDE\u751F\u4E8E\u6052\u661F\u76D8\uFF0C\u4E5F\u53EF\u80FD\u662F\u4E00\u6B21\u58EE\u89C2\u7684\u884C\u661F\u78B0\u649E\u7684\u6B8B\u9AB8\u3002\n"
+Description: "\u4E00\u9897\u5C1A\u5904\u4E8E\u5A74\u513F\u671F\u7684\u6708\u7403\uFF0C\u5176\u6838\u5FC3\u5C1A\u672A\u5B8C\u5168\u56FA\u5316\uFF0C\u53EA\u6709\u5FAE\u5F31\u7684\u5927\u6C14\u75D5\u8FF9\u3002  \n\u4E5F\u8BB8\u5B83\u8BDE\u751F\u4E8E\u6052\u661F\u76D8\u4E4B\u4E2D\uFF0C\u6216\u8005\u662F\u4E00\u6B21\u58EE\u89C2\u884C\u661F\u78B0\u649E\u540E\u7684\u5E9F\u589F\u3002"
+
 
 PlanetType: MoonLava
 Emissive: True
@@ -113,10 +114,10 @@ RandomResources:
         MaxRadius: 13
         YVariance: 10
       
-    - Name: PentaxidResource
+    - Name: PentaxidResource   # Will get grabbed by POI
       IsScalingCount: True 
-      CountMinMax: [ 4, 5 ]
-      SizeMinMax: [ 2, 3 ]
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 4, 5 ]
       DroneProb: 0.6
       MaxDroneCount: 2
       DepthMinMax: [ 0, 5 ]
@@ -373,6 +374,8 @@ POIs:
           DroneProb: 1.0
           DronesMinMax: [ 4, 5 ]
           ReserveCount: 5
+          SpawnResource: ["PentaxidResource:2-2"]
+          SpawnResourceRange: [150,200]
           Properties: 
             - Key: RegenAfter
               Value: 720
@@ -380,14 +383,13 @@ POIs:
 
          # DB Kriel ============================
 
-         # DB KRIEL ========
         - GroupName: KrielDroneBase 
+          Faction: Kriel
+          # Biome: [ BM_SPAWN_EASY_DARK ]  # 'darker' Biomes
 
           DroneBaseSetup: DroneBaseSetupKrl
 
-          Faction: Kriel
           IsImportant: True
-          # Biome: [ BM_SPAWN_EASY_DARK ]  # 'darker' Biomes
           CountMinMax: [ 1, 1 ]
 
           SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, ARCDronebase]
@@ -396,6 +398,8 @@ POIs:
           DronesMinMax: [ 3, 5 ]
           ReserveCount: 5
           NoShieldReload: True
+          SpawnResource: ["PentaxidResource:2-2"]
+          SpawnResourceRange: [150,200]
           Properties: 
             - Key: Music
               Value: AlteredPhase
@@ -406,7 +410,6 @@ POIs:
 
          # DB ArkenianRepublic =================
 
-         # DB ARKENIAN ========
 
         - GroupName: PolarisDroneBase 
           # Biome: [ BM_SPAWN_EASY_BRIGHT] # 'brighter' biomes
@@ -423,6 +426,8 @@ POIs:
           NoShieldReload: True
           SpawnPOIAvoid: [CNTRL_IsInfected]
           SpawnPOIAvoidDistance: 45000
+          SpawnResource: ["PentaxidResource:2-3"]
+          SpawnResourceRange: [150,200]
           Properties: 
             - Key: Music
               Value: desert
@@ -435,7 +440,25 @@ POIs:
 
          # DB Prenn ============================
 
-              # (Avoid IsInfected)
+        - GroupName: PrennDroneBaseT0 # 
+          Biome: [ LowMountains, Mountains ]
+          Faction: PrennFederation
+
+          DroneBaseSetup: DroneBaseSetupPre
+          # IsCommandCenter: True
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 6 ]
+          ReserveCount: 7
+          NoShieldReload: True 
+          SpawnPOIAvoid: [CNTRL_IsInfected]
+          SpawnPOIAvoidDistance: 45000
+          Properties:
+            - Key: RegenAfter
+              Value: 720 
+
 
          # DB Farr =============================
 
@@ -443,7 +466,7 @@ POIs:
           # BiomesExcluded: [ BM_POLE, BM_TOO_SMALL, BM_FORBIDDEN ]
           Faction: Farr 
 
-          DroneBaseSetup: DroneBaseSetupBoF
+          DroneBaseSetup: DroneBaseSetupFarr
 
           IsImportant: True
           CountMinMax: [ 1, 1 ]
@@ -453,6 +476,8 @@ POIs:
           NoShieldReload: True 
           SpawnPOIAvoid: [CNTRL_IsInfected]
           SpawnPOIAvoidDistance: 45000
+          SpawnResource: ["PentaxidResource:1-2"]
+          SpawnResourceRange: [150,200]
           Properties:
             - Key: Music
               Value: desert
@@ -506,6 +531,8 @@ POIs:
           SpawnPOINearRange: [500, 45000]
           SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase]
           SpawnPOIAvoidDistance: 45000 # Fully avoids
+          SpawnResource: ["PentaxidResource:1-2"]
+          SpawnResourceRange: [150,200]
           Properties: 
             - Key: Music
               Value: moonstone 
@@ -583,15 +610,45 @@ POIs:
 
          # Ghyst =================
 
-        - GroupName: GhystAuxT1
-          Faction: Ghyst  
-          NoShieldReload: True
-          CountMinMax: [ 3, 4 ]
+          # In-zirax faction
+        - GroupName: GhystAuxT2
+          Faction: Ghyst
+
           IsScalingCount: True 
+          CountMinMax: [ 2, 2 ]
           DroneProb: 0.7
           DronesMinMax: [ 1, 2 ]
           ReserveCount: 2
           TroopTransport: False
+          NoShieldReload: True
+          SpawnPOIAvoid: [PolarisDroneBase, FarrDroneBase, ARCDronebase ]
+          SpawnPOIAvoidDistance: 45000 # Fully avoids
+          SpawnPOINear: [CNTRL_IsLawless]  #Avoids IsInfected
+          SpawnPOINearRange: [0, 10000]
+          SpawnResource: ["PentaxidResource:0-1"]
+          ResourceDistance: 400
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+          # Other territories
+        - GroupName: GhystAuxT1
+          Faction: Ghyst
+          FactionTerritory: [All]
+
+          IsScalingCount: True 
+          CountMinMax: [ 3, 4 ]
+          DroneProb: 0.7
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          NoShieldReload: True
+          SpawnPOIAvoid: [CNTRL_IsInfected, KrielDroneBase, PolarisDroneBase, FarrDroneBase, ARCDronebase ]
+          SpawnPOIAvoidDistance: 45000 # Fully avoids
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [0, 10000]
           SpawnResource: ["PentaxidResource:0-1"]
           ResourceDistance: 400
           Properties: 
@@ -607,6 +664,24 @@ POIs:
          # Epsilon (In-Territory) # (AVOIDS LAWLESS)
 
 # Fill: Kriel ====================
+
+        - GroupName: KrielDefenseT1 
+          BiomesExcluded: [ LowMountains, Mountains, RegolithEdge ]
+          Faction: Kriel   
+
+          IsScalingCount: True
+          CountMinMax: [ 2, 2 ]
+          NoShieldReload: True
+          SpawnPOIAvoid: [KrielDefenseT1 ]
+          SpawnPOIAvoidDistance: 500 # 
+          SpawnPOINear: [KrielDroneBase]  #
+          SpawnPOINearRange: [0, 10000]
+          SpawnResource: ["PentaxidResource:0-1"]
+          ResourceDistance: 400
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
 
 # Fill: Arkenian =================
 
@@ -642,7 +717,149 @@ POIs:
 
 # Colonists - Vanguard ===========
 
+
+
+        - GroupName: CivilMain
+          Biome: [LowMountains, Mountains]
+          Faction: Colonists
+          
+          IsImportant: True # Small target biome
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1
+          DronesMinMax: [ 2, 2 ]
+          NoShieldReload: True
+          SpawnPOIAvoid: [GhystAuxT1 ] # Will not spawn if Ghyst are there
+          SpawnPOIAvoidDistance: 45000 # Fully avoids
+          SpawnPOINear: [CNTRL_IsLawless]  #Avoids IsInfected
+          SpawnPOINearRange: [0, 10000]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: TS_Metal_Waypoint
+          Faction: Colonists
+          Territory: False
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [150, 300]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CivilSettlement 
+          Faction: Colonists
+          CountMinMax: [1, 1 ]
+          NoShieldReload: True
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [150, 300]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+
+        - GroupName: OreMinerT1
+          Faction: Colonists
+          CountMinMax: [ 1, 2 ]
+          NoShieldReload: True
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [100, 200]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: OreMinerT2 
+          Faction: Colonists
+          CountMinMax: [ 1, 1 ]
+          NoShieldReload: True
+          SpawnPOINear: [CivilMain]
+          SpawnPOINearRange: [150, 300]
+          SpawnResource: ["PentaxidResource:1-2"]
+          SpawnResourceRange: [150,200]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+
+
 # Epsilon - Listening Posts ======
+
+
+
+        - GroupName: EpsilonBunker  # POI anchor for a loose Epsilon cluster.
+          Biome: [LowMountains, Mountains]
+          Faction: Epsilon
+          
+          IsImportant: True  # Rough terrain
+          CountMinMax: [ 0, 1 ] # 50 % chance
+          DroneProb: 0.8
+          DronesMinMax: [ 4, 6 ]
+          ReserveCount: 3
+          TroopTransport: True
+          NoShieldReload: True
+          # SpawnPOIAvoid: [CNTRL_IsLawless]
+          # SpawnPOIAvoidDistance: 45000 #
+          SpawnPOINear: [CNTRL_IsLawless]  # Avoids IsInfected. Only in Lawless space.
+          SpawnPOINearRange: [100, 6000]  # Anchored to Zirax BA
+          SpawnResource: ["PentaxidResource:1-2"]
+          SpawnResourceRange: [150,200]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+         # (In Zirax territory, attached POI might not end up at this POI, but at a random other EpsilonBunker.)
+
+        - GroupName: EpsilonRadarAddition
+          # BiomesExcluded: [ PoleEdge, Radiated ]
+          Faction: Epsilon
+          Territory: False 
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: True
+          NoShieldReload: True
+          SpawnPOINear: [EpsilonBunker]
+          SpawnPOINearRange: [100, 250]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+          # Further away
+        - GroupName: EpsilonAuxT1
+          # BiomesExcluded: [ PoleEdge ]
+          Faction: Epsilon
+          Territory: False
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: True 
+          NoShieldReload: True
+          SpawnPOINear: [EpsilonBunker]
+          SpawnPOINearRange: [400, 700]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: EpsilonDefenceT1
+          BiomesExcluded: [ PoleEdge, Radiated ]
+          Faction: Epsilon  
+          Territory: False
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          NoShieldReload: True
+          SpawnPOINear: [EpsilonBunker]
+          SpawnPOINearRange: [500, 1200]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
 
 # Pirates - Hideouts =============
 
@@ -650,7 +867,7 @@ POIs:
 
 # Progenitor Structures ==========
 
-        - GroupName: ProgenitorArtifacts
+        - GroupName: ProgenitorAlpha  # Cut monolith
           # BiomesExcluded: [ BM_POLE, BM_TOO_SMALL, BM_FORBIDDEN ]
           Faction: Progenitor
           Territory: False
@@ -664,10 +881,47 @@ POIs:
           SpawnPOINear: [CNTRL_IsLawless] 
           SpawnPOINearRange: [0, 10000]
           Properties: 
-            - Key: MapMarker
-              Value: Neutral
+            # - Key: MapMarker
+              # Value: Neutral
             - Key: RegenAfter
               Value: 720
+
+
+
+        - GroupName: ProgenitorPlexus  # floating 'wires'
+          # BiomesExcluded: [ BM_POLE, BM_TOO_SMALL, BM_FORBIDDEN ]
+          Faction: Progenitor
+          Territory: False
+          FactionTerritory: [All]
+          CountMinMax: [ 1, 1 ] 
+          SpawnPOIAvoid: [ZiraxDroneBase, KrielDroneBase, PolarisDroneBase, FarrDroneBase, ARCDronebase ]
+          SpawnPOIAvoidDistance: 45000 # Fully avoids
+          SpawnPOINear: [CNTRL_IsLawless] # Avoids Isinfected, Does not spawn in Unclaimed space
+          SpawnPOINearRange: [0, 10000]
+          Properties: 
+            # - Key: MapMarker
+              # Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+        # - GroupName: ProgenitorTrench  # Trench, cutting into terrain - Not enough visible range
+          # # BiomesExcluded: [ BM_POLE, BM_TOO_SMALL, BM_FORBIDDEN ]
+          # Faction: Progenitor
+          # Territory: False
+          # FactionTerritory: [All]
+          # CountMinMax: [ 1, 1 ] 
+          # SpawnPOIAvoid: [ZiraxDroneBase, KrielDroneBase, PolarisDroneBase, FarrDroneBase, ARCDronebase ]
+          # SpawnPOIAvoidDistance: 45000 # Fully avoids
+          # SpawnPOINear: [CNTRL_IsLawless] # Avoids Isinfected, Does not spawn in Unclaimed space
+          # SpawnPOINearRange: [0, 10000]
+          # Properties: 
+            # # - Key: MapMarker
+              # # Value: Neutral
+            # - Key: RegenAfter
+              # Value: 720
+
+
 
 
 
@@ -682,6 +936,51 @@ POIs:
 
 
 # Exotics (Cluster) ==============
+
+
+         # ==  Hidden Monument core   # Might not always spawn
+        - GroupName: HiddenMonument-60m  # POI Anchor for Circle path monuments. Will not spawn all the time. Hard to locate, but possible with custom HUD MapMarkers.
+          Biome: [ LowMountains, Mountains ]
+          Faction: Alien
+          Territory: False
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]       #
+          SpawnPOIAvoid: [CNTRL_IsInfected]
+          SpawnPOIAvoidDistance: 45000    #Fully avoids
+          SpawnPOINear: [START]  # So that the ring may appear nearly full
+          SpawnPOINearRange: [0, 800]  
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 140
+            - Key: HudDistance
+              Value: 140
+            - Key: RegenAfter
+              Value: 720
+
+
+         # ==  Hidden Monument circle
+        - GroupName: PathMonument  # Will only spawn, if the Hidden Monument has spawned first.
+          Faction: None
+          IsImportant: True
+          CountMinMax: [ 11, 11 ]
+          SpawnPOIAvoid: [PathMonument, HiddenMonument-60m]
+          SpawnPOIAvoidDistance: 400
+          SpawnPOINear: [HiddenMonument-60m]
+          SpawnPOINearRange: [800, 800]   # Will make circle of about 1600m diameter. Check map to find the center, and use custom HUD waypoints.
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance     # Low detection range, to give players clue about the (even more hidden) central monument
+              Value: 500
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+
 
 # Debris fields & Salvage ========
 
@@ -716,7 +1015,7 @@ POIs:
 
         - GroupName: CrashedShip    
           Faction: None     
-          CountMinMax: [ 1, 2 ]
+          CountMinMax: [ 2, 2 ]
           IsScalingCount: True 
           DroneProb: 1.0
           DronesMinMax: [ 1, 2 ]
@@ -872,8 +1171,43 @@ DroneBaseSetup:
                 Extra: 3
 
 
+        - GroupName: DroneBaseSetupPre
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
 
-        - GroupName: DroneBaseSetupBoF   # DroneBaseSetupFarr
+          Stock:
+              - Name: DroneSmallPolarisLaser
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallPolarisLaser    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+              - Name: AssaultCyborgCommando
+                Amount: 100
+                Extra: 3
+
+        - GroupName: DroneBaseSetupFarr
           DronesMinMax: [ 3, 5 ]
           ReserveCount: 5
           DroneProb: 1.0
@@ -971,7 +1305,7 @@ DroneBaseSetup:
       RangePatrolTask: 
         Position3D: [-800, 0, 400]   # (Secondary spawn location would be in shooting range to the Kriel definition)
         POINameAsPositionRef: [DroneBaseT1]  # ... could be both the Ghyst DB, or the Warlord one, fighting it.
-        DistToGround: 200
+        DistToGround: 250  # Higher than the Warlord vessel
         ## (Default patrol area is planet-size)
       Stock:
         - Name: DroneSmallFast01Minigun
@@ -1013,6 +1347,7 @@ DroneBaseSetup:
           Type: FighterDrone
 
 
+
     - Name: OPVPiratesT1
       Faction: Pirates
       CountMinMax: [0, 1]   # 50 % chance. Might fight with warlord  drones
@@ -1030,6 +1365,24 @@ DroneBaseSetup:
           # Amount: Infinite
           # Type: FighterDrone
 
+    - Name: OPVWarlordT0
+      Faction: Warlord
+      CountMinMax: [0, 1]   #  Random spawn 50% chance
+      FixedMaxSpeed: 8
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        Position3D: [-800, 0, -400]  # fallback spawn position
+        POINameAsPositionRef: [DroneBaseT1]  
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
 
 
 ## === FREE DRONES ==========================================================================================
@@ -1040,13 +1393,89 @@ DroneBaseSetup:
 DroneSpawning:
     Random:
 
-        - DronesMinMax: [ 5, 10 ]
-          CenterX: -2500
-          Radius: 1500
+          # (Filled in by dominant faction)
+      - DronesMinMax: [ 5, 10 ]
+        CenterX: -2500
+        Radius: 1500
 
-        - DronesMinMax: [ 5, 10 ]
-          CenterX: 2500
-          Radius: 1500
+      - DronesMinMax: [ 5, 10 ]
+        CenterX: 2500
+        Radius: 1500
+
+
+
+       # Specific drones / outer dronebase sweep  ========
+
+       # === XENU === 
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 2, 2 ]
+        Faction: Xenu
+       # CenterX: 5
+        POINameAsPositionRef: ZiraxDroneBase
+        Radius: 1000
+
+
+       # === KRIEL === 
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 2, 2 ]
+        Faction: Kriel
+       # CenterX: 5
+        POINameAsPositionRef: KrielDroneBase
+        Radius: 6000
+
+
+       # === ARKENIAN  === 
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 2, 2 ]
+        Faction: ArkenianRepublic
+        POINameAsPositionRef: PolarisDroneBase
+        Radius: 3000
+
+       # === POLARIS === 
+        # Survey drones
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 2, 2 ]
+        Faction: Polaris
+       # CenterX: 5
+        POINameAsPositionRef: PolarisDroneBase
+        Radius: 2000
+
+
+
+          # ARC
+
+
+       # === PRENN / TRADER === 
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 2, 2 ]
+        Faction: PrennFederation
+        POINameAsPositionRef: PrennDroneBaseT1
+        Radius: 3000
+
+       # === Farr === 
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 2, 2 ]
+        Faction: Farr
+        POINameAsPositionRef: FarrDroneBase
+        Radius: 3000
+
+
+       # === Pirates === 
+      - Name: DroneSmallFast01Minigun
+        DronesMinMax: [ 2, 2 ]
+        Faction: Pirates
+        CenterX: 0
+        Radius: 3000
+
+
+       # === WARLORD === 
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 2, 2 ]
+        Faction: Warlord
+       # CenterX: 5
+        POINameAsPositionRef: DroneBaseT1
+        Radius: 6000
+
 
 
 

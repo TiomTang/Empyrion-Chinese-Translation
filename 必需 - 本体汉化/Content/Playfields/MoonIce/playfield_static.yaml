@@ -2,7 +2,8 @@
 # Playfield Configuration
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
 
-Description: "\u4E00\u4E2A\u51B0\u51B7\u7684\u4F34\u661F\uFF0C\u5176\u5730\u58F3\u4E0E\u5CA9\u77F3\u6838\u5FC3\u4E4B\u95F4\u6709\u7740\u6DF1\u9083\u7684\u6D77\u6D0B\u3002  \n\u5FAE\u5F31\u7684\u6709\u673A\u7269\u8D28\u5728\u8868\u9762\u7559\u4E0B\u8272\u5F69\u6591\u6593\u7684\u6761\u7EB9\u3002  \n\u2014\u2014\u6765\u81EA\u592A\u9633\u7CFB\u4E00\u9897\u536B\u661F\u7684\u8BB0\u5FC6\u2026\u2026\n"
+Description: "\u4E00\u9897\u51B0\u51B7\u7684\u4F34\u661F\uFF0C\u5176\u5730\u58F3\u4E0E\u5CA9\u77F3\u6838\u5FC3\u4E4B\u95F4\u9690\u85CF\u7740\u4E00\u7247\u6DF1\u9083\u7684\u6D77\u6D0B\u3002  \n\u5FAE\u5F31\u7684\u6709\u673A\u7269\u8D28\u5728\u8868\u9762\u7559\u4E0B\u4E86\u5F69\u8272\u7684\u6761\u7EB9\u3002  \n\u2014\u2014\u4EFF\u4F5B\u662F\u5BF9\u592A\u9633\u7CFB\u4E2D\u67D0\u9897\u6708\u7403\u7684\u8BB0\u5FC6\u2026\u2026"
+
 
 PlanetType: MoonIce
 PlayfieldType: Moon
@@ -64,10 +65,11 @@ RandomResources:
     - Name: SiliconResource   # Shallow
       Biome: [ Mountains, PlainsEdge, Plains, Regolith ]
       IsScalingCount: True 
-      CountMinMax: [ 3, 5 ]
-      SizeMinMax: [ 7, 8 ]
+      CountMinMax: [ 2, 3 ] # 3,5
+      SizeMinMax: [ 5, 6 ]  # 7,8  # Now ca 300-500 ores each. (This is an ultra-common moon, and deposits were bigger than on most planets...)
       DepthMinMax: [ 3, 8 ]
       DroneProb: 0.4
+      MaxDroneCount: 1
       # DistTypeCylinder:
         # MaxRadius: 10
         # YVariance: 3
@@ -75,26 +77,26 @@ RandomResources:
     - Name: CobaltResource    # Mountains, shallow
       Biome: [ Mountains, Regolith ]
       IsScalingCount: True 
-      CountMinMax: [ 2, 3 ]
+      CountMinMax: [ 1, 2 ]
       SizeMinMax: [ 3, 4 ]
       DepthMinMax: [ 4, 9 ]
       DroneProb: 0.7
-      MaxDroneCount: 1      
+      MaxDroneCount: 1
       
     - Name: MagnesiumResource  # Mountains, shallow, very poor
       Biome: [ Mountains, Regolith ]
       IsScalingCount: True 
-      CountMinMax: [ 1, 2 ]
-      SizeMinMax: [ 2, 3 ]
+      CountMinMax: [ 2, 2 ]  #1,2
+      SizeMinMax: [ 3, 4 ]   # was 2,3 - Now 67-160 Ores each
       DepthMinMax: [ 5, 10 ]
       DroneProb: 0.7
-      MaxDroneCount: 1 
+      MaxDroneCount: 1
       
     - Name: MagnesiumResource  # Below ice, rich -> Needs HV excavator or autominer
       Biome: [ LayeredIce, IceSheet, CrustedIce ]
       IsScalingCount: True 
-      CountMinMax: [ 3, 4 ]  #2,2
-      SizeMinMax: [ 6, 7 ]
+      CountMinMax: [ 3, 4 ]
+      SizeMinMax: [ 6, 8 ]   # was 6,7 - Now ca 550-1200 ores each
       DepthMinMax: [ 35, 45 ]
       DroneProb: 0.2
       MaxDroneCount: 1       
@@ -102,7 +104,7 @@ RandomResources:
     - Name: CobaltResource     # Deep below ice, rich -> Needs HV excavator or autominer
       Biome: [ LayeredIce, IceSheet, CrustedIce ]
       IsScalingCount: True 
-      CountMinMax: [ 3, 3 ]
+      CountMinMax: [ 2, 2 ]
       SizeMinMax: [ 8, 9 ]
       DepthMinMax: [ 45, 55 ]
       DroneProb: 0.2
@@ -111,10 +113,10 @@ RandomResources:
     - Name: IronResource    # Very shallow, meteorite impact anywhere
       # Biome: [ Mountains, SmallCrater, Regolith ]
       IsScalingCount: True 
-      CountMinMax: [ 5, 7 ] 
+      CountMinMax: [ 4, 5 ] 
       SizeMinMax: [ 4, 7 ] 
       DepthMinMax: [ 2, 5 ]
-      DroneProb: 0.3      
+      DroneProb: 0.3
       MaxDroneCount: 1
       
     - Name: PromethiumResource # Shallow, meteorite impact
@@ -461,30 +463,46 @@ POIs:
          # DB Warlord ==========================
 
 
-        - GroupName: DroneBaseT1
+        - GroupName: WarlordDroneBaseT0
           Biome: [ SmallCrater, LargeCrater, Plains ]
           Faction: Warlord
           CountMinMax: [ 1, 1 ]  # (100% spawn)
 
-          IsCommandCenter: True
+          # IsCommandCenter: True  # Will only spawn drones - No Troop transport
           DroneBaseSetup: DroneBaseSetupWar
 
           DroneProb: 1.0
-          DronesMinMax: [ 3, 5 ] 
+          DronesMinMax: [ 2, 3 ] 
           ReserveCount: 5
           NoShieldReload: True
           SpawnPOINear: [CNTRL_IsLawless]
           SpawnPOINearRange: [500, 45000]
           SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase]
           SpawnPOIAvoidDistance: 45000 # Fully avoids
-
-          AuxiliaryPOIs: [OreMinerT1]
-
+          SpawnResource: ["PromethiumResource:2-2"]   # Grabs most of them
+          SpawnResourceRange: [150,300]
           Properties: 
             - Key: Music
               Value: moonstone 
             - Key: RegenAfter
               Value: 720
+
+
+         # Mining structures closer to the settlements 
+        - GroupName: OreMinerT1
+          # BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          Faction: Warlord
+          Territory: False
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [WarlordDroneBaseT0] 
+          SpawnPOINearRange: [80, 200]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
 
 
 
@@ -557,14 +575,25 @@ POIs:
           DronesMinMax: [ 2, 2 ]
           ReserveCount: 3
           NoShieldReload: True
-
-          AuxiliaryPOIs: [OreMinerT1]
-
           SpawnPOINear: [PiratesDroneBase]  # Avoids IsInfected
           SpawnPOINearRange: [200, 500]
           Properties:  
             - Key: RegenAfter
               Value: 720 
+
+         # Mining structures closer to the settlements 
+        - GroupName: OreMinerT1
+          # BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          Faction: Pirates
+          Territory: False
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [Pirates] 
+          SpawnPOINearRange: [80, 200]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
 
         - GroupName: PiratesAmbush
           Faction: Alien
@@ -686,22 +715,6 @@ POIs:
      # Note: AuxPOI have to be playfield-unique spawngroups, else they won't spawn
 
 
-         # (Aux) Mining structures closer to the settlements 
-        - GroupName: OreMinerT1
-          # BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
-          Faction: None
-          Territory: False
-
-          IsAuxPOI: True #######
-          CountMinMax: [ 1, 2 ]
-          # SpawnPOINear: [CivilSettlement]  # ( AuxPOI don't need this, since they are not anchored to a specific POI=
-          SpawnPOINearRange: [80, 200]
-          Properties:
-            - Key: MapMarker
-              Value: Neutral
-            - Key: RegenAfter
-              Value: 720
-
 
          # (Aux) Extra deco for Progenitors
         - GroupName: ProgenitorPillar
@@ -720,6 +733,57 @@ POIs:
             - Key: RegenAfter
               Value: 720
 
+
+
+
+         #### ===== AuxPOI definition for Treasures  ==== #####
+
+         ### =============== Treasure beacons ========================
+
+          # 50m, "easy"
+        - GroupName: BeaconPirTreasure50m
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: Terrain, OnWater
+
+          IsAuxPOI: True #######
+
+          SpawnPOINear: [DoesNotNeedThis]  # 
+          SpawnPOINearRange: [50, 50]
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: MapMarker 
+              Value: Neutral
+            # - Key: Discovery   # Can be seen everywhere on the map. 
+              # Value: False
+            - Key: MapDistance   # Overridden by main poi?
+              Value: 500
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+         ### =============== Treasure decoys ========================
+
+        - GroupName: PirateTreasureT0Decoy  # This is junk
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          PlaceAt: Terrain
+
+          IsAuxPOI: True #######
+
+          # SpawnPOINear: [LegacyFloatingT2]  # ( AuxPOI don't need this, since they are not anchored to a specific POI)
+          SpawnPOINearRange: [30, 100]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Overridden by main poi?
+              Value: 2000
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
 
 
 
@@ -763,9 +827,6 @@ POIs:
           SpawnPOINearRange: [0, 45000]
           SpawnResource: ["PentaxidResource:1-2","CobaltResource:0-1"]  # claims resources, since it has territory
           SpawnResourceRange: [150,200]
-
-          AuxiliaryPOIs: [OreMinerT1]
-
           Properties:
             - Key: RegenAfter
               Value: 720 
@@ -784,12 +845,25 @@ POIs:
           SpawnPOINearRange: [0, 2000]
           SpawnResource: ["PentaxidResource:1-2","CobaltResource:0-1"]  # claims resources, since it has territory
           SpawnResourceRange: [150,200]
-
-          AuxiliaryPOIs: [OreMinerT1]
-
           Properties:
             - Key: RegenAfter
               Value: 720 
+
+
+         # Mining structures closer to the settlements 
+        - GroupName: OreMinerT1
+          # BiomesExcluded: [ PoleEdge, PoleEdge_1, SandDrift ]
+          Faction: Colonists
+          Territory: False
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [CivilSettlement] 
+          SpawnPOINearRange: [80, 200]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
 
 
 # Epsilon - Listening Posts ======
@@ -870,6 +944,130 @@ POIs:
 
 # Pirate treasures ===============
 
+
+          # Cheapest treasure
+        - GroupName: PirateTreasureT0_Tell # This is a grey alien container
+          Biome: [ Mare ]
+          AvoidFactionTerritory: True
+          Faction: None
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: Terrain, OnWater
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: BeaconPirTreasure120
+          # Biome: [ IceShelf, GlacierHills, Plains ]
+          Faction: None
+          AvoidFactionTerritory: True
+          IsImportant: True
+          CountMinMax: [1, 1 ]
+          SpawnPOINear: [PirateTreasureT0_Tell]
+          SpawnPOINearRange: [119, 120]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 200
+            - Key: HudDistance
+              Value: 400
+            - Key: RegenAfter
+              Value: 720
+
+
+          # General treasure 
+        - GroupName: PirateTreasureT1W_Tell   # This is better loot. Uses decoys
+          Biome: [ SmallCrater ]  # Harder to spawn, may not always be there
+          Faction: None
+          AvoidFactionTerritory: True
+
+          IsImportant: True
+          CountMinMax: [1, 1 ]
+
+          AuxiliaryPOIs: [PirateTreasureT0Decoy, BeaconPirTreasure50m ] ### AUX (1 Spawn, 50m distance) - Beacon will have similar low detection.
+
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [1000, 45000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+
+          # Single treasure - Real treasure is below box. Good loot. Beacon might not always spawn.
+        - GroupName: PirateTreasureT2_Palette&Decoy
+          Biome: [ Mountains ]
+          Faction: None
+          AvoidFactionTerritory: True
+
+          IsImportant: True
+          CountMinMax: [0, 1 ]
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [500, 45000]
+          SpawnPOIAvoid: [PirateTreasureT0_Tell]
+          SpawnPOIAvoidDistance: 1000
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: BeaconPirTreasure120
+          Faction: None
+          AvoidFactionTerritory: True
+          CountMinMax: [1, 1 ]
+          SpawnPOINear: [PirateTreasureT2_Palette&Decoy]
+          SpawnPOINearRange: [119, 120]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 200
+            - Key: HudDistance
+              Value: 400
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: JunkT2       # makes finding the treasure harder
+          Faction: None  
+          CountMinMax: [ 2, 3 ]
+          SpawnPOIAvoid: [JunkT2]  
+          SpawnPOIAvoidDistance: 250
+          SpawnPOINear: [PirateTreasureT2_Palette&Decoy]
+          SpawnPOINearRange: [150, 400]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+
+
+
+
+
+
 # Smugglers / Criminals ==========
 
 # Lost Cargo =====================
@@ -916,7 +1114,7 @@ POIs:
           CountMinMax: [ 0, 1 ]   # 50 % chance
           IsScalingCount: True 
           DroneProb: 1.0
-          DronesMinMax: [ 2, 3 ]
+          DronesMinMax: [ 1, 2 ]
           ReserveCount: 3
           TroopTransport: False
           SpawnPOIAvoid: [ZiraxDroneBase, PlanetVesselBase, PolarisDroneBase, KrielDroneBase ]  
@@ -943,7 +1141,7 @@ POIs:
           Faction: None     
           CountMinMax: [ 0, 1 ]
           DroneProb: 1.0
-          DronesMinMax: [ 1, 2 ]
+          DronesMinMax: [ 1, 1 ]
           ReserveCount: 4
           TroopTransport: False
           Properties: 
@@ -957,7 +1155,7 @@ POIs:
           CountMinMax: [ 1, 1 ]
           IsScalingCount: True 
           DroneProb: 1.0
-          DronesMinMax: [ 1, 2 ]
+          DronesMinMax: [ 1, 1 ]
           ReserveCount: 4
           TroopTransport: False
           Properties: 
@@ -1139,13 +1337,83 @@ DroneBaseSetup:
 DroneSpawning:
     Random:
 
-        - DronesMinMax: [ 5, 10 ]
-          CenterX: -2500
-          Radius: 1500
+      - DronesMinMax: [ 3, 4 ]
+        CenterX: -2500
+        Radius: 1500
 
-        - DronesMinMax: [ 5, 10 ]
-          CenterX: 2500
-          Radius: 1500
+      - DronesMinMax: [ 3, 4 ]
+        CenterX: 2500
+        Radius: 1500
+
+
+
+       # Specific drones / outer dronebase sweep  ========
+
+       # === XENU === 
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 2, 2 ]
+        Faction: Xenu
+        CenterX: 0
+        Radius: 1000
+
+
+       # === KRIEL === 
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 2, 2 ]
+        Faction: Kriel
+        CenterX: 0
+        Radius: 1000
+
+
+       # === ARKENIAN  === 
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 2, 2 ]
+        Faction: ArkenianRepublic
+        CenterX: 0
+        Radius: 1000
+
+       # === POLARIS === 
+        # Survey drones
+      - Name: DroneSmallFast01Rocket
+        DronesMinMax: [ 2, 2 ]
+        Faction: Polaris
+        CenterX: 0
+        Radius: 1000
+
+          # ARC
+
+       # === PRENN / TRADER === 
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 2, 2 ]
+        Faction: PrennFederation
+        CenterX: 0
+        Radius: 1000
+
+       # === Farr === 
+      - Name: DroneSmallPolarisLaser
+        DronesMinMax: [ 2, 2 ]
+        Faction: Farr
+        CenterX: 0
+        Radius: 1000
+
+
+       # === Pirates === 
+      - Name: DroneSmallFast01Minigun
+        DronesMinMax: [ 2, 2 ]
+        Faction: Pirates
+        CenterX: 0
+        Radius: 1000
+
+
+       # # === WARLORD === 
+      # - Name: DroneSmallFast01Rocket
+        # DronesMinMax: [ 2, 2 ]
+        # Faction: Warlord
+       # # CenterX: 5
+        # POINameAsPositionRef: DroneBaseT0
+        # Radius: 6000
+
+
 
 ## === PATROL VESSELS =======================================================================================
 ## ==========================================================================================================

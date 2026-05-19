@@ -2,7 +2,8 @@
 # Playfield Configuration
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
 
-Description: "\u8FD9\u9897\u536B\u661F\u62E5\u6709\u975E\u5E38\u7A00\u8584\u7684\u5927\u6C14\u5C42\u2014\u2014\n\u5B83\u53D7\u5230\u90BB\u8FD1\u884C\u661F\u5F02\u5E38\u5DE8\u5927\u7684\u78C1\u573A\u4FDD\u62A4\uFF0C\u5E76\u4E14\u536B\u661F\u672C\u8EAB\u7684\u5BC6\u5EA6\u8DB3\u4EE5\u963B\u6B62\u90E8\u5206\u6C14\u4F53\u6F02\u79FB\u5230\u592A\u7A7A\u3002\n\u56E0\u6B64\uFF0C\u5B83\u8868\u9762\u79EF\u7D2F\u4E86\u6781\u539A\u7684\u6C99\u6F20\u98CE\u5316\u5C42\u3002\n"
+Description: "\u8FD9\u9897\u6708\u7403\u62E5\u6709\u975E\u5E38\u7A00\u8584\u7684\u5927\u6C14\u5C42 -  \n\u5B83\u53D7\u5230\u9644\u8FD1\u884C\u661F\u5F02\u5E38\u5DE8\u5927\u7684\u78C1\u573A\u4FDD\u62A4\uFF0C\u800C\u4E14\u8FD9\u9897\u6708\u7403\u7684\u5BC6\u5EA6\u8DB3\u4EE5\u4F7F\u90E8\u5206\u6C14\u4F53\u4E0D\u4F1A\u6F02\u79FB\u5230\u592A\u7A7A\u4E2D\u3002  \n\u56E0\u6B64\u8FD9\u91CC\u79EF\u7D2F\u4E86\u6781\u5927\u91CF\u7684\u6C99\u6F20\u5CA9\u6F06\u3002"
+
 
 
 PlanetType: MoonDesert
@@ -421,7 +422,29 @@ POIs:
 
         - GroupName: DroneBaseT1
           Faction: Warlord
-          CountMinMax: [ 0, 1 ]  # (100% spawn at living & precious PFs, 50% at low interest)
+          CountMinMax: [ 1, 1 ]  # (50 % chance, see Coinflip)
+
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetupWar
+
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ] 
+          ReserveCount: 5
+          NoShieldReload: True
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [500, 45000]
+          SpawnPOIAvoid: [CNTRL_Coinflip_01, ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase]
+          SpawnPOIAvoidDistance: 45000 # Fully avoids
+          Properties: 
+            - Key: Music
+              Value: moonstone 
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: WarlordDroneBaseT0  # Drone Pad
+          Faction: Warlord
+          CountMinMax: [ 1, 1 ]  # (Fallback)
 
           IsCommandCenter: True
           DroneBaseSetup: DroneBaseSetupWar
@@ -435,11 +458,8 @@ POIs:
           SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase]
           SpawnPOIAvoidDistance: 45000 # Fully avoids
           Properties: 
-            - Key: Music
-              Value: moonstone 
             - Key: RegenAfter
               Value: 720
-
 
 
 ## === (4) POI CLUSTERS =====================================================================================
@@ -525,6 +545,41 @@ POIs:
 
 # TheLegacy (Infected Planets) ===
 
+
+        - GroupName: LegacyDefenseT1   # SC 1 - No creatures on terrain - Has VeryRare LootContainer, but strong gun
+          Biome: [ SmallCrater, LargeCrater, Flats ]
+          Faction: TheLegacy
+          CountMinMax: [ 1, 1 ]
+          NoShieldReload: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: BeaconGrndQuarantine   # Warning marker. This world is likely one of the first player Lgc interactions due to chances.
+          Faction: Alien
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [LegacyDefenseT1]
+          SpawnPOINearRange: [150, 300]
+          Properties:
+            - Key: Discovery   # Can be seen everywhere on the map. 
+              Value: False
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CrashedShip  # Shot down...
+          Faction: None      
+          CountMinMax: [ 2, 4 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          SpawnPOINear: [LegacyDefenseT1]
+          SpawnPOINearRange: [300, 800]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
 
 
 
@@ -628,6 +683,57 @@ POIs:
 ## ==========================================================================================================
 
      # Note: AuxPOI have to be playfield-unique spawngroups, else they won't spawn
+
+
+
+         #### ===== AuxPOI definition for Treasures  ==== #####
+
+         ### =============== Treasure beacons ========================
+
+          # 50m, "easy"
+        - GroupName: BeaconPirTreasure50m
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: Terrain, OnWater
+
+          IsAuxPOI: True #######
+
+          SpawnPOINear: [DoesNotNeedThis]  # 
+          SpawnPOINearRange: [50, 50]
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: MapMarker 
+              Value: Neutral
+            # - Key: Discovery   # Can be seen everywhere on the map. 
+              # Value: False
+            - Key: MapDistance   # Overridden by main poi?
+              Value: 500
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+         ### =============== Treasure decoys ========================
+
+        - GroupName: PirateTreasureT0Decoy  # This is junk
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          PlaceAt: Terrain
+
+          IsAuxPOI: True #######
+
+          # SpawnPOINear: [LegacyFloatingT2]  # ( AuxPOI don't need this, since they are not anchored to a specific POI)
+          SpawnPOINearRange: [30, 100]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Overridden by main poi?
+              Value: 2000
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
 
 
 ## === (7) LAWLESS / OUTPOSTS ===============================================================================
@@ -755,6 +861,120 @@ POIs:
 
 # Pirate treasures ===============
 
+
+          # Cheapest treasure
+        - GroupName: PirateTreasureT0_Tell # This is a grey alien container
+          Biome: [ LargeCrater ]
+          AvoidFactionTerritory: True
+          Faction: None
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: Terrain, OnWater
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: BeaconPirTreasure120
+          Faction: None
+          AvoidFactionTerritory: True
+          IsImportant: True
+          CountMinMax: [1, 1 ]
+          SpawnPOINear: [PirateTreasureT0_Tell]
+          SpawnPOINearRange: [119, 120]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 200
+            - Key: HudDistance
+              Value: 400
+            - Key: RegenAfter
+              Value: 720
+
+
+          # General treasure 
+        - GroupName: PirateTreasureT1W_Tell   # This is better loot. Uses decoys
+          Biome: [ SmallCrater ]  # Harder to spawn, may not always be there
+          Faction: None
+          AvoidFactionTerritory: True
+
+          IsImportant: True
+          CountMinMax: [1, 1 ]
+
+          AuxiliaryPOIs: [PirateTreasureT0Decoy, BeaconPirTreasure50m ] ### AUX (1 Spawn, 50m distance) - Beacon will have similar low detection.
+
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [1000, 45000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+
+          # Single treasure - Real treasure is below box. Good loot. Beacon might not always spawn.
+        - GroupName: PirateTreasureT2_Palette&Decoy
+          Biome: [ Mountains ]
+          Faction: None
+          AvoidFactionTerritory: True
+
+          IsImportant: True
+          CountMinMax: [0, 1 ]
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [500, 45000]
+          SpawnPOIAvoid: [PirateTreasureT0_Tell]
+          SpawnPOIAvoidDistance: 1000
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: BeaconPirTreasure120
+          Faction: None
+          AvoidFactionTerritory: True
+          CountMinMax: [1, 1 ]
+          SpawnPOINear: [PirateTreasureT2_Palette&Decoy]
+          SpawnPOINearRange: [119, 120]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 200
+            - Key: HudDistance
+              Value: 400
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: JunkT2       # makes finding the treasure harder
+          Faction: None  
+          CountMinMax: [ 2, 3 ]
+          SpawnPOIAvoid: [JunkT2]  
+          SpawnPOIAvoidDistance: 250
+          SpawnPOINear: [PirateTreasureT2_Palette&Decoy]
+          SpawnPOINearRange: [150, 400]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
 # Smugglers / Criminals ==========
 
 # Lost Cargo =====================
@@ -771,6 +991,28 @@ POIs:
 # Exotics (Single) ===============
 
 # Legacy POI (Alien) =============
+
+        - GroupName: Artifacts
+          Biome: [ SmallCrater, LargeCrater ]
+          Faction: Alien  # These are "easy" artifacts
+          AvoidFactionTerritory: True 
+
+          IsScalingCount: True
+          CountMinMax: [ 1, 2 ]
+          SpawnPOIAvoid: [Artifacts, CivilMain, CivilSettlement, DroneBaseT1, ZiraxDroneBase, PlanetVesselBase, PolarisDroneBase, KrielDroneBase, WarlordDroneBaseT0, WarlordDroneBaseT0Station]  
+          POIDistance: 1500  # 
+          SpawnPOINear: [CNTRL_IsLawless]  # Avoids infected planets
+          SpawnPOINearRange: [500, 45000]
+          Properties:
+            - Key: Music
+              Value: EvilWhispering
+            - Key: MapDistance   # Hidden
+              Value: 150
+            - Key: HudDistance
+              Value: 300
+            - Key: RegenAfter
+              Value: 720
+
 
 # Abandoned POI ==================
 
@@ -925,11 +1167,11 @@ DroneSpawning:
     Random:
 
 
-        - DronesMinMax: [ 5, 10 ]
+        - DronesMinMax: [ 4, 6 ]
           CenterX: -2500
           Radius: 1500
 
-        - DronesMinMax: [ 5, 10 ]
+        - DronesMinMax: [ 4, 6 ]
           CenterX: 2500
           Radius: 1500
 

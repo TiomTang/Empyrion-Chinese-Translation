@@ -3,7 +3,8 @@
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
 
 
-Description: "\u4E00\u4E2A\u5904\u4E8E\u6DF1\u9ED1\u5149\u4E2D\u7684\u4E16\u754C\u3002  \n\uFF08\u8BF7\u6D82\u62B9\u5927\u91CF\u9632\u6652\u971C\u3002\uFF09\n\n\u5927\u6C14\u5C42\u4E2D\u542B\u6709\u7684\u6C14\u4F53\u53EA\u5141\u8BB8\u7D2B\u5916\u7EBF\u901A\u8FC7\u3002  \n\u867D\u7136\u7D2B\u5916\u7EBF\u5BF9\u4EBA\u773C\u4E0D\u53EF\u89C1\uFF0C\u4F46\u4ECE\u5730\u8868\u4F9D\u7136\u53EF\u4EE5\u88AB\u53CD\u5C04\u56DE\u4F5C\u4E3A\u201C\u5149\u201D\u2014\u2014\u5F62\u6210\u9634\u90C1\u5374\u8272\u5F69\u6591\u6593\u7684\u666F\u89C2\u3002\n"
+Description: "\u4E00\u4E2A\u6DF1\u9677\u5728\u9ED1\u5149\u4E2D\u7684\u4E16\u754C\u3002  \n\uFF08\u8BB0\u5F97\u591A\u6D82\u9632\u6652\u971C\u3002\uFF09\n\n\u8FD9\u91CC\u7684\u5927\u6C14\u5C42\u5305\u542B\u53EA\u5141\u8BB8\u7D2B\u5916\u7EBF\u901A\u8FC7\u7684\u6C14\u4F53\u3002  \n\u867D\u7136\u8FD9\u4E9B\u5149\u7EBF\u5BF9\u4EBA\u773C\u6765\u8BF4\u662F\u4E0D\u53EF\u89C1\u7684\uFF0C\u4F46\u5B83\u4EEC\u4ECD\u7136\u53EF\u4EE5\u4ECE\u5730\u8868\u53CD\u5C04\u56DE\u6765\u5F62\u6210\u201C\u5149\u201D\u2014\u2014\u4ECE\u800C\u4EA7\u751F\u4E00\u79CD\u9634\u90C1\u5374\u53C8\u8272\u5F69\u6591\u6593\u7684\u666F\u89C2\u3002"
+
 
 
 
@@ -560,7 +561,7 @@ POIs:
 
          # DB Zirax ============================
 
-        - GroupName: DroneBaseT1  # Spawn Anchor
+        - GroupName: ZiraxDroneBase  # Spawn Anchor
           Faction: Ghyst
           BiomesExcluded: [ IceSheet, RadiatedFog]
 
@@ -581,13 +582,108 @@ POIs:
 
          # DB Zirax subfactions ================
 
+
          # DB Kriel ============================
+
+
+        - GroupName: KrielDroneBase
+          BiomesExcluded: [ IceSheet, RadiatedFog]
+          # Biome: [  PolarSnow, GlacierSnow, ColdPlains, Tundra, Swamp, DeepForest, LowMountains, Mountains ]  # 'darker' Biomes
+          Faction: Kriel
+
+          DroneBaseSetup: DroneBaseSetupKrl
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, ARCDronebase]
+          SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 6, 8 ]
+          ReserveCount: 10
+          NoShieldReload: True
+          Properties: 
+            - Key: Music
+              Value: Encryptor
+            - Key: RegenAfter
+              Value: 720 
+
 
          # DB ArkenianRepublic =================
 
-         # DB Prenn ============================
+        - GroupName: PolarisDroneBase
+          BiomesExcluded: [ IceSheet, RadiatedFog]
+          # Biome: [ Sand, SavannaEdge, Savanna, HighGrass] # 'brighter' biomes
+          Faction: ArkenianRepublic
+
+          DroneBaseSetup: DroneBaseSetupArk
+          IsCommandCenter: True      # BA attacks
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          SpawnPOIAvoid: [CNTRL_IsInfected]
+          SpawnPOIAvoidDistance: 45000
+          Properties: 
+            - Key: Music
+              Value: desert
+            - Key: RegenAfter
+              Value: 720
+
+
+
+        # DB PRENN (Trader) ========
+
+        - GroupName: PrennDroneBaseT1 # Is also a trading station, but normal core. Needs breathable atmo
+          BiomesExcluded: [ IceSheet, RadiatedFog]
+          Faction: PrennFederation
+
+          DroneBaseSetup: DroneBaseSetupPre
+          # IsCommandCenter: True
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 6 ]
+          ReserveCount: 7
+          NoShieldReload: True 
+          SpawnPOIAvoid: [CNTRL_IsInfected]
+          SpawnPOIAvoidDistance: 45000
+          Properties:
+            - Key: Music
+              Value: SunnySkies
+            - Key: RegenAfter
+              Value: 720 
+            - Key: Discovery  # Traders broadcasting their position
+              Value: False
 
          # DB Farr =============================
+
+        - GroupName: FarrDroneBase
+          BiomesExcluded: [ IceSheet, RadiatedFog]
+          Faction: Farr 
+
+          DroneBaseSetup: DroneBaseSetupFarr
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True 
+          SpawnPOIAvoid: [CNTRL_IsInfected]
+          SpawnPOIAvoidDistance: 45000
+
+          SpawnResource: ["GoldResource:1-1"]  # 
+          SpawnResourceRange: [150,300]
+
+          Properties:
+            - Key: Music
+              Value: desert
+            - Key: RegenAfter
+              Value: 720 
 
          # DB (Other mini-factions)=============
 
@@ -733,14 +829,14 @@ POIs:
 
         # Defense for drone base
         - GroupName: GhystAuxT2
-          Faction: Zirax    
+          Faction: Ghyst    
           NoShieldReload: True
           CountMinMax: [ 2, 3 ]
           DroneProb: 1
           DronesMinMax: [ 1, 2 ]
           ReserveCount: 3
           TroopTransport: False
-          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINear: [ZiraxDroneBase]
           SpawnPOINearRange: [200, 500] 
           Properties: 
             - Key: RegenAfter
@@ -753,7 +849,7 @@ POIs:
           DronesMinMax: [ 1, 2 ]
           ReserveCount: 2
           TroopTransport: False
-          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINear: [ZiraxDroneBase]
           SpawnPOINearRange: [100, 250] 
           Properties: 
             - Key: MapMarker
@@ -1606,7 +1702,7 @@ POIs:
 
 
 DroneBaseSetup: 
-    Random:
+  Random:
         - GroupName: DroneBaseSetup  
           Difficulty: 7
           PresetStyle: 3
@@ -1651,25 +1747,169 @@ DroneBaseSetup:
                 Amount: 250
                 Extra: 3
 
-          PlanetVesselBase:
-              Name: PlanetVesselBaseSetup
-              Position3D: [ 0, 102, 0]
-              BaseType: PlanetVesselBase
-              KeyId: 0
-              PlanetVessel:
-                - Name: PVZiraxT2
-                  Mission: PlanetPatrol
-                  FixedMaxSpeed: 10
-                  RespawnDelay: 12
-                  InitialDelay: 48
+          # PlanetVesselBase:
+              # Name: PlanetVesselBaseSetup
+              # Position3D: [ 0, 102, 0]
+              # BaseType: PlanetVesselBase
+              # KeyId: 0
+              # PlanetVessel:
+                # - Name: PVZiraxT2
+                  # Mission: PlanetPatrol
+                  # FixedMaxSpeed: 10
+                  # RespawnDelay: 12
+                  # InitialDelay: 48
 
-                  RangePatrolTask:
-                    Position3D: [ -1000, 80, 0 ]
-                    Radius: 800
-                    DistToGround: 80
+                  # RangePatrolTask:
+                    # Position3D: [ -1000, 80, 0 ]
+                    # Radius: 800
+                    # DistToGround: 80
 
-                  AttackCVCircleAround:
-                    DistToTarget: 190
+                  # AttackCVCircleAround:
+                    # DistToTarget: 190
+
+
+
+        - GroupName: DroneBaseSetupKrl
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AlienAssassinRed
+                Amount: 500
+                Extra: 3
+
+              - Name: Hexapod
+                Amount: 100
+                Extra: 3
+
+
+
+        - GroupName: DroneBaseSetupArk
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPolarisLaser
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallPolarisLaser    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+              - Name: AssaultCyborgCommando
+                Amount: 100
+                Extra: 3
+
+
+        - GroupName: DroneBaseSetupPre
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPolarisLaser
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallPolarisLaser    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+              - Name: AssaultCyborgCommando
+                Amount: 100
+                Extra: 3
+
+
+        - GroupName: DroneBaseSetupFarr
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPiratesCannon
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneLargePiratesMortar  
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+
 
 
         - GroupName: DroneBaseSetupWar
@@ -1703,6 +1943,307 @@ DroneBaseSetup:
               - Name: AssaultCyborg
                 Amount: 500
                 Extra: 3
+
+
+
+  DroneBases:
+
+
+
+## === PATROL VESSELS =======================================================================================
+## ==========================================================================================================
+
+    # Note: Patrol vessels will follow the spawn rules set in the Galaxyconfig.
+
+
+## ====================== PATROL VESSEL BASES =========================== ( Here a PV can get repairs and will respawn)
+
+  PlanetVesselBases:
+
+
+## ====================== FREE ROAMING PATROL VESSELS ===========================
+
+
+  PlanetVessels:
+
+
+      # ========= Zirax
+    - Name: OPVZiraxT2
+      Faction: Ghyst
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask: 
+        POINameAsPositionRef: [ZiraxDroneBase] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: OPVZiraxT1
+      Faction: Ghyst
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask: 
+        POINameAsPositionRef: [Wreckage] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+       # === KRIEL === 
+       # More PVs, but some of them are rater harmless (but much faster)
+
+
+    - Name: OPVKrielT2
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 8
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        POINameAsPositionRef: [KrielDroneBase]
+        Radius: 1000           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 320
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+    - Name: OPVKrielT2
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 8
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [CrashedShip] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # The OPV0  are mostly harmless
+    - Name: OPVKrielT0
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [Wreckage] 
+        DistToGround: 250
+        ## (Default patrol area is planet-size)
+
+    - Name: OPVKrielT0
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [PromethiumResource] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+
+    - Name: OPVKrielT0
+      Faction: Kriel   # Aggressive
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [IronResource] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+
+
+
+
+
+
+      # ========= Arkenians
+    - Name: OPVArkenianT2
+      Faction: ArkenianRepublic
+      CountMinMax: [1, 1]
+#      LevelMod: 2
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        POINameAsPositionRef: [PolarisDroneBase]
+        Radius: 1000           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 300
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # ========= Polaris outposts
+    - Name: OPVArkenianT2
+      Faction: Polaris
+      CountMinMax: [0, 1]  # 50% chance
+#      LevelMod: 2
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        POINameAsPositionRef: [Ruins]
+        Radius: 1000           # 
+        DistToGround: 300
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # ========= Prenn 
+
+
+    - Name: OPVPrennT3
+      Faction: PrennFederation
+      CountMinMax: [1, 1] 
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [PrennDroneBaseT1]
+        # Radius: 8000           # Patrols the planet
+        DistToGround: 450
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+    - Name: BillboardDrone
+      Faction: PrennFederation
+      CountMinMax: [1, 1] 
+      FixedMaxSpeed: 5
+      DelayBetweenRespawn: 3500
+      DelayBeforeSelfDestruction: 3500
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [TraderMain]
+        Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 400
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: BillboardDrone
+      Faction: PrennFederation
+      CountMinMax: [1, 1] 
+      FixedMaxSpeed: 10
+      DelayBetweenRespawn: 3500
+      DelayBeforeSelfDestruction: 3500
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [TraderMain]
+        Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 200
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+    - Name: BillboardDrone
+      Faction: PrennFederation
+      CountMinMax: [1, 1] 
+      FixedMaxSpeed: 5
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [TraderSettlement]
+        Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 350
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+      # ========= Pirates 
+
+    - Name: OPVPiratesT1
+      Faction: Pirates 
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 14
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [Pirates] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+       # === WARLORD === 
+       # Smaller but faster PVs
+
+    - Name: OPVWarlordT1
+      Faction: Warlord
+      CountMinMax: [1, 1]   # 
+      FixedMaxSpeed: 16
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [WarlordSkaarDroneBase]
+        DistToGround: 200
+        Radius: 2500           # Patrols around Dronebase; might catch players attacking or raiding it?
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    - Name: OPVWarlordT1
+      Faction: Warlord
+      CountMinMax: [0, 1]   #  Random spawn 50% chance
+      FixedMaxSpeed: 16
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [Ruins]  
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
 
 
 

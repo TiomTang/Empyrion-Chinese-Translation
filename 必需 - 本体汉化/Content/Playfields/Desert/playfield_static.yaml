@@ -2,7 +2,8 @@
 # Playfield Configuration
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
 
-Description: "\u6C34\u5728\u5B87\u5B99\u4E2D\u76F8\u5F53\u5E38\u89C1\uFF0C\u4F5C\u4E3A\u8D4B\u4E88\u751F\u547D\u7684\u6DB2\u4F53\uFF0C\u6216\u8005\u81F3\u5C11\u4EE5\u51B0\u6216\u84B8\u6C7D\u7684\u5F62\u5F0F\u5B58\u5728\u3002\n\u7136\u800C\uFF0C\u5E76\u4E0D\u662F\u6BCF\u9897\u884C\u661F\u90FD\u62E5\u6709\u6C34\u3002\u6709\u4E9B\u4E16\u754C\u88AB\u6BCD\u6052\u661F\u7099\u70E4\uFF0C\u6216\u8005\u5B83\u4EEC\u7684\u78C1\u573A\u592A\u5F31\uFF0C\u65E0\u6CD5\u62B5\u6321\u6052\u661F\u98CE\u7684\u51B2\u51FB\u3002\n\n\u4F46\u5373\u4FBF\u662F\u5728\u8FD9\u4E2A\u9633\u5149\u7099\u70C8\u7684\u5730\u65B9\uFF0C\u4E5F\u8BBE\u6CD5\u4FDD\u7559\u4E86\u4E00\u4E9B\u96F6\u661F\u7684\u6C34\u6E90\u2026\u2026\n"
+Description: "\u6C34\u5728\u5B87\u5B99\u4E2D\u76F8\u5F53\u5E38\u89C1\uFF0C\u65E2\u53EF\u4EE5\u662F\u5B55\u80B2\u751F\u547D\u7684\u6DB2\u6001\u5F62\u5F0F\uFF0C\u81F3\u5C11\u4E5F\u4F1A\u4EE5\u51B0\u6216\u84B8\u6C7D\u7684\u5F62\u5F0F\u5B58\u5728\u3002  \n\u7136\u800C\uFF0C\u5E76\u4E0D\u662F\u6BCF\u4E00\u9897\u661F\u7403\u90FD\u62E5\u6709\u6C34\u3002\u6709\u4E9B\u4E16\u754C\u88AB\u5B83\u4EEC\u7684\u6052\u661F\u7099\u70E4\u5F97\u70BD\u70ED\u65E0\u6BD4\uFF0C\u6216\u8005\u5B83\u4EEC\u7684\u78C1\u573A\u8FC7\u4E8E\u5FAE\u5F31\uFF0C\u65E0\u6CD5\u62B5\u5FA1\u6052\u661F\u98CE\u7684\u51B2\u51FB\u3002\n\n\u4F46\u5373\u4F7F\u662F\u5728\u8FD9\u7247\u8000\u773C\u9633\u5149\u7B3C\u7F69\u4E4B\u5730\uFF0C\u8FD9\u91CC\u6216\u90A3\u91CC\u4ECD\u7136\u8BBE\u6CD5\u4FDD\u7559\u4E86\u4E00\u4E9B\u6C34\u6E90\u2026\u2026"
+
 PlanetType: Desert
 PlayfieldType: Planet
 Difficulty: 3
@@ -420,7 +421,7 @@ POIs:
 
 
           # Zirax drone base & perimeter defenses ====            # Forced to spawn on mountains. Allows different attack vectors
-        - GroupName: DroneBaseT1                  #CommandCenter
+        - GroupName: ZiraxDroneBase                  # CommandCenter
           Biome: [ Plateau, LowMountains, LowMountains_1, Mountains, SandDrift ]
           Faction: Rados  
 
@@ -446,7 +447,7 @@ POIs:
           BiomesExcluded: [ Plains ]
           Faction: Rados  
 
-          PlanetVesselBaseSetup: PlanetVesselBaseSetup
+          # PlanetVesselBaseSetup: PlanetVesselBaseSetup
 
           IsImportant: True
           CountMinMax: [ 1, 1 ]
@@ -466,9 +467,31 @@ POIs:
 
          # DB Kriel ============================
 
-         # DB ArkenianRepublic =================
 
-         # DB ARKENIAN ========
+         # DB KRIEL ========
+        - GroupName: KrielDroneBase 
+          Biome: [ LowMountains, LowMountains_1, SandDrift, Mountains ]  # 'darker' Biomes
+          Faction: Kriel
+
+          DroneBaseSetup: DroneBaseSetupKrl
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, PolarisDroneBase, ARCDronebase]
+          SpawnPOIAvoidDistance: 2000
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          SpawnResource: ["NeodymiumResource:1-2","AluminiumResource:1-1","TitanResource:1-2" ]
+          SpawnResourceRange: [80,300]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+         # DB ArkenianRepublic =================
 
         - GroupName: PolarisDroneBase 
           Biome: [ Sand, Plateau, FlowersEdge, Flowers, Plantation, DustBowl, Oasis] # 'brighter' biomes
@@ -495,15 +518,35 @@ POIs:
 
               # (Avoid IsInfected)
 
+
+        - GroupName: PrennDroneBaseT0  # Smaller station, usually for low interest worlds / moons. Hostile terrain capable
+          Biome: [ Sand, Plateau, FlowersEdge, Flowers, Plantation, DustBowl, Oasis ]
+          Faction: PrennFederation 
+
+          DroneBaseSetup: DroneBaseSetupPre
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True 
+          SpawnPOIAvoid: [CNTRL_IsInfected]
+          SpawnPOIAvoidDistance: 45000
+          Properties:
+            - Key: Music
+              Value: SunnySkies   # Trading station
+            - Key: RegenAfter
+              Value: 720 
+
          # DB Farr =============================
 
-        # DB FARR ========
 
         - GroupName: FarrDroneBase
           BiomesExcluded: [ Plains, Nest, DustBowl, BM_FORBIDDEN ]
           Faction: Farr 
 
-          DroneBaseSetup: DroneBaseSetupBoF
+          DroneBaseSetup: DroneBaseSetupFarr
 
           IsImportant: True
           CountMinMax: [ 1, 1 ]
@@ -542,7 +585,30 @@ POIs:
 
          # DB Pirates ==========================
 
-            # (IsLawless. Fully avoid all bigger DBs)
+        - GroupName: PiratesDroneBase
+          Biome: [ LowMountains, LowMountains_1, SandDrift, Mountains, Plantation ]
+          Faction: Pirates
+
+          DroneBaseSetup: DroneBaseSetupPir
+
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOIAvoid: [ZiraxDroneBase, DroneBaseT1, EpsilonDronebase, PolarisDroneBase, KrielDroneBase, ARCDronebase, FarrDroneBase]
+          SpawnPOIAvoidDistance: 5000 # Far away from other factions / Dangers
+          SpawnPOINear: [CNTRL_IsLawless]  # Avoids IsInfected
+          SpawnPOINearRange: [500, 45000]
+
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Properties:
+            - Key: Music
+              Value: desert 
+            - Key: RegenAfter
+              Value: 720
+
 
          # DB Epsilon (In-territory) ===========
 
@@ -603,7 +669,7 @@ POIs:
           DronesMinMax: [ 1, 2 ]
           ReserveCount: 2
           TroopTransport: True
-          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINear: [ZiraxDroneBase]
           SpawnPOINearRange: [200, 300]
           Properties:
             - Key: RegenAfter
@@ -870,24 +936,28 @@ POIs:
               Value: 720
 
         - GroupName: Ruins
-          Faction: ArkenianRepublic  
+          Faction: None  
           NoShieldReload: True
           BiomesExcluded: [ Plantation, LowMountains, LowMountains_1, Mountains ]
           CountMinMax: [ 1, 2 ]
           SpawnPOINear: [TS_Planet]
           SpawnPOINearRange: [250, 500]
           Properties: 
+            - Key: MapMarker
+              Value: Neutral
             - Key: RegenAfter
               Value: 720 
 
         - GroupName: Wreckage
-          Faction: ArkenianRepublic  
+          Faction: None  
           NoShieldReload: True
           BiomesExcluded: [ Plantation, LowMountains, LowMountains_1, Mountains ] 
           CountMinMax: [ 1, 1 ]
           SpawnPOINear: [TS_Planet]
           SpawnPOINearRange: [400, 650]
           Properties: 
+            - Key: MapMarker
+              Value: Neutral
             - Key: RegenAfter
               Value: 720 
  
@@ -910,7 +980,7 @@ POIs:
 
 
         - GroupName: TraderMain    # 
-          Biome: [ Sand, Plateau, FlowersEdge, Flowers, Plantation, DustBowl, Oasis ]
+          Biome: [ Dunes, Sand, Plateau, FlowersEdge, Flowers, Plantation, DustBowl, Oasis ]
           Faction: PrennFederation
 
           IsImportant: True
@@ -918,6 +988,8 @@ POIs:
           NoShieldReload: True
           SpawnPOIAvoid: [CNTRL_IsInfected]
           SpawnPOIAvoidDistance: 45000
+          SpawnPOINear: [PrennDroneBaseT0]
+          SpawnPOINearRange: [100,250]
           Properties: 
             - Key: Music
               Value: AlteredPhase
@@ -1278,6 +1350,7 @@ POIs:
 
                    # (Avoids IsInfected or does SpawnNear to Pir DB)
 
+
 # Warlord ========================
 
 # TheLegacy (Infected Planets) ===
@@ -1489,7 +1562,11 @@ POIs:
           NoShieldReload: True
           SpawnPOIAvoid: [CNTRL_IsInfected]
           SpawnPOIAvoidDistance: 45000
+          SpawnPOINear: [FarrMainSingle]
+          SpawnPOINearRange: [700, 40000]
           Properties: 
+            - Key: MapMarker
+              Value: Neutral
             - Key: RegenAfter
               Value: 720 
 
@@ -1628,6 +1705,141 @@ POIs:
 
 
 
+# Pirate Treasures
+
+         #### ===== AuxPOI definition for Treasures  ==== #####
+
+         ### =============== Treasure beacons ========================
+
+          # 50m, "easy"
+        - GroupName: BeaconPirTreasure50m
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: Terrain, OnWater
+
+          IsAuxPOI: True #######
+
+          # SpawnPOINear: [NoNeedForAuxPOI]
+          SpawnPOINearRange: [50, 50]
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: MapMarker 
+              Value: Neutral
+            # - Key: Discovery   # Can be seen everywhere on the map. 
+              # Value: False
+            - Key: MapDistance   # Overridden by main poi?
+              Value: 2000
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+          # 120m, "normal"
+        - GroupName: BeaconPirTreasure120
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: Terrain, OnWater
+
+
+          DroneProb: 1
+          DronesMinMax: [ 3, 3 ]
+          ReserveCount: 1
+          TroopTransport: False
+
+          IsAuxPOI: True #######
+
+          # SpawnPOINear: [NoNeedForAuxPOI]
+          SpawnPOINearRange: [50, 120]
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Overridden by main poi?
+              Value: 2000
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+          # 2km, "hard"
+        - GroupName: BeaconPirTreasure2k
+          Biome: [ DeepForest, Forest, Swamp, WaterSwamp, DustBowl, Radiated, GlacierSnow ]
+          Faction: None
+
+          IsImportant: True
+          CountMinMax: [ 2, 4 ]  # Two beacons are usually helpful to 'solve' this. If more spawn, it will be easier. One alone is hard but possible by flying in a circle.
+          PlaceAt: Terrain, OnWater
+
+          IsAuxPOI: True #######
+
+          # SpawnPOINear: [NoNeedForAuxPOI]
+          SpawnPOINearRange: [1999, 2000]
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 15
+            - Key: HudDistance
+              Value: 50
+            - Key: RegenAfter
+              Value: 720
+
+
+         ### =============== Treasure decoys ========================
+
+        - GroupName: PirateTreasureT0Decoy  # This is junk
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          PlaceAt: Terrain
+
+          IsAuxPOI: True #######
+
+          # SpawnPOINear: [NoNeedForAuxPOI]  # ( AuxPOI don't need this, since they are not anchored to a specific POI)
+          SpawnPOINearRange: [30, 100]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Overridden by main poi?
+              Value: 2000
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+
+         ### =============== Secondary treasures ========================
+
+
+          # "Second prize" for the hard beacons
+        - GroupName: PirateTreasureW_T2_Tell # This is a wooden box, T2 loot
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+          PlaceAt: Terrain, OnWater
+
+          IsAuxPOI: True #######
+
+          # SpawnPOINear: [NoNeedForAuxPOI]
+          SpawnPOINearRange: [200, 400]  # If you don't measure well. It also messes with your detector.
+          Properties: 
+            - Key: SI
+              Value: Off
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 3
+            - Key: HudDistance
+              Value: 3
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
 ## === (7) LAWLESS / OUTPOSTS ===============================================================================
 ## ==========================================================================================================
 
@@ -1755,7 +1967,7 @@ POIs:
 
 
 
-          # Pirate cluster
+          # Second Pirate cluster
         - GroupName: Pirates
           Biome: [Plantation, Oasis, Flowers, FlowersEdge, Sand, DustBowl, SandDrift ]
           Faction: Pirates
@@ -1793,8 +2005,8 @@ POIs:
 
         - GroupName: PiratesDefenseT2Desert 
           Faction: Pirates    
-          NoShieldReload: True 
           CountMinMax: [ 2, 3 ]
+          NoShieldReload: True 
           SpawnPOIAvoid: [CNTRL_IsInfected]
           SpawnPOIAvoidDistance: 45000
           SpawnPOINear: [PiratesAuxDesert] 
@@ -1802,6 +2014,104 @@ POIs:
           Properties:  
             - Key: RegenAfter
               Value: 720 
+
+        - GroupName: PiratesAmbush 
+          BiomesExcluded: [ Plains ] 
+          Faction: Alien   # To ensure that these are hostile
+          CountMinMax: [ 2, 3 ]
+          NoShieldReload: True
+          SpawnPOINear: [Pirates]
+          SpawnPOINearRange: [400, 800] # Might possibly fail, since more restricted
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+          # (Has to spawn after the outpost, since not enough individual spawn anchors available)
+          # DroneBase cluster
+        - GroupName: PiratesMain
+          Biome: [Plantation, Oasis, Flowers, FlowersEdge, Sand, DustBowl, LowMountains, LowMountains_1, SandDrift, Mountains]
+          Faction: Pirates
+
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+          NoShieldReload: True
+          SpawnPOINear: [PiratesDroneBase]  # avoids IsInfected
+          SpawnPOINearRange: [100, 250]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: Pirates
+          Faction: Pirates
+          CountMinMax: [ 1, 2 ]
+          NoShieldReload: True
+          SpawnPOINear: [PiratesDroneBase]  # avoids IsInfected
+          SpawnPOINearRange: [150, 300]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+
+        - GroupName: PlanetVesselBase 
+          Faction: Pirates    
+          CountMinMax: [ 1, 3 ]
+          NoShieldReload: True
+          SpawnPOINear: [PiratesMain] 
+          SpawnPOINearRange: [100, 350]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PiratesAuxDesert 
+          Faction: Pirates    
+          CountMinMax: [ 2, 3 ]
+          NoShieldReload: True
+          SpawnPOINear: [PiratesMain] 
+          SpawnPOINearRange: [100, 300]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PiratesDefenseT2Desert 
+          Faction: Pirates    
+          CountMinMax: [ 2, 3 ]
+          NoShieldReload: True 
+          SpawnPOIAvoid: [CNTRL_IsInfected]
+          SpawnPOIAvoidDistance: 45000
+          SpawnPOINear: [PiratesAuxDesert] 
+          SpawnPOINearRange: [200, 300]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+          # Right at the Pirates' doorstep, next to a resource. - No beacon.
+        - GroupName: PirateTreasureT1W_Tell
+          Biome: [ Dunes, Sand, Plateau, DustBowl, Flowers, FlowersEdge, Nest ]
+          Faction: None
+
+          CountMinMax: [1, 1 ]
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 1
+          SpawnPOINear: [Pirates]
+          SpawnPOINearRange: [100, 150]
+          SpawnResource: ["PromethiumResource:1-1"]
+          SpawnResourceRange: [20,50]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+
 
 
 # Warlord - Claims ===============
@@ -1822,6 +2132,159 @@ POIs:
 # Debris fields & Salvage ========
 
 # Pirate treasures ===============
+
+
+
+          # info treasure with custom beacon
+        - GroupName: PirateTreasureT0_Tell  # "Training loot" - T1 Alien container
+          Biome: [ LowMountains_1, LowMountains_2, Mountains, SandDrift ]
+          Faction: None
+          AvoidFactionTerritory: True
+
+          IsImportant: True
+          CountMinMax: [1, 1 ]
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [1000, 45000]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 2
+            - Key: HudDistance
+              Value: 3
+            - Key: RegenAfter
+              Value: 720
+
+          # Custom Helper beacon for it
+        - GroupName: BeaconPirTreasureInfo   # Beacon with info, as a hint that this planet has treasures.
+          PlaceAt: Terrain, OnWater
+          Faction: None
+          IsImportant: True
+          CountMinMax: [1, 1 ]
+          SpawnPOINear: [PirateTreasureT0_Tell]
+          SpawnPOINearRange: [50, 50]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: Discovery   # Can be seen everywhere on the map. 
+              Value: False
+            - Key: RegenAfter
+              Value: 720
+
+
+
+          # Single treasure - May not always spawn
+        - GroupName: PirateTreasureT2_Palette&Decoy
+          Biome: [ Oasis, Plantation ]
+          Faction: None
+          # AvoidFactionTerritory: True  # Might end up in faction territory, though...
+
+          IsImportant: True
+          CountMinMax: [1, 1 ]
+
+          AuxiliaryPOIs: [BeaconPirTreasure120] ### AUX (1 Spawn, 50-120m distance) - Beacon will have similar low detection.
+
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [1000, 45000]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+
+          # ========= Scaling with planet size
+
+
+
+          # General treasure, Difficult. 
+        - GroupName: PirateTreasureT2_Palette
+          Biome: [ Plantation, Oasis, DustBowl, SandDrift]
+          Faction: None
+          AvoidFactionTerritory: True
+
+          IsImportant: True
+          IsScalingCount: True
+          CountMinMax: [1, 1 ]
+
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 1
+          SpawnPOIAvoid: [PirateTreasureT2_Palette]
+          SpawnPOIAvoidDistance: 500
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [1000, 45000]
+
+          AuxiliaryPOIs: [PirateTreasureT0Decoy, BeaconPirTreasure120] ### AUX (1 Spawn, 50m distance) - Beacon will have similar low detection.
+
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+
+          # General treasure - Spawns on very open terrain. Treasure is further away.
+        - GroupName: PirateTreasureT1W_Tell
+          Biome: [LowMountains_1, LowMountains_2, Mountains, SandDrift, Nest]
+          Faction: None
+          AvoidFactionTerritory: True
+
+          IsImportant: True
+          IsScalingCount: True
+          CountMinMax: [1, 1 ]
+
+          AuxiliaryPOIs: [PirateTreasureT0Decoy, BeaconPirTreasure120 ] ### AUX (1 Spawn, 120m distance) - Beacon will have similar low detection.
+
+          SpawnPOIAvoid: [PirateTreasureT2_Palette, PirateTreasureT1W_Tell]
+          SpawnPOIAvoidDistance: 500
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [1000, 45000]
+          # SpawnResource: ["CobaltResource:0-1"]  # Use a different resource
+          # SpawnResourceRange: [150,300]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: PirateTreasureT1W_Tell  # Will stick out in the deco biomes, but is still hard to see while flying. Use with grassy areas.
+          Biome: [ Oasis, DustBowl, Plantation, SandDrift, Nest ]  # Difficult spawn areas
+          Faction: None
+          AvoidFactionTerritory: True
+
+          IsImportant: True
+          IsScalingCount: True
+          CountMinMax: [1, 1 ]
+
+          AuxiliaryPOIs: [BeaconPirTreasure120 ] ### AUX  -
+
+          SpawnPOINear: [CNTRL_IsLawless]
+          SpawnPOINearRange: [1000, 45000]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance   # Hidden
+              Value: 5
+            - Key: HudDistance
+              Value: 5
+            - Key: RegenAfter
+              Value: 720
+
+
 
 # Smugglers / Criminals ==========
 
@@ -1848,20 +2311,36 @@ POIs:
 
           IsScalingCount: True
           CountMinMax: [ 1, 1 ]
+          NoShieldReload: True 
+          SpawnPOIAvoid: [Artifacts]
+          SpawnPOIAvoidDistance: 1000
           SpawnPOINear: [CNTRL_IsLawless] # avoids IsInfected
-          SpawnPOINearRange: [0, 45000]
+          SpawnPOINearRange: [0, 40000]
           Properties:  
             - Key: Music
               Value: EvilWhispering
             - Key: HudDistance
               Value: 300
             - Key: RegenAfter
-              Value: 720
-            - Key: RegenAfter
               Value: 720 
 
 
 # Abandoned POI (Alien) ==========
+
+        - GroupName: AbandonedPOI
+          Biome: [Plantation, LowMountains, LowMountains_1, Mountains, SandDrift ]
+          AvoidFactionTerritory: True
+          Faction: Alien
+          CountMinMax: [ 1, 1 ]
+          NoShieldReload: True 
+          SpawnPOINear: [CNTRL_IsLawless] # avoids IsInfected
+          SpawnPOINearRange: [0, 40000]
+          Properties: 
+            - Key: Music
+              Value: lava
+            - Key: RegenAfter
+              Value: 720
+
 
 # Smugglers ======================
 
@@ -1869,9 +2348,41 @@ POIs:
 
 # Survival BAs ===================
 
+        - GroupName: Wreckage
+          Biome: [Nest, Oasis, Plantation, DustBowl, FlowersEdge, Flowers, LargeCrater, LowMountains, LowMountains_1, Mountains, SandDrift ]#
+          AvoidFactionTerritory: True
+          Faction: None  
+          NoShieldReload: True
+          CountMinMax: [ 2, 3 ]
+          SpawnPOIAvoid: [Wreckage]
+          SpawnPOIAvoidDistance: 1000
+          SpawnPOINear: [CNTRL_IsLawless] # Avoids isInfected
+          SpawnPOINearRange: [100, 40000]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
 # Crashed Vessels ================
 
+        - GroupName: CrashedShip
+          Biome: [Oasis, Plantation, DustBowl, FlowersEdge, Flowers, LargeCrater, SandDrift ]
+          AvoidFactionTerritory: True
+          Faction: None  
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.3
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [CNTRL_IsLawless] # avoids IsInfected
+          SpawnPOINearRange: [0, 45000]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720 
+
 # Junk / Deco / Ruins ============
+
 
 
 ## === STARTING LOCATIONS & GEAR ============================================================================
@@ -1913,7 +2424,7 @@ POIs:
 
 ### Drones
 DroneBaseSetup:
-    Random:
+  Random:
 
         - GroupName: DroneBaseSetup
           DronesMinMax: [ 3, 5 ]
@@ -1978,8 +2489,40 @@ DroneBaseSetup:
 
                   AttackCVCircleAround:
                     DistToTarget: 210
-                
-                
+
+
+        - GroupName: DroneBaseSetupKrl
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AlienAssassinRed
+                Amount: 500
+                Extra: 3
+
+              - Name: Hexapod
+                Amount: 100
+                Extra: 3
+
 
         - GroupName: DroneBaseSetupArk
           DronesMinMax: [ 3, 5 ]
@@ -2017,7 +2560,46 @@ DroneBaseSetup:
                 Amount: 100
                 Extra: 3
 
-        - GroupName: DroneBaseSetupBoF   # DroneBaseSetupFarr
+
+
+        - GroupName: DroneBaseSetupPre
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPolarisLaser
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallPolarisLaser    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
+              - Name: AssaultCyborgCommando
+                Amount: 100
+                Extra: 3
+
+
+        - GroupName: DroneBaseSetupFarr
           DronesMinMax: [ 3, 5 ]
           ReserveCount: 5
           DroneProb: 1.0
@@ -2048,6 +2630,40 @@ DroneBaseSetup:
               - Name: AssaultCyborg
                 Amount: 500
                 Extra: 3
+
+
+        - GroupName: DroneBaseSetupPir
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          DroneProb: 1.0
+          Difficulty: 5
+          PresetStyle: 2
+
+          Stock:
+              - Name: DroneSmallPiratesCannon
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneLargePiratesMortar  
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: AssaultCyborg
+                Amount: 500
+                Extra: 3
+
 
 
         - GroupName: DroneBaseSetupWar
@@ -2083,6 +2699,321 @@ DroneBaseSetup:
                 Extra: 3
 
 
+
+  DroneBases:
+
+
+
+## === PATROL VESSELS =======================================================================================
+## ==========================================================================================================
+
+    # Note: Patrol vessels will follow the spawn rules set in the Galaxyconfig.
+
+
+## ====================== PATROL VESSEL BASES =========================== ( Here a PV can get repairs and will respawn)
+
+  PlanetVesselBases:
+
+
+## ====================== FREE ROAMING PATROL VESSELS ===========================
+
+
+  PlanetVessels:
+
+
+      # ========= Zirax
+    - Name: OPVZiraxT2
+      Faction: Rados
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask: 
+        POINameAsPositionRef: [ZiraxDroneBase] 
+        DistToGround: 200
+        Radius: 1200           # Patrol radius- Is inside of planetary faction territory
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: OPVZiraxT1
+      Faction: Rados
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask: 
+        POINameAsPositionRef: [Wreckage] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)  # Searching for more resources
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+       # === KRIEL === 
+       # More PVs, but some of them are rater harmless (but much faster)
+
+
+    - Name: OPVKrielT2
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 8
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        POINameAsPositionRef: [KrielDroneBase]
+        Radius: 1000           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 320
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # The OPV0  are mostly harmless
+    - Name: OPVKrielT0
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [Wreckage] 
+        DistToGround: 250
+        ## (Default patrol area is planet-size)
+
+    - Name: OPVKrielT0
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [PromethiumResource]  # May fight some Pirates...
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+
+
+
+
+      # ========= Arkenians
+    - Name: OPVArkenianT2
+      Faction: ArkenianRepublic
+      CountMinMax: [1, 1]
+#      LevelMod: 2
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        POINameAsPositionRef: [PolarisDroneBase]
+        Radius: 1000           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 300
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # ========= Polaris outposts
+    - Name: OPVArkenianT2
+      Faction: Polaris
+      CountMinMax: [0, 1]  # 50% chance
+#      LevelMod: 2
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        POINameAsPositionRef: [AluminiumResource]
+        Radius: 500           # Checks out resources
+        DistToGround: 300
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # ========= Prenn 
+
+
+    - Name: OPVPrennT3
+      Faction: PrennFederation
+      CountMinMax: [1, 1] 
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [PrennDroneBaseT0]
+        # Radius: 8000           # Patrols the planet
+        DistToGround: 450
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+    - Name: BillboardDrone
+      Faction: PrennFederation
+      CountMinMax: [1, 1] 
+      FixedMaxSpeed: 5
+      DelayBetweenRespawn: 3500
+      DelayBeforeSelfDestruction: 3500
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [TraderMain]
+        Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 400
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: BillboardDrone
+      Faction: PrennFederation
+      CountMinMax: [1, 1] 
+      FixedMaxSpeed: 10
+      DelayBetweenRespawn: 3500
+      DelayBeforeSelfDestruction: 3500
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [TraderMain]
+        Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 200
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+    - Name: BillboardDrone
+      Faction: PrennFederation
+      CountMinMax: [0, 1] 
+      FixedMaxSpeed: 5
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [TraderSettlement]
+        Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 350
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+
+       # === FARR ===
+
+    - Name: OPVFarrT1
+      Faction: Farr
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [FarrDroneBase] 
+        DistToGround: 200
+        Radius: 1500           # Patrol radius- Is inside of planetary faction territory. Less intersted on the planet, more on securing their base.
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+
+
+       # === Pirates ===  # Main world; lots of traffic here.
+
+    - Name: OPVPiratesT3   # Fat vessel... If you are enemy to them, keep better away.
+      Faction: Pirates
+
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 14
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [PiratesDroneBase] 
+        DistToGround: 350     # High up
+        Radius: 700           # Patrol radius- Is inside of planetary faction territory
+
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    - Name: OPVPiratesT1
+      Faction: Pirates 
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 14
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [Pirates] 
+        DistToGround: 200
+        Radius: 1500           # Patrol radius- Is inside of planetary faction territory. Less intersted on the planet, more on securing their base.
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    - Name: OPVPiratesT1
+      Faction: Pirates
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 14
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [CobaltResource] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+
+       # === WARLORD === 
+       # Smaller but faster PVs
+
+    - Name: OPVWarlordT0  # Not really their main world...
+      Faction: Warlord
+      CountMinMax: [1, 1]   # 
+      FixedMaxSpeed: 8
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [DroneBaseT1]   # Might spawn on top of a Zirax base?
+        DistToGround: 200
+        Radius: 2500           # Patrols around Dronebase; might catch players attacking or raiding it?
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+
+
+
 ## === FREE DRONES ==========================================================================================
 ## ==========================================================================================================
 
@@ -2098,14 +3029,6 @@ DroneSpawning:
           CenterX: -5000
           Radius: 3000
 
-
-
-
-
-## === PATROL VESSELS =======================================================================================
-## ==========================================================================================================
-
-    # Note: Patrol vessels will follow the spawn rules set in the Galaxyconfig.
 
 
 
@@ -2151,7 +3074,7 @@ SpawnZones:
      # ===== Rados spawns
 
 
-   - SpawnAt: [DroneBaseT1, RadosBunker ]
+   - SpawnAt: [ZiraxDroneBase, RadosBunker ]
      BiomesExcluded: [ LowMountains, LowMountains_1, Mountains ]
      Radius: 500
      RadiusRandom: 50

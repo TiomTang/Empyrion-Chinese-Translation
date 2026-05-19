@@ -3,7 +3,7 @@
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
 
 
-Description: "\u4E00\u9897\u5728\u5730\u5E54\u6DF1\u5904\u542B\u6709\u5927\u91CF\u53EF\u88C2\u53D8\u5143\u7D20\u7684\u884C\u661F\uFF0C\u5BFC\u81F4\u5931\u63A7\u7684\u6838\u53CD\u5E94\u3002"
+Description: "\u4E00\u9897\u5728\u5176\u5730\u5E54\u6DF1\u5904\u542B\u6709\u5927\u91CF\u53EF\u88C2\u53D8\u5143\u7D20\u7684\u661F\u7403\uFF0C\u5BFC\u81F4\u5931\u63A7\u7684\u6838\u53CD\u5E94\u3002"
 
 PlanetType: Barren
 PlayfieldType: Planet
@@ -162,7 +162,7 @@ RandomResources:
       MaxDroneCount: 2
 #T2
 
-    - Name: AluminiumResource #rich
+    - Name: AluminiumResource #rich  # PV anchor Zirax, Kriel
       Biome: [LowMountains, Mountains]  # (more interesting to mine here)
       IsScalingCount: True 
       CountMinMax: [ 2, 2 ] # (Amount increased, due to smaller target biome)
@@ -171,7 +171,7 @@ RandomResources:
       DroneProb: 0.9
       MaxDroneCount: 2
 
-    - Name: NeodymiumResource #rich
+    - Name: NeodymiumResource #rich # PV anchor Polaris
       IsScalingCount: True 
       CountMinMax: [ 3, 5 ]
       SizeMinMax: [ 7, 9 ]
@@ -471,7 +471,9 @@ POIs:
         - GroupName: PlanetVesselBase
           Faction: Xenu  
           NoShieldReload: True
-          PlanetVesselBaseSetup: PlanetVesselBaseSetup
+
+          # PlanetVesselBaseSetup: PlanetVesselBaseSetup
+
           CountMinMax: [ 1, 1 ] 
           DroneProb: 1.0
           DronesMinMax: [ 2, 3 ]
@@ -1178,24 +1180,24 @@ DroneBaseSetup:
                 Amount: 250
                 Extra: 3
 
-          PlanetVesselBase:
-              Name: PlanetVesselBaseSetup
-              Position3D: [ 0, 102, 0]
-              BaseType: PlanetVesselBase
-              KeyId: 0
-              PlanetVessel:
-                - Name: PVZiraxT2
-                  Mission: PlanetPatrol
-                  FixedMaxSpeed: 5
-                  RespawnDelay: 12
+          # PlanetVesselBase:
+              # Name: PlanetVesselBaseSetup
+              # Position3D: [ 0, 102, 0]
+              # BaseType: PlanetVesselBase
+              # KeyId: 0
+              # PlanetVessel:
+                # - Name: PVZiraxT2
+                  # Mission: PlanetPatrol
+                  # FixedMaxSpeed: 5
+                  # RespawnDelay: 12
 
-                  RangePatrolTask:
-                    Position3D: [ 1500, 80, 0 ]
-                    Radius: 800
-                    DistToGround: 60
+                  # RangePatrolTask:
+                    # Position3D: [ 1500, 80, 0 ]
+                    # Radius: 800
+                    # DistToGround: 60
 
-                  AttackCVCircleAround:
-                    DistToTarget: 210
+                  # AttackCVCircleAround:
+                    # DistToTarget: 210
 
 
 
@@ -1234,6 +1236,7 @@ DroneBaseSetup:
 
 
 
+
   DroneBases:
 
 
@@ -1253,6 +1256,289 @@ DroneBaseSetup:
 
 
   PlanetVessels:
+
+
+
+      # ========= Tesch  # (No interest for this biological world)
+
+
+      # ========= Zirax
+    - Name: OPVZiraxT2
+      Faction: Xenu
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask: 
+        POINameAsPositionRef: [ZiraxDroneBase] 
+        DistToGround: 200
+        Radius: 2000           # Patrol radius- Is mostly inside of planetary faction territory
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+    - Name: OPVZiraxT1
+      Faction: Xenu
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [AluminiumResource] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+
+       # === KRIEL === 
+       # More PVs, but some of them are rater harmless (but much faster)
+
+
+    - Name: OPVKrielT2
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 8
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [KrielDroneBase]
+        Radius: 1500           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 320
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+    # - Name: OPVKrielT2
+      # Faction: Kriel
+      # CountMinMax: [1, 1]
+      # FixedMaxSpeed: 8
+      # DelayBetweenRespawn: 1200
+      # DelayBeforeSelfDestruction: 1200
+      # IsRespawnAfterDestruction: False
+      # RangePatrolTask: 
+        # POINameAsPositionRef: [NeodymiumResource] 
+        # DistToGround: 260
+        # ## (Default patrol area is planet-size)
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+      # The OPV0  are mostly harmless
+    - Name: OPVKrielT0
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [AluminiumResource]  # Might get into a fight with Zirax
+        DistToGround: 260
+        ## (Default patrol area is planet-size)
+
+    - Name: OPVKrielT0
+      Faction: Kriel
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [KrielDefenseT1] 
+        DistToGround: 200
+        ## (Default patrol area is planet-size)
+
+    - Name: OPVKrielT0
+      Faction: Kriel   # Aggressive
+      CountMinMax: [1, 1]
+      FixedMaxSpeed: 18
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [KrielMain] 
+        DistToGround: 250  # (Different height to prevent spawn overlaps)
+        ## (Default patrol area is planet-size)
+
+
+
+
+
+
+      # ========= Arkenians
+    - Name: OPVArkenianT2
+      Faction: ArkenianRepublic
+      CountMinMax: [1, 1]
+#      LevelMod: 2
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        POINameAsPositionRef: [PolarisDroneBase]
+        Radius: 1000           # Patrol radius- Is inside of planetary faction territory
+        DistToGround: 300
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # ========= Polaris outposts
+    - Name: OPVArkenianT0
+      Faction: Polaris
+      CountMinMax: [0, 1]  # 50% chance
+#      LevelMod: 2
+      FixedMaxSpeed: 12
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask:
+        POINameAsPositionRef: [NeodymiumResource]
+        # Radius: 1000           #   Planet wide
+        DistToGround: 300
+      Stock:
+        - Name: DroneSmallFast01Minigun
+          Amount: Infinite
+          Type: FighterDrone
+
+
+      # ========= Prenn 
+
+
+    # - Name: OPVPrennT3
+      # Faction: PrennFederation
+      # CountMinMax: [0, 1]    # Not interested at this world...
+      # FixedMaxSpeed: 12
+      # DelayBetweenRespawn: 1200
+      # DelayBeforeSelfDestruction: 1200
+      # IsRespawnAfterDestruction: False
+      # RangePatrolTask:
+        # POINameAsPositionRef: [PrennDroneBaseT1]
+        # # Radius: 8000           # Patrols the planet
+        # DistToGround: 450
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+    # - Name: BillboardDrone
+      # Faction: PrennFederation
+      # CountMinMax: [1, 1] 
+      # FixedMaxSpeed: 5
+      # DelayBetweenRespawn: 3500
+      # DelayBeforeSelfDestruction: 3500
+      # IsRespawnAfterDestruction: False
+      # RangePatrolTask:
+        # POINameAsPositionRef: [TraderMain]
+        # Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        # DistToGround: 400
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    # - Name: BillboardDrone
+      # Faction: PrennFederation
+      # CountMinMax: [1, 1] 
+      # FixedMaxSpeed: 10
+      # DelayBetweenRespawn: 3500
+      # DelayBeforeSelfDestruction: 3500
+      # IsRespawnAfterDestruction: False
+      # RangePatrolTask:
+        # POINameAsPositionRef: [TraderMain]
+        # Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        # DistToGround: 200
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+    # - Name: BillboardDrone
+      # Faction: PrennFederation
+      # CountMinMax: [1, 1] 
+      # FixedMaxSpeed: 5
+      # DelayBetweenRespawn: 1200
+      # DelayBeforeSelfDestruction: 1200
+      # IsRespawnAfterDestruction: False
+      # RangePatrolTask:
+        # POINameAsPositionRef: [TraderSettlement]
+        # Radius: 500           # Patrol radius- Is inside of planetary faction territory
+        # DistToGround: 350
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+
+
+       # === WARLORD === 
+       # Smaller but faster PVs
+
+    - Name: OPVWarlordT1
+      Faction: Warlord
+      CountMinMax: [0, 1]   # 
+      FixedMaxSpeed: 16
+      DelayBetweenRespawn: 1200
+      DelayBeforeSelfDestruction: 1200
+      IsRespawnAfterDestruction: False
+      RangePatrolTask: 
+        POINameAsPositionRef: [DroneBaseT1]   # Might spawn on top of a Zirax base?
+        DistToGround: 200
+        Radius: 2500           # Patrols around Dronebase; might catch players attacking or raiding it?
+      # Stock:
+        # - Name: DroneSmallFast01Minigun
+          # Amount: Infinite
+          # Type: FighterDrone
+
+    # - Name: OPVWarlordT1
+      # Faction: Warlord
+      # CountMinMax: [0, 1]   #  Random spawn 50% chance
+      # FixedMaxSpeed: 16
+      # DelayBetweenRespawn: 1200
+      # DelayBeforeSelfDestruction: 1200
+      # IsRespawnAfterDestruction: False
+      # RangePatrolTask: 
+        # POINameAsPositionRef: [SathiumResource]  
+        # DistToGround: 200
+        # ## (Default patrol area is planet-size)
+      # # Stock:
+        # # - Name: DroneSmallFast01Minigun
+          # # Amount: Infinite
+          # # Type: FighterDrone
+
+    # - Name: OPVWarlordT1
+      # Faction: Warlord
+      # CountMinMax: [0, 1]   #  Random spawn 50% chance
+      # FixedMaxSpeed: 16
+      # DelayBetweenRespawn: 1200
+      # DelayBeforeSelfDestruction: 1200
+      # IsRespawnAfterDestruction: False
+      # RangePatrolTask: 
+        # POINameAsPositionRef: [CNTRL_IsLawless]   # Otherwise spawns at 0,0,0
+        # DistToGround: 200
+        # ## (Default patrol area is planet-size)
+      # # Stock:
+        # # - Name: DroneSmallFast01Minigun
+          # # Amount: Infinite
+          # # Type: FighterDrone
+
+
+
 
 
 ## === FREE DRONES ==========================================================================================
