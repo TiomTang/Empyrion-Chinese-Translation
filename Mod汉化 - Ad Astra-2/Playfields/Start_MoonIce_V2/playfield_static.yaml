@@ -1,0 +1,403 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "\u96BE\u5EA6: [c][00ff00]\u7B80\u5355[-][/c]\n\n\n\u4E00\u9897\u51B0\u5C01\u7684\u4F34\u661F\uFF0C\u5728\u5176\u5730\u58F3\u4E0E\u5CA9\u77F3\u6838\u5FC3\u4E4B\u95F4\u9690\u85CF\u7740\u6DF1\u9083\u7684\u6D77\u6D0B\u3002\u5FAE\u5F31\u7684\u6709\u673A\u7269\u8D28\u5728\u8868\u9762\u7559\u4E0B\u4E86\u4E94\u5F69\u6591\u6593\u7684\u6761\u7EB9\u2014\u2014\u4EFF\u4F5B\u8BA9\u4EBA\u60F3\u8D77\u592A\u9633\u7CFB\u4E2D\u7684\u90A3\u9897\u6708\u7403\u2026\u2026"
+
+
+PlanetClass: Ice Moon
+PlanetType: MoonIce
+PlayfieldType: Moon
+Difficulty: 2
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.30, 0.40, 0.4"
+
+SkyColor: "0, 0, 0" 
+SkyHorizonColor: "0, 0.1, 0"
+AtmosphereParams: [1, 2]
+
+# Light
+DayLightIntensity: 0.6
+NightLightIntensity: 0.4
+
+LightZenithColor: "0.98, 0.90, 1"
+LightHorizonColor: "1, 0.6, 0.15"
+NightLightColor: "0.78, 0.78, 1"
+
+DayShadowStrength: 1
+NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite3 
+
+# Fog
+# AtmosphereFog: 0.00
+FogCloudIntensity: 0.0
+FogColor: "1, 1, 1"
+# GroundFogIntensity: 0.07
+# GroundFogHeight: 130
+
+# Clouds and Wind
+CloudsDensity: 0.0
+CloudsSharpness: 1
+CloudsBrightness: 0.0
+CloudsOpacity: 0.0
+CloudsZenithColor: "0.1, 0.1, 0.1"
+CloudsHorizonColor: "1, 0.3, 0.1"
+
+WindSpeed: 0
+
+
+SpecialEffectsGlobal:
+  - Name: Clear    # To remove the 'space view clouds'
+    Type: Weather
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 3000
+
+
+# ==============================================================
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 8
+# ======================================================================================================
+      # DistTypeWorm:
+        # FreqDirChange: 0.2
+        # DirChangeMagnitude: 0.2
+        # MaxLength: 50
+        # DeepnessType: 0 #Depth Style 0=Undefined, 1=Free, 2=Shallow
+# ======================================================================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: SiliconResource   # Shallow
+      Biome: [ Mountains, PlainsEdge, Plains, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 3, 5 ]
+      SizeMinMax: [ 5, 7 ]
+      DepthMinMax: [ 3, 8 ]
+      DroneProb: 0.4
+      #DistTypeCylinder:
+        #MaxRadius: 10
+        #YVariance: 3
+
+    - Name: CobaltResource    # Mountains, shallow
+      Biome: [ Mountains, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 4, 9 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1      
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 8
+      
+    - Name: MagnesiumResource  # Mountains, shallow, very poor
+      Biome: [ Mountains, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 1, 2 ]
+      SizeMinMax: [ 2, 3 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      #DistTypeCylinder:
+        #MaxRadius: 8
+        #YVariance: 6
+      
+    - Name: MagnesiumResource  # Below ice, rich -> Needs HV excavator or autominer
+      Biome: [ LayeredIce, IceSheet, CrustedIce ]
+      IsScalingCount: True 
+      CountMinMax: [ 3, 4 ]  #2,2
+      SizeMinMax: [ 6, 7 ]
+      DepthMinMax: [ 35, 45 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1       
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 8
+     
+    - Name: CobaltResource     # Deep below ice, rich -> Needs HV excavator or autominer
+      Biome: [ LayeredIce, IceSheet, CrustedIce ]
+      IsScalingCount: True 
+      CountMinMax: [ 3, 3 ]
+      SizeMinMax: [ 8, 9 ]
+      DepthMinMax: [ 45, 55 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 8
+
+    - Name: IronResource    # Very shallow, meteorite impact anywhere
+      # Biome: [ Mountains, SmallCrater, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 5, 7 ] 
+      SizeMinMax: [ 4, 7 ] 
+      DepthMinMax: [ 2, 5 ]
+      DroneProb: 0.3      
+      MaxDroneCount: 1
+      #DistTypeCylinder:
+        #MaxRadius: 3
+        #YVariance: 3
+      
+    - Name: PromethiumResource # Shallow, meteorite impact
+      Biome: [ SmallCrater, Rifts, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 2, 4 ]
+      SizeMinMax: [ 3, 6 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DepthMinMax: [ 0, 1 ]
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 10
+      
+    - Name: PentaxidResource   # Shallow, meteorite impact
+      Biome: [ SmallCrater ]
+      IsScalingCount: True 
+      CountMinMax: [ 4, 5 ]
+      SizeMinMax: [ 3, 4 ]
+      DroneProb: 0.6
+      MaxDroneCount: 2
+      DepthMinMax: [ 0, 5 ]
+      #DistTypeCylinder:
+        #MaxRadius: 5
+        #YVariance: 3
+
+### Resource Asteroids
+AsteroidResources:
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: CobaltResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: MagnesiumResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.1
+     - Name: PentaxidResource
+       Threshold: 0.2
+       Amount: 0.1
+
+### POIs
+POIs:
+    Random:
+
+# =============================================== Faction Zirax
+# Drone Base
+        - GroupName: R2DroneBase
+          Faction: Zirax
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetup
+          IsImportant: True
+          CountMinMax: [ 0, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 5 ]
+          ReserveCount: 5
+          Properties:
+            - Key: RegenAfter
+              Value: 4320
+
+# Near Drone Base
+        - GroupName: R2XenuAuxT1
+          Faction: Zirax
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOINear: [R2DroneBase]
+          SpawnPOINearRange: [600, 800]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Defenses for Drone Base
+        - GroupName: R2XenuDefenseT1
+          Faction: Zirax
+          Territory: False
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0.7
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          SpawnPOIAvoid: [R2XenuDefenseT3]
+          SpawnPOIAvoidDistance: 500
+          SpawnPOINear: [R2DroneBase]
+          SpawnPOINearRange: [300, 400]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# =============================================== Faction Polaris
+# Trade Station
+        - GroupName: R2PolarisTradePlanet
+          Faction: Polaris
+          IsImportant: True
+          BiomesExcluded: [ PolarSnow, Radiated, RadiatedFog ]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnResource: ["PromethiumResource:0-1"]
+          SpawnResourceRange: [150,600]
+          Properties:
+            - Key: Discovery
+              Value: False
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 4320
+
+        - GroupName: R2PolarisAuxT1
+          Faction: Polaris
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [R2PolarisTradePlanet]
+          SpawnPOINearRange: [175, 300]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: R2PolarisDefenseT2
+          Faction: Polaris
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0.3
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [R2PolarisTradePlanet]
+          SpawnPOINearRange: [250, 500]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# =============================================== Faction Zirax
+# Random POIs
+        - GroupName: R2XenuAuxT1
+          Faction: Zirax
+          IsScalingCount: True
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0.6
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [R2DroneBase]
+          SpawnPOIAvoidDistance: 750
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Crashed ship near Drone Base
+        - GroupName: CrashedShip
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          SpawnPOINear: [R2DroneBase]
+          SpawnPOINearRange: [400, 600]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+# Crashed ships
+        - GroupName: CrashedShip
+          Faction: None
+          CountMinMax: [ 0, 1 ]
+          IsScalingCount: True
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          SpawnPOIAvoid: [R2DroneBase]
+          SpawnPOIAvoidDistance: 1000
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 0
+          PresetStyle: 0
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeSlow01Minigun
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallAttackBase
+                Amount: 300
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 400
+                Extra: 3
+
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 2500
+          Radius: 1500

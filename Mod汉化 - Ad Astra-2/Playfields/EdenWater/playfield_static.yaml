@@ -1,0 +1,864 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+
+
+Description: "\u96BE\u5EA6: [c][00ff00]\u7B80\u5355[-][/c]\n\n\n\u4E00\u4E2A\u51E0\u4E4E\u5B8C\u5168\u88AB\u6DB2\u6001\u6C34\u8986\u76D6\u7684\u4E16\u754C\u3002\u5BF9\u4E8E\u90A3\u4E9B\u6562\u4E8E\u6DF1\u5165\u6DF1\u6E0A\u7684\u4EBA\u6765\u8BF4\uFF0C\u8BB8\u591A\u5929\u7136\u8D44\u6E90\u53EF\u4EE5\u5728\u6D77\u5E95\u627E\u5230\u3002"
+
+
+PlanetClass: Water
+PlanetType: Water
+PlayfieldType: Planet
+Difficulty: 2
+IndestructibleTerrain: True
+
+BaseAttackCount: 0
+
+UseFixed: True
+UseRandom: True
+
+LandClaimZone: Device
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Atmosphere and Sky:
+AtmosphereEnabled: True
+AtmosphereColor: "0.3, 0.5, 0.9"
+# OrbitUsesLightColor: True
+
+
+# Basic atmosphere colour
+AtmosphereParams: [1, 1.6] 
+SkyColor: "0.8, 0.8, 0.85"
+SkyHorizonColor: "0.5, 0.25, 0.5"
+FogColor: "0.85, 0.70, 0.85" 
+
+# Fog
+FogCloudIntensity: 0.2
+AtmosphereFog: 0.1
+GroundFogIntensity: 0
+GroundFogHeight: 200   # Fitted to terrain height
+
+# Light
+DayLightIntensity: 2.4
+NightLightIntensity: 1.8
+
+DayShadowStrength: 1.0
+NightShadowStrength: 1.0
+
+LightZenithColor: "0.5, 0.5, 0.7"
+LightHorizonColor: "0.6, 0.2, 0.03"
+NightLightColor: "0.73, 0.8, 1.2"
+
+# Cloud colours
+CloudsZenithColor: "0.75, 0.85, 1.3"
+CloudsHorizonColor: "0.9, 0.2, 0.05"
+CloudsNightZenithColor: "0.05, 0.056, 0.072"
+CloudsNightHorizonColor: "0.05, 0.056, 0.072"
+
+# Other parameters(Only active if NO weather is defined)
+CloudsDensity: 0.2
+CloudsSharpness: 0.3
+CloudsBrightness: 0.3
+CloudsOpacity: 0.1
+
+# Wind
+WindSpeed: 3
+
+
+
+# ==============================================================
+
+
+# Special Effects 
+SpecialEffectsLocal:
+    # (Multiple entries: Effect is tied to terrain height, not the water surface level)
+  - Name: FireFliesGreen
+    Biome: [ Abyss ]
+    Time: Night
+    MaxHeight: 70
+  - Name: FireFliesGreen
+    Biome: [ DeepSea ]
+    Time: Night
+    MaxHeight: 50
+  - Name: FireFliesGreen
+    Biome: [ Shelf ]
+    Time: Night
+    MaxHeight: 40
+  - Name: FireFliesGreen
+    Biome: [ KelpForest]
+    Time: Night
+    MaxHeight: 35
+
+
+
+  - Name: DandelionsFew
+    Biome: [ TropicalHills, Grassland, ColdPlains ]
+    Time: Day
+    MaxHeight: 10
+    
+  - Name: ButterfliesFew
+    Biome: [ Grassland, PalmForest, HighForest, DeepForest ]
+    Time: Day
+    MaxHeight: 10
+    
+  - Name: Pollen
+    Biome: [ HighPalms, HighForest ]  
+    Time: Day
+    MaxHeight: 20
+  - Name: Mosquitos
+    Biome: [ HighPalms, PalmForest, DeepForest, Marsh, Swamp, SwampShore, WaterLilies ]  
+    Time: Day
+    MaxHeight: 25
+  - Name: ButterfliesBlue
+    Biome: [ Forest, Marsh, Cliffs, PalmForest, DeepForest ]
+    Time: Day
+    MaxHeight: 20
+  - Name: Dragonflies
+    Biome: [ Marsh, Swamp, SwampShore, Water, ShallowWater ]
+    Time: Day
+    MaxHeight: 20
+
+
+  - Name: Moths
+    Biome: [ PalmForest ]
+    Time: Night
+    MaxHeight: 10
+
+  - Name: FireFliesRed
+    Biome: [ PalmBeach, PalmDunes, PalmForest, HighPalms ]
+    Time: Night
+    MaxHeight: 20
+
+  - Name: Moths
+    Biome: [ PalmForest, PalmBeach, Savanna, Grassland ]
+    Time: Night
+    MaxHeight: 20
+
+
+
+SpecialEffectsGlobal:
+# Weather
+    # Standard
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 2
+    Delay: 2
+    Lifetime: 1000
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 15
+    Delay: 15
+    Lifetime: 300
+
+    # Bad weather
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 400
+
+    # Special
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+
+
+# Global Effect
+  - Name: BirdFlocksCrows
+    Biome: [ Any ]
+    Time: Day
+    InitialDelay: 1 
+    Delay: 4 
+    Lifetime: 600 
+    PlyDist: 100
+    SpawnY: 30
+    Struct: True
+
+# ==============================================================
+# Size Scaling of ore amount. Poor = 66%. Normal = 100%. Rich = 143%. Gold = 66%. Penatix = 50%.
+# ======================================================================================================
+# 1=2          6=542      11=3300     16=10200    21=23200
+# 2=20         7=862      12=4300     17=12300    22=26700
+# 3=67         8=1200     13=5500     18=14600    23=30500
+# 4=160        9=1800     14=6800     19=17200    24=34700
+# 5=314        10=2500    15=8400     20=20100    25=39200
+# ======================================================================================================
+      # #DistTypeCylinder:
+        # #MaxRadius: 13
+        # #YVariance: 8
+# ======================================================================================================
+      # DistTypeWorm:
+        # FreqDirChange: 0.2
+        # DirChangeMagnitude: 0.2
+        # MaxLength: 50
+        # DeepnessType: 0 #Depth Style 0=Undefined, 1=Free, 2=Shallow
+# ======================================================================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: CopperResource
+      IsImportant: True
+      Biome: [ ShallowWater, ShallowWater_1 ]
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      PlaceAt: UnderWater
+      SizeMinMax: [ 4, 6 ]
+      DepthMinMax: [ 30, 40 ] 
+      DroneProb: 0.3
+      MaxDroneCount: 1
+      #DistTypeCylinder:
+        #MaxRadius: 5
+        #YVariance: 50
+
+    - Name: CobaltResource
+      IsImportant: True
+      Biome: [ BlackSmoker ]
+      IsScalingCount: True
+      CountMinMax: [ 3, 4 ]
+      PlaceAt: UnderWater
+      SizeMinMax: [ 5, 6 ] 
+      DepthMinMax: [ 5, 10 ] 
+      DroneProb: 1
+      MaxDroneCount: 8
+
+    - Name: PromethiumResource
+      IsImportant: True
+      Biome: [ BlackSmoker ]
+      IsScalingCount: True
+      CountMinMax: [ 1, 1 ]
+      PlaceAt: UnderWater
+      SizeMinMax: [ 8, 9 ]
+      DroneProb: 1 
+      MaxDroneCount: 15
+      DepthMinMax: [ 0, 1 ]
+      #DistTypeCylinder:
+        #MaxRadius: 64
+        #YVariance: 3
+      
+    - Name: PromethiumResource
+      Biome: [ Abyss ]
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      PlaceAt: UnderWater
+      SizeMinMax: [ 3, 4 ]
+      DroneProb: 0.8
+      MaxDroneCount: 3
+      DepthMinMax: [ 0, 1 ]
+      #DistTypeCylinder:
+        #MaxRadius: 13
+        #YVariance: 10
+
+    - Name: PentaxidResource  # 'Nice find'
+      IsImportant: True
+      Biome: [ ColdDark, Abyss ]
+      IsScalingCount: True
+      CountMinMax: [ 3, 5 ]
+      PlaceAt: UnderWater
+      SizeMinMax: [ 2, 3 ] 
+      DepthMinMax: [ 8, 12 ] 
+      DroneProb: 1
+      MaxDroneCount: 3
+      #DistTypeCylinder:
+        #MaxRadius: 3
+        #YVariance: 3
+
+
+### Resource Asteroids
+AsteroidResources:
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.1
+
+     - Name: CobaltResource
+       Threshold: 0.2
+       Amount: 0.1
+
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.1
+
+
+### POIs
+POIs:
+    Random:
+
+       # ================================
+        # Floating UCH Outposts
+        - GroupName: Eden_UCHOceanAuxT2
+          Faction: UCH
+          # NoShieldReload: True
+          BiomesExcluded: [ Abyss, DeepSea, BlackSmoker, ColdDark ]
+#          # NoShieldReload: True
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          PlaceAt: OnWater
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: Music
+              Value: Reaver
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Eden_UCHOceanAuxT1
+          Faction: UCH
+          # NoShieldReload: True
+          BiomesExcluded: [ Abyss, DeepSea, BlackSmoker, ColdDark ]
+#          # NoShieldReload: True
+          CountMinMax: [ 2, 3 ]
+          PlaceAt: OnWater
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [Eden_UCHOceanAuxT2]
+          SpawnPOINearRange: [150, 300]
+          Properties:
+            - Key: Music
+              Value: Reaver
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Eden_UCHOceanAuxT1
+          Faction: UCH
+          # NoShieldReload: True
+          BiomesExcluded: [ Abyss, DeepSea, BlackSmoker, ColdDark ]
+#          # NoShieldReload: True
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          PlaceAt: OnWater
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: Music
+              Value: Reaver
+            - Key: RegenAfter
+              Value: 720
+
+# UCH Underwater Mission Labs =====================================================
+        - GroupName: Eden_UCHUnderwaterLab1
+          Faction: UCH
+          # NoShieldReload: True  
+          Territory: False         
+          PlaceAt: UnderWater
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: Eden_UCHUnderwaterLab2
+          Faction: UCH
+          # NoShieldReload: True  
+          Territory: False         
+          PlaceAt: UnderWater
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: Eden_UCHUnderwaterLab3
+          Faction: UCH
+          # NoShieldReload: True  
+          Territory: False         
+          PlaceAt: UnderWater
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+       # ================================
+        # Helios Hydro Plant
+        - GroupName: Eden_HeliosMainWater
+          Faction: Polaris
+          # NoShieldReload: True
+          # Biome: [ Abyss, DeepSea, Shelf, KelpForest, CoralReefs, OpenSea ]
+#          # NoShieldReload: True
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True
+          PlaceAt: OnWater
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: Music
+              Value: SunnySkies
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+        # Random Polaris Water Outposts
+        - GroupName: Eden_PolarisWaterAuxT1
+          Faction: Polaris
+          # NoShieldReload: True
+          # Biome: [ Abyss, DeepSea, Shelf, KelpForest, CoralReefs, OpenSea ]
+#          # NoShieldReload: True
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          PlaceAt: OnWater
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+       # ================================
+        # Helios Solar Farms
+        - GroupName: Eden_HeliosSolarFarmWater
+          Faction: Polaris
+          # Biome: [ Abyss, DeepSea, Shelf, KelpForest, CoralReefs, OpenSea ]
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True
+          PlaceAt: OnWater
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+
+       # ================================
+        # Helios Navigation Buoys
+        - GroupName: Eden_HeliosBuoy
+          Faction: Polaris
+          # Biome: [ Abyss, DeepSea, Shelf, KelpForest, CoralReefs, OpenSea ]
+          CountMinMax: [ 4, 6 ]
+          IsScalingCount: True
+          PlaceAt: OnWater
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+
+
+# Ocean colony
+        - GroupName: R2PolarisSettlementWater
+          Faction: Polaris
+          Biome: [ OpenSea, DeepWater, Water ]
+          PlaceAt: OnWater
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720 
+
+# Ocean defenses for colony
+        - GroupName: R2PolarisDefenseWater
+          Faction: Polaris
+          Territory: False
+          Biome: [ OpenSea, DeepWater, Water ]
+          PlaceAt: OnWater
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [R2PolarisDefenseWater]
+          SpawnPOIAvoidDistance: 250
+          SpawnPOINear: [R2PolarisSettlementWater]
+          SpawnPOINearRange: [150, 200]
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720 
+
+# Ocean colony
+        - GroupName: R2ColonistMainOcean
+          Faction: Colonists
+          Territory: False
+          Biome: [ OpenSea, DeepWater, Water ]
+          PlaceAt: OnWater
+          CountMinMax: [ 2, 3 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+# Ocean defenses for colony
+        - GroupName: R2ColonistDefenseOcean
+          Faction: Colonists
+          Territory: False
+          Biome: [ OpenSea, DeepWater, Water ]
+          PlaceAt: OnWater
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [R2ColonistDefenseOcean]
+          SpawnPOIAvoidDistance: 250
+          SpawnPOINear: [R2ColonistMainOcean]
+          SpawnPOINearRange: [150, 200]
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+
+
+# Ocean colonies
+        - GroupName: R2ColonistMainOcean
+          Faction: Colonists
+          Territory: False
+          Biome: [ OpenSea, DeepWater, Water ]
+          PlaceAt: OnWater
+          CountMinMax: [ 0, 4 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 4320
+
+
+          # Alien Ocean Life
+        - GroupName: Eden_OceanLifeAuxT2
+          Faction: Alien
+          Biome: [ Graveyard, ColdDark, BlackSmoker, Abyss ]
+          PlaceAt: UnderWater
+          CountMinMax: [ 3, 6 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapDistance
+              Value: 100
+            - Key: MapMarker
+              Value: Neutral
+
+          # Alien Ocean Life on surface
+        - GroupName: Eden_OceanLifeSurfaceT1
+          Faction: None
+          Biome: [ Graveyard, ColdDark, BlackSmoker, Abyss ]
+          PlaceAt: OnWater
+          CountMinMax: [ 12, 24 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: MapMarker
+              Value: Neutral
+
+          # Alien Ocean Life underwater
+        - GroupName: Eden_OceanLifeFloorT1
+          Faction: None
+          Biome: [ Abyss ]
+          PlaceAt: UnderWater
+          CountMinMax: [ 12, 24 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+            - Key: MapMarker
+              Value: Neutral
+
+          # Crashed ships.
+        - GroupName: CrashedShip
+          Faction: None
+          Biome: [ DeepSea, Abyss ]
+          PlaceAt: UnderWater
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 50 
+            - Key: HudDistance
+              Value: 50
+
+          # Random Ocean Ruins
+        - GroupName: Eden_RuinsOceanAuxT1
+          Faction: None
+          Biome: [ Graveyard, ColdDark, BlackSmoker, Abyss, DeepSea ]
+          PlaceAt: UnderWater
+          CountMinMax: [ 12, 16 ]
+          IsScalingCount: True
+          DroneProb: 0.1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 250
+            - Key: HudDistance
+              Value: 250
+
+        - GroupName: Eden_RuinsOceanAuxT2
+          Faction: None
+          Biome: [ Graveyard, ColdDark, BlackSmoker, Abyss, DeepSea ]
+          PlaceAt: UnderWater
+          CountMinMax: [ 6, 9 ]
+          IsScalingCount: True
+          DroneProb: 0.1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 250
+            - Key: HudDistance
+              Value: 250
+
+          # Bones
+        - GroupName: Eden_Bones
+          Faction: None
+          # Biome: [ DeepSea, Abyss ]
+          PlaceAt: UnderWater
+          CountMinMax: [ 12, 16 ]
+          IsScalingCount: True
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+
+    Fixed:
+
+
+
+    FixedPlayerStart:
+        - Mode: Creative
+          SubMode: Empty
+          Armor: ArmorLight
+          Pos: [ 423, 147, 693 ]
+          RotY: 160
+
+        - Mode: Creative
+          SubMode: Normal
+          Armor: ArmorLight
+          Pos: [ 435, 52, 868 ]  
+          RotY: 30
+
+        - Mode: Debug
+          Armor: ArmorLight
+          Pos: [ 0, 147, 0 ]
+          RotY: 160
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorLight
+          Items: [ "Pistol, AssaultRifle, PlayerBike, SurvivalTool, ConstructorSurvival, SurvivalTent, Flashlight, OreScanner, Drill, Chainsaw, Bandages:3, AntibioticOintment:3, StomachPills:3, PowerBar:3, EnergyDrink:2, PearthingStage1, DurianRoot, CornStage1, SnakeweedStage1, RadarSuitT1, Core:1, IronIngot:250, CopperIngot:250, SiliconIngot:200, BioFuel:8, 50Caliber:100, 5.8mmBullet:100", "SurvivalTent, Flashlight, AntibioticOintment:1, Bandages:1, PowerBar:1, SurvivalTool", "SurvivalTool, SurvivalTent, Flashlight, Bandages:1, WaterBottle: 1", "#FreshStart: SurvivalTool, SurvivalTent, PlayerBike, Flashlight, Bandages:1, WaterBottle: 1" ]
+
+# ==============================================================
+# ==============================================================
+
+# Drones
+# ------------ Aerodrones with propellers.
+# DroneSmallZiraxEMP
+# DroneAeroZiraxMinigun
+# DroneAeroZiraxCannon
+# DroneAeroZiraxRocket
+
+# ------------ Small hoverdrones
+# DroneHoverZiraxMinigun
+# DroneHoverZiraxLaser
+# DroneHoverZiraxRocket
+
+# ------------ Large gunships
+# DroneLargeZiraxMinigun
+# DroneLargeZiraxRocket
+# DroneLargeZiraxPlasma
+
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 6
+          PresetStyle: 3
+          Stock:
+
+              - Name: DroneHoverZiraxMinigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneHoverZiraxRocket
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeZiraxMinigun
+                Amount: 50
+                Extra: 0
+
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 150
+                Extra: 3
+
+              - Name: Mechanoid
+                Amount: 300
+                Extra: 3
+
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 5000
+          Radius: 3000
+
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -5000
+          Radius: 3000
+
+# ==============================================================
+# ==============================================================
+
+SpawnRateZones:
+
+SpawnZones:
+
+     # Telluropods near resources
+   - SpawnAt: [PromethiumResource, CobaltResource]
+     Radius: 200
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "0.0, 0.0, 0.6, 0.8"
+     Entities:
+       - Names: [Telluropods]
+         Biomes: [Abyss, ColdDark, BlackSmoker, DeepSea]
+         AllowInWater: true 
+         Amount: 800
+         Period: Always
+         DelayMinMax: [36, 36]
+
+### Creatures
+CreatureSpawning:
+
+      # Water  ===
+      # Standard Telluropods
+    - Biomes: [KelpForest, CoralReefs, OpenSea, ShallowWater, ShallowWater_1, ShallowWaterLilies, Surf, Surf_1, Shore, GravelBeach, SwampShore, Swamp, Marsh]
+      Entities:
+        - Name: Telluropods
+          Period: Always
+          Amount: 50
+          DelayMinMax: [3, 5] 
+          AllowInWater: true 
+          Color: "0, 0, 0.7"
+
+      # Extra many Telluropods at some shores
+    - Biomes: [ShallowWaterLilies, SwampShore]
+      Entities:
+        - Name: Telluropods
+          Period: Always
+          Amount: 200
+          DelayMinMax: [3, 5] 
+          AllowInWater: true 
+          Color: "0, 0, 0.7"
