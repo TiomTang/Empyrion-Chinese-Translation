@@ -1,76 +1,100 @@
-# 汉化包说明
+# Empyrion 银河生存 汉化包
 
-Github发布:  [TiomTang/Empyrion-Chinese-Translation](https://github.com/TiomTang/Empyrion-Chinese-Translation)（关注不迷路）
+GitHub 发布：[TiomTang/Empyrion-Chinese-Translation](https://github.com/TiomTang/Empyrion-Chinese-Translation)（关注不迷路）
 
-Q群交流：455283526 （入群问题答案：CN9527）
----
-
-## 【说明】
-
-这是一份采集自网上流行版本的汉化文件，经过本人细心校对，基本消除了各种ffffff的颜色代码、各种错行，以及进行小幅度的翻译内容修正。由于原RE1的语言文件就有部分词条缺失（够乱的），因为不知道内容，无法修正。除此之外，有错漏的地方欢迎补充。
-
-RE2的文档8/17加入施工，不定时更新。(已完成)
-
-本汉化项目将会持续跟进游戏的更新而更新，并不断补充完善。
-
-## 【汉化适用】
-
-1. 帝国霸业银河生存游戏本体 1.17
-2. Mod：重铸伊甸园1 Build 86 (仅做修复，不再深度汉化)
-3. Mod：重铸伊甸园2 Build 46
-4. Mod：AdA-2 1.3.2（2026-6-15新增）
-
-注意：本体汉化必打，Mod是玩哪个打哪个
-
-## 【使用方法】
-
-### 一、Steam
-
-1. 下载：
-
-    - 右上角绿色Code→Download ZIP，解压后按下面方法覆盖游戏原文件即可。
-2. 本体汉化：
-
-    - 找到游戏本体所在的目录，在Steam库页面，左边目录找到游戏名称，右键点击游戏选择【管理】>【浏览本地文件】，如：C:\Steam\steamapps\common\Empyrion - Galactic Survival
-    - 将【必需 - 本体汉化】里面文件复制到该目录，覆盖原文件即可。
-3. Reforged Eden 1/2 Mod汉化：
-
-	将【Mod汉化 - Reforged Eden 1】/【Mod汉化 - Reforged Eden 2】里面文件复制到相应Mod根目录目录。（请按你们实际的steam安装游戏路径，假如都装C盘即如下路径）
-
-    - RE1目录：C:\Steam\steamapps\workshop\content\383120\2550354956
-    - RE2目录：C:\Steam\steamapps\workshop\content\383120\3143225812
-
-### 二、Epic
-
-1. 下载：
-
-	- 右上角绿色Code→Download ZIP，解压后按下面方法覆盖游戏原文件即可。
-2. 本体汉化：
-
-    - 将目录 【必需 - 本体汉化】 里面的【Content】覆盖到游戏根目录同名目录。
-3. Mod汉化：
-
-    - 首先把mod打上，一般应该放到游戏根目录路径如：【Empyrion - Galactic Survival\Content\Scenarios】中，如RE2解压出来是【Reforged Eden 2】文件夹，整个拖到【Scenarios】目录中，然后看起来路径应该是【Empyrion - Galactic Survival\Content\Scenarios\Reforged Eden 2】。
-    - 然后打汉化包，将【Mod汉化 - Reforged Eden 2】目录里面所有东西拖到上面的Mod本体里面，提示覆盖后确定。RE1也是这样打。
-
-### 三、服务器
-
-1. 使用【本体汉化】里Content目录覆盖游戏根目录下的Content文件夹。
-2. 使用剧本启动游戏，如Reforged Eden 2，则到如下路径 Content\Scenarios\Reforged Eden 2，把汉化文件覆盖上去。
-
-
-## 【注意事项】
-
-1. 现发现PDA的汉化文本在旧存档不生效，必须开新档。不清楚这是游戏机制问题还是游戏程序的问题。为确保汉化文本正确加载，尽量使用新档。  
-    感谢#1兄弟提出的一个解决方法，在游戏中按~键呼出控制台，输入pda readdata,刷新pda数据，实测可以生效，可能会有一个副作用是会重置任务进度，酌情考虑使用哈！
-2. 现发现个别NPC无法正常对话，表现对话框为空。经排查后，不是文本问题，应该是游戏本体对中文的一个bug。切换为英文后小退再进入可以继续对话，对话完后再切回中文即可。
+QQ 交流群：**455283526**（入群答案：CN9527）
 
 ---
 
-**如果您对我的项目感到满意，可以请我喝杯咖啡吗？**
+## 📋 项目简介
+
+本项目提供《Empyrion - Galactic Survival》（帝国霸业银河生存）的简体中文汉化，持续跟进游戏更新。
+
+- **精校文本**：基本消除了网上流行版本中残留的颜色代码（`ffffff`）、错行等问题，并进行了小幅度的翻译修正。
+- **持续维护**：随游戏版本更新同步跟进，不断补充完善。
+- **Mod 支持**：覆盖主流 Mod（重铸伊甸园 1/2、AdA-2）。
+
+> 原 RE1 语言文件有部分词条缺失——因为不知道原文内容，暂无法修正。有错漏的地方欢迎反馈。
+
+---
+
+## 📦 汉化覆盖
+
+| 项目 | 版本 | 状态 |
+|------|------|------|
+| 游戏本体 | v1.18 | 持续跟进 |
+| Mod：重铸伊甸园 1（RE1） | Build 86 | 仅维护修复，不再深度汉化 |
+| Mod：重铸伊甸园 2（RE2） | Build 46 | 活跃跟进 |
+| Mod：AdA-2 | 1.3.2 | 2026-06-15 新增 |
+
+> **注意**：本体汉化必须安装；Mod 汉化按需安装——玩哪个打哪个。
+
+---
+
+## 🚀 快速开始
+
+### 下载
+
+点击仓库右上角 **Code → Download ZIP**，解压后按下方对应平台操作。
+
+### Steam
+
+#### 本体汉化
+
+1. 在 Steam 库中右键游戏 → **管理** → **浏览本地文件**
+2. 进入类似 `C:\Steam\steamapps\common\Empyrion - Galactic Survival` 的目录
+3. 将 `必需 - 本体汉化` 中的文件复制到该目录，覆盖原文件
+
+#### Mod 汉化
+
+将对应 Mod 汉化文件夹中的内容复制到 Mod 根目录（先要订阅Mod）：
+
+| Mod | 路径 |
+|-----|------|
+| RE1 | `C:\Steam\steamapps\workshop\content\383120\2550354956` |
+| RE2 | `C:\Steam\steamapps\workshop\content\383120\3143225812` |
+| AdA-2 | `C:\Steam\steamapps\workshop\content\383120\3450067750` |
+
+### Epic
+
+#### 本体汉化
+
+将 `必需 - 本体汉化` 中的 `Content` 文件夹覆盖到游戏根目录的同名文件夹。
+
+#### Mod 汉化
+
+1. 将 Mod 放置到 `游戏根目录\Content\Scenarios\`（例如 RE2 解压后应位于 `Empyrion - Galactic Survival\Content\Scenarios\Reforged Eden 2`）
+2. 将对应汉化文件夹中的所有内容拖入 Mod 目录，提示覆盖时确认
+
+### 服务器
+
+1. 用 `必需 - 本体汉化` 中的 `Content` 文件夹覆盖游戏根目录的 `Content`
+2. 用剧本启动游戏后，进入对应 Mod 路径（如 `Content\Scenarios\Reforged Eden 2`），将汉化文件覆盖上去
+
+---
+
+## ⚠️ 已知问题
+
+### PDA 文本旧存档不生效
+
+PDA 汉化文本在旧存档中不加载，需开新档。不确定是游戏机制还是程序 bug。
+
+**临时方案**：游戏中按 `~` 呼出控制台，输入 `pda readdata` 刷新 PDA 数据（实测可用）。⚠ 可能会重置任务进度，请酌情使用。
+
+### 个别 NPC 对话框空白
+
+表现为对话框无文字，非文本问题，应为游戏对中文的兼容性 bug。
+
+**临时方案**：切换为英文 → 小退重进 → 完成对话 → 切回中文。
+
+---
+
+## ☕ 支持项目
+
+如果觉得这个项目对你有帮助，欢迎请我喝杯咖啡 ☕
 
 ![赞赏码](assets/赞赏码.png)
 
-感谢名单：youzi（贴吧）、杨文、史莱姆、Think and do、怀念小时候的空气、陈+、向阳、Z+、Nikita Buyanov 等（以及部分匿名小伙伴）
+### 感谢名单
 
-‍
+youzi（贴吧）、杨文、史莱姆、Think and do、怀念小时候的空气、陈+、向阳、Z+、Nikita Buyanov 等，以及部分匿名小伙伴 🙏
