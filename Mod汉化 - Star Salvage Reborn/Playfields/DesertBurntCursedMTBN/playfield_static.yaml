@@ -1,0 +1,397 @@
+Description: "\u8FD9\u9897\u661F\u7403\u906D\u53D7\u4E86\u4E00\u573A\u672A\u77E5\u7684\u707E\u96BE\uFF0C\u4F7F\u5B83\u53D8\u6210\u4E86\u4E00\u7247\u7070\u70EC\u6C99\u6F20\u3002\n\n\n\n\u4F46\u4ECD\u6709\u5E78\u5B58\u8005\uFF1A\n\n\u4ECE\u4E0B\u6C34\u9053\u548C\u6D1E\u7A74\u4E2D\uFF0C\u751F\u547D\u7F13\u6162\u5730\u63A2\u7D22\u7740\u4E00\u4E2A\u964C\u751F\u7684\u65B0\u4E16\u754C\u3002"
+
+
+
+PlanetType: DesertBurnt
+PlayfieldType: Planet
+AtmosphereEnabled: True
+Difficulty: 3
+# Blueprint factory is disabled on this starting planet.
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+# AllowBlueprintBA: False
+AllowBlueprintHV: False
+AllowCV: False   
+LandClaimZone: Device
+SpecialEffectsLocal:
+-  Name: FireFliesGreen
+   Biome: [Water, ShallowWater, Shore]
+   Time: Night
+   MaxHeight: 40
+-  Name: FireFliesGreenFew
+   Biome: [Plains, Sand, Flowers, FlowersEdge, Wadi, DustBowl]
+   Time: Night
+   MaxHeight: 150
+-  Name: Pollen
+   Biome: [Plains, DustBowl, Plantation, Flowers, FlowersEdge, Oasis]
+   Time: Day
+   MaxHeight: 150
+-  Name: FireFliesGreen
+   Biome: [Oasis, Plantation]
+   Time: Night
+   MaxHeight: 150
+SpecialEffectsGlobal:
+-  Name: Clear
+   Type: Weather
+   Delay: 2
+   Lifetime: 1200
+-  Name: HeatWave
+   Type: Weather
+   InitialDelay: 48
+   Delay: 12
+   Lifetime: 1200
+-  Name: Wind
+   Type: Weather
+   InitialDelay: 20
+   Delay: 8
+   Lifetime: 500
+AtmosphereColor: 0.1, 0, 0
+SkyColor: 0, 0, 0
+SkyHorizonColor: 0, 0, 1
+AtmosphereParams: [10, 3]
+LightZenithColor: 0.01,0.01,0.01
+LightHorizonColor: 0.05, 0, 0
+DayLightIntensity: 0.05
+NightLightIntensity: 0.05
+NightLightColor: 0.1, 0, 0
+SunFlare: EnvironmentalEffects/SunFlareRed
+AtmosphereFog: 0.35
+FogColor: 0, 0, 0
+FogCloudIntensity: 0.8
+GroundFogIntensity: 0.05
+GroundFogHeight: 60
+CloudsDensity: 1
+CloudsSharpness: 0
+CloudsBrightness: 0
+CloudsOpacity: 0.5
+CloudsZenithColor: 0.03, 0, 0
+CloudsHorizonColor: 0.03, 0.03, 0
+CloudsNightZenithColor: 0, 0, 0.03
+CloudsNightHorizonColor: 0.02, 0.01, 0.02
+WindSpeed: 3
+PvP: True
+
+RandomResources:
+
+AsteroidResources:
+
+POIs:
+    Random:
+        - GroupName: BN_DroneBase                  #CommandCenter
+          Faction: Zirax  
+          NoShieldReload: True
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetup
+          Biome: [ Plateau, LowMountains, LowMountains_1, Mountains, SandDrift ]
+          IsImportant: True
+          CountMinMax: [ 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: RadosDefenceT1Sand
+          Faction: Rados  
+          NoShieldReload: True
+          CountMinMax: [ 2, 2 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True
+          SpawnPOINear: [BN_DroneBase]
+          SpawnPOINearRange: [200, 300]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+# Remnants of Civilization
+
+        - GroupName: JunkT1
+          Faction: None  
+          BiomesExcluded: [ LowMountains, LowMountains_1, Mountains ]
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [TS_Planet]
+          SpawnPOINearRange: [150, 450]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Ruins
+          Faction: GhostShip  
+          NoShieldReload: True
+          BiomesExcluded: [ Plantation, LowMountains, LowMountains_1, Mountains ]
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [TS_Planet]
+          SpawnPOINearRange: [250, 500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: Wreckage
+          Faction: GhostShip  
+          NoShieldReload: True
+          BiomesExcluded: [ Plantation, LowMountains, LowMountains_1, Mountains ] 
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [TS_Planet]
+          SpawnPOINearRange: [400, 650]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+ 
+ 
+
+# =========== Alien Artifacts ===========
+
+        - GroupName: Artifacts
+          Faction: TheLegacy  
+          BiomesExcluded: [ Plains]
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True
+          Properties:  
+            - Key: Music
+              Value: EvilWhispering  
+            - Key: RegenAfter
+              Value: 720 
+
+ 
+        - GroupName: JunkT2
+          Faction: None
+          CountMinMax: [ 10, 25 ]
+          IsScalingCount: True
+          Properties: 
+            - Key: MapDistance
+              Value: 0 
+
+        - GroupName: JunkT1
+          Faction: None
+          CountMinMax: [ 75, 150 ]
+          IsScalingCount: True
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720  
+
+        - GroupName: CrashedShip     # no core 
+          Faction: None
+          CountMinMax: [ 20, 50 ]
+          IsScalingCount: True
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+
+        - GroupName: CursedWreck
+          Faction: GhostShip
+          CountMinMax: [ 20, 50 ]
+          IsScalingCount: True
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+
+        - GroupName: JunkSV 
+          Type: SV_Player
+          Faction: None
+          CountMinMax: [ 20, 50 ]
+          IsScalingCount: True
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+
+        - GroupName: JunkHV 
+          Type: HV_Player
+          Faction: None
+          CountMinMax: [ 35, 115 ]
+          IsScalingCount: True
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+              
+
+        - GroupName: ReclaimedPOI
+          Faction: Salvage    
+          CountMinMax: [ 10, 20 ]
+          IsScalingCount: True 
+          Properties: 
+            - Key: Music
+              Value: lava
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: ABA_Rados
+          Faction: Salvage    
+          CountMinMax: [ 15, 30 ]
+          IsScalingCount: True 
+          Properties: 
+            - Key: Music
+              Value: lava
+            - Key: RegenAfter
+              Value: 720
+### Drones
+DroneBaseSetup: 
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 6
+          PresetStyle: 3
+          Stock:
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0  
+    
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 150
+                Extra: 3
+
+              - Name: Mechanoid
+                Amount: 300
+                Extra: 3
+   
+
+DroneSpawning:
+   Random:
+   -  DronesMinMax: [5, 10]
+      CenterX: -5000
+      Radius: 3000
+   -  DronesMinMax: [5, 10]
+      CenterX: -5000
+      Radius: 3000
+SpawnZones:
+- SpawnAt: [RadosJunkyardAux, RadosJunkyardMain]
+  BiomesExcluded: [ LowMountains, Mountains ]
+  Radius: 500
+  RadiusRandom: 25
+  RateMultiplyerCenter: 1.0
+  RateMultiplyerEdge: 0.6
+  Color: "1.0, 1.0, 1.0, 1.0"
+  SpawnOnlyIfPoiIsAlien: true
+  Entities:
+    - Names: [ZiraxRipperDogPatrol]
+      Biomes: [Any]
+      Amount: 200
+      Period: Always
+      DelayMinMax: [-1, -1]        
+-  SpawnAt: [BN_DroneBase]
+   Radius: 10000
+   RadiusRandom: 50
+   RateMultiplyerCenter: 1
+   RateMultiplyerEdge: 1
+   Entities:
+   -  Names: [ZiraxMechanoidPatrol]
+      Biomes: [Mountains]
+      Amount: 10
+      Period: Always
+      DelayMinMax: [20, 24]
+   -  Names: [RipperDog]
+      Biomes: [LowMountains2, Mountains]
+      Amount: 8
+      Period: Always
+      DelayMinMax: [20, 24]
+
+   -  Names: [ZiraxMechanoidPatrol]
+      Biomes: [LowMountains2]
+      Amount: 10
+      Period: Night
+      DelayMinMax: [20, 24]      
+CreatureSpawning:
+-  Biomes: [CausticMountains, Volcanoe, CausticPlateau]
+   Entities:
+   -  Name: Overseers
+      Period: Night
+      Amount: 20
+      DelayMinMax: [20, 24]
+   -  Name: AlienBugs03
+      Period: Always
+      Amount: 20
+      DelayMinMax: [20, 24]
+   -  Name: GolemsDesert
+      Period: Night
+      Amount: 10
+      DelayMinMax: [20, 24]
+-  Biomes: [Dunes, Sand, Plains, Plateau, DustBowl]
+   Entities:
+   -  Name: AlienBugs03
+      Period: Always
+      Amount: 10
+      DelayMinMax: [20, 24]
+-  Biomes: [Plantation, FlowersEdge, Flowers]
+   Entities:
+   -  Name: AlienBugs01
+      Period: Day
+      Amount: 10
+      DelayMinMax: [20, 24]
+   -  Name: Spiders03
+      Period: Day
+      Amount: 200
+      Color: "1.0, 0, 0"
+      DelayMinMax: [20, 24]
+   -  Name: WoodWalkers
+      Period: Night
+      Amount: 1000
+      DelayMinMax: [10, 12]
+      Color: "0, 0.5, 1.0"
+-  Biomes: [Shore, Oasis]
+   Entities:
+   -  Name: AlienBugs01
+      Period: Day
+      Amount: 10
+      DelayMinMax: [20, 24]
+-  Biomes: [LowMountains2]
+   Entities:
+   # -  Name: RipperDog
+      # Period: Always
+      # Amount: 8
+      # DelayMinMax: [20, 24]
+   -  Name: AlienAssassinsInfectedHerd
+      Period: Night
+      Amount: 10
+      DelayMinMax: [20, 24]
+-  Biomes: [Wadi]
+   Entities:
+   -  Name: AlienBugs02
+      Period: Always
+      Amount: 10
+      DelayMinMax: [20, 24]
+-  Biomes: [LargeCrater]
+   Entities:
+   -  Name: AlienBugs01
+      Period: Always
+      Amount: 12
+      DelayMinMax: [20, 24]
+-  Biomes: [Mountains]
+   Entities:
+   -  Name: AlienAssassinsInfectedHerd
+      Period: Always
+      Amount: 10
+      DelayMinMax: [20, 24]

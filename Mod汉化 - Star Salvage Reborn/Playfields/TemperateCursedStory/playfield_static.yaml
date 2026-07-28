@@ -1,0 +1,458 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+Description: "\u6C83\u7279\u9686\u4E4B\u5B9D\u66FE\u662F\u65E5\u76CA\u660F\u6697\u7684\u661F\u7CFB\u4E2D\u4E00\u5EA7\u5E0C\u671B\u7684\u706F\u5854\u3002\u4F5C\u4E3A\u6C83\u7279\u9686\u661F\u7CFB\u4E2D\u552F\u4E00\u7684\u661F\u7403\uFF0C\u8FD9\u9897\u5F02\u5E38\u5DE8\u5927\u7684\u6E29\u5E26\u884C\u661F\u6210\u4E86\u6D3B\u52A8\u4E2D\u5FC3\uFF0C\u5404\u6D3E\u7CFB\u7684\u516C\u6C11\u7EB7\u7EB7\u5728\u6B64\u5B9A\u5C45\u3002\u6C83\u7279\u9686\u4E4B\u5B9D\u6210\u4E3A\u4EFB\u4F55\u613F\u610F\u653E\u4E0B\u5206\u6B67\u3001\u548C\u5E73\u5171\u5904\u8005\u7684\u5BB6\u56ED\u3002\u7136\u800C\uFF0C\u968F\u7740\u4E00\u5EA7\u53E4\u8001\u7684\u5916\u661F\u91D1\u5B57\u5854\u7684\u53D1\u73B0\uFF0C\u4E00\u5207\u6539\u53D8\u4E86\u3002\u5F53\u8003\u53E4\u5B66\u5BB6\u8BD5\u56FE\u63A2\u7D22\u8FD9\u5EA7\u5EFA\u7B51\u7ED3\u6784\u65F6\uFF0C\u4ED6\u4EEC\u91CA\u653E\u4E86\u4E00\u80A1\u90AA\u6076\u529B\u91CF\uFF0C\u5F00\u59CB\u8086\u8650\u8FD9\u4E2A\u4E16\u754C\u3002\u901A\u5E38\u6E29\u987A\u7684\u751F\u7269\u5F00\u59CB\u731B\u70C8\u653B\u51FB\u3002\u751A\u81F3\u8FD9\u4E2A\u4E16\u754C\u4E0A\u7684\u6280\u672F\u4E5F\u5F00\u59CB\u53CD\u566C\u5C45\u6C11\u3002\u4E0D\u4E45\uFF0C\u8FD9\u4E2A\u4E16\u754C\u53D8\u6210\u4E86\u4E00\u9897\u5E9F\u5F03\u661F\u7403\uFF0C\u9664\u4E86\u88AB\u90AA\u6076\u529B\u91CF\u626D\u66F2\u7684\u751F\u7269\u5916\uFF0C\u518D\u65E0\u4EFB\u4F55\u6D3B\u7269\u7559\u5B58\u2026\u2026\n\n\u6B64\u661F\u7403\u7981\u6B62\u4E3B\u529B\u8230\u8FDB\u5165\u3002"
+
+PlanetType: Cursed
+PlayfieldType: Planet
+Difficulty: 5
+PlayfieldLevel: 10
+LandClaimZone: Device
+
+# Blueprint factory is disabled on this starting planet.
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+# AllowBlueprintBA: False
+AllowBlueprintHV: False
+
+AllowCV: False   
+# Sun
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.1, 0, 0" 
+SkyColor: "0,0,0"
+AtmosphereParams: [10, 3]
+
+# Light
+DayLightIntensity: 0.05
+NightLightIntensity: 0.05
+DayShadowStrength: 0.95
+
+LightZenithColor: "0.01,0.01,0.01"
+LightHorizonColor: "0.05,0,0"
+NightLightColor: "0.1, 0, 0"
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareRed
+OrbitUsesLightColor: True
+
+# Fog
+FogColor: "0, 0, 0"
+FogCloudIntensity: 0.8
+# AtmosphereFog: 0.95
+# GroundFogIntensity: 0.4
+# GroundFogHeight: 800
+
+# Clouds and Wind
+CloudsDensity: 1
+CloudsSharpness: 0
+CloudsBrightness: 0
+CloudsOpacity: 0.5
+CloudsZenithColor: "0.03,0,0"
+CloudsHorizonColor: "0.03,0.03,0"
+CloudsNightZenithColor: "0, 0, 0.03"
+CloudsNightHorizonColor: "0.02, 0.01, 0.02"
+
+WindSpeed: 0
+
+# Special Effects 
+SpecialEffectsLocal:
+  - Name: DandelionsFew
+    Biome: [ Grassland, ColdPlains ]
+    Time: Day
+    MaxHeight: 10
+  - Name: FireFliesGreenFew
+    Biome: [ Grassland, Oasis ]
+    Time: Day
+    MaxHeight: 15
+  - Name: Pollen
+    Biome: [ Savanna, SavannaEdge, DustBowl ]  
+    Time: Day
+    MaxHeight: 10
+  - Name: FireFliesGreenFew
+    Biome: [ Savanna, SavannaEdge, DustBowl, Marsh, Swamp, WaterSwamp, Water ]  
+    Time: Day
+    MaxHeight: 15
+  - Name: FireFliesGreenFew
+    Biome: [ Forest, Marsh ]
+    Time: Day
+    MaxHeight: 15
+  - Name: FireFliesGreenFew
+    Biome: [ Marsh, Swamp, WaterSwamp, Water, ShallowWater ]
+    Time: Day
+    MaxHeight: 15
+  - Name: FireFliesGreen
+    Biome: [ Forest, DeepForest, Peaks, Marsh, Swamp, WaterSwamp, Oasis ]
+    Time: Night
+    MaxHeight: 15
+  - Name: Moths
+    Biome: [ DeepForest, Savanna, SavannaEdge, Grassland ]
+    Time: Night
+    MaxHeight: 15
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 10
+    Delay: 5
+    Lifetime: 1000
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 24
+    Delay: 12
+    Lifetime: 1000
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 24
+    Delay: 12
+    Lifetime: 600
+  - Name: RainMedium
+    Type: Weather
+    InitialDelay: 24
+    Delay: 12
+    Lifetime: 600
+  - Name: RainHeavy
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 600
+  - Name: FogRadiationGreen
+    Type: Weather
+    InitialDelay: 96
+    Delay: 24
+    Lifetime: 600
+# Global Effect
+  - Name: BirdFlockBats
+    Biome: [ Any ]
+    Time: Night
+    InitialDelay: 0.5
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 50
+    SpawnY: 20
+    Struct: True
+  - Name: ThunderAndLightning
+    Biome: [ Any ]
+    Time: Always
+    InitialDelay: 0.5
+    Delay: 6
+    Lifetime: 300
+    PlyDist: 100
+    SpawnY: 500
+    Struct: Avoid
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+
+### Resource Asteroids
+AsteroidResources:
+
+### POIs
+POIs:
+    Random:   
+        - GroupName: DroneBaseCursed
+          Faction: GhostShip  
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 1, 1 ]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: Music
+              Value: EvilWhispering
+            - Key: RegenAfter
+              Value: 720
+              
+        - GroupName: SSAlienZigurat
+          Faction: GhostShip  
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          Properties:
+            - Key: Music
+              Value: Obelisk
+            - Key: SI
+              Value: Off
+            - Key: RegenAfter
+              Value: 720
+              
+        - GroupName: JunkT2
+          Faction: None
+          CountMinMax: [ 10, 25 ]
+          IsScalingCount: True
+          Properties: 
+            - Key: MapDistance
+              Value: 0 
+
+        - GroupName: JunkT1
+          Faction: None
+          CountMinMax: [ 75, 150 ]
+          IsScalingCount: True
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720  
+
+        - GroupName: CrashedShip     # no core 
+          Faction: None
+          CountMinMax: [ 20, 50 ]
+          IsScalingCount: True
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+
+        - GroupName: CursedWreck
+          Faction: GhostShip
+          CountMinMax: [ 20, 50 ]
+          IsScalingCount: True
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+
+        - GroupName: JunkSV 
+          Type: SV_Player
+          Faction: None
+          CountMinMax: [ 20, 50 ]
+          IsScalingCount: True
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+
+        - GroupName: JunkHV 
+          Type: HV_Player
+          Faction: None
+          CountMinMax: [ 35, 115 ]
+          IsScalingCount: True
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+              
+
+        - GroupName: ReclaimedPOI
+          Faction: Salvage    
+          CountMinMax: [ 10, 20 ]
+          IsScalingCount: True 
+          Properties: 
+            - Key: Music
+              Value: lava
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: ABA_Rados
+          Faction: Salvage    
+          CountMinMax: [ 15, 30 ]
+          IsScalingCount: True 
+          Properties: 
+            - Key: Music
+              Value: lava
+            - Key: RegenAfter
+              Value: 720
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Armor: ArmorLight
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+### Drones
+DroneBaseSetup: 
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 10
+          PresetStyle: 3
+          Stock:
+
+              - Name: DroneSmallFast01Minigun
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallFast01Rocket
+                Amount: Infinite
+                Extra: 1  
+    
+              - Name: DroneBomberAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: EnemyDroneV2Plasma
+                Amount: Infinite
+                Extra: 1
+       
+          
+          PlanetVesselBase:
+              Name: PlanetVesselBaseSetup
+              Position3D: [ 0, 102, 0]
+              BaseType: PlanetVesselBase
+              KeyId: 0
+              PlanetVessel:
+                - Name: CursedPlanetVessel
+                  Faction: GhostShip
+                  Mission: PlanetPatrol
+                  FixedMaxSpeed: 30
+               
+                  RangePatrolTask:
+                    Position3D: [ 1500, 80, 0 ]
+                    Radius: 50000
+                    DistToGround: 80
+
+                  AttackCVCircleAround:
+                    DistToTarget: 500
+
+# Drones that patrol on whole planet 
+DroneSpawning:    
+    Random:
+        - DronesMinMax: [ 15, 35 ]
+          CenterX: -5000
+          Radius: 3000
+
+        - DronesMinMax: [ 15, 35 ]
+          CenterX: -5000
+          Radius: 3000
+
+# ==============================================================
+# ==============================================================
+
+SpawnRateZones:
+   - SpawnAt: [TS_Planet]
+     Radius: 1000
+     RadiusRandom: 50
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0.7
+     AffectEnemies: true
+     Color: "0.0, 1.0, 0.0, 0.7"  
+      
+SpawnZones:
+   - SpawnAt: [CrashedShip, CursedWreck, PromethiumResource, Ruins, Wreckage, ReclaimedPOI]
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 500
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Spiders03]
+         Biomes: [Any]
+         Amount: 200
+         Period: Night
+         DelayMinMax: [-1, -1]
+
+
+### Creatures
+CreatureSpawning:
+    - Biomes: [Grassland]
+      Entities:
+        - Name: Spiders03
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+    - Biomes: [Forest, DeepForest, Marsh]
+      Entities:
+        - Name: Spiders03
+          Period: Day
+          Amount: 200
+          Color: "1.0, 0, 0"
+          DelayMinMax: [20, 24]
+        - Name: WoodWalkers
+          Period: Night
+          Amount: 1000
+          DelayMinMax: [10, 12]
+          Color: "0, 0.5, 1.0"
+    - Biomes: [Savanna, SavannaEdge]
+      Entities:
+        - Name: Spiders03
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+    - Biomes: [ShallowWater, WaterSwamp]
+      Entities:
+        - Name: Spiders03
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+    - Biomes: [Swamp, WaterSwamp, Beach]
+      Entities:
+        - Name: Spiders03
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+    - Biomes: [DustBowl]
+      Entities:
+        - Name: Spiders03
+          Period: Always
+          Amount: 8
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+    - Biomes: [LowMountains]
+      Entities:
+        - Name: Spiders03
+          Period: Always
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 10
+          DelayMinMax: [10, 12]
+    - Biomes: [Tundra, ColdPlains]
+      Entities:
+        - Name: Spiders03
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+    - Biomes: [PolarSnow ]
+      Entities:
+        - Name: Spiders03
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+        - Name: GolemsIce
+          Period: Day
+          Amount: 100
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"
+    - Biomes: [Sand]
+      Entities:
+        - Name: Spiders03
+          Period: Night
+          Amount: 6
+          DelayMinMax: [20, 24]
+          Color: "1.0, 0, 0"

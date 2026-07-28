@@ -1,0 +1,169 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "\u79BB\u592A\u9633[\u53F3]\u592A\u8FD1\u800C\u6C38\u8FDC\u65E0\u6CD5\u51DD\u56FA\uFF0C\u8FD9\u9897\u661F\u7403\u672C\u8D28\u4E0A\u662F\u4E00\u5757\u7ED5\u884C\u5728\u592A\u9633[\u53F3]\u9644\u8FD1\u7684\u7194\u5CA9\u56E2\u5757\u3002\u5C31\u8FDE\u5179\u745E\u514B\u65AF\u4EBA\u4E5F\u77E5\u9053\u4E0D\u8BE5\u5728\u8FD9\u9897\u661F\u7403\u4E0A\u5EFA\u9020\u57FA\u5730\u3002"
+
+PlanetType: MoonLava
+Emissive: True
+PlayfieldType: Moon
+Difficulty: 3
+# Blueprint factory is disabled on this starting planet.
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+AllowBlueprintBA: False
+AllowBlueprintHV: False
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+
+# Light
+DayLightIntensity: 0.65
+NightLightIntensity: 0.8
+DayShadowStrength: 0.95
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareRed
+
+# Atmosphere and Sky
+AtmosphereColor: "0.88, 0.48, 0.25"
+SkyColor: "0.8, 0.1, 0" 
+SkyHorizonColor: "0.2, 0.005, 0"
+AtmosphereParams: [2, 1.6]     
+
+# Light
+LightZenithColor: "1, 0.95, 0.98"
+LightHorizonColor: "1, 0.6, 0.15"
+NightLightColor: "0.78, 0.78, 1"
+
+DayShadowStrength: 1
+NightShadowStrength: 1
+
+# Fog
+# AtmosphereFog: 0.00
+FogCloudIntensity: 0.0
+FogColor: "1, 0, 0"
+# GroundFogIntensity: 0.03
+# GroundFogHeight: 125
+
+# Clouds and Wind
+CloudsDensity: 0.0
+CloudsSharpness: 1
+CloudsBrightness: 0.0
+CloudsOpacity: 0.0
+ 
+CloudsZenithColor: "-0.1, -0.2, -0.2"
+CloudsHorizonColor: "1, 0.3, 0.1"
+
+WindSpeed: 0
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+
+### Resource Asteroids
+AsteroidResources:
+
+
+### POIs
+POIs:
+    Random: 
+       # ================================
+       # ScoutMissions               #For Scout Mission 6
+        - GroupName: SSEpsilonIObelisk
+          Faction: Mystery 
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+       # ================================
+        - GroupName: CrashedShip    
+          Faction: None     
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True 
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 720
+              
+        - GroupName: CrashedShip    
+          Faction: None     
+          CountMinMax: [ 1, 2 ]
+          IsScalingCount: True 
+          PlaceAt: UnderWater
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 0
+          PresetStyle: 0
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeSlow01Minigun
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallAttackBase
+                Amount: 300
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMale
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 400
+                Extra: 3
+
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 0, 0 ]
+          CenterX: 2500
+          Radius: 1500

@@ -1,0 +1,355 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "\u8FD9\u9897\u536B\u661F\u7684\u5927\u6C14\u5C42\u975E\u5E38\u7A00\u8584\u2014\u2014\u5B83\u88AB\u90BB\u8FD1\u661F\u7403\u5F02\u5E38\u5DE8\u5927\u7684\u78C1\u573A\u5C4F\u853D\uFF0C\u5E76\u4E14\u536B\u661F\u5BC6\u5EA6\u8DB3\u591F\u5927\uFF0C\u80FD\u963B\u6B62\u4E00\u4E9B\u6C14\u4F53\u98D8\u5411\u592A\u7A7A\u3002\u56E0\u6B64\u5B83\u79EF\u7D2F\u4E86\u6781\u5927\u91CF\u7684\u6C99\u6F20\u6F06\u3002"
+
+PlanetType: MoonDesert
+PlayfieldType: Moon
+Difficulty: 3
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.1, 0, 0" 
+SkyColor: "0,0,0"
+AtmosphereParams: [10, 3]
+
+# Light
+DayLightIntensity: 0.05
+NightLightIntensity: 0.05
+DayShadowStrength: 0.95
+
+LightZenithColor: "0.01,0.01,0.01"
+LightHorizonColor: "0.05,0,0"
+NightLightColor: "0.1, 0, 0"
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareRed
+OrbitUsesLightColor: True
+
+# Fog
+FogColor: "0, 0, 0"
+FogCloudIntensity: 0.8
+# AtmosphereFog: 0.95
+# GroundFogIntensity: 0.4
+# GroundFogHeight: 800
+
+# Clouds and Wind
+CloudsDensity: 1
+CloudsSharpness: 0
+CloudsBrightness: 0
+CloudsOpacity: 0.5
+CloudsZenithColor: "0.03,0,0"
+CloudsHorizonColor: "0.03,0.03,0"
+CloudsNightZenithColor: "0, 0, 0.03"
+CloudsNightHorizonColor: "0.02, 0.01, 0.02"
+
+WindSpeed: 0
+
+
+SpecialEffectsGlobal:
+  - Name: Clear    # To remove the 'space view clouds'
+    Type: Weather
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 3000
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+
+      
+### Resource Asteroids
+AsteroidResources:
+
+### POIs
+POIs:
+    Random:
+        - GroupName: DroneBaseT1     #CommandCenter
+          Faction: Zirax  
+          NoShieldReload: True
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 5 ] 
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+# Brotherhood of Farr SECONDARY interest worlds
+
+      # Small moon hub
+
+        - GroupName: FarrAuxT2               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 2 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrAuxT1               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [FarrAuxT2]
+          SpawnPOINearRange: [300, 800]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: FarrDefenseT1               
+          BiomesExcluded: [ Radiated ]
+          Faction: Farr    
+          NoShieldReload: True
+          IsImportant: True
+          CountMinMax: [ 3, 6 ]
+          SpawnPOINear: [FarrAuxT2]
+          SpawnPOINearRange: [300, 800]
+          DroneProb: 1.0
+          DronesMinMax: [ 0, 1 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: Music
+              Value: moonstone
+            - Key: RegenAfter
+              Value: 720 
+
+# Trader
+
+        - GroupName: TraderSettlement 
+          Faction: Trader    
+          NoShieldReload: True
+          CountMinMax: [ 3, 5 ]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720  
+
+        - GroupName: TraderDefenseA 
+          Faction: Trader    
+          NoShieldReload: True
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [TraderSettlement]
+          SpawnPOINearRange: [100,250]
+          Properties: 
+            - Key: Music
+              Value: AlteredPhase
+            - Key: RegenAfter
+              Value: 720 
+
+# Pirates
+
+        - GroupName: PiratesMain 
+          Faction: Pirates    
+          NoShieldReload: True
+          CountMinMax: [ 0, 1 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720         
+
+        - GroupName: PiratesAuxDesert 
+          Faction: Pirates    
+          NoShieldReload: True
+          CountMinMax: [ 0, 3 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PiratesDefenseT1Desert 
+          Faction: Pirates    
+          NoShieldReload: True 
+          SpawnPOINear: [PiratesMain]
+          SpawnPOINearRange: [100,250]
+          CountMinMax: [ 1, 3 ]
+     #     IsImportant: True
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+# Civilians
+
+        - GroupName: CivilSettlement 
+          Territory: False
+          Faction: Colonists                    #primarily for outside the territories
+          NoShieldReload: True
+          CountMinMax: [ 3, 4 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+# Wreckages
+
+        - GroupName: CrashedShipLargeDesert     
+          Faction: None     
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 720
+
+#Zirax
+        - GroupName: GhystAuxT1
+          Faction: Ghyst  
+          NoShieldReload: True
+          CountMinMax: [ 3, 4 ]
+          DroneProb: 0.7
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          SpawnResource: ["PentaxidResource:1-2"]
+          ResourceDistance: 400
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+# ===== Junkyards
+        - GroupName: RadosJunkyardMain
+          Faction: Rados
+          Biome: [ LargeCrater ]
+          IsScalingCount: True 
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+                          
+        - GroupName: JunkT2
+          Faction: None  
+          Biome: [ LargeCrater ] 
+          CountMinMax: [ 7, 15 ]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+              
+        - GroupName: RadosJunkyardAux
+          Faction: Rados
+          Biome: [ LargeCrater ]
+          IsScalingCount: True 
+          CountMinMax: [ 5, 10 ]
+          IsImportant: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+            
+        - GroupName: JunkT1
+          Faction: None
+          Biome: [ LargeCrater ]
+          CountMinMax: [ 25, 50 ]
+          SpawnPOINear: [JunkT2]
+          SpawnPOINearRange: [50, 500]
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720  
+
+        - GroupName: SSCPUJunk
+          Faction: None  
+          Biome: [ LargeCrater ] 
+          CountMinMax: [ 3, 5 ]
+          DroneProb: 0.25
+          DronesMinMax: [ 1, 1 ]
+          IsImportant: True
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapDistance
+              Value: 0 
+# Progenitor 
+        - GroupName: ProgenitorArtifacts      
+          Faction: None     
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True 
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 0
+          PresetStyle: 0
+
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeSlow01Minigun
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallAttackBase
+                Amount: 300
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMale
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 400
+                Extra: 3
+
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 2500
+          Radius: 1500

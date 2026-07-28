@@ -26,6 +26,7 @@ QQ 交流群：**455283526**（入群答案：CN9527）
 | Mod：重铸伊甸园 1（RE1） | Build 86 | 仅维护修复，不再深度汉化 |
 | Mod：重铸伊甸园 2（RE2） | Build 46 | 活跃跟进 |
 | Mod：AdA-2 | 1.3.2 | 2026-06-15 新增 |
+| Mod：Star Salvage Reborn | 7.26 Update| 2026-07-28 新增 |
 
 > **注意**：本体汉化必须安装；Mod 汉化按需安装——玩哪个打哪个。
 
@@ -54,6 +55,7 @@ QQ 交流群：**455283526**（入群答案：CN9527）
 | RE1 | `C:\Steam\steamapps\workshop\content\383120\2550354956` |
 | RE2 | `C:\Steam\steamapps\workshop\content\383120\3143225812` |
 | AdA-2 | `C:\Steam\steamapps\workshop\content\383120\3450067750` |
+| Star Salvage Reborn | `C:\Steam\steamapps\workshop\content\383120\3409399573` |
 
 ### Epic
 

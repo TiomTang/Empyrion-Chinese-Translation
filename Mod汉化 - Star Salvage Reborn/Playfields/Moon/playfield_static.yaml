@@ -1,0 +1,306 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+
+Description: "\u8FD9\u9897\u8352\u829C\u7684\u5CA9\u77F3\u5728\u5176\u8868\u9762\u627F\u8F7D\u7740\u5B83\u7684\u5386\u53F2\uFF1A\n\n\u5B8C\u5168\u51DD\u56FA\uFF0C\u6CA1\u6709\u5927\u6C14\u6765\u62B9\u53BB\u75D5\u8FF9\u4E0E\u5F62\u72B6\u2014\u2014\n\n\u6240\u6709\u7684\u9082\u9005\u90FD\u4F1A\u88AB\u94ED\u8BB0\u3002"
+
+
+
+
+PlanetType: MoonBarren
+PlayfieldType: Moon
+Difficulty: 2
+
+LandClaimZone: Device
+# Blueprint factory is disabled on this starting planet.
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+#AllowBlueprintHV: False
+
+
+# Atmosphere and Sky
+AtmosphereEnabled: False
+
+# Light
+DayLightIntensity: 1.6
+NightLightIntensity: 0.7
+
+DayShadowStrength: 0.95
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhiteMoon
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: CobaltResource
+      IsScalingCount: True
+      CountMinMax: [ 0, 1 ]
+      SizeMinMax: [ 2, 3 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+
+    - Name: MagnesiumResource
+      IsScalingCount: True
+      CountMinMax: [ 0, 1 ]
+      SizeMinMax: [ 1, 2 ]
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1 
+
+    - Name: TitanResource
+      IsScalingCount: True
+      CountMinMax: [ 0, 1 ]
+      SizeMinMax: [ 1, 2 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DepthMinMax: [ 0, 5 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+### Resource Asteroids
+AsteroidResources:
+     - Name: CobaltResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: MagnesiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+### POIs
+POIs:
+    Random:  
+        - GroupName: DroneBaseT1          #CommandCenter
+          Faction: Zirax  
+          NoShieldReload: True
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 0, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 5 ] 
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CrashedShip    
+          Faction: None      
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: GhystAuxT1
+          Faction: Ghyst  
+          NoShieldReload: True
+          CountMinMax: [ 3, 4 ]
+          IsScalingCount: True 
+          DroneProb: 0.7
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+# Civilians
+
+        - GroupName: CivilSettlement 
+          Territory: False
+          Faction: Colonists                    #primarily for outside the territories
+          NoShieldReload: True
+          CountMinMax: [ 3, 4 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+# Progenitor 
+        - GroupName: ProgenitorArtifacts      
+          Faction: None     
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True 
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+# ===== Junkyards
+        - GroupName: RadosJunkyardMain
+          Faction: Rados
+          Biome: [ LargeCrater ]
+          IsScalingCount: True 
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: RadosJunkyardAux
+          Faction: Rados
+          Biome: [ LargeCrater ]
+          IsScalingCount: True 
+          CountMinMax: [ 3, 5 ]
+          IsImportant: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: PolarisDefence
+          Faction: Polaris  
+          NoShieldReload: True
+          Biome: [ LargeCrater ]
+          IsScalingCount: True 
+          CountMinMax: [ 3, 5 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: JunkT2
+          Faction: None  
+          Biome: [ SmallCrater ] 
+          CountMinMax: [ 1, 3 ]
+          DroneProb: 1
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 4
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+              
+        - GroupName: JunkT2
+          Faction: None  
+          Biome: [ LargeCrater ] 
+          CountMinMax: [ 1, 3 ]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            
+        - GroupName: JunkT1
+          Faction: None
+          Biome: [ LargeCrater, SmallCrater ]
+          CountMinMax: [ 10, 25 ]
+          Properties: 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720  
+
+        - GroupName: SSCPUJunk
+          Faction: None  
+          Biome: [ LargeCrater ] 
+          CountMinMax: [ 3, 5 ]
+          DroneProb: 0.25
+          DronesMinMax: [ 1, 1 ]
+          IsImportant: True
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapDistance
+              Value: 0  
+
+        - GroupName: SSPirateJunkDefenseMain          # Main Building
+          Faction: Pirates  
+          Biome: [ LargeCrater ] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+              
+        - GroupName: SSPirateJunkDefense
+          Faction: Rados
+          Biome: [ LargeCrater ] 
+          CountMinMax: [ 3, 5 ]
+          SpawnPOINear: [SSPirateJunkDefenseMain]
+          SpawnPOINearRange: [50, 1000] 
+          Properties: 
+            - Key: MapDistance
+              Value: 0 
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 0
+          PresetStyle: 0
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeSlow01Minigun
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallAttackBase
+                Amount: 300
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              # - Name: RipperDog  # No atmosphere. But Zirax wear at least masks.
+                # Amount: 400
+                # Extra: 3
+
+              - Name: ZiraxRocketPatrol
+                Amount: 100
+                Extra: 3
+                
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -5000
+          Radius: 2000
+    
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 2500
+          Radius: 1500
+          
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 5000
+          Radius: 2000
+          

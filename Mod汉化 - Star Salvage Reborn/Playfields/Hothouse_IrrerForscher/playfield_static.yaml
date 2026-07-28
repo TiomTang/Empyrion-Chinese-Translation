@@ -1,0 +1,1987 @@
+---
+# Playfield Configuration for Hothouse_IrrerForscher  Chaos Junkyard
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+Description: "[c][FF5555]\u8B66\u544A\uFF1A\u6B64\u661F\u7403\u573A\u666F\u5904\u4E8E\u963F\u5C14\u6CD5\u9636\u6BB5\u3002\u53EF\u80FD\u51FA\u73B0\u9519\u8BEF\u3002[-][/c]\n\n[c][ff8c00][b]\u4E00\u9897\u708E\u70ED\u3001\u98CE\u66B4\u8086\u8650\u7684\u661F\u7403\uFF0C\u62E5\u6709\u76F8\u5BF9\u4E30\u5BCC\u7684\u8D44\u6E90\u3002\u7A00\u8584\u4F46\u53EF\u547C\u5438\u7684\u5927\u6C14\u4F7F\u5F97\u751F\u5B58\u6210\u4E3A\u65E0\u60C5\u7684\u9996\u8981\u4EFB\u52A1\u3002[c][ffff66]\u7531\u4E8E\u72EC\u7279\u7684\u5F53\u5730\u6761\u4EF6\uFF0C\u57FA\u5730\u5EFA\u7B51\u65E0\u6CD5\u901A\u8FC7\u84DD\u56FE\u751F\u6210\u3002\u4F60\u53EA\u80FD\u4ECE\u96F6\u5F00\u59CB\u5EFA\u9020\u6216\u6539\u9020\u73B0\u6709\u7ED3\u6784\u3002\u8010\u70ED\u6027\u662F\u8FD9\u91CC\u7684\u4F18\u5148\u4E8B\u9879\uFF01[/c][/sup]"
+
+
+
+PlanetClass: Hot Junkyard
+PlanetType: Chaos Junkyard
+PlayfieldType: Planet
+Difficulty: 6
+
+AllowBlueprintSV: True
+AllowBlueprintCV: False
+AllowBlueprintBA: False # Specialised conditions must build from scratch or take over excising
+AllowBlueprintHV: True
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True   
+AtmosphereColor: "2.3, 1.5, 1.10"  # was "1.0, 0.86, 0.88" now is classic Hot House  initailly
+SkyColor: "0.7, 0.4, 0.1" # was "1, 0.6, 0.6" #  
+SkyHorizonColor: "0.2, 0.23, 0.005" # was "1, 0.2, 0.2" now is classic Hot House  initailly
+AtmosphereParams: [10, -5]
+
+# Light
+DayLightIntensity: 1.5 # was 1.3
+NightLightIntensity: 0.8 # Was .48
+
+DayShadowStrength: 0.95
+NightShadowStrength: 0.5
+
+LightZenithColor: "0.7, 0.5, 0.2" # was "1, 0.75, 0.60"
+LightHorizonColor: "1, 0.5, 0" # was "1, 0.3, 0.2"
+NightLightColor: "0.5, 0.3, 0.0" # was "0.7, 0.7, 1"
+
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Fog
+FogCloudIntensity: 0.9
+AtmosphereFog: 0.6
+GroundFogIntensity: 0.08
+GroundFogHeight: 1030
+
+# Clouds and Wind
+CloudsDensity: 0.7 # was 0.4
+CloudsSharpness: 0.2 # was 0.3
+CloudsBrightness: 0.7 # was 1.0
+CloudsOpacity: 0.9 # was 1.0
+CloudsZenithColor: "0.5, 0.3, 0.4"
+CloudsHorizonColor: "1, 0.18, 0.18"
+WindSpeed: 6 # was 4
+
+
+# Special effects around the players
+SpecialEffectsLocal:
+  - Name: Grime
+    MaxHeight: 20
+  - Name: Grime
+    MaxHeight: 30
+  - Name: Grime
+    MaxHeight: 40
+  - Name: DustDevil
+    Biome: [ Desert, Dunes, Rocks ]  
+    Time: Day
+    FollowPlayerY: True
+    MaxHeight: 10
+  - Name: FireFliesGreenFew
+    Biome: [ Marsh, Oasis, OasisEdge, OasisThin, Grassland ]
+    Time: Night
+    MaxHeight: 15
+  - Name: WindLines
+    Biome: [ Desert, Dunes, Rocks, LowMountains, Mountains ]
+    Time: Day
+    MaxHeight: 10
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: CloudsDark
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 400
+  - Name: Fog 
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 300
+  - Name: AcidRainHeavy
+    Type: Weather
+    InitialDelay: 2
+    Delay: 10
+    Lifetime: 200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 600
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 0
+    Delay: 3
+    Lifetime: 800
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 12
+    Delay: 10
+    Lifetime: 500
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 24
+    Delay: 10
+    Lifetime: 600
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 800
+  - Name: FogRadiationGreen
+    Type: Weather
+    InitialDelay: 48
+    Delay: 24
+    Lifetime: 100
+# Global Effect
+  - Name: ThunderAndLightningPurple
+    # Time: Night
+    InitialDelay: 1.5   
+    Delay: 4
+    Lifetime: 300     
+    PlyDist: 50
+    SpawnY: 500
+    # Struct: Avoid
+  - Name: MeteorShower
+    Time: Always
+    InitialDelay: 3.5
+    Delay: 5
+    Lifetime: 100
+    PlyDist: 200
+    SpawnY: 100
+    # Struct: Avoid
+
+# ==============================================================
+#  Planet Resources: Set to NOT scale in most cases!
+
+
+RandomResources:
+-  Name: CobaltResource
+   Biome: [Mountains, LowMountains]
+   IsScalingCount: False
+   IsImportant: True
+   CountMinMax: [1, 1]
+   SizeMinMax: [1, 3]
+   DepthMinMax: [0, 10]
+   DroneProb: 0.8
+   DistTypeCylinder:
+      MaxRadius: 13
+      YVariance: 10
+-  Name: CopperResource
+   Biome: [LowMountains, LavaFieldUpper, Dunes, Oasis, Rifts ]
+   IsScalingCount: False
+   IsImportant: False
+   CountMinMax: [2, 4]
+   SizeMinMax: [2, 6]
+   DepthMinMax: [3, 10]
+   DroneProb: 0.3
+-  Name: GoldResource
+   Biome: [Grassland, LowMountains, Sand]
+   IsScalingCount: False
+   IsImportant: True
+   CountMinMax: [1, 2]
+   SizeMinMax: [1, 3]
+   DepthMinMax: [3, 10]
+   DroneProb: 0.2
+   MaxDroneCount: 1
+-  Name: IronResource
+   Biome: [Any]
+   IsScalingCount: False
+   IsImportant: False
+   CountMinMax: [2, 4]
+   SizeMinMax: [2, 4]
+   DepthMinMax: [3, 10]
+   DroneProb: 0.2
+   MaxDroneCount: 1
+-  Name: PentaxidResource
+   Biome: [Mountains, LowMountains, Radiated, RadiatedFog, Shore, Hills]
+   IsScalingCount: False
+   IsImportant: True
+   CountMinMax: [1, 3]
+   SizeMinMax: [2, 3]
+   DepthMinMax: [0, 10]
+   DroneProb: 0.8
+   DistTypeCylinder:
+      MaxRadius: 13
+      YVariance: 10
+-  Name: PromethiumResource
+   Biome: [Mountains, LowMountains, Shore, Rifts]
+   IsScalingCount: False
+   IsImportant: True
+   CountMinMax: [2, 3]
+   SizeMinMax: [1, 5]
+   DepthMinMax: [0, 10]
+   DroneProb: 0.8
+   DistTypeCylinder:
+      MaxRadius: 13
+      YVariance: 10
+#      
+-  Name: SiliconResource
+   Biome: [Savanna, SavannaEdge, Dunes, Sand]
+   IsScalingCount: False
+   IsImportant: False
+   CountMinMax: [3, 6]
+   SizeMinMax: [2, 6]
+   DepthMinMax: [3, 10]
+   DroneProb: 0.3
+#   
+-  Name: TitanResource
+   Biome: [Mountains, LowMountains, Rifts]
+   IsScalingCount: False
+   IsImportant: False
+   CountMinMax: [1, 1]
+   SizeMinMax: [1, 9]
+   DepthMinMax: [0, 10]
+   DroneProb: 0.8
+   DistTypeCylinder:
+      MaxRadius: 13
+      YVariance: 10
+#      
+-  Name: CarbonResource
+   Biome: [Any]
+   IsScalingCount: False
+   IsImportant: False
+   CountMinMax: [2, 3]
+   SizeMinMax: [2, 5]
+   DepthMinMax: [0, 10]
+   DroneProb: 0.1
+   MaxDroneCount: 1  
+
+- Name: NeodymiumResource
+  Biome: [ Sediment, Fissure, Rifts ]
+  IsScalingCount: False
+  CountMinMax: [ 1, 2 ]
+  SizeMinMax: [ 4, 7 ]      # 
+  DepthMinMax: [ 3, 10 ]    # "Easy" to mine (Player drone or handdrill, if player is crazy)
+  DroneProb: 0.2
+  MaxDroneCount: 1
+  DistTypeCylinder:
+    MaxRadius: 13
+    YVariance: 10
+
+- Name: SathiumResource
+  Biome: [ Sediment, Fissure, Rifts ]
+  IsScalingCount: False
+  CountMinMax: [ 0, 1 ]
+  SizeMinMax: [ 4, 7 ]
+  DepthMinMax: [ 30, 40 ]  # Needs drone hatch to mine
+  DroneProb: 1
+  MaxDroneCount: 3 
+
+#- Name: ErestrumResource    # Lucky find
+#  Biome: [ Sediment, Fissure, DeepWater ]
+#  CountMinMax: [ 0, 2 ]     # Does NOT scale with planet size!
+#  SizeMinMax: [ 3, 5 ]
+#  DepthMinMax: [ 60, 70 ]   # Out of drone range. Use an HV.
+#  DroneProb: 1  
+#  MaxDroneCount: 4 
+#  DistTypeCylinder:
+#    MaxRadius: 10
+#    YVariance: 15  
+    
+#- Name: ZascosiumResource    # Lucky find
+#  Biome: [ Sediment, Fissure, DeepWater ]
+#  CountMinMax: [ 1, 1 ]      # Does NOT scale with planet size!
+#  SizeMinMax: [ 3, 4 ]
+#  DepthMinMax: [ 60, 70 ]    # Out of drone range. Use an HV
+#  DroneProb: 1  
+#  MaxDroneCount: 4 
+#  DistTypeCylinder:
+#    MaxRadius: 12
+#    YVariance: 20
+
+- Name: PlatinResource      # Lucky find
+  Biome: [ Sediment, Fissure, Dunes ]
+  CountMinMax: [ 1, 1 ]     # Does NOT scale with planet size!
+  SizeMinMax: [ 3, 5 ]      #
+  DepthMinMax: [ 60, 70 ]   # Out of drone range. Use an HV
+  DroneProb: 1  
+  MaxDroneCount: 4 
+  DistTypeCylinder:
+    MaxRadius: 12
+    YVariance: 20
+
+# Resource Asteroids
+AsteroidResources:
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: "ErestrumResource"
+       Amount: 100
+       InitialDelay: 120
+       Delay: 240
+       DespawnDelay: 300
+     - Name: "SathiumResource"
+       Amount: 100
+       InitialDelay: 120
+       Delay: 240
+       DespawnDelay: 300
+     - Name: "ZascosiumResource"
+       Amount: 100
+       InitialDelay: 120
+       Delay: 240
+       DespawnDelay: 300
+     - Name: "NeodymiumResource"
+       Amount: 500
+       InitialDelay: 120
+       Delay: 240
+       DespawnDelay: 300
+     - Name: "GoldResource"
+       Amount: 500
+       InitialDelay: 120
+       Delay: 240
+       DespawnDelay: 300
+
+# ==============================================================
+
+### POIs
+POIs:
+    Random:
+
+# ======================= TRASHHEAP  ======================= 
+        - GroupName: NullPOI
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [START]
+          SpawnPOINearDistance: 10
+
+# ======================= Stage 1  ======================= 
+        - GroupName: ZathJunkSnowCamp
+          Faction: Salvage
+          Territory: False
+          AvoidFactionTerritory: True
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          InitPower: False
+          SpawnPOINear: [START]
+          SpawnPOINearRange: [50, 100]
+          Properties: 
+            - Key: PersonalContainer
+              Value: "WaterBottle:6, AntiRadiationOintment:2, MobileAirCon:1, ConstructorSurvival:1"
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 12500 # Very long to allow this to be a Temp base if desired. Items in storage are wiped when it regens!
+            - Key: SI
+              Value: Off
+              
+
+        - GroupName: Junksite
+          Faction: None   
+          Biome: [ TrashHeap ]           
+          CountMinMax: [ 3, 5 ]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 720  
+              
+       # ScoutMissions               
+        - GroupName: CryoArid1
+          Faction: Salvage
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          TroopTransport: False
+          SpawnPOIAvoid: [START]
+          SpawnPOIAvoidDistance: 1500  
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 720
+            - Key: SI
+              Value: Off              
+# ======================= Stage 2  ======================= 
+
+      #  - Alt start adaption
+        
+        - GroupName: JunkHV                                #Required for: TUTORIAL
+          Faction: None  
+          Biome: [ TrashHeap ]
+          Type: HV_Player  
+          CountMinMax: [ 7, 12 ]
+          IsImportant: True  
+          InitPower: False
+          Properties:   
+            - Key: MapMarker 
+              Value: Neutral  
+
+
+
+
+# ======================= Environment close to START ======================= 
+
+          # SPIDER NEST ===
+          # One of the first dangerous 'POI' to see with a 'red' marker 
+        - GroupName: EggsStarter
+          Faction: None
+          Biome: [ Rubble ]           # Very small spawning biome. Has to be this high in list to spawn reliably.
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 0, 0 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [EggsStarter, JunkT2, DamagedHV]
+          SpawnPOIAvoidDistance: 300  
+          SpawnPOINear: [START]          # If not tied to START / a POI close by, spawning will fail 
+          SpawnPOINearRange: [300, 1200]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+          # (Without resource spawn)
+        - GroupName: EggsStarter  
+          Faction: None
+          Biome: [ Rubble ]
+          IsImportant: True
+          CountMinMax: [ 0, 2 ]
+          DroneProb: 0
+          DronesMinMax: [ 0, 0 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [EggsStarter, JunkT2]
+          SpawnPOIAvoidDistance: 350
+          SpawnPOINear: [START]
+          SpawnPOINearRange: [300, 1200]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+# ======================MISSION POIS=========================
+       # ScoutMissions               
+        - GroupName: SSScoutMissionArid1
+          Faction: Mystery
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          SpawnPOINear: [START]
+          SpawnPOINearRange: [600, 800]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+# ======================= INTERSPACE =======================
+        - GroupName: SSISIJunkBase
+          Faction: Interspace
+          #Territory: False   
+          Biome: [ Junkyard ]
+          IsScalingCount: False 
+          CountMinMax: [ 4, 4 ]
+          #SpawnPOIAvoid: [RadosJunkyardAux]  
+          #SpawnPOIAvoidDistance: 1000 
+          IsImportant: True
+          Properties:             
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: SSISIJunkDefenseI
+          Faction: Interspace
+          Biome: [ Junkyard ] 
+          IsScalingCount: False 
+          Territory: False
+          CountMinMax: [ 3, 4 ]
+          SpawnPOINear: [SSISIJunkBase]
+          SpawnPOINearRange: [150, 500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720             
+ 
+        - GroupName: SSISIJunkDefenseII
+          Faction: Interspace
+          Biome: [ Junkyard ]
+          IsScalingCount: False 
+          #Territory: False
+          CountMinMax: [ 6, 9 ]
+          # SpawnPOINear: [SSISIJunkBase]
+          # SpawnPOINearRange: [250, 500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+              
+# ======================= ZIRAX MAIN ======================= 
+
+        - GroupName: SSRadosDB
+          Faction: Zirax
+          NoShieldReload: True
+          IsCommandCenter: True                         # CommandCenter for Zirax Base Attacks
+          DroneBaseSetup: DroneBaseSetup
+          BiomesExcluded: [ PolarSnow, Junkyard, TrashHeap ] 
+          IsImportant: True
+          LevelMod: +4
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          SpawnPOIAvoid: [START]
+          SpawnPOIAvoidDistance: 6000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+       # ScoutMissions               
+        - GroupName: SSRadosComCenterArid
+          Faction: Rados
+          BiomesExcluded: [ PolarSnow, Junkyard, TrashHeap ] 
+          IsImportant: True
+          LevelMod: +1
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          SpawnPOIAvoid: [START, SSRadosDB]
+          SpawnPOIAvoidDistance: 4000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720              
+# ======================= ZIRAX - MAIN SETTLEMENT - DRONE BASE ======================= 
+       # Main Building
+        - GroupName: RadosMain                            # Main Building
+          Faction: Zirax  
+          NoShieldReload: True
+          BiomesExcluded: [ Junkyard, TrashHeap ] 
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          LevelMod: +3
+          DroneProb: 1.0
+          DronesMinMax: [ 2, 4 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [SSRadosDB]
+          SpawnPOINearRange: [150, 250]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+       # Auxiliary Buildings
+        - GroupName: RadosAuxT2
+          Faction: Zirax  
+          NoShieldReload: True
+          BiomesExcluded: [ Junkyard, TrashHeap ] 
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +2
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [RadosMain]
+          SpawnPOINearRange: [150, 250]
+          Properties: 
+       #     - Key: MapDistance
+       #       Value: 0  
+       #     - Key: HudDistance
+       #       Value: 100 
+            - Key: RegenAfter
+              Value: 720
+
+       # Defence Buildings - around SSRadosDB
+        - GroupName: RadosDefenceT1
+          Faction: Zirax  
+          NoShieldReload: True
+          Territory: False        
+          BiomesExcluded: [ Junkyard, TrashHeap ] 
+          CountMinMax: [ 2, 2 ]
+          LevelMod: +1
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOINear: [SSRadosDB]
+          SpawnPOINearRange: [300, 500]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+# ======================UNIQUE JUNK=========================              
+          # Lucky find, a source of water pollution
+        - GroupName: JunkT3_Engine
+          Faction: None
+          Biome: [ PollutionSource ]
+          PlaceAt: UnderWater
+          CountMinMax: [ 3, 5 ]
+          DroneProb: 0.9
+          DronesMinMax: [ 1, 3 ]
+          ReserveCount: 3
+          TroopTransport: False 
+          SpawnPOIAvoid: [JunkT3_Engine] 
+          SpawnPOIAvoidDistance: 1000
+          IsImportant: True          
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance  # Very valuable, has to be hard to find! (And it is hidden in water from the scanner)
+              Value: 250
+            - Key: RegenAfter
+              Value: 720
+              
+              
+        - GroupName: SSFuelJunk
+          Faction: None
+          Biome: [ PollutionSource ]
+          PlaceAt: UnderWater
+          CountMinMax: [ 10, 25 ]
+          TroopTransport: False 
+          IsImportant: True          
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance  # Very valuable, has to be hard to find! (And it is hidden in water from the scanner)
+              Value: 50     
+
+        
+
+        # DB WARLORD ========   # Sneaked itself on the planet; drones might fight with each other
+        - GroupName: WarlordSkaarDroneBase
+          Faction: Warlord
+          
+          # DroneBaseSetup: DroneBaseSetupWar
+          # FactionTerritory: [Zirax, ArkenianRepublic, Kriel, PrennFederation, Farr, STRY] # Not allowed in SilentQuarter / PlayerAssist
+
+          IsImportant: True
+          BiomesExcluded: [PoleEdge]
+          CountMinMax: [ 1, 1 ]
+
+          SpawnPOIAvoid: [Start ] 
+          SpawnPOIAvoidDistance: 500 
+          
+          DroneProb: 1.0
+          DronesMinMax: [ 3, 5 ]
+          ReserveCount: 5
+          NoShieldReload: True
+          Territory: True #...
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+            - Key: HudDistance
+              Value: 1000
+            - Key: MapDistance
+              Value: 1000
+
+
+
+          # ================ TheLegacy ================
+          # ================ 
+
+        - GroupName: LegacyInfector
+          Faction: TheLegacy
+          FactionTerritory: [PlayerAssist]   # Silent Quarter
+          BiomesExcluded: [ PoleEdge, Sediment ] 
+
+
+          # AvoidFactionTerritory: True
+
+          CountMinMax: [ 1, 3 ]
+          IsScalingCount: False
+
+          SpawnPOIAvoid: [Start] # This prevents the Infectors to spawn in Farr territory
+          SpawnPOIAvoidDistance: 500    # (= Bigger than the class 3-4 planet)
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+
+       # ======================= RADOS Mining attempt ======================= 
+
+        - GroupName: RadosAuxT2
+          CountMinMax: [ 1, 1 ]
+          BiomesExcluded: [ PoleEdge, Sediment ] 
+          Faction: Rados
+          IsImportant: True
+          DroneProb: 0.0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          SpawnResource: ["PromethiumResource:1-1", "ZascosiumResource:0-1"]
+          SpawnResourceRange: [150,400]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: RadosSurvey
+          Faction: Rados
+          Biome: [ Rocks, Hills, Sediment, Fissure]
+          CountMinMax: [ 2, 2 ]
+          SpawnPOINear: [RadosAuxT2]
+          SpawnPOINearRange: [30, 1500]
+          SpawnResource: ["SathiumResource:1-1", "ErestrumResource:0-1"]
+          SpawnResourceRange: [50,200]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: SkyminerZirax
+          Faction: Rados
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          SpawnPOINear: [RadosAuxT2]
+          SpawnPOINearRange: [200, 300]
+          SpawnResource: ["SathiumResource:1-1"]
+          SpawnResourceRange: [50,200]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: RadosAuxT1
+          Faction: Rados
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          SpawnPOINear: [RadosAuxT2]
+          SpawnPOINearRange: [200, 300]
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+          # At Rados cluster 
+        - GroupName: JunkT1
+          Faction: None  
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [RadosAuxT2]
+          SpawnPOINearRange: [200, 400]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral   
+            - Key: RegenAfter
+              Value: 720
+            - Key: HudDistance
+              Value: 50
+            - Key: MapDistance
+              Value: 50
+
+          # At Rados cluster 
+        - GroupName: Ruins
+          Faction: None  
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [RadosAuxT2]
+          SpawnPOINearRange: [400, 500]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral   
+            - Key: RegenAfter
+              Value: 720
+            - Key: HudDistance
+              Value: 50
+            - Key: MapDistance
+              Value: 200
+
+
+       # ======================= SERDU Monastery ======================= 
+        - GroupName: SerduMonastery
+          CountMinMax: [ 1, 1 ]
+          BiomesExcluded: [ PoleEdge, Sediment ] 
+          Faction: Serdu
+          DroneProb: 1
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 5
+          TroopTransport: False 
+          # SpawnPOINear: [SignalMarker01]
+          # SpawnPOINearRange: [200, 800]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: SerduHousing
+          CountMinMax: [ 1, 1 ]
+          Faction: Serdu
+          Territory: False
+          DroneProb: 1
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 5
+          TroopTransport: False 
+          SpawnPOINear: [SerduMonastery]
+          SpawnPOINearRange: [100, 200]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+       # ======================= POLARIS MINING ATTEMPT ======================= 
+
+        - GroupName: PolarisLogisticsMain # PolarisMiningLavaAux  #PolarisMiningLava
+          Faction: Polaris
+          BiomesExcluded: [ PoleEdge, Sediment ] 
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +1
+          DroneProb: 1
+          DronesMinMax: [ 2, 3 ]
+          ReserveCount: 0
+          TroopTransport: False
+          # SpawnPOIAvoid: [RadosAuxT2]
+          # SpawnPOIAvoidDistance: 20000  # Larger than the planet
+          # SpawnPOINear: [SignalMarker01]
+          # SpawnPOINearRange: [200, 800]
+          SpawnResource: ["PromethiumResource:0-1"]
+          SpawnResourceRange: [150,400]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisLogisticsAux
+          Faction: Polaris
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +1
+          DroneProb: 1
+          DronesMinMax: [ 1, 4 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [300, 500] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: SkyminerPolaris
+          Faction: Polaris
+          Territory: False
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +1
+          DroneProb: 1
+          DronesMinMax: [ 1, 4 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [300, 500] 
+          SpawnResource: ["PromethiumResource:1-1"]
+          SpawnResourceRange: [50,100]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisDefenceSnow
+          Faction: Polaris 
+          Territory: False
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +1
+          DroneProb: 1
+          DronesMinMax: [ 1, 4 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [200, 300] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: TS_Masperon
+          Faction: Polaris 
+          Territory: False
+          CountMinMax: [ 1, 1 ]
+          LevelMod: +1
+          DroneProb: 1
+          DronesMinMax: [ 1, 4 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [400, 700] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: JunkT1
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [TS_Masperon]
+          SpawnPOINearRange: [100, 300] 
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 720  
+
+
+
+              
+
+        - GroupName: RuinsTribalTower        # (Just deco of former glory)
+          Faction: None  
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [TribalZiggurat]
+          SpawnPOINearRange: [250, 300]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: TribalVillageStone
+          Faction: Predator
+          CountMinMax: [ 2, 2 ]
+          BiomesExcluded: [ PolarSnow, Junkyard ] 
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          SpawnPOINear: [TribalZiggurat]
+          SpawnPOINearRange: [180, 300]
+          SpawnPOIAvoid: [TribalVillageStone]
+          SpawnPOIAvoidDistance: 350
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapMarker
+              Value: Neutral
+
+        - GroupName: TribalField
+          Faction: Predator
+          Territory: False         
+          BiomesExcluded: [ PolarSnow, Junkyard ] 
+          CountMinMax: [ 4, 6 ]
+          SpawnPOINear: [TribalZiggurat]
+          SpawnPOINearRange: [85, 120]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720  
+            - Key: MapMarker
+              Value: Neutral
+              
+        - GroupName: TribalDefenseTower
+          Faction: Predator  
+          BiomesExcluded: [ PolarSnow, Junkyard ] 
+          CountMinMax: [ 3, 5 ]
+          SpawnPOINear: [TribalZiggurat]
+          SpawnPOINearRange: [250, 350] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+            - Key: MapMarker
+              Value: Neutral
+              
+        - GroupName: RuinsTribal
+          Faction: None
+          BiomesExcluded: [ PolarSnow, Junkyard ] 
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [TribalZiggurat]
+          SpawnPOINearRange: [200, 400]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 720
+
+
+
+# ======================= Abandoned POI for Adventurers ======================
+# ============================================================================
+
+
+
+
+          # POI for Adventurers
+
+        - GroupName: ReclaimedStarter                                 # Required for: CompanionMission
+          Faction: Salvage  
+          Biome: [ Oasis, OasisEdge, Savanna, SavannaEdge, Rocks ]
+          IsScalingCount: True              # scales with planet size
+          Territory: False
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.1
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 1
+          TroopTransport: False
+          SpawnPOIAvoid: [START]
+          SpawnPOIAvoidDistance: 4000
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: Music
+              Value: DarkSoundscape
+            - Key: RegenAfter
+              Value: 720
+
+
+# =================== JUNKYARDS ==================
+
+        - GroupName: JunkT2
+          Faction: None
+          Biome: [ Junkyard ]
+          CountMinMax: [ 10, 30 ]
+          SpawnPOIAvoid: [START]  
+          SpawnPOIAvoidDistance: 3000 
+          DroneProb: 0.25
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          IsImportant: True
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral 
+            - Key: MapDistance
+              Value: 0 
+                          
+        - GroupName: RadosJunkyardAux
+          Faction: Rados
+          Biome: [ Junkyard ]
+          IsScalingCount: False 
+          CountMinMax: [ 10, 15 ]
+          SpawnPOIAvoid: [START]  
+          SpawnPOIAvoidDistance: 2000 
+          DroneProb: 0.25
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False
+          IsImportant: True
+          Properties: 
+            - Key: RegenAfter
+              Value: 720  
+
+        - GroupName: RadosJunkyardAux
+          Faction: Rados
+          Biome: [ Junkyard ]
+          IsScalingCount: False 
+          CountMinMax: [ 10, 15 ]
+          SpawnPOIAvoid: [START]  
+          SpawnPOIAvoidDistance: 2000 
+          IsImportant: True
+          Properties: 
+              
+        - GroupName: JunkT1
+          Faction: None
+          Biome: [ Junkyard ]
+          CountMinMax: [ 35, 75 ]
+          IsImportant: True
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral 
+            - Key: MapDistance
+              Value: 0   
+            - Key: RegenAfter
+              Value: 720  
+
+        - GroupName: CVJunkT1
+          Type: CV_Player
+          Faction: None
+          Biome: [ Junkyard ]
+          IsImportant: True
+          CountMinMax: [ 10, 25 ]
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral 
+            - Key: MapDistance
+              Value: 0   
+
+        - GroupName: Wreckage
+          Faction: None  
+          Biome: [ Junkyard ] 
+          CountMinMax: [ 5, 10 ]
+          IsImportant: True
+
+        - GroupName: CrashedShip     # no core 
+          Faction: None
+          Biome: [ Junkyard ]
+          CountMinMax: [ 5, 10 ]
+          SpawnPOIAvoid: [START]
+          SpawnPOIAvoidDistance: 4500
+          IsImportant: True
+          DroneProb: 0.05
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral 
+              
+        - GroupName: JunkTrawler
+          Type: HV_Player
+          Faction: Zirax
+          Biome: [ Junkyard ]
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [CrashedShip]
+          SpawnPOINearRange: [50, 100] 
+          IsImportant: True
+          DroneProb: 0.3
+          DronesMinMax: [ 1, 3 ]
+          ReserveCount: 1
+          TroopTransport: True
+
+        - GroupName: JunkSV 
+          Type: SV_Player
+          Faction: None
+          Biome: [ Junkyard ]
+          CountMinMax: [ 10, 25 ]
+          SpawnPOIAvoid: [START]  
+          SpawnPOIAvoidDistance: 5000  
+          IsImportant: True
+          DroneProb: 0.01
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral 
+
+        - GroupName: JunkScout 
+          Type: SV_Player
+          Faction: None
+          Biome: [ Junkyard ]
+          CountMinMax: [ 5, 10 ]
+          SpawnPOINear: [START]  
+          SpawnPOINearRange: [2000, 3500] 
+          IsImportant: True
+          DroneProb: 0.01
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral 
+              
+        - GroupName: JunkSV 
+          Type: SV_Player
+          Faction: None
+          Biome: [ Junkyard ]
+          CountMinMax: [ 5, 10 ]
+          SpawnPOINear: [START]  
+          SpawnPOINearRange: [3000, 5500] 
+          IsImportant: True
+          DroneProb: 0.01
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral 
+                        
+        - GroupName: JunkHV 
+          Type: HV_Player
+          Faction: None
+          Biome: [ Junkyard ]
+          CountMinMax: [ 20, 25 ]
+          SpawnPOINear: [START]  
+          SpawnPOINearRange: [1000, 3000]  
+          IsImportant: True
+          DroneProb: 0.01
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral 
+
+        - GroupName: JunkHV 
+          Type: HV_Player
+          Faction: None
+          Biome: [ Junkyard ]
+          CountMinMax: [ 25, 50 ]
+          SpawnPOIAvoid: [START]  
+          SpawnPOIAvoidDistance: 3000  
+          IsImportant: True
+          DroneProb: 0.01
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral 
+
+              
+
+# ======================= POLARIS SETTLEMENT ======================= 
+        # Mining Station
+        - GroupName: PolarisIndustrialMain                      # Main Building
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ Junkyard, TrashHeap, Rifts ] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [START]
+          SpawnPOINearRange: [3000, 5000] 
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisLogisticsMain
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ Junkyard, TrashHeap, Rifts  ] 
+          IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [PolarisIndustrialMain]
+          SpawnPOINearRange: [150, 300] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: PolarisTradingPlanet                                     # Story relevant: TOTALLY OVERPOWERED
+          Faction: Polaris 
+          NoShieldReload: True 
+          IsImportant: True
+          BiomesExcluded: [ Junkyard, TrashHeap, Rifts  ] 
+          CountMinMax: [ 1, 1 ]
+         # SpawnPOINear: [PolarisIndustrialMain]
+        #  SpawnPOINearRange: [100, 200] 
+          Properties: 
+            # - Key: MapDistance
+              # Value: 0  
+            # - Key: HudDistance
+              # Value: 300 
+            - Key: Music
+              Value: SunnySkies
+            - Key: RegenAfter
+              Value: 720
+            - Key: StationInterface
+              Value: "Fuel:1.1,O2:1.1,Warp:1.1,Ammo:1,Repair:2,Shield:2,IfNeutral:0,IfFriendly:-0.1,IfHonored:-0.20"
+
+        - GroupName: PolarisIndustrialAux
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ PolarSnow, Junkyard, TrashHeap ] 
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [PolarisIndustrialMain]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: PolarisSettlement
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ PolarSnow, Junkyard, TrashHeap ] 
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisLogisticsAux
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ PolarSnow, Junkyard, TrashHeap ] 
+          CountMinMax: [ 1, 3 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+ 
+        - GroupName: PolarisDefence
+          Faction: Polaris  
+          NoShieldReload: True
+          BiomesExcluded: [ PolarSnow, Junkyard, TrashHeap ] 
+          CountMinMax: [ 1, 6 ]
+          SpawnPOINear: [PolarisLogisticsMain]
+          SpawnPOINearRange: [300, 400] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+# ======================= Rados Large Bunker =======================
+
+        - GroupName: RadosBunker                             # Main Building
+          Faction: Rados  
+          NoShieldReload: True
+          BiomesExcluded: [ Mountains, LowMountains ]
+          CountMinMax: [ 1, 1 ]
+          IsImportant: True
+          LevelMod: +3
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 3 ]
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOIAvoid: [START]
+          SpawnPOIAvoidDistance: 5000
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: RadosAuxT2
+          Faction: Rados  
+          NoShieldReload: True
+          Territory: False        
+          CountMinMax: [ 2, 2 ]
+          LevelMod: +1
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [RadosBunker]
+          SpawnPOINearRange: [150, 300]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+  
+# ======================= Random Fillers ============================
+# ===================================================================
+
+        - GroupName: RuinsTribal
+          Faction: None  
+          Biome: [ Oasis, OasisEdge, Savanna, SavannaEdge, Rocks, LowMountains ]
+          CountMinMax: [ 3, 5 ]
+          IsScalingCount: False
+          SpawnPOIAvoid: [START]
+          SpawnPOIAvoidDistance: 1500
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Ruins
+          Faction: None
+          # BiomesExcluded: [ PolarSnow ] 
+        #  Biome: [ DeepForest, Marsh, Swamp, Forest, Forest_1 ]
+          CountMinMax: [ 4, 6 ]
+          IsScalingCount: False
+          SpawnPOIAvoid: [START]
+          SpawnPOIAvoidDistance: 1500
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+         # HUMAN ruins close to Artifacts
+         # ========
+
+        - GroupName: Wreckage
+          Faction: None  
+          # BiomesExcluded: [ Junkyard ] 
+          # IsImportant: True
+          CountMinMax: [ 1, 1 ]
+          SpawnPOIAvoid: [START ]
+          SpawnPOIAvoidDistance: 3000
+          SpawnPOINear: [Artifacts]
+          SpawnPOINearRange: [200, 500]
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Ruins
+          Faction: None  
+          # BiomesExcluded: [ Junkyard ] 
+          CountMinMax: [ 2, 3 ]
+          SpawnPOINear: [Wreckage]
+          SpawnPOINearRange: [80, 150]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+# # ======================= Fillers (Scaling with planet size) =======================
+
+
+
+
+        - GroupName: CrashedShip
+          Faction: None
+          # IsImportant: True                 # Small biome
+          IsScalingCount: False              
+          CountMinMax: [ 4, 6 ]
+          PlaceAt: UnderWater
+          SpawnPOIAvoid: [START, CrashedShip]
+          SpawnPOIAvoidDistance: 2000
+          Properties:
+            - Key: MapMarker
+              Value: Neutral
+
+
+
+# =================================================
+# =================================================
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Armor: ArmorLight
+          Pos: [ 0, 147, 0 ]
+          RotY: 160 
+
+        - Mode: Survival
+          Spawn: EscapePod #DO NOT CHANGE THIS! Crashes game in SP
+          Pos: [ -350, 0 ]      # fixed x,z position of escape pod start (Equator)
+          Armor: ArmorLight      
+          Status: [ 
+          "Food: 500, Health: 500", 
+          "Food: 400, Health: 500", 
+          "Food: 350, Health: 500", 
+          "#FreshStart:Food: 450, Health: 500" ]      # NEW
+          Items: [ 
+          "Chainsaw:1, AntibioticOintment:2, Bandages:15, StomachPills:2, PowerBar:5, EnergyDrink:2, WaterBottle:1, WaterJug:1", 
+          "Chainsaw:1, AntibioticOintment:2, Bandages:15, StomachPills:2, PowerBar:5, EnergyDrink:2, WaterBottle:1, WaterJug:1",
+          "Chainsaw:1, AntibioticOintment:2, Bandages:15, StomachPills:2, PowerBar:5, EnergyDrink:2, WaterBottle:1, WaterJug:1", 
+          "#FreshStart: Chainsaw:1, AntibioticOintment:2, Bandages:15, StomachPills:2, PowerBar:5, EnergyDrink:2, WaterBottle:1, WaterJug:1" ]
+
+### Drones
+DroneBaseSetup:
+  Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 5
+          PresetStyle: 4
+          Stock:
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0  
+
+              - Name: DroneSmallFast01Minigun
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneSmallAttackBase
+                Amount: Infinite
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 200
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 150
+                Extra: 3
+  PlanetVessels:
+    - Name: StorageBug
+      Position3D: [-500, 0, 500]
+      Faction: AutoJunk                                  
+      LevelMod: 1
+      FixedMaxSpeed: 20
+      PauseTimeOnStart: 1
+      DelayBetweenRespawn: 60
+      DelayBeforeSelfDestruction: 360
+      IsRespawnAfterDestruction: True
+      RangePatrolTask:
+        Position3D: [0, 0, 0]
+        DistToGround: 100                                                      
+      Stock:
+          
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 25, 25 ]
+          CenterX: -5000
+
+        - DronesMinMax: [ 25, 25 ]
+          CenterX: 5000
+
+# ==============================================================
+# ==============================================================
+ 
+SpawnRateZones:
+   - SpawnAt: [START]
+     Radius: 400
+     RadiusRandom: 0
+     RateMultiplyerCenter: 0.0
+     RateMultiplyerEdge: 0
+     AffectEnemies: true
+     # AffectFriendly: true
+     Color: "0.0, 1.0, 0.0, 0.7" 
+
+SpawnZones:
+
+
+
+     # ====================
+     # Comment in for testing- MARKER ZONES
+     # (To easily find story POI in the SSG  - - has no other function)
+     # ====================
+   - SpawnAt: [ArtifactsFloating, StoryDmgComStation, JunkT2, UCHDartWreck, AlienTowerSmallStory, BAStoryCryoStation, UCHHeidelberg, TribalVillageWoodStory, PolarisSanctuaryStory, WreckTeleporterStory, TribalBazarStone, TribalZiggurat, TribalBurialChamber, BurialChamberStory] 
+     Radius: 280
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [AlienAssassinGreysInfected]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+   - SpawnAt: [StoryDmgComStation, JunkT2, BAStoryCryoStation, UCHHeidelberg, TribalVillageWoodStory, PolarisSanctuaryStory, BurialChamberStory, WreckTeleporterStory ] 
+     Radius: 380
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [AlienAssassinGreysInfected]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+   - SpawnAt: [UCHHeidelberg, PolarisSanctuaryStory] 
+     Radius: 400
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [AlienAssassinGreysInfected]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+
+     # (To check for ranges of faction exclusion zones. Current SSG bug)
+   - SpawnAt: [PolarisSanctuaryStory] 
+     Radius: 1250
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "0.0, 0, 1.0, 0.4"
+     Entities:
+       - Names: [AlienAssassinGreysInfected]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+   - SpawnAt: [TribalField, TribalDefenceStone ] 
+     Radius: 1250
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "0.0, 1, 0.0, 0.15"
+     Entities:
+       - Names: [AlienAssassinGreysInfected]
+         Amount: 0  # No effect
+         Period: Always
+         DelayMinMax: [99, 99]
+
+
+     # ====================
+     # ====================
+
+
+
+   - SpawnAt: [Artifacts, AlienTowerSmallStory, AlienTowerDMG, ReclaimedStarter, AlienWatchtower]  # Inner circle with higher concentration, and melee creatures
+     Radius: 100
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.8
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienAssassinGreysInfected]
+         Biomes: [Junkyard]
+         Amount: 600
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [Artifacts]
+     Radius: 300
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "1.0, 1.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [CaveWormGreyHerd, Spiders02, AlienAssassinGreysInfected]
+         Biomes: [Junkyard]
+         Amount: 400
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+     # Guardians of deposits
+   - SpawnAt: [PromethiumResource, GoldResource, SathiumResource, Ruins]   # Inner circle with higher concentration
+     BiomesExcluded: [ LowMountains, Mountains]
+     Radius: 50
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.5
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Spiders02, GolemsDesert]
+         Biomes: [Any]
+         Amount: 600
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [PromethiumResource, GoldResource, SathiumResource, Ruins] 
+     BiomesExcluded: [ LowMountains, Mountains]
+     Radius: 250
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "1.0, 1.0, 1.0, 1.0"
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [Spiders02, GolemsDesert]
+         Biomes: [Junkyard, Oasis, OasisEdge, Marsh, Savanna, SavannaEdge, Rocks]
+         Amount: 180
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+     # ZIRAX troops ===
+
+     # DroneBase troops
+   - SpawnAt: [SSRadosDB]    # Close to building
+     BiomesExcluded: [ Mountains, HighMountains, Dunes, Sand ]
+     Radius: 150
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 0.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 800
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [SSRadosDB]    # Further out
+     BiomesExcluded: [ Mountains, Sand ]
+     Radius: 400
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 0.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       # - Names: [ZiraxMinigunPatrol, ZiraxShotgunPatrol, ZiraxRipperDogPatrol]
+       - Names: [ZiraxMinigunPatrolEasy, ZiraxShotgunPatrolEasy, ZiraxRipperDogPatrolEasy]
+         Biomes: [Any]
+         Amount: 400
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+     # Outposts
+   - SpawnAt: [XenuStarter]    # Close to buildings. Dangerous troops here.
+     BiomesExcluded: [ HighMountains, Sand ]
+     Radius: 100
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 0.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       # - Names: [ZiraxMinigunPatrol, ZiraxShotgunPatrol, ZiraxRocketPatrol]
+       - Names: [ZiraxMinigunPatrolEasy, ZiraxShotgunPatrolEasy, ZiraxRocketPatrolEasy]
+         Biomes: [Any]
+         Amount: 300
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+   - SpawnAt: [XenuStarter]    # Further out
+     BiomesExcluded: [ HighMountains, Sand ]
+     Radius: 150
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 0.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       # - Names: [ZiraxMinigunPatrol, ZiraxShotgunPatrol]
+       - Names: [ZiraxMinigunPatrolEasy, ZiraxShotgunPatrolEasy]
+         Biomes: [Any]
+         Amount: 150
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [UCHDartWreck]    # Wide range
+     BiomesExcluded: [ HighMountains, Sand ]
+     Radius: 1200
+     RadiusRandom: 25
+     RateMultiplyerCenter: 0
+     RateMultiplyerEdge: 1
+     Color: "1.0, 0.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true    # Is tied to NONE faction. Does it still work?
+     Entities:
+       # - Names: [ZiraxMinigunPatrol, ZiraxShotgunPatrol, ZiraxShotgunPatrol]
+       - Names: [ZiraxRipperDogPatrolEasy, ZiraxShotgunPatrolEasy]
+         Biomes: [Any]
+         Amount: 150
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+
+
+
+
+     # Zirax =============
+   - SpawnAt: [SSRadosDB, XenuRadarMain, XenuBunker]
+     BiomesExcluded: [ LowMountains, Mountains, Junkyard ]
+     Radius: 1000
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 0.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 300
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+   - SpawnAt: [XenuAuxT1]    # Outposts
+     BiomesExcluded: [ LowMountains, Mountains, Junkyard ]
+     Radius: 1000
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "1.0, 0.0, 0.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ZiraxMinigunPatrol, ZiraxRocketPatrol, ZiraxShotgunPatrol, ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 200
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+     # Polaris =============
+   - SpawnAt: [PolarisTradingPlanet, PolarisIndustrialMain, PolarisLogisticsMain, PolarisLogisticsAux, PolarisSettlement, PolarisMiningAux]
+     BiomesExcluded: [ Mountains, Junkyard ]
+     Radius: 100
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "0.0, 0.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienCivilians1]
+         Biomes: [Any]
+         Amount: 150
+         Period: Always
+         DelayMinMax: [-1, -1]
+       - Names: [AssaultCyborgs]
+         Biomes: [Any]
+         Amount: 150
+         Period: Always
+         DelayMinMax: [-1, -1]
+         
+   - SpawnAt: [PolarisTradingPlanet, PolarisIndustrialMain, PolarisLogisticsMain ]
+     BiomesExcluded: [ LowMountains, Mountains, Junkyard]
+     Radius: 500
+     RadiusRandom: 0
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.2
+     Color: "0.0, 0.0, 1.0, 1.0" 
+     SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [AlienCivilians1]
+         Biomes: [Oasis, OasisEdge, Savanna, SavannaEdge, Shore, Marsh]
+         Amount: 50
+         Period: Always
+         DelayMinMax: [-1, -1]
+       - Names: [AssaultCyborgs]
+         Biomes: [Any]
+         Amount: 100
+         Period: Always
+         DelayMinMax: [-1, -1]
+#============== ZIRAX JUNKYARD GUARDS ====================
+   - SpawnAt: [CrashedShip, JunkT2, JunkCV, JunkSV] 
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 500
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "1.0, 1.0, 1.0, 1.0"
+     Entities:
+       - Names: [ZiraxRipperDogPatrol]
+         Biomes: [Junkyard]
+         Amount: 30
+         Period: Always
+         DelayMinMax: [-1, -1]
+   - SpawnAt: [CrashedShip, JunkT2, JunkCV, JunkSV, JunkHV] 
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 75
+     RadiusRandom: 35
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "1.0, 1.0, 1.0, 1.0"
+     Entities:
+       - Names: [Spiders01]
+         Biomes: [Junkyard]
+         Amount: 30
+         Period: Always
+         DelayMinMax: [-1, -1]        
+   - SpawnAt: [JunkTrawler] 
+     BiomesExcluded: [ LowMountains, Mountains ]
+     Radius: 150
+     RadiusRandom: 25
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.3
+     Color: "1.0, 1.0, 1.0, 1.0"
+     Entities:
+       - Names: [ZiraxMechanoidPatrol, ZiraxRipperDogPatrol]
+         Biomes: [Any]
+         Amount: 50
+         Period: Always
+         DelayMinMax: [-1, -1]
+
+         
+   - SpawnAt: [Wreckage, CrashedShip, Junksite, JunkT2, JunkT1, Ruins, JunkHV, JunkSV, CVJunkT1]
+   #  BiomesExcluded: [ LowMountains, LowMountains_1, Mountains ]
+     Radius: 175
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "1.0, 1.0, 1.0, 1.0"
+  #   SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [-1, -1]
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [-1, -1]
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [-1, -1]         
+
+### Creatures
+CreatureSpawning:
+    - Biomes: [TrashHeap] 
+      Entities:
+        - Name: Spiders01few     # Were too aggressive for new players
+          Period: Always
+          Amount: 10
+          Color: "1.0, 1, 1"
+          DelayMinMax: [20, 24]
+        - Name: AlienBugs01     # Were too much 'backstabbing' for new players?
+          Period: Always
+          Amount: 30
+          DelayMinMax: [6, 8]
+          Color: "0, 1.0, 1.0"
+
+    - Biomes: [Rubble] 
+      Entities:
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 30
+          DelayMinMax: [6, 8]
+          Color: "0, 1.0, 1.0"
+        - Name: lienAssassinReds     
+          Period: Always
+          Amount: 15
+          Color: "1.0, 1, 1"
+          DelayMinMax: [20, 24]
+        - Name: Spiders01
+          Period: Night
+          Amount: 30
+          Color: "1.0, 1, 1"
+          DelayMinMax: [20, 24]
+
+    - Biomes: [Desert, Dunes, Sand, Rocks]
+      Entities:
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 10
+          DelayMinMax: [10, 20]
+          # Color: "1.0, 1.0, 1.0"
+        - Name: WormDesertHerd
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 20]
+    - Biomes: [SavannaEdge, Savanna]
+      Entities:
+        - Name: CaveWormGreyHerd
+          Period: Day
+          Amount: 8
+          DelayMinMax: [10, 20]
+        - Name: WormDesertHerd
+          Period: Day
+          Amount: 10
+          DelayMinMax: [10, 20]
+        - Name: Otyughs
+          Period: Night
+          Amount: 15
+          DelayMinMax: [10, 20]
+    - Biomes: [Oasis, OasisEdge]
+      Entities:
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 20]
+        - Name: Spiders02
+          Period: Night
+          Amount: 10
+          DelayMinMax: [10, 20]
+        - Name: LizardMuleHerd
+          Period: Always
+          Amount: 15
+          DelayMinMax: [10, 12]
+    - Biomes: [Marsh, Shore]
+      Entities:
+        - Name: CaveWormGreyHerd
+          Period: Night
+          Amount: 8
+          DelayMinMax: [10, 20]
+
+    - Biomes: [LowMountains]
+      Entities:
+        - Name: Spiders02
+          Period: Night
+          Amount: 8
+          DelayMinMax: [10, 20]
+
+    - Biomes: [Junkyard]
+      Entities:
+        - Name: Spiders01
+          Period: Always
+          Amount: 10
+          DelayMinMax: [20, 24]
+          Color: "0, 0, 0"
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 3
+          DelayMinMax: [-1, -1]
+          Color: "0, 0, 0"
+        -  Name: RipperDog
+           Period: Always
+           Amount: 25
+        - Name: AlienBugs03
+          Period: Night
+          Amount: 5
+          DelayMinMax: [20, 24]
+          Color: "0, 0, 0"
+        - Name: ScraperDronesMixed
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+          Color: "0, 0, 1.0" 
+    - Biomes: [DeepWater,Water]
+      Entities:
+        - Name: ShoalofFishesLarge
+          Period: Always
+          Amount: 20
+          AllowInWater: true
+          DelayMinMax: [0, 1]
+          Color: "1, 1.0, 0.0" 
+        - Name: ShoalofFishesSmall
+          Period: Always
+          Amount: 20
+          AllowInWater: true
+          DelayMinMax: [0, 1]
+          Color: "1, 1.0, 0.0" 
+          
+    - Biomes: [ShallowWater]
+      Entities: 
+        - Name: ShoalofFishesSmall
+          Period: Always
+          Amount: 20
+          AllowInWater: true
+          DelayMinMax: [0, 1]
+          Color: "1, 1.0, 0.0"
+
+    - Biomes: [Plains, Dunes, Rocks, Rifts]
+      Entities:
+        - Name: AlienBugs03
+          Period: Night
+          Amount: 15
+          DelayMinMax: [20, 24]
+        - Name: Overseers
+          Period: Day
+          Amount: 15
+          DelayMinMax: [20, 24]          

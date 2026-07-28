@@ -1,0 +1,607 @@
+# Playfield Characteristics
+Description: "\u96BE\u5EA6- [c][FFA500][b]\u975E\u5E38\u56F0\u96BE[/b][-][/c]                                                                                                                                                                                                                  \u8D77\u70B9- [c][FFFFFF]\u5E9F\u5F03\u51B7\u51BB\u98DE\u8239[-][/c]                                                                                                                                                                                                                            \u62A4\u7532- [c][FFFFFF]\u65E0[-][/c]                                                                                                                                                                                                                         \u4F5C\u4E3AUES\u7F57\u897F\u5C3C\u5965\u5C14\u53F7\u4E0A\u7684\u4E58\u5BA2\uFF0C\u4F60\u4ECE\u51B7\u51BB\u7761\u7720\u4E2D\u9192\u6765\uFF0C\u53D1\u73B0\u98DE\u8239\u5DF2\u4E25\u91CD\u53D7\u635F\uFF0C\u8BB8\u591A\u533A\u57DF\u66B4\u9732\u5728\u592A\u7A7A\u771F\u7A7A\u4E2D\u3002\u98DE\u8239\u4F4D\u4E8E\u661F\u8230\u575F\u573A\u7684\u4E2D\u592E\uFF0C\u5468\u56F4\u6EE1\u662F\u5176\u4ED6\u98DE\u8239\u7684\u6B8B\u9AB8\u3002\u773C\u524D\u770B\u4E0D\u5230\u4EFB\u4F55\u661F\u7403\uFF0C\u4F60\u5FC5\u987B\u751F\u5B58\u8DB3\u591F\u957F\u7684\u65F6\u95F4\uFF0C\u4FEE\u590D\u5176\u4E2D\u4E00\u8258\u6B8B\u9AB8\uFF0C\u5E76\u8BBE\u6CD5\u9003\u8131\u50CF\u5176\u4ED6\u4EBA\u90A3\u6837\u7684\u547D\u8FD0\u3002                                                                                                                                                                                                                                                     [c][ffff00][b]\u6CE8\u610F[/b][-][/c]- \u6B64\u8D77\u59CB\u533A\u57DF\u9650\u5236\u4F7F\u7528\u84DD\u56FE\u5DE5\u5382\u3002"
+Gravity: 0                         
+AtmosphereEnabled: False          
+PvPProb: 0
+UseFixed: True                       
+Radiation: [3,5]                    
+TemperatureDay: [-150,-125]    
+Music: [StellarGrasp]          
+Difficulty: 8 # Testing!
+PlayfieldType: Space  
+PlanetType: StarshipGraveyard  
+        
+# Blueprint factory is restricted to space vessles on this starting Zone.
+AllowBlueprintSV: True
+AllowBlueprintCV: True
+AllowBlueprintBA: False
+AllowBlueprintHV: False
+
+Skybox:  # (Doesn't work in space_dynamic when in galaxy mode. - To force one of the old skyboxes, use a playfield.yaml instead.) Needed for Space Start
+    - [SunFlareWhite4Space, SkyboxStarsCyan, PrefabNebulaBlueYellow]
+    - [SunFlareWhite3Space, SkyboxStarsBlue, PrefabNebulaBlueGlittery] 
+    - [SunFlareWhiteSpace, SkyboxStarsBlack, PrefabNebulaBlue] 
+
+### Resource Asteroid
+Resources:                     
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      CountMinMax: [ 3, 6 ]
+      Probability: 1 
+      Properties:     
+        - Key: RegenAfter
+          Value: 360                  
+      
+### POIs
+POIs:
+# Asteroids
+    - Name: [AsteroidFieldBoxExclude] 
+      FieldName: [AsteroidFieldBoxExclude]   # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      BaseField: True 
+      RandomRotation: True
+
+    - Type: BA_Alien   
+      Name: [SS_SpaceTrash]
+      DisplayName: Space Trash
+      Faction: none
+      Mode: Survival
+      CountMinMax: [ 5, 7 ]    
+      Probability: 1 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180 
+        - Key: MapMarker
+          Value: Neutral
+
+
+
+# Starship Graveyard 
+    - Type: BA_Alien   
+      Name: [SAL_Ancient Colony Ship]
+      DisplayName: Ancient Colony Ship
+      Faction: Alien
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      InitPower: True
+      Pos: [ 0, 0, 0 ]    
+      Rot: [ 0, 0, 0 ] 
+      Compound:
+        CountMinMax: [100, 130] # Dropping from 150 max to give us leeway to add our stuff
+        Probability: 1
+        Name: [SS_SpaceTrash, SS_FragSpaceCV1Wreck, SpaceJunk1, SpaceJunk2, SpaceJunk3, SpaceJunk4 , SpaceJunkCV1, SpaceJunkCV2, SpaceJunkCV3, SpaceJunkCV4, SpaceJunkCV5, SpaceJunkCV6, SpaceJunkCV7, SpaceJunkCV8, SpaceJunkCV9, CV_Destroyed1, CV_Destroyed2, CV_Destroyed3, CV_Destroyed4, CV_Destroyed5, CV_DestroyedFront, CV_DestroyedRear, BA_CrashedCV_2, BA_CrashedCV_3, JunkSV-1, JunkSV-2, JunkSV-3, JunkSV-4, JunkSV-5, JunkSV-6, SpaceJunkSV-7, SpaceJunkSV-8, SS_SpaceCV1Wreck, CVJ_DestroyedFortune, SS_SpaceCV1Wreck, SAL_DurevelThureneth_fix] # The Dure-vel_Thureneth may be better off as a Fixed POI needs testing.
+        DistanceMinMax: [1500, 3000] 
+        Rotate: true
+      Properties:     
+            - Key: PersonalContainer
+              Value: "ArmorMedium:1, EVABoost:1, ArmorBoost:1, OxygenBottleSmall:3"
+            - Key: AIManExcludeFromPatrol #Used by Space AI Manager, this will exclude this POI from all patrol routes
+              Value: true 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 15000 # Long Regen so players can use as Base for about a week realtime.
+
+    - Type: SV_Player   
+      Name: [ AsteroidVoxel01Ice ]
+      DisplayName: Salvagable Water Ice # Needed for Scout Speciality mission don't remove!
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: False
+      Pos: [ -73, 50, -720]    
+      Rot: [ 30, 0, 0 ] 
+      Properties:  
+            - Key: RegenAfter
+              Value: 15000 # Matching Orillion POI
+
+    - Type: SV_Player   
+      Name: [Rossi_1]
+      DisplayName: Rossignols Shuttle No 1 # Almost a total wreck, but Basically a Prop for Mission building block "Diary of the Damned"
+      Faction: Salvager
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: False
+      Pos: [ -560, 564, 156 ]    
+      Rot: [ 30, 0, 0 ] # May need to adjust rotation
+      Properties:  
+            - Key: RegenAfter
+              Value: 15000 # Matching Orillion
+
+    - Type: SV_Player   
+      Name: [Rossi_2]
+      DisplayName: Rossignols Shuttle No 2 # Badly damaged Basically a Prop for Mission building block "Diary of the Damned"
+      Faction: Salvager
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: False
+      Pos: [ 9, 32, -155 ]    
+      Rot: [ 30, 0, 0 ] # May need to adjust rotation
+      Properties:  
+            - Key: RegenAfter
+              Value: 15000 # Matching Orillion
+             
+    - Type: SV_Player   
+      Name: [Rossi_3]
+      DisplayName: Rossignols Shuttle No 3 # Initial Test to see if possible and for Mission building block "Diary of the Damned"
+      Faction: Salvager
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: False
+      Pos: [ 25, 32, 45 ]    
+      Rot: [ 0, 0, 0 ]
+      Properties:  
+            - Key: RegenAfter
+              Value: 15000 # Matching Orillion
+              
+    - Type: BA_Alien              
+      Name: [The_Fragment] # First attempt to work aroud the CORE issues disallowign narby respawn - Quest site "Diary of the Damned" and Possibel storage hub as well.
+      DisplayName: Orillion Fragment
+      Faction: Salvager
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: True
+      Pos: [ 16, 25, -162 ]    
+      Rot: [ -5, -140, 0 ] #Flat to share Grav, with slight tilt to annoy don't want the players here long LOL hopefuly the Rads will discorage! [Roll clock = Pos , Yaw, Pitch]
+      Properties: 
+            # - Key: PersonalContainer
+              # Value: "ArmorMedium:1, EVABoost:1, ArmorBoost:1, OxygenBottleSmall:3"      
+            # - Key: RegenAfter no regen wanted
+            #  Value: 15000 # Matching Orillion
+ 
+# Auxiliary Junkyards 
+    - Type: BA_Alien   
+      Name: [SS_RadosSpaceDefense]
+      DisplayName: Junkyard Defense
+      Faction: Rados
+      Mode: Survival
+      CountMinMax: [ 2, 3 ]    
+      Probability: 1
+      InitPower: True
+      Compound:
+        CountMinMax: [10, 30]
+        Probability: 1
+        Name: [SS_FragSpaceCV1Wreck, SpaceJunk1, SpaceJunk2, SpaceJunk3, SpaceJunk4 , SpaceJunkCV1, SpaceJunkCV2, SpaceJunkCV3, SpaceJunkCV4, SpaceJunkCV5, SpaceJunkCV6, SpaceJunkCV7, SpaceJunkCV8, SpaceJunkCV9, CV_Destroyed1, CV_Destroyed2, CV_Destroyed3, CV_Destroyed4, CV_Destroyed5, CV_DestroyedFront, CV_DestroyedRear, BA_CrashedCV_2, BA_CrashedCV_3, JunkSV-1, JunkSV-2, JunkSV-3, JunkSV-4, JunkSV-5, JunkSV-6, SpaceJunkSV-7, SpaceJunkSV-8, SS_CPUT2JunkSV-1, SS_CPUT2JunkSV-3, SS_CPUT2JunkSVBaker_3, SS_CPUT2JunkSVBaker_5, SS_SpaceCV1Wreck, CVJ_DestroyedFortune, SS_EjCom_0E_1, SS_EjCom_0E_2, SS_EjCom_0E_3, SS_EjCom_0E_4, SS_EjCom_0E_5, SS_EjCom_0E_6, SS_EjCom_0E_7, SS_EjCom_0E_8, SS_EjCom_0E_9, SS_EjCom_0E_10, SS_EjCom_1C2_1, SS_EjCom_1C2_2, SS_EjCom_1C2_3, SS_EjCom_1C2_4, SS_EjCom_1C2_5, SS_EjCom_1B2_1, SS_EjCom_1B2_2, SS_EjCom_1B2_3, SS_EjCom_1B2_4, SS_EjCom_1B2_5]
+        DistanceMinMax: [100, 400] 
+        Rotate: true
+      Properties:     
+        - Key: RegenAfter
+          Value: 720  
+        - Key: MapMarker 
+          Value: Neutral 
+        - Key: Music
+          Value: EvilWhispering
+
+    - Type: BA_Alien   
+      Name: [SS_PolarisSpaceDefense]
+      DisplayName: Junkyard Defense
+      Faction: Polaris
+      Mode: Survival
+      CountMinMax: [ 2, 3 ]    
+      Probability: 1
+      InitPower: True
+      Compound:
+        CountMinMax: [10, 30]
+        Probability: 1
+        Name: [SS_FragSpaceCV1Wreck, SpaceJunk1, SpaceJunk2, SpaceJunk3, SpaceJunk4 , SpaceJunkCV1, SpaceJunkCV2, SpaceJunkCV3, SpaceJunkCV4, SpaceJunkCV5, SpaceJunkCV6, SpaceJunkCV7, SpaceJunkCV8, SpaceJunkCV9, CV_Destroyed1, CV_Destroyed2, CV_Destroyed3, CV_Destroyed4, CV_Destroyed5, CV_DestroyedFront, CV_DestroyedRear, BA_CrashedCV_2, BA_CrashedCV_3, JunkSV-1, JunkSV-2, JunkSV-3, JunkSV-4, JunkSV-5, JunkSV-6, SpaceJunkSV-7, SpaceJunkSV-8, SS_CPUT2JunkSV-1, SS_CPUT2JunkSV-3, SS_CPUT2JunkSVBaker_3, SS_CPUT2JunkSVBaker_5, SS_PolarisSpaceDefense, SS_SpaceCV1Wreck, CVJ_DestroyedFortune, SS_EjCom_0E_1, SS_EjCom_0E_2, SS_EjCom_0E_3, SS_EjCom_0E_4, SS_EjCom_0E_5, SS_EjCom_0E_6, SS_EjCom_0E_7, SS_EjCom_0E_8, SS_EjCom_0E_9, SS_EjCom_0E_10, SS_EjCom_1C2_1, SS_EjCom_1C2_2, SS_EjCom_1C2_3, SS_EjCom_1C2_4, SS_EjCom_1C2_5, SS_EjCom_1B2_1, SS_EjCom_1B2_2, SS_EjCom_1B2_3, SS_EjCom_1B2_4, SS_EjCom_1B2_5]
+        DistanceMinMax: [100, 400] 
+        Rotate: true
+      Properties:     
+        - Key: RegenAfter
+          Value: 720 
+        - Key: MapMarker 
+          Value: Neutral 
+
+# Definition for elements in Compound       
+    - Type: BA_Alien   
+      Name: [SpaceJunk1, SpaceJunk2, SpaceJunk3, SpaceJunk4]
+      DisplayName: Space Junk
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 25, 50 ]    
+      Probability: 1
+      IsCompoundSubDesc: True      
+      InitPower: False
+      Properties:  
+        - Key: MapMarker 
+          Value: Neutral       
+
+    - Type: BA_Alien   
+      Name: [SS_PolarisSpaceDefense]
+      DisplayName: Junkyard Defense
+      Faction: Polaris
+      Mode: Survival
+      CountMinMax: [ 4, 8 ]    
+      Probability: 1
+      IsCompoundSubDesc: True      
+      InitPower: False
+      Properties:
+
+    - Type: CV_Alien   
+      Name: [SpaceJunkCV1, SpaceJunkCV2, SpaceJunkCV3, SpaceJunkCV4, SpaceJunkCV5, SpaceJunkCV6, SpaceJunkCV7, SpaceJunkCV8, SpaceJunkCV9]
+      DisplayName: Space Junk
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 30, 50 ]    
+      Probability: 1
+      IsCompoundSubDesc: True      
+      InitPower: False
+      Properties:  
+        - Key: MapMarker 
+          Value: Neutral       
+
+    - Type: SV_Player   
+      Name: [JunkSV-1, JunkSV-2, JunkSV-3, JunkSV-4, JunkSV-5, JunkSV-6, SpaceJunkSV-7, SpaceJunkSV-8, SS_CPUT2JunkSV-1, SS_CPUT2JunkSV-3, SS_CPUT2JunkSVBaker_3, SS_CPUT2JunkSVBaker_5]
+      DisplayName: Destroyed Vessel
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 30, 50 ]    
+      Probability: 1
+      IsCompoundSubDesc: True      
+      InitPower: False
+      Properties:   
+        - Key: MapMarker 
+          Value: Neutral       
+
+    - Type: CV_Player   
+      Name: [SS_FragSpaceCV1Wreck, CV_Destroyed1, CV_Destroyed2, CV_Destroyed3, CV_Destroyed4, CV_Destroyed5, CV_DestroyedFront, CV_DestroyedRear, BA_CrashedCV_2, BA_CrashedCV_3, SS_SpaceCV1Wreck, CVJ_DestroyedFortune]
+      DisplayName: Destroyed Vessel
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 15, 30 ]    
+      Probability: 1
+      IsCompoundSubDesc: True      
+      InitPower: False
+      Properties: 
+        - Key: MapMarker 
+          Value: Neutral 
+
+
+    - Type: HV_Player   # GV in Rossi Hanger Needs to load first as ship forms around it.
+      Name: [FA-020B Bulldog]
+      DisplayName: Mining Craft
+      Faction: Player
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: False
+      Pos: [ -1641, 1584, 537 ]    
+      Rot: [ 0, 0, 0 ]
+      Properties:  
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 15000 # Matching Orillion
+              
+
+    - Type: BA_Alien   #  ====== The Players actual Start location! =====
+      Name: [SAL_Rossignol]
+      DisplayName: UES Rossignol
+      Faction: Salvage
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: False
+      Pos: [ -1642, 1578, 611 ]    
+      Rot: [ 0, 0, 0 ]
+      Properties:  
+            - Key: PersonalContainer
+              Value: "ArmorSpacesuit:1, EmergencyRations:4, RocketLauncher:1, SlowRocket:40 " # Teams Loaded for Bear! But careful where you shoot those Rockets!
+            - Key: AIManExcludeFromPatrol #Used by Space AI Manager, this will exclude this POI from all patrol routes
+              Value: true 
+            - Key: MapMarker 
+              Value: Neutral  
+            - Key: RegenAfter
+              Value: 150 # Fast Reset as Ship can Blow up!
+
+    - Type: BA_Alien   
+      Name: [SS_ScoutMissionSSG1]
+      DisplayName: Destroyed Polaris Heavy Freighter
+      Faction: Mystery
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: False
+      Pos: [ 629, 2005, 1370 ]    
+      Rot: [ 0, 0, 0 ]
+      Properties:  
+            #- Key: PersonalContainer
+            #  Value: "ArmorSpacesuit:1, EmergencyRations:1" 
+            - Key: RegenAfter
+              Value: 1500 # About a real Day
+              
+    - Type: CV_Alien   # Ditranns Baby
+      Name: [Dure-vel_Thureneth]
+      DisplayName: Destroyed Alien Ship
+      Faction: Mystery
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]    
+      Probability: 1
+      IsCompoundSubDesc: False      
+      InitPower: False
+      Pos: [ 1325, -1508, -1455 ]    
+      Rot: [ 0, 0, 0 ]
+      Properties:  
+            #- Key: PersonalContainer
+            #  Value: "ArmorSpacesuit:1, EmergencyRations:1" 
+            - Key: RegenAfter
+              Value: 15000 # Matching Orillion
+              
+    - Type: BA_Alien   
+      Name: [SS_SpaceTrash]
+      DisplayName: Space Trash
+      Faction: none
+      Mode: Survival
+      CountMinMax: [ 5, 7 ]    
+      Probability: 1
+      IsCompoundSubDesc: True   
+      Properties:     
+        - Key: RegenAfter
+          Value: 180 
+        - Key: MapMarker
+          Value: Neutral
+# Starter System Ejected Cores
+    - Type: BA_Alien   
+      Name: [SS_EjCom_0E_1, SS_EjCom_0E_2, SS_EjCom_0E_3, SS_EjCom_0E_4, SS_EjCom_0E_5, SS_EjCom_0E_6, SS_EjCom_0E_7, SS_EjCom_0E_8, SS_EjCom_0E_9, SS_EjCom_0E_10, SS_EjCom_1C2_1, SS_EjCom_1C2_2, SS_EjCom_1C2_3, SS_EjCom_1C2_4, SS_EjCom_1C2_5, SS_EjCom_1B2_1, SS_EjCom_1B2_2, SS_EjCom_1B2_3, SS_EjCom_1B2_4, SS_EjCom_1B2_5]
+      DisplayName: Ejected Computer Core
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 15, 25 ]    
+      Probability: 1
+      IsCompoundSubDesc: True      
+      InitPower: False
+      Properties:
+        - Key: MapMarker 
+          Value: Neutral 
+FixedPlayerStart:
+    - Mode: Survival
+      Spawn: Structure
+      Structure: UES Rossignol
+      Items: ['LaserPistol, PulseLaserChargePistol:260, Flashlight, AntibioticOintment:2, Bandages:25, StomachPills:2, PowerBar:25, EnergyDrink:5', 'LaserPistol, PulseLaserChargePistol:260, Flashlight, AntibioticOintment:2, Bandages:25, StomachPills:2, PowerBar:25, EnergyDrink:5', 'LaserPistol, PulseLaserChargePistol:260, Flashlight, AntibioticOintment:2, Bandages:25, StomachPills:2, PowerBar:25, EnergyDrink:5', '#FreshStart: LaserPistol, PulseLaserChargePistol:260, Flashlight, AntibioticOintment:2, Bandages:25, StomachPills:2, PowerBar:25, EnergyDrink:5 ']
+      Status: ['Food:500, Health: 500', 'Food:400, Health: 500', 'Food:350, Health: 500', '#FreshStart:Food:450, Health: 500']
+            
+DroneBaseSetup:                                                # Note: not ALL possible settings are used in that config. Check +ExampleSpace folder > space_dynamic.yaml
+      - FreeDrones:                                             #FreeDrones = only relevant for NPC Factions that have a galactic territory: Zirax, Polaris, Trader, Kriel, Pirates, Legacy. Will not spawn in non-territory!
+          - Name: [SpaceDroneLaser, SpaceDronePlasma]
+            Faction: Zirax                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [2, 4]                       
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions                                              #Drones shall only partrol RESOURCES; OPV shall patrol POIs  
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 1500 #close this down a bit from 2.5K
+          - Name: [SpaceDronePolarisLaser]
+            Faction: Polaris                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [2, 4]                         
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 1500 #close this down a bit from 2.5K
+          - Name: [SpaceDroneTraderLaser]
+            Faction: Trader                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [2, 4]                         
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 1500 #close this down a bit from 2.5K
+          - Name: [SpaceDroneBattered01, SpaceDroneBattered02]
+            Faction: Pirates                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [2, 4]                          
+            Radius: [2500, 10000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2000 #close this down a bit from 2.5K               
+
+
+        SpaceVessels:
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [0, 1]
+            Probability: 1
+            Faction: Colonists                              # Colony support
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser, SpaceDroneTraderLaser, SpaceDroneBattered01, SpaceDroneBattered02]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [0, 1]
+            Probability: 1
+            Faction: Polaris                              #can lead to double amount of freighters in Polaris territor = ok, because it is a company = expected higher freighter traffic!
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [Freighter] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [0, 1]
+            Probability: 1
+            Faction: Trader                              #can lead to double amount of freighters in Polaris territor = ok, because it is a trader guild = expected higher freighter traffic!
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneTraderLaser]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone 
+          - Name: [Ghostship] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [0, 2]
+            Probability: 1
+            Faction: GhostShip
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDronePolarisLaser]
+              AmountMinMax: [0, 0]
+              Type: FighterDrone 
+              
+          - Name: [OPVTugboat] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [0, 2]
+            Probability: 1
+            Faction: Interspace                            
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneBattered01, SpaceDroneBattered02]
+              AmountMinMax: [1, 2]
+              Type: FighterDrone
+
+          - Name: [StorageBug] 
+            FixedMaxSpeed: [20, 40]
+            Mission: Freighter
+            CountMinMax: [1, 3]
+            Probability: 1
+            Faction: AutoJunk                            
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]
+              DelayBeforeSelfDestructionMinMax: [200, 250]
+              IsRespawnAfterDestruction: True
+              Position:                                  
+                PosXZMinMax: [1000, 2500]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneBattered01, SpaceDroneBattered02]
+              AmountMinMax: [0, 0]
+              Type: FighterDrone 
+              
+# ========= Patrol Vessels =================
+# Note: definition for EACH faction REQUIRED as each faction has their own design and vessels!!  
+# Note: Do not add VOID, Progenitor, DESC (for now), UCH or GLaD as they are only "story factions"; Do not use ALIEN as this faction is reserved for POI/Wreckages/Dungeons only, not for ships)
+          - Name: [OPVPirates]     
+            Faction: Pirates
+            CountMinMax: [1, 1]   
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000]        #[Min radius, Max radius] defines the boundaries the patrol area radius in meter drawn randomly; Default: 1000
+           #   POINameAsPositionRef: [BAO_PiratesBlackMarket, BAO_PiratesHideout, BAO_PiratesSlaveMarket]
+            StockDescription:
+              Name: [SpaceDroneBattered01, SpaceDroneBattered02] 
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000
+
+          - Name: [CombatBug]     
+            Faction: AutoJunk
+            CountMinMax: [1, 1]   
+            Probability: 1
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000]         
+            StockDescription:
+              Name: [SpaceDroneBattered01, SpaceDroneBattered02] 
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:
+              - Key: SelfDestructionWithNoCore
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 10000  
+
+          - Name: [SSOXenuDB] 
+            Count: [1, 1]
+            FixedMaxSpeed: [0,0]
+            Mission: Immobile
+            MissionDescription:
+              Name: Immobile
+              Position:
+                PosXZMinMax: [10000, 25000]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [15, 25]
+              ExtraMinMax: [0,0]      
+            Properties: 
+              - Key: RegenAfter
+                Value: 720 
+
+          - Name: [SSXenuComStation] 
+            Count: [1, 1]
+            FixedMaxSpeed: [0,0]
+            Mission: Immobile
+            MissionDescription:
+              Name: Immobile
+              Position:
+                PosXZMinMax: [10000, 25000]
+                PosYMax: 2500                
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [5, 15]
+              ExtraMinMax: [0,0]      
+            Properties: 
+              - Key: RegenAfter
+                Value: 720 
