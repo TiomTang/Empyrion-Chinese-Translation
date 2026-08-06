@@ -27,8 +27,9 @@ QQ 交流群：**455283526**（入群答案：CN9527）
 | Mod：重铸伊甸园 2（RE2） | Build 46 | 活跃跟进 |
 | Mod：AdA-2 | 1.3.2 | 2026-06-15 新增 |
 | Mod：Star Salvage Reborn | 7.26 Update| 2026-07-28 新增 |
+| 教程：Guided Tutorial（新手指引） | 随游戏本体 v1.19 | 2026-08-07 新增 |
 
-> **注意**：本体汉化必须安装；Mod 汉化按需安装——玩哪个打哪个。
+> **注意**：本体汉化必须安装；Mod 与教程汉化按需安装——玩哪个打哪个。
 
 ---
 
@@ -72,6 +73,13 @@ QQ 交流群：**455283526**（入群答案：CN9527）
 
 1. 用 `必需 - 本体汉化` 中的 `Content` 文件夹覆盖游戏根目录的 `Content`
 2. 用剧本启动游戏后，进入对应 Mod 路径（如 `Content\Scenarios\Reforged Eden 2`），将汉化文件覆盖上去
+
+### 教程汉化（Guided Tutorial）
+
+新手指引场景汉化，Steam / Epic / 服务器安装方式相同：
+
+1. 进入游戏目录 `Empyrion - Galactic Survival\Content\Scenarios\Guided Tutorial`
+2. 将 `教程汉化 - Guided Tutorial` 文件夹中的内容（`Content`、`Extras`、`Playfields`）复制进去，提示覆盖时确认
 
 ---
 
