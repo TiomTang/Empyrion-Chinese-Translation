@@ -1,0 +1,580 @@
+# Playfield Characteristics
+Description: "\u96BE\u5EA6: [c][ff0000]\u56F0\u96BE[-][/c]\n\n\u73AF\u7ED5\u4ED9\u5973\u5EA7\u661F\u7CFB\u4E2D\u5FC3\u8D85\u5927\u8D28\u91CF\u9ED1\u6D1E\u7684\u5438\u79EF\u76D8\u5916\u5C42\u3002\n\n\n[sup][c][ffff00]\u5F3A\u70C8\u7684\u8F90\u5C04\u548C\u5E72\u6270\u4F1A\u6270\u4E71\u626B\u63CF\u4EEA\u3002[-][/c][/sup]\n\n[sup][c][ffffff][i]\u5F00\u91C7\u88AB\u6D3E\u7CFB\u8BA4\u9886\u7684\u5C0F\u884C\u661F\u88AB\u89C6\u4E3A\u6218\u4E89\u884C\u4E3A\u3002\u5174\u8DA3\u70B9\u7684\u5B58\u5728\u53D7\u661F\u7CFB\u6D3E\u7CFB\u9886\u5730\u5F71\u54CD\u3002[/i][-][/c][/sup]"
+
+
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0
+UseFixed: True
+
+Radiation: [60,75]
+TemperatureDay: [300,400]
+# Dark Ambient Music
+Music: [alien2, AnAridPlace, barren, Blight, Cypher, DarkSoundscape, DarkSoundscape2, DarkSoundscape3, lava2]
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: Outer Accretion Disk
+PlayfieldLevelOverride: [1,2]
+
+DenyMicroWarp: true
+
+### Resource Asteroids
+Resources:
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 0.0
+      Properties:
+        - Key: RegenAfter
+          Value: 180
+
+### POIs
+POIs:
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidFieldRing]
+      FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude]   # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.0
+      BaseField: True 
+      # RandomRotation: True
+
+    # - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidField, AsteroidFieldRectangle2]
+      # # FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidField, AsteroidFieldRectangle2]
+      # FieldName: [AsteroidField]
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 1
+      # Pos: [0, 0, -500]
+      # Rot: [0, 0, 0]
+
+# Nebula
+    - Name: [Eden_NebulaM_RandomBrownDim, Eden_NebulaM_RandomGray, Eden_NebulaM_RandomGray2, Eden_NebulaL_RandomBrownDim, Eden_NebulaL_RandomBrownDim2, Eden_NebulaL_RandomGrayDim, Eden_NebulaL_RandomGrayDim2, Eden_NebulaL_RandomOrangeDim, Eden_NebulaL_RandomOrangeDim2]
+      FieldName: [Eden_NebulaM_RandomBrownDim, Eden_NebulaM_RandomGray, Eden_NebulaM_RandomGray2, Eden_NebulaL_RandomBrownDim, Eden_NebulaL_RandomBrownDim2, Eden_NebulaL_RandomGrayDim, Eden_NebulaL_RandomGrayDim2, Eden_NebulaL_RandomOrangeDim, Eden_NebulaL_RandomOrangeDim2] #EdenReplace_NebulaAsteroid_RichT1B
+      CountMinMax: [ 1, 1 ]
+      Probability: 0
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+
+# Accretion Disk
+    - Name: [Eden_AsteroidField_SMBHDiskOuter]
+      FieldName: [Eden_AsteroidField_SMBHDiskOuter]
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      Pos: [0, 0, 0]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+
+# # Zirax defense cluster
+    # - Type: BA_Alien
+      # # GroupName: Eden_DummyPOI
+      # Name: [Eden_BA_DummyPOI2]
+      # DisplayName: Zirax Defenses
+      # Faction: Zirax
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 0.75
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # InitPower: True
+      # Pos: [0, 0, 0]
+      # Rot: [0, 0, 0]
+      # Compound:
+        # CountMinMax: [20, 20]
+        # Probability: 1
+        # Name: [CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense]
+        # DistanceMinMax: [1000, 9000]
+        # Rotate: false
+      # Properties:
+        # - Key: MapDistance
+          # Value: 0
+        # - Key: HudDistance
+          # Value: 0
+        # - Key: RegenAfter
+          # Value: 720
+
+# # Asteroid Cluster
+    # - Type: BA_Alien
+      # # GroupName: Eden_DummyPOI
+      # Name: [Eden_BA_DummyPOI]
+      # DisplayName: Asteroid Field
+      # Faction: None
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # InitPower: True
+      # Pos: [0, 0, 0]
+      # Rot: [0, 0, 0]
+      # Compound:
+        # CountMinMax: [4, 6]
+        # Probability: 1
+        # Name: [CompoundAsteroidT4, CompoundAsteroidT3Hot, CompoundAsteroidT3Hot, CompoundAsteroidT1, CompoundAsteroidT2, CompoundAsteroidT1]
+        # DistanceMinMax: [1000, 4500]
+        # Rotate: false
+      # Properties:
+        # - Key: HudDistance
+          # Value: 0
+        # - Key: Discovery
+          # Value: False
+        # - Key: MapMarker
+          # Value: Neutral
+        # - Key: RegenAfter
+          # Value: 720
+
+# # Asteroid Cluster
+    # - Type: BA_Alien
+      # # GroupName: Eden_DummyPOI
+      # Name: [Eden_BA_DummyPOI2]
+      # DisplayName: Asteroid Field
+      # Faction: None
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # InitPower: True
+      # Pos: [7500, 0, 0]
+      # Rot: [0, 0, 0]
+      # Compound:
+        # CountMinMax: [4, 6]
+        # Probability: 1
+        # Name: [CompoundAsteroidT3Hot, CompoundAsteroidT3Hot, CompoundAsteroidT2, CompoundAsteroidT2, CompoundAsteroidT2, CompoundAsteroidT1]
+        # DistanceMinMax: [1000, 4500]
+        # Rotate: false
+      # Properties:
+        # - Key: HudDistance
+          # Value: 0
+        # - Key: Discovery
+          # Value: False
+        # - Key: MapMarker
+          # Value: Neutral
+        # - Key: RegenAfter
+          # Value: 720
+
+# # Asteroid Cluster
+    # - Type: BA_Alien
+      # # GroupName: Eden_DummyPOI
+      # Name: [Eden_BA_DummyPOI3]
+      # DisplayName: Asteroid Field
+      # Faction: None
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]
+      # Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # InitPower: True
+      # Pos: [-7500, 0, 0]
+      # Rot: [0, 0, 0]
+      # Compound:
+        # CountMinMax: [4, 6]
+        # Probability: 1
+        # Name: [CompoundAsteroidT3Hot, CompoundAsteroidT3Hot, CompoundAsteroidT2, CompoundAsteroidT2, CompoundAsteroidT2, CompoundAsteroidT1]
+        # DistanceMinMax: [1000, 4500]
+        # Rotate: false
+      # Properties:
+        # - Key: HudDistance
+          # Value: 0
+        # - Key: Discovery
+          # Value: False
+        # - Key: MapMarker
+          # Value: Neutral
+        # - Key: RegenAfter
+          # Value: 720
+
+
+
+# Jump Points
+    - Type: BA_Alien
+      GroupName: RE2_JumpPointSMBH
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, 15000]
+      Rot: [0, 0, 0]
+      Compound:
+        CountMinMax: [20, 20]
+        Probability: 1
+        Name: [CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense, CompoundZiraxDefense]
+        DistanceMinMax: [1500, 6000]
+        Rotate: false
+      Properties:
+        - Key: Discovery
+          Value: False
+
+# Jump Exits
+    - Type: BA_Alien
+      GroupName: RE2_JumpExit
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Pos: [0, 0, -15000]
+      Rot: [0, 0, 0]
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0
+
+
+# Stable Wormhole. Jumps player to random system. Limit 1 per playfield.
+    - Type: BA_Alien
+      GroupName: RE2_JumpGateWormholeOrange
+      Faction: Alien
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Position:
+         PosXZMinMax: [750, 7500]
+         PosYMax: 5000
+      Compound:
+        CountMinMax: [1, 1]
+        Probability: 1
+        Name: [CompoundWormhole]
+        DistanceMinMax: [5, 10]
+        Rotate: false
+      Properties:
+        - Key: RegenAfter
+          Value: 720
+        - Key: JumpGate
+          Value: Eden_WormholeRandom_Init
+
+# Visual effect for wormhole
+    - Type: Eden_WormholeOrange
+      Name: [CompoundWormhole]
+      DisplayName: Stable Wormhole Visual
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      IsCompoundSubDesc: True
+      InitPower: True
+      Position:
+         PosXZMinMax: [7000, 12000]
+         PosYMax: 5000
+
+# ======================================================================================================================================================================================================
+# ================================================================================================================================================================================= Definitions for Compounds
+# ======================================================================================================================================================================================================
+
+# Zirax Defense
+    - Type: BA_Alien
+      Name: [CompoundZiraxDefense]
+      GroupName: R2ZiraxSpaceDefense
+      Faction: Zirax
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 720
+
+# Wrecks
+# Wreckage Tier 1 Compound
+    - Type: BA_Alien
+      Name: [CompoundWreckT1All]
+      GroupName: Eden_SpaceJunkT1
+      Faction: Eden_Wreck
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# Wreckage Tier 2 Compound All.
+    - Type: BA_Alien
+      Name: [CompoundWreckT2All]
+      GroupName: Eden_SpaceJunkT2
+      Faction: Eden_Wreck
+      FactionTerritory: [All]
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.5
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      IsCompoundSubDesc: True
+      Position:
+         PosXZMinMax: [750, 7000]
+         PosYMax: 5000
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 4320
+
+
+
+
+
+
+# Asteroids for compounds.
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT1]
+      GroupName: Eden_AsteroidT1
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT2]
+      GroupName: Eden_AsteroidT2
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT3Cold]
+      GroupName: Eden_AsteroidT3Cold
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT3Hot]
+      GroupName: Eden_AsteroidT3Hot
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+    - Type: BA_Alien
+      Name: [CompoundAsteroidT4]
+      GroupName: Eden_AsteroidT4
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.8
+      IsCompoundSubDesc: True
+      Properties:
+        - Key: MapDistance
+          Value: 3000
+        - Key: HudDistance
+          Value: 3000
+        - Key: RegenAfter
+          Value: 4320
+        - Key: MapMarker
+          Value: Neutral
+
+# ================================================================================================================================================================================= Drone Base Setup
+DroneBaseSetup:
+
+# ================================================================================================================================================================================= Drones
+      - FreeDrones:
+
+# Zirax
+          - Name: [DroneSpaceZiraxLaser, DroneSpaceZiraxRocket, DroneSpaceZiraxPlasma]
+            Faction: Zirax
+            CanNotBeControlledByMasterAI: False
+            # POINameAsPositionRef: [Eden_BA_DummyPOI]
+            Count: [5, 10]
+            Radius: [500, 5000]
+            Properties:
+              # - Key: AIManPatrolGroups
+                # Value: "Eden_DummyPOI"
+              - Key: AIManPatrolFactions
+                Value: "Zirax, Warlord"
+              - Key: AIManMaxPursuitRange
+                Value: 5000
+
+# Warlord
+          - Name: [Eden_SpaceDroneBanditGatling, Eden_SpaceDroneBanditBolter, Eden_SpaceDroneBanditMissile]
+            Faction: Warlord
+            CanNotBeControlledByMasterAI: False
+            # POINameAsPositionRef: [Eden_BA_DummyPOI]
+            Count: [15, 20]
+            Radius: [500, 5000]
+            Properties:
+              # - Key: AIManPatrolGroups
+                # Value: "Eden_DummyPOI"
+              - Key: AIManPatrolFactions
+                Value: "Warlord, Zirax"
+              - Key: AIManMaxPursuitRange
+                Value: 5000
+
+# ================================================================================================================================================================================= Ships
+        SpaceVessels:
+# ================================================================================================================================================================================= Patrol Vessels and Freighters and Bases
+
+# Zirax
+          - Name: [R2OPVZiraxT1]
+            Faction: Zirax
+            CountMinMax: [2, 2]
+            Probability: 0
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [50, 60]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [1500, 3000]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1000, 2000]
+                PosYMax: 500
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: MapDistance
+                Value: 3000
+              - Key: HudDistance
+                Value: 3000
+              - Key: AIManPatrolFactions
+                Value: "Zirax, Warlord"
+              - Key: AIManMaxPursuitRange
+                Value: 6000
+
+          - Name: [R2OPVZiraxT2]
+            Faction: Zirax
+            CountMinMax: [1, 1]
+            Probability: 0
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [45, 55]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [1500, 3000]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1500, 2500]
+                PosYMax: 1000
+            StockDescription:
+              Name: [SpaceDroneLaser, SpaceDronePlasma]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: MapDistance
+                Value: 3000
+              - Key: HudDistance
+                Value: 3000
+              - Key: AIManPatrolFactions
+                Value: "Zirax, Warlord"
+              - Key: AIManMaxPursuitRange
+                Value: 6000
+
+# Warlord
+          - Name: [RE2_OPVRaiderT1]
+            Faction: Warlord
+            CountMinMax: [5, 6]
+            Probability: 1
+            CanNotBeControlledByMasterAI: False
+            FixedMaxSpeed: [40, 50]
+            Mission: SpacePatrol
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [3600, 3600]
+              DelayBeforeSelfDestructionMinMax: [3600, 3600]
+              IsRespawnAfterDestruction: True
+              RadiusMinMax: [1500, 9000]
+              POINameAsPositionRef: [Eden_BA_DummyPOI]
+              Position:
+                PosXZMinMax: [1500, 7500]
+                PosYMax: 500
+            StockDescription:
+              Name: [Eden_SpaceDroneBanditGatling, Eden_SpaceDroneBanditBolter]
+              AmountMinMax: [0, 0]
+              ExtraMinMax: [0,0]
+              Type: FighterDrone
+            Properties:
+              - Key: MapDistance
+                Value: 3000
+              - Key: HudDistance
+                Value: 3000
+              - Key: AIManPatrolFactions
+                Value: "Zirax, Warlord"
+              - Key: AIManMaxPursuitRange
+                Value: 10000
